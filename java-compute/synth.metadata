@@ -4,21 +4,21 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:vam-google/java-compute.git",
-        "sha": "bd8bbdb2d05199149653a461c241ea0cda87f1be"
+        "sha": "7fd31076c09f3ae9f898f219fab5c01cf7fd462a"
       }
     },
     {
       "git": {
         "name": "googleapis-discovery",
         "remote": "https://github.com/googleapis/googleapis-discovery.git",
-        "sha": "ed8fe29ede4a8c5117c955bf0972e6b751800e41"
+        "sha": "8f48e81408f5582f8bf17d0b959711d955988bb9"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "67f09bf301083798e7220137723222eb00b8f88a"
+        "sha": "046994f491c02806aea60118e214a9edd67f5ab7"
       }
     }
   ],

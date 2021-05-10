@@ -60,6 +60,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,8 +71,9 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
           case 0:
             done = true;
             break;
-          case 1984840776:
+          case -162642872:
             {
+              bitField0_ |= 0x00000001;
               allEffective_ = input.readBool();
               break;
             }
@@ -110,7 +112,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
                 .class);
   }
 
-  public static final int ALL_EFFECTIVE_FIELD_NUMBER = 248105097;
+  private int bitField0_;
+  public static final int ALL_EFFECTIVE_FIELD_NUMBER = 516540553;
   private boolean allEffective_;
   /**
    *
@@ -119,7 +122,22 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
-   * <code>bool all_effective = 248105097;</code>
+   * <code>bool all_effective = 516540553;</code>
+   *
+   * @return Whether the allEffective field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllEffective() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * </pre>
+   *
+   * <code>bool all_effective = 516540553;</code>
    *
    * @return The allEffective.
    */
@@ -142,8 +160,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (allEffective_ != false) {
-      output.writeBool(248105097, allEffective_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(516540553, allEffective_);
     }
     unknownFields.writeTo(output);
   }
@@ -154,8 +172,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     if (size != -1) return size;
 
     size = 0;
-    if (allEffective_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(248105097, allEffective_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(516540553, allEffective_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,7 +193,10 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs other =
         (com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs) obj;
 
-    if (getAllEffective() != other.getAllEffective()) return false;
+    if (hasAllEffective() != other.hasAllEffective()) return false;
+    if (hasAllEffective()) {
+      if (getAllEffective() != other.getAllEffective()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,8 +208,10 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ALL_EFFECTIVE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllEffective());
+    if (hasAllEffective()) {
+      hash = (37 * hash) + ALL_EFFECTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllEffective());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -345,7 +368,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
     public Builder clear() {
       super.clear();
       allEffective_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -379,7 +402,13 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs(
               this);
-      result.allEffective_ = allEffective_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allEffective_ = allEffective_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -436,7 +465,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
               .getDefaultInstance()) return this;
-      if (other.getAllEffective() != false) {
+      if (other.hasAllEffective()) {
         setAllEffective(other.getAllEffective());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -471,6 +500,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       return this;
     }
 
+    private int bitField0_;
+
     private boolean allEffective_;
     /**
      *
@@ -479,7 +510,22 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 248105097;</code>
+     * <code>bool all_effective = 516540553;</code>
+     *
+     * @return Whether the allEffective field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllEffective() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+     * </pre>
+     *
+     * <code>bool all_effective = 516540553;</code>
      *
      * @return The allEffective.
      */
@@ -494,13 +540,13 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 248105097;</code>
+     * <code>bool all_effective = 516540553;</code>
      *
      * @param value The allEffective to set.
      * @return This builder for chaining.
      */
     public Builder setAllEffective(boolean value) {
-
+      bitField0_ |= 0x00000001;
       allEffective_ = value;
       onChanged();
       return this;
@@ -512,12 +558,12 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 248105097;</code>
+     * <code>bool all_effective = 516540553;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllEffective() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allEffective_ = false;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    *
    * <code>string organization = 105180467;</code>
    *
+   * @return Whether the organization field is set.
+   */
+  boolean hasOrganization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+   * </pre>
+   *
+   * <code>string organization = 105180467;</code>
+   *
    * @return The organization.
    */
   java.lang.String getOrganization();

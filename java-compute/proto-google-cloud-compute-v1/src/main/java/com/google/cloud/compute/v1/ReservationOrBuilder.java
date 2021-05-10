@@ -30,7 +30,19 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 213699349;</code>
+   * <code>string commitment = 482134805;</code>
+   *
+   * @return Whether the commitment field is set.
+   */
+  boolean hasCommitment();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * </pre>
+   *
+   * <code>string commitment = 482134805;</code>
    *
    * @return The commitment.
    */
@@ -42,12 +54,24 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 213699349;</code>
+   * <code>string commitment = 482134805;</code>
    *
    * @return The bytes for commitment.
    */
   com.google.protobuf.ByteString getCommitmentBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -92,12 +128,24 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -132,6 +180,18 @@ public interface ReservationOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -148,6 +208,18 @@ public interface ReservationOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -180,7 +252,19 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -192,7 +276,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -206,7 +290,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return Whether the specificReservation field is set.
@@ -220,7 +304,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    *
    * @return The specificReservation.
@@ -234,7 +318,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
    * </code>
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUReservationOrBuilder
@@ -249,10 +333,34 @@ public interface ReservationOrBuilder
    *
    * <code>bool specific_reservation_required = 226550687;</code>
    *
+   * @return Whether the specificReservationRequired field is set.
+   */
+  boolean hasSpecificReservationRequired();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+   * </pre>
+   *
+   * <code>bool specific_reservation_required = 226550687;</code>
+   *
    * @return The specificReservationRequired.
    */
   boolean getSpecificReservationRequired();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -278,6 +386,18 @@ public interface ReservationOrBuilder
    */
   com.google.cloud.compute.v1.Reservation.Status getStatus();
 
+  /**
+   *
+   *
+   * <pre>
+   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

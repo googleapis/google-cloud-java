@@ -60,6 +60,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
           case 25022378:
             {
               com.google.cloud.compute.v1.Expr.Builder subBuilder = null;
-              if (expr_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = expr_.toBuilder();
               }
               expr_ =
@@ -82,20 +83,13 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
                 subBuilder.mergeFrom(expr_);
                 expr_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 430804456:
-            {
-              int rawValue = input.readEnum();
-
-              versionedExpr_ = rawValue;
+              bitField0_ |= 0x00000002;
               break;
             }
           case 2046564882:
             {
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder subBuilder = null;
-              if (config_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = config_.toBuilder();
               }
               config_ =
@@ -106,7 +100,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
                 subBuilder.mergeFrom(config_);
                 config_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case -1716679192:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000004;
+              versionedExpr_ = rawValue;
               break;
             }
           default:
@@ -264,6 +265,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr)
   }
 
+  private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 255820610;
   private com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config_;
   /**
@@ -279,7 +281,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasConfig() {
-    return config_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -309,7 +311,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int EXPR_FIELD_NUMBER = 3127797;
@@ -327,7 +331,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasExpr() {
-    return expr_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -355,10 +359,10 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ExprOrBuilder getExprOrBuilder() {
-    return getExpr();
+    return expr_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : expr_;
   }
 
-  public static final int VERSIONED_EXPR_FIELD_NUMBER = 53850557;
+  public static final int VERSIONED_EXPR_FIELD_NUMBER = 322286013;
   private int versionedExpr_;
   /**
    *
@@ -368,7 +372,24 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+   * </code>
+   *
+   * @return Whether the versionedExpr field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersionedExpr() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
    * </code>
    *
    * @return The enum numeric value on the wire for versionedExpr.
@@ -385,7 +406,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
    * </code>
    *
    * @return The versionedExpr.
@@ -414,17 +435,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (expr_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3127797, getExpr());
     }
-    if (versionedExpr_
-        != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr
-            .UNDEFINED_VERSIONED_EXPR
-            .getNumber()) {
-      output.writeEnum(53850557, versionedExpr_);
-    }
-    if (config_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(255820610, getConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(322286013, versionedExpr_);
     }
     unknownFields.writeTo(output);
   }
@@ -435,17 +453,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (expr_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3127797, getExpr());
     }
-    if (versionedExpr_
-        != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr
-            .UNDEFINED_VERSIONED_EXPR
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53850557, versionedExpr_);
-    }
-    if (config_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(255820610, getConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(322286013, versionedExpr_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -471,7 +486,10 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     if (hasExpr()) {
       if (!getExpr().equals(other.getExpr())) return false;
     }
-    if (versionedExpr_ != other.versionedExpr_) return false;
+    if (hasVersionedExpr() != other.hasVersionedExpr()) return false;
+    if (hasVersionedExpr()) {
+      if (versionedExpr_ != other.versionedExpr_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -491,8 +509,10 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       hash = (37 * hash) + EXPR_FIELD_NUMBER;
       hash = (53 * hash) + getExpr().hashCode();
     }
-    hash = (37 * hash) + VERSIONED_EXPR_FIELD_NUMBER;
-    hash = (53 * hash) + versionedExpr_;
+    if (hasVersionedExpr()) {
+      hash = (37 * hash) + VERSIONED_EXPR_FIELD_NUMBER;
+      hash = (53 * hash) + versionedExpr_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -633,7 +653,10 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConfigFieldBuilder();
+        getExprFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -642,17 +665,17 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       if (configBuilder_ == null) {
         config_ = null;
       } else {
-        config_ = null;
-        configBuilder_ = null;
+        configBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (exprBuilder_ == null) {
         expr_ = null;
       } else {
-        expr_ = null;
-        exprBuilder_ = null;
+        exprBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       versionedExpr_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -680,17 +703,29 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleMatcher result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleMatcher(this);
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (configBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = configBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (exprBuilder_ == null) {
-        result.expr_ = expr_;
-      } else {
-        result.expr_ = exprBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (exprBuilder_ == null) {
+          result.expr_ = expr_;
+        } else {
+          result.expr_ = exprBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.versionedExpr_ = versionedExpr_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -747,8 +782,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       if (other.hasExpr()) {
         mergeExpr(other.getExpr());
       }
-      if (other.versionedExpr_ != 0) {
-        setVersionedExprValue(other.getVersionedExprValue());
+      if (other.hasVersionedExpr()) {
+        setVersionedExpr(other.getVersionedExpr());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -780,6 +815,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig,
@@ -798,7 +835,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -839,7 +876,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -859,7 +896,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -873,7 +910,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder mergeConfig(com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && config_ != null
+            && config_
+                != com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig
+                    .getDefaultInstance()) {
           config_ =
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.newBuilder(config_)
                   .mergeFrom(value)
@@ -885,7 +926,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -902,10 +943,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         config_ = null;
         onChanged();
       } else {
-        config_ = null;
-        configBuilder_ = null;
+        configBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -918,7 +958,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;</code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -985,7 +1025,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return Whether the expr field is set.
      */
     public boolean hasExpr() {
-      return exprBuilder_ != null || expr_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1024,7 +1064,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         exprBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1043,7 +1083,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         exprBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1057,7 +1097,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder mergeExpr(com.google.cloud.compute.v1.Expr value) {
       if (exprBuilder_ == null) {
-        if (expr_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && expr_ != null
+            && expr_ != com.google.cloud.compute.v1.Expr.getDefaultInstance()) {
           expr_ =
               com.google.cloud.compute.v1.Expr.newBuilder(expr_).mergeFrom(value).buildPartial();
         } else {
@@ -1067,7 +1109,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         exprBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1084,10 +1126,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
         expr_ = null;
         onChanged();
       } else {
-        expr_ = null;
-        exprBuilder_ = null;
+        exprBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1100,7 +1141,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>.google.cloud.compute.v1.Expr expr = 3127797;</code>
      */
     public com.google.cloud.compute.v1.Expr.Builder getExprBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExprFieldBuilder().getBuilder();
     }
@@ -1155,7 +1196,24 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * </code>
+     *
+     * @return Whether the versionedExpr field is set.
+     */
+    @java.lang.Override
+    public boolean hasVersionedExpr() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
      * </code>
      *
      * @return The enum numeric value on the wire for versionedExpr.
@@ -1172,14 +1230,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
      * </code>
      *
      * @param value The enum numeric value on the wire for versionedExpr to set.
      * @return This builder for chaining.
      */
     public Builder setVersionedExprValue(int value) {
-
+      bitField0_ |= 0x00000004;
       versionedExpr_ = value;
       onChanged();
       return this;
@@ -1192,7 +1250,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
      * </code>
      *
      * @return The versionedExpr.
@@ -1215,7 +1273,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
      * </code>
      *
      * @param value The versionedExpr to set.
@@ -1226,7 +1284,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       versionedExpr_ = value.getNumber();
       onChanged();
       return this;
@@ -1239,13 +1297,13 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearVersionedExpr() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       versionedExpr_ = 0;
       onChanged();
       return this;

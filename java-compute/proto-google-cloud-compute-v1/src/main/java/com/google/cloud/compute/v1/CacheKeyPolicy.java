@@ -72,38 +72,41 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 280576632:
-            {
-              includeProtocol_ = input.readBool();
-              break;
-            }
           case 419651970:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000010;
               }
               queryStringWhitelist_.add(s);
               break;
             }
-          case 692234290:
+          case -1866907016:
+            {
+              bitField0_ |= 0x00000002;
+              includeProtocol_ = input.readBool();
+              break;
+            }
+          case -1455249358:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               queryStringBlacklist_.add(s);
               break;
             }
-          case 1644809464:
+          case -502674184:
             {
+              bitField0_ |= 0x00000004;
               includeQueryString_ = input.readBool();
               break;
             }
-          case 1747457784:
+          case -400025864:
             {
+              bitField0_ |= 0x00000001;
               includeHost_ = input.readBool();
               break;
             }
@@ -121,10 +124,10 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -147,7 +150,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.CacheKeyPolicy.Builder.class);
   }
 
-  public static final int INCLUDE_HOST_FIELD_NUMBER = 218432223;
+  private int bitField0_;
+  public static final int INCLUDE_HOST_FIELD_NUMBER = 486867679;
   private boolean includeHost_;
   /**
    *
@@ -156,7 +160,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, requests to different hosts will be cached separately.
    * </pre>
    *
-   * <code>bool include_host = 218432223;</code>
+   * <code>bool include_host = 486867679;</code>
+   *
+   * @return Whether the includeHost field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeHost() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, requests to different hosts will be cached separately.
+   * </pre>
+   *
+   * <code>bool include_host = 486867679;</code>
    *
    * @return The includeHost.
    */
@@ -165,7 +184,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     return includeHost_;
   }
 
-  public static final int INCLUDE_PROTOCOL_FIELD_NUMBER = 35072079;
+  public static final int INCLUDE_PROTOCOL_FIELD_NUMBER = 303507535;
   private boolean includeProtocol_;
   /**
    *
@@ -174,7 +193,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, http and https requests will be cached separately.
    * </pre>
    *
-   * <code>bool include_protocol = 35072079;</code>
+   * <code>bool include_protocol = 303507535;</code>
+   *
+   * @return Whether the includeProtocol field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeProtocol() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, http and https requests will be cached separately.
+   * </pre>
+   *
+   * <code>bool include_protocol = 303507535;</code>
    *
    * @return The includeProtocol.
    */
@@ -183,7 +217,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     return includeProtocol_;
   }
 
-  public static final int INCLUDE_QUERY_STRING_FIELD_NUMBER = 205601183;
+  public static final int INCLUDE_QUERY_STRING_FIELD_NUMBER = 474036639;
   private boolean includeQueryString_;
   /**
    *
@@ -192,7 +226,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
-   * <code>bool include_query_string = 205601183;</code>
+   * <code>bool include_query_string = 474036639;</code>
+   *
+   * @return Whether the includeQueryString field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeQueryString() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * </pre>
+   *
+   * <code>bool include_query_string = 474036639;</code>
    *
    * @return The includeQueryString.
    */
@@ -201,7 +250,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     return includeQueryString_;
   }
 
-  public static final int QUERY_STRING_BLACKLIST_FIELD_NUMBER = 86529286;
+  public static final int QUERY_STRING_BLACKLIST_FIELD_NUMBER = 354964742;
   private com.google.protobuf.LazyStringList queryStringBlacklist_;
   /**
    *
@@ -210,7 +259,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 86529286;</code>
+   * <code>repeated string query_string_blacklist = 354964742;</code>
    *
    * @return A list containing the queryStringBlacklist.
    */
@@ -224,7 +273,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 86529286;</code>
+   * <code>repeated string query_string_blacklist = 354964742;</code>
    *
    * @return The count of queryStringBlacklist.
    */
@@ -238,7 +287,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 86529286;</code>
+   * <code>repeated string query_string_blacklist = 354964742;</code>
    *
    * @param index The index of the element to return.
    * @return The queryStringBlacklist at the given index.
@@ -253,7 +302,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 86529286;</code>
+   * <code>repeated string query_string_blacklist = 354964742;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the queryStringBlacklist at the given index.
@@ -337,22 +386,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (includeProtocol_ != false) {
-      output.writeBool(35072079, includeProtocol_);
-    }
     for (int i = 0; i < queryStringWhitelist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 52456496, queryStringWhitelist_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(303507535, includeProtocol_);
+    }
     for (int i = 0; i < queryStringBlacklist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 86529286, queryStringBlacklist_.getRaw(i));
+          output, 354964742, queryStringBlacklist_.getRaw(i));
     }
-    if (includeQueryString_ != false) {
-      output.writeBool(205601183, includeQueryString_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(474036639, includeQueryString_);
     }
-    if (includeHost_ != false) {
-      output.writeBool(218432223, includeHost_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(486867679, includeHost_);
     }
     unknownFields.writeTo(output);
   }
@@ -363,9 +412,6 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (includeProtocol_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(35072079, includeProtocol_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < queryStringWhitelist_.size(); i++) {
@@ -373,6 +419,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getQueryStringWhitelistList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(303507535, includeProtocol_);
     }
     {
       int dataSize = 0;
@@ -382,11 +431,11 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getQueryStringBlacklistList().size();
     }
-    if (includeQueryString_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(205601183, includeQueryString_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(474036639, includeQueryString_);
     }
-    if (includeHost_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(218432223, includeHost_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(486867679, includeHost_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -404,9 +453,18 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.CacheKeyPolicy other =
         (com.google.cloud.compute.v1.CacheKeyPolicy) obj;
 
-    if (getIncludeHost() != other.getIncludeHost()) return false;
-    if (getIncludeProtocol() != other.getIncludeProtocol()) return false;
-    if (getIncludeQueryString() != other.getIncludeQueryString()) return false;
+    if (hasIncludeHost() != other.hasIncludeHost()) return false;
+    if (hasIncludeHost()) {
+      if (getIncludeHost() != other.getIncludeHost()) return false;
+    }
+    if (hasIncludeProtocol() != other.hasIncludeProtocol()) return false;
+    if (hasIncludeProtocol()) {
+      if (getIncludeProtocol() != other.getIncludeProtocol()) return false;
+    }
+    if (hasIncludeQueryString() != other.hasIncludeQueryString()) return false;
+    if (hasIncludeQueryString()) {
+      if (getIncludeQueryString() != other.getIncludeQueryString()) return false;
+    }
     if (!getQueryStringBlacklistList().equals(other.getQueryStringBlacklistList())) return false;
     if (!getQueryStringWhitelistList().equals(other.getQueryStringWhitelistList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -420,12 +478,18 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INCLUDE_HOST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeHost());
-    hash = (37 * hash) + INCLUDE_PROTOCOL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeProtocol());
-    hash = (37 * hash) + INCLUDE_QUERY_STRING_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeQueryString());
+    if (hasIncludeHost()) {
+      hash = (37 * hash) + INCLUDE_HOST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeHost());
+    }
+    if (hasIncludeProtocol()) {
+      hash = (37 * hash) + INCLUDE_PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeProtocol());
+    }
+    if (hasIncludeQueryString()) {
+      hash = (37 * hash) + INCLUDE_QUERY_STRING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeQueryString());
+    }
     if (getQueryStringBlacklistCount() > 0) {
       hash = (37 * hash) + QUERY_STRING_BLACKLIST_FIELD_NUMBER;
       hash = (53 * hash) + getQueryStringBlacklistList().hashCode();
@@ -580,15 +644,15 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       includeHost_ = false;
-
-      includeProtocol_ = false;
-
-      includeQueryString_ = false;
-
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeProtocol_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
+      includeQueryString_ = false;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -617,19 +681,30 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.CacheKeyPolicy result =
           new com.google.cloud.compute.v1.CacheKeyPolicy(this);
       int from_bitField0_ = bitField0_;
-      result.includeHost_ = includeHost_;
-      result.includeProtocol_ = includeProtocol_;
-      result.includeQueryString_ = includeQueryString_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.includeHost_ = includeHost_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.includeProtocol_ = includeProtocol_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.includeQueryString_ = includeQueryString_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
         queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.queryStringBlacklist_ = queryStringBlacklist_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.queryStringWhitelist_ = queryStringWhitelist_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -679,19 +754,19 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.CacheKeyPolicy other) {
       if (other == com.google.cloud.compute.v1.CacheKeyPolicy.getDefaultInstance()) return this;
-      if (other.getIncludeHost() != false) {
+      if (other.hasIncludeHost()) {
         setIncludeHost(other.getIncludeHost());
       }
-      if (other.getIncludeProtocol() != false) {
+      if (other.hasIncludeProtocol()) {
         setIncludeProtocol(other.getIncludeProtocol());
       }
-      if (other.getIncludeQueryString() != false) {
+      if (other.hasIncludeQueryString()) {
         setIncludeQueryString(other.getIncludeQueryString());
       }
       if (!other.queryStringBlacklist_.isEmpty()) {
         if (queryStringBlacklist_.isEmpty()) {
           queryStringBlacklist_ = other.queryStringBlacklist_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureQueryStringBlacklistIsMutable();
           queryStringBlacklist_.addAll(other.queryStringBlacklist_);
@@ -701,7 +776,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryStringWhitelist_.isEmpty()) {
         if (queryStringWhitelist_.isEmpty()) {
           queryStringWhitelist_ = other.queryStringWhitelist_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureQueryStringWhitelistIsMutable();
           queryStringWhitelist_.addAll(other.queryStringWhitelist_);
@@ -747,7 +822,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, requests to different hosts will be cached separately.
      * </pre>
      *
-     * <code>bool include_host = 218432223;</code>
+     * <code>bool include_host = 486867679;</code>
+     *
+     * @return Whether the includeHost field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeHost() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, requests to different hosts will be cached separately.
+     * </pre>
+     *
+     * <code>bool include_host = 486867679;</code>
      *
      * @return The includeHost.
      */
@@ -762,13 +852,13 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, requests to different hosts will be cached separately.
      * </pre>
      *
-     * <code>bool include_host = 218432223;</code>
+     * <code>bool include_host = 486867679;</code>
      *
      * @param value The includeHost to set.
      * @return This builder for chaining.
      */
     public Builder setIncludeHost(boolean value) {
-
+      bitField0_ |= 0x00000001;
       includeHost_ = value;
       onChanged();
       return this;
@@ -780,12 +870,12 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, requests to different hosts will be cached separately.
      * </pre>
      *
-     * <code>bool include_host = 218432223;</code>
+     * <code>bool include_host = 486867679;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIncludeHost() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       includeHost_ = false;
       onChanged();
       return this;
@@ -799,7 +889,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, http and https requests will be cached separately.
      * </pre>
      *
-     * <code>bool include_protocol = 35072079;</code>
+     * <code>bool include_protocol = 303507535;</code>
+     *
+     * @return Whether the includeProtocol field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeProtocol() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, http and https requests will be cached separately.
+     * </pre>
+     *
+     * <code>bool include_protocol = 303507535;</code>
      *
      * @return The includeProtocol.
      */
@@ -814,13 +919,13 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, http and https requests will be cached separately.
      * </pre>
      *
-     * <code>bool include_protocol = 35072079;</code>
+     * <code>bool include_protocol = 303507535;</code>
      *
      * @param value The includeProtocol to set.
      * @return This builder for chaining.
      */
     public Builder setIncludeProtocol(boolean value) {
-
+      bitField0_ |= 0x00000002;
       includeProtocol_ = value;
       onChanged();
       return this;
@@ -832,12 +937,12 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, http and https requests will be cached separately.
      * </pre>
      *
-     * <code>bool include_protocol = 35072079;</code>
+     * <code>bool include_protocol = 303507535;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIncludeProtocol() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       includeProtocol_ = false;
       onChanged();
       return this;
@@ -851,7 +956,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
-     * <code>bool include_query_string = 205601183;</code>
+     * <code>bool include_query_string = 474036639;</code>
+     *
+     * @return Whether the includeQueryString field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeQueryString() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+     * </pre>
+     *
+     * <code>bool include_query_string = 474036639;</code>
      *
      * @return The includeQueryString.
      */
@@ -866,13 +986,13 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
-     * <code>bool include_query_string = 205601183;</code>
+     * <code>bool include_query_string = 474036639;</code>
      *
      * @param value The includeQueryString to set.
      * @return This builder for chaining.
      */
     public Builder setIncludeQueryString(boolean value) {
-
+      bitField0_ |= 0x00000004;
       includeQueryString_ = value;
       onChanged();
       return this;
@@ -884,12 +1004,12 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
-     * <code>bool include_query_string = 205601183;</code>
+     * <code>bool include_query_string = 474036639;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIncludeQueryString() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       includeQueryString_ = false;
       onChanged();
       return this;
@@ -899,9 +1019,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureQueryStringBlacklistIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList(queryStringBlacklist_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -911,7 +1031,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @return A list containing the queryStringBlacklist.
      */
@@ -925,7 +1045,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @return The count of queryStringBlacklist.
      */
@@ -939,7 +1059,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param index The index of the element to return.
      * @return The queryStringBlacklist at the given index.
@@ -954,7 +1074,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the queryStringBlacklist at the given index.
@@ -969,7 +1089,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param index The index to set the value at.
      * @param value The queryStringBlacklist to set.
@@ -991,7 +1111,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param value The queryStringBlacklist to add.
      * @return This builder for chaining.
@@ -1012,7 +1132,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param values The queryStringBlacklist to add.
      * @return This builder for chaining.
@@ -1030,13 +1150,13 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearQueryStringBlacklist() {
       queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1047,7 +1167,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 86529286;</code>
+     * <code>repeated string query_string_blacklist = 354964742;</code>
      *
      * @param value The bytes of the queryStringBlacklist to add.
      * @return This builder for chaining.
@@ -1067,9 +1187,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureQueryStringWhitelistIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList(queryStringWhitelist_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1204,7 +1324,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueryStringWhitelist() {
       queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

@@ -97,14 +97,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               id_ = s;
               break;
             }
           case 832194:
             {
               com.google.cloud.compute.v1.BackendServiceIAP.Builder subBuilder = null;
-              if (iap_ != null) {
+              if (((bitField0_ & 0x00000400) != 0)) {
                 subBuilder = iap_.toBuilder();
               }
               iap_ =
@@ -114,14 +114,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(iap_);
                 iap_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000400;
               break;
             }
           case 7247066:
             {
               com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.Builder subBuilder =
                   null;
-              if (consistentHash_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = consistentHash_.toBuilder();
               }
               consistentHash_ =
@@ -132,34 +132,35 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(consistentHash_);
                 consistentHash_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000010;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00001000;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00010000;
               name_ = s;
               break;
             }
           case 27575304:
             {
+              bitField0_ |= 0x00080000;
               port_ = input.readInt32();
               break;
             }
           case 223823938:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 customRequestHeaders_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000080;
               }
               customRequestHeaders_.add(s);
               break;
@@ -167,78 +168,34 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               creationTimestamp_ = s;
               break;
             }
           case 332274762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00100000;
               portName_ = s;
               break;
             }
           case 639959960:
             {
+              bitField0_ |= 0x08000000;
               timeoutSec_ = input.readInt32();
-              break;
-            }
-          case 662914282:
-            {
-              com.google.cloud.compute.v1.BackendServiceLogConfig.Builder subBuilder = null;
-              if (logConfig_ != null) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.BackendServiceLogConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 676623552:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00200000;
               protocol_ = rawValue;
-              break;
-            }
-          case 689517042:
-            {
-              com.google.cloud.compute.v1.OutlierDetection.Builder subBuilder = null;
-              if (outlierDetection_ != null) {
-                subBuilder = outlierDetection_.toBuilder();
-              }
-              outlierDetection_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.OutlierDetection.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outlierDetection_);
-                outlierDetection_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 763638304:
-            {
-              int rawValue = input.readEnum();
-
-              loadBalancingScheme_ = rawValue;
-              break;
-            }
-          case 812491984:
-            {
-              affinityCookieTtlSec_ = input.readInt32();
               break;
             }
           case 845269242:
             {
               com.google.cloud.compute.v1.BackendServiceFailoverPolicy.Builder subBuilder = null;
-              if (failoverPolicy_ != null) {
+              if (((bitField0_ & 0x00000100) != 0)) {
                 subBuilder = failoverPolicy_.toBuilder();
               }
               failoverPolicy_ =
@@ -249,123 +206,34 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(failoverPolicy_);
                 failoverPolicy_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 952829106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                customResponseHeaders_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              customResponseHeaders_.add(s);
+              bitField0_ |= 0x00000100;
               break;
             }
           case 1051451896:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00004000;
               localityLbPolicy_ = rawValue;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00400000;
               region_ = s;
-              break;
-            }
-          case 1223236842:
-            {
-              com.google.cloud.compute.v1.CircuitBreakers.Builder subBuilder = null;
-              if (circuitBreakers_ != null) {
-                subBuilder = circuitBreakers_.toBuilder();
-              }
-              circuitBreakers_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CircuitBreakers.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(circuitBreakers_);
-                circuitBreakers_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1368660106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00800000;
               securityPolicy_ = s;
-              break;
-            }
-          case 1439481202:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              healthChecks_.add(s);
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case 1541290330:
-            {
-              com.google.cloud.compute.v1.ConnectionDraining.Builder subBuilder = null;
-              if (connectionDraining_ != null) {
-                subBuilder = connectionDraining_.toBuilder();
-              }
-              connectionDraining_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ConnectionDraining.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(connectionDraining_);
-                connectionDraining_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1563624840:
-            {
-              int rawValue = input.readEnum();
-
-              sessionAffinity_ = rawValue;
-              break;
-            }
-          case 1681715730:
-            {
-              com.google.cloud.compute.v1.SecuritySettings.Builder subBuilder = null;
-              if (securitySettings_ != null) {
-                subBuilder = securitySettings_.toBuilder();
-              }
-              securitySettings_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecuritySettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(securitySettings_);
-                securitySettings_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 1711811618:
             {
               com.google.cloud.compute.v1.BackendServiceCdnPolicy.Builder subBuilder = null;
-              if (cdnPolicy_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = cdnPolicy_.toBuilder();
               }
               cdnPolicy_ =
@@ -376,37 +244,173 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(cdnPolicy_);
                 cdnPolicy_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00020000;
               network_ = s;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000200;
               fingerprint_ = s;
-              break;
-            }
-          case 1939235578:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                backends_ = new java.util.ArrayList<com.google.cloud.compute.v1.Backend>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              backends_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Backend.parser(), extensionRegistry));
               break;
             }
           case 2005867992:
             {
+              bitField0_ |= 0x00000080;
               enableCDN_ = input.readBool();
+              break;
+            }
+          case -1484569366:
+            {
+              com.google.cloud.compute.v1.BackendServiceLogConfig.Builder subBuilder = null;
+              if (((bitField0_ & 0x00008000) != 0)) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.BackendServiceLogConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00008000;
+              break;
+            }
+          case -1457966606:
+            {
+              com.google.cloud.compute.v1.OutlierDetection.Builder subBuilder = null;
+              if (((bitField0_ & 0x00040000) != 0)) {
+                subBuilder = outlierDetection_.toBuilder();
+              }
+              outlierDetection_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.OutlierDetection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outlierDetection_);
+                outlierDetection_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00040000;
+              break;
+            }
+          case -1383845344:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00002000;
+              loadBalancingScheme_ = rawValue;
+              break;
+            }
+          case -1334991664:
+            {
+              bitField0_ |= 0x00000001;
+              affinityCookieTtlSec_ = input.readInt32();
+              break;
+            }
+          case -1194654542:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                customResponseHeaders_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              customResponseHeaders_.add(s);
+              break;
+            }
+          case -924246806:
+            {
+              com.google.cloud.compute.v1.CircuitBreakers.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = circuitBreakers_.toBuilder();
+              }
+              circuitBreakers_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.CircuitBreakers.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(circuitBreakers_);
+                circuitBreakers_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              description_ = s;
+              break;
+            }
+          case -708002446:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              healthChecks_.add(s);
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x02000000;
+              selfLink_ = s;
+              break;
+            }
+          case -606193318:
+            {
+              com.google.cloud.compute.v1.ConnectionDraining.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) != 0)) {
+                subBuilder = connectionDraining_.toBuilder();
+              }
+              connectionDraining_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ConnectionDraining.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(connectionDraining_);
+                connectionDraining_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          case -583858808:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x04000000;
+              sessionAffinity_ = rawValue;
+              break;
+            }
+          case -465767918:
+            {
+              com.google.cloud.compute.v1.SecuritySettings.Builder subBuilder = null;
+              if (((bitField0_ & 0x01000000) != 0)) {
+                subBuilder = securitySettings_.toBuilder();
+              }
+              securitySettings_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecuritySettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(securitySettings_);
+                securitySettings_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x01000000;
+              break;
+            }
+          case -208248070:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                backends_ = new java.util.ArrayList<com.google.cloud.compute.v1.Backend>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              backends_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Backend.parser(), extensionRegistry));
               break;
             }
           default:
@@ -423,16 +427,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         customRequestHeaders_ = customRequestHeaders_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         healthChecks_ = healthChecks_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         backends_ = java.util.Collections.unmodifiableList(backends_);
       }
       this.unknownFields = unknownFields.build();
@@ -477,14 +481,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOAD_BALANCING_SCHEME(0),
     /** <code>EXTERNAL = 35607499;</code> */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 10860221;</code> */
-    INTERNAL(10860221),
+    /** <code>INTERNAL = 279295677;</code> */
+    INTERNAL(279295677),
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     INTERNAL_MANAGED(37350397),
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     INTERNAL_SELF_MANAGED(236211150),
-    /** <code>INVALID_LOAD_BALANCING_SCHEME = 6916604;</code> */
-    INVALID_LOAD_BALANCING_SCHEME(6916604),
+    /** <code>INVALID_LOAD_BALANCING_SCHEME = 275352060;</code> */
+    INVALID_LOAD_BALANCING_SCHEME(275352060),
     UNRECOGNIZED(-1),
     ;
 
@@ -500,14 +504,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
     /** <code>EXTERNAL = 35607499;</code> */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 10860221;</code> */
-    public static final int INTERNAL_VALUE = 10860221;
+    /** <code>INTERNAL = 279295677;</code> */
+    public static final int INTERNAL_VALUE = 279295677;
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     public static final int INTERNAL_MANAGED_VALUE = 37350397;
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     public static final int INTERNAL_SELF_MANAGED_VALUE = 236211150;
-    /** <code>INVALID_LOAD_BALANCING_SCHEME = 6916604;</code> */
-    public static final int INVALID_LOAD_BALANCING_SCHEME_VALUE = 6916604;
+    /** <code>INVALID_LOAD_BALANCING_SCHEME = 275352060;</code> */
+    public static final int INVALID_LOAD_BALANCING_SCHEME_VALUE = 275352060;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -537,13 +541,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_LOAD_BALANCING_SCHEME;
         case 35607499:
           return EXTERNAL;
-        case 10860221:
+        case 279295677:
           return INTERNAL;
         case 37350397:
           return INTERNAL_MANAGED;
         case 236211150:
           return INTERNAL_SELF_MANAGED;
-        case 6916604:
+        case 275352060:
           return INVALID_LOAD_BALANCING_SCHEME;
         default:
           return null;
@@ -632,8 +636,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_LOCALITY_LB_POLICY = 0;</code>
      */
     UNDEFINED_LOCALITY_LB_POLICY(0),
-    /** <code>INVALID_LB_POLICY = 54883251;</code> */
-    INVALID_LB_POLICY(54883251),
+    /** <code>INVALID_LB_POLICY = 323318707;</code> */
+    INVALID_LB_POLICY(323318707),
     /** <code>LEAST_REQUEST = 46604921;</code> */
     LEAST_REQUEST(46604921),
     /** <code>MAGLEV = 119180266;</code> */
@@ -642,8 +646,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     ORIGINAL_DESTINATION(166297216),
     /** <code>RANDOM = 262527171;</code> */
     RANDOM(262527171),
-    /** <code>RING_HASH = 164359613;</code> */
-    RING_HASH(164359613),
+    /** <code>RING_HASH = 432795069;</code> */
+    RING_HASH(432795069),
     /** <code>ROUND_ROBIN = 153895801;</code> */
     ROUND_ROBIN(153895801),
     UNRECOGNIZED(-1),
@@ -659,8 +663,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_LOCALITY_LB_POLICY = 0;</code>
      */
     public static final int UNDEFINED_LOCALITY_LB_POLICY_VALUE = 0;
-    /** <code>INVALID_LB_POLICY = 54883251;</code> */
-    public static final int INVALID_LB_POLICY_VALUE = 54883251;
+    /** <code>INVALID_LB_POLICY = 323318707;</code> */
+    public static final int INVALID_LB_POLICY_VALUE = 323318707;
     /** <code>LEAST_REQUEST = 46604921;</code> */
     public static final int LEAST_REQUEST_VALUE = 46604921;
     /** <code>MAGLEV = 119180266;</code> */
@@ -669,8 +673,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public static final int ORIGINAL_DESTINATION_VALUE = 166297216;
     /** <code>RANDOM = 262527171;</code> */
     public static final int RANDOM_VALUE = 262527171;
-    /** <code>RING_HASH = 164359613;</code> */
-    public static final int RING_HASH_VALUE = 164359613;
+    /** <code>RING_HASH = 432795069;</code> */
+    public static final int RING_HASH_VALUE = 432795069;
     /** <code>ROUND_ROBIN = 153895801;</code> */
     public static final int ROUND_ROBIN_VALUE = 153895801;
 
@@ -700,7 +704,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_LOCALITY_LB_POLICY;
-        case 54883251:
+        case 323318707:
           return INVALID_LB_POLICY;
         case 46604921:
           return LEAST_REQUEST;
@@ -710,7 +714,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           return ORIGINAL_DESTINATION;
         case 262527171:
           return RANDOM;
-        case 164359613:
+        case 432795069:
           return RING_HASH;
         case 153895801:
           return ROUND_ROBIN;
@@ -950,18 +954,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     UNDEFINED_SESSION_AFFINITY(0),
-    /** <code>CLIENT_IP = 77229595;</code> */
-    CLIENT_IP(77229595),
+    /** <code>CLIENT_IP = 345665051;</code> */
+    CLIENT_IP(345665051),
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     CLIENT_IP_PORT_PROTO(221722926),
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     CLIENT_IP_PROTO(25322148),
-    /** <code>GENERATED_COOKIE = 101885748;</code> */
-    GENERATED_COOKIE(101885748),
+    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    GENERATED_COOKIE(370321204),
     /** <code>HEADER_FIELD = 200737960;</code> */
     HEADER_FIELD(200737960),
-    /** <code>HTTP_COOKIE = 226546171;</code> */
-    HTTP_COOKIE(226546171),
+    /** <code>HTTP_COOKIE = 494981627;</code> */
+    HTTP_COOKIE(494981627),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
     UNRECOGNIZED(-1),
@@ -977,18 +981,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
-    /** <code>CLIENT_IP = 77229595;</code> */
-    public static final int CLIENT_IP_VALUE = 77229595;
+    /** <code>CLIENT_IP = 345665051;</code> */
+    public static final int CLIENT_IP_VALUE = 345665051;
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     public static final int CLIENT_IP_PROTO_VALUE = 25322148;
-    /** <code>GENERATED_COOKIE = 101885748;</code> */
-    public static final int GENERATED_COOKIE_VALUE = 101885748;
+    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    public static final int GENERATED_COOKIE_VALUE = 370321204;
     /** <code>HEADER_FIELD = 200737960;</code> */
     public static final int HEADER_FIELD_VALUE = 200737960;
-    /** <code>HTTP_COOKIE = 226546171;</code> */
-    public static final int HTTP_COOKIE_VALUE = 226546171;
+    /** <code>HTTP_COOKIE = 494981627;</code> */
+    public static final int HTTP_COOKIE_VALUE = 494981627;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
 
@@ -1018,17 +1022,17 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_SESSION_AFFINITY;
-        case 77229595:
+        case 345665051:
           return CLIENT_IP;
         case 221722926:
           return CLIENT_IP_PORT_PROTO;
         case 25322148:
           return CLIENT_IP_PROTO;
-        case 101885748:
+        case 370321204:
           return GENERATED_COOKIE;
         case 200737960:
           return HEADER_FIELD;
-        case 226546171:
+        case 494981627:
           return HTTP_COOKIE;
         case 2402104:
           return NONE;
@@ -1087,7 +1091,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.BackendService.SessionAffinity)
   }
 
-  public static final int AFFINITY_COOKIE_TTL_SEC_FIELD_NUMBER = 101561498;
+  private int bitField0_;
+  public static final int AFFINITY_COOKIE_TTL_SEC_FIELD_NUMBER = 369996954;
   private int affinityCookieTtlSec_;
   /**
    *
@@ -1098,7 +1103,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
+   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+   *
+   * @return Whether the affinityCookieTtlSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasAffinityCookieTtlSec() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
+   * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
    *
    * @return The affinityCookieTtlSec.
    */
@@ -1107,7 +1129,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return affinityCookieTtlSec_;
   }
 
-  public static final int BACKENDS_FIELD_NUMBER = 242404447;
+  public static final int BACKENDS_FIELD_NUMBER = 510839903;
   private java.util.List<com.google.cloud.compute.v1.Backend> backends_;
   /**
    *
@@ -1116,7 +1138,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Backend> getBackendsList() {
@@ -1129,7 +1151,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.BackendOrBuilder>
@@ -1143,7 +1165,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   @java.lang.Override
   public int getBackendsCount() {
@@ -1156,7 +1178,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Backend getBackends(int index) {
@@ -1169,7 +1191,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendOrBuilder getBackendsOrBuilder(int index) {
@@ -1191,7 +1213,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCdnPolicy() {
-    return cdnPolicy_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -1221,10 +1243,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceCdnPolicyOrBuilder getCdnPolicyOrBuilder() {
-    return getCdnPolicy();
+    return cdnPolicy_ == null
+        ? com.google.cloud.compute.v1.BackendServiceCdnPolicy.getDefaultInstance()
+        : cdnPolicy_;
   }
 
-  public static final int CIRCUIT_BREAKERS_FIELD_NUMBER = 152904605;
+  public static final int CIRCUIT_BREAKERS_FIELD_NUMBER = 421340061;
   private com.google.cloud.compute.v1.CircuitBreakers circuitBreakers_;
   /**
    *
@@ -1237,13 +1261,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return Whether the circuitBreakers field is set.
    */
   @java.lang.Override
   public boolean hasCircuitBreakers() {
-    return circuitBreakers_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -1256,7 +1280,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return The circuitBreakers.
    */
@@ -1277,26 +1301,28 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder() {
-    return getCircuitBreakers();
+    return circuitBreakers_ == null
+        ? com.google.cloud.compute.v1.CircuitBreakers.getDefaultInstance()
+        : circuitBreakers_;
   }
 
-  public static final int CONNECTION_DRAINING_FIELD_NUMBER = 192661291;
+  public static final int CONNECTION_DRAINING_FIELD_NUMBER = 461096747;
   private com.google.cloud.compute.v1.ConnectionDraining connectionDraining_;
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
    *
    * @return Whether the connectionDraining field is set.
    */
   @java.lang.Override
   public boolean hasConnectionDraining() {
-    return connectionDraining_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
    *
    * @return The connectionDraining.
    */
@@ -1306,10 +1332,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.ConnectionDraining.getDefaultInstance()
         : connectionDraining_;
   }
-  /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+  /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.ConnectionDrainingOrBuilder getConnectionDrainingOrBuilder() {
-    return getConnectionDraining();
+    return connectionDraining_ == null
+        ? com.google.cloud.compute.v1.ConnectionDraining.getDefaultInstance()
+        : connectionDraining_;
   }
 
   public static final int CONSISTENT_HASH_FIELD_NUMBER = 905883;
@@ -1332,7 +1360,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasConsistentHash() {
-    return consistentHash_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1373,11 +1401,28 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsOrBuilder
       getConsistentHashOrBuilder() {
-    return getConsistentHash();
+    return consistentHash_ == null
+        ? com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.getDefaultInstance()
+        : consistentHash_;
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -1486,7 +1531,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return customRequestHeaders_.getByteString(index);
   }
 
-  public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 119103638;
+  public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 387539094;
   private com.google.protobuf.LazyStringList customResponseHeaders_;
   /**
    *
@@ -1495,7 +1540,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return A list containing the customResponseHeaders.
    */
@@ -1509,7 +1554,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return The count of customResponseHeaders.
    */
@@ -1523,7 +1568,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the element to return.
    * @return The customResponseHeaders at the given index.
@@ -1538,7 +1583,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the customResponseHeaders at the given index.
@@ -1547,7 +1592,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return customResponseHeaders_.getByteString(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -1556,7 +1601,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -1579,7 +1639,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -1598,6 +1658,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_C_D_N_FIELD_NUMBER = 250733499;
   private boolean enableCDN_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+   * </pre>
+   *
+   * <code>bool enable_c_d_n = 250733499;</code>
+   *
+   * @return Whether the enableCDN field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableCDN() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -1629,7 +1704,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFailoverPolicy() {
-    return failoverPolicy_ != null;
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1660,11 +1735,29 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceFailoverPolicyOrBuilder
       getFailoverPolicyOrBuilder() {
-    return getFailoverPolicy();
+    return failoverPolicy_ == null
+        ? com.google.cloud.compute.v1.BackendServiceFailoverPolicy.getDefaultInstance()
+        : failoverPolicy_;
   }
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -1714,7 +1807,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int HEALTH_CHECKS_FIELD_NUMBER = 179935150;
+  public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
   private com.google.protobuf.LazyStringList healthChecks_;
   /**
    *
@@ -1723,7 +1816,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -1737,7 +1830,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return The count of healthChecks.
    */
@@ -1751,7 +1844,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -1766,7 +1859,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -1790,7 +1883,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIap() {
-    return iap_ != null;
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1818,11 +1911,26 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceIAPOrBuilder getIapOrBuilder() {
-    return getIap();
+    return iap_ == null ? com.google.cloud.compute.v1.BackendServiceIAP.getDefaultInstance() : iap_;
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -1881,6 +1989,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#backendService for backend services.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -1919,7 +2042,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 95454788;
+  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
   private int loadBalancingScheme_;
   /**
    *
@@ -1929,7 +2052,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * </code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancingScheme() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -1946,7 +2086,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The loadBalancingScheme.
@@ -1964,6 +2104,33 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCALITY_LB_POLICY_FIELD_NUMBER = 131431487;
   private int localityLbPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing algorithm used within the scope of the locality. The possible values are:
+   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+   * - RANDOM: The load balancer selects a random healthy host.
+   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+   * This field is applicable to either:
+   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
+   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
+   * </code>
+   *
+   * @return Whether the localityLbPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalityLbPolicy() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
   /**
    *
    *
@@ -2024,7 +2191,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int LOG_CONFIG_FIELD_NUMBER = 82864285;
+  public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
   private com.google.cloud.compute.v1.BackendServiceLogConfig logConfig_;
   /**
    *
@@ -2033,13 +2200,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
   @java.lang.Override
   public boolean hasLogConfig() {
-    return logConfig_ != null;
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -2048,7 +2215,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -2065,15 +2232,32 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceLogConfigOrBuilder getLogConfigOrBuilder() {
-    return getLogConfig();
+    return logConfig_ == null
+        ? com.google.cloud.compute.v1.BackendServiceLogConfig.getDefaultInstance()
+        : logConfig_;
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
   /**
    *
    *
@@ -2132,6 +2316,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -2170,7 +2369,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int OUTLIER_DETECTION_FIELD_NUMBER = 86189630;
+  public static final int OUTLIER_DETECTION_FIELD_NUMBER = 354625086;
   private com.google.cloud.compute.v1.OutlierDetection outlierDetection_;
   /**
    *
@@ -2183,13 +2382,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return Whether the outlierDetection field is set.
    */
   @java.lang.Override
   public boolean hasOutlierDetection() {
-    return outlierDetection_ != null;
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2202,7 +2401,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return The outlierDetection.
    */
@@ -2223,15 +2422,33 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.OutlierDetectionOrBuilder getOutlierDetectionOrBuilder() {
-    return getOutlierDetection();
+    return outlierDetection_ == null
+        ? com.google.cloud.compute.v1.OutlierDetection.getDefaultInstance()
+        : outlierDetection_;
   }
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_;
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
+   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
   /**
    *
    *
@@ -2251,6 +2468,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
   private volatile java.lang.Object portName_;
+  /**
+   *
+   *
+   * <pre>
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortName() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
   /**
    *
    *
@@ -2313,6 +2546,23 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
    *
+   * @return Whether the protocol field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtocol() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The protocol this BackendService uses to communicate with backends.
+   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
+   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   *
    * @return The enum numeric value on the wire for protocol.
    */
   @java.lang.Override
@@ -2344,6 +2594,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
   /**
    *
    *
@@ -2402,6 +2667,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string security_policy = 171082513;</code>
    *
+   * @return Whether the securityPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPolicy() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this backend service.
+   * </pre>
+   *
+   * <code>string security_policy = 171082513;</code>
+   *
    * @return The securityPolicy.
    */
   @java.lang.Override
@@ -2440,7 +2720,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SECURITY_SETTINGS_FIELD_NUMBER = 210214466;
+  public static final int SECURITY_SETTINGS_FIELD_NUMBER = 478649922;
   private com.google.cloud.compute.v1.SecuritySettings securitySettings_;
   /**
    *
@@ -2451,13 +2731,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return Whether the securitySettings field is set.
    */
   @java.lang.Override
   public boolean hasSecuritySettings() {
-    return securitySettings_ != null;
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -2468,7 +2748,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return The securitySettings.
    */
@@ -2487,14 +2767,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecuritySettingsOrBuilder getSecuritySettingsOrBuilder() {
-    return getSecuritySettings();
+    return securitySettings_ == null
+        ? com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()
+        : securitySettings_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -2503,7 +2785,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -2526,7 +2823,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -2543,7 +2840,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SESSION_AFFINITY_FIELD_NUMBER = 195453105;
+  public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
   private int sessionAffinity_;
   /**
    *
@@ -2556,7 +2853,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
+   * </code>
+   *
+   * @return Whether the sessionAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionAffinity() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of session affinity to use. The default is NONE.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
+   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
    * </code>
    *
    * @return The enum numeric value on the wire for sessionAffinity.
@@ -2576,7 +2893,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
    * </code>
    *
    * @return The sessionAffinity.
@@ -2593,6 +2910,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_SEC_FIELD_NUMBER = 79994995;
   private int timeoutSec_;
+  /**
+   *
+   *
+   * <pre>
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * </pre>
+   *
+   * <code>int32 timeout_sec = 79994995;</code>
+   *
+   * @return Whether the timeoutSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeoutSec() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
   /**
    *
    *
@@ -2623,112 +2955,104 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (iap_ != null) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(104024, getIap());
     }
-    if (consistentHash_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(905883, getConsistentHash());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeInt32(3446913, port_);
     }
     for (int i = 0; i < customRequestHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 27977992, customRequestHeaders_.getRaw(i));
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (timeoutSec_ != 0) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
     }
-    if (logConfig_ != null) {
-      output.writeMessage(82864285, getLogConfig());
-    }
-    if (protocol_
-        != com.google.cloud.compute.v1.BackendService.Protocol.UNDEFINED_PROTOCOL.getNumber()) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeEnum(84577944, protocol_);
     }
-    if (outlierDetection_ != null) {
-      output.writeMessage(86189630, getOutlierDetection());
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.BackendService.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      output.writeEnum(95454788, loadBalancingScheme_);
-    }
-    if (affinityCookieTtlSec_ != 0) {
-      output.writeInt32(101561498, affinityCookieTtlSec_);
-    }
-    if (failoverPolicy_ != null) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(105658655, getFailoverPolicy());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeEnum(131431487, localityLbPolicy_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(213976452, getCdnPolicy());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(250733499, enableCDN_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(351299741, getLogConfig());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(354625086, getOutlierDetection());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeEnum(363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(369996954, affinityCookieTtlSec_);
     }
     for (int i = 0; i < customResponseHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 119103638, customResponseHeaders_.getRaw(i));
+          output, 387539094, customResponseHeaders_.getRaw(i));
     }
-    if (localityLbPolicy_
-        != com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNDEFINED_LOCALITY_LB_POLICY
-            .getNumber()) {
-      output.writeEnum(131431487, localityLbPolicy_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(421340061, getCircuitBreakers());
     }
-    if (!getRegionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
-    }
-    if (circuitBreakers_ != null) {
-      output.writeMessage(152904605, getCircuitBreakers());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getSecurityPolicyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     for (int i = 0; i < healthChecks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 179935150, healthChecks_.getRaw(i));
+          output, 448370606, healthChecks_.getRaw(i));
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x02000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (connectionDraining_ != null) {
-      output.writeMessage(192661291, getConnectionDraining());
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(461096747, getConnectionDraining());
     }
-    if (sessionAffinity_
-        != com.google.cloud.compute.v1.BackendService.SessionAffinity.UNDEFINED_SESSION_AFFINITY
-            .getNumber()) {
-      output.writeEnum(195453105, sessionAffinity_);
+    if (((bitField0_ & 0x04000000) != 0)) {
+      output.writeEnum(463888561, sessionAffinity_);
     }
-    if (securitySettings_ != null) {
-      output.writeMessage(210214466, getSecuritySettings());
-    }
-    if (cdnPolicy_ != null) {
-      output.writeMessage(213976452, getCdnPolicy());
-    }
-    if (!getNetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(478649922, getSecuritySettings());
     }
     for (int i = 0; i < backends_.size(); i++) {
-      output.writeMessage(242404447, backends_.get(i));
-    }
-    if (enableCDN_ != false) {
-      output.writeBool(250733499, enableCDN_);
+      output.writeMessage(510839903, backends_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2739,22 +3063,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (iap_ != null) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(104024, getIap());
     }
-    if (consistentHash_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(905883, getConsistentHash());
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     {
@@ -2765,40 +3089,59 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getCustomRequestHeadersList().size();
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (timeoutSec_ != 0) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
     }
-    if (logConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(82864285, getLogConfig());
-    }
-    if (protocol_
-        != com.google.cloud.compute.v1.BackendService.Protocol.UNDEFINED_PROTOCOL.getNumber()) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(84577944, protocol_);
     }
-    if (outlierDetection_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(86189630, getOutlierDetection());
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.BackendService.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(95454788, loadBalancingScheme_);
-    }
-    if (affinityCookieTtlSec_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(101561498, affinityCookieTtlSec_);
-    }
-    if (failoverPolicy_ != null) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(105658655, getFailoverPolicy());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(131431487, localityLbPolicy_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(250733499, enableCDN_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              354625086, getOutlierDetection());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(369996954, affinityCookieTtlSec_);
     }
     {
       int dataSize = 0;
@@ -2808,23 +3151,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getCustomResponseHeadersList().size();
     }
-    if (localityLbPolicy_
-        != com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNDEFINED_LOCALITY_LB_POLICY
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(131431487, localityLbPolicy_);
-    }
-    if (!getRegionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (circuitBreakers_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(152904605, getCircuitBreakers());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(421340061, getCircuitBreakers());
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (!getSecurityPolicyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     {
       int dataSize = 0;
@@ -2834,38 +3166,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (connectionDraining_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              192661291, getConnectionDraining());
+              461096747, getConnectionDraining());
     }
-    if (sessionAffinity_
-        != com.google.cloud.compute.v1.BackendService.SessionAffinity.UNDEFINED_SESSION_AFFINITY
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(195453105, sessionAffinity_);
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(463888561, sessionAffinity_);
     }
-    if (securitySettings_ != null) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              210214466, getSecuritySettings());
-    }
-    if (cdnPolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
-    }
-    if (!getNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+              478649922, getSecuritySettings());
     }
     for (int i = 0; i < backends_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(242404447, backends_.get(i));
-    }
-    if (enableCDN_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(250733499, enableCDN_);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(510839903, backends_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2883,7 +3201,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.BackendService other =
         (com.google.cloud.compute.v1.BackendService) obj;
 
-    if (getAffinityCookieTtlSec() != other.getAffinityCookieTtlSec()) return false;
+    if (hasAffinityCookieTtlSec() != other.hasAffinityCookieTtlSec()) return false;
+    if (hasAffinityCookieTtlSec()) {
+      if (getAffinityCookieTtlSec() != other.getAffinityCookieTtlSec()) return false;
+    }
     if (!getBackendsList().equals(other.getBackendsList())) return false;
     if (hasCdnPolicy() != other.hasCdnPolicy()) return false;
     if (hasCdnPolicy()) {
@@ -2901,47 +3222,101 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasConsistentHash()) {
       if (!getConsistentHash().equals(other.getConsistentHash())) return false;
     }
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
     if (!getCustomRequestHeadersList().equals(other.getCustomRequestHeadersList())) return false;
     if (!getCustomResponseHeadersList().equals(other.getCustomResponseHeadersList())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (getEnableCDN() != other.getEnableCDN()) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasEnableCDN() != other.hasEnableCDN()) return false;
+    if (hasEnableCDN()) {
+      if (getEnableCDN() != other.getEnableCDN()) return false;
+    }
     if (hasFailoverPolicy() != other.hasFailoverPolicy()) return false;
     if (hasFailoverPolicy()) {
       if (!getFailoverPolicy().equals(other.getFailoverPolicy())) return false;
     }
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
     if (!getHealthChecksList().equals(other.getHealthChecksList())) return false;
     if (hasIap() != other.hasIap()) return false;
     if (hasIap()) {
       if (!getIap().equals(other.getIap())) return false;
     }
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
-    if (localityLbPolicy_ != other.localityLbPolicy_) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
+    if (hasLoadBalancingScheme()) {
+      if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+    }
+    if (hasLocalityLbPolicy() != other.hasLocalityLbPolicy()) return false;
+    if (hasLocalityLbPolicy()) {
+      if (localityLbPolicy_ != other.localityLbPolicy_) return false;
+    }
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
       if (!getLogConfig().equals(other.getLogConfig())) return false;
     }
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
     if (hasOutlierDetection() != other.hasOutlierDetection()) return false;
     if (hasOutlierDetection()) {
       if (!getOutlierDetection().equals(other.getOutlierDetection())) return false;
     }
-    if (getPort() != other.getPort()) return false;
-    if (!getPortName().equals(other.getPortName())) return false;
-    if (protocol_ != other.protocol_) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
+    if (hasPortName() != other.hasPortName()) return false;
+    if (hasPortName()) {
+      if (!getPortName().equals(other.getPortName())) return false;
+    }
+    if (hasProtocol() != other.hasProtocol()) return false;
+    if (hasProtocol()) {
+      if (protocol_ != other.protocol_) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSecurityPolicy() != other.hasSecurityPolicy()) return false;
+    if (hasSecurityPolicy()) {
+      if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
+    }
     if (hasSecuritySettings() != other.hasSecuritySettings()) return false;
     if (hasSecuritySettings()) {
       if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     }
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (sessionAffinity_ != other.sessionAffinity_) return false;
-    if (getTimeoutSec() != other.getTimeoutSec()) return false;
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
+    if (hasSessionAffinity()) {
+      if (sessionAffinity_ != other.sessionAffinity_) return false;
+    }
+    if (hasTimeoutSec() != other.hasTimeoutSec()) return false;
+    if (hasTimeoutSec()) {
+      if (getTimeoutSec() != other.getTimeoutSec()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2953,8 +3328,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AFFINITY_COOKIE_TTL_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getAffinityCookieTtlSec();
+    if (hasAffinityCookieTtlSec()) {
+      hash = (37 * hash) + AFFINITY_COOKIE_TTL_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getAffinityCookieTtlSec();
+    }
     if (getBackendsCount() > 0) {
       hash = (37 * hash) + BACKENDS_FIELD_NUMBER;
       hash = (53 * hash) + getBackendsList().hashCode();
@@ -2975,8 +3352,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONSISTENT_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getConsistentHash().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
     if (getCustomRequestHeadersCount() > 0) {
       hash = (37 * hash) + CUSTOM_REQUEST_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomRequestHeadersList().hashCode();
@@ -2985,16 +3364,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomResponseHeadersList().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ENABLE_C_D_N_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCDN());
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasEnableCDN()) {
+      hash = (37 * hash) + ENABLE_C_D_N_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCDN());
+    }
     if (hasFailoverPolicy()) {
       hash = (37 * hash) + FAILOVER_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getFailoverPolicy().hashCode();
     }
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
     if (getHealthChecksCount() > 0) {
       hash = (37 * hash) + HEALTH_CHECKS_FIELD_NUMBER;
       hash = (53 * hash) + getHealthChecksList().hashCode();
@@ -3003,46 +3388,74 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + IAP_FIELD_NUMBER;
       hash = (53 * hash) + getIap().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
-    hash = (53 * hash) + loadBalancingScheme_;
-    hash = (37 * hash) + LOCALITY_LB_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + localityLbPolicy_;
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLoadBalancingScheme()) {
+      hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
+      hash = (53 * hash) + loadBalancingScheme_;
+    }
+    if (hasLocalityLbPolicy()) {
+      hash = (37 * hash) + LOCALITY_LB_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + localityLbPolicy_;
+    }
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLogConfig().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
     if (hasOutlierDetection()) {
       hash = (37 * hash) + OUTLIER_DETECTION_FIELD_NUMBER;
       hash = (53 * hash) + getOutlierDetection().hashCode();
     }
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
-    hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPortName().hashCode();
-    hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
-    hash = (53 * hash) + protocol_;
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + getSecurityPolicy().hashCode();
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
+    if (hasPortName()) {
+      hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPortName().hashCode();
+    }
+    if (hasProtocol()) {
+      hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + protocol_;
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSecurityPolicy()) {
+      hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPolicy().hashCode();
+    }
     if (hasSecuritySettings()) {
       hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSecuritySettings().hashCode();
     }
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
-    hash = (53 * hash) + sessionAffinity_;
-    hash = (37 * hash) + TIMEOUT_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getTimeoutSec();
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSessionAffinity()) {
+      hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + sessionAffinity_;
+    }
+    if (hasTimeoutSec()) {
+      hash = (37 * hash) + TIMEOUT_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeoutSec();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3189,6 +3602,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBackendsFieldBuilder();
+        getCdnPolicyFieldBuilder();
+        getCircuitBreakersFieldBuilder();
+        getConnectionDrainingFieldBuilder();
+        getConsistentHashFieldBuilder();
+        getFailoverPolicyFieldBuilder();
+        getIapFieldBuilder();
+        getLogConfigFieldBuilder();
+        getOutlierDetectionFieldBuilder();
+        getSecuritySettingsFieldBuilder();
       }
     }
 
@@ -3196,109 +3618,109 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       affinityCookieTtlSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (backendsBuilder_ == null) {
         backends_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         backendsBuilder_.clear();
       }
       if (cdnPolicyBuilder_ == null) {
         cdnPolicy_ = null;
       } else {
-        cdnPolicy_ = null;
-        cdnPolicyBuilder_ = null;
+        cdnPolicyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (circuitBreakersBuilder_ == null) {
         circuitBreakers_ = null;
       } else {
-        circuitBreakers_ = null;
-        circuitBreakersBuilder_ = null;
+        circuitBreakersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (connectionDrainingBuilder_ == null) {
         connectionDraining_ = null;
       } else {
-        connectionDraining_ = null;
-        connectionDrainingBuilder_ = null;
+        connectionDrainingBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (consistentHashBuilder_ == null) {
         consistentHash_ = null;
       } else {
-        consistentHash_ = null;
-        consistentHashBuilder_ = null;
+        consistentHashBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableCDN_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (failoverPolicyBuilder_ == null) {
         failoverPolicy_ = null;
       } else {
-        failoverPolicy_ = null;
-        failoverPolicyBuilder_ = null;
+        failoverPolicyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000800);
       fingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (iapBuilder_ == null) {
         iap_ = null;
       } else {
-        iap_ = null;
-        iapBuilder_ = null;
+        iapBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00004000);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       loadBalancingScheme_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       localityLbPolicy_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00040000);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
       } else {
-        logConfig_ = null;
-        logConfigBuilder_ = null;
+        logConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00080000);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       if (outlierDetectionBuilder_ == null) {
         outlierDetection_ = null;
       } else {
-        outlierDetection_ = null;
-        outlierDetectionBuilder_ = null;
+        outlierDetectionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00400000);
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       portName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       protocol_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x02000000);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x04000000);
       securityPolicy_ = "";
-
+      bitField0_ = (bitField0_ & ~0x08000000);
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = null;
       } else {
-        securitySettings_ = null;
-        securitySettingsBuilder_ = null;
+        securitySettingsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x10000000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x20000000);
       sessionAffinity_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x40000000);
       timeoutSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x80000000);
       return this;
     }
 
@@ -3327,94 +3749,180 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.BackendService result =
           new com.google.cloud.compute.v1.BackendService(this);
       int from_bitField0_ = bitField0_;
-      result.affinityCookieTtlSec_ = affinityCookieTtlSec_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.affinityCookieTtlSec_ = affinityCookieTtlSec_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (backendsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           backends_ = java.util.Collections.unmodifiableList(backends_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.backends_ = backends_;
       } else {
         result.backends_ = backendsBuilder_.build();
       }
-      if (cdnPolicyBuilder_ == null) {
-        result.cdnPolicy_ = cdnPolicy_;
-      } else {
-        result.cdnPolicy_ = cdnPolicyBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (cdnPolicyBuilder_ == null) {
+          result.cdnPolicy_ = cdnPolicy_;
+        } else {
+          result.cdnPolicy_ = cdnPolicyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
-      if (circuitBreakersBuilder_ == null) {
-        result.circuitBreakers_ = circuitBreakers_;
-      } else {
-        result.circuitBreakers_ = circuitBreakersBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (circuitBreakersBuilder_ == null) {
+          result.circuitBreakers_ = circuitBreakers_;
+        } else {
+          result.circuitBreakers_ = circuitBreakersBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
-      if (connectionDrainingBuilder_ == null) {
-        result.connectionDraining_ = connectionDraining_;
-      } else {
-        result.connectionDraining_ = connectionDrainingBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (connectionDrainingBuilder_ == null) {
+          result.connectionDraining_ = connectionDraining_;
+        } else {
+          result.connectionDraining_ = connectionDrainingBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
       }
-      if (consistentHashBuilder_ == null) {
-        result.consistentHash_ = consistentHash_;
-      } else {
-        result.consistentHash_ = consistentHashBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (consistentHashBuilder_ == null) {
+          result.consistentHash_ = consistentHash_;
+        } else {
+          result.consistentHash_ = consistentHashBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
       }
       result.creationTimestamp_ = creationTimestamp_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         customRequestHeaders_ = customRequestHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.customRequestHeaders_ = customRequestHeaders_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.customResponseHeaders_ = customResponseHeaders_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.description_ = description_;
-      result.enableCDN_ = enableCDN_;
-      if (failoverPolicyBuilder_ == null) {
-        result.failoverPolicy_ = failoverPolicy_;
-      } else {
-        result.failoverPolicy_ = failoverPolicyBuilder_.build();
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableCDN_ = enableCDN_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (failoverPolicyBuilder_ == null) {
+          result.failoverPolicy_ = failoverPolicy_;
+        } else {
+          result.failoverPolicy_ = failoverPolicyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000200;
       }
       result.fingerprint_ = fingerprint_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         healthChecks_ = healthChecks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00002000);
       }
       result.healthChecks_ = healthChecks_;
-      if (iapBuilder_ == null) {
-        result.iap_ = iap_;
-      } else {
-        result.iap_ = iapBuilder_.build();
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (iapBuilder_ == null) {
+          result.iap_ = iap_;
+        } else {
+          result.iap_ = iapBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00000800;
       }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00001000;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00002000;
+      }
       result.loadBalancingScheme_ = loadBalancingScheme_;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
       result.localityLbPolicy_ = localityLbPolicy_;
-      if (logConfigBuilder_ == null) {
-        result.logConfig_ = logConfig_;
-      } else {
-        result.logConfig_ = logConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        if (logConfigBuilder_ == null) {
+          result.logConfig_ = logConfig_;
+        } else {
+          result.logConfig_ = logConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        to_bitField0_ |= 0x00010000;
       }
       result.name_ = name_;
-      result.network_ = network_;
-      if (outlierDetectionBuilder_ == null) {
-        result.outlierDetection_ = outlierDetection_;
-      } else {
-        result.outlierDetection_ = outlierDetectionBuilder_.build();
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        to_bitField0_ |= 0x00020000;
       }
-      result.port_ = port_;
+      result.network_ = network_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        if (outlierDetectionBuilder_ == null) {
+          result.outlierDetection_ = outlierDetection_;
+        } else {
+          result.outlierDetection_ = outlierDetectionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        to_bitField0_ |= 0x00100000;
+      }
       result.portName_ = portName_;
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        to_bitField0_ |= 0x00200000;
+      }
       result.protocol_ = protocol_;
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        to_bitField0_ |= 0x00400000;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        to_bitField0_ |= 0x00800000;
+      }
       result.securityPolicy_ = securityPolicy_;
-      if (securitySettingsBuilder_ == null) {
-        result.securitySettings_ = securitySettings_;
-      } else {
-        result.securitySettings_ = securitySettingsBuilder_.build();
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        if (securitySettingsBuilder_ == null) {
+          result.securitySettings_ = securitySettings_;
+        } else {
+          result.securitySettings_ = securitySettingsBuilder_.build();
+        }
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        to_bitField0_ |= 0x02000000;
       }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        to_bitField0_ |= 0x04000000;
+      }
       result.sessionAffinity_ = sessionAffinity_;
-      result.timeoutSec_ = timeoutSec_;
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.timeoutSec_ = timeoutSec_;
+        to_bitField0_ |= 0x08000000;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3464,14 +3972,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendService other) {
       if (other == com.google.cloud.compute.v1.BackendService.getDefaultInstance()) return this;
-      if (other.getAffinityCookieTtlSec() != 0) {
+      if (other.hasAffinityCookieTtlSec()) {
         setAffinityCookieTtlSec(other.getAffinityCookieTtlSec());
       }
       if (backendsBuilder_ == null) {
         if (!other.backends_.isEmpty()) {
           if (backends_.isEmpty()) {
             backends_ = other.backends_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureBackendsIsMutable();
             backends_.addAll(other.backends_);
@@ -3484,7 +3992,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             backendsBuilder_.dispose();
             backendsBuilder_ = null;
             backends_ = other.backends_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             backendsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBackendsFieldBuilder()
@@ -3506,14 +4014,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasConsistentHash()) {
         mergeConsistentHash(other.getConsistentHash());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000040;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (!other.customRequestHeaders_.isEmpty()) {
         if (customRequestHeaders_.isEmpty()) {
           customRequestHeaders_ = other.customRequestHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureCustomRequestHeadersIsMutable();
           customRequestHeaders_.addAll(other.customRequestHeaders_);
@@ -3523,31 +4032,33 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.customResponseHeaders_.isEmpty()) {
         if (customResponseHeaders_.isEmpty()) {
           customResponseHeaders_ = other.customResponseHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureCustomResponseHeadersIsMutable();
           customResponseHeaders_.addAll(other.customResponseHeaders_);
         }
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000200;
         description_ = other.description_;
         onChanged();
       }
-      if (other.getEnableCDN() != false) {
+      if (other.hasEnableCDN()) {
         setEnableCDN(other.getEnableCDN());
       }
       if (other.hasFailoverPolicy()) {
         mergeFailoverPolicy(other.getFailoverPolicy());
       }
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00001000;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
@@ -3557,63 +4068,71 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIap()) {
         mergeIap(other.getIap());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00008000;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00010000;
         kind_ = other.kind_;
         onChanged();
       }
-      if (other.loadBalancingScheme_ != 0) {
-        setLoadBalancingSchemeValue(other.getLoadBalancingSchemeValue());
+      if (other.hasLoadBalancingScheme()) {
+        setLoadBalancingScheme(other.getLoadBalancingScheme());
       }
-      if (other.localityLbPolicy_ != 0) {
-        setLocalityLbPolicyValue(other.getLocalityLbPolicyValue());
+      if (other.hasLocalityLbPolicy()) {
+        setLocalityLbPolicy(other.getLocalityLbPolicy());
       }
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00100000;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00200000;
         network_ = other.network_;
         onChanged();
       }
       if (other.hasOutlierDetection()) {
         mergeOutlierDetection(other.getOutlierDetection());
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
-      if (!other.getPortName().isEmpty()) {
+      if (other.hasPortName()) {
+        bitField0_ |= 0x01000000;
         portName_ = other.portName_;
         onChanged();
       }
-      if (other.protocol_ != 0) {
-        setProtocolValue(other.getProtocolValue());
+      if (other.hasProtocol()) {
+        setProtocol(other.getProtocol());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x04000000;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSecurityPolicy().isEmpty()) {
+      if (other.hasSecurityPolicy()) {
+        bitField0_ |= 0x08000000;
         securityPolicy_ = other.securityPolicy_;
         onChanged();
       }
       if (other.hasSecuritySettings()) {
         mergeSecuritySettings(other.getSecuritySettings());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x20000000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.sessionAffinity_ != 0) {
-        setSessionAffinityValue(other.getSessionAffinityValue());
+      if (other.hasSessionAffinity()) {
+        setSessionAffinity(other.getSessionAffinity());
       }
-      if (other.getTimeoutSec() != 0) {
+      if (other.hasTimeoutSec()) {
         setTimeoutSec(other.getTimeoutSec());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3657,7 +4176,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
+     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+     *
+     * @return Whether the affinityCookieTtlSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasAffinityCookieTtlSec() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
+     * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @return The affinityCookieTtlSec.
      */
@@ -3674,13 +4210,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
+     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @param value The affinityCookieTtlSec to set.
      * @return This builder for chaining.
      */
     public Builder setAffinityCookieTtlSec(int value) {
-
+      bitField0_ |= 0x00000001;
       affinityCookieTtlSec_ = value;
       onChanged();
       return this;
@@ -3694,12 +4230,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
+     * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAffinityCookieTtlSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       affinityCookieTtlSec_ = 0;
       onChanged();
       return this;
@@ -3709,9 +4245,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBackendsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         backends_ = new java.util.ArrayList<com.google.cloud.compute.v1.Backend>(backends_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3728,7 +4264,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Backend> getBackendsList() {
       if (backendsBuilder_ == null) {
@@ -3744,7 +4280,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public int getBackendsCount() {
       if (backendsBuilder_ == null) {
@@ -3760,7 +4296,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public com.google.cloud.compute.v1.Backend getBackends(int index) {
       if (backendsBuilder_ == null) {
@@ -3776,7 +4312,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder setBackends(int index, com.google.cloud.compute.v1.Backend value) {
       if (backendsBuilder_ == null) {
@@ -3798,7 +4334,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder setBackends(
         int index, com.google.cloud.compute.v1.Backend.Builder builderForValue) {
@@ -3818,7 +4354,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder addBackends(com.google.cloud.compute.v1.Backend value) {
       if (backendsBuilder_ == null) {
@@ -3840,7 +4376,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder addBackends(int index, com.google.cloud.compute.v1.Backend value) {
       if (backendsBuilder_ == null) {
@@ -3862,7 +4398,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder addBackends(com.google.cloud.compute.v1.Backend.Builder builderForValue) {
       if (backendsBuilder_ == null) {
@@ -3881,7 +4417,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder addBackends(
         int index, com.google.cloud.compute.v1.Backend.Builder builderForValue) {
@@ -3901,7 +4437,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder addAllBackends(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Backend> values) {
@@ -3921,12 +4457,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder clearBackends() {
       if (backendsBuilder_ == null) {
         backends_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         backendsBuilder_.clear();
@@ -3940,7 +4476,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public Builder removeBackends(int index) {
       if (backendsBuilder_ == null) {
@@ -3959,7 +4495,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public com.google.cloud.compute.v1.Backend.Builder getBackendsBuilder(int index) {
       return getBackendsFieldBuilder().getBuilder(index);
@@ -3971,7 +4507,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public com.google.cloud.compute.v1.BackendOrBuilder getBackendsOrBuilder(int index) {
       if (backendsBuilder_ == null) {
@@ -3987,7 +4523,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.BackendOrBuilder>
         getBackendsOrBuilderList() {
@@ -4004,7 +4540,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public com.google.cloud.compute.v1.Backend.Builder addBackendsBuilder() {
       return getBackendsFieldBuilder()
@@ -4017,7 +4553,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public com.google.cloud.compute.v1.Backend.Builder addBackendsBuilder(int index) {
       return getBackendsFieldBuilder()
@@ -4030,7 +4566,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of backends that serve this BackendService.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+     * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Backend.Builder> getBackendsBuilderList() {
       return getBackendsFieldBuilder().getBuilderList();
@@ -4047,7 +4583,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Backend,
                 com.google.cloud.compute.v1.Backend.Builder,
                 com.google.cloud.compute.v1.BackendOrBuilder>(
-                backends_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                backends_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         backends_ = null;
       }
       return backendsBuilder_;
@@ -4071,7 +4607,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cdnPolicy field is set.
      */
     public boolean hasCdnPolicy() {
-      return cdnPolicyBuilder_ != null || cdnPolicy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4112,7 +4648,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         cdnPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -4132,7 +4668,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         cdnPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -4146,7 +4682,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCdnPolicy(com.google.cloud.compute.v1.BackendServiceCdnPolicy value) {
       if (cdnPolicyBuilder_ == null) {
-        if (cdnPolicy_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && cdnPolicy_ != null
+            && cdnPolicy_
+                != com.google.cloud.compute.v1.BackendServiceCdnPolicy.getDefaultInstance()) {
           cdnPolicy_ =
               com.google.cloud.compute.v1.BackendServiceCdnPolicy.newBuilder(cdnPolicy_)
                   .mergeFrom(value)
@@ -4158,7 +4697,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         cdnPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -4175,10 +4714,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         cdnPolicy_ = null;
         onChanged();
       } else {
-        cdnPolicy_ = null;
-        cdnPolicyBuilder_ = null;
+        cdnPolicyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -4191,7 +4729,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceCdnPolicy.Builder getCdnPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCdnPolicyFieldBuilder().getBuilder();
     }
@@ -4256,12 +4794,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      *
      * @return Whether the circuitBreakers field is set.
      */
     public boolean hasCircuitBreakers() {
-      return circuitBreakersBuilder_ != null || circuitBreakers_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4274,7 +4812,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      *
      * @return The circuitBreakers.
      */
@@ -4298,7 +4836,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder setCircuitBreakers(com.google.cloud.compute.v1.CircuitBreakers value) {
       if (circuitBreakersBuilder_ == null) {
@@ -4310,7 +4848,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         circuitBreakersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4324,7 +4862,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder setCircuitBreakers(
         com.google.cloud.compute.v1.CircuitBreakers.Builder builderForValue) {
@@ -4334,7 +4872,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         circuitBreakersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4348,11 +4886,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder mergeCircuitBreakers(com.google.cloud.compute.v1.CircuitBreakers value) {
       if (circuitBreakersBuilder_ == null) {
-        if (circuitBreakers_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && circuitBreakers_ != null
+            && circuitBreakers_
+                != com.google.cloud.compute.v1.CircuitBreakers.getDefaultInstance()) {
           circuitBreakers_ =
               com.google.cloud.compute.v1.CircuitBreakers.newBuilder(circuitBreakers_)
                   .mergeFrom(value)
@@ -4364,7 +4905,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         circuitBreakersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4378,17 +4919,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public Builder clearCircuitBreakers() {
       if (circuitBreakersBuilder_ == null) {
         circuitBreakers_ = null;
         onChanged();
       } else {
-        circuitBreakers_ = null;
-        circuitBreakersBuilder_ = null;
+        circuitBreakersBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -4402,10 +4942,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public com.google.cloud.compute.v1.CircuitBreakers.Builder getCircuitBreakersBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCircuitBreakersFieldBuilder().getBuilder();
     }
@@ -4420,7 +4960,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     public com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder() {
       if (circuitBreakersBuilder_ != null) {
@@ -4442,7 +4982,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+     * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CircuitBreakers,
@@ -4468,15 +5008,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.ConnectionDrainingOrBuilder>
         connectionDrainingBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
      *
      * @return Whether the connectionDraining field is set.
      */
     public boolean hasConnectionDraining() {
-      return connectionDrainingBuilder_ != null || connectionDraining_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+     * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
      *
      * @return The connectionDraining.
      */
@@ -4489,7 +5029,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         return connectionDrainingBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public Builder setConnectionDraining(com.google.cloud.compute.v1.ConnectionDraining value) {
       if (connectionDrainingBuilder_ == null) {
         if (value == null) {
@@ -4500,10 +5040,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         connectionDrainingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public Builder setConnectionDraining(
         com.google.cloud.compute.v1.ConnectionDraining.Builder builderForValue) {
       if (connectionDrainingBuilder_ == null) {
@@ -4512,13 +5052,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         connectionDrainingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public Builder mergeConnectionDraining(com.google.cloud.compute.v1.ConnectionDraining value) {
       if (connectionDrainingBuilder_ == null) {
-        if (connectionDraining_ != null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && connectionDraining_ != null
+            && connectionDraining_
+                != com.google.cloud.compute.v1.ConnectionDraining.getDefaultInstance()) {
           connectionDraining_ =
               com.google.cloud.compute.v1.ConnectionDraining.newBuilder(connectionDraining_)
                   .mergeFrom(value)
@@ -4530,28 +5073,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         connectionDrainingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public Builder clearConnectionDraining() {
       if (connectionDrainingBuilder_ == null) {
         connectionDraining_ = null;
         onChanged();
       } else {
-        connectionDraining_ = null;
-        connectionDrainingBuilder_ = null;
+        connectionDrainingBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public com.google.cloud.compute.v1.ConnectionDraining.Builder getConnectionDrainingBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getConnectionDrainingFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     public com.google.cloud.compute.v1.ConnectionDrainingOrBuilder
         getConnectionDrainingOrBuilder() {
       if (connectionDrainingBuilder_ != null) {
@@ -4562,7 +5104,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             : connectionDraining_;
       }
     }
-    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+    /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ConnectionDraining,
             com.google.cloud.compute.v1.ConnectionDraining.Builder,
@@ -4603,7 +5145,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the consistentHash field is set.
      */
     public boolean hasConsistentHash() {
-      return consistentHashBuilder_ != null || consistentHash_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -4655,7 +5197,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         consistentHashBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -4680,7 +5222,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         consistentHashBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -4700,7 +5242,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeConsistentHash(
         com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings value) {
       if (consistentHashBuilder_ == null) {
-        if (consistentHash_ != null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && consistentHash_ != null
+            && consistentHash_
+                != com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings
+                    .getDefaultInstance()) {
           consistentHash_ =
               com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.newBuilder(
                       consistentHash_)
@@ -4713,7 +5259,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         consistentHashBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -4735,10 +5281,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         consistentHash_ = null;
         onChanged();
       } else {
-        consistentHash_ = null;
-        consistentHashBuilder_ = null;
+        consistentHashBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -4757,7 +5302,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.Builder
         getConsistentHashBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConsistentHashFieldBuilder().getBuilder();
     }
@@ -4826,6 +5371,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string creation_timestamp = 30525366;</code>
      *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
      * @return The creationTimestamp.
      */
     public java.lang.String getCreationTimestamp() {
@@ -4877,7 +5436,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -4894,7 +5453,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -4916,7 +5475,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -4926,9 +5485,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCustomRequestHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         customRequestHeaders_ = new com.google.protobuf.LazyStringArrayList(customRequestHeaders_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -5063,7 +5622,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCustomRequestHeaders() {
       customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -5094,10 +5653,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCustomResponseHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         customResponseHeaders_ =
             new com.google.protobuf.LazyStringArrayList(customResponseHeaders_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -5107,7 +5666,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @return A list containing the customResponseHeaders.
      */
@@ -5121,7 +5680,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @return The count of customResponseHeaders.
      */
@@ -5135,7 +5694,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param index The index of the element to return.
      * @return The customResponseHeaders at the given index.
@@ -5150,7 +5709,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the customResponseHeaders at the given index.
@@ -5165,7 +5724,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param index The index to set the value at.
      * @param value The customResponseHeaders to set.
@@ -5187,7 +5746,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param value The customResponseHeaders to add.
      * @return This builder for chaining.
@@ -5208,7 +5767,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param values The customResponseHeaders to add.
      * @return This builder for chaining.
@@ -5226,13 +5785,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCustomResponseHeaders() {
       customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -5243,7 +5802,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Headers that the HTTP/S load balancer should add to proxied responses.
      * </pre>
      *
-     * <code>repeated string custom_response_headers = 119103638;</code>
+     * <code>repeated string custom_response_headers = 387539094;</code>
      *
      * @param value The bytes of the customResponseHeaders to add.
      * @return This builder for chaining.
@@ -5267,7 +5826,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -5289,7 +5862,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -5311,7 +5884,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -5320,7 +5893,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       description_ = value;
       onChanged();
       return this;
@@ -5332,12 +5905,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -5349,7 +5922,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -5359,13 +5932,28 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       description_ = value;
       onChanged();
       return this;
     }
 
     private boolean enableCDN_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+     * </pre>
+     *
+     * <code>bool enable_c_d_n = 250733499;</code>
+     *
+     * @return Whether the enableCDN field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableCDN() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -5394,7 +5982,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnableCDN(boolean value) {
-
+      bitField0_ |= 0x00000400;
       enableCDN_ = value;
       onChanged();
       return this;
@@ -5411,7 +5999,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableCDN() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableCDN_ = false;
       onChanged();
       return this;
@@ -5436,7 +6024,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the failoverPolicy field is set.
      */
     public boolean hasFailoverPolicy() {
-      return failoverPolicyBuilder_ != null || failoverPolicy_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -5480,7 +6068,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         failoverPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -5501,7 +6089,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         failoverPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -5517,7 +6105,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFailoverPolicy(
         com.google.cloud.compute.v1.BackendServiceFailoverPolicy value) {
       if (failoverPolicyBuilder_ == null) {
-        if (failoverPolicy_ != null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && failoverPolicy_ != null
+            && failoverPolicy_
+                != com.google.cloud.compute.v1.BackendServiceFailoverPolicy.getDefaultInstance()) {
           failoverPolicy_ =
               com.google.cloud.compute.v1.BackendServiceFailoverPolicy.newBuilder(failoverPolicy_)
                   .mergeFrom(value)
@@ -5529,7 +6120,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         failoverPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -5547,10 +6138,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         failoverPolicy_ = null;
         onChanged();
       } else {
-        failoverPolicy_ = null;
-        failoverPolicyBuilder_ = null;
+        failoverPolicyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
     /**
@@ -5565,7 +6155,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicy.Builder
         getFailoverPolicyBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getFailoverPolicyFieldBuilder().getBuilder();
     }
@@ -5617,6 +6207,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
+     * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -5680,7 +6285,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -5698,7 +6303,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -5721,7 +6326,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -5731,9 +6336,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureHealthChecksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -5743,7 +6348,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return A list containing the healthChecks.
      */
@@ -5757,7 +6362,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return The count of healthChecks.
      */
@@ -5771,7 +6376,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index of the element to return.
      * @return The healthChecks at the given index.
@@ -5786,7 +6391,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the healthChecks at the given index.
@@ -5801,7 +6406,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index to set the value at.
      * @param value The healthChecks to set.
@@ -5823,7 +6428,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param value The healthChecks to add.
      * @return This builder for chaining.
@@ -5844,7 +6449,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param values The healthChecks to add.
      * @return This builder for chaining.
@@ -5862,13 +6467,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthChecks() {
       healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5879,7 +6484,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param value The bytes of the healthChecks to add.
      * @return This builder for chaining.
@@ -5913,7 +6518,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iap field is set.
      */
     public boolean hasIap() {
-      return iapBuilder_ != null || iap_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5954,7 +6559,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         iapBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -5973,7 +6578,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         iapBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -5987,7 +6592,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIap(com.google.cloud.compute.v1.BackendServiceIAP value) {
       if (iapBuilder_ == null) {
-        if (iap_ != null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && iap_ != null
+            && iap_ != com.google.cloud.compute.v1.BackendServiceIAP.getDefaultInstance()) {
           iap_ =
               com.google.cloud.compute.v1.BackendServiceIAP.newBuilder(iap_)
                   .mergeFrom(value)
@@ -5999,7 +6606,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         iapBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -6016,10 +6623,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         iap_ = null;
         onChanged();
       } else {
-        iap_ = null;
-        iapBuilder_ = null;
+        iapBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
     /**
@@ -6032,7 +6638,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceIAP.Builder getIapBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getIapFieldBuilder().getBuilder();
     }
@@ -6081,6 +6687,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
     /**
      *
      *
@@ -6141,7 +6761,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       id_ = value;
       onChanged();
       return this;
@@ -6158,7 +6778,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -6180,13 +6800,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00008000;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#backendService for backend services.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
     /**
      *
      *
@@ -6247,7 +6881,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       kind_ = value;
       onChanged();
       return this;
@@ -6264,7 +6898,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -6286,7 +6920,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00010000;
       kind_ = value;
       onChanged();
       return this;
@@ -6301,7 +6935,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * </code>
+     *
+     * @return Whether the loadBalancingScheme field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoadBalancingScheme() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -6318,14 +6969,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @param value The enum numeric value on the wire for loadBalancingScheme to set.
      * @return This builder for chaining.
      */
     public Builder setLoadBalancingSchemeValue(int value) {
-
+      bitField0_ |= 0x00020000;
       loadBalancingScheme_ = value;
       onChanged();
       return this;
@@ -6338,7 +6989,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return The loadBalancingScheme.
@@ -6361,7 +7012,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @param value The loadBalancingScheme to set.
@@ -6372,7 +7023,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00020000;
       loadBalancingScheme_ = value.getNumber();
       onChanged();
       return this;
@@ -6385,19 +7036,47 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancingScheme() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       loadBalancingScheme_ = 0;
       onChanged();
       return this;
     }
 
     private int localityLbPolicy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing algorithm used within the scope of the locality. The possible values are:
+     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+     * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+     * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+     * - RANDOM: The load balancer selects a random healthy host.
+     * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+     * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+     * This field is applicable to either:
+     * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+     * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
+     * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
+     * </code>
+     *
+     * @return Whether the localityLbPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalityLbPolicy() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
     /**
      *
      *
@@ -6452,7 +7131,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLocalityLbPolicyValue(int value) {
-
+      bitField0_ |= 0x00040000;
       localityLbPolicy_ = value;
       onChanged();
       return this;
@@ -6520,7 +7199,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00040000;
       localityLbPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -6550,7 +7229,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalityLbPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00040000);
       localityLbPolicy_ = 0;
       onChanged();
       return this;
@@ -6569,12 +7248,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      *
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return logConfigBuilder_ != null || logConfig_ != null;
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -6583,7 +7262,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      *
      * @return The logConfig.
      */
@@ -6603,7 +7282,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -6615,7 +7294,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6625,7 +7304,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.BackendServiceLogConfig.Builder builderForValue) {
@@ -6635,7 +7314,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6645,11 +7324,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (logConfig_ != null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && logConfig_ != null
+            && logConfig_
+                != com.google.cloud.compute.v1.BackendServiceLogConfig.getDefaultInstance()) {
           logConfig_ =
               com.google.cloud.compute.v1.BackendServiceLogConfig.newBuilder(logConfig_)
                   .mergeFrom(value)
@@ -6661,7 +7343,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -6671,17 +7353,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
         onChanged();
       } else {
-        logConfig_ = null;
-        logConfigBuilder_ = null;
+        logConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
     /**
@@ -6691,10 +7372,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfig.Builder getLogConfigBuilder() {
-
+      bitField0_ |= 0x00080000;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -6705,7 +7386,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -6723,7 +7404,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceLogConfig,
@@ -6743,6 +7424,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
     /**
      *
      *
@@ -6803,7 +7498,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00100000;
       name_ = value;
       onChanged();
       return this;
@@ -6820,7 +7515,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -6842,13 +7537,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00100000;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
     /**
      *
      *
@@ -6909,7 +7618,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00200000;
       network_ = value;
       onChanged();
       return this;
@@ -6926,7 +7635,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -6948,7 +7657,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00200000;
       network_ = value;
       onChanged();
       return this;
@@ -6971,12 +7680,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      *
      * @return Whether the outlierDetection field is set.
      */
     public boolean hasOutlierDetection() {
-      return outlierDetectionBuilder_ != null || outlierDetection_ != null;
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6989,7 +7698,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      *
      * @return The outlierDetection.
      */
@@ -7013,7 +7722,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public Builder setOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
@@ -7025,7 +7734,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -7039,7 +7748,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public Builder setOutlierDetection(
         com.google.cloud.compute.v1.OutlierDetection.Builder builderForValue) {
@@ -7049,7 +7758,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -7063,11 +7772,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public Builder mergeOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
-        if (outlierDetection_ != null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && outlierDetection_ != null
+            && outlierDetection_
+                != com.google.cloud.compute.v1.OutlierDetection.getDefaultInstance()) {
           outlierDetection_ =
               com.google.cloud.compute.v1.OutlierDetection.newBuilder(outlierDetection_)
                   .mergeFrom(value)
@@ -7079,7 +7791,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -7093,17 +7805,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public Builder clearOutlierDetection() {
       if (outlierDetectionBuilder_ == null) {
         outlierDetection_ = null;
         onChanged();
       } else {
-        outlierDetection_ = null;
-        outlierDetectionBuilder_ = null;
+        outlierDetectionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
     /**
@@ -7117,10 +7828,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public com.google.cloud.compute.v1.OutlierDetection.Builder getOutlierDetectionBuilder() {
-
+      bitField0_ |= 0x00400000;
       onChanged();
       return getOutlierDetectionFieldBuilder().getBuilder();
     }
@@ -7135,7 +7846,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public com.google.cloud.compute.v1.OutlierDetectionOrBuilder getOutlierDetectionOrBuilder() {
       if (outlierDetectionBuilder_ != null) {
@@ -7157,7 +7868,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+     * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.OutlierDetection,
@@ -7177,6 +7888,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
+     * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
     /**
      *
      *
@@ -7207,7 +7934,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00800000;
       port_ = value;
       onChanged();
       return this;
@@ -7225,13 +7952,28 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       port_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object portName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+     * </pre>
+     *
+     * <code>string port_name = 41534345;</code>
+     *
+     * @return Whether the portName field is set.
+     */
+    public boolean hasPortName() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
     /**
      *
      *
@@ -7295,7 +8037,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x01000000;
       portName_ = value;
       onChanged();
       return this;
@@ -7313,7 +8055,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -7336,13 +8078,30 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x01000000;
       portName_ = value;
       onChanged();
       return this;
     }
 
     private int protocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The protocol this BackendService uses to communicate with backends.
+     * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
+     * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     *
+     * @return Whether the protocol field is set.
+     */
+    @java.lang.Override
+    public boolean hasProtocol() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
     /**
      *
      *
@@ -7375,7 +8134,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProtocolValue(int value) {
-
+      bitField0_ |= 0x02000000;
       protocol_ = value;
       onChanged();
       return this;
@@ -7420,7 +8179,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x02000000;
       protocol_ = value.getNumber();
       onChanged();
       return this;
@@ -7439,13 +8198,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-
+      bitField0_ = (bitField0_ & ~0x02000000);
       protocol_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
     /**
      *
      *
@@ -7506,7 +8279,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x04000000;
       region_ = value;
       onChanged();
       return this;
@@ -7523,7 +8296,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x04000000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -7545,13 +8318,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x04000000;
       region_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object securityPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The resource URL for the security policy associated with this backend service.
+     * </pre>
+     *
+     * <code>string security_policy = 171082513;</code>
+     *
+     * @return Whether the securityPolicy field is set.
+     */
+    public boolean hasSecurityPolicy() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
     /**
      *
      *
@@ -7612,7 +8399,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x08000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -7629,7 +8416,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x08000000);
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
       onChanged();
       return this;
@@ -7651,7 +8438,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x08000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -7672,12 +8459,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      *
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return securitySettingsBuilder_ != null || securitySettings_ != null;
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -7688,7 +8475,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      *
      * @return The securitySettings.
      */
@@ -7710,7 +8497,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public Builder setSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
@@ -7722,7 +8509,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x10000000;
       return this;
     }
     /**
@@ -7734,7 +8521,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public Builder setSecuritySettings(
         com.google.cloud.compute.v1.SecuritySettings.Builder builderForValue) {
@@ -7744,7 +8531,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x10000000;
       return this;
     }
     /**
@@ -7756,11 +8543,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public Builder mergeSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (securitySettings_ != null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && securitySettings_ != null
+            && securitySettings_
+                != com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) {
           securitySettings_ =
               com.google.cloud.compute.v1.SecuritySettings.newBuilder(securitySettings_)
                   .mergeFrom(value)
@@ -7772,7 +8562,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x10000000;
       return this;
     }
     /**
@@ -7784,17 +8574,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public Builder clearSecuritySettings() {
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = null;
         onChanged();
       } else {
-        securitySettings_ = null;
-        securitySettingsBuilder_ = null;
+        securitySettingsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x10000000);
       return this;
     }
     /**
@@ -7806,10 +8595,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public com.google.cloud.compute.v1.SecuritySettings.Builder getSecuritySettingsBuilder() {
-
+      bitField0_ |= 0x10000000;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }
@@ -7822,7 +8611,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public com.google.cloud.compute.v1.SecuritySettingsOrBuilder getSecuritySettingsOrBuilder() {
       if (securitySettingsBuilder_ != null) {
@@ -7842,7 +8631,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+     * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecuritySettings,
@@ -7869,7 +8658,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -7891,7 +8694,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -7913,7 +8716,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -7922,7 +8725,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x20000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7934,12 +8737,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x20000000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -7951,7 +8754,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -7961,7 +8764,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x20000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7979,7 +8782,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
+     * </code>
+     *
+     * @return Whether the sessionAffinity field is set.
+     */
+    @java.lang.Override
+    public boolean hasSessionAffinity() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of session affinity to use. The default is NONE.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
+     * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return The enum numeric value on the wire for sessionAffinity.
@@ -7999,14 +8822,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @param value The enum numeric value on the wire for sessionAffinity to set.
      * @return This builder for chaining.
      */
     public Builder setSessionAffinityValue(int value) {
-
+      bitField0_ |= 0x40000000;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -8022,7 +8845,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return The sessionAffinity.
@@ -8047,7 +8870,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @param value The sessionAffinity to set.
@@ -8058,7 +8881,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x40000000;
       sessionAffinity_ = value.getNumber();
       onChanged();
       return this;
@@ -8074,19 +8897,34 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-
+      bitField0_ = (bitField0_ & ~0x40000000);
       sessionAffinity_ = 0;
       onChanged();
       return this;
     }
 
     private int timeoutSec_;
+    /**
+     *
+     *
+     * <pre>
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+     * </pre>
+     *
+     * <code>int32 timeout_sec = 79994995;</code>
+     *
+     * @return Whether the timeoutSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeoutSec() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
     /**
      *
      *
@@ -8115,7 +8953,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-
+      bitField0_ |= 0x80000000;
       timeoutSec_ = value;
       onChanged();
       return this;
@@ -8132,7 +8970,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-
+      bitField0_ = (bitField0_ & ~0x80000000);
       timeoutSec_ = 0;
       onChanged();
       return this;

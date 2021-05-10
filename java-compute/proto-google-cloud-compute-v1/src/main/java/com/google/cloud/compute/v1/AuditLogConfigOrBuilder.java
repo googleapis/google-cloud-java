@@ -77,6 +77,12 @@ public interface AuditLogConfigOrBuilder
   /**
    * <code>bool ignore_child_exemptions = 70141850;</code>
    *
+   * @return Whether the ignoreChildExemptions field is set.
+   */
+  boolean hasIgnoreChildExemptions();
+  /**
+   * <code>bool ignore_child_exemptions = 70141850;</code>
+   *
    * @return The ignoreChildExemptions.
    */
   boolean getIgnoreChildExemptions();
@@ -88,7 +94,19 @@ public interface AuditLogConfigOrBuilder
    * The log type that this config enables.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
+   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   *
+   * @return Whether the logType field is set.
+   */
+  boolean hasLogType();
+  /**
+   *
+   *
+   * <pre>
+   * The log type that this config enables.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
    *
    * @return The enum numeric value on the wire for logType.
    */
@@ -100,7 +118,7 @@ public interface AuditLogConfigOrBuilder
    * The log type that this config enables.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
+   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
    *
    * @return The logType.
    */

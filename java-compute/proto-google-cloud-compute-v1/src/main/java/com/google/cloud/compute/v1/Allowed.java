@@ -71,21 +71,21 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 442710250:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              iPProtocol_ = s;
-              break;
-            }
           case 854835346:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 ports_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               ports_.add(s);
+              break;
+            }
+          case -1704773398:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              iPProtocol_ = s;
               break;
             }
           default:
@@ -102,7 +102,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         ports_ = ports_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -125,7 +125,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Allowed.Builder.class);
   }
 
-  public static final int I_P_PROTOCOL_FIELD_NUMBER = 55338781;
+  private int bitField0_;
+  public static final int I_P_PROTOCOL_FIELD_NUMBER = 323774237;
   private volatile java.lang.Object iPProtocol_;
   /**
    *
@@ -134,7 +135,22 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 55338781;</code>
+   * <code>string i_p_protocol = 323774237;</code>
+   *
+   * @return Whether the iPProtocol field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPProtocol() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
+   * </pre>
+   *
+   * <code>string i_p_protocol = 323774237;</code>
    *
    * @return The iPProtocol.
    */
@@ -157,7 +173,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 55338781;</code>
+   * <code>string i_p_protocol = 323774237;</code>
    *
    * @return The bytes for iPProtocol.
    */
@@ -253,11 +269,11 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIPProtocolBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 55338781, iPProtocol_);
-    }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 323774237, iPProtocol_);
     }
     unknownFields.writeTo(output);
   }
@@ -268,9 +284,6 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIPProtocolBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55338781, iPProtocol_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < ports_.size(); i++) {
@@ -278,6 +291,9 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getPortsList().size();
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323774237, iPProtocol_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -294,7 +310,10 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Allowed other = (com.google.cloud.compute.v1.Allowed) obj;
 
-    if (!getIPProtocol().equals(other.getIPProtocol())) return false;
+    if (hasIPProtocol() != other.hasIPProtocol()) return false;
+    if (hasIPProtocol()) {
+      if (!getIPProtocol().equals(other.getIPProtocol())) return false;
+    }
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -307,8 +326,10 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
-    hash = (53 * hash) + getIPProtocol().hashCode();
+    if (hasIPProtocol()) {
+      hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + getIPProtocol().hashCode();
+    }
     if (getPortsCount() > 0) {
       hash = (37 * hash) + PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getPortsList().hashCode();
@@ -457,9 +478,9 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       iPProtocol_ = "";
-
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -487,12 +508,17 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Allowed buildPartial() {
       com.google.cloud.compute.v1.Allowed result = new com.google.cloud.compute.v1.Allowed(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.iPProtocol_ = iPProtocol_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         ports_ = ports_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ports_ = ports_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -542,14 +568,15 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Allowed other) {
       if (other == com.google.cloud.compute.v1.Allowed.getDefaultInstance()) return this;
-      if (!other.getIPProtocol().isEmpty()) {
+      if (other.hasIPProtocol()) {
+        bitField0_ |= 0x00000001;
         iPProtocol_ = other.iPProtocol_;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -595,7 +622,21 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 55338781;</code>
+     * <code>string i_p_protocol = 323774237;</code>
+     *
+     * @return Whether the iPProtocol field is set.
+     */
+    public boolean hasIPProtocol() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
+     * </pre>
+     *
+     * <code>string i_p_protocol = 323774237;</code>
      *
      * @return The iPProtocol.
      */
@@ -617,7 +658,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 55338781;</code>
+     * <code>string i_p_protocol = 323774237;</code>
      *
      * @return The bytes for iPProtocol.
      */
@@ -639,7 +680,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 55338781;</code>
+     * <code>string i_p_protocol = 323774237;</code>
      *
      * @param value The iPProtocol to set.
      * @return This builder for chaining.
@@ -648,7 +689,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       iPProtocol_ = value;
       onChanged();
       return this;
@@ -660,12 +701,12 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 55338781;</code>
+     * <code>string i_p_protocol = 323774237;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIPProtocol() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       iPProtocol_ = getDefaultInstance().getIPProtocol();
       onChanged();
       return this;
@@ -677,7 +718,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 55338781;</code>
+     * <code>string i_p_protocol = 323774237;</code>
      *
      * @param value The bytes for iPProtocol to set.
      * @return This builder for chaining.
@@ -687,7 +728,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       iPProtocol_ = value;
       onChanged();
       return this;
@@ -697,9 +738,9 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -842,7 +883,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPorts() {
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

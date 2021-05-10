@@ -61,6 +61,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,16 +72,17 @@ public final class InstanceGroupManagerAutoHealingPolicy
           case 0:
             done = true;
             break;
-          case 323529514:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              healthCheck_ = s;
-              break;
-            }
           case 2105656016:
             {
+              bitField0_ |= 0x00000002;
               initialDelaySec_ = input.readInt32();
+              break;
+            }
+          case -1823954134:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              healthCheck_ = s;
               break;
             }
           default:
@@ -117,7 +119,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
             com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
+  private int bitField0_;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
   private volatile java.lang.Object healthCheck_;
   /**
    *
@@ -126,7 +129,22 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 40441189;</code>
+   * <code>string health_check = 308876645;</code>
+   *
+   * @return Whether the healthCheck field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthCheck() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL for the health check that signals autohealing.
+   * </pre>
+   *
+   * <code>string health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -149,7 +167,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 40441189;</code>
+   * <code>string health_check = 308876645;</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -168,6 +186,21 @@ public final class InstanceGroupManagerAutoHealingPolicy
 
   public static final int INITIAL_DELAY_SEC_FIELD_NUMBER = 263207002;
   private int initialDelaySec_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
+   * </pre>
+   *
+   * <code>int32 initial_delay_sec = 263207002;</code>
+   *
+   * @return Whether the initialDelaySec field is set.
+   */
+  @java.lang.Override
+  public boolean hasInitialDelaySec() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -198,11 +231,11 @@ public final class InstanceGroupManagerAutoHealingPolicy
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHealthCheckBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 40441189, healthCheck_);
-    }
-    if (initialDelaySec_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(263207002, initialDelaySec_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
     }
     unknownFields.writeTo(output);
   }
@@ -213,11 +246,11 @@ public final class InstanceGroupManagerAutoHealingPolicy
     if (size != -1) return size;
 
     size = 0;
-    if (!getHealthCheckBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40441189, healthCheck_);
-    }
-    if (initialDelaySec_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(263207002, initialDelaySec_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,8 +268,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
     com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy other =
         (com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy) obj;
 
-    if (!getHealthCheck().equals(other.getHealthCheck())) return false;
-    if (getInitialDelaySec() != other.getInitialDelaySec()) return false;
+    if (hasHealthCheck() != other.hasHealthCheck()) return false;
+    if (hasHealthCheck()) {
+      if (!getHealthCheck().equals(other.getHealthCheck())) return false;
+    }
+    if (hasInitialDelaySec() != other.hasInitialDelaySec()) return false;
+    if (hasInitialDelaySec()) {
+      if (getInitialDelaySec() != other.getInitialDelaySec()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -248,10 +287,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HEALTH_CHECK_FIELD_NUMBER;
-    hash = (53 * hash) + getHealthCheck().hashCode();
-    hash = (37 * hash) + INITIAL_DELAY_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialDelaySec();
+    if (hasHealthCheck()) {
+      hash = (37 * hash) + HEALTH_CHECK_FIELD_NUMBER;
+      hash = (53 * hash) + getHealthCheck().hashCode();
+    }
+    if (hasInitialDelaySec()) {
+      hash = (37 * hash) + INITIAL_DELAY_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getInitialDelaySec();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -400,9 +443,9 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public Builder clear() {
       super.clear();
       healthCheck_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       initialDelaySec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -431,8 +474,17 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy result =
           new com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.healthCheck_ = healthCheck_;
-      result.initialDelaySec_ = initialDelaySec_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.initialDelaySec_ = initialDelaySec_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -485,11 +537,12 @@ public final class InstanceGroupManagerAutoHealingPolicy
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.getDefaultInstance())
         return this;
-      if (!other.getHealthCheck().isEmpty()) {
+      if (other.hasHealthCheck()) {
+        bitField0_ |= 0x00000001;
         healthCheck_ = other.healthCheck_;
         onChanged();
       }
-      if (other.getInitialDelaySec() != 0) {
+      if (other.hasInitialDelaySec()) {
         setInitialDelaySec(other.getInitialDelaySec());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -523,6 +576,8 @@ public final class InstanceGroupManagerAutoHealingPolicy
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object healthCheck_ = "";
     /**
      *
@@ -531,7 +586,21 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 40441189;</code>
+     * <code>string health_check = 308876645;</code>
+     *
+     * @return Whether the healthCheck field is set.
+     */
+    public boolean hasHealthCheck() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL for the health check that signals autohealing.
+     * </pre>
+     *
+     * <code>string health_check = 308876645;</code>
      *
      * @return The healthCheck.
      */
@@ -553,7 +622,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 40441189;</code>
+     * <code>string health_check = 308876645;</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -575,7 +644,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 40441189;</code>
+     * <code>string health_check = 308876645;</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -584,7 +653,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       healthCheck_ = value;
       onChanged();
       return this;
@@ -596,12 +665,12 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 40441189;</code>
+     * <code>string health_check = 308876645;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthCheck() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       healthCheck_ = getDefaultInstance().getHealthCheck();
       onChanged();
       return this;
@@ -613,7 +682,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * The URL for the health check that signals autohealing.
      * </pre>
      *
-     * <code>string health_check = 40441189;</code>
+     * <code>string health_check = 308876645;</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.
@@ -623,13 +692,28 @@ public final class InstanceGroupManagerAutoHealingPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       healthCheck_ = value;
       onChanged();
       return this;
     }
 
     private int initialDelaySec_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that the managed instance group waits before it applies autohealing policies to new instances or recently recreated instances. This initial delay allows instances to initialize and run their startup scripts before the instance group determines that they are UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely. This value must be from range [0, 3600].
+     * </pre>
+     *
+     * <code>int32 initial_delay_sec = 263207002;</code>
+     *
+     * @return Whether the initialDelaySec field is set.
+     */
+    @java.lang.Override
+    public boolean hasInitialDelaySec() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -658,7 +742,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * @return This builder for chaining.
      */
     public Builder setInitialDelaySec(int value) {
-
+      bitField0_ |= 0x00000002;
       initialDelaySec_ = value;
       onChanged();
       return this;
@@ -675,7 +759,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
      * @return This builder for chaining.
      */
     public Builder clearInitialDelaySec() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       initialDelaySec_ = 0;
       onChanged();
       return this;

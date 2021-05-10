@@ -73,21 +73,21 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
           case 0:
             done = true;
             break;
-          case 541097290:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                targetPools_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              targetPools_.add(s);
-              break;
-            }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               fingerprint_ = s;
+              break;
+            }
+          case -1606386358:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                targetPools_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              targetPools_.add(s);
               break;
             }
           default:
@@ -104,7 +104,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         targetPools_ = targetPools_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -128,8 +128,24 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
                 .class);
   }
 
+  private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of the target pools information, which is a hash of the contents. This field is used for optimistic locking when you update the target pool entries. This field is optional.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -177,7 +193,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     }
   }
 
-  public static final int TARGET_POOLS_FIELD_NUMBER = 67637161;
+  public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
   private com.google.protobuf.LazyStringList targetPools_;
   /**
    *
@@ -186,7 +202,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -200,7 +216,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return The count of targetPools.
    */
@@ -214,7 +230,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -229,7 +245,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.
@@ -252,11 +268,11 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < targetPools_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 67637161, targetPools_.getRaw(i));
-    }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    }
+    for (int i = 0; i < targetPools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 336072617, targetPools_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -267,6 +283,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < targetPools_.size(); i++) {
@@ -274,9 +293,6 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       }
       size += dataSize;
       size += 5 * getTargetPoolsList().size();
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -295,7 +311,10 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest other =
         (com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest) obj;
 
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
     if (!getTargetPoolsList().equals(other.getTargetPoolsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -308,8 +327,10 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
     if (getTargetPoolsCount() > 0) {
       hash = (37 * hash) + TARGET_POOLS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetPoolsList().hashCode();
@@ -468,9 +489,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public Builder clear() {
       super.clear();
       fingerprint_ = "";
-
-      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -503,12 +524,17 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.fingerprint_ = fingerprint_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         targetPools_ = targetPools_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.targetPools_ = targetPools_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -563,14 +589,15 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       if (other
           == com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
               .getDefaultInstance()) return this;
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
       if (!other.targetPools_.isEmpty()) {
         if (targetPools_.isEmpty()) {
           targetPools_ = other.targetPools_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureTargetPoolsIsMutable();
           targetPools_.addAll(other.targetPools_);
@@ -612,6 +639,20 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     private int bitField0_;
 
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the target pools information, which is a hash of the contents. This field is used for optimistic locking when you update the target pool entries. This field is optional.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -672,7 +713,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -689,7 +730,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -711,7 +752,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -721,9 +762,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetPoolsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         targetPools_ = new com.google.protobuf.LazyStringArrayList(targetPools_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -733,7 +774,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @return A list containing the targetPools.
      */
@@ -747,7 +788,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @return The count of targetPools.
      */
@@ -761,7 +802,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param index The index of the element to return.
      * @return The targetPools at the given index.
@@ -776,7 +817,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetPools at the given index.
@@ -791,7 +832,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param index The index to set the value at.
      * @param value The targetPools to set.
@@ -813,7 +854,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param value The targetPools to add.
      * @return This builder for chaining.
@@ -834,7 +875,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param values The targetPools to add.
      * @return This builder for chaining.
@@ -852,13 +893,13 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTargetPools() {
       targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -869,7 +910,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 67637161;</code>
+     * <code>repeated string target_pools = 336072617;</code>
      *
      * @param value The bytes of the targetPools to add.
      * @return This builder for chaining.

@@ -63,6 +63,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,25 +74,25 @@ public final class InterconnectDiagnosticsLinkLACPStatus
           case 0:
             done = true;
             break;
-          case 603087090:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              neighborSystemId_ = s;
-              break;
-            }
           case 729683242:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               googleSystemId_ = s;
               break;
             }
           case 878060680:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000004;
               state_ = rawValue;
+              break;
+            }
+          case -1544396558:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              neighborSystemId_ = s;
               break;
             }
           default:
@@ -150,8 +151,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 46297862;</code> */
-    ACTIVE(46297862),
+    /** <code>ACTIVE = 314733318;</code> */
+    ACTIVE(314733318),
     /** <code>DETACHED = 216562546;</code> */
     DETACHED(216562546),
     UNRECOGNIZED(-1),
@@ -167,8 +168,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 46297862;</code> */
-    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>ACTIVE = 314733318;</code> */
+    public static final int ACTIVE_VALUE = 314733318;
     /** <code>DETACHED = 216562546;</code> */
     public static final int DETACHED_VALUE = 216562546;
 
@@ -198,7 +199,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 46297862:
+        case 314733318:
           return ACTIVE;
         case 216562546:
           return DETACHED;
@@ -257,8 +258,24 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State)
   }
 
+  private int bitField0_;
   public static final int GOOGLE_SYSTEM_ID_FIELD_NUMBER = 91210405;
   private volatile java.lang.Object googleSystemId_;
+  /**
+   *
+   *
+   * <pre>
+   * System ID of the port on Google's side of the LACP exchange.
+   * </pre>
+   *
+   * <code>string google_system_id = 91210405;</code>
+   *
+   * @return Whether the googleSystemId field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleSystemId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -306,7 +323,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     }
   }
 
-  public static final int NEIGHBOR_SYSTEM_ID_FIELD_NUMBER = 75385886;
+  public static final int NEIGHBOR_SYSTEM_ID_FIELD_NUMBER = 343821342;
   private volatile java.lang.Object neighborSystemId_;
   /**
    *
@@ -315,7 +332,22 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 75385886;</code>
+   * <code>string neighbor_system_id = 343821342;</code>
+   *
+   * @return Whether the neighborSystemId field is set.
+   */
+  @java.lang.Override
+  public boolean hasNeighborSystemId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System ID of the port on the neighbor's side of the LACP exchange.
+   * </pre>
+   *
+   * <code>string neighbor_system_id = 343821342;</code>
    *
    * @return The neighborSystemId.
    */
@@ -338,7 +370,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 75385886;</code>
+   * <code>string neighbor_system_id = 343821342;</code>
    *
    * @return The bytes for neighborSystemId.
    */
@@ -357,6 +389,24 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * The state of a LACP link, which can take one of the following values:
+   * - ACTIVE: The link is configured and active within the bundle.
+   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
+   * </code>
+   *
+   * @return Whether the state field is set.
+   */
+  @java.lang.Override
+  public boolean hasState() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -413,16 +463,14 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNeighborSystemIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 75385886, neighborSystemId_);
-    }
-    if (!getGoogleSystemIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 91210405, googleSystemId_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State.UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(109757585, state_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 343821342, neighborSystemId_);
     }
     unknownFields.writeTo(output);
   }
@@ -433,16 +481,15 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     if (size != -1) return size;
 
     size = 0;
-    if (!getNeighborSystemIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(75385886, neighborSystemId_);
-    }
-    if (!getGoogleSystemIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91210405, googleSystemId_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State.UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(343821342, neighborSystemId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,9 +507,18 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus other =
         (com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus) obj;
 
-    if (!getGoogleSystemId().equals(other.getGoogleSystemId())) return false;
-    if (!getNeighborSystemId().equals(other.getNeighborSystemId())) return false;
-    if (state_ != other.state_) return false;
+    if (hasGoogleSystemId() != other.hasGoogleSystemId()) return false;
+    if (hasGoogleSystemId()) {
+      if (!getGoogleSystemId().equals(other.getGoogleSystemId())) return false;
+    }
+    if (hasNeighborSystemId() != other.hasNeighborSystemId()) return false;
+    if (hasNeighborSystemId()) {
+      if (!getNeighborSystemId().equals(other.getNeighborSystemId())) return false;
+    }
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (state_ != other.state_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -474,12 +530,18 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GOOGLE_SYSTEM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGoogleSystemId().hashCode();
-    hash = (37 * hash) + NEIGHBOR_SYSTEM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getNeighborSystemId().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
+    if (hasGoogleSystemId()) {
+      hash = (37 * hash) + GOOGLE_SYSTEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleSystemId().hashCode();
+    }
+    if (hasNeighborSystemId()) {
+      hash = (37 * hash) + NEIGHBOR_SYSTEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNeighborSystemId().hashCode();
+    }
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -628,11 +690,11 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public Builder clear() {
       super.clear();
       googleSystemId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       neighborSystemId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -661,9 +723,21 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.googleSystemId_ = googleSystemId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.neighborSystemId_ = neighborSystemId_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.state_ = state_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -716,16 +790,18 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (other
           == com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.getDefaultInstance())
         return this;
-      if (!other.getGoogleSystemId().isEmpty()) {
+      if (other.hasGoogleSystemId()) {
+        bitField0_ |= 0x00000001;
         googleSystemId_ = other.googleSystemId_;
         onChanged();
       }
-      if (!other.getNeighborSystemId().isEmpty()) {
+      if (other.hasNeighborSystemId()) {
+        bitField0_ |= 0x00000002;
         neighborSystemId_ = other.neighborSystemId_;
         onChanged();
       }
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
+      if (other.hasState()) {
+        setState(other.getState());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -758,7 +834,23 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object googleSystemId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * System ID of the port on Google's side of the LACP exchange.
+     * </pre>
+     *
+     * <code>string google_system_id = 91210405;</code>
+     *
+     * @return Whether the googleSystemId field is set.
+     */
+    public boolean hasGoogleSystemId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -819,7 +911,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       googleSystemId_ = value;
       onChanged();
       return this;
@@ -836,7 +928,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder clearGoogleSystemId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       googleSystemId_ = getDefaultInstance().getGoogleSystemId();
       onChanged();
       return this;
@@ -858,7 +950,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       googleSystemId_ = value;
       onChanged();
       return this;
@@ -872,7 +964,21 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 75385886;</code>
+     * <code>string neighbor_system_id = 343821342;</code>
+     *
+     * @return Whether the neighborSystemId field is set.
+     */
+    public boolean hasNeighborSystemId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System ID of the port on the neighbor's side of the LACP exchange.
+     * </pre>
+     *
+     * <code>string neighbor_system_id = 343821342;</code>
      *
      * @return The neighborSystemId.
      */
@@ -894,7 +1000,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 75385886;</code>
+     * <code>string neighbor_system_id = 343821342;</code>
      *
      * @return The bytes for neighborSystemId.
      */
@@ -916,7 +1022,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 75385886;</code>
+     * <code>string neighbor_system_id = 343821342;</code>
      *
      * @param value The neighborSystemId to set.
      * @return This builder for chaining.
@@ -925,7 +1031,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       neighborSystemId_ = value;
       onChanged();
       return this;
@@ -937,12 +1043,12 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 75385886;</code>
+     * <code>string neighbor_system_id = 343821342;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNeighborSystemId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       neighborSystemId_ = getDefaultInstance().getNeighborSystemId();
       onChanged();
       return this;
@@ -954,7 +1060,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 75385886;</code>
+     * <code>string neighbor_system_id = 343821342;</code>
      *
      * @param value The bytes for neighborSystemId to set.
      * @return This builder for chaining.
@@ -964,13 +1070,31 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       neighborSystemId_ = value;
       onChanged();
       return this;
     }
 
     private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of a LACP link, which can take one of the following values:
+     * - ACTIVE: The link is configured and active within the bundle.
+     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
+     * </code>
+     *
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1005,7 +1129,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
+      bitField0_ |= 0x00000004;
       state_ = value;
       onChanged();
       return this;
@@ -1053,7 +1177,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1073,7 +1197,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;

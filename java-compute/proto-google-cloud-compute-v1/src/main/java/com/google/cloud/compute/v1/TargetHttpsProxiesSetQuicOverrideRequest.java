@@ -61,6 +61,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,10 +72,10 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
           case 0:
             done = true;
             break;
-          case 1505133928:
+          case -642349720:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               quicOverride_ = rawValue;
               break;
             }
@@ -135,8 +136,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     UNDEFINED_QUIC_OVERRIDE(0),
     /** <code>DISABLE = 241807048;</code> */
     DISABLE(241807048),
-    /** <code>ENABLE = 170400131;</code> */
-    ENABLE(170400131),
+    /** <code>ENABLE = 438835587;</code> */
+    ENABLE(438835587),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
     UNRECOGNIZED(-1),
@@ -154,8 +155,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     public static final int UNDEFINED_QUIC_OVERRIDE_VALUE = 0;
     /** <code>DISABLE = 241807048;</code> */
     public static final int DISABLE_VALUE = 241807048;
-    /** <code>ENABLE = 170400131;</code> */
-    public static final int ENABLE_VALUE = 170400131;
+    /** <code>ENABLE = 438835587;</code> */
+    public static final int ENABLE_VALUE = 438835587;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
 
@@ -187,7 +188,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
           return UNDEFINED_QUIC_OVERRIDE;
         case 241807048:
           return DISABLE;
-        case 170400131:
+        case 438835587:
           return ENABLE;
         case 2402104:
           return NONE;
@@ -246,7 +247,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride)
   }
 
-  public static final int QUIC_OVERRIDE_FIELD_NUMBER = 188141741;
+  private int bitField0_;
+  public static final int QUIC_OVERRIDE_FIELD_NUMBER = 456577197;
   private int quicOverride_;
   /**
    *
@@ -256,7 +258,24 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
+   * </code>
+   *
+   * @return Whether the quicOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuicOverride() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * QUIC policy for the TargetHttpsProxy resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
    * </code>
    *
    * @return The enum numeric value on the wire for quicOverride.
@@ -273,7 +292,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
    * </code>
    *
    * @return The quicOverride.
@@ -305,11 +324,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (quicOverride_
-        != com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride
-            .UNDEFINED_QUIC_OVERRIDE
-            .getNumber()) {
-      output.writeEnum(188141741, quicOverride_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(456577197, quicOverride_);
     }
     unknownFields.writeTo(output);
   }
@@ -320,11 +336,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     if (size != -1) return size;
 
     size = 0;
-    if (quicOverride_
-        != com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride
-            .UNDEFINED_QUIC_OVERRIDE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(188141741, quicOverride_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(456577197, quicOverride_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -342,7 +355,10 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest other =
         (com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest) obj;
 
-    if (quicOverride_ != other.quicOverride_) return false;
+    if (hasQuicOverride() != other.hasQuicOverride()) return false;
+    if (hasQuicOverride()) {
+      if (quicOverride_ != other.quicOverride_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -354,8 +370,10 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + QUIC_OVERRIDE_FIELD_NUMBER;
-    hash = (53 * hash) + quicOverride_;
+    if (hasQuicOverride()) {
+      hash = (37 * hash) + QUIC_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + quicOverride_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -504,7 +522,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     public Builder clear() {
       super.clear();
       quicOverride_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -534,7 +552,13 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest buildPartial() {
       com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest result =
           new com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.quicOverride_ = quicOverride_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -588,8 +612,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       if (other
           == com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest
               .getDefaultInstance()) return this;
-      if (other.quicOverride_ != 0) {
-        setQuicOverrideValue(other.getQuicOverrideValue());
+      if (other.hasQuicOverride()) {
+        setQuicOverride(other.getQuicOverride());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -622,6 +646,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       return this;
     }
 
+    private int bitField0_;
+
     private int quicOverride_ = 0;
     /**
      *
@@ -631,7 +657,24 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
+     * </code>
+     *
+     * @return Whether the quicOverride field is set.
+     */
+    @java.lang.Override
+    public boolean hasQuicOverride() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * QUIC policy for the TargetHttpsProxy resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
      * </code>
      *
      * @return The enum numeric value on the wire for quicOverride.
@@ -648,14 +691,14 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
      * </code>
      *
      * @param value The enum numeric value on the wire for quicOverride to set.
      * @return This builder for chaining.
      */
     public Builder setQuicOverrideValue(int value) {
-
+      bitField0_ |= 0x00000001;
       quicOverride_ = value;
       onChanged();
       return this;
@@ -668,7 +711,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
      * </code>
      *
      * @return The quicOverride.
@@ -693,7 +736,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
      * </code>
      *
      * @param value The quicOverride to set.
@@ -704,7 +747,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       quicOverride_ = value.getNumber();
       onChanged();
       return this;
@@ -717,13 +760,13 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearQuicOverride() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       quicOverride_ = 0;
       onChanged();
       return this;

@@ -71,10 +71,26 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 92845530:
+          case 230524282:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                retryConditions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              retryConditions_.add(s);
+              break;
+            }
+          case 2013441128:
+            {
+              bitField0_ |= 0x00000001;
+              numRetries_ = input.readUInt32();
+              break;
+            }
+          case -2054638118:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (perTryTimeout_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = perTryTimeout_.toBuilder();
               }
               perTryTimeout_ =
@@ -84,22 +100,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(perTryTimeout_);
                 perTryTimeout_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 230524282:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                retryConditions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              retryConditions_.add(s);
-              break;
-            }
-          case 2013441128:
-            {
-              numRetries_ = input.readUInt32();
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -116,7 +117,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         retryConditions_ = retryConditions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -139,8 +140,24 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.HttpRetryPolicy.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NUM_RETRIES_FIELD_NUMBER = 251680141;
   private int numRetries_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the allowed number retries. This number must be &gt; 0. If not specified, defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 num_retries = 251680141;</code>
+   *
+   * @return Whether the numRetries field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumRetries() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -157,7 +174,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     return numRetries_;
   }
 
-  public static final int PER_TRY_TIMEOUT_FIELD_NUMBER = 11605691;
+  public static final int PER_TRY_TIMEOUT_FIELD_NUMBER = 280041147;
   private com.google.cloud.compute.v1.Duration perTryTimeout_;
   /**
    *
@@ -167,13 +184,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    *
    * @return Whether the perTryTimeout field is set.
    */
   @java.lang.Override
   public boolean hasPerTryTimeout() {
-    return perTryTimeout_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -183,7 +200,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    *
    * @return The perTryTimeout.
    */
@@ -201,11 +218,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getPerTryTimeoutOrBuilder() {
-    return getPerTryTimeout();
+    return perTryTimeout_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : perTryTimeout_;
   }
 
   public static final int RETRY_CONDITIONS_FIELD_NUMBER = 28815535;
@@ -323,15 +342,15 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (perTryTimeout_ != null) {
-      output.writeMessage(11605691, getPerTryTimeout());
-    }
     for (int i = 0; i < retryConditions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 28815535, retryConditions_.getRaw(i));
     }
-    if (numRetries_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(251680141, numRetries_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(280041147, getPerTryTimeout());
     }
     unknownFields.writeTo(output);
   }
@@ -342,10 +361,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (perTryTimeout_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(11605691, getPerTryTimeout());
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < retryConditions_.size(); i++) {
@@ -354,8 +369,12 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 4 * getRetryConditionsList().size();
     }
-    if (numRetries_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(251680141, numRetries_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(280041147, getPerTryTimeout());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -373,7 +392,10 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.HttpRetryPolicy other =
         (com.google.cloud.compute.v1.HttpRetryPolicy) obj;
 
-    if (getNumRetries() != other.getNumRetries()) return false;
+    if (hasNumRetries() != other.hasNumRetries()) return false;
+    if (hasNumRetries()) {
+      if (getNumRetries() != other.getNumRetries()) return false;
+    }
     if (hasPerTryTimeout() != other.hasPerTryTimeout()) return false;
     if (hasPerTryTimeout()) {
       if (!getPerTryTimeout().equals(other.getPerTryTimeout())) return false;
@@ -390,8 +412,10 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NUM_RETRIES_FIELD_NUMBER;
-    hash = (53 * hash) + getNumRetries();
+    if (hasNumRetries()) {
+      hash = (37 * hash) + NUM_RETRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getNumRetries();
+    }
     if (hasPerTryTimeout()) {
       hash = (37 * hash) + PER_TRY_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getPerTryTimeout().hashCode();
@@ -539,22 +563,24 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPerTryTimeoutFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       numRetries_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (perTryTimeoutBuilder_ == null) {
         perTryTimeout_ = null;
       } else {
-        perTryTimeout_ = null;
-        perTryTimeoutBuilder_ = null;
+        perTryTimeoutBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -583,17 +609,25 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.compute.v1.HttpRetryPolicy result =
           new com.google.cloud.compute.v1.HttpRetryPolicy(this);
       int from_bitField0_ = bitField0_;
-      result.numRetries_ = numRetries_;
-      if (perTryTimeoutBuilder_ == null) {
-        result.perTryTimeout_ = perTryTimeout_;
-      } else {
-        result.perTryTimeout_ = perTryTimeoutBuilder_.build();
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.numRetries_ = numRetries_;
+        to_bitField0_ |= 0x00000001;
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (perTryTimeoutBuilder_ == null) {
+          result.perTryTimeout_ = perTryTimeout_;
+        } else {
+          result.perTryTimeout_ = perTryTimeoutBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         retryConditions_ = retryConditions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.retryConditions_ = retryConditions_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -643,7 +677,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRetryPolicy other) {
       if (other == com.google.cloud.compute.v1.HttpRetryPolicy.getDefaultInstance()) return this;
-      if (other.getNumRetries() != 0) {
+      if (other.hasNumRetries()) {
         setNumRetries(other.getNumRetries());
       }
       if (other.hasPerTryTimeout()) {
@@ -652,7 +686,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       if (!other.retryConditions_.isEmpty()) {
         if (retryConditions_.isEmpty()) {
           retryConditions_ = other.retryConditions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureRetryConditionsIsMutable();
           retryConditions_.addAll(other.retryConditions_);
@@ -700,6 +734,21 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      *
      * <code>uint32 num_retries = 251680141;</code>
      *
+     * @return Whether the numRetries field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumRetries() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the allowed number retries. This number must be &gt; 0. If not specified, defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 num_retries = 251680141;</code>
+     *
      * @return The numRetries.
      */
     @java.lang.Override
@@ -719,7 +768,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setNumRetries(int value) {
-
+      bitField0_ |= 0x00000001;
       numRetries_ = value;
       onChanged();
       return this;
@@ -736,7 +785,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNumRetries() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       numRetries_ = 0;
       onChanged();
       return this;
@@ -756,12 +805,12 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      *
      * @return Whether the perTryTimeout field is set.
      */
     public boolean hasPerTryTimeout() {
-      return perTryTimeoutBuilder_ != null || perTryTimeout_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -771,7 +820,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      *
      * @return The perTryTimeout.
      */
@@ -792,7 +841,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public Builder setPerTryTimeout(com.google.cloud.compute.v1.Duration value) {
       if (perTryTimeoutBuilder_ == null) {
@@ -804,7 +853,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       } else {
         perTryTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -815,7 +864,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public Builder setPerTryTimeout(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (perTryTimeoutBuilder_ == null) {
@@ -824,7 +873,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       } else {
         perTryTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -835,11 +884,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public Builder mergePerTryTimeout(com.google.cloud.compute.v1.Duration value) {
       if (perTryTimeoutBuilder_ == null) {
-        if (perTryTimeout_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && perTryTimeout_ != null
+            && perTryTimeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           perTryTimeout_ =
               com.google.cloud.compute.v1.Duration.newBuilder(perTryTimeout_)
                   .mergeFrom(value)
@@ -851,7 +902,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       } else {
         perTryTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -862,17 +913,16 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public Builder clearPerTryTimeout() {
       if (perTryTimeoutBuilder_ == null) {
         perTryTimeout_ = null;
         onChanged();
       } else {
-        perTryTimeout_ = null;
-        perTryTimeoutBuilder_ = null;
+        perTryTimeoutBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -883,10 +933,10 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getPerTryTimeoutBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPerTryTimeoutFieldBuilder().getBuilder();
     }
@@ -898,7 +948,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getPerTryTimeoutOrBuilder() {
       if (perTryTimeoutBuilder_ != null) {
@@ -917,7 +967,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -940,9 +990,9 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRetryConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         retryConditions_ = new com.google.protobuf.LazyStringArrayList(retryConditions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1157,7 +1207,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearRetryConditions() {
       retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

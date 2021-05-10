@@ -73,41 +73,44 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case 7512626:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              signedUrlCacheMaxAgeSec_ = s;
-              break;
-            }
           case 231023104:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               cacheMode_ = rawValue;
               break;
             }
           case 232274880:
             {
+              bitField0_ |= 0x00000002;
               clientTtl_ = input.readInt32();
-              break;
-            }
-          case 313140360:
-            {
-              maxTtl_ = input.readInt32();
               break;
             }
           case 802027376:
             {
+              bitField0_ |= 0x00000004;
               defaultTtl_ = input.readInt32();
               break;
             }
-          case 827307434:
+          case -2139971022:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              bitField0_ |= 0x00000010;
+              signedUrlCacheMaxAgeSec_ = s;
+              break;
+            }
+          case -1834343288:
+            {
+              bitField0_ |= 0x00000008;
+              maxTtl_ = input.readInt32();
+              break;
+            }
+          case -1320176214:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000020;
               }
               signedUrlKeyNames_.add(s);
               break;
@@ -126,7 +129,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -172,12 +175,12 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_CACHE_MODE = 0;</code>
      */
     UNDEFINED_CACHE_MODE(0),
-    /** <code>CACHE_ALL_STATIC = 86592489;</code> */
-    CACHE_ALL_STATIC(86592489),
-    /** <code>FORCE_CACHE_ALL = 217591472;</code> */
-    FORCE_CACHE_ALL(217591472),
-    /** <code>INVALID_CACHE_MODE = 112860104;</code> */
-    INVALID_CACHE_MODE(112860104),
+    /** <code>CACHE_ALL_STATIC = 355027945;</code> */
+    CACHE_ALL_STATIC(355027945),
+    /** <code>FORCE_CACHE_ALL = 486026928;</code> */
+    FORCE_CACHE_ALL(486026928),
+    /** <code>INVALID_CACHE_MODE = 381295560;</code> */
+    INVALID_CACHE_MODE(381295560),
     /** <code>USE_ORIGIN_HEADERS = 55380261;</code> */
     USE_ORIGIN_HEADERS(55380261),
     UNRECOGNIZED(-1),
@@ -193,12 +196,12 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_CACHE_MODE = 0;</code>
      */
     public static final int UNDEFINED_CACHE_MODE_VALUE = 0;
-    /** <code>CACHE_ALL_STATIC = 86592489;</code> */
-    public static final int CACHE_ALL_STATIC_VALUE = 86592489;
-    /** <code>FORCE_CACHE_ALL = 217591472;</code> */
-    public static final int FORCE_CACHE_ALL_VALUE = 217591472;
-    /** <code>INVALID_CACHE_MODE = 112860104;</code> */
-    public static final int INVALID_CACHE_MODE_VALUE = 112860104;
+    /** <code>CACHE_ALL_STATIC = 355027945;</code> */
+    public static final int CACHE_ALL_STATIC_VALUE = 355027945;
+    /** <code>FORCE_CACHE_ALL = 486026928;</code> */
+    public static final int FORCE_CACHE_ALL_VALUE = 486026928;
+    /** <code>INVALID_CACHE_MODE = 381295560;</code> */
+    public static final int INVALID_CACHE_MODE_VALUE = 381295560;
     /** <code>USE_ORIGIN_HEADERS = 55380261;</code> */
     public static final int USE_ORIGIN_HEADERS_VALUE = 55380261;
 
@@ -228,11 +231,11 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return UNDEFINED_CACHE_MODE;
-        case 86592489:
+        case 355027945:
           return CACHE_ALL_STATIC;
-        case 217591472:
+        case 486026928:
           return FORCE_CACHE_ALL;
-        case 112860104:
+        case 381295560:
           return INVALID_CACHE_MODE;
         case 55380261:
           return USE_ORIGIN_HEADERS;
@@ -291,8 +294,27 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode)
   }
 
+  private int bitField0_;
   public static final int CACHE_MODE_FIELD_NUMBER = 28877888;
   private int cacheMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   *
+   * @return Whether the cacheMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasCacheMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -346,6 +368,21 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    *
    * <code>int32 client_ttl = 29034360;</code>
    *
+   * @return Whether the clientTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientTtl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * </pre>
+   *
+   * <code>int32 client_ttl = 29034360;</code>
+   *
    * @return The clientTtl.
    */
   @java.lang.Override
@@ -364,6 +401,21 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    *
    * <code>int32 default_ttl = 100253422;</code>
    *
+   * @return Whether the defaultTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultTtl() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 default_ttl = 100253422;</code>
+   *
    * @return The defaultTtl.
    */
   @java.lang.Override
@@ -371,7 +423,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     return defaultTtl_;
   }
 
-  public static final int MAX_TTL_FIELD_NUMBER = 39142545;
+  public static final int MAX_TTL_FIELD_NUMBER = 307578001;
   private int maxTtl_;
   /**
    *
@@ -380,7 +432,22 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
-   * <code>int32 max_ttl = 39142545;</code>
+   * <code>int32 max_ttl = 307578001;</code>
+   *
+   * @return Whether the maxTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxTtl() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 max_ttl = 307578001;</code>
    *
    * @return The maxTtl.
    */
@@ -389,7 +456,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     return maxTtl_;
   }
 
-  public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 939078;
+  public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
   private volatile java.lang.Object signedUrlCacheMaxAgeSec_;
   /**
    *
@@ -398,7 +465,22 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 939078;</code>
+   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   *
+   * @return Whether the signedUrlCacheMaxAgeSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSignedUrlCacheMaxAgeSec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
+   * </pre>
+   *
+   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return The signedUrlCacheMaxAgeSec.
    */
@@ -421,7 +503,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 939078;</code>
+   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
    *
    * @return The bytes for signedUrlCacheMaxAgeSec.
    */
@@ -438,7 +520,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 103413429;
+  public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 371848885;
   private com.google.protobuf.LazyStringList signedUrlKeyNames_;
   /**
    *
@@ -447,7 +529,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 103413429;</code>
+   * <code>repeated string signed_url_key_names = 371848885;</code>
    *
    * @return A list containing the signedUrlKeyNames.
    */
@@ -461,7 +543,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 103413429;</code>
+   * <code>repeated string signed_url_key_names = 371848885;</code>
    *
    * @return The count of signedUrlKeyNames.
    */
@@ -475,7 +557,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 103413429;</code>
+   * <code>repeated string signed_url_key_names = 371848885;</code>
    *
    * @param index The index of the element to return.
    * @return The signedUrlKeyNames at the given index.
@@ -490,7 +572,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 103413429;</code>
+   * <code>repeated string signed_url_key_names = 371848885;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the signedUrlKeyNames at the given index.
@@ -513,26 +595,25 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSignedUrlCacheMaxAgeSecBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 939078, signedUrlCacheMaxAgeSec_);
-    }
-    if (cacheMode_
-        != com.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode.UNDEFINED_CACHE_MODE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(28877888, cacheMode_);
     }
-    if (clientTtl_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(29034360, clientTtl_);
     }
-    if (maxTtl_ != 0) {
-      output.writeInt32(39142545, maxTtl_);
-    }
-    if (defaultTtl_ != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(100253422, defaultTtl_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 269374534, signedUrlCacheMaxAgeSec_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(307578001, maxTtl_);
     }
     for (int i = 0; i < signedUrlKeyNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 103413429, signedUrlKeyNames_.getRaw(i));
+          output, 371848885, signedUrlKeyNames_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -543,24 +624,22 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getSignedUrlCacheMaxAgeSecBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              939078, signedUrlCacheMaxAgeSec_);
-    }
-    if (cacheMode_
-        != com.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode.UNDEFINED_CACHE_MODE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(28877888, cacheMode_);
     }
-    if (clientTtl_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(29034360, clientTtl_);
     }
-    if (maxTtl_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(39142545, maxTtl_);
-    }
-    if (defaultTtl_ != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(100253422, defaultTtl_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              269374534, signedUrlCacheMaxAgeSec_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(307578001, maxTtl_);
     }
     {
       int dataSize = 0;
@@ -586,11 +665,26 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.BackendBucketCdnPolicy other =
         (com.google.cloud.compute.v1.BackendBucketCdnPolicy) obj;
 
-    if (cacheMode_ != other.cacheMode_) return false;
-    if (getClientTtl() != other.getClientTtl()) return false;
-    if (getDefaultTtl() != other.getDefaultTtl()) return false;
-    if (getMaxTtl() != other.getMaxTtl()) return false;
-    if (!getSignedUrlCacheMaxAgeSec().equals(other.getSignedUrlCacheMaxAgeSec())) return false;
+    if (hasCacheMode() != other.hasCacheMode()) return false;
+    if (hasCacheMode()) {
+      if (cacheMode_ != other.cacheMode_) return false;
+    }
+    if (hasClientTtl() != other.hasClientTtl()) return false;
+    if (hasClientTtl()) {
+      if (getClientTtl() != other.getClientTtl()) return false;
+    }
+    if (hasDefaultTtl() != other.hasDefaultTtl()) return false;
+    if (hasDefaultTtl()) {
+      if (getDefaultTtl() != other.getDefaultTtl()) return false;
+    }
+    if (hasMaxTtl() != other.hasMaxTtl()) return false;
+    if (hasMaxTtl()) {
+      if (getMaxTtl() != other.getMaxTtl()) return false;
+    }
+    if (hasSignedUrlCacheMaxAgeSec() != other.hasSignedUrlCacheMaxAgeSec()) return false;
+    if (hasSignedUrlCacheMaxAgeSec()) {
+      if (!getSignedUrlCacheMaxAgeSec().equals(other.getSignedUrlCacheMaxAgeSec())) return false;
+    }
     if (!getSignedUrlKeyNamesList().equals(other.getSignedUrlKeyNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -603,16 +697,26 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CACHE_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + cacheMode_;
-    hash = (37 * hash) + CLIENT_TTL_FIELD_NUMBER;
-    hash = (53 * hash) + getClientTtl();
-    hash = (37 * hash) + DEFAULT_TTL_FIELD_NUMBER;
-    hash = (53 * hash) + getDefaultTtl();
-    hash = (37 * hash) + MAX_TTL_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxTtl();
-    hash = (37 * hash) + SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getSignedUrlCacheMaxAgeSec().hashCode();
+    if (hasCacheMode()) {
+      hash = (37 * hash) + CACHE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + cacheMode_;
+    }
+    if (hasClientTtl()) {
+      hash = (37 * hash) + CLIENT_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getClientTtl();
+    }
+    if (hasDefaultTtl()) {
+      hash = (37 * hash) + DEFAULT_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultTtl();
+    }
+    if (hasMaxTtl()) {
+      hash = (37 * hash) + MAX_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxTtl();
+    }
+    if (hasSignedUrlCacheMaxAgeSec()) {
+      hash = (37 * hash) + SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSignedUrlCacheMaxAgeSec().hashCode();
+    }
     if (getSignedUrlKeyNamesCount() > 0) {
       hash = (37 * hash) + SIGNED_URL_KEY_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getSignedUrlKeyNamesList().hashCode();
@@ -763,17 +867,17 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       cacheMode_ = 0;
-
-      clientTtl_ = 0;
-
-      defaultTtl_ = 0;
-
-      maxTtl_ = 0;
-
-      signedUrlCacheMaxAgeSec_ = "";
-
-      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      clientTtl_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      defaultTtl_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maxTtl_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      signedUrlCacheMaxAgeSec_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
+      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -802,16 +906,33 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.BackendBucketCdnPolicy result =
           new com.google.cloud.compute.v1.BackendBucketCdnPolicy(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.cacheMode_ = cacheMode_;
-      result.clientTtl_ = clientTtl_;
-      result.defaultTtl_ = defaultTtl_;
-      result.maxTtl_ = maxTtl_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientTtl_ = clientTtl_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.defaultTtl_ = defaultTtl_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxTtl_ = maxTtl_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.signedUrlKeyNames_ = signedUrlKeyNames_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -862,26 +983,27 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendBucketCdnPolicy other) {
       if (other == com.google.cloud.compute.v1.BackendBucketCdnPolicy.getDefaultInstance())
         return this;
-      if (other.cacheMode_ != 0) {
-        setCacheModeValue(other.getCacheModeValue());
+      if (other.hasCacheMode()) {
+        setCacheMode(other.getCacheMode());
       }
-      if (other.getClientTtl() != 0) {
+      if (other.hasClientTtl()) {
         setClientTtl(other.getClientTtl());
       }
-      if (other.getDefaultTtl() != 0) {
+      if (other.hasDefaultTtl()) {
         setDefaultTtl(other.getDefaultTtl());
       }
-      if (other.getMaxTtl() != 0) {
+      if (other.hasMaxTtl()) {
         setMaxTtl(other.getMaxTtl());
       }
-      if (!other.getSignedUrlCacheMaxAgeSec().isEmpty()) {
+      if (other.hasSignedUrlCacheMaxAgeSec()) {
+        bitField0_ |= 0x00000010;
         signedUrlCacheMaxAgeSec_ = other.signedUrlCacheMaxAgeSec_;
         onChanged();
       }
       if (!other.signedUrlKeyNames_.isEmpty()) {
         if (signedUrlKeyNames_.isEmpty()) {
           signedUrlKeyNames_ = other.signedUrlKeyNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureSignedUrlKeyNamesIsMutable();
           signedUrlKeyNames_.addAll(other.signedUrlKeyNames_);
@@ -933,6 +1055,24 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      *
      * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode cache_mode = 28877888;</code>
      *
+     * @return Whether the cacheMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasCacheMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode cache_mode = 28877888;</code>
+     *
      * @return The enum numeric value on the wire for cacheMode.
      */
     @java.lang.Override
@@ -955,7 +1095,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setCacheModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       cacheMode_ = value;
       onChanged();
       return this;
@@ -1003,7 +1143,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       cacheMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1023,13 +1163,28 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCacheMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cacheMode_ = 0;
       onChanged();
       return this;
     }
 
     private int clientTtl_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * </pre>
+     *
+     * <code>int32 client_ttl = 29034360;</code>
+     *
+     * @return Whether the clientTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasClientTtl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1058,7 +1213,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setClientTtl(int value) {
-
+      bitField0_ |= 0x00000002;
       clientTtl_ = value;
       onChanged();
       return this;
@@ -1075,13 +1230,28 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearClientTtl() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       clientTtl_ = 0;
       onChanged();
       return this;
     }
 
     private int defaultTtl_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 default_ttl = 100253422;</code>
+     *
+     * @return Whether the defaultTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultTtl() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1110,7 +1280,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDefaultTtl(int value) {
-
+      bitField0_ |= 0x00000004;
       defaultTtl_ = value;
       onChanged();
       return this;
@@ -1127,7 +1297,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDefaultTtl() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultTtl_ = 0;
       onChanged();
       return this;
@@ -1141,7 +1311,22 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 max_ttl = 39142545;</code>
+     * <code>int32 max_ttl = 307578001;</code>
+     *
+     * @return Whether the maxTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxTtl() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 max_ttl = 307578001;</code>
      *
      * @return The maxTtl.
      */
@@ -1156,13 +1341,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 max_ttl = 39142545;</code>
+     * <code>int32 max_ttl = 307578001;</code>
      *
      * @param value The maxTtl to set.
      * @return This builder for chaining.
      */
     public Builder setMaxTtl(int value) {
-
+      bitField0_ |= 0x00000008;
       maxTtl_ = value;
       onChanged();
       return this;
@@ -1174,12 +1359,12 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
      * </pre>
      *
-     * <code>int32 max_ttl = 39142545;</code>
+     * <code>int32 max_ttl = 307578001;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMaxTtl() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxTtl_ = 0;
       onChanged();
       return this;
@@ -1193,7 +1378,21 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 939078;</code>
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     *
+     * @return Whether the signedUrlCacheMaxAgeSec field is set.
+     */
+    public boolean hasSignedUrlCacheMaxAgeSec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
+     * </pre>
+     *
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return The signedUrlCacheMaxAgeSec.
      */
@@ -1215,7 +1414,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 939078;</code>
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return The bytes for signedUrlCacheMaxAgeSec.
      */
@@ -1237,7 +1436,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 939078;</code>
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @param value The signedUrlCacheMaxAgeSec to set.
      * @return This builder for chaining.
@@ -1246,7 +1445,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       signedUrlCacheMaxAgeSec_ = value;
       onChanged();
       return this;
@@ -1258,12 +1457,12 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 939078;</code>
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSignedUrlCacheMaxAgeSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       signedUrlCacheMaxAgeSec_ = getDefaultInstance().getSignedUrlCacheMaxAgeSec();
       onChanged();
       return this;
@@ -1275,7 +1474,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 939078;</code>
+     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
      *
      * @param value The bytes for signedUrlCacheMaxAgeSec to set.
      * @return This builder for chaining.
@@ -1285,7 +1484,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       signedUrlCacheMaxAgeSec_ = value;
       onChanged();
       return this;
@@ -1295,9 +1494,9 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSignedUrlKeyNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList(signedUrlKeyNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1307,7 +1506,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @return A list containing the signedUrlKeyNames.
      */
@@ -1321,7 +1520,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @return The count of signedUrlKeyNames.
      */
@@ -1335,7 +1534,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param index The index of the element to return.
      * @return The signedUrlKeyNames at the given index.
@@ -1350,7 +1549,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the signedUrlKeyNames at the given index.
@@ -1365,7 +1564,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param index The index to set the value at.
      * @param value The signedUrlKeyNames to set.
@@ -1387,7 +1586,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param value The signedUrlKeyNames to add.
      * @return This builder for chaining.
@@ -1408,7 +1607,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param values The signedUrlKeyNames to add.
      * @return This builder for chaining.
@@ -1426,13 +1625,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSignedUrlKeyNames() {
       signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1443,7 +1642,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 103413429;</code>
+     * <code>repeated string signed_url_key_names = 371848885;</code>
      *
      * @param value The bytes of the signedUrlKeyNames to add.
      * @return This builder for chaining.

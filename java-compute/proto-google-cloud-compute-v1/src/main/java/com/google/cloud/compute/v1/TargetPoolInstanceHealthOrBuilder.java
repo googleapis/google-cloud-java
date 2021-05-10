@@ -23,18 +23,30 @@ public interface TargetPoolInstanceHealthOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.TargetPoolInstanceHealth)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code> */
+  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList();
-  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code> */
+  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index);
-  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code> */
+  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   int getHealthStatusCount();
-  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code> */
+  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
       getHealthStatusOrBuilderList();
-  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code> */
+  /** <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code> */
   com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *

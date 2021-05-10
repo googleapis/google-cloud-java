@@ -35,6 +35,21 @@ public interface TargetHttpsProxyOrBuilder
    *
    * <code>string authorization_policy = 33945528;</code>
    *
+   * @return Whether the authorizationPolicy field is set.
+   */
+  boolean hasAuthorizationPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+   * Refer to the AuthorizationPolicy resource for additional details.
+   * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string authorization_policy = 33945528;</code>
+   *
    * @return The authorizationPolicy.
    */
   java.lang.String getAuthorizationPolicy();
@@ -54,6 +69,18 @@ public interface TargetHttpsProxyOrBuilder
    */
   com.google.protobuf.ByteString getAuthorizationPolicyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -86,7 +113,19 @@ public interface TargetHttpsProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -98,12 +137,24 @@ public interface TargetHttpsProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -138,6 +189,18 @@ public interface TargetHttpsProxyOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -154,6 +217,18 @@ public interface TargetHttpsProxyOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -188,7 +263,21 @@ public interface TargetHttpsProxyOrBuilder
    * The default is false.
    * </pre>
    *
-   * <code>bool proxy_bind = 17590126;</code>
+   * <code>bool proxy_bind = 286025582;</code>
+   *
+   * @return Whether the proxyBind field is set.
+   */
+  boolean hasProxyBind();
+  /**
+   *
+   *
+   * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 286025582;</code>
    *
    * @return The proxyBind.
    */
@@ -206,7 +295,24 @@ public interface TargetHttpsProxyOrBuilder
    * -
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
+   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+   *
+   * @return Whether the quicOverride field is set.
+   */
+  boolean hasQuicOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE.
+   * - When quic-override is set to NONE, Google manages whether QUIC is used.
+   * - When quic-override is set to ENABLE, the load balancer uses QUIC when possible.
+   * - When quic-override is set to DISABLE, the load balancer doesn't use QUIC.
+   * - If the quic-override flag is not specified, NONE is implied.
+   * -
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
    *
    * @return The enum numeric value on the wire for quicOverride.
    */
@@ -223,12 +329,24 @@ public interface TargetHttpsProxyOrBuilder
    * -
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
+   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
    *
    * @return The quicOverride.
    */
   com.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride getQuicOverride();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not applicable to global TargetHttpsProxies.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -261,7 +379,19 @@ public interface TargetHttpsProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -273,7 +403,7 @@ public interface TargetHttpsProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -289,7 +419,22 @@ public interface TargetHttpsProxyOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string server_tls_policy = 27389810;</code>
+   * <code>string server_tls_policy = 295825266;</code>
+   *
+   * @return Whether the serverTlsPolicy field is set.
+   */
+  boolean hasServerTlsPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+   * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * If left blank, communications are not encrypted.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string server_tls_policy = 295825266;</code>
    *
    * @return The serverTlsPolicy.
    */
@@ -304,7 +449,7 @@ public interface TargetHttpsProxyOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string server_tls_policy = 27389810;</code>
+   * <code>string server_tls_policy = 295825266;</code>
    *
    * @return The bytes for serverTlsPolicy.
    */
@@ -317,7 +462,7 @@ public interface TargetHttpsProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @return A list containing the sslCertificates.
    */
@@ -329,7 +474,7 @@ public interface TargetHttpsProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @return The count of sslCertificates.
    */
@@ -341,7 +486,7 @@ public interface TargetHttpsProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @param index The index of the element to return.
    * @return The sslCertificates at the given index.
@@ -354,7 +499,7 @@ public interface TargetHttpsProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sslCertificates at the given index.
@@ -368,7 +513,19 @@ public interface TargetHttpsProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 26754757;</code>
+   * <code>string ssl_policy = 295190213;</code>
+   *
+   * @return Whether the sslPolicy field is set.
+   */
+  boolean hasSslPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
+   * </pre>
+   *
+   * <code>string ssl_policy = 295190213;</code>
    *
    * @return The sslPolicy.
    */
@@ -380,7 +537,7 @@ public interface TargetHttpsProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 26754757;</code>
+   * <code>string ssl_policy = 295190213;</code>
    *
    * @return The bytes for sslPolicy.
    */
@@ -396,7 +553,22 @@ public interface TargetHttpsProxyOrBuilder
    * - global/urlMaps/url-map
    * </pre>
    *
-   * <code>string url_map = 98585228;</code>
+   * <code>string url_map = 367020684;</code>
+   *
+   * @return Whether the urlMap field is set.
+   */
+  boolean hasUrlMap();
+  /**
+   *
+   *
+   * <pre>
+   * A fully-qualified or valid partial URL to the UrlMap resource that defines the mapping from URL to the BackendService. For example, the following are all valid URLs for specifying a URL map:
+   * - https://www.googleapis.compute/v1/projects/project/global/urlMaps/url-map
+   * - projects/project/global/urlMaps/url-map
+   * - global/urlMaps/url-map
+   * </pre>
+   *
+   * <code>string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
@@ -411,7 +583,7 @@ public interface TargetHttpsProxyOrBuilder
    * - global/urlMaps/url-map
    * </pre>
    *
-   * <code>string url_map = 98585228;</code>
+   * <code>string url_map = 367020684;</code>
    *
    * @return The bytes for urlMap.
    */

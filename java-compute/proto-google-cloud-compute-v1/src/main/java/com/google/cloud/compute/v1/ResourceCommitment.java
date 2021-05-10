@@ -62,6 +62,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,21 +76,21 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000004;
               type_ = rawValue;
               break;
             }
           case 1104249970:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               acceleratorType_ = s;
               break;
             }
           case 1574077122:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               amount_ = s;
               break;
             }
@@ -147,14 +148,14 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>ACCELERATOR = 161379915;</code> */
-    ACCELERATOR(161379915),
-    /** <code>LOCAL_SSD = 240499440;</code> */
-    LOCAL_SSD(240499440),
+    /** <code>ACCELERATOR = 429815371;</code> */
+    ACCELERATOR(429815371),
+    /** <code>LOCAL_SSD = 508934896;</code> */
+    LOCAL_SSD(508934896),
     /** <code>MEMORY = 123056385;</code> */
     MEMORY(123056385),
-    /** <code>UNSPECIFIED = 258350871;</code> */
-    UNSPECIFIED(258350871),
+    /** <code>UNSPECIFIED = 526786327;</code> */
+    UNSPECIFIED(526786327),
     /** <code>VCPU = 2628978;</code> */
     VCPU(2628978),
     UNRECOGNIZED(-1),
@@ -170,14 +171,14 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>ACCELERATOR = 161379915;</code> */
-    public static final int ACCELERATOR_VALUE = 161379915;
-    /** <code>LOCAL_SSD = 240499440;</code> */
-    public static final int LOCAL_SSD_VALUE = 240499440;
+    /** <code>ACCELERATOR = 429815371;</code> */
+    public static final int ACCELERATOR_VALUE = 429815371;
+    /** <code>LOCAL_SSD = 508934896;</code> */
+    public static final int LOCAL_SSD_VALUE = 508934896;
     /** <code>MEMORY = 123056385;</code> */
     public static final int MEMORY_VALUE = 123056385;
-    /** <code>UNSPECIFIED = 258350871;</code> */
-    public static final int UNSPECIFIED_VALUE = 258350871;
+    /** <code>UNSPECIFIED = 526786327;</code> */
+    public static final int UNSPECIFIED_VALUE = 526786327;
     /** <code>VCPU = 2628978;</code> */
     public static final int VCPU_VALUE = 2628978;
 
@@ -207,13 +208,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 161379915:
+        case 429815371:
           return ACCELERATOR;
-        case 240499440:
+        case 508934896:
           return LOCAL_SSD;
         case 123056385:
           return MEMORY;
-        case 258350871:
+        case 526786327:
           return UNSPECIFIED;
         case 2628978:
           return VCPU;
@@ -270,8 +271,24 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourceCommitment.Type)
   }
 
+  private int bitField0_;
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 138031246;
   private volatile java.lang.Object acceleratorType_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
+   * </pre>
+   *
+   * <code>string accelerator_type = 138031246;</code>
+   *
+   * @return Whether the acceleratorType field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceleratorType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -330,6 +347,21 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    * <code>string amount = 196759640;</code>
    *
+   * @return Whether the amount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAmount() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
+   * </pre>
+   *
+   * <code>string amount = 196759640;</code>
+   *
    * @return The amount.
    */
   @java.lang.Override
@@ -370,6 +402,21 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
   private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -420,13 +467,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (type_ != com.google.cloud.compute.v1.ResourceCommitment.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(3575610, type_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138031246, acceleratorType_);
     }
-    if (!getAmountBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 196759640, amount_);
     }
     unknownFields.writeTo(output);
@@ -438,13 +485,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != com.google.cloud.compute.v1.ResourceCommitment.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138031246, acceleratorType_);
     }
-    if (!getAmountBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(196759640, amount_);
     }
     size += unknownFields.getSerializedSize();
@@ -463,9 +510,18 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.ResourceCommitment other =
         (com.google.cloud.compute.v1.ResourceCommitment) obj;
 
-    if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
-    if (!getAmount().equals(other.getAmount())) return false;
-    if (type_ != other.type_) return false;
+    if (hasAcceleratorType() != other.hasAcceleratorType()) return false;
+    if (hasAcceleratorType()) {
+      if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+    }
+    if (hasAmount() != other.hasAmount()) return false;
+    if (hasAmount()) {
+      if (!getAmount().equals(other.getAmount())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -477,12 +533,18 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getAcceleratorType().hashCode();
-    hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAmount().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasAcceleratorType()) {
+      hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorType().hashCode();
+    }
+    if (hasAmount()) {
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -629,11 +691,11 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       acceleratorType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       amount_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -661,9 +723,21 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.ResourceCommitment buildPartial() {
       com.google.cloud.compute.v1.ResourceCommitment result =
           new com.google.cloud.compute.v1.ResourceCommitment(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.acceleratorType_ = acceleratorType_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.amount_ = amount_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -713,16 +787,18 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourceCommitment other) {
       if (other == com.google.cloud.compute.v1.ResourceCommitment.getDefaultInstance()) return this;
-      if (!other.getAcceleratorType().isEmpty()) {
+      if (other.hasAcceleratorType()) {
+        bitField0_ |= 0x00000001;
         acceleratorType_ = other.acceleratorType_;
         onChanged();
       }
-      if (!other.getAmount().isEmpty()) {
+      if (other.hasAmount()) {
+        bitField0_ |= 0x00000002;
         amount_ = other.amount_;
         onChanged();
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -753,7 +829,23 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object acceleratorType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
+     * </pre>
+     *
+     * <code>string accelerator_type = 138031246;</code>
+     *
+     * @return Whether the acceleratorType field is set.
+     */
+    public boolean hasAcceleratorType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -814,7 +906,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       acceleratorType_ = value;
       onChanged();
       return this;
@@ -831,7 +923,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       acceleratorType_ = getDefaultInstance().getAcceleratorType();
       onChanged();
       return this;
@@ -853,13 +945,27 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       acceleratorType_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object amount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
+     * </pre>
+     *
+     * <code>string amount = 196759640;</code>
+     *
+     * @return Whether the amount field is set.
+     */
+    public boolean hasAmount() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -920,7 +1026,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       amount_ = value;
       onChanged();
       return this;
@@ -937,7 +1043,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAmount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       amount_ = getDefaultInstance().getAmount();
       onChanged();
       return this;
@@ -959,13 +1065,28 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       amount_ = value;
       onChanged();
       return this;
     }
 
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -994,7 +1115,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000004;
       type_ = value;
       onChanged();
       return this;
@@ -1035,7 +1156,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1052,7 +1173,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;

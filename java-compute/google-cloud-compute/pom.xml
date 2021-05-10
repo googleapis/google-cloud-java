@@ -36,10 +36,12 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+      <version>1.63.3</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>0.80.3</version>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -70,12 +72,14 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>0.80.3</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+      <version>1.63.3</version>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>

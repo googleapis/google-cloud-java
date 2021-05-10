@@ -84,11 +84,21 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           case 24987818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               etag_ = s;
               break;
             }
-          case 477161578:
+          case 870991802:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.Rule>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              rules_.add(
+                  input.readMessage(com.google.cloud.compute.v1.Rule.parser(), extensionRegistry));
+              break;
+            }
+          case -1670322070:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 auditConfigs_ = new java.util.ArrayList<com.google.cloud.compute.v1.AuditConfig>();
@@ -99,22 +109,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.AuditConfig.parser(), extensionRegistry));
               break;
             }
-          case 665380544:
+          case -1482103104:
             {
+              bitField0_ |= 0x00000004;
               version_ = input.readInt32();
               break;
             }
-          case 870991802:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.Rule>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              rules_.add(
-                  input.readMessage(com.google.cloud.compute.v1.Rule.parser(), extensionRegistry));
-              break;
-            }
-          case 1078531186:
+          case -1068952462:
             {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 bindings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Binding>();
@@ -125,8 +126,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.Binding.parser(), extensionRegistry));
               break;
             }
-          case 1457045976:
+          case -690437672:
             {
+              bitField0_ |= 0x00000002;
               iamOwned_ = input.readBool();
               break;
             }
@@ -144,11 +146,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        rules_ = java.util.Collections.unmodifiableList(rules_);
+      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         auditConfigs_ = java.util.Collections.unmodifiableList(auditConfigs_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         bindings_ = java.util.Collections.unmodifiableList(bindings_);
@@ -173,7 +175,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Policy.Builder.class);
   }
 
-  public static final int AUDIT_CONFIGS_FIELD_NUMBER = 59645197;
+  private int bitField0_;
+  public static final int AUDIT_CONFIGS_FIELD_NUMBER = 328080653;
   private java.util.List<com.google.cloud.compute.v1.AuditConfig> auditConfigs_;
   /**
    *
@@ -182,7 +185,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.AuditConfig> getAuditConfigsList() {
@@ -195,7 +198,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.AuditConfigOrBuilder>
@@ -209,7 +212,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   @java.lang.Override
   public int getAuditConfigsCount() {
@@ -222,7 +225,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AuditConfig getAuditConfigs(int index) {
@@ -235,14 +238,14 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AuditConfigOrBuilder getAuditConfigsOrBuilder(int index) {
     return auditConfigs_.get(index);
   }
 
-  public static final int BINDINGS_FIELD_NUMBER = 134816398;
+  public static final int BINDINGS_FIELD_NUMBER = 403251854;
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
   /**
    *
@@ -251,7 +254,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
@@ -264,7 +267,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
@@ -278,7 +281,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public int getBindingsCount() {
@@ -291,7 +294,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Binding getBindings(int index) {
@@ -304,7 +307,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
@@ -313,6 +316,22 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ETAG_FIELD_NUMBER = 3123477;
   private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
+   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+   * </pre>
+   *
+   * <code>string etag = 3123477;</code>
+   *
+   * @return Whether the etag field is set.
+   */
+  @java.lang.Override
+  public boolean hasEtag() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -362,10 +381,19 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IAM_OWNED_FIELD_NUMBER = 182130747;
+  public static final int IAM_OWNED_FIELD_NUMBER = 450566203;
   private boolean iamOwned_;
   /**
-   * <code>bool iam_owned = 182130747;</code>
+   * <code>bool iam_owned = 450566203;</code>
+   *
+   * @return Whether the iamOwned field is set.
+   */
+  @java.lang.Override
+  public boolean hasIamOwned() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>bool iam_owned = 450566203;</code>
    *
    * @return The iamOwned.
    */
@@ -443,7 +471,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return rules_.get(index);
   }
 
-  public static final int VERSION_FIELD_NUMBER = 83172568;
+  public static final int VERSION_FIELD_NUMBER = 351608024;
   private int version_;
   /**
    *
@@ -458,7 +486,28 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    * </pre>
    *
-   * <code>int32 version = 83172568;</code>
+   * <code>int32 version = 351608024;</code>
+   *
+   * @return Whether the version field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersion() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the format of the policy.
+   * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
+   * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
+   * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
+   * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+   * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
+   * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+   * </pre>
+   *
+   * <code>int32 version = 351608024;</code>
    *
    * @return The version.
    */
@@ -481,23 +530,23 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEtagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3123477, etag_);
-    }
-    for (int i = 0; i < auditConfigs_.size(); i++) {
-      output.writeMessage(59645197, auditConfigs_.get(i));
-    }
-    if (version_ != 0) {
-      output.writeInt32(83172568, version_);
     }
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
-    for (int i = 0; i < bindings_.size(); i++) {
-      output.writeMessage(134816398, bindings_.get(i));
+    for (int i = 0; i < auditConfigs_.size(); i++) {
+      output.writeMessage(328080653, auditConfigs_.get(i));
     }
-    if (iamOwned_ != false) {
-      output.writeBool(182130747, iamOwned_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(351608024, version_);
+    }
+    for (int i = 0; i < bindings_.size(); i++) {
+      output.writeMessage(403251854, bindings_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(450566203, iamOwned_);
     }
     unknownFields.writeTo(output);
   }
@@ -508,24 +557,24 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getEtagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3123477, etag_);
-    }
-    for (int i = 0; i < auditConfigs_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(59645197, auditConfigs_.get(i));
-    }
-    if (version_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(83172568, version_);
     }
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
-    for (int i = 0; i < bindings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(134816398, bindings_.get(i));
+    for (int i = 0; i < auditConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(328080653, auditConfigs_.get(i));
     }
-    if (iamOwned_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(182130747, iamOwned_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(351608024, version_);
+    }
+    for (int i = 0; i < bindings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(403251854, bindings_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(450566203, iamOwned_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -544,10 +593,19 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
     if (!getAuditConfigsList().equals(other.getAuditConfigsList())) return false;
     if (!getBindingsList().equals(other.getBindingsList())) return false;
-    if (!getEtag().equals(other.getEtag())) return false;
-    if (getIamOwned() != other.getIamOwned()) return false;
+    if (hasEtag() != other.hasEtag()) return false;
+    if (hasEtag()) {
+      if (!getEtag().equals(other.getEtag())) return false;
+    }
+    if (hasIamOwned() != other.hasIamOwned()) return false;
+    if (hasIamOwned()) {
+      if (getIamOwned() != other.getIamOwned()) return false;
+    }
     if (!getRulesList().equals(other.getRulesList())) return false;
-    if (getVersion() != other.getVersion()) return false;
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (getVersion() != other.getVersion()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -567,16 +625,22 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getBindingsList().hashCode();
     }
-    hash = (37 * hash) + ETAG_FIELD_NUMBER;
-    hash = (53 * hash) + getEtag().hashCode();
-    hash = (37 * hash) + IAM_OWNED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIamOwned());
+    if (hasEtag()) {
+      hash = (37 * hash) + ETAG_FIELD_NUMBER;
+      hash = (53 * hash) + getEtag().hashCode();
+    }
+    if (hasIamOwned()) {
+      hash = (37 * hash) + IAM_OWNED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIamOwned());
+    }
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
       hash = (53 * hash) + getRulesList().hashCode();
     }
-    hash = (37 * hash) + VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getVersion();
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -745,17 +809,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         bindingsBuilder_.clear();
       }
       etag_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       iamOwned_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         rulesBuilder_.clear();
       }
       version_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -783,6 +847,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Policy buildPartial() {
       com.google.cloud.compute.v1.Policy result = new com.google.cloud.compute.v1.Policy(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (auditConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           auditConfigs_ = java.util.Collections.unmodifiableList(auditConfigs_);
@@ -801,18 +866,28 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.bindings_ = bindingsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.etag_ = etag_;
-      result.iamOwned_ = iamOwned_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.iamOwned_ = iamOwned_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      result.version_ = version_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.version_ = version_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -916,18 +991,19 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getEtag().isEmpty()) {
+      if (other.hasEtag()) {
+        bitField0_ |= 0x00000004;
         etag_ = other.etag_;
         onChanged();
       }
-      if (other.getIamOwned() != false) {
+      if (other.hasIamOwned()) {
         setIamOwned(other.getIamOwned());
       }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -940,7 +1016,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -950,7 +1026,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.getVersion() != 0) {
+      if (other.hasVersion()) {
         setVersion(other.getVersion());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1008,7 +1084,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AuditConfig> getAuditConfigsList() {
       if (auditConfigsBuilder_ == null) {
@@ -1024,7 +1100,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public int getAuditConfigsCount() {
       if (auditConfigsBuilder_ == null) {
@@ -1040,7 +1116,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public com.google.cloud.compute.v1.AuditConfig getAuditConfigs(int index) {
       if (auditConfigsBuilder_ == null) {
@@ -1056,7 +1132,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder setAuditConfigs(int index, com.google.cloud.compute.v1.AuditConfig value) {
       if (auditConfigsBuilder_ == null) {
@@ -1078,7 +1154,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder setAuditConfigs(
         int index, com.google.cloud.compute.v1.AuditConfig.Builder builderForValue) {
@@ -1098,7 +1174,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder addAuditConfigs(com.google.cloud.compute.v1.AuditConfig value) {
       if (auditConfigsBuilder_ == null) {
@@ -1120,7 +1196,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder addAuditConfigs(int index, com.google.cloud.compute.v1.AuditConfig value) {
       if (auditConfigsBuilder_ == null) {
@@ -1142,7 +1218,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder addAuditConfigs(
         com.google.cloud.compute.v1.AuditConfig.Builder builderForValue) {
@@ -1162,7 +1238,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder addAuditConfigs(
         int index, com.google.cloud.compute.v1.AuditConfig.Builder builderForValue) {
@@ -1182,7 +1258,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder addAllAuditConfigs(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.AuditConfig> values) {
@@ -1202,7 +1278,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder clearAuditConfigs() {
       if (auditConfigsBuilder_ == null) {
@@ -1221,7 +1297,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public Builder removeAuditConfigs(int index) {
       if (auditConfigsBuilder_ == null) {
@@ -1240,7 +1316,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public com.google.cloud.compute.v1.AuditConfig.Builder getAuditConfigsBuilder(int index) {
       return getAuditConfigsFieldBuilder().getBuilder(index);
@@ -1252,7 +1328,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public com.google.cloud.compute.v1.AuditConfigOrBuilder getAuditConfigsOrBuilder(int index) {
       if (auditConfigsBuilder_ == null) {
@@ -1268,7 +1344,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AuditConfigOrBuilder>
         getAuditConfigsOrBuilderList() {
@@ -1285,7 +1361,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public com.google.cloud.compute.v1.AuditConfig.Builder addAuditConfigsBuilder() {
       return getAuditConfigsFieldBuilder()
@@ -1298,7 +1374,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public com.google.cloud.compute.v1.AuditConfig.Builder addAuditConfigsBuilder(int index) {
       return getAuditConfigsFieldBuilder()
@@ -1311,7 +1387,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Specifies cloud audit logging configuration for this policy.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AuditConfig.Builder>
         getAuditConfigsBuilderList() {
@@ -1358,7 +1434,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
       if (bindingsBuilder_ == null) {
@@ -1374,7 +1450,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public int getBindingsCount() {
       if (bindingsBuilder_ == null) {
@@ -1390,7 +1466,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding getBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -1406,7 +1482,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder setBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -1428,7 +1504,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder setBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -1448,7 +1524,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -1470,7 +1546,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -1492,7 +1568,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding.Builder builderForValue) {
       if (bindingsBuilder_ == null) {
@@ -1511,7 +1587,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -1531,7 +1607,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addAllBindings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Binding> values) {
@@ -1551,7 +1627,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder clearBindings() {
       if (bindingsBuilder_ == null) {
@@ -1570,7 +1646,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder removeBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -1589,7 +1665,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder getBindingsBuilder(int index) {
       return getBindingsFieldBuilder().getBuilder(index);
@@ -1601,7 +1677,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
       if (bindingsBuilder_ == null) {
@@ -1617,7 +1693,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
         getBindingsOrBuilderList() {
@@ -1634,7 +1710,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder() {
       return getBindingsFieldBuilder()
@@ -1647,7 +1723,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder(int index) {
       return getBindingsFieldBuilder()
@@ -1660,7 +1736,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding.Builder> getBindingsBuilderList() {
       return getBindingsFieldBuilder().getBuilderList();
@@ -1684,6 +1760,21 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy.
+     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * </pre>
+     *
+     * <code>string etag = 3123477;</code>
+     *
+     * @return Whether the etag field is set.
+     */
+    public boolean hasEtag() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1747,7 +1838,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       etag_ = value;
       onChanged();
       return this;
@@ -1765,7 +1856,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       etag_ = getDefaultInstance().getEtag();
       onChanged();
       return this;
@@ -1788,7 +1879,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       etag_ = value;
       onChanged();
       return this;
@@ -1796,7 +1887,16 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
     private boolean iamOwned_;
     /**
-     * <code>bool iam_owned = 182130747;</code>
+     * <code>bool iam_owned = 450566203;</code>
+     *
+     * @return Whether the iamOwned field is set.
+     */
+    @java.lang.Override
+    public boolean hasIamOwned() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>bool iam_owned = 450566203;</code>
      *
      * @return The iamOwned.
      */
@@ -1805,24 +1905,24 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return iamOwned_;
     }
     /**
-     * <code>bool iam_owned = 182130747;</code>
+     * <code>bool iam_owned = 450566203;</code>
      *
      * @param value The iamOwned to set.
      * @return This builder for chaining.
      */
     public Builder setIamOwned(boolean value) {
-
+      bitField0_ |= 0x00000008;
       iamOwned_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool iam_owned = 182130747;</code>
+     * <code>bool iam_owned = 450566203;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIamOwned() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       iamOwned_ = false;
       onChanged();
       return this;
@@ -1832,9 +1932,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.Rule>(rules_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2047,7 +2147,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -2168,7 +2268,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Rule,
                 com.google.cloud.compute.v1.Rule.Builder,
                 com.google.cloud.compute.v1.RuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -2188,7 +2288,28 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 83172568;</code>
+     * <code>int32 version = 351608024;</code>
+     *
+     * @return Whether the version field is set.
+     */
+    @java.lang.Override
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the format of the policy.
+     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected.
+     * Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations:
+     * * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions
+     * **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost.
+     * If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
+     * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+     * </pre>
+     *
+     * <code>int32 version = 351608024;</code>
      *
      * @return The version.
      */
@@ -2209,13 +2330,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 83172568;</code>
+     * <code>int32 version = 351608024;</code>
      *
      * @param value The version to set.
      * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
-
+      bitField0_ |= 0x00000020;
       version_ = value;
       onChanged();
       return this;
@@ -2233,12 +2354,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
-     * <code>int32 version = 83172568;</code>
+     * <code>int32 version = 351608024;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       version_ = 0;
       onChanged();
       return this;

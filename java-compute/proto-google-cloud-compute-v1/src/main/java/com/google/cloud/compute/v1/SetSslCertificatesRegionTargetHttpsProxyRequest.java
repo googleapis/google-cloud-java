@@ -65,6 +65,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,7 +79,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -89,7 +90,21 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
               targetHttpsProxy_ = s;
               break;
             }
-          case 978063418:
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1169420230:
             {
               com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest.Builder
                   subBuilder = null;
@@ -107,20 +122,6 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
                     subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -158,6 +159,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
                 .class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -257,7 +259,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
   }
 
   public static final int
-      REGION_TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER = 122257927;
+      REGION_TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER = 390693383;
   private com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest
       regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
   /**
@@ -268,7 +270,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -285,7 +287,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionTargetHttpsProxiesSetSslCertificatesRequestResource.
@@ -306,7 +308,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -317,6 +319,23 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -431,21 +450,21 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getTargetHttpsProxyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 52336748, targetHttpsProxy_);
-    }
-    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
-      output.writeMessage(
-          122257927, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
+      output.writeMessage(
+          390693383, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -456,22 +475,22 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getTargetHttpsProxyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(52336748, targetHttpsProxy_);
-    }
-    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              122257927, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              390693383, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -499,7 +518,10 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
           .equals(other.getRegionTargetHttpsProxiesSetSslCertificatesRequestResource()))
         return false;
     }
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getTargetHttpsProxy().equals(other.getTargetHttpsProxy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -523,8 +545,10 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       hash =
           (53 * hash) + getRegionTargetHttpsProxiesSetSslCertificatesRequestResource().hashCode();
     }
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + TARGET_HTTPS_PROXY_FIELD_NUMBER;
     hash = (53 * hash) + getTargetHttpsProxy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -692,7 +716,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetHttpsProxy_ = "";
 
       return this;
@@ -726,6 +750,8 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         buildPartial() {
       com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest result =
           new com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
       result.region_ = region_;
       if (regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_ == null) {
@@ -735,8 +761,12 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         result.regionTargetHttpsProxiesSetSslCertificatesRequestResource_ =
             regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.targetHttpsProxy_ = targetHttpsProxy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -803,7 +833,8 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         mergeRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
             other.getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -842,6 +873,8 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -1070,7 +1103,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -1087,7 +1120,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionTargetHttpsProxiesSetSslCertificatesRequestResource.
@@ -1111,7 +1144,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1136,7 +1169,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1160,7 +1193,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1190,7 +1223,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionTargetHttpsProxiesSetSslCertificatesRequestResource() {
@@ -1212,7 +1245,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest.Builder
@@ -1230,7 +1263,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
@@ -1253,7 +1286,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1278,6 +1311,22 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1344,7 +1393,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1363,7 +1412,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1387,7 +1436,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

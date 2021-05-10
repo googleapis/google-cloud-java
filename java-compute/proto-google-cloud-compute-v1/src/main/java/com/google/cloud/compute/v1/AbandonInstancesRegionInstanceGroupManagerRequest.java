@@ -65,6 +65,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,7 +79,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -89,7 +90,21 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
               region_ = s;
               break;
             }
-          case 1760512282:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case 1994907162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceGroupManager_ = s;
+              break;
+            }
+          case -386971366:
             {
               com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest.Builder
                   subBuilder = null;
@@ -108,20 +123,6 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
                     subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1994907162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceGroupManager_ = s;
               break;
             }
           default:
@@ -159,6 +160,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
                 .class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_GROUP_MANAGER_FIELD_NUMBER = 249363395;
   private volatile java.lang.Object instanceGroupManager_;
   /**
@@ -309,7 +311,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int
-      REGION_INSTANCE_GROUP_MANAGERS_ABANDON_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 220064035;
+      REGION_INSTANCE_GROUP_MANAGERS_ABANDON_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 488499491;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest
       regionInstanceGroupManagersAbandonInstancesRequestResource_;
   /**
@@ -320,7 +322,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersAbandonInstancesRequestResource field is set.
@@ -337,7 +339,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersAbandonInstancesRequestResource.
@@ -358,7 +360,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -369,6 +371,23 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -434,21 +453,21 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
-    }
-    if (regionInstanceGroupManagersAbandonInstancesRequestResource_ != null) {
-      output.writeMessage(
-          220064035, getRegionInstanceGroupManagersAbandonInstancesRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
+    }
+    if (regionInstanceGroupManagersAbandonInstancesRequestResource_ != null) {
+      output.writeMessage(
+          488499491, getRegionInstanceGroupManagersAbandonInstancesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -459,16 +478,11 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (regionInstanceGroupManagersAbandonInstancesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              220064035, getRegionInstanceGroupManagersAbandonInstancesRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
@@ -477,6 +491,11 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
+    }
+    if (regionInstanceGroupManagersAbandonInstancesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              488499491, getRegionInstanceGroupManagersAbandonInstancesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -505,7 +524,10 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
           .equals(other.getRegionInstanceGroupManagersAbandonInstancesRequestResource()))
         return false;
     }
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -530,8 +552,10 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
       hash =
           (53 * hash) + getRegionInstanceGroupManagersAbandonInstancesRequestResource().hashCode();
     }
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -699,7 +723,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
         regionInstanceGroupManagersAbandonInstancesRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -731,6 +755,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
         buildPartial() {
       com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerRequest result =
           new com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instanceGroupManager_ = instanceGroupManager_;
       result.project_ = project_;
       result.region_ = region_;
@@ -741,7 +767,11 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
         result.regionInstanceGroupManagersAbandonInstancesRequestResource_ =
             regionInstanceGroupManagersAbandonInstancesRequestResourceBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -813,7 +843,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
         mergeRegionInstanceGroupManagersAbandonInstancesRequestResource(
             other.getRegionInstanceGroupManagersAbandonInstancesRequestResource());
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -848,6 +879,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
     /**
@@ -1187,7 +1220,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersAbandonInstancesRequestResource field is set.
@@ -1204,7 +1237,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersAbandonInstancesRequestResource.
@@ -1228,7 +1261,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersAbandonInstancesRequestResource(
@@ -1253,7 +1286,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersAbandonInstancesRequestResource(
@@ -1277,7 +1310,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersAbandonInstancesRequestResource(
@@ -1307,7 +1340,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersAbandonInstancesRequestResource() {
@@ -1329,7 +1362,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest.Builder
@@ -1347,7 +1380,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequestOrBuilder
@@ -1370,7 +1403,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1395,6 +1428,22 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1461,7 +1510,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1480,7 +1529,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1504,7 +1553,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

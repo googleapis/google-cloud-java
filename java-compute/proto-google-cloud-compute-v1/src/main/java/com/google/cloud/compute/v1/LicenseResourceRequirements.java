@@ -57,6 +57,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,13 +68,15 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
           case 0:
             done = true;
             break;
-          case 1676235040:
+          case -471248608:
             {
+              bitField0_ |= 0x00000001;
               minGuestCpuCount_ = input.readInt32();
               break;
             }
-          case 1890803504:
+          case -256680144:
             {
+              bitField0_ |= 0x00000002;
               minMemoryMb_ = input.readInt32();
               break;
             }
@@ -111,7 +114,8 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.LicenseResourceRequirements.Builder.class);
   }
 
-  public static final int MIN_GUEST_CPU_COUNT_FIELD_NUMBER = 209529380;
+  private int bitField0_;
+  public static final int MIN_GUEST_CPU_COUNT_FIELD_NUMBER = 477964836;
   private int minGuestCpuCount_;
   /**
    *
@@ -120,7 +124,22 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_guest_cpu_count = 209529380;</code>
+   * <code>int32 min_guest_cpu_count = 477964836;</code>
+   *
+   * @return Whether the minGuestCpuCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinGuestCpuCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
+   * </pre>
+   *
+   * <code>int32 min_guest_cpu_count = 477964836;</code>
    *
    * @return The minGuestCpuCount.
    */
@@ -129,7 +148,7 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     return minGuestCpuCount_;
   }
 
-  public static final int MIN_MEMORY_MB_FIELD_NUMBER = 236350438;
+  public static final int MIN_MEMORY_MB_FIELD_NUMBER = 504785894;
   private int minMemoryMb_;
   /**
    *
@@ -138,7 +157,22 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
    * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_memory_mb = 236350438;</code>
+   * <code>int32 min_memory_mb = 504785894;</code>
+   *
+   * @return Whether the minMemoryMb field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinMemoryMb() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
+   * </pre>
+   *
+   * <code>int32 min_memory_mb = 504785894;</code>
    *
    * @return The minMemoryMb.
    */
@@ -161,11 +195,11 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (minGuestCpuCount_ != 0) {
-      output.writeInt32(209529380, minGuestCpuCount_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(477964836, minGuestCpuCount_);
     }
-    if (minMemoryMb_ != 0) {
-      output.writeInt32(236350438, minMemoryMb_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(504785894, minMemoryMb_);
     }
     unknownFields.writeTo(output);
   }
@@ -176,11 +210,11 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (minGuestCpuCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(209529380, minGuestCpuCount_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(477964836, minGuestCpuCount_);
     }
-    if (minMemoryMb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(236350438, minMemoryMb_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(504785894, minMemoryMb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -198,8 +232,14 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.LicenseResourceRequirements other =
         (com.google.cloud.compute.v1.LicenseResourceRequirements) obj;
 
-    if (getMinGuestCpuCount() != other.getMinGuestCpuCount()) return false;
-    if (getMinMemoryMb() != other.getMinMemoryMb()) return false;
+    if (hasMinGuestCpuCount() != other.hasMinGuestCpuCount()) return false;
+    if (hasMinGuestCpuCount()) {
+      if (getMinGuestCpuCount() != other.getMinGuestCpuCount()) return false;
+    }
+    if (hasMinMemoryMb() != other.hasMinMemoryMb()) return false;
+    if (hasMinMemoryMb()) {
+      if (getMinMemoryMb() != other.getMinMemoryMb()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -211,10 +251,14 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MIN_GUEST_CPU_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getMinGuestCpuCount();
-    hash = (37 * hash) + MIN_MEMORY_MB_FIELD_NUMBER;
-    hash = (53 * hash) + getMinMemoryMb();
+    if (hasMinGuestCpuCount()) {
+      hash = (37 * hash) + MIN_GUEST_CPU_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getMinGuestCpuCount();
+    }
+    if (hasMinMemoryMb()) {
+      hash = (37 * hash) + MIN_MEMORY_MB_FIELD_NUMBER;
+      hash = (53 * hash) + getMinMemoryMb();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -361,9 +405,9 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       minGuestCpuCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minMemoryMb_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -391,8 +435,17 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.LicenseResourceRequirements buildPartial() {
       com.google.cloud.compute.v1.LicenseResourceRequirements result =
           new com.google.cloud.compute.v1.LicenseResourceRequirements(this);
-      result.minGuestCpuCount_ = minGuestCpuCount_;
-      result.minMemoryMb_ = minMemoryMb_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minGuestCpuCount_ = minGuestCpuCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minMemoryMb_ = minMemoryMb_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -443,10 +496,10 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.LicenseResourceRequirements other) {
       if (other == com.google.cloud.compute.v1.LicenseResourceRequirements.getDefaultInstance())
         return this;
-      if (other.getMinGuestCpuCount() != 0) {
+      if (other.hasMinGuestCpuCount()) {
         setMinGuestCpuCount(other.getMinGuestCpuCount());
       }
-      if (other.getMinMemoryMb() != 0) {
+      if (other.hasMinMemoryMb()) {
         setMinMemoryMb(other.getMinMemoryMb());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -479,6 +532,8 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private int minGuestCpuCount_;
     /**
      *
@@ -487,7 +542,22 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 209529380;</code>
+     * <code>int32 min_guest_cpu_count = 477964836;</code>
+     *
+     * @return Whether the minGuestCpuCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinGuestCpuCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
+     * </pre>
+     *
+     * <code>int32 min_guest_cpu_count = 477964836;</code>
      *
      * @return The minGuestCpuCount.
      */
@@ -502,13 +572,13 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 209529380;</code>
+     * <code>int32 min_guest_cpu_count = 477964836;</code>
      *
      * @param value The minGuestCpuCount to set.
      * @return This builder for chaining.
      */
     public Builder setMinGuestCpuCount(int value) {
-
+      bitField0_ |= 0x00000001;
       minGuestCpuCount_ = value;
       onChanged();
       return this;
@@ -520,12 +590,12 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_guest_cpu_count = 209529380;</code>
+     * <code>int32 min_guest_cpu_count = 477964836;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinGuestCpuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minGuestCpuCount_ = 0;
       onChanged();
       return this;
@@ -539,7 +609,22 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 236350438;</code>
+     * <code>int32 min_memory_mb = 504785894;</code>
+     *
+     * @return Whether the minMemoryMb field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinMemoryMb() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
+     * </pre>
+     *
+     * <code>int32 min_memory_mb = 504785894;</code>
      *
      * @return The minMemoryMb.
      */
@@ -554,13 +639,13 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 236350438;</code>
+     * <code>int32 min_memory_mb = 504785894;</code>
      *
      * @param value The minMemoryMb to set.
      * @return This builder for chaining.
      */
     public Builder setMinMemoryMb(int value) {
-
+      bitField0_ |= 0x00000002;
       minMemoryMb_ = value;
       onChanged();
       return this;
@@ -572,12 +657,12 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
      * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
      * </pre>
      *
-     * <code>int32 min_memory_mb = 236350438;</code>
+     * <code>int32 min_memory_mb = 504785894;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinMemoryMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minMemoryMb_ = 0;
       onChanged();
       return this;

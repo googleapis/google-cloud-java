@@ -30,7 +30,19 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 194485236;</code>
+   * <code>string address = 462920692;</code>
+   *
+   * @return Whether the address field is set.
+   */
+  boolean hasAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * </pre>
+   *
+   * <code>string address = 462920692;</code>
    *
    * @return The address.
    */
@@ -42,12 +54,24 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 194485236;</code>
+   * <code>string address = 462920692;</code>
    *
    * @return The bytes for address.
    */
   com.google.protobuf.ByteString getAddressBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
+   * </pre>
+   *
+   * <code>string availability_zone = 158459920;</code>
+   *
+   * @return Whether the availabilityZone field is set.
+   */
+  boolean hasAvailabilityZone();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface InterconnectLocationOrBuilder
    *
    * <code>string city = 3053931;</code>
    *
+   * @return Whether the city field is set.
+   */
+  boolean hasCity();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * </pre>
+   *
+   * <code>string city = 3053931;</code>
+   *
    * @return The city.
    */
   java.lang.String getCity();
@@ -98,6 +134,23 @@ public interface InterconnectLocationOrBuilder
    */
   com.google.protobuf.ByteString getCityBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Continent for this location, which can take one of the following values:
+   * - AFRICA
+   * - ASIA_PAC
+   * - EUROPE
+   * - NORTH_AMERICA
+   * - SOUTH_AMERICA
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   *
+   * @return Whether the continent field is set.
+   */
+  boolean hasContinent();
   /**
    *
    *
@@ -142,6 +195,18 @@ public interface InterconnectLocationOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -165,7 +230,19 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional description of the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -177,7 +254,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +267,19 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 264867853;</code>
+   * <code>string facility_provider = 533303309;</code>
+   *
+   * @return Whether the facilityProvider field is set.
+   */
+  boolean hasFacilityProvider();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * </pre>
+   *
+   * <code>string facility_provider = 533303309;</code>
    *
    * @return The facilityProvider.
    */
@@ -202,12 +291,24 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 264867853;</code>
+   * <code>string facility_provider = 533303309;</code>
    *
    * @return The bytes for facilityProvider.
    */
   com.google.protobuf.ByteString getFacilityProviderBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * </pre>
+   *
+   * <code>string facility_provider_facility_id = 87269125;</code>
+   *
+   * @return Whether the facilityProviderFacilityId field is set.
+   */
+  boolean hasFacilityProviderFacilityId();
   /**
    *
    *
@@ -242,6 +343,18 @@ public interface InterconnectLocationOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -258,6 +371,18 @@ public interface InterconnectLocationOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -292,6 +417,18 @@ public interface InterconnectLocationOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -315,7 +452,19 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 268131638;</code>
+   * <code>string peeringdb_facility_id = 536567094;</code>
+   *
+   * @return Whether the peeringdbFacilityId field is set.
+   */
+  boolean hasPeeringdbFacilityId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * </pre>
+   *
+   * <code>string peeringdb_facility_id = 536567094;</code>
    *
    * @return The peeringdbFacilityId.
    */
@@ -327,7 +476,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 268131638;</code>
+   * <code>string peeringdb_facility_id = 536567094;</code>
    *
    * @return The bytes for peeringdbFacilityId.
    */
@@ -340,7 +489,8 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> getRegionInfosList();
@@ -351,7 +501,8 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfo getRegionInfos(int index);
@@ -362,7 +513,8 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
    * </code>
    */
   int getRegionInfosCount();
@@ -373,7 +525,8 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder>
@@ -385,7 +538,8 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder getRegionInfosOrBuilder(
@@ -398,7 +552,19 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -410,12 +576,26 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
+   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
+   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *

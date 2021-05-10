@@ -94,67 +94,55 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000200;
               id_ = s;
               break;
             }
           case 867696:
             {
+              bitField0_ |= 0x00001000;
               mtu_ = input.readInt32();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00002000;
               name_ = s;
               break;
             }
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00800000;
               type_ = rawValue;
-              break;
-            }
-          case 151658562:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cloudRouterIpAddress_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               creationTimestamp_ = s;
               break;
             }
           case 279360600:
             {
+              bitField0_ |= 0x00000020;
               dataplaneVersion_ = input.readInt32();
-              break;
-            }
-          case 512322442:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              customerRouterIpAddress_ = s;
               break;
             }
           case 527271474:
             {
               com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder subBuilder =
                   null;
-              if (partnerMetadata_ != null) {
+              if (((bitField0_ & 0x00020000) != 0)) {
                 subBuilder = partnerMetadata_.toBuilder();
               }
               partnerMetadata_ =
@@ -165,93 +153,61 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
                 subBuilder.mergeFrom(partnerMetadata_);
                 partnerMetadata_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00020000;
               break;
             }
           case 570316080:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000080;
               edgeAvailabilityDomain_ = rawValue;
               break;
             }
           case 878060680:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00400000;
               state_ = rawValue;
               break;
             }
           case 959422688:
             {
+              bitField0_ |= 0x01000000;
               vlanTag8021Q_ = input.readInt32();
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00080000;
               region_ = s;
               break;
             }
           case 1188870730:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00100000;
               router_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1357845546:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              partnerAsn_ = s;
-              break;
-            }
-          case 1370080066:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pairingKey_ = s;
-              break;
-            }
-          case 1417917064:
-            {
-              adminEnabled_ = input.readBool();
               break;
             }
           case 1453720968:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               bandwidth_ = rawValue;
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1608566776:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00004000;
               operationalStatus_ = rawValue;
               break;
             }
           case 1796809842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               interconnect_ = s;
               break;
             }
@@ -259,7 +215,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             {
               com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder subBuilder =
                   null;
-              if (privateInterconnectInfo_ != null) {
+              if (((bitField0_ & 0x00040000) != 0)) {
                 subBuilder = privateInterconnectInfo_.toBuilder();
               }
               privateInterconnectInfo_ =
@@ -270,23 +226,71 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
                 subBuilder.mergeFrom(privateInterconnectInfo_);
                 privateInterconnectInfo_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00040000;
               break;
             }
           case 1902743506:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 candidateSubnets_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               candidateSubnets_.add(s);
               break;
             }
-          case 2132072106:
+          case -1995825086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              cloudRouterIpAddress_ = s;
+              break;
+            }
+          case -1635161206:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              customerRouterIpAddress_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              description_ = s;
+              break;
+            }
+          case -789638102:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00010000;
+              partnerAsn_ = s;
+              break;
+            }
+          case -777403582:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              pairingKey_ = s;
+              break;
+            }
+          case -729566584:
+            {
+              bitField0_ |= 0x00000001;
+              adminEnabled_ = input.readBool();
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00200000;
+              selfLink_ = s;
+              break;
+            }
+          case -15411542:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
               googleReferenceId_ = s;
               break;
             }
@@ -304,7 +308,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         candidateSubnets_ = candidateSubnets_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -361,28 +365,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     UNDEFINED_BANDWIDTH(0),
     /** <code>BPS_100M = 49547958;</code> */
     BPS_100M(49547958),
-    /** <code>BPS_10G = 10257550;</code> */
-    BPS_10G(10257550),
-    /** <code>BPS_1G = 86922992;</code> */
-    BPS_1G(86922992),
+    /** <code>BPS_10G = 278693006;</code> */
+    BPS_10G(278693006),
+    /** <code>BPS_1G = 355358448;</code> */
+    BPS_1G(355358448),
     /** <code>BPS_200M = 49577749;</code> */
     BPS_200M(49577749),
-    /** <code>BPS_20G = 10258511;</code> */
-    BPS_20G(10258511),
-    /** <code>BPS_2G = 86923023;</code> */
-    BPS_2G(86923023),
+    /** <code>BPS_20G = 278693967;</code> */
+    BPS_20G(278693967),
+    /** <code>BPS_2G = 355358479;</code> */
+    BPS_2G(355358479),
     /** <code>BPS_300M = 49607540;</code> */
     BPS_300M(49607540),
     /** <code>BPS_400M = 49637331;</code> */
     BPS_400M(49637331),
     /** <code>BPS_500M = 49667122;</code> */
     BPS_500M(49667122),
-    /** <code>BPS_50G = 10261394;</code> */
-    BPS_50G(10261394),
-    /** <code>BPS_50M = 10261400;</code> */
-    BPS_50M(10261400),
-    /** <code>BPS_5G = 86923116;</code> */
-    BPS_5G(86923116),
+    /** <code>BPS_50G = 278696850;</code> */
+    BPS_50G(278696850),
+    /** <code>BPS_50M = 278696856;</code> */
+    BPS_50M(278696856),
+    /** <code>BPS_5G = 355358572;</code> */
+    BPS_5G(355358572),
     UNRECOGNIZED(-1),
     ;
 
@@ -398,28 +402,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public static final int UNDEFINED_BANDWIDTH_VALUE = 0;
     /** <code>BPS_100M = 49547958;</code> */
     public static final int BPS_100M_VALUE = 49547958;
-    /** <code>BPS_10G = 10257550;</code> */
-    public static final int BPS_10G_VALUE = 10257550;
-    /** <code>BPS_1G = 86922992;</code> */
-    public static final int BPS_1G_VALUE = 86922992;
+    /** <code>BPS_10G = 278693006;</code> */
+    public static final int BPS_10G_VALUE = 278693006;
+    /** <code>BPS_1G = 355358448;</code> */
+    public static final int BPS_1G_VALUE = 355358448;
     /** <code>BPS_200M = 49577749;</code> */
     public static final int BPS_200M_VALUE = 49577749;
-    /** <code>BPS_20G = 10258511;</code> */
-    public static final int BPS_20G_VALUE = 10258511;
-    /** <code>BPS_2G = 86923023;</code> */
-    public static final int BPS_2G_VALUE = 86923023;
+    /** <code>BPS_20G = 278693967;</code> */
+    public static final int BPS_20G_VALUE = 278693967;
+    /** <code>BPS_2G = 355358479;</code> */
+    public static final int BPS_2G_VALUE = 355358479;
     /** <code>BPS_300M = 49607540;</code> */
     public static final int BPS_300M_VALUE = 49607540;
     /** <code>BPS_400M = 49637331;</code> */
     public static final int BPS_400M_VALUE = 49637331;
     /** <code>BPS_500M = 49667122;</code> */
     public static final int BPS_500M_VALUE = 49667122;
-    /** <code>BPS_50G = 10261394;</code> */
-    public static final int BPS_50G_VALUE = 10261394;
-    /** <code>BPS_50M = 10261400;</code> */
-    public static final int BPS_50M_VALUE = 10261400;
-    /** <code>BPS_5G = 86923116;</code> */
-    public static final int BPS_5G_VALUE = 86923116;
+    /** <code>BPS_50G = 278696850;</code> */
+    public static final int BPS_50G_VALUE = 278696850;
+    /** <code>BPS_50M = 278696856;</code> */
+    public static final int BPS_50M_VALUE = 278696856;
+    /** <code>BPS_5G = 355358572;</code> */
+    public static final int BPS_5G_VALUE = 355358572;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -449,15 +453,15 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           return UNDEFINED_BANDWIDTH;
         case 49547958:
           return BPS_100M;
-        case 10257550:
+        case 278693006:
           return BPS_10G;
-        case 86922992:
+        case 355358448:
           return BPS_1G;
         case 49577749:
           return BPS_200M;
-        case 10258511:
+        case 278693967:
           return BPS_20G;
-        case 86923023:
+        case 355358479:
           return BPS_2G;
         case 49607540:
           return BPS_300M;
@@ -465,11 +469,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           return BPS_400M;
         case 49667122:
           return BPS_500M;
-        case 10261394:
+        case 278696850:
           return BPS_50G;
-        case 10261400:
+        case 278696856:
           return BPS_50M;
-        case 86923116:
+        case 355358572:
           return BPS_5G;
         default:
           return null;
@@ -549,12 +553,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_EDGE_AVAILABILITY_DOMAIN = 0;</code>
      */
     UNDEFINED_EDGE_AVAILABILITY_DOMAIN(0),
-    /** <code>AVAILABILITY_DOMAIN_1 = 81116634;</code> */
-    AVAILABILITY_DOMAIN_1(81116634),
-    /** <code>AVAILABILITY_DOMAIN_2 = 81116635;</code> */
-    AVAILABILITY_DOMAIN_2(81116635),
-    /** <code>AVAILABILITY_DOMAIN_ANY = 106820917;</code> */
-    AVAILABILITY_DOMAIN_ANY(106820917),
+    /** <code>AVAILABILITY_DOMAIN_1 = 349552090;</code> */
+    AVAILABILITY_DOMAIN_1(349552090),
+    /** <code>AVAILABILITY_DOMAIN_2 = 349552091;</code> */
+    AVAILABILITY_DOMAIN_2(349552091),
+    /** <code>AVAILABILITY_DOMAIN_ANY = 375256373;</code> */
+    AVAILABILITY_DOMAIN_ANY(375256373),
     UNRECOGNIZED(-1),
     ;
 
@@ -568,12 +572,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_EDGE_AVAILABILITY_DOMAIN = 0;</code>
      */
     public static final int UNDEFINED_EDGE_AVAILABILITY_DOMAIN_VALUE = 0;
-    /** <code>AVAILABILITY_DOMAIN_1 = 81116634;</code> */
-    public static final int AVAILABILITY_DOMAIN_1_VALUE = 81116634;
-    /** <code>AVAILABILITY_DOMAIN_2 = 81116635;</code> */
-    public static final int AVAILABILITY_DOMAIN_2_VALUE = 81116635;
-    /** <code>AVAILABILITY_DOMAIN_ANY = 106820917;</code> */
-    public static final int AVAILABILITY_DOMAIN_ANY_VALUE = 106820917;
+    /** <code>AVAILABILITY_DOMAIN_1 = 349552090;</code> */
+    public static final int AVAILABILITY_DOMAIN_1_VALUE = 349552090;
+    /** <code>AVAILABILITY_DOMAIN_2 = 349552091;</code> */
+    public static final int AVAILABILITY_DOMAIN_2_VALUE = 349552091;
+    /** <code>AVAILABILITY_DOMAIN_ANY = 375256373;</code> */
+    public static final int AVAILABILITY_DOMAIN_ANY_VALUE = 375256373;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -601,11 +605,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return UNDEFINED_EDGE_AVAILABILITY_DOMAIN;
-        case 81116634:
+        case 349552090:
           return AVAILABILITY_DOMAIN_1;
-        case 81116635:
+        case 349552091:
           return AVAILABILITY_DOMAIN_2;
-        case 106820917:
+        case 375256373:
           return AVAILABILITY_DOMAIN_ANY;
         default:
           return null;
@@ -823,20 +827,20 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 46297862;</code> */
-    ACTIVE(46297862),
+    /** <code>ACTIVE = 314733318;</code> */
+    ACTIVE(314733318),
     /** <code>DEFUNCT = 115891759;</code> */
     DEFUNCT(115891759),
-    /** <code>PARTNER_REQUEST_RECEIVED = 245151848;</code> */
-    PARTNER_REQUEST_RECEIVED(245151848),
+    /** <code>PARTNER_REQUEST_RECEIVED = 513587304;</code> */
+    PARTNER_REQUEST_RECEIVED(513587304),
     /** <code>PENDING_CUSTOMER = 167494054;</code> */
     PENDING_CUSTOMER(167494054),
-    /** <code>PENDING_PARTNER = 119455200;</code> */
-    PENDING_PARTNER(119455200),
-    /** <code>STATE_UNSPECIFIED = 202319945;</code> */
-    STATE_UNSPECIFIED(202319945),
-    /** <code>UNPROVISIONED = 248898523;</code> */
-    UNPROVISIONED(248898523),
+    /** <code>PENDING_PARTNER = 387890656;</code> */
+    PENDING_PARTNER(387890656),
+    /** <code>STATE_UNSPECIFIED = 470755401;</code> */
+    STATE_UNSPECIFIED(470755401),
+    /** <code>UNPROVISIONED = 517333979;</code> */
+    UNPROVISIONED(517333979),
     UNRECOGNIZED(-1),
     ;
 
@@ -850,20 +854,20 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 46297862;</code> */
-    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>ACTIVE = 314733318;</code> */
+    public static final int ACTIVE_VALUE = 314733318;
     /** <code>DEFUNCT = 115891759;</code> */
     public static final int DEFUNCT_VALUE = 115891759;
-    /** <code>PARTNER_REQUEST_RECEIVED = 245151848;</code> */
-    public static final int PARTNER_REQUEST_RECEIVED_VALUE = 245151848;
+    /** <code>PARTNER_REQUEST_RECEIVED = 513587304;</code> */
+    public static final int PARTNER_REQUEST_RECEIVED_VALUE = 513587304;
     /** <code>PENDING_CUSTOMER = 167494054;</code> */
     public static final int PENDING_CUSTOMER_VALUE = 167494054;
-    /** <code>PENDING_PARTNER = 119455200;</code> */
-    public static final int PENDING_PARTNER_VALUE = 119455200;
-    /** <code>STATE_UNSPECIFIED = 202319945;</code> */
-    public static final int STATE_UNSPECIFIED_VALUE = 202319945;
-    /** <code>UNPROVISIONED = 248898523;</code> */
-    public static final int UNPROVISIONED_VALUE = 248898523;
+    /** <code>PENDING_PARTNER = 387890656;</code> */
+    public static final int PENDING_PARTNER_VALUE = 387890656;
+    /** <code>STATE_UNSPECIFIED = 470755401;</code> */
+    public static final int STATE_UNSPECIFIED_VALUE = 470755401;
+    /** <code>UNPROVISIONED = 517333979;</code> */
+    public static final int UNPROVISIONED_VALUE = 517333979;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -891,19 +895,19 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 46297862:
+        case 314733318:
           return ACTIVE;
         case 115891759:
           return DEFUNCT;
-        case 245151848:
+        case 513587304:
           return PARTNER_REQUEST_RECEIVED;
         case 167494054:
           return PENDING_CUSTOMER;
-        case 119455200:
+        case 387890656:
           return PENDING_PARTNER;
-        case 202319945:
+        case 470755401:
           return STATE_UNSPECIFIED;
-        case 248898523:
+        case 517333979:
           return UNPROVISIONED;
         default:
           return null;
@@ -985,10 +989,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     UNDEFINED_TYPE(0),
     /** <code>DEDICATED = 258411983;</code> */
     DEDICATED(258411983),
-    /** <code>PARTNER = 193489064;</code> */
-    PARTNER(193489064),
-    /** <code>PARTNER_PROVIDER = 214825896;</code> */
-    PARTNER_PROVIDER(214825896),
+    /** <code>PARTNER = 461924520;</code> */
+    PARTNER(461924520),
+    /** <code>PARTNER_PROVIDER = 483261352;</code> */
+    PARTNER_PROVIDER(483261352),
     UNRECOGNIZED(-1),
     ;
 
@@ -1004,10 +1008,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public static final int UNDEFINED_TYPE_VALUE = 0;
     /** <code>DEDICATED = 258411983;</code> */
     public static final int DEDICATED_VALUE = 258411983;
-    /** <code>PARTNER = 193489064;</code> */
-    public static final int PARTNER_VALUE = 193489064;
-    /** <code>PARTNER_PROVIDER = 214825896;</code> */
-    public static final int PARTNER_PROVIDER_VALUE = 214825896;
+    /** <code>PARTNER = 461924520;</code> */
+    public static final int PARTNER_VALUE = 461924520;
+    /** <code>PARTNER_PROVIDER = 483261352;</code> */
+    public static final int PARTNER_PROVIDER_VALUE = 483261352;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1037,9 +1041,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           return UNDEFINED_TYPE;
         case 258411983:
           return DEDICATED;
-        case 193489064:
+        case 461924520:
           return PARTNER;
-        case 214825896:
+        case 483261352:
           return PARTNER_PROVIDER;
         default:
           return null;
@@ -1096,7 +1100,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectAttachment.Type)
   }
 
-  public static final int ADMIN_ENABLED_FIELD_NUMBER = 177239633;
+  private int bitField0_;
+  public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
   private boolean adminEnabled_;
   /**
    *
@@ -1105,7 +1110,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
    * </pre>
    *
-   * <code>bool admin_enabled = 177239633;</code>
+   * <code>bool admin_enabled = 445675089;</code>
+   *
+   * @return Whether the adminEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdminEnabled() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
+   * </pre>
+   *
+   * <code>bool admin_enabled = 445675089;</code>
    *
    * @return The adminEnabled.
    */
@@ -1116,6 +1136,33 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int BANDWIDTH_FIELD_NUMBER = 181715121;
   private int bandwidth_;
+  /**
+   *
+   *
+   * <pre>
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
+   * - BPS_50M: 50 Mbit/s
+   * - BPS_100M: 100 Mbit/s
+   * - BPS_200M: 200 Mbit/s
+   * - BPS_300M: 300 Mbit/s
+   * - BPS_400M: 400 Mbit/s
+   * - BPS_500M: 500 Mbit/s
+   * - BPS_1G: 1 Gbit/s
+   * - BPS_2G: 2 Gbit/s
+   * - BPS_5G: 5 Gbit/s
+   * - BPS_10G: 10 Gbit/s
+   * - BPS_20G: 20 Gbit/s
+   * - BPS_50G: 50 Gbit/s
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
+   *
+   * @return Whether the bandwidth field is set.
+   */
+  @java.lang.Override
+  public boolean hasBandwidth() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -1237,7 +1284,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     return candidateSubnets_.getByteString(index);
   }
 
-  public static final int CLOUD_ROUTER_IP_ADDRESS_FIELD_NUMBER = 18957320;
+  public static final int CLOUD_ROUTER_IP_ADDRESS_FIELD_NUMBER = 287392776;
   private volatile java.lang.Object cloudRouterIpAddress_;
   /**
    *
@@ -1246,7 +1293,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 18957320;</code>
+   * <code>string cloud_router_ip_address = 287392776;</code>
+   *
+   * @return Whether the cloudRouterIpAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudRouterIpAddress() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>string cloud_router_ip_address = 287392776;</code>
    *
    * @return The cloudRouterIpAddress.
    */
@@ -1269,7 +1331,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 18957320;</code>
+   * <code>string cloud_router_ip_address = 287392776;</code>
    *
    * @return The bytes for cloudRouterIpAddress.
    */
@@ -1288,6 +1350,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -1335,7 +1412,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int CUSTOMER_ROUTER_IP_ADDRESS_FIELD_NUMBER = 64040305;
+  public static final int CUSTOMER_ROUTER_IP_ADDRESS_FIELD_NUMBER = 332475761;
   private volatile java.lang.Object customerRouterIpAddress_;
   /**
    *
@@ -1344,7 +1421,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 64040305;</code>
+   * <code>string customer_router_ip_address = 332475761;</code>
+   *
+   * @return Whether the customerRouterIpAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomerRouterIpAddress() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>string customer_router_ip_address = 332475761;</code>
    *
    * @return The customerRouterIpAddress.
    */
@@ -1367,7 +1459,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 64040305;</code>
+   * <code>string customer_router_ip_address = 332475761;</code>
    *
    * @return The bytes for customerRouterIpAddress.
    */
@@ -1395,6 +1487,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>int32 dataplane_version = 34920075;</code>
    *
+   * @return Whether the dataplaneVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplaneVersion() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Dataplane version for this InterconnectAttachment.
+   * </pre>
+   *
+   * <code>int32 dataplane_version = 34920075;</code>
+   *
    * @return The dataplaneVersion.
    */
   @java.lang.Override
@@ -1402,7 +1509,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     return dataplaneVersion_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -1411,7 +1518,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -1434,7 +1556,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -1453,6 +1575,26 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int EDGE_AVAILABILITY_DOMAIN_FIELD_NUMBER = 71289510;
   private int edgeAvailabilityDomain_;
+  /**
+   *
+   *
+   * <pre>
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
+   * - AVAILABILITY_DOMAIN_ANY
+   * - AVAILABILITY_DOMAIN_1
+   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain edge_availability_domain = 71289510;
+   * </code>
+   *
+   * @return Whether the edgeAvailabilityDomain field is set.
+   */
+  @java.lang.Override
+  public boolean hasEdgeAvailabilityDomain() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -1501,7 +1643,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         : result;
   }
 
-  public static final int GOOGLE_REFERENCE_ID_FIELD_NUMBER = 266509013;
+  public static final int GOOGLE_REFERENCE_ID_FIELD_NUMBER = 534944469;
   private volatile java.lang.Object googleReferenceId_;
   /**
    *
@@ -1510,7 +1652,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
+   *
+   * @return Whether the googleReferenceId field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleReferenceId() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
+   * </pre>
+   *
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The googleReferenceId.
    */
@@ -1533,7 +1690,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The bytes for googleReferenceId.
    */
@@ -1552,6 +1709,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -1610,6 +1782,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>string interconnect = 224601230;</code>
    *
+   * @return Whether the interconnect field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterconnect() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the underlying Interconnect object that this attachment's traffic will traverse through.
+   * </pre>
+   *
+   * <code>string interconnect = 224601230;</code>
+   *
    * @return The interconnect.
    */
   @java.lang.Override
@@ -1650,6 +1837,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -1708,6 +1910,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>int32 mtu = 108462;</code>
    *
+   * @return Whether the mtu field is set.
+   */
+  @java.lang.Override
+  public boolean hasMtu() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+   * </pre>
+   *
+   * <code>int32 mtu = 108462;</code>
+   *
    * @return The mtu.
    */
   @java.lang.Override
@@ -1717,6 +1934,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
   /**
    *
    *
@@ -1779,6 +2011,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * .google.cloud.compute.v1.InterconnectAttachment.OperationalStatus operational_status = 201070847;
    * </code>
    *
+   * @return Whether the operationalStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasOperationalStatus() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
+   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
+   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectAttachment.OperationalStatus operational_status = 201070847;
+   * </code>
+   *
    * @return The enum numeric value on the wire for operationalStatus.
    */
   @java.lang.Override
@@ -1812,7 +2063,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         : result;
   }
 
-  public static final int PAIRING_KEY_FIELD_NUMBER = 171260008;
+  public static final int PAIRING_KEY_FIELD_NUMBER = 439695464;
   private volatile java.lang.Object pairingKey_;
   /**
    *
@@ -1821,7 +2072,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 171260008;</code>
+   * <code>string pairing_key = 439695464;</code>
+   *
+   * @return Whether the pairingKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasPairingKey() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+   * </pre>
+   *
+   * <code>string pairing_key = 439695464;</code>
    *
    * @return The pairingKey.
    */
@@ -1844,7 +2110,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 171260008;</code>
+   * <code>string pairing_key = 439695464;</code>
    *
    * @return The bytes for pairingKey.
    */
@@ -1861,7 +2127,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int PARTNER_ASN_FIELD_NUMBER = 169730693;
+  public static final int PARTNER_ASN_FIELD_NUMBER = 438166149;
   private volatile java.lang.Object partnerAsn_;
   /**
    *
@@ -1870,7 +2136,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 169730693;</code>
+   * <code>string partner_asn = 438166149;</code>
+   *
+   * @return Whether the partnerAsn field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartnerAsn() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
+   * </pre>
+   *
+   * <code>string partner_asn = 438166149;</code>
    *
    * @return The partnerAsn.
    */
@@ -1893,7 +2174,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 169730693;</code>
+   * <code>string partner_asn = 438166149;</code>
    *
    * @return The bytes for partnerAsn.
    */
@@ -1927,7 +2208,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPartnerMetadata() {
-    return partnerMetadata_ != null;
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1962,7 +2243,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadataOrBuilder
       getPartnerMetadataOrBuilder() {
-    return getPartnerMetadata();
+    return partnerMetadata_ == null
+        ? com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.getDefaultInstance()
+        : partnerMetadata_;
   }
 
   public static final int PRIVATE_INTERCONNECT_INFO_FIELD_NUMBER = 237270531;
@@ -1982,7 +2265,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPrivateInterconnectInfo() {
-    return privateInterconnectInfo_ != null;
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2018,11 +2301,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfoOrBuilder
       getPrivateInterconnectInfoOrBuilder() {
-    return getPrivateInterconnectInfo();
+    return privateInterconnectInfo_ == null
+        ? com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.getDefaultInstance()
+        : privateInterconnectInfo_;
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
   /**
    *
    *
@@ -2081,6 +2381,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>string router = 148608841;</code>
    *
+   * @return Whether the router field is set.
+   */
+  @java.lang.Override
+  public boolean hasRouter() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured.
+   * </pre>
+   *
+   * <code>string router = 148608841;</code>
+   *
    * @return The router.
    */
   @java.lang.Override
@@ -2119,7 +2434,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -2128,7 +2443,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -2151,7 +2481,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -2170,6 +2500,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
+   * - ACTIVE: The attachment has been turned up and is ready to use.
+   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
+   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
+   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
+   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
+   *
+   * @return Whether the state field is set.
+   */
+  @java.lang.Override
+  public boolean hasState() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
   /**
    *
    *
@@ -2232,6 +2583,24 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
    *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of interconnect attachment this is, which can take one of the following values:
+   * - DEDICATED: an attachment to a Dedicated Interconnect.
+   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
+   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -2273,6 +2642,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    * <code>int32 vlan_tag8021q = 119927836;</code>
    *
+   * @return Whether the vlanTag8021q field is set.
+   */
+  @java.lang.Override
+  public boolean hasVlanTag8021Q() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+   * </pre>
+   *
+   * <code>int32 vlan_tag8021q = 119927836;</code>
+   *
    * @return The vlanTag8021q.
    */
   @java.lang.Override
@@ -2294,95 +2678,85 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (mtu_ != 0) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(108462, mtu_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (type_
-        != com.google.cloud.compute.v1.InterconnectAttachment.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeEnum(3575610, type_);
     }
-    if (!getCloudRouterIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 18957320, cloudRouterIpAddress_);
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (dataplaneVersion_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(34920075, dataplaneVersion_);
     }
-    if (!getCustomerRouterIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 64040305, customerRouterIpAddress_);
-    }
-    if (partnerMetadata_ != null) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(65908934, getPartnerMetadata());
     }
-    if (edgeAvailabilityDomain_
-        != com.google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain
-            .UNDEFINED_EDGE_AVAILABILITY_DOMAIN
-            .getNumber()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeEnum(71289510, edgeAvailabilityDomain_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectAttachment.State.UNDEFINED_STATE.getNumber()) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeEnum(109757585, state_);
     }
-    if (vlanTag8021Q_ != 0) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeInt32(119927836, vlanTag8021Q_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getRouterBytes().isEmpty()) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 148608841, router_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getPartnerAsnBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 169730693, partnerAsn_);
-    }
-    if (!getPairingKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 171260008, pairingKey_);
-    }
-    if (adminEnabled_ != false) {
-      output.writeBool(177239633, adminEnabled_);
-    }
-    if (bandwidth_
-        != com.google.cloud.compute.v1.InterconnectAttachment.Bandwidth.UNDEFINED_BANDWIDTH
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(181715121, bandwidth_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (operationalStatus_
-        != com.google.cloud.compute.v1.InterconnectAttachment.OperationalStatus
-            .UNDEFINED_OPERATIONAL_STATUS
-            .getNumber()) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeEnum(201070847, operationalStatus_);
     }
-    if (!getInterconnectBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 224601230, interconnect_);
     }
-    if (privateInterconnectInfo_ != null) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(237270531, getPrivateInterconnectInfo());
     }
     for (int i = 0; i < candidateSubnets_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 237842938, candidateSubnets_.getRaw(i));
     }
-    if (!getGoogleReferenceIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 266509013, googleReferenceId_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 287392776, cloudRouterIpAddress_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 332475761, customerRouterIpAddress_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 438166149, partnerAsn_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 439695464, pairingKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(445675089, adminEnabled_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
     }
     unknownFields.writeTo(output);
   }
@@ -2393,92 +2767,58 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (mtu_ != 0) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (type_
-        != com.google.cloud.compute.v1.InterconnectAttachment.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
-    if (!getCloudRouterIpAddressBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(18957320, cloudRouterIpAddress_);
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (dataplaneVersion_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(34920075, dataplaneVersion_);
     }
-    if (!getCustomerRouterIpAddressBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              64040305, customerRouterIpAddress_);
-    }
-    if (partnerMetadata_ != null) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(65908934, getPartnerMetadata());
     }
-    if (edgeAvailabilityDomain_
-        != com.google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain
-            .UNDEFINED_EDGE_AVAILABILITY_DOMAIN
-            .getNumber()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(71289510, edgeAvailabilityDomain_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectAttachment.State.UNDEFINED_STATE.getNumber()) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
-    if (vlanTag8021Q_ != 0) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(119927836, vlanTag8021Q_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getRouterBytes().isEmpty()) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (!getPartnerAsnBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(169730693, partnerAsn_);
-    }
-    if (!getPairingKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171260008, pairingKey_);
-    }
-    if (adminEnabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(177239633, adminEnabled_);
-    }
-    if (bandwidth_
-        != com.google.cloud.compute.v1.InterconnectAttachment.Bandwidth.UNDEFINED_BANDWIDTH
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181715121, bandwidth_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (operationalStatus_
-        != com.google.cloud.compute.v1.InterconnectAttachment.OperationalStatus
-            .UNDEFINED_OPERATIONAL_STATUS
-            .getNumber()) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(201070847, operationalStatus_);
     }
-    if (!getInterconnectBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(224601230, interconnect_);
     }
-    if (privateInterconnectInfo_ != null) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               237270531, getPrivateInterconnectInfo());
@@ -2491,9 +2831,34 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 5 * getCandidateSubnetsList().size();
     }
-    if (!getGoogleReferenceIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(266509013, googleReferenceId_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              287392776, cloudRouterIpAddress_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              332475761, customerRouterIpAddress_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(438166149, partnerAsn_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(439695464, pairingKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(445675089, adminEnabled_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(534944469, googleReferenceId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2511,24 +2876,75 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.InterconnectAttachment other =
         (com.google.cloud.compute.v1.InterconnectAttachment) obj;
 
-    if (getAdminEnabled() != other.getAdminEnabled()) return false;
-    if (bandwidth_ != other.bandwidth_) return false;
+    if (hasAdminEnabled() != other.hasAdminEnabled()) return false;
+    if (hasAdminEnabled()) {
+      if (getAdminEnabled() != other.getAdminEnabled()) return false;
+    }
+    if (hasBandwidth() != other.hasBandwidth()) return false;
+    if (hasBandwidth()) {
+      if (bandwidth_ != other.bandwidth_) return false;
+    }
     if (!getCandidateSubnetsList().equals(other.getCandidateSubnetsList())) return false;
-    if (!getCloudRouterIpAddress().equals(other.getCloudRouterIpAddress())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getCustomerRouterIpAddress().equals(other.getCustomerRouterIpAddress())) return false;
-    if (getDataplaneVersion() != other.getDataplaneVersion()) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (edgeAvailabilityDomain_ != other.edgeAvailabilityDomain_) return false;
-    if (!getGoogleReferenceId().equals(other.getGoogleReferenceId())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getInterconnect().equals(other.getInterconnect())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (getMtu() != other.getMtu()) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (operationalStatus_ != other.operationalStatus_) return false;
-    if (!getPairingKey().equals(other.getPairingKey())) return false;
-    if (!getPartnerAsn().equals(other.getPartnerAsn())) return false;
+    if (hasCloudRouterIpAddress() != other.hasCloudRouterIpAddress()) return false;
+    if (hasCloudRouterIpAddress()) {
+      if (!getCloudRouterIpAddress().equals(other.getCloudRouterIpAddress())) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasCustomerRouterIpAddress() != other.hasCustomerRouterIpAddress()) return false;
+    if (hasCustomerRouterIpAddress()) {
+      if (!getCustomerRouterIpAddress().equals(other.getCustomerRouterIpAddress())) return false;
+    }
+    if (hasDataplaneVersion() != other.hasDataplaneVersion()) return false;
+    if (hasDataplaneVersion()) {
+      if (getDataplaneVersion() != other.getDataplaneVersion()) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasEdgeAvailabilityDomain() != other.hasEdgeAvailabilityDomain()) return false;
+    if (hasEdgeAvailabilityDomain()) {
+      if (edgeAvailabilityDomain_ != other.edgeAvailabilityDomain_) return false;
+    }
+    if (hasGoogleReferenceId() != other.hasGoogleReferenceId()) return false;
+    if (hasGoogleReferenceId()) {
+      if (!getGoogleReferenceId().equals(other.getGoogleReferenceId())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasInterconnect() != other.hasInterconnect()) return false;
+    if (hasInterconnect()) {
+      if (!getInterconnect().equals(other.getInterconnect())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasMtu() != other.hasMtu()) return false;
+    if (hasMtu()) {
+      if (getMtu() != other.getMtu()) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasOperationalStatus() != other.hasOperationalStatus()) return false;
+    if (hasOperationalStatus()) {
+      if (operationalStatus_ != other.operationalStatus_) return false;
+    }
+    if (hasPairingKey() != other.hasPairingKey()) return false;
+    if (hasPairingKey()) {
+      if (!getPairingKey().equals(other.getPairingKey())) return false;
+    }
+    if (hasPartnerAsn() != other.hasPartnerAsn()) return false;
+    if (hasPartnerAsn()) {
+      if (!getPartnerAsn().equals(other.getPartnerAsn())) return false;
+    }
     if (hasPartnerMetadata() != other.hasPartnerMetadata()) return false;
     if (hasPartnerMetadata()) {
       if (!getPartnerMetadata().equals(other.getPartnerMetadata())) return false;
@@ -2537,12 +2953,30 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasPrivateInterconnectInfo()) {
       if (!getPrivateInterconnectInfo().equals(other.getPrivateInterconnectInfo())) return false;
     }
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRouter().equals(other.getRouter())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (state_ != other.state_) return false;
-    if (type_ != other.type_) return false;
-    if (getVlanTag8021Q() != other.getVlanTag8021Q()) return false;
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasRouter() != other.hasRouter()) return false;
+    if (hasRouter()) {
+      if (!getRouter().equals(other.getRouter())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (state_ != other.state_) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
+    if (hasVlanTag8021Q() != other.hasVlanTag8021Q()) return false;
+    if (hasVlanTag8021Q()) {
+      if (getVlanTag8021Q() != other.getVlanTag8021Q()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2554,44 +2988,78 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ADMIN_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminEnabled());
-    hash = (37 * hash) + BANDWIDTH_FIELD_NUMBER;
-    hash = (53 * hash) + bandwidth_;
+    if (hasAdminEnabled()) {
+      hash = (37 * hash) + ADMIN_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminEnabled());
+    }
+    if (hasBandwidth()) {
+      hash = (37 * hash) + BANDWIDTH_FIELD_NUMBER;
+      hash = (53 * hash) + bandwidth_;
+    }
     if (getCandidateSubnetsCount() > 0) {
       hash = (37 * hash) + CANDIDATE_SUBNETS_FIELD_NUMBER;
       hash = (53 * hash) + getCandidateSubnetsList().hashCode();
     }
-    hash = (37 * hash) + CLOUD_ROUTER_IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getCloudRouterIpAddress().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + CUSTOMER_ROUTER_IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getCustomerRouterIpAddress().hashCode();
-    hash = (37 * hash) + DATAPLANE_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getDataplaneVersion();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + EDGE_AVAILABILITY_DOMAIN_FIELD_NUMBER;
-    hash = (53 * hash) + edgeAvailabilityDomain_;
-    hash = (37 * hash) + GOOGLE_REFERENCE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGoogleReferenceId().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + INTERCONNECT_FIELD_NUMBER;
-    hash = (53 * hash) + getInterconnect().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + MTU_FIELD_NUMBER;
-    hash = (53 * hash) + getMtu();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + OPERATIONAL_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + operationalStatus_;
-    hash = (37 * hash) + PAIRING_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getPairingKey().hashCode();
-    hash = (37 * hash) + PARTNER_ASN_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerAsn().hashCode();
+    if (hasCloudRouterIpAddress()) {
+      hash = (37 * hash) + CLOUD_ROUTER_IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudRouterIpAddress().hashCode();
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasCustomerRouterIpAddress()) {
+      hash = (37 * hash) + CUSTOMER_ROUTER_IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerRouterIpAddress().hashCode();
+    }
+    if (hasDataplaneVersion()) {
+      hash = (37 * hash) + DATAPLANE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplaneVersion();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasEdgeAvailabilityDomain()) {
+      hash = (37 * hash) + EDGE_AVAILABILITY_DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + edgeAvailabilityDomain_;
+    }
+    if (hasGoogleReferenceId()) {
+      hash = (37 * hash) + GOOGLE_REFERENCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleReferenceId().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasInterconnect()) {
+      hash = (37 * hash) + INTERCONNECT_FIELD_NUMBER;
+      hash = (53 * hash) + getInterconnect().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasMtu()) {
+      hash = (37 * hash) + MTU_FIELD_NUMBER;
+      hash = (53 * hash) + getMtu();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasOperationalStatus()) {
+      hash = (37 * hash) + OPERATIONAL_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + operationalStatus_;
+    }
+    if (hasPairingKey()) {
+      hash = (37 * hash) + PAIRING_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPairingKey().hashCode();
+    }
+    if (hasPartnerAsn()) {
+      hash = (37 * hash) + PARTNER_ASN_FIELD_NUMBER;
+      hash = (53 * hash) + getPartnerAsn().hashCode();
+    }
     if (hasPartnerMetadata()) {
       hash = (37 * hash) + PARTNER_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerMetadata().hashCode();
@@ -2600,18 +3068,30 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + PRIVATE_INTERCONNECT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateInterconnectInfo().hashCode();
     }
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + ROUTER_FIELD_NUMBER;
-    hash = (53 * hash) + getRouter().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
-    hash = (37 * hash) + VLAN_TAG8021Q_FIELD_NUMBER;
-    hash = (53 * hash) + getVlanTag8021Q();
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasRouter()) {
+      hash = (37 * hash) + ROUTER_FIELD_NUMBER;
+      hash = (53 * hash) + getRouter().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
+    if (hasVlanTag8021Q()) {
+      hash = (37 * hash) + VLAN_TAG8021Q_FIELD_NUMBER;
+      hash = (53 * hash) + getVlanTag8021Q();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2752,72 +3232,75 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPartnerMetadataFieldBuilder();
+        getPrivateInterconnectInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       adminEnabled_ = false;
-
-      bandwidth_ = 0;
-
-      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      bandwidth_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       cloudRouterIpAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       customerRouterIpAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       dataplaneVersion_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       edgeAvailabilityDomain_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       googleReferenceId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       interconnect_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       mtu_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       operationalStatus_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       pairingKey_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       partnerAsn_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       if (partnerMetadataBuilder_ == null) {
         partnerMetadata_ = null;
       } else {
-        partnerMetadata_ = null;
-        partnerMetadataBuilder_ = null;
+        partnerMetadataBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00040000);
       if (privateInterconnectInfoBuilder_ == null) {
         privateInterconnectInfo_ = null;
       } else {
-        privateInterconnectInfo_ = null;
-        privateInterconnectInfoBuilder_ = null;
+        privateInterconnectInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00080000);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       router_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       state_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       vlanTag8021Q_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x02000000);
       return this;
     }
 
@@ -2846,44 +3329,121 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.InterconnectAttachment result =
           new com.google.cloud.compute.v1.InterconnectAttachment(this);
       int from_bitField0_ = bitField0_;
-      result.adminEnabled_ = adminEnabled_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adminEnabled_ = adminEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.bandwidth_ = bandwidth_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         candidateSubnets_ = candidateSubnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.candidateSubnets_ = candidateSubnets_;
-      result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
-      result.creationTimestamp_ = creationTimestamp_;
-      result.customerRouterIpAddress_ = customerRouterIpAddress_;
-      result.dataplaneVersion_ = dataplaneVersion_;
-      result.description_ = description_;
-      result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
-      result.googleReferenceId_ = googleReferenceId_;
-      result.id_ = id_;
-      result.interconnect_ = interconnect_;
-      result.kind_ = kind_;
-      result.mtu_ = mtu_;
-      result.name_ = name_;
-      result.operationalStatus_ = operationalStatus_;
-      result.pairingKey_ = pairingKey_;
-      result.partnerAsn_ = partnerAsn_;
-      if (partnerMetadataBuilder_ == null) {
-        result.partnerMetadata_ = partnerMetadata_;
-      } else {
-        result.partnerMetadata_ = partnerMetadataBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
-      if (privateInterconnectInfoBuilder_ == null) {
-        result.privateInterconnectInfo_ = privateInterconnectInfo_;
-      } else {
-        result.privateInterconnectInfo_ = privateInterconnectInfoBuilder_.build();
+      result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
+      result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
+      result.customerRouterIpAddress_ = customerRouterIpAddress_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.dataplaneVersion_ = dataplaneVersion_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
+      result.description_ = description_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
+      result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
+      result.googleReferenceId_ = googleReferenceId_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
+      result.id_ = id_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
+      result.interconnect_ = interconnect_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.mtu_ = mtu_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        to_bitField0_ |= 0x00002000;
+      }
+      result.name_ = name_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
+      result.operationalStatus_ = operationalStatus_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00008000;
+      }
+      result.pairingKey_ = pairingKey_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00010000;
+      }
+      result.partnerAsn_ = partnerAsn_;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        if (partnerMetadataBuilder_ == null) {
+          result.partnerMetadata_ = partnerMetadata_;
+        } else {
+          result.partnerMetadata_ = partnerMetadataBuilder_.build();
+        }
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        if (privateInterconnectInfoBuilder_ == null) {
+          result.privateInterconnectInfo_ = privateInterconnectInfo_;
+        } else {
+          result.privateInterconnectInfo_ = privateInterconnectInfoBuilder_.build();
+        }
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        to_bitField0_ |= 0x00080000;
       }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        to_bitField0_ |= 0x00100000;
+      }
       result.router_ = router_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        to_bitField0_ |= 0x00200000;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        to_bitField0_ |= 0x00400000;
+      }
       result.state_ = state_;
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        to_bitField0_ |= 0x00800000;
+      }
       result.type_ = type_;
-      result.vlanTag8021Q_ = vlanTag8021Q_;
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.vlanTag8021Q_ = vlanTag8021Q_;
+        to_bitField0_ |= 0x01000000;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2934,75 +3494,86 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.InterconnectAttachment other) {
       if (other == com.google.cloud.compute.v1.InterconnectAttachment.getDefaultInstance())
         return this;
-      if (other.getAdminEnabled() != false) {
+      if (other.hasAdminEnabled()) {
         setAdminEnabled(other.getAdminEnabled());
       }
-      if (other.bandwidth_ != 0) {
-        setBandwidthValue(other.getBandwidthValue());
+      if (other.hasBandwidth()) {
+        setBandwidth(other.getBandwidth());
       }
       if (!other.candidateSubnets_.isEmpty()) {
         if (candidateSubnets_.isEmpty()) {
           candidateSubnets_ = other.candidateSubnets_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureCandidateSubnetsIsMutable();
           candidateSubnets_.addAll(other.candidateSubnets_);
         }
         onChanged();
       }
-      if (!other.getCloudRouterIpAddress().isEmpty()) {
+      if (other.hasCloudRouterIpAddress()) {
+        bitField0_ |= 0x00000008;
         cloudRouterIpAddress_ = other.cloudRouterIpAddress_;
         onChanged();
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000010;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getCustomerRouterIpAddress().isEmpty()) {
+      if (other.hasCustomerRouterIpAddress()) {
+        bitField0_ |= 0x00000020;
         customerRouterIpAddress_ = other.customerRouterIpAddress_;
         onChanged();
       }
-      if (other.getDataplaneVersion() != 0) {
+      if (other.hasDataplaneVersion()) {
         setDataplaneVersion(other.getDataplaneVersion());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000080;
         description_ = other.description_;
         onChanged();
       }
-      if (other.edgeAvailabilityDomain_ != 0) {
-        setEdgeAvailabilityDomainValue(other.getEdgeAvailabilityDomainValue());
+      if (other.hasEdgeAvailabilityDomain()) {
+        setEdgeAvailabilityDomain(other.getEdgeAvailabilityDomain());
       }
-      if (!other.getGoogleReferenceId().isEmpty()) {
+      if (other.hasGoogleReferenceId()) {
+        bitField0_ |= 0x00000200;
         googleReferenceId_ = other.googleReferenceId_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000400;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getInterconnect().isEmpty()) {
+      if (other.hasInterconnect()) {
+        bitField0_ |= 0x00000800;
         interconnect_ = other.interconnect_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00001000;
         kind_ = other.kind_;
         onChanged();
       }
-      if (other.getMtu() != 0) {
+      if (other.hasMtu()) {
         setMtu(other.getMtu());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00004000;
         name_ = other.name_;
         onChanged();
       }
-      if (other.operationalStatus_ != 0) {
-        setOperationalStatusValue(other.getOperationalStatusValue());
+      if (other.hasOperationalStatus()) {
+        setOperationalStatus(other.getOperationalStatus());
       }
-      if (!other.getPairingKey().isEmpty()) {
+      if (other.hasPairingKey()) {
+        bitField0_ |= 0x00010000;
         pairingKey_ = other.pairingKey_;
         onChanged();
       }
-      if (!other.getPartnerAsn().isEmpty()) {
+      if (other.hasPartnerAsn()) {
+        bitField0_ |= 0x00020000;
         partnerAsn_ = other.partnerAsn_;
         onChanged();
       }
@@ -3012,25 +3583,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (other.hasPrivateInterconnectInfo()) {
         mergePrivateInterconnectInfo(other.getPrivateInterconnectInfo());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00100000;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRouter().isEmpty()) {
+      if (other.hasRouter()) {
+        bitField0_ |= 0x00200000;
         router_ = other.router_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00400000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
+      if (other.hasState()) {
+        setState(other.getState());
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
-      if (other.getVlanTag8021Q() != 0) {
+      if (other.hasVlanTag8021Q()) {
         setVlanTag8021Q(other.getVlanTag8021Q());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3073,7 +3647,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      * </pre>
      *
-     * <code>bool admin_enabled = 177239633;</code>
+     * <code>bool admin_enabled = 445675089;</code>
+     *
+     * @return Whether the adminEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdminEnabled() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
+     * </pre>
+     *
+     * <code>bool admin_enabled = 445675089;</code>
      *
      * @return The adminEnabled.
      */
@@ -3088,13 +3677,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      * </pre>
      *
-     * <code>bool admin_enabled = 177239633;</code>
+     * <code>bool admin_enabled = 445675089;</code>
      *
      * @param value The adminEnabled to set.
      * @return This builder for chaining.
      */
     public Builder setAdminEnabled(boolean value) {
-
+      bitField0_ |= 0x00000001;
       adminEnabled_ = value;
       onChanged();
       return this;
@@ -3106,18 +3695,45 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
      * </pre>
      *
-     * <code>bool admin_enabled = 177239633;</code>
+     * <code>bool admin_enabled = 445675089;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAdminEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       adminEnabled_ = false;
       onChanged();
       return this;
     }
 
     private int bandwidth_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
+     * - BPS_50M: 50 Mbit/s
+     * - BPS_100M: 100 Mbit/s
+     * - BPS_200M: 200 Mbit/s
+     * - BPS_300M: 300 Mbit/s
+     * - BPS_400M: 400 Mbit/s
+     * - BPS_500M: 500 Mbit/s
+     * - BPS_1G: 1 Gbit/s
+     * - BPS_2G: 2 Gbit/s
+     * - BPS_5G: 5 Gbit/s
+     * - BPS_10G: 10 Gbit/s
+     * - BPS_20G: 20 Gbit/s
+     * - BPS_50G: 50 Gbit/s
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
+     *
+     * @return Whether the bandwidth field is set.
+     */
+    @java.lang.Override
+    public boolean hasBandwidth() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -3170,7 +3786,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setBandwidthValue(int value) {
-
+      bitField0_ |= 0x00000002;
       bandwidth_ = value;
       onChanged();
       return this;
@@ -3236,7 +3852,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       bandwidth_ = value.getNumber();
       onChanged();
       return this;
@@ -3265,7 +3881,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearBandwidth() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       bandwidth_ = 0;
       onChanged();
       return this;
@@ -3275,9 +3891,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCandidateSubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         candidateSubnets_ = new com.google.protobuf.LazyStringArrayList(candidateSubnets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -3412,7 +4028,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearCandidateSubnets() {
       candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3447,7 +4063,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      * </pre>
      *
-     * <code>string cloud_router_ip_address = 18957320;</code>
+     * <code>string cloud_router_ip_address = 287392776;</code>
+     *
+     * @return Whether the cloudRouterIpAddress field is set.
+     */
+    public boolean hasCloudRouterIpAddress() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+     * </pre>
+     *
+     * <code>string cloud_router_ip_address = 287392776;</code>
      *
      * @return The cloudRouterIpAddress.
      */
@@ -3469,7 +4099,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      * </pre>
      *
-     * <code>string cloud_router_ip_address = 18957320;</code>
+     * <code>string cloud_router_ip_address = 287392776;</code>
      *
      * @return The bytes for cloudRouterIpAddress.
      */
@@ -3491,7 +4121,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      * </pre>
      *
-     * <code>string cloud_router_ip_address = 18957320;</code>
+     * <code>string cloud_router_ip_address = 287392776;</code>
      *
      * @param value The cloudRouterIpAddress to set.
      * @return This builder for chaining.
@@ -3500,7 +4130,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       cloudRouterIpAddress_ = value;
       onChanged();
       return this;
@@ -3512,12 +4142,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      * </pre>
      *
-     * <code>string cloud_router_ip_address = 18957320;</code>
+     * <code>string cloud_router_ip_address = 287392776;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCloudRouterIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       cloudRouterIpAddress_ = getDefaultInstance().getCloudRouterIpAddress();
       onChanged();
       return this;
@@ -3529,7 +4159,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
      * </pre>
      *
-     * <code>string cloud_router_ip_address = 18957320;</code>
+     * <code>string cloud_router_ip_address = 287392776;</code>
      *
      * @param value The bytes for cloudRouterIpAddress to set.
      * @return This builder for chaining.
@@ -3539,13 +4169,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       cloudRouterIpAddress_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -3606,7 +4250,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3623,7 +4267,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -3645,7 +4289,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3659,7 +4303,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      * </pre>
      *
-     * <code>string customer_router_ip_address = 64040305;</code>
+     * <code>string customer_router_ip_address = 332475761;</code>
+     *
+     * @return Whether the customerRouterIpAddress field is set.
+     */
+    public boolean hasCustomerRouterIpAddress() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+     * </pre>
+     *
+     * <code>string customer_router_ip_address = 332475761;</code>
      *
      * @return The customerRouterIpAddress.
      */
@@ -3681,7 +4339,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      * </pre>
      *
-     * <code>string customer_router_ip_address = 64040305;</code>
+     * <code>string customer_router_ip_address = 332475761;</code>
      *
      * @return The bytes for customerRouterIpAddress.
      */
@@ -3703,7 +4361,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      * </pre>
      *
-     * <code>string customer_router_ip_address = 64040305;</code>
+     * <code>string customer_router_ip_address = 332475761;</code>
      *
      * @param value The customerRouterIpAddress to set.
      * @return This builder for chaining.
@@ -3712,7 +4370,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       customerRouterIpAddress_ = value;
       onChanged();
       return this;
@@ -3724,12 +4382,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      * </pre>
      *
-     * <code>string customer_router_ip_address = 64040305;</code>
+     * <code>string customer_router_ip_address = 332475761;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCustomerRouterIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       customerRouterIpAddress_ = getDefaultInstance().getCustomerRouterIpAddress();
       onChanged();
       return this;
@@ -3741,7 +4399,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
      * </pre>
      *
-     * <code>string customer_router_ip_address = 64040305;</code>
+     * <code>string customer_router_ip_address = 332475761;</code>
      *
      * @param value The bytes for customerRouterIpAddress to set.
      * @return This builder for chaining.
@@ -3751,13 +4409,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       customerRouterIpAddress_ = value;
       onChanged();
       return this;
     }
 
     private int dataplaneVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Dataplane version for this InterconnectAttachment.
+     * </pre>
+     *
+     * <code>int32 dataplane_version = 34920075;</code>
+     *
+     * @return Whether the dataplaneVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataplaneVersion() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -3786,7 +4459,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDataplaneVersion(int value) {
-
+      bitField0_ |= 0x00000040;
       dataplaneVersion_ = value;
       onChanged();
       return this;
@@ -3803,7 +4476,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataplaneVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       dataplaneVersion_ = 0;
       onChanged();
       return this;
@@ -3817,7 +4490,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3839,7 +4526,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3861,7 +4548,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3870,7 +4557,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       description_ = value;
       onChanged();
       return this;
@@ -3882,12 +4569,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -3899,7 +4586,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3909,13 +4596,33 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       description_ = value;
       onChanged();
       return this;
     }
 
     private int edgeAvailabilityDomain_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
+     * - AVAILABILITY_DOMAIN_ANY
+     * - AVAILABILITY_DOMAIN_1
+     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain edge_availability_domain = 71289510;
+     * </code>
+     *
+     * @return Whether the edgeAvailabilityDomain field is set.
+     */
+    @java.lang.Override
+    public boolean hasEdgeAvailabilityDomain() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3954,7 +4661,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEdgeAvailabilityDomainValue(int value) {
-
+      bitField0_ |= 0x00000100;
       edgeAvailabilityDomain_ = value;
       onChanged();
       return this;
@@ -4008,7 +4715,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       edgeAvailabilityDomain_ = value.getNumber();
       onChanged();
       return this;
@@ -4030,7 +4737,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEdgeAvailabilityDomain() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       edgeAvailabilityDomain_ = 0;
       onChanged();
       return this;
@@ -4044,7 +4751,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      * </pre>
      *
-     * <code>string google_reference_id = 266509013;</code>
+     * <code>string google_reference_id = 534944469;</code>
+     *
+     * @return Whether the googleReferenceId field is set.
+     */
+    public boolean hasGoogleReferenceId() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
+     * </pre>
+     *
+     * <code>string google_reference_id = 534944469;</code>
      *
      * @return The googleReferenceId.
      */
@@ -4066,7 +4787,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      * </pre>
      *
-     * <code>string google_reference_id = 266509013;</code>
+     * <code>string google_reference_id = 534944469;</code>
      *
      * @return The bytes for googleReferenceId.
      */
@@ -4088,7 +4809,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      * </pre>
      *
-     * <code>string google_reference_id = 266509013;</code>
+     * <code>string google_reference_id = 534944469;</code>
      *
      * @param value The googleReferenceId to set.
      * @return This builder for chaining.
@@ -4097,7 +4818,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       googleReferenceId_ = value;
       onChanged();
       return this;
@@ -4109,12 +4830,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      * </pre>
      *
-     * <code>string google_reference_id = 266509013;</code>
+     * <code>string google_reference_id = 534944469;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoogleReferenceId() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       googleReferenceId_ = getDefaultInstance().getGoogleReferenceId();
       onChanged();
       return this;
@@ -4126,7 +4847,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
      * </pre>
      *
-     * <code>string google_reference_id = 266509013;</code>
+     * <code>string google_reference_id = 534944469;</code>
      *
      * @param value The bytes for googleReferenceId to set.
      * @return This builder for chaining.
@@ -4136,13 +4857,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       googleReferenceId_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -4203,7 +4938,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       id_ = value;
       onChanged();
       return this;
@@ -4220,7 +4955,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -4242,13 +4977,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object interconnect_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the underlying Interconnect object that this attachment's traffic will traverse through.
+     * </pre>
+     *
+     * <code>string interconnect = 224601230;</code>
+     *
+     * @return Whether the interconnect field is set.
+     */
+    public boolean hasInterconnect() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -4309,7 +5058,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       interconnect_ = value;
       onChanged();
       return this;
@@ -4326,7 +5075,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInterconnect() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       interconnect_ = getDefaultInstance().getInterconnect();
       onChanged();
       return this;
@@ -4348,13 +5097,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       interconnect_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -4415,7 +5178,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       kind_ = value;
       onChanged();
       return this;
@@ -4432,7 +5195,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -4454,13 +5217,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private int mtu_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+     * </pre>
+     *
+     * <code>int32 mtu = 108462;</code>
+     *
+     * @return Whether the mtu field is set.
+     */
+    @java.lang.Override
+    public boolean hasMtu() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
     /**
      *
      *
@@ -4489,7 +5267,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setMtu(int value) {
-
+      bitField0_ |= 0x00002000;
       mtu_ = value;
       onChanged();
       return this;
@@ -4506,13 +5284,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       mtu_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
     /**
      *
      *
@@ -4573,7 +5365,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       name_ = value;
       onChanged();
       return this;
@@ -4590,7 +5382,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4612,13 +5404,32 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00004000;
       name_ = value;
       onChanged();
       return this;
     }
 
     private int operationalStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
+     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
+     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InterconnectAttachment.OperationalStatus operational_status = 201070847;
+     * </code>
+     *
+     * @return Whether the operationalStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasOperationalStatus() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
     /**
      *
      *
@@ -4655,7 +5466,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setOperationalStatusValue(int value) {
-
+      bitField0_ |= 0x00008000;
       operationalStatus_ = value;
       onChanged();
       return this;
@@ -4707,7 +5518,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       operationalStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -4728,7 +5539,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOperationalStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       operationalStatus_ = 0;
       onChanged();
       return this;
@@ -4742,7 +5553,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      * </pre>
      *
-     * <code>string pairing_key = 171260008;</code>
+     * <code>string pairing_key = 439695464;</code>
+     *
+     * @return Whether the pairingKey field is set.
+     */
+    public boolean hasPairingKey() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+     * </pre>
+     *
+     * <code>string pairing_key = 439695464;</code>
      *
      * @return The pairingKey.
      */
@@ -4764,7 +5589,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      * </pre>
      *
-     * <code>string pairing_key = 171260008;</code>
+     * <code>string pairing_key = 439695464;</code>
      *
      * @return The bytes for pairingKey.
      */
@@ -4786,7 +5611,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      * </pre>
      *
-     * <code>string pairing_key = 171260008;</code>
+     * <code>string pairing_key = 439695464;</code>
      *
      * @param value The pairingKey to set.
      * @return This builder for chaining.
@@ -4795,7 +5620,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       pairingKey_ = value;
       onChanged();
       return this;
@@ -4807,12 +5632,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      * </pre>
      *
-     * <code>string pairing_key = 171260008;</code>
+     * <code>string pairing_key = 439695464;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPairingKey() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       pairingKey_ = getDefaultInstance().getPairingKey();
       onChanged();
       return this;
@@ -4824,7 +5649,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
      * </pre>
      *
-     * <code>string pairing_key = 171260008;</code>
+     * <code>string pairing_key = 439695464;</code>
      *
      * @param value The bytes for pairingKey to set.
      * @return This builder for chaining.
@@ -4834,7 +5659,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00010000;
       pairingKey_ = value;
       onChanged();
       return this;
@@ -4848,7 +5673,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 169730693;</code>
+     * <code>string partner_asn = 438166149;</code>
+     *
+     * @return Whether the partnerAsn field is set.
+     */
+    public boolean hasPartnerAsn() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
+     * </pre>
+     *
+     * <code>string partner_asn = 438166149;</code>
      *
      * @return The partnerAsn.
      */
@@ -4870,7 +5709,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 169730693;</code>
+     * <code>string partner_asn = 438166149;</code>
      *
      * @return The bytes for partnerAsn.
      */
@@ -4892,7 +5731,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 169730693;</code>
+     * <code>string partner_asn = 438166149;</code>
      *
      * @param value The partnerAsn to set.
      * @return This builder for chaining.
@@ -4901,7 +5740,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00020000;
       partnerAsn_ = value;
       onChanged();
       return this;
@@ -4913,12 +5752,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 169730693;</code>
+     * <code>string partner_asn = 438166149;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPartnerAsn() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       partnerAsn_ = getDefaultInstance().getPartnerAsn();
       onChanged();
       return this;
@@ -4930,7 +5769,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
      * </pre>
      *
-     * <code>string partner_asn = 169730693;</code>
+     * <code>string partner_asn = 438166149;</code>
      *
      * @param value The bytes for partnerAsn to set.
      * @return This builder for chaining.
@@ -4940,7 +5779,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00020000;
       partnerAsn_ = value;
       onChanged();
       return this;
@@ -4966,7 +5805,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the partnerMetadata field is set.
      */
     public boolean hasPartnerMetadata() {
-      return partnerMetadataBuilder_ != null || partnerMetadata_ != null;
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5012,7 +5851,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -5034,7 +5873,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -5051,7 +5890,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder mergePartnerMetadata(
         com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata value) {
       if (partnerMetadataBuilder_ == null) {
-        if (partnerMetadata_ != null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && partnerMetadata_ != null
+            && partnerMetadata_
+                != com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata
+                    .getDefaultInstance()) {
           partnerMetadata_ =
               com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.newBuilder(
                       partnerMetadata_)
@@ -5064,7 +5907,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -5083,10 +5926,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         partnerMetadata_ = null;
         onChanged();
       } else {
-        partnerMetadata_ = null;
-        partnerMetadataBuilder_ = null;
+        partnerMetadataBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
     /**
@@ -5102,7 +5944,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder
         getPartnerMetadataBuilder() {
-
+      bitField0_ |= 0x00040000;
       onChanged();
       return getPartnerMetadataFieldBuilder().getBuilder();
     }
@@ -5175,7 +6017,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the privateInterconnectInfo field is set.
      */
     public boolean hasPrivateInterconnectInfo() {
-      return privateInterconnectInfoBuilder_ != null || privateInterconnectInfo_ != null;
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5222,7 +6064,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -5244,7 +6086,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -5261,7 +6103,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder mergePrivateInterconnectInfo(
         com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo value) {
       if (privateInterconnectInfoBuilder_ == null) {
-        if (privateInterconnectInfo_ != null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && privateInterconnectInfo_ != null
+            && privateInterconnectInfo_
+                != com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo
+                    .getDefaultInstance()) {
           privateInterconnectInfo_ =
               com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.newBuilder(
                       privateInterconnectInfo_)
@@ -5274,7 +6120,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -5293,10 +6139,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         privateInterconnectInfo_ = null;
         onChanged();
       } else {
-        privateInterconnectInfo_ = null;
-        privateInterconnectInfoBuilder_ = null;
+        privateInterconnectInfoBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
     /**
@@ -5312,7 +6157,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder
         getPrivateInterconnectInfoBuilder() {
-
+      bitField0_ |= 0x00080000;
       onChanged();
       return getPrivateInterconnectInfoFieldBuilder().getBuilder();
     }
@@ -5375,6 +6220,20 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      * <code>string region = 138946292;</code>
      *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
      * @return The region.
      */
     public java.lang.String getRegion() {
@@ -5426,7 +6285,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00100000;
       region_ = value;
       onChanged();
       return this;
@@ -5443,7 +6302,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -5465,13 +6324,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00100000;
       region_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object router_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured.
+     * </pre>
+     *
+     * <code>string router = 148608841;</code>
+     *
+     * @return Whether the router field is set.
+     */
+    public boolean hasRouter() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
     /**
      *
      *
@@ -5532,7 +6405,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00200000;
       router_ = value;
       onChanged();
       return this;
@@ -5549,7 +6422,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRouter() {
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       router_ = getDefaultInstance().getRouter();
       onChanged();
       return this;
@@ -5571,7 +6444,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00200000;
       router_ = value;
       onChanged();
       return this;
@@ -5585,7 +6458,21 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -5607,7 +6494,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -5629,7 +6516,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -5638,7 +6525,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00400000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -5650,12 +6537,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -5667,7 +6554,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -5677,13 +6564,34 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00400000;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
+     * - ACTIVE: The attachment has been turned up and is ready to use.
+     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
+     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
+     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
+     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
+     *
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
     /**
      *
      *
@@ -5724,7 +6632,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
+      bitField0_ |= 0x00800000;
       state_ = value;
       onChanged();
       return this;
@@ -5777,7 +6685,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00800000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5800,13 +6708,31 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of interconnect attachment this is, which can take one of the following values:
+     * - DEDICATED: an attachment to a Dedicated Interconnect.
+     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
+     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
     /**
      *
      *
@@ -5841,7 +6767,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x01000000;
       type_ = value;
       onChanged();
       return this;
@@ -5888,7 +6814,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x01000000;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -5908,13 +6834,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       type_ = 0;
       onChanged();
       return this;
     }
 
     private int vlanTag8021Q_;
+    /**
+     *
+     *
+     * <pre>
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+     * </pre>
+     *
+     * <code>int32 vlan_tag8021q = 119927836;</code>
+     *
+     * @return Whether the vlanTag8021q field is set.
+     */
+    @java.lang.Override
+    public boolean hasVlanTag8021Q() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
     /**
      *
      *
@@ -5943,7 +6884,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setVlanTag8021Q(int value) {
-
+      bitField0_ |= 0x02000000;
       vlanTag8021Q_ = value;
       onChanged();
       return this;
@@ -5960,7 +6901,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVlanTag8021Q() {
-
+      bitField0_ = (bitField0_ & ~0x02000000);
       vlanTag8021Q_ = 0;
       onChanged();
       return this;

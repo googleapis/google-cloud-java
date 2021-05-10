@@ -76,19 +76,20 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
           case 25203882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               fqdn_ = s;
               break;
             }
           case 27575304:
             {
+              bitField0_ |= 0x00000008;
               port_ = input.readInt32();
               break;
             }
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               instance_ = s;
               break;
             }
@@ -107,10 +108,10 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
               annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
               break;
             }
-          case 1102694114:
+          case -1044789534:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               ipAddress_ = s;
               break;
             }
@@ -159,6 +160,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.NetworkEndpoint.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ANNOTATIONS_FIELD_NUMBER = 112032548;
 
   private static final class AnnotationsDefaultEntryHolder {
@@ -270,6 +272,21 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string fqdn = 3150485;</code>
    *
+   * @return Whether the fqdn field is set.
+   */
+  @java.lang.Override
+  public boolean hasFqdn() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
+   * </pre>
+   *
+   * <code>string fqdn = 3150485;</code>
+   *
    * @return The fqdn.
    */
   @java.lang.Override
@@ -320,6 +337,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string instance = 18257045;</code>
    *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
+   * The name must be 1-63 characters long, and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
    * @return The instance.
    */
   @java.lang.Override
@@ -359,7 +392,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -368,7 +401,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAddress() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -391,7 +439,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -410,6 +458,21 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -440,19 +503,19 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFqdnBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3150485, fqdn_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(3446913, port_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
-    if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -463,13 +526,13 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getFqdnBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3150485, fqdn_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -482,8 +545,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(112032548, annotations__);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -502,10 +565,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.compute.v1.NetworkEndpoint) obj;
 
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
-    if (!getFqdn().equals(other.getFqdn())) return false;
-    if (!getInstance().equals(other.getInstance())) return false;
-    if (!getIpAddress().equals(other.getIpAddress())) return false;
-    if (getPort() != other.getPort()) return false;
+    if (hasFqdn() != other.hasFqdn()) return false;
+    if (hasFqdn()) {
+      if (!getFqdn().equals(other.getFqdn())) return false;
+    }
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
+    if (hasIpAddress() != other.hasIpAddress()) return false;
+    if (hasIpAddress()) {
+      if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -521,14 +596,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
-    hash = (37 * hash) + FQDN_FIELD_NUMBER;
-    hash = (53 * hash) + getFqdn().hashCode();
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
-    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddress().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
+    if (hasFqdn()) {
+      hash = (37 * hash) + FQDN_FIELD_NUMBER;
+      hash = (53 * hash) + getFqdn().hashCode();
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
+    if (hasIpAddress()) {
+      hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -696,13 +779,13 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       super.clear();
       internalGetMutableAnnotations().clear();
       fqdn_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -731,12 +814,26 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.compute.v1.NetworkEndpoint result =
           new com.google.cloud.compute.v1.NetworkEndpoint(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.annotations_ = internalGetAnnotations();
       result.annotations_.makeImmutable();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.fqdn_ = fqdn_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.instance_ = instance_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.ipAddress_ = ipAddress_;
-      result.port_ = port_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000008;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -787,19 +884,22 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkEndpoint other) {
       if (other == com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance()) return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      if (!other.getFqdn().isEmpty()) {
+      if (other.hasFqdn()) {
+        bitField0_ |= 0x00000002;
         fqdn_ = other.fqdn_;
         onChanged();
       }
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000004;
         instance_ = other.instance_;
         onChanged();
       }
-      if (!other.getIpAddress().isEmpty()) {
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000008;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1003,6 +1103,20 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string fqdn = 3150485;</code>
      *
+     * @return Whether the fqdn field is set.
+     */
+    public boolean hasFqdn() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
+     * </pre>
+     *
+     * <code>string fqdn = 3150485;</code>
+     *
      * @return The fqdn.
      */
     public java.lang.String getFqdn() {
@@ -1054,7 +1168,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       fqdn_ = value;
       onChanged();
       return this;
@@ -1071,7 +1185,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFqdn() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fqdn_ = getDefaultInstance().getFqdn();
       onChanged();
       return this;
@@ -1093,13 +1207,28 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       fqdn_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1163,7 +1292,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1181,7 +1310,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -1204,7 +1333,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1218,7 +1347,21 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
+     *
+     * @return Whether the ipAddress field is set.
+     */
+    public boolean hasIpAddress() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
+     * </pre>
+     *
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -1240,7 +1383,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -1262,7 +1405,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -1271,7 +1414,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -1283,12 +1426,12 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -1300,7 +1443,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -1310,13 +1453,28 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       ipAddress_ = value;
       onChanged();
       return this;
     }
 
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1345,7 +1503,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000010;
       port_ = value;
       onChanged();
       return this;
@@ -1362,7 +1520,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       port_ = 0;
       onChanged();
       return this;

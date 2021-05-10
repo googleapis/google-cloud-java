@@ -32,6 +32,18 @@ public interface SecurityPolicyRuleOrBuilder
    *
    * <code>string action = 187661878;</code>
    *
+   * @return Whether the action field is set.
+   */
+  boolean hasAction();
+  /**
+   *
+   *
+   * <pre>
+   * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * </pre>
+   *
+   * <code>string action = 187661878;</code>
+   *
    * @return The action.
    */
   java.lang.String getAction();
@@ -55,7 +67,19 @@ public interface SecurityPolicyRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,12 +91,24 @@ public interface SecurityPolicyRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -142,6 +178,18 @@ public interface SecurityPolicyRuleOrBuilder
    *
    * <code>bool preview = 218686408;</code>
    *
+   * @return Whether the preview field is set.
+   */
+  boolean hasPreview();
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the specified action is not enforced.
+   * </pre>
+   *
+   * <code>bool preview = 218686408;</code>
+   *
    * @return The preview.
    */
   boolean getPreview();
@@ -153,7 +201,19 @@ public interface SecurityPolicyRuleOrBuilder
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */

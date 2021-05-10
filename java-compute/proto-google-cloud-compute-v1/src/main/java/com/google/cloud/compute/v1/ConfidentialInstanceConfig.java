@@ -58,6 +58,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,6 +71,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
             break;
           case 817081824:
             {
+              bitField0_ |= 0x00000001;
               enableConfidentialCompute_ = input.readBool();
               break;
             }
@@ -107,8 +109,24 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 102135228;
   private boolean enableConfidentialCompute_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance should have confidential compute enabled.
+   * </pre>
+   *
+   * <code>bool enable_confidential_compute = 102135228;</code>
+   *
+   * @return Whether the enableConfidentialCompute field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableConfidentialCompute() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -139,7 +157,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enableConfidentialCompute_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(102135228, enableConfidentialCompute_);
     }
     unknownFields.writeTo(output);
@@ -151,7 +169,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (enableConfidentialCompute_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               102135228, enableConfidentialCompute_);
@@ -172,7 +190,10 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.ConfidentialInstanceConfig other =
         (com.google.cloud.compute.v1.ConfidentialInstanceConfig) obj;
 
-    if (getEnableConfidentialCompute() != other.getEnableConfidentialCompute()) return false;
+    if (hasEnableConfidentialCompute() != other.hasEnableConfidentialCompute()) return false;
+    if (hasEnableConfidentialCompute()) {
+      if (getEnableConfidentialCompute() != other.getEnableConfidentialCompute()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,8 +205,10 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialCompute());
+    if (hasEnableConfidentialCompute()) {
+      hash = (37 * hash) + ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialCompute());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,7 +356,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       enableConfidentialCompute_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,7 +384,13 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.ConfidentialInstanceConfig buildPartial() {
       com.google.cloud.compute.v1.ConfidentialInstanceConfig result =
           new com.google.cloud.compute.v1.ConfidentialInstanceConfig(this);
-      result.enableConfidentialCompute_ = enableConfidentialCompute_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableConfidentialCompute_ = enableConfidentialCompute_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -412,7 +441,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.ConfidentialInstanceConfig other) {
       if (other == com.google.cloud.compute.v1.ConfidentialInstanceConfig.getDefaultInstance())
         return this;
-      if (other.getEnableConfidentialCompute() != false) {
+      if (other.hasEnableConfidentialCompute()) {
         setEnableConfidentialCompute(other.getEnableConfidentialCompute());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -445,7 +474,24 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enableConfidentialCompute_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether the instance should have confidential compute enabled.
+     * </pre>
+     *
+     * <code>bool enable_confidential_compute = 102135228;</code>
+     *
+     * @return Whether the enableConfidentialCompute field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableConfidentialCompute() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -474,7 +520,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setEnableConfidentialCompute(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enableConfidentialCompute_ = value;
       onChanged();
       return this;
@@ -491,7 +537,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEnableConfidentialCompute() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableConfidentialCompute_ = false;
       onChanged();
       return this;

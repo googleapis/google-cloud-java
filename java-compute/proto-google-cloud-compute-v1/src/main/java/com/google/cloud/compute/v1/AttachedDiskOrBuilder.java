@@ -30,7 +30,19 @@ public interface AttachedDiskOrBuilder
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 196325947;</code>
+   * <code>bool auto_delete = 464761403;</code>
+   *
+   * @return Whether the autoDelete field is set.
+   */
+  boolean hasAutoDelete();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * </pre>
+   *
+   * <code>bool auto_delete = 464761403;</code>
    *
    * @return The autoDelete.
    */
@@ -45,10 +57,35 @@ public interface AttachedDiskOrBuilder
    *
    * <code>bool boot = 3029746;</code>
    *
+   * @return Whether the boot field is set.
+   */
+  boolean hasBoot();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+   * </pre>
+   *
+   * <code>bool boot = 3029746;</code>
+   *
    * @return The boot.
    */
   boolean getBoot();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance.
+   * If not specified, the server chooses a default device name to apply to this disk, in the form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is only applicable for persistent disks.
+   * </pre>
+   *
+   * <code>string device_name = 67541716;</code>
+   *
+   * @return Whether the deviceName field is set.
+   */
+  boolean hasDeviceName();
   /**
    *
    *
@@ -87,7 +124,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -103,7 +140,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -119,7 +156,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getDiskEncryptionKeyOrBuilder();
 
@@ -130,7 +167,19 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * The size of the disk in GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -142,7 +191,7 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -209,6 +258,18 @@ public interface AttachedDiskOrBuilder
    *
    * <code>int32 index = 100346066;</code>
    *
+   * @return Whether the index field is set.
+   */
+  boolean hasIndex();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
+   * </pre>
+   *
+   * <code>int32 index = 100346066;</code>
+   *
    * @return The index.
    */
   int getIndex();
@@ -261,7 +322,19 @@ public interface AttachedDiskOrBuilder
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   *
+   * @return Whether the interface field is set.
+   */
+  boolean hasInterface();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
    *
    * @return The enum numeric value on the wire for interface.
    */
@@ -273,12 +346,24 @@ public interface AttachedDiskOrBuilder
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
    *
    * @return The interface.
    */
   com.google.cloud.compute.v1.AttachedDisk.Interface getInterface();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -311,7 +396,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return A list containing the licenses.
    */
@@ -323,7 +408,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return The count of licenses.
    */
@@ -335,7 +420,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -348,13 +433,25 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
    */
   com.google.protobuf.ByteString getLicensesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
   /**
    *
    *
@@ -430,6 +527,20 @@ public interface AttachedDiskOrBuilder
    *
    * <code>string source = 177235995;</code>
    *
+   * @return Whether the source field is set.
+   */
+  boolean hasSource();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+   * If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks.
+   * Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
    * @return The source.
    */
   java.lang.String getSource();
@@ -448,6 +559,18 @@ public interface AttachedDiskOrBuilder
    */
   com.google.protobuf.ByteString getSourceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
   /**
    *
    *

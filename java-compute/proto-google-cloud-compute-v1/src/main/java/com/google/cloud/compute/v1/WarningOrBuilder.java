@@ -32,6 +32,18 @@ public interface WarningOrBuilder
    *
    * <code>.google.cloud.compute.v1.Warning.Code code = 3059181;</code>
    *
+   * @return Whether the code field is set.
+   */
+  boolean hasCode();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Warning.Code code = 3059181;</code>
+   *
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
@@ -111,7 +123,19 @@ public interface WarningOrBuilder
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  boolean hasMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A human-readable description of the warning code.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -123,7 +147,7 @@ public interface WarningOrBuilder
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

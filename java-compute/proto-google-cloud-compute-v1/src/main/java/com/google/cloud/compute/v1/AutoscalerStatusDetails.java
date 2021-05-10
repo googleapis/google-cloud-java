@@ -60,6 +60,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,14 +74,14 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               type_ = rawValue;
               break;
             }
-          case 1196949562:
+          case -950534086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               message_ = s;
               break;
             }
@@ -154,22 +155,22 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>ALL_INSTANCES_UNHEALTHY = 136530021;</code> */
-    ALL_INSTANCES_UNHEALTHY(136530021),
+    /** <code>ALL_INSTANCES_UNHEALTHY = 404965477;</code> */
+    ALL_INSTANCES_UNHEALTHY(404965477),
     /** <code>BACKEND_SERVICE_DOES_NOT_EXIST = 191417626;</code> */
     BACKEND_SERVICE_DOES_NOT_EXIST(191417626),
     /** <code>CAPPED_AT_MAX_NUM_REPLICAS = 518617;</code> */
     CAPPED_AT_MAX_NUM_REPLICAS(518617),
-    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 60529203;</code> */
-    CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE(60529203),
+    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code> */
+    CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE(328964659),
     /** <code>CUSTOM_METRIC_INVALID = 204430550;</code> */
     CUSTOM_METRIC_INVALID(204430550),
     /** <code>MIN_EQUALS_MAX = 2821361;</code> */
     MIN_EQUALS_MAX(2821361),
     /** <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code> */
     MISSING_CUSTOM_METRIC_DATA_POINTS(94885086),
-    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 241423442;</code> */
-    MISSING_LOAD_BALANCING_DATA_POINTS(241423442),
+    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code> */
+    MISSING_LOAD_BALANCING_DATA_POINTS(509858898),
     /** <code>MODE_OFF = 164169907;</code> */
     MODE_OFF(164169907),
     /** <code>MODE_ONLY_SCALE_OUT = 3840994;</code> */
@@ -178,16 +179,16 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     MODE_ONLY_UP(100969842),
     /** <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code> */
     MORE_THAN_ONE_BACKEND_SERVICE(151922141),
-    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 134666175;</code> */
-    NOT_ENOUGH_QUOTA_AVAILABLE(134666175),
-    /** <code>REGION_RESOURCE_STOCKOUT = 260187390;</code> */
-    REGION_RESOURCE_STOCKOUT(260187390),
+    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code> */
+    NOT_ENOUGH_QUOTA_AVAILABLE(403101631),
+    /** <code>REGION_RESOURCE_STOCKOUT = 528622846;</code> */
+    REGION_RESOURCE_STOCKOUT(528622846),
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     SCALING_TARGET_DOES_NOT_EXIST(122636699),
-    /** <code>UNKNOWN = 164706346;</code> */
-    UNKNOWN(164706346),
-    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 62409553;</code> */
-    UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION(62409553),
+    /** <code>UNKNOWN = 433141802;</code> */
+    UNKNOWN(433141802),
+    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
+    UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION(330845009),
     /** <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code> */
     ZONE_RESOURCE_STOCKOUT(210200502),
     UNRECOGNIZED(-1),
@@ -203,22 +204,22 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>ALL_INSTANCES_UNHEALTHY = 136530021;</code> */
-    public static final int ALL_INSTANCES_UNHEALTHY_VALUE = 136530021;
+    /** <code>ALL_INSTANCES_UNHEALTHY = 404965477;</code> */
+    public static final int ALL_INSTANCES_UNHEALTHY_VALUE = 404965477;
     /** <code>BACKEND_SERVICE_DOES_NOT_EXIST = 191417626;</code> */
     public static final int BACKEND_SERVICE_DOES_NOT_EXIST_VALUE = 191417626;
     /** <code>CAPPED_AT_MAX_NUM_REPLICAS = 518617;</code> */
     public static final int CAPPED_AT_MAX_NUM_REPLICAS_VALUE = 518617;
-    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 60529203;</code> */
-    public static final int CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE_VALUE = 60529203;
+    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code> */
+    public static final int CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE_VALUE = 328964659;
     /** <code>CUSTOM_METRIC_INVALID = 204430550;</code> */
     public static final int CUSTOM_METRIC_INVALID_VALUE = 204430550;
     /** <code>MIN_EQUALS_MAX = 2821361;</code> */
     public static final int MIN_EQUALS_MAX_VALUE = 2821361;
     /** <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code> */
     public static final int MISSING_CUSTOM_METRIC_DATA_POINTS_VALUE = 94885086;
-    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 241423442;</code> */
-    public static final int MISSING_LOAD_BALANCING_DATA_POINTS_VALUE = 241423442;
+    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code> */
+    public static final int MISSING_LOAD_BALANCING_DATA_POINTS_VALUE = 509858898;
     /** <code>MODE_OFF = 164169907;</code> */
     public static final int MODE_OFF_VALUE = 164169907;
     /** <code>MODE_ONLY_SCALE_OUT = 3840994;</code> */
@@ -227,16 +228,16 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public static final int MODE_ONLY_UP_VALUE = 100969842;
     /** <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code> */
     public static final int MORE_THAN_ONE_BACKEND_SERVICE_VALUE = 151922141;
-    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 134666175;</code> */
-    public static final int NOT_ENOUGH_QUOTA_AVAILABLE_VALUE = 134666175;
-    /** <code>REGION_RESOURCE_STOCKOUT = 260187390;</code> */
-    public static final int REGION_RESOURCE_STOCKOUT_VALUE = 260187390;
+    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code> */
+    public static final int NOT_ENOUGH_QUOTA_AVAILABLE_VALUE = 403101631;
+    /** <code>REGION_RESOURCE_STOCKOUT = 528622846;</code> */
+    public static final int REGION_RESOURCE_STOCKOUT_VALUE = 528622846;
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     public static final int SCALING_TARGET_DOES_NOT_EXIST_VALUE = 122636699;
-    /** <code>UNKNOWN = 164706346;</code> */
-    public static final int UNKNOWN_VALUE = 164706346;
-    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 62409553;</code> */
-    public static final int UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION_VALUE = 62409553;
+    /** <code>UNKNOWN = 433141802;</code> */
+    public static final int UNKNOWN_VALUE = 433141802;
+    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
+    public static final int UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION_VALUE = 330845009;
     /** <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code> */
     public static final int ZONE_RESOURCE_STOCKOUT_VALUE = 210200502;
 
@@ -266,13 +267,13 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 136530021:
+        case 404965477:
           return ALL_INSTANCES_UNHEALTHY;
         case 191417626:
           return BACKEND_SERVICE_DOES_NOT_EXIST;
         case 518617:
           return CAPPED_AT_MAX_NUM_REPLICAS;
-        case 60529203:
+        case 328964659:
           return CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE;
         case 204430550:
           return CUSTOM_METRIC_INVALID;
@@ -280,7 +281,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           return MIN_EQUALS_MAX;
         case 94885086:
           return MISSING_CUSTOM_METRIC_DATA_POINTS;
-        case 241423442:
+        case 509858898:
           return MISSING_LOAD_BALANCING_DATA_POINTS;
         case 164169907:
           return MODE_OFF;
@@ -290,15 +291,15 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           return MODE_ONLY_UP;
         case 151922141:
           return MORE_THAN_ONE_BACKEND_SERVICE;
-        case 134666175:
+        case 403101631:
           return NOT_ENOUGH_QUOTA_AVAILABLE;
-        case 260187390:
+        case 528622846:
           return REGION_RESOURCE_STOCKOUT;
         case 122636699:
           return SCALING_TARGET_DOES_NOT_EXIST;
-        case 164706346:
+        case 433141802:
           return UNKNOWN;
-        case 62409553:
+        case 330845009:
           return UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION;
         case 210200502:
           return ZONE_RESOURCE_STOCKOUT;
@@ -357,7 +358,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AutoscalerStatusDetails.Type)
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 149618695;
+  private int bitField0_;
+  public static final int MESSAGE_FIELD_NUMBER = 418054151;
   private volatile java.lang.Object message_;
   /**
    *
@@ -366,7 +368,22 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * The status message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  @java.lang.Override
+  public boolean hasMessage() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The status message.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -389,7 +406,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * The status message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */
@@ -408,6 +425,37 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
   private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of error, warning, or notice returned. Current set of possible values:
+   * - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state).
+   * - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group.
+   * - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas.
+   * - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling.
+   * - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels.
+   * - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group.
+   * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
+   * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
+   * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
+   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
+   * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
+   * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
+   * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
+   * - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist.
+   * - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate.
+   * - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout.  New values might be added in the future. Some of the values might not be available in all API versions.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AutoscalerStatusDetails.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -490,12 +538,11 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (type_
-        != com.google.cloud.compute.v1.AutoscalerStatusDetails.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(3575610, type_);
     }
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 149618695, message_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418054151, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -506,12 +553,11 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (type_
-        != com.google.cloud.compute.v1.AutoscalerStatusDetails.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149618695, message_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418054151, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -529,8 +575,14 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.AutoscalerStatusDetails other =
         (com.google.cloud.compute.v1.AutoscalerStatusDetails) obj;
 
-    if (!getMessage().equals(other.getMessage())) return false;
-    if (type_ != other.type_) return false;
+    if (hasMessage() != other.hasMessage()) return false;
+    if (hasMessage()) {
+      if (!getMessage().equals(other.getMessage())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -542,10 +594,14 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasMessage()) {
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -691,9 +747,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       message_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -721,8 +777,17 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.AutoscalerStatusDetails buildPartial() {
       com.google.cloud.compute.v1.AutoscalerStatusDetails result =
           new com.google.cloud.compute.v1.AutoscalerStatusDetails(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.message_ = message_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -773,12 +838,13 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.AutoscalerStatusDetails other) {
       if (other == com.google.cloud.compute.v1.AutoscalerStatusDetails.getDefaultInstance())
         return this;
-      if (!other.getMessage().isEmpty()) {
+      if (other.hasMessage()) {
+        bitField0_ |= 0x00000001;
         message_ = other.message_;
         onChanged();
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -810,6 +876,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object message_ = "";
     /**
      *
@@ -818,7 +886,21 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
+     *
+     * @return Whether the message field is set.
+     */
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status message.
+     * </pre>
+     *
+     * <code>string message = 418054151;</code>
      *
      * @return The message.
      */
@@ -840,7 +922,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return The bytes for message.
      */
@@ -862,7 +944,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -871,7 +953,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       message_ = value;
       onChanged();
       return this;
@@ -883,12 +965,12 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
@@ -900,7 +982,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.
@@ -910,13 +992,44 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       message_ = value;
       onChanged();
       return this;
     }
 
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of error, warning, or notice returned. Current set of possible values:
+     * - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state).
+     * - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group.
+     * - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas.
+     * - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling.
+     * - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels.
+     * - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group.
+     * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
+     * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
+     * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
+     * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
+     * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
+     * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
+     * - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist.
+     * - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate.
+     * - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout.  New values might be added in the future. Some of the values might not be available in all API versions.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.AutoscalerStatusDetails.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -977,7 +1090,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000002;
       type_ = value;
       onChanged();
       return this;
@@ -1050,7 +1163,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1083,7 +1196,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

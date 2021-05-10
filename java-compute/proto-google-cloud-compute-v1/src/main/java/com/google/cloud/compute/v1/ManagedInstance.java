@@ -78,21 +78,51 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               id_ = s;
               break;
             }
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               instance_ = s;
               break;
             }
-          case 665380546:
+          case 789294866:
+            {
+              com.google.cloud.compute.v1.PreservedState.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) != 0)) {
+                subBuilder = preservedStateFromConfig_.toBuilder();
+              }
+              preservedStateFromConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.PreservedState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(preservedStateFromConfig_);
+                preservedStateFromConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
+              break;
+            }
+          case 1396618976:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000008;
+              instanceStatus_ = rawValue;
+              break;
+            }
+          case 1427807712:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              currentAction_ = rawValue;
+              break;
+            }
+          case -1482103102:
             {
               com.google.cloud.compute.v1.ManagedInstanceVersion.Builder subBuilder = null;
-              if (version_ != null) {
+              if (((bitField0_ & 0x00000080) != 0)) {
                 subBuilder = version_.toBuilder();
               }
               version_ =
@@ -103,32 +133,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(version_);
                 version_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000080;
               break;
             }
-          case 789294866:
+          case -1233630670:
             {
-              com.google.cloud.compute.v1.PreservedState.Builder subBuilder = null;
-              if (preservedStateFromConfig_ != null) {
-                subBuilder = preservedStateFromConfig_.toBuilder();
-              }
-              preservedStateFromConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.PreservedState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(preservedStateFromConfig_);
-                preservedStateFromConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 913852978:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 instanceHealth_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.ManagedInstanceInstanceHealth>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               instanceHealth_.add(
                   input.readMessage(
@@ -136,10 +150,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                       extensionRegistry));
               break;
             }
-          case 1330688290:
+          case -816795358:
             {
               com.google.cloud.compute.v1.ManagedInstanceLastAttempt.Builder subBuilder = null;
-              if (lastAttempt_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = lastAttempt_.toBuilder();
               }
               lastAttempt_ =
@@ -150,27 +164,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(lastAttempt_);
                 lastAttempt_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000010;
               break;
             }
-          case 1396618976:
-            {
-              int rawValue = input.readEnum();
-
-              instanceStatus_ = rawValue;
-              break;
-            }
-          case 1427807712:
-            {
-              int rawValue = input.readEnum();
-
-              currentAction_ = rawValue;
-              break;
-            }
-          case 1618787986:
+          case -528695662:
             {
               com.google.cloud.compute.v1.PreservedState.Builder subBuilder = null;
-              if (preservedStateFromPolicy_ != null) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = preservedStateFromPolicy_.toBuilder();
               }
               preservedStateFromPolicy_ =
@@ -180,7 +180,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(preservedStateFromPolicy_);
                 preservedStateFromPolicy_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000040;
               break;
             }
           default:
@@ -197,7 +197,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         instanceHealth_ = java.util.Collections.unmodifiableList(instanceHealth_);
       }
       this.unknownFields = unknownFields.build();
@@ -249,22 +249,22 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_CURRENT_ACTION = 0;</code>
      */
     UNDEFINED_CURRENT_ACTION(0),
-    /** <code>ABANDONING = 119809357;</code> */
-    ABANDONING(119809357),
-    /** <code>CREATING = 187129529;</code> */
-    CREATING(187129529),
-    /** <code>CREATING_WITHOUT_RETRIES = 160408329;</code> */
-    CREATING_WITHOUT_RETRIES(160408329),
-    /** <code>DELETING = 260166568;</code> */
-    DELETING(260166568),
+    /** <code>ABANDONING = 388244813;</code> */
+    ABANDONING(388244813),
+    /** <code>CREATING = 455564985;</code> */
+    CREATING(455564985),
+    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    CREATING_WITHOUT_RETRIES(428843785),
+    /** <code>DELETING = 528602024;</code> */
+    DELETING(528602024),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>RECREATING = 18843116;</code> */
-    RECREATING(18843116),
+    /** <code>RECREATING = 287278572;</code> */
+    RECREATING(287278572),
     /** <code>REFRESHING = 163266343;</code> */
     REFRESHING(163266343),
-    /** <code>RESTARTING = 52098931;</code> */
-    RESTARTING(52098931),
+    /** <code>RESTARTING = 320534387;</code> */
+    RESTARTING(320534387),
     /** <code>VERIFYING = 16982185;</code> */
     VERIFYING(16982185),
     UNRECOGNIZED(-1),
@@ -280,22 +280,22 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_CURRENT_ACTION = 0;</code>
      */
     public static final int UNDEFINED_CURRENT_ACTION_VALUE = 0;
-    /** <code>ABANDONING = 119809357;</code> */
-    public static final int ABANDONING_VALUE = 119809357;
-    /** <code>CREATING = 187129529;</code> */
-    public static final int CREATING_VALUE = 187129529;
-    /** <code>CREATING_WITHOUT_RETRIES = 160408329;</code> */
-    public static final int CREATING_WITHOUT_RETRIES_VALUE = 160408329;
-    /** <code>DELETING = 260166568;</code> */
-    public static final int DELETING_VALUE = 260166568;
+    /** <code>ABANDONING = 388244813;</code> */
+    public static final int ABANDONING_VALUE = 388244813;
+    /** <code>CREATING = 455564985;</code> */
+    public static final int CREATING_VALUE = 455564985;
+    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    public static final int CREATING_WITHOUT_RETRIES_VALUE = 428843785;
+    /** <code>DELETING = 528602024;</code> */
+    public static final int DELETING_VALUE = 528602024;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>RECREATING = 18843116;</code> */
-    public static final int RECREATING_VALUE = 18843116;
+    /** <code>RECREATING = 287278572;</code> */
+    public static final int RECREATING_VALUE = 287278572;
     /** <code>REFRESHING = 163266343;</code> */
     public static final int REFRESHING_VALUE = 163266343;
-    /** <code>RESTARTING = 52098931;</code> */
-    public static final int RESTARTING_VALUE = 52098931;
+    /** <code>RESTARTING = 320534387;</code> */
+    public static final int RESTARTING_VALUE = 320534387;
     /** <code>VERIFYING = 16982185;</code> */
     public static final int VERIFYING_VALUE = 16982185;
 
@@ -325,21 +325,21 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       switch (value) {
         case 0:
           return UNDEFINED_CURRENT_ACTION;
-        case 119809357:
+        case 388244813:
           return ABANDONING;
-        case 187129529:
+        case 455564985:
           return CREATING;
-        case 160408329:
+        case 428843785:
           return CREATING_WITHOUT_RETRIES;
-        case 260166568:
+        case 528602024:
           return DELETING;
         case 2402104:
           return NONE;
-        case 18843116:
+        case 287278572:
           return RECREATING;
         case 163266343:
           return REFRESHING;
-        case 52098931:
+        case 320534387:
           return RESTARTING;
         case 16982185:
           return VERIFYING;
@@ -416,24 +416,24 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_INSTANCE_STATUS = 0;</code>
      */
     UNDEFINED_INSTANCE_STATUS(0),
-    /** <code>DEPROVISIONING = 160500206;</code> */
-    DEPROVISIONING(160500206),
-    /** <code>PROVISIONING = 22461165;</code> */
-    PROVISIONING(22461165),
-    /** <code>REPAIRING = 145047829;</code> */
-    REPAIRING(145047829),
+    /** <code>DEPROVISIONING = 428935662;</code> */
+    DEPROVISIONING(428935662),
+    /** <code>PROVISIONING = 290896621;</code> */
+    PROVISIONING(290896621),
+    /** <code>REPAIRING = 413483285;</code> */
+    REPAIRING(413483285),
     /** <code>RUNNING = 121282975;</code> */
     RUNNING(121282975),
-    /** <code>STAGING = 162636827;</code> */
-    STAGING(162636827),
-    /** <code>STOPPED = 175840685;</code> */
-    STOPPED(175840685),
-    /** <code>STOPPING = 82356340;</code> */
-    STOPPING(82356340),
+    /** <code>STAGING = 431072283;</code> */
+    STAGING(431072283),
+    /** <code>STOPPED = 444276141;</code> */
+    STOPPED(444276141),
+    /** <code>STOPPING = 350791796;</code> */
+    STOPPING(350791796),
     /** <code>SUSPENDED = 51223995;</code> */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 245770790;</code> */
-    SUSPENDING(245770790),
+    /** <code>SUSPENDING = 514206246;</code> */
+    SUSPENDING(514206246),
     /** <code>TERMINATED = 250018339;</code> */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
@@ -449,24 +449,24 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_INSTANCE_STATUS = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 160500206;</code> */
-    public static final int DEPROVISIONING_VALUE = 160500206;
-    /** <code>PROVISIONING = 22461165;</code> */
-    public static final int PROVISIONING_VALUE = 22461165;
-    /** <code>REPAIRING = 145047829;</code> */
-    public static final int REPAIRING_VALUE = 145047829;
+    /** <code>DEPROVISIONING = 428935662;</code> */
+    public static final int DEPROVISIONING_VALUE = 428935662;
+    /** <code>PROVISIONING = 290896621;</code> */
+    public static final int PROVISIONING_VALUE = 290896621;
+    /** <code>REPAIRING = 413483285;</code> */
+    public static final int REPAIRING_VALUE = 413483285;
     /** <code>RUNNING = 121282975;</code> */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 162636827;</code> */
-    public static final int STAGING_VALUE = 162636827;
-    /** <code>STOPPED = 175840685;</code> */
-    public static final int STOPPED_VALUE = 175840685;
-    /** <code>STOPPING = 82356340;</code> */
-    public static final int STOPPING_VALUE = 82356340;
+    /** <code>STAGING = 431072283;</code> */
+    public static final int STAGING_VALUE = 431072283;
+    /** <code>STOPPED = 444276141;</code> */
+    public static final int STOPPED_VALUE = 444276141;
+    /** <code>STOPPING = 350791796;</code> */
+    public static final int STOPPING_VALUE = 350791796;
     /** <code>SUSPENDED = 51223995;</code> */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 245770790;</code> */
-    public static final int SUSPENDING_VALUE = 245770790;
+    /** <code>SUSPENDING = 514206246;</code> */
+    public static final int SUSPENDING_VALUE = 514206246;
     /** <code>TERMINATED = 250018339;</code> */
     public static final int TERMINATED_VALUE = 250018339;
 
@@ -496,23 +496,23 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       switch (value) {
         case 0:
           return UNDEFINED_INSTANCE_STATUS;
-        case 160500206:
+        case 428935662:
           return DEPROVISIONING;
-        case 22461165:
+        case 290896621:
           return PROVISIONING;
-        case 145047829:
+        case 413483285:
           return REPAIRING;
         case 121282975:
           return RUNNING;
-        case 162636827:
+        case 431072283:
           return STAGING;
-        case 175840685:
+        case 444276141:
           return STOPPED;
-        case 82356340:
+        case 350791796:
           return STOPPING;
         case 51223995:
           return SUSPENDED;
-        case 245770790:
+        case 514206246:
           return SUSPENDING;
         case 250018339:
           return TERMINATED;
@@ -569,8 +569,33 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ManagedInstance.InstanceStatus)
   }
 
+  private int bitField0_;
   public static final int CURRENT_ACTION_FIELD_NUMBER = 178475964;
   private int currentAction_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
+   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
+   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
+   * - RECREATING The managed instance group is recreating this instance.
+   * - DELETING The managed instance group is permanently deleting this instance.
+   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+   * - RESTARTING The managed instance group is restarting the instance.
+   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+   *
+   * @return Whether the currentAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -636,6 +661,21 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   @java.lang.Override
@@ -685,6 +725,21 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string instance = 18257045;</code>
    *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
    * @return The instance.
    */
   @java.lang.Override
@@ -723,7 +778,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int INSTANCE_HEALTH_FIELD_NUMBER = 114231622;
+  public static final int INSTANCE_HEALTH_FIELD_NUMBER = 382667078;
   private java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> instanceHealth_;
   /**
    *
@@ -733,7 +788,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   @java.lang.Override
@@ -749,7 +804,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   @java.lang.Override
@@ -766,7 +821,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   @java.lang.Override
@@ -781,7 +836,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   @java.lang.Override
@@ -796,7 +851,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   @java.lang.Override
@@ -807,6 +862,22 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   public static final int INSTANCE_STATUS_FIELD_NUMBER = 174577372;
   private int instanceStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;
+   * </code>
+   *
+   * @return Whether the instanceStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -845,7 +916,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
-  public static final int LAST_ATTEMPT_FIELD_NUMBER = 166336036;
+  public static final int LAST_ATTEMPT_FIELD_NUMBER = 434771492;
   private com.google.cloud.compute.v1.ManagedInstanceLastAttempt lastAttempt_;
   /**
    *
@@ -854,13 +925,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    *
    * @return Whether the lastAttempt field is set.
    */
   @java.lang.Override
   public boolean hasLastAttempt() {
-    return lastAttempt_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -869,7 +940,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    *
    * @return The lastAttempt.
    */
@@ -886,11 +957,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ManagedInstanceLastAttemptOrBuilder getLastAttemptOrBuilder() {
-    return getLastAttempt();
+    return lastAttempt_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceLastAttempt.getDefaultInstance()
+        : lastAttempt_;
   }
 
   public static final int PRESERVED_STATE_FROM_CONFIG_FIELD_NUMBER = 98661858;
@@ -908,7 +981,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasPreservedStateFromConfig() {
-    return preservedStateFromConfig_ != null;
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -939,10 +1012,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.compute.v1.PreservedStateOrBuilder
       getPreservedStateFromConfigOrBuilder() {
-    return getPreservedStateFromConfig();
+    return preservedStateFromConfig_ == null
+        ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
+        : preservedStateFromConfig_;
   }
 
-  public static final int PRESERVED_STATE_FROM_POLICY_FIELD_NUMBER = 202348498;
+  public static final int PRESERVED_STATE_FROM_POLICY_FIELD_NUMBER = 470783954;
   private com.google.cloud.compute.v1.PreservedState preservedStateFromPolicy_;
   /**
    *
@@ -951,13 +1026,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    *
    * @return Whether the preservedStateFromPolicy field is set.
    */
   @java.lang.Override
   public boolean hasPreservedStateFromPolicy() {
-    return preservedStateFromPolicy_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -966,7 +1041,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    *
    * @return The preservedStateFromPolicy.
    */
@@ -983,15 +1058,17 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PreservedStateOrBuilder
       getPreservedStateFromPolicyOrBuilder() {
-    return getPreservedStateFromPolicy();
+    return preservedStateFromPolicy_ == null
+        ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
+        : preservedStateFromPolicy_;
   }
 
-  public static final int VERSION_FIELD_NUMBER = 83172568;
+  public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
   /**
    *
@@ -1000,13 +1077,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return Whether the version field is set.
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return version_ != null;
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1015,7 +1092,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return The version.
    */
@@ -1032,11 +1109,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()
+        : version_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1053,36 +1132,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (version_ != null) {
-      output.writeMessage(83172568, getVersion());
-    }
-    if (preservedStateFromConfig_ != null) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(98661858, getPreservedStateFromConfig());
     }
-    for (int i = 0; i < instanceHealth_.size(); i++) {
-      output.writeMessage(114231622, instanceHealth_.get(i));
-    }
-    if (lastAttempt_ != null) {
-      output.writeMessage(166336036, getLastAttempt());
-    }
-    if (instanceStatus_
-        != com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.UNDEFINED_INSTANCE_STATUS
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(174577372, instanceStatus_);
     }
-    if (currentAction_
-        != com.google.cloud.compute.v1.ManagedInstance.CurrentAction.UNDEFINED_CURRENT_ACTION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(178475964, currentAction_);
     }
-    if (preservedStateFromPolicy_ != null) {
-      output.writeMessage(202348498, getPreservedStateFromPolicy());
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(351608024, getVersion());
+    }
+    for (int i = 0; i < instanceHealth_.size(); i++) {
+      output.writeMessage(382667078, instanceHealth_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(434771492, getLastAttempt());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(470783954, getPreservedStateFromPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -1093,42 +1168,38 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (version_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(83172568, getVersion());
-    }
-    if (preservedStateFromConfig_ != null) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               98661858, getPreservedStateFromConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(174577372, instanceStatus_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(178475964, currentAction_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
+    }
     for (int i = 0; i < instanceHealth_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              114231622, instanceHealth_.get(i));
+              382667078, instanceHealth_.get(i));
     }
-    if (lastAttempt_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(166336036, getLastAttempt());
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(434771492, getLastAttempt());
     }
-    if (instanceStatus_
-        != com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.UNDEFINED_INSTANCE_STATUS
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(174577372, instanceStatus_);
-    }
-    if (currentAction_
-        != com.google.cloud.compute.v1.ManagedInstance.CurrentAction.UNDEFINED_CURRENT_ACTION
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(178475964, currentAction_);
-    }
-    if (preservedStateFromPolicy_ != null) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              202348498, getPreservedStateFromPolicy());
+              470783954, getPreservedStateFromPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1146,11 +1217,23 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.ManagedInstance other =
         (com.google.cloud.compute.v1.ManagedInstance) obj;
 
-    if (currentAction_ != other.currentAction_) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getInstance().equals(other.getInstance())) return false;
+    if (hasCurrentAction() != other.hasCurrentAction()) return false;
+    if (hasCurrentAction()) {
+      if (currentAction_ != other.currentAction_) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
     if (!getInstanceHealthList().equals(other.getInstanceHealthList())) return false;
-    if (instanceStatus_ != other.instanceStatus_) return false;
+    if (hasInstanceStatus() != other.hasInstanceStatus()) return false;
+    if (hasInstanceStatus()) {
+      if (instanceStatus_ != other.instanceStatus_) return false;
+    }
     if (hasLastAttempt() != other.hasLastAttempt()) return false;
     if (hasLastAttempt()) {
       if (!getLastAttempt().equals(other.getLastAttempt())) return false;
@@ -1178,18 +1261,26 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CURRENT_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + currentAction_;
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
+    if (hasCurrentAction()) {
+      hash = (37 * hash) + CURRENT_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + currentAction_;
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
     if (getInstanceHealthCount() > 0) {
       hash = (37 * hash) + INSTANCE_HEALTH_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceHealthList().hashCode();
     }
-    hash = (37 * hash) + INSTANCE_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + instanceStatus_;
+    if (hasInstanceStatus()) {
+      hash = (37 * hash) + INSTANCE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + instanceStatus_;
+    }
     if (hasLastAttempt()) {
       hash = (37 * hash) + LAST_ATTEMPT_FIELD_NUMBER;
       hash = (53 * hash) + getLastAttempt().hashCode();
@@ -1347,6 +1438,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInstanceHealthFieldBuilder();
+        getLastAttemptFieldBuilder();
+        getPreservedStateFromConfigFieldBuilder();
+        getPreservedStateFromPolicyFieldBuilder();
+        getVersionFieldBuilder();
       }
     }
 
@@ -1354,43 +1449,43 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       currentAction_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (instanceHealthBuilder_ == null) {
         instanceHealth_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         instanceHealthBuilder_.clear();
       }
       instanceStatus_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (lastAttemptBuilder_ == null) {
         lastAttempt_ = null;
       } else {
-        lastAttempt_ = null;
-        lastAttemptBuilder_ = null;
+        lastAttemptBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (preservedStateFromConfigBuilder_ == null) {
         preservedStateFromConfig_ = null;
       } else {
-        preservedStateFromConfig_ = null;
-        preservedStateFromConfigBuilder_ = null;
+        preservedStateFromConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (preservedStateFromPolicyBuilder_ == null) {
         preservedStateFromPolicy_ = null;
       } else {
-        preservedStateFromPolicy_ = null;
-        preservedStateFromPolicyBuilder_ = null;
+        preservedStateFromPolicyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (versionBuilder_ == null) {
         version_ = null;
       } else {
-        version_ = null;
-        versionBuilder_ = null;
+        versionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1419,39 +1514,65 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.compute.v1.ManagedInstance result =
           new com.google.cloud.compute.v1.ManagedInstance(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.currentAction_ = currentAction_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.instance_ = instance_;
       if (instanceHealthBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           instanceHealth_ = java.util.Collections.unmodifiableList(instanceHealth_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.instanceHealth_ = instanceHealth_;
       } else {
         result.instanceHealth_ = instanceHealthBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.instanceStatus_ = instanceStatus_;
-      if (lastAttemptBuilder_ == null) {
-        result.lastAttempt_ = lastAttempt_;
-      } else {
-        result.lastAttempt_ = lastAttemptBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (lastAttemptBuilder_ == null) {
+          result.lastAttempt_ = lastAttempt_;
+        } else {
+          result.lastAttempt_ = lastAttemptBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
       }
-      if (preservedStateFromConfigBuilder_ == null) {
-        result.preservedStateFromConfig_ = preservedStateFromConfig_;
-      } else {
-        result.preservedStateFromConfig_ = preservedStateFromConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (preservedStateFromConfigBuilder_ == null) {
+          result.preservedStateFromConfig_ = preservedStateFromConfig_;
+        } else {
+          result.preservedStateFromConfig_ = preservedStateFromConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000020;
       }
-      if (preservedStateFromPolicyBuilder_ == null) {
-        result.preservedStateFromPolicy_ = preservedStateFromPolicy_;
-      } else {
-        result.preservedStateFromPolicy_ = preservedStateFromPolicyBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (preservedStateFromPolicyBuilder_ == null) {
+          result.preservedStateFromPolicy_ = preservedStateFromPolicy_;
+        } else {
+          result.preservedStateFromPolicy_ = preservedStateFromPolicyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
       }
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (versionBuilder_ == null) {
+          result.version_ = version_;
+        } else {
+          result.version_ = versionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000080;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1501,14 +1622,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ManagedInstance other) {
       if (other == com.google.cloud.compute.v1.ManagedInstance.getDefaultInstance()) return this;
-      if (other.currentAction_ != 0) {
-        setCurrentActionValue(other.getCurrentActionValue());
+      if (other.hasCurrentAction()) {
+        setCurrentAction(other.getCurrentAction());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000002;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000004;
         instance_ = other.instance_;
         onChanged();
       }
@@ -1516,7 +1639,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         if (!other.instanceHealth_.isEmpty()) {
           if (instanceHealth_.isEmpty()) {
             instanceHealth_ = other.instanceHealth_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInstanceHealthIsMutable();
             instanceHealth_.addAll(other.instanceHealth_);
@@ -1529,7 +1652,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             instanceHealthBuilder_.dispose();
             instanceHealthBuilder_ = null;
             instanceHealth_ = other.instanceHealth_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             instanceHealthBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInstanceHealthFieldBuilder()
@@ -1539,8 +1662,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
-      if (other.instanceStatus_ != 0) {
-        setInstanceStatusValue(other.getInstanceStatusValue());
+      if (other.hasInstanceStatus()) {
+        setInstanceStatus(other.getInstanceStatus());
       }
       if (other.hasLastAttempt()) {
         mergeLastAttempt(other.getLastAttempt());
@@ -1605,6 +1728,31 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
      * </code>
      *
+     * @return Whether the currentAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasCurrentAction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
+     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
+     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
+     * - RECREATING The managed instance group is recreating this instance.
+     * - DELETING The managed instance group is permanently deleting this instance.
+     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * - RESTARTING The managed instance group is restarting the instance.
+     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
+     * </code>
+     *
      * @return The enum numeric value on the wire for currentAction.
      */
     @java.lang.Override
@@ -1634,7 +1782,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCurrentActionValue(int value) {
-
+      bitField0_ |= 0x00000001;
       currentAction_ = value;
       onChanged();
       return this;
@@ -1696,7 +1844,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       currentAction_ = value.getNumber();
       onChanged();
       return this;
@@ -1723,13 +1871,27 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCurrentAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       currentAction_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1790,7 +1952,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       id_ = value;
       onChanged();
       return this;
@@ -1807,7 +1969,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1829,13 +1991,27 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1896,7 +2072,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1913,7 +2089,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -1935,7 +2111,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1945,11 +2121,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         instanceHealth_ = java.util.Collections.emptyList();
 
     private void ensureInstanceHealthIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         instanceHealth_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth>(
                 instanceHealth_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1967,7 +2143,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth>
@@ -1986,7 +2162,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public int getInstanceHealthCount() {
@@ -2004,7 +2180,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth getInstanceHealth(int index) {
@@ -2022,7 +2198,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder setInstanceHealth(
@@ -2047,7 +2223,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder setInstanceHealth(
@@ -2070,7 +2246,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder addInstanceHealth(
@@ -2095,7 +2271,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder addInstanceHealth(
@@ -2120,7 +2296,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder addInstanceHealth(
@@ -2142,7 +2318,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder addInstanceHealth(
@@ -2165,7 +2341,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder addAllInstanceHealth(
@@ -2188,13 +2364,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder clearInstanceHealth() {
       if (instanceHealthBuilder_ == null) {
         instanceHealth_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         instanceHealthBuilder_.clear();
@@ -2209,7 +2385,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public Builder removeInstanceHealth(int index) {
@@ -2230,7 +2406,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.Builder
@@ -2245,7 +2421,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder
@@ -2264,7 +2440,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public java.util.List<
@@ -2284,7 +2460,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.Builder
@@ -2301,7 +2477,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.Builder
@@ -2319,7 +2495,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+     * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.Builder>
@@ -2339,7 +2515,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.Builder,
                 com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder>(
                 instanceHealth_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         instanceHealth_ = null;
@@ -2348,6 +2524,22 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     }
 
     private int instanceStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;
+     * </code>
+     *
+     * @return Whether the instanceStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstanceStatus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2378,7 +2570,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setInstanceStatusValue(int value) {
-
+      bitField0_ |= 0x00000010;
       instanceStatus_ = value;
       onChanged();
       return this;
@@ -2422,7 +2614,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       instanceStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -2440,7 +2632,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInstanceStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       instanceStatus_ = 0;
       onChanged();
       return this;
@@ -2459,12 +2651,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      *
      * @return Whether the lastAttempt field is set.
      */
     public boolean hasLastAttempt() {
-      return lastAttemptBuilder_ != null || lastAttempt_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2473,7 +2665,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      *
      * @return The lastAttempt.
      */
@@ -2493,7 +2685,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public Builder setLastAttempt(com.google.cloud.compute.v1.ManagedInstanceLastAttempt value) {
       if (lastAttemptBuilder_ == null) {
@@ -2505,7 +2697,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         lastAttemptBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2515,7 +2707,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public Builder setLastAttempt(
         com.google.cloud.compute.v1.ManagedInstanceLastAttempt.Builder builderForValue) {
@@ -2525,7 +2717,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         lastAttemptBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2535,11 +2727,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public Builder mergeLastAttempt(com.google.cloud.compute.v1.ManagedInstanceLastAttempt value) {
       if (lastAttemptBuilder_ == null) {
-        if (lastAttempt_ != null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && lastAttempt_ != null
+            && lastAttempt_
+                != com.google.cloud.compute.v1.ManagedInstanceLastAttempt.getDefaultInstance()) {
           lastAttempt_ =
               com.google.cloud.compute.v1.ManagedInstanceLastAttempt.newBuilder(lastAttempt_)
                   .mergeFrom(value)
@@ -2551,7 +2746,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         lastAttemptBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2561,17 +2756,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public Builder clearLastAttempt() {
       if (lastAttemptBuilder_ == null) {
         lastAttempt_ = null;
         onChanged();
       } else {
-        lastAttempt_ = null;
-        lastAttemptBuilder_ = null;
+        lastAttemptBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -2581,10 +2775,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceLastAttempt.Builder getLastAttemptBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastAttemptFieldBuilder().getBuilder();
     }
@@ -2595,7 +2789,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceLastAttemptOrBuilder
         getLastAttemptOrBuilder() {
@@ -2614,7 +2808,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Information about the last attempt to create or delete the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ManagedInstanceLastAttempt,
@@ -2651,7 +2845,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return Whether the preservedStateFromConfig field is set.
      */
     public boolean hasPreservedStateFromConfig() {
-      return preservedStateFromConfigBuilder_ != null || preservedStateFromConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2692,7 +2886,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2712,7 +2906,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2726,7 +2920,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePreservedStateFromConfig(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateFromConfigBuilder_ == null) {
-        if (preservedStateFromConfig_ != null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && preservedStateFromConfig_ != null
+            && preservedStateFromConfig_
+                != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
           preservedStateFromConfig_ =
               com.google.cloud.compute.v1.PreservedState.newBuilder(preservedStateFromConfig_)
                   .mergeFrom(value)
@@ -2738,7 +2935,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2755,10 +2952,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         preservedStateFromConfig_ = null;
         onChanged();
       } else {
-        preservedStateFromConfig_ = null;
-        preservedStateFromConfigBuilder_ = null;
+        preservedStateFromConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -2771,7 +2967,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;</code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateFromConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPreservedStateFromConfigFieldBuilder().getBuilder();
     }
@@ -2833,12 +3029,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      *
      * @return Whether the preservedStateFromPolicy field is set.
      */
     public boolean hasPreservedStateFromPolicy() {
-      return preservedStateFromPolicyBuilder_ != null || preservedStateFromPolicy_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2847,7 +3043,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      *
      * @return The preservedStateFromPolicy.
      */
@@ -2867,7 +3063,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public Builder setPreservedStateFromPolicy(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateFromPolicyBuilder_ == null) {
@@ -2879,7 +3075,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2889,7 +3085,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public Builder setPreservedStateFromPolicy(
         com.google.cloud.compute.v1.PreservedState.Builder builderForValue) {
@@ -2899,7 +3095,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2909,11 +3105,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public Builder mergePreservedStateFromPolicy(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateFromPolicyBuilder_ == null) {
-        if (preservedStateFromPolicy_ != null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && preservedStateFromPolicy_ != null
+            && preservedStateFromPolicy_
+                != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
           preservedStateFromPolicy_ =
               com.google.cloud.compute.v1.PreservedState.newBuilder(preservedStateFromPolicy_)
                   .mergeFrom(value)
@@ -2925,7 +3124,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2935,17 +3134,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public Builder clearPreservedStateFromPolicy() {
       if (preservedStateFromPolicyBuilder_ == null) {
         preservedStateFromPolicy_ = null;
         onChanged();
       } else {
-        preservedStateFromPolicy_ = null;
-        preservedStateFromPolicyBuilder_ = null;
+        preservedStateFromPolicyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -2955,10 +3153,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateFromPolicyBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPreservedStateFromPolicyFieldBuilder().getBuilder();
     }
@@ -2969,7 +3167,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     public com.google.cloud.compute.v1.PreservedStateOrBuilder
         getPreservedStateFromPolicyOrBuilder() {
@@ -2988,7 +3186,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Preserved state generated based on stateful policy for this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+     * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PreservedState,
@@ -3020,12 +3218,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      *
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3034,7 +3232,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      *
      * @return The version.
      */
@@ -3054,7 +3252,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder setVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
@@ -3066,7 +3264,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3076,7 +3274,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder setVersion(
         com.google.cloud.compute.v1.ManagedInstanceVersion.Builder builderForValue) {
@@ -3086,7 +3284,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3096,11 +3294,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
           version_ =
               com.google.cloud.compute.v1.ManagedInstanceVersion.newBuilder(version_)
                   .mergeFrom(value)
@@ -3112,7 +3313,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3122,17 +3323,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
       if (versionBuilder_ == null) {
         version_ = null;
         onChanged();
       } else {
-        version_ = null;
-        versionBuilder_ = null;
+        versionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
     /**
@@ -3142,10 +3342,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -3156,7 +3356,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder() {
       if (versionBuilder_ != null) {
@@ -3174,7 +3374,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Intended version of this instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ManagedInstanceVersion,

@@ -31,7 +31,21 @@ public interface StatefulPolicyPreservedStateDiskDeviceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+   * </code>
+   *
+   * @return Whether the autoDelete field is set.
+   */
+  boolean hasAutoDelete();
+  /**
+   *
+   *
+   * <pre>
+   * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -45,7 +59,7 @@ public interface StatefulPolicyPreservedStateDiskDeviceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The autoDelete.

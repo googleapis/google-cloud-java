@@ -32,6 +32,18 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    * <code>string fingerprint = 234678500;</code>
    *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * The fingerprint of the target pools information. Use this optional property to prevent conflicts when multiple users change the target pools settings concurrently. Obtain the fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
@@ -55,7 +67,7 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -67,7 +79,7 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return The count of targetPools.
    */
@@ -79,7 +91,7 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -92,7 +104,7 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.

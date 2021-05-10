@@ -117,7 +117,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AbandonInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -177,17 +180,30 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AggregatedListInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "includeAllScopes", request.getIncludeAllScopes());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasIncludeAllScopes()) {
+                                serializer.putQueryParam(
+                                    fields, "includeAllScopes", request.getIncludeAllScopes());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -313,7 +329,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<CreateInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -373,7 +392,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -429,7 +451,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -607,7 +632,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<InsertInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -662,15 +690,26 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListInstanceGroupManagersRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -727,15 +766,26 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListErrorsInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -799,15 +849,26 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListManagedInstancesInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -876,15 +937,26 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       ListPerInstanceConfigsInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -942,7 +1014,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<PatchInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1007,7 +1082,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       PatchPerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1069,7 +1147,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<RecreateInstancesInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1129,7 +1210,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ResizeInstanceGroupManagerRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               serializer.putQueryParam(fields, "size", request.getSize());
                               return fields;
                             }
@@ -1189,7 +1273,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetInstanceTemplateInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1251,7 +1338,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetTargetPoolsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1318,7 +1408,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer<
                                       UpdatePerInstanceConfigsInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })

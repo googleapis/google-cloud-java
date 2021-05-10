@@ -6,4 +6,25 @@
     <differenceType>8001</differenceType>
     <className>com/google/cloud/compute/**</className>
   </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/31 -->
+  <difference>
+    <differenceType>6003</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <field>*FIELD_NUMBER</field>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/31 -->
+  <difference>
+    <differenceType>6003</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <field>*_VALUE</field>
+  </difference>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/30-->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <method>boolean has*(*)</method>
+  </difference>
 </differences>

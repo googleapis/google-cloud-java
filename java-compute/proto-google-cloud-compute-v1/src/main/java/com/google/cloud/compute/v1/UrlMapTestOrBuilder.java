@@ -30,7 +30,19 @@ public interface UrlMapTestOrBuilder
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Description of this test case.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -42,12 +54,24 @@ public interface UrlMapTestOrBuilder
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Host portion of the URL. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>string host = 3208616;</code>
+   *
+   * @return Whether the host field is set.
+   */
+  boolean hasHost();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface UrlMapTestOrBuilder
    *
    * <code>string path = 3433509;</code>
    *
+   * @return Whether the path field is set.
+   */
+  boolean hasPath();
+  /**
+   *
+   *
+   * <pre>
+   * Path portion of the URL.
+   * </pre>
+   *
+   * <code>string path = 3433509;</code>
+   *
    * @return The path.
    */
   java.lang.String getPath();
@@ -106,7 +142,20 @@ public interface UrlMapTestOrBuilder
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  boolean hasService();
+  /**
+   *
+   *
+   * <pre>
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * service cannot be set if expectedRedirectResponseCode is set.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -119,7 +168,7 @@ public interface UrlMapTestOrBuilder
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */

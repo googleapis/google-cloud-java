@@ -32,6 +32,18 @@ public interface InstancesSetServiceAccountRequestOrBuilder
    *
    * <code>string email = 96619420;</code>
    *
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Email address of the service account.
+   * </pre>
+   *
+   * <code>string email = 96619420;</code>
+   *
    * @return The email.
    */
   java.lang.String getEmail();

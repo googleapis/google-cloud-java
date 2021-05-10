@@ -30,7 +30,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> getArpCachesList();
@@ -41,7 +41,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index);
@@ -52,7 +52,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   int getArpCachesCount();
@@ -63,7 +63,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder>
@@ -75,7 +75,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder getArpCachesOrBuilder(
@@ -146,7 +146,19 @@ public interface InterconnectDiagnosticsOrBuilder
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
+   *
+   * @return Whether the macAddress field is set.
+   */
+  boolean hasMacAddress();
+  /**
+   *
+   *
+   * <pre>
+   * The MAC address of the Interconnect's bundle interface.
+   * </pre>
+   *
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -158,7 +170,7 @@ public interface InterconnectDiagnosticsOrBuilder
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */

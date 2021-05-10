@@ -59,6 +59,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,13 +72,14 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
             break;
           case 291242400:
             {
+              bitField0_ |= 0x00000002;
               timeWindowSec_ = input.readInt32();
               break;
             }
           case 1445680986:
             {
               com.google.cloud.compute.v1.FixedOrPercent.Builder subBuilder = null;
-              if (maxScaledInReplicas_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = maxScaledInReplicas_.toBuilder();
               }
               maxScaledInReplicas_ =
@@ -87,7 +89,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
                 subBuilder.mergeFrom(maxScaledInReplicas_);
                 maxScaledInReplicas_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -124,6 +126,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
             com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MAX_SCALED_IN_REPLICAS_FIELD_NUMBER = 180710123;
   private com.google.cloud.compute.v1.FixedOrPercent maxScaledInReplicas_;
   /**
@@ -139,7 +142,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasMaxScaledInReplicas() {
-    return maxScaledInReplicas_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -169,11 +172,28 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxScaledInReplicasOrBuilder() {
-    return getMaxScaledInReplicas();
+    return maxScaledInReplicas_ == null
+        ? com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()
+        : maxScaledInReplicas_;
   }
 
   public static final int TIME_WINDOW_SEC_FIELD_NUMBER = 36405300;
   private int timeWindowSec_;
+  /**
+   *
+   *
+   * <pre>
+   * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
+   * </pre>
+   *
+   * <code>int32 time_window_sec = 36405300;</code>
+   *
+   * @return Whether the timeWindowSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeWindowSec() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -204,10 +224,10 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (timeWindowSec_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(36405300, timeWindowSec_);
     }
-    if (maxScaledInReplicas_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(180710123, getMaxScaledInReplicas());
     }
     unknownFields.writeTo(output);
@@ -219,10 +239,10 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (timeWindowSec_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(36405300, timeWindowSec_);
     }
-    if (maxScaledInReplicas_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               180710123, getMaxScaledInReplicas());
@@ -247,7 +267,10 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     if (hasMaxScaledInReplicas()) {
       if (!getMaxScaledInReplicas().equals(other.getMaxScaledInReplicas())) return false;
     }
-    if (getTimeWindowSec() != other.getTimeWindowSec()) return false;
+    if (hasTimeWindowSec() != other.hasTimeWindowSec()) return false;
+    if (hasTimeWindowSec()) {
+      if (getTimeWindowSec() != other.getTimeWindowSec()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -263,8 +286,10 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       hash = (37 * hash) + MAX_SCALED_IN_REPLICAS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxScaledInReplicas().hashCode();
     }
-    hash = (37 * hash) + TIME_WINDOW_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getTimeWindowSec();
+    if (hasTimeWindowSec()) {
+      hash = (37 * hash) + TIME_WINDOW_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeWindowSec();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,7 +430,9 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMaxScaledInReplicasFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -414,11 +441,11 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       if (maxScaledInReplicasBuilder_ == null) {
         maxScaledInReplicas_ = null;
       } else {
-        maxScaledInReplicas_ = null;
-        maxScaledInReplicasBuilder_ = null;
+        maxScaledInReplicasBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       timeWindowSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -446,12 +473,21 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl result =
           new com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl(this);
-      if (maxScaledInReplicasBuilder_ == null) {
-        result.maxScaledInReplicas_ = maxScaledInReplicas_;
-      } else {
-        result.maxScaledInReplicas_ = maxScaledInReplicasBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (maxScaledInReplicasBuilder_ == null) {
+          result.maxScaledInReplicas_ = maxScaledInReplicas_;
+        } else {
+          result.maxScaledInReplicas_ = maxScaledInReplicasBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      result.timeWindowSec_ = timeWindowSec_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeWindowSec_ = timeWindowSec_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -505,7 +541,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       if (other.hasMaxScaledInReplicas()) {
         mergeMaxScaledInReplicas(other.getMaxScaledInReplicas());
       }
-      if (other.getTimeWindowSec() != 0) {
+      if (other.hasTimeWindowSec()) {
         setTimeWindowSec(other.getTimeWindowSec());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -538,6 +574,8 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.FixedOrPercent maxScaledInReplicas_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FixedOrPercent,
@@ -556,7 +594,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * @return Whether the maxScaledInReplicas field is set.
      */
     public boolean hasMaxScaledInReplicas() {
-      return maxScaledInReplicasBuilder_ != null || maxScaledInReplicas_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -597,7 +635,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       } else {
         maxScaledInReplicasBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -617,7 +655,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       } else {
         maxScaledInReplicasBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -631,7 +669,10 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      */
     public Builder mergeMaxScaledInReplicas(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxScaledInReplicasBuilder_ == null) {
-        if (maxScaledInReplicas_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && maxScaledInReplicas_ != null
+            && maxScaledInReplicas_
+                != com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) {
           maxScaledInReplicas_ =
               com.google.cloud.compute.v1.FixedOrPercent.newBuilder(maxScaledInReplicas_)
                   .mergeFrom(value)
@@ -643,7 +684,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
       } else {
         maxScaledInReplicasBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -660,10 +701,9 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
         maxScaledInReplicas_ = null;
         onChanged();
       } else {
-        maxScaledInReplicas_ = null;
-        maxScaledInReplicasBuilder_ = null;
+        maxScaledInReplicasBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -676,7 +716,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * <code>.google.cloud.compute.v1.FixedOrPercent max_scaled_in_replicas = 180710123;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getMaxScaledInReplicasBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMaxScaledInReplicasFieldBuilder().getBuilder();
     }
@@ -734,6 +774,21 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      *
      * <code>int32 time_window_sec = 36405300;</code>
      *
+     * @return Whether the timeWindowSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeWindowSec() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
+     * </pre>
+     *
+     * <code>int32 time_window_sec = 36405300;</code>
+     *
      * @return The timeWindowSec.
      */
     @java.lang.Override
@@ -753,7 +808,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setTimeWindowSec(int value) {
-
+      bitField0_ |= 0x00000002;
       timeWindowSec_ = value;
       onChanged();
       return this;
@@ -770,7 +825,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearTimeWindowSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       timeWindowSec_ = 0;
       onChanged();
       return this;

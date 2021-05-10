@@ -32,6 +32,18 @@ public interface DisplayDeviceOrBuilder
    *
    * <code>bool enable_display = 14266886;</code>
    *
+   * @return Whether the enableDisplay field is set.
+   */
+  boolean hasEnableDisplay();
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance has Display enabled.
+   * </pre>
+   *
+   * <code>bool enable_display = 14266886;</code>
+   *
    * @return The enableDisplay.
    */
   boolean getEnableDisplay();

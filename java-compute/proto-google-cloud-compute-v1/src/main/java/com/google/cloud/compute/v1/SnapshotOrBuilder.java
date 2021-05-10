@@ -30,12 +30,36 @@ public interface SnapshotOrBuilder
    * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
    * </pre>
    *
-   * <code>bool auto_created = 195486808;</code>
+   * <code>bool auto_created = 463922264;</code>
+   *
+   * @return Whether the autoCreated field is set.
+   */
+  boolean hasAutoCreated();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
+   * </pre>
+   *
+   * <code>bool auto_created = 463922264;</code>
    *
    * @return The autoCreated.
    */
   boolean getAutoCreated();
 
+  /**
+   *
+   *
+   * <pre>
+   * Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+   * </pre>
+   *
+   * <code>string chain_name = 68644169;</code>
+   *
+   * @return Whether the chainName field is set.
+   */
+  boolean hasChainName();
   /**
    *
    *
@@ -70,6 +94,18 @@ public interface SnapshotOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -93,7 +129,19 @@ public interface SnapshotOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -105,7 +153,7 @@ public interface SnapshotOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -118,7 +166,19 @@ public interface SnapshotOrBuilder
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Size of the source disk, specified in GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -130,7 +190,7 @@ public interface SnapshotOrBuilder
    * [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -143,7 +203,19 @@ public interface SnapshotOrBuilder
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>string download_bytes = 166618612;</code>
+   * <code>string download_bytes = 435054068;</code>
+   *
+   * @return Whether the downloadBytes field is set.
+   */
+  boolean hasDownloadBytes();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+   * </pre>
+   *
+   * <code>string download_bytes = 435054068;</code>
    *
    * @return The downloadBytes.
    */
@@ -155,12 +227,24 @@ public interface SnapshotOrBuilder
    * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
-   * <code>string download_bytes = 166618612;</code>
+   * <code>string download_bytes = 435054068;</code>
    *
    * @return The bytes for downloadBytes.
    */
   com.google.protobuf.ByteString getDownloadBytesBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -186,6 +270,18 @@ public interface SnapshotOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -221,6 +317,19 @@ public interface SnapshotOrBuilder
    *
    * <code>string label_fingerprint = 178124825;</code>
    *
+   * @return Whether the labelFingerprint field is set.
+   */
+  boolean hasLabelFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve a snapshot.
+   * </pre>
+   *
+   * <code>string label_fingerprint = 178124825;</code>
+   *
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
@@ -245,7 +354,7 @@ public interface SnapshotOrBuilder
    * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
   /**
@@ -255,7 +364,7 @@ public interface SnapshotOrBuilder
    * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -268,7 +377,7 @@ public interface SnapshotOrBuilder
    * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -278,7 +387,7 @@ public interface SnapshotOrBuilder
    * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -288,7 +397,7 @@ public interface SnapshotOrBuilder
    * Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -350,7 +459,7 @@ public interface SnapshotOrBuilder
    * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return A list containing the licenses.
    */
@@ -362,7 +471,7 @@ public interface SnapshotOrBuilder
    * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return The count of licenses.
    */
@@ -374,7 +483,7 @@ public interface SnapshotOrBuilder
    * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -387,13 +496,25 @@ public interface SnapshotOrBuilder
    * [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
    */
   com.google.protobuf.ByteString getLicensesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -426,7 +547,19 @@ public interface SnapshotOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -438,7 +571,7 @@ public interface SnapshotOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -495,7 +628,19 @@ public interface SnapshotOrBuilder
    * The source disk used to create this snapshot.
    * </pre>
    *
-   * <code>string source_disk = 183318337;</code>
+   * <code>string source_disk = 451753793;</code>
+   *
+   * @return Whether the sourceDisk field is set.
+   */
+  boolean hasSourceDisk();
+  /**
+   *
+   *
+   * <pre>
+   * The source disk used to create this snapshot.
+   * </pre>
+   *
+   * <code>string source_disk = 451753793;</code>
    *
    * @return The sourceDisk.
    */
@@ -507,7 +652,7 @@ public interface SnapshotOrBuilder
    * The source disk used to create this snapshot.
    * </pre>
    *
-   * <code>string source_disk = 183318337;</code>
+   * <code>string source_disk = 451753793;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -520,7 +665,7 @@ public interface SnapshotOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return Whether the sourceDiskEncryptionKey field is set.
@@ -533,7 +678,7 @@ public interface SnapshotOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return The sourceDiskEncryptionKey.
@@ -546,7 +691,7 @@ public interface SnapshotOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceDiskEncryptionKeyOrBuilder();
@@ -558,7 +703,19 @@ public interface SnapshotOrBuilder
    * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 185755353;</code>
+   * <code>string source_disk_id = 454190809;</code>
+   *
+   * @return Whether the sourceDiskId field is set.
+   */
+  boolean hasSourceDiskId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
+   * </pre>
+   *
+   * <code>string source_disk_id = 454190809;</code>
    *
    * @return The sourceDiskId.
    */
@@ -570,12 +727,24 @@ public interface SnapshotOrBuilder
    * [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 185755353;</code>
+   * <code>string source_disk_id = 454190809;</code>
    *
    * @return The bytes for sourceDiskId.
    */
   com.google.protobuf.ByteString getSourceDiskIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -608,7 +777,19 @@ public interface SnapshotOrBuilder
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>string storage_bytes = 156196263;</code>
+   * <code>string storage_bytes = 424631719;</code>
+   *
+   * @return Whether the storageBytes field is set.
+   */
+  boolean hasStorageBytes();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
+   * </pre>
+   *
+   * <code>string storage_bytes = 424631719;</code>
    *
    * @return The storageBytes.
    */
@@ -620,7 +801,7 @@ public interface SnapshotOrBuilder
    * [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
    * </pre>
    *
-   * <code>string storage_bytes = 156196263;</code>
+   * <code>string storage_bytes = 424631719;</code>
    *
    * @return The bytes for storageBytes.
    */
@@ -633,7 +814,20 @@ public interface SnapshotOrBuilder
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 222303626;
+   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
+   * </code>
+   *
+   * @return Whether the storageBytesStatus field is set.
+   */
+  boolean hasStorageBytesStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
    * </code>
    *
    * @return The enum numeric value on the wire for storageBytesStatus.
@@ -646,7 +840,7 @@ public interface SnapshotOrBuilder
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 222303626;
+   * <code>.google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;
    * </code>
    *
    * @return The storageBytesStatus.
@@ -660,7 +854,7 @@ public interface SnapshotOrBuilder
    * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return A list containing the storageLocations.
    */
@@ -672,7 +866,7 @@ public interface SnapshotOrBuilder
    * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return The count of storageLocations.
    */
@@ -684,7 +878,7 @@ public interface SnapshotOrBuilder
    * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the element to return.
    * @return The storageLocations at the given index.
@@ -697,7 +891,7 @@ public interface SnapshotOrBuilder
    * Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the storageLocations at the given index.

@@ -101,7 +101,21 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+   * </code>
+   *
+   * @return Whether the versionedExpr field is set.
+   */
+  boolean hasVersionedExpr();
+  /**
+   *
+   *
+   * <pre>
+   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
    * </code>
    *
    * @return The enum numeric value on the wire for versionedExpr.
@@ -115,7 +129,7 @@ public interface SecurityPolicyRuleMatcherOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
    * </code>
    *
    * @return The versionedExpr.

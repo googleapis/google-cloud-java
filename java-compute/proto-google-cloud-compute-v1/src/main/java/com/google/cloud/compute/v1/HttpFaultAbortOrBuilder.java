@@ -31,12 +31,38 @@ public interface HttpFaultAbortOrBuilder
    * The value must be between 200 and 599 inclusive.
    * </pre>
    *
-   * <code>uint32 http_status = 200514441;</code>
+   * <code>uint32 http_status = 468949897;</code>
+   *
+   * @return Whether the httpStatus field is set.
+   */
+  boolean hasHttpStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The HTTP status code used to abort the request.
+   * The value must be between 200 and 599 inclusive.
+   * </pre>
+   *
+   * <code>uint32 http_status = 468949897;</code>
    *
    * @return The httpStatus.
    */
   int getHttpStatus();
 
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
+   * The value must be between 0.0 and 100.0 inclusive.
+   * </pre>
+   *
+   * <code>double percentage = 151909018;</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  boolean hasPercentage();
   /**
    *
    *

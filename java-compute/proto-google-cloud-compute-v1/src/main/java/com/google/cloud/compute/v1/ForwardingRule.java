@@ -100,177 +100,180 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00002000;
               name_ = s;
-              break;
-            }
-          case 212192768:
-            {
-              int rawValue = input.readEnum();
-
-              ipVersion_ = rawValue;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               creationTimestamp_ = s;
-              break;
-            }
-          case 308084818:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
-              break;
-            }
-          case 315137906:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case 442710248:
-            {
-              int rawValue = input.readEnum();
-
-              iPProtocol_ = rawValue;
-              break;
-            }
-          case 731557546:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceName_ = s;
-              break;
-            }
-          case 763638304:
-            {
-              int rawValue = input.readEnum();
-
-              loadBalancingScheme_ = rawValue;
               break;
             }
           case 854835346:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
                 ports_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00040000;
               }
               ports_.add(s);
               break;
             }
           case 954041312:
             {
+              bitField0_ |= 0x00000400;
               isMirroringCollector_ = input.readBool();
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00020000;
               region_ = s;
-              break;
-            }
-          case 1188587346:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceLabel_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1413922720:
-            {
-              allPorts_ = input.readBool();
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00400000;
               target_ = s;
-              break;
-            }
-          case 1570322266:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                metadataFilters_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              metadataFilters_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
               break;
             }
           case 1740144634:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00010000;
               portRange_ = s;
-              break;
-            }
-          case 1847793744:
-            {
-              allowGlobalAccess_ = input.readBool();
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00004000;
               network_ = s;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               fingerprint_ = s;
               break;
             }
-          case 1991699096:
+          case -1935290880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000200;
+              ipVersion_ = rawValue;
+              break;
+            }
+          case -1839398830:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              backendService_ = s;
+              break;
+            }
+          case -1832345742:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00200000;
+              subnetwork_ = s;
+              break;
+            }
+          case -1704773400:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000080;
+              iPProtocol_ = rawValue;
+              break;
+            }
+          case -1415926102:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00100000;
+              serviceName_ = s;
+              break;
+            }
+          case -1383845344:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00001000;
+              loadBalancingScheme_ = rawValue;
+              break;
+            }
+          case -958896302:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00080000;
+              serviceLabel_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              description_ = s;
+              break;
+            }
+          case -733560928:
+            {
+              bitField0_ |= 0x00000001;
+              allPorts_ = input.readBool();
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00040000;
+              selfLink_ = s;
+              break;
+            }
+          case -577161382:
+            {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+                metadataFilters_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              metadataFilters_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
+              break;
+            }
+          case -299689904:
+            {
+              bitField0_ |= 0x00000002;
+              allowGlobalAccess_ = input.readBool();
+              break;
+            }
+          case -155784552:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00008000;
               networkTier_ = rawValue;
               break;
             }
-          case 2033251962:
+          case -114231686:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               iPAddress_ = s;
               break;
             }
@@ -288,10 +291,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00040000) != 0)) {
         ports_ = ports_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
       }
       this.unknownFields = unknownFields.build();
@@ -635,14 +638,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOAD_BALANCING_SCHEME(0),
     /** <code>EXTERNAL = 35607499;</code> */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 10860221;</code> */
-    INTERNAL(10860221),
+    /** <code>INTERNAL = 279295677;</code> */
+    INTERNAL(279295677),
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     INTERNAL_MANAGED(37350397),
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     INTERNAL_SELF_MANAGED(236211150),
-    /** <code>INVALID = 261848535;</code> */
-    INVALID(261848535),
+    /** <code>INVALID = 530283991;</code> */
+    INVALID(530283991),
     UNRECOGNIZED(-1),
     ;
 
@@ -658,14 +661,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
     /** <code>EXTERNAL = 35607499;</code> */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 10860221;</code> */
-    public static final int INTERNAL_VALUE = 10860221;
+    /** <code>INTERNAL = 279295677;</code> */
+    public static final int INTERNAL_VALUE = 279295677;
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     public static final int INTERNAL_MANAGED_VALUE = 37350397;
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     public static final int INTERNAL_SELF_MANAGED_VALUE = 236211150;
-    /** <code>INVALID = 261848535;</code> */
-    public static final int INVALID_VALUE = 261848535;
+    /** <code>INVALID = 530283991;</code> */
+    public static final int INVALID_VALUE = 530283991;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -695,13 +698,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_LOAD_BALANCING_SCHEME;
         case 35607499:
           return EXTERNAL;
-        case 10860221:
+        case 279295677:
           return INTERNAL;
         case 37350397:
           return INTERNAL_MANAGED;
         case 236211150:
           return INTERNAL_SELF_MANAGED;
-        case 261848535:
+        case 530283991:
           return INVALID;
         default:
           return null;
@@ -781,10 +784,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 131095095;</code> */
-    PREMIUM(131095095),
-    /** <code>STANDARD = 216207037;</code> */
-    STANDARD(216207037),
+    /** <code>PREMIUM = 399530551;</code> */
+    PREMIUM(399530551),
+    /** <code>STANDARD = 484642493;</code> */
+    STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
 
@@ -798,10 +801,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 131095095;</code> */
-    public static final int PREMIUM_VALUE = 131095095;
-    /** <code>STANDARD = 216207037;</code> */
-    public static final int STANDARD_VALUE = 216207037;
+    /** <code>PREMIUM = 399530551;</code> */
+    public static final int PREMIUM_VALUE = 399530551;
+    /** <code>STANDARD = 484642493;</code> */
+    public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -829,9 +832,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
-        case 131095095:
+        case 399530551:
           return PREMIUM;
-        case 216207037:
+        case 484642493:
           return STANDARD;
         default:
           return null;
@@ -886,7 +889,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ForwardingRule.NetworkTier)
   }
 
-  public static final int ALL_PORTS_FIELD_NUMBER = 176740340;
+  private int bitField0_;
+  public static final int ALL_PORTS_FIELD_NUMBER = 445175796;
   private boolean allPorts_;
   /**
    *
@@ -896,7 +900,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
    * </pre>
    *
-   * <code>bool all_ports = 176740340;</code>
+   * <code>bool all_ports = 445175796;</code>
+   *
+   * @return Whether the allPorts field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllPorts() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
+   * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
+   * </pre>
+   *
+   * <code>bool all_ports = 445175796;</code>
    *
    * @return The allPorts.
    */
@@ -905,7 +925,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return allPorts_;
   }
 
-  public static final int ALLOW_GLOBAL_ACCESS_FIELD_NUMBER = 230974218;
+  public static final int ALLOW_GLOBAL_ACCESS_FIELD_NUMBER = 499409674;
   private boolean allowGlobalAccess_;
   /**
    *
@@ -914,7 +934,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
    * </pre>
    *
-   * <code>bool allow_global_access = 230974218;</code>
+   * <code>bool allow_global_access = 499409674;</code>
+   *
+   * @return Whether the allowGlobalAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowGlobalAccess() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * </pre>
+   *
+   * <code>bool allow_global_access = 499409674;</code>
    *
    * @return The allowGlobalAccess.
    */
@@ -923,7 +958,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return allowGlobalAccess_;
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -932,7 +967,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
+   *
+   * @return Whether the backendService field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackendService() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
+   * </pre>
+   *
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -955,7 +1005,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
@@ -974,6 +1024,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -1021,7 +1086,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -1030,7 +1095,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -1053,7 +1133,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -1072,6 +1152,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -1121,7 +1217,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int I_P_ADDRESS_FIELD_NUMBER = 254156495;
+  public static final int I_P_ADDRESS_FIELD_NUMBER = 522591951;
   private volatile java.lang.Object iPAddress_;
   /**
    *
@@ -1139,7 +1235,31 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 254156495;</code>
+   * <code>string i_p_address = 522591951;</code>
+   *
+   * @return Whether the iPAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPAddress() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
+   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * </pre>
+   *
+   * <code>string i_p_address = 522591951;</code>
    *
    * @return The iPAddress.
    */
@@ -1171,7 +1291,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 254156495;</code>
+   * <code>string i_p_address = 522591951;</code>
    *
    * @return The bytes for iPAddress.
    */
@@ -1188,7 +1308,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int I_P_PROTOCOL_FIELD_NUMBER = 55338781;
+  public static final int I_P_PROTOCOL_FIELD_NUMBER = 323774237;
   private int iPProtocol_;
   /**
    *
@@ -1204,7 +1324,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+   *
+   * @return Whether the iPProtocol field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPProtocol() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
    *
    * @return The enum numeric value on the wire for iPProtocol.
    */
@@ -1226,7 +1368,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
    *
    * @return The iPProtocol.
    */
@@ -1242,6 +1384,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -1289,7 +1446,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IP_VERSION_FIELD_NUMBER = 26524096;
+  public static final int IP_VERSION_FIELD_NUMBER = 294959552;
   private int ipVersion_;
   /**
    *
@@ -1298,7 +1455,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpVersion() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -1313,7 +1485,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
    *
    * @return The ipVersion.
    */
@@ -1338,6 +1510,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool is_mirroring_collector = 119255164;</code>
    *
+   * @return Whether the isMirroringCollector field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsMirroringCollector() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
+   * </pre>
+   *
+   * <code>bool is_mirroring_collector = 119255164;</code>
+   *
    * @return The isMirroringCollector.
    */
   @java.lang.Override
@@ -1347,6 +1534,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -1394,7 +1596,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 95454788;
+  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
   private int loadBalancingScheme_;
   /**
    *
@@ -1416,7 +1618,36 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * </code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancingScheme() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the forwarding rule type.
+   * - EXTERNAL is used for:
+   * - Classic Cloud VPN gateways
+   * - Protocol forwarding to VMs from an external IP address
+   * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
+   * - INTERNAL is used for:
+   * - Protocol forwarding to VMs from an internal IP address
+   * - Internal TCP/UDP Load Balancing
+   * - INTERNAL_MANAGED is used for:
+   * - Internal HTTP(S) Load Balancing
+   * - INTERNAL_SELF_MANAGED is used for:
+   * - Traffic Director
+   * For more information about forwarding rules, refer to Forwarding rule concepts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -1445,7 +1676,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The loadBalancingScheme.
@@ -1461,7 +1692,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int METADATA_FILTERS_FIELD_NUMBER = 196290283;
+  public static final int METADATA_FILTERS_FIELD_NUMBER = 464725739;
   private java.util.List<com.google.cloud.compute.v1.MetadataFilter> metadataFilters_;
   /**
    *
@@ -1473,7 +1704,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
@@ -1489,7 +1720,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
@@ -1506,7 +1737,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public int getMetadataFiltersCount() {
@@ -1522,7 +1753,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
@@ -1538,7 +1769,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
@@ -1548,6 +1779,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
   /**
    *
    *
@@ -1608,6 +1854,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field is not used for external load balancing.
+   * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -1648,7 +1911,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NETWORK_TIER_FIELD_NUMBER = 248962387;
+  public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
   private int networkTier_;
   /**
    *
@@ -1659,7 +1922,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkTier() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
+   * For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
+   * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -1676,7 +1956,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
    *
    * @return The networkTier.
    */
@@ -1692,6 +1972,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_RANGE_FIELD_NUMBER = 217518079;
   private volatile java.lang.Object portRange_;
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+   * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+   * Some types of forwarding target have constraints on the acceptable ports:
+   * - TargetHttpProxy: 80, 8080
+   * - TargetHttpsProxy: 443
+   * - TargetGrpcProxy: no constraints
+   * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+   * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+   * - TargetVpnGateway: 500, 4500
+   * </pre>
+   *
+   * <code>string port_range = 217518079;</code>
+   *
+   * @return Whether the portRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortRange() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
   /**
    *
    *
@@ -1843,6 +2146,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -1881,7 +2199,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1890,7 +2208,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1913,7 +2246,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1930,7 +2263,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SERVICE_LABEL_FIELD_NUMBER = 148573418;
+  public static final int SERVICE_LABEL_FIELD_NUMBER = 417008874;
   private volatile java.lang.Object serviceLabel_;
   /**
    *
@@ -1941,7 +2274,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 148573418;</code>
+   * <code>string service_label = 417008874;</code>
+   *
+   * @return Whether the serviceLabel field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceLabel() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
+   * The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * This field is only used for internal load balancing.
+   * </pre>
+   *
+   * <code>string service_label = 417008874;</code>
    *
    * @return The serviceLabel.
    */
@@ -1966,7 +2316,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 148573418;</code>
+   * <code>string service_label = 417008874;</code>
    *
    * @return The bytes for serviceLabel.
    */
@@ -1983,7 +2333,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SERVICE_NAME_FIELD_NUMBER = 91444693;
+  public static final int SERVICE_NAME_FIELD_NUMBER = 359880149;
   private volatile java.lang.Object serviceName_;
   /**
    *
@@ -1993,7 +2343,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 91444693;</code>
+   * <code>string service_name = 359880149;</code>
+   *
+   * @return Whether the serviceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceName() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+   * This field is only used for internal load balancing.
+   * </pre>
+   *
+   * <code>string service_name = 359880149;</code>
    *
    * @return The serviceName.
    */
@@ -2017,7 +2383,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 91444693;</code>
+   * <code>string service_name = 359880149;</code>
    *
    * @return The bytes for serviceName.
    */
@@ -2034,7 +2400,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
+  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -2045,7 +2411,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetwork() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field is only used for internal load balancing.
+   * For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
+   * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -2070,7 +2453,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -2089,6 +2472,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+   * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+   * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  @java.lang.Override
+  public boolean hasTarget() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
   /**
    *
    *
@@ -2156,88 +2557,80 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      output.writeEnum(26524096, ipVersion_);
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
-    }
-    if (iPProtocol_
-        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
-            .getNumber()) {
-      output.writeEnum(55338781, iPProtocol_);
-    }
-    if (!getServiceNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 91444693, serviceName_);
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      output.writeEnum(95454788, loadBalancingScheme_);
     }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
     }
-    if (isMirroringCollector_ != false) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(119255164, isMirroringCollector_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getServiceLabelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 148573418, serviceLabel_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (allPorts_ != false) {
-      output.writeBool(176740340, allPorts_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
-    for (int i = 0; i < metadataFilters_.size(); i++) {
-      output.writeMessage(196290283, metadataFilters_.get(i));
-    }
-    if (!getPortRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 217518079, portRange_);
     }
-    if (allowGlobalAccess_ != false) {
-      output.writeBool(230974218, allowGlobalAccess_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (networkTier_
-        != com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      output.writeEnum(248962387, networkTier_);
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeEnum(294959552, ipVersion_);
     }
-    if (!getIPAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 254156495, iPAddress_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeEnum(323774237, iPProtocol_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeEnum(363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(445175796, allPorts_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    for (int i = 0; i < metadataFilters_.size(); i++) {
+      output.writeMessage(464725739, metadataFilters_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(499409674, allowGlobalAccess_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeEnum(517397843, networkTier_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 522591951, iPAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -2248,42 +2641,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26524096, ipVersion_);
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
-    }
-    if (iPProtocol_
-        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(55338781, iPProtocol_);
-    }
-    if (!getServiceNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91444693, serviceName_);
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(95454788, loadBalancingScheme_);
     }
     {
       int dataSize = 0;
@@ -2293,52 +2662,69 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getPortsList().size();
     }
-    if (isMirroringCollector_ != false) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(119255164, isMirroringCollector_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getServiceLabelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148573418, serviceLabel_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (allPorts_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(176740340, allPorts_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(217518079, portRange_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(323774237, iPProtocol_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(445175796, allPorts_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              196290283, metadataFilters_.get(i));
+              464725739, metadataFilters_.get(i));
     }
-    if (!getPortRangeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(217518079, portRange_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(499409674, allowGlobalAccess_);
     }
-    if (allowGlobalAccess_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(230974218, allowGlobalAccess_);
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
     }
-    if (!getNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (networkTier_
-        != com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(248962387, networkTier_);
-    }
-    if (!getIPAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(254156495, iPAddress_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522591951, iPAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2356,31 +2742,100 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.ForwardingRule other =
         (com.google.cloud.compute.v1.ForwardingRule) obj;
 
-    if (getAllPorts() != other.getAllPorts()) return false;
-    if (getAllowGlobalAccess() != other.getAllowGlobalAccess()) return false;
-    if (!getBackendService().equals(other.getBackendService())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
-    if (!getIPAddress().equals(other.getIPAddress())) return false;
-    if (iPProtocol_ != other.iPProtocol_) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (ipVersion_ != other.ipVersion_) return false;
-    if (getIsMirroringCollector() != other.getIsMirroringCollector()) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+    if (hasAllPorts() != other.hasAllPorts()) return false;
+    if (hasAllPorts()) {
+      if (getAllPorts() != other.getAllPorts()) return false;
+    }
+    if (hasAllowGlobalAccess() != other.hasAllowGlobalAccess()) return false;
+    if (hasAllowGlobalAccess()) {
+      if (getAllowGlobalAccess() != other.getAllowGlobalAccess()) return false;
+    }
+    if (hasBackendService() != other.hasBackendService()) return false;
+    if (hasBackendService()) {
+      if (!getBackendService().equals(other.getBackendService())) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasIPAddress() != other.hasIPAddress()) return false;
+    if (hasIPAddress()) {
+      if (!getIPAddress().equals(other.getIPAddress())) return false;
+    }
+    if (hasIPProtocol() != other.hasIPProtocol()) return false;
+    if (hasIPProtocol()) {
+      if (iPProtocol_ != other.iPProtocol_) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasIpVersion() != other.hasIpVersion()) return false;
+    if (hasIpVersion()) {
+      if (ipVersion_ != other.ipVersion_) return false;
+    }
+    if (hasIsMirroringCollector() != other.hasIsMirroringCollector()) return false;
+    if (hasIsMirroringCollector()) {
+      if (getIsMirroringCollector() != other.getIsMirroringCollector()) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
+    if (hasLoadBalancingScheme()) {
+      if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+    }
     if (!getMetadataFiltersList().equals(other.getMetadataFiltersList())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (networkTier_ != other.networkTier_) return false;
-    if (!getPortRange().equals(other.getPortRange())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasNetworkTier() != other.hasNetworkTier()) return false;
+    if (hasNetworkTier()) {
+      if (networkTier_ != other.networkTier_) return false;
+    }
+    if (hasPortRange() != other.hasPortRange()) return false;
+    if (hasPortRange()) {
+      if (!getPortRange().equals(other.getPortRange())) return false;
+    }
     if (!getPortsList().equals(other.getPortsList())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (!getServiceLabel().equals(other.getServiceLabel())) return false;
-    if (!getServiceName().equals(other.getServiceName())) return false;
-    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
-    if (!getTarget().equals(other.getTarget())) return false;
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasServiceLabel() != other.hasServiceLabel()) return false;
+    if (hasServiceLabel()) {
+      if (!getServiceLabel().equals(other.getServiceLabel())) return false;
+    }
+    if (hasServiceName() != other.hasServiceName()) return false;
+    if (hasServiceName()) {
+      if (!getServiceName().equals(other.getServiceName())) return false;
+    }
+    if (hasSubnetwork() != other.hasSubnetwork()) return false;
+    if (hasSubnetwork()) {
+      if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    }
+    if (hasTarget() != other.hasTarget()) return false;
+    if (hasTarget()) {
+      if (!getTarget().equals(other.getTarget())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2392,60 +2847,106 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ALL_PORTS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllPorts());
-    hash = (37 * hash) + ALLOW_GLOBAL_ACCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowGlobalAccess());
-    hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getBackendService().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
-    hash = (37 * hash) + I_P_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIPAddress().hashCode();
-    hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
-    hash = (53 * hash) + iPProtocol_;
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + ipVersion_;
-    hash = (37 * hash) + IS_MIRRORING_COLLECTOR_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsMirroringCollector());
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
-    hash = (53 * hash) + loadBalancingScheme_;
+    if (hasAllPorts()) {
+      hash = (37 * hash) + ALL_PORTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllPorts());
+    }
+    if (hasAllowGlobalAccess()) {
+      hash = (37 * hash) + ALLOW_GLOBAL_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowGlobalAccess());
+    }
+    if (hasBackendService()) {
+      hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getBackendService().hashCode();
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasIPAddress()) {
+      hash = (37 * hash) + I_P_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIPAddress().hashCode();
+    }
+    if (hasIPProtocol()) {
+      hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + iPProtocol_;
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasIpVersion()) {
+      hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + ipVersion_;
+    }
+    if (hasIsMirroringCollector()) {
+      hash = (37 * hash) + IS_MIRRORING_COLLECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsMirroringCollector());
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLoadBalancingScheme()) {
+      hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
+      hash = (53 * hash) + loadBalancingScheme_;
+    }
     if (getMetadataFiltersCount() > 0) {
       hash = (37 * hash) + METADATA_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataFiltersList().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-    hash = (53 * hash) + networkTier_;
-    hash = (37 * hash) + PORT_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getPortRange().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasNetworkTier()) {
+      hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + networkTier_;
+    }
+    if (hasPortRange()) {
+      hash = (37 * hash) + PORT_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPortRange().hashCode();
+    }
     if (getPortsCount() > 0) {
       hash = (37 * hash) + PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getPortsList().hashCode();
     }
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SERVICE_LABEL_FIELD_NUMBER;
-    hash = (53 * hash) + getServiceLabel().hashCode();
-    hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getServiceName().hashCode();
-    hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnetwork().hashCode();
-    hash = (37 * hash) + TARGET_FIELD_NUMBER;
-    hash = (53 * hash) + getTarget().hashCode();
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasServiceLabel()) {
+      hash = (37 * hash) + SERVICE_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceLabel().hashCode();
+    }
+    if (hasServiceName()) {
+      hash = (37 * hash) + SERVICE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceName().hashCode();
+    }
+    if (hasSubnetwork()) {
+      hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetwork().hashCode();
+    }
+    if (hasTarget()) {
+      hash = (37 * hash) + TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getTarget().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2599,59 +3100,59 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       allPorts_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowGlobalAccess_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       backendService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       fingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       iPAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       iPProtocol_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       ipVersion_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       isMirroringCollector_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       loadBalancingScheme_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         metadataFiltersBuilder_.clear();
       }
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       networkTier_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       portRange_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00040000);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       serviceLabel_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       serviceName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       subnetwork_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       target_ = "";
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       return this;
     }
 
@@ -2680,43 +3181,114 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.ForwardingRule result =
           new com.google.cloud.compute.v1.ForwardingRule(this);
       int from_bitField0_ = bitField0_;
-      result.allPorts_ = allPorts_;
-      result.allowGlobalAccess_ = allowGlobalAccess_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allPorts_ = allPorts_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowGlobalAccess_ = allowGlobalAccess_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.backendService_ = backendService_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.fingerprint_ = fingerprint_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.iPAddress_ = iPAddress_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.iPProtocol_ = iPProtocol_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.ipVersion_ = ipVersion_;
-      result.isMirroringCollector_ = isMirroringCollector_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.isMirroringCollector_ = isMirroringCollector_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00001000;
+      }
       result.loadBalancingScheme_ = loadBalancingScheme_;
       if (metadataFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.metadataFilters_ = metadataFilters_;
       } else {
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        to_bitField0_ |= 0x00002000;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
       result.network_ = network_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00008000;
+      }
       result.networkTier_ = networkTier_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00010000;
+      }
       result.portRange_ = portRange_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         ports_ = ports_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00040000);
       }
       result.ports_ = ports_;
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        to_bitField0_ |= 0x00020000;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        to_bitField0_ |= 0x00040000;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        to_bitField0_ |= 0x00080000;
+      }
       result.serviceLabel_ = serviceLabel_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        to_bitField0_ |= 0x00100000;
+      }
       result.serviceName_ = serviceName_;
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        to_bitField0_ |= 0x00200000;
+      }
       result.subnetwork_ = subnetwork_;
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        to_bitField0_ |= 0x00400000;
+      }
       result.target_ = target_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2766,57 +3338,64 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ForwardingRule other) {
       if (other == com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance()) return this;
-      if (other.getAllPorts() != false) {
+      if (other.hasAllPorts()) {
         setAllPorts(other.getAllPorts());
       }
-      if (other.getAllowGlobalAccess() != false) {
+      if (other.hasAllowGlobalAccess()) {
         setAllowGlobalAccess(other.getAllowGlobalAccess());
       }
-      if (!other.getBackendService().isEmpty()) {
+      if (other.hasBackendService()) {
+        bitField0_ |= 0x00000004;
         backendService_ = other.backendService_;
         onChanged();
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000008;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000010;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000020;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
-      if (!other.getIPAddress().isEmpty()) {
+      if (other.hasIPAddress()) {
+        bitField0_ |= 0x00000040;
         iPAddress_ = other.iPAddress_;
         onChanged();
       }
-      if (other.iPProtocol_ != 0) {
-        setIPProtocolValue(other.getIPProtocolValue());
+      if (other.hasIPProtocol()) {
+        setIPProtocol(other.getIPProtocol());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000100;
         id_ = other.id_;
         onChanged();
       }
-      if (other.ipVersion_ != 0) {
-        setIpVersionValue(other.getIpVersionValue());
+      if (other.hasIpVersion()) {
+        setIpVersion(other.getIpVersion());
       }
-      if (other.getIsMirroringCollector() != false) {
+      if (other.hasIsMirroringCollector()) {
         setIsMirroringCollector(other.getIsMirroringCollector());
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000800;
         kind_ = other.kind_;
         onChanged();
       }
-      if (other.loadBalancingScheme_ != 0) {
-        setLoadBalancingSchemeValue(other.getLoadBalancingSchemeValue());
+      if (other.hasLoadBalancingScheme()) {
+        setLoadBalancingScheme(other.getLoadBalancingScheme());
       }
       if (metadataFiltersBuilder_ == null) {
         if (!other.metadataFilters_.isEmpty()) {
           if (metadataFilters_.isEmpty()) {
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureMetadataFiltersIsMutable();
             metadataFilters_.addAll(other.metadataFilters_);
@@ -2829,7 +3408,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             metadataFiltersBuilder_.dispose();
             metadataFiltersBuilder_ = null;
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00002000);
             metadataFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetadataFiltersFieldBuilder()
@@ -2839,52 +3418,61 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00004000;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00008000;
         network_ = other.network_;
         onChanged();
       }
-      if (other.networkTier_ != 0) {
-        setNetworkTierValue(other.getNetworkTierValue());
+      if (other.hasNetworkTier()) {
+        setNetworkTier(other.getNetworkTier());
       }
-      if (!other.getPortRange().isEmpty()) {
+      if (other.hasPortRange()) {
+        bitField0_ |= 0x00020000;
         portRange_ = other.portRange_;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
         }
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00080000;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00100000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (!other.getServiceLabel().isEmpty()) {
+      if (other.hasServiceLabel()) {
+        bitField0_ |= 0x00200000;
         serviceLabel_ = other.serviceLabel_;
         onChanged();
       }
-      if (!other.getServiceName().isEmpty()) {
+      if (other.hasServiceName()) {
+        bitField0_ |= 0x00400000;
         serviceName_ = other.serviceName_;
         onChanged();
       }
-      if (!other.getSubnetwork().isEmpty()) {
+      if (other.hasSubnetwork()) {
+        bitField0_ |= 0x00800000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
-      if (!other.getTarget().isEmpty()) {
+      if (other.hasTarget()) {
+        bitField0_ |= 0x01000000;
         target_ = other.target_;
         onChanged();
       }
@@ -2928,7 +3516,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 176740340;</code>
+     * <code>bool all_ports = 445175796;</code>
+     *
+     * @return Whether the allPorts field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllPorts() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
+     * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
+     * </pre>
+     *
+     * <code>bool all_ports = 445175796;</code>
      *
      * @return The allPorts.
      */
@@ -2944,13 +3548,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 176740340;</code>
+     * <code>bool all_ports = 445175796;</code>
      *
      * @param value The allPorts to set.
      * @return This builder for chaining.
      */
     public Builder setAllPorts(boolean value) {
-
+      bitField0_ |= 0x00000001;
       allPorts_ = value;
       onChanged();
       return this;
@@ -2963,12 +3567,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 176740340;</code>
+     * <code>bool all_ports = 445175796;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllPorts() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allPorts_ = false;
       onChanged();
       return this;
@@ -2982,7 +3586,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 230974218;</code>
+     * <code>bool allow_global_access = 499409674;</code>
+     *
+     * @return Whether the allowGlobalAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowGlobalAccess() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+     * </pre>
+     *
+     * <code>bool allow_global_access = 499409674;</code>
      *
      * @return The allowGlobalAccess.
      */
@@ -2997,13 +3616,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 230974218;</code>
+     * <code>bool allow_global_access = 499409674;</code>
      *
      * @param value The allowGlobalAccess to set.
      * @return This builder for chaining.
      */
     public Builder setAllowGlobalAccess(boolean value) {
-
+      bitField0_ |= 0x00000002;
       allowGlobalAccess_ = value;
       onChanged();
       return this;
@@ -3015,12 +3634,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 230974218;</code>
+     * <code>bool allow_global_access = 499409674;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllowGlobalAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowGlobalAccess_ = false;
       onChanged();
       return this;
@@ -3034,7 +3653,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
+     *
+     * @return Whether the backendService field is set.
+     */
+    public boolean hasBackendService() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
+     * </pre>
+     *
+     * <code>string backend_service = 306946058;</code>
      *
      * @return The backendService.
      */
@@ -3056,7 +3689,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @return The bytes for backendService.
      */
@@ -3078,7 +3711,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -3087,7 +3720,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       backendService_ = value;
       onChanged();
       return this;
@@ -3099,12 +3732,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       backendService_ = getDefaultInstance().getBackendService();
       onChanged();
       return this;
@@ -3116,7 +3749,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -3126,13 +3759,27 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       backendService_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -3193,7 +3840,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3210,7 +3857,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -3232,7 +3879,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3246,7 +3893,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3268,7 +3929,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3290,7 +3951,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3299,7 +3960,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
@@ -3311,12 +3972,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -3328,7 +3989,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3338,13 +3999,28 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request.
+     * To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -3408,7 +4084,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3426,7 +4102,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -3449,7 +4125,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3472,7 +4148,30 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 254156495;</code>
+     * <code>string i_p_address = 522591951;</code>
+     *
+     * @return Whether the iPAddress field is set.
+     */
+    public boolean hasIPAddress() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string i_p_address = 522591951;</code>
      *
      * @return The iPAddress.
      */
@@ -3503,7 +4202,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 254156495;</code>
+     * <code>string i_p_address = 522591951;</code>
      *
      * @return The bytes for iPAddress.
      */
@@ -3534,7 +4233,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 254156495;</code>
+     * <code>string i_p_address = 522591951;</code>
      *
      * @param value The iPAddress to set.
      * @return This builder for chaining.
@@ -3543,7 +4242,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       iPAddress_ = value;
       onChanged();
       return this;
@@ -3564,12 +4263,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 254156495;</code>
+     * <code>string i_p_address = 522591951;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIPAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       iPAddress_ = getDefaultInstance().getIPAddress();
       onChanged();
       return this;
@@ -3590,7 +4289,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 254156495;</code>
+     * <code>string i_p_address = 522591951;</code>
      *
      * @param value The bytes for iPAddress to set.
      * @return This builder for chaining.
@@ -3600,7 +4299,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       iPAddress_ = value;
       onChanged();
       return this;
@@ -3621,7 +4320,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     *
+     * @return Whether the iPProtocol field is set.
+     */
+    @java.lang.Override
+    public boolean hasIPProtocol() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
      *
      * @return The enum numeric value on the wire for iPProtocol.
      */
@@ -3643,13 +4364,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
      *
      * @param value The enum numeric value on the wire for iPProtocol to set.
      * @return This builder for chaining.
      */
     public Builder setIPProtocolValue(int value) {
-
+      bitField0_ |= 0x00000080;
       iPProtocol_ = value;
       onChanged();
       return this;
@@ -3668,7 +4389,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
      *
      * @return The iPProtocol.
      */
@@ -3695,7 +4416,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
      *
      * @param value The iPProtocol to set.
      * @return This builder for chaining.
@@ -3704,7 +4425,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       iPProtocol_ = value.getNumber();
       onChanged();
       return this;
@@ -3723,18 +4444,32 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIPProtocol() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       iPProtocol_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3795,7 +4530,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       id_ = value;
       onChanged();
       return this;
@@ -3812,7 +4547,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -3834,7 +4569,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       id_ = value;
       onChanged();
       return this;
@@ -3848,7 +4583,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     *
+     * @return Whether the ipVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasIpVersion() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
      *
      * @return The enum numeric value on the wire for ipVersion.
      */
@@ -3863,13 +4613,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
      *
      * @param value The enum numeric value on the wire for ipVersion to set.
      * @return This builder for chaining.
      */
     public Builder setIpVersionValue(int value) {
-
+      bitField0_ |= 0x00000200;
       ipVersion_ = value;
       onChanged();
       return this;
@@ -3881,7 +4631,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
      *
      * @return The ipVersion.
      */
@@ -3901,7 +4651,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
      *
      * @param value The ipVersion to set.
      * @return This builder for chaining.
@@ -3910,7 +4660,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       ipVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -3922,18 +4672,33 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       ipVersion_ = 0;
       onChanged();
       return this;
     }
 
     private boolean isMirroringCollector_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
+     * </pre>
+     *
+     * <code>bool is_mirroring_collector = 119255164;</code>
+     *
+     * @return Whether the isMirroringCollector field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsMirroringCollector() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -3962,7 +4727,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIsMirroringCollector(boolean value) {
-
+      bitField0_ |= 0x00000400;
       isMirroringCollector_ = value;
       onChanged();
       return this;
@@ -3979,13 +4744,27 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsMirroringCollector() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       isMirroringCollector_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -4046,7 +4825,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       kind_ = value;
       onChanged();
       return this;
@@ -4063,7 +4842,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -4085,7 +4864,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       kind_ = value;
       onChanged();
       return this;
@@ -4112,7 +4891,36 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * </code>
+     *
+     * @return Whether the loadBalancingScheme field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoadBalancingScheme() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the forwarding rule type.
+     * - EXTERNAL is used for:
+     * - Classic Cloud VPN gateways
+     * - Protocol forwarding to VMs from an external IP address
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
+     * - INTERNAL is used for:
+     * - Protocol forwarding to VMs from an internal IP address
+     * - Internal TCP/UDP Load Balancing
+     * - INTERNAL_MANAGED is used for:
+     * - Internal HTTP(S) Load Balancing
+     * - INTERNAL_SELF_MANAGED is used for:
+     * - Traffic Director
+     * For more information about forwarding rules, refer to Forwarding rule concepts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -4141,14 +4949,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @param value The enum numeric value on the wire for loadBalancingScheme to set.
      * @return This builder for chaining.
      */
     public Builder setLoadBalancingSchemeValue(int value) {
-
+      bitField0_ |= 0x00001000;
       loadBalancingScheme_ = value;
       onChanged();
       return this;
@@ -4173,7 +4981,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return The loadBalancingScheme.
@@ -4208,7 +5016,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @param value The loadBalancingScheme to set.
@@ -4219,7 +5027,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       loadBalancingScheme_ = value.getNumber();
       onChanged();
       return this;
@@ -4244,13 +5052,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancingScheme() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       loadBalancingScheme_ = 0;
       onChanged();
       return this;
@@ -4260,10 +5068,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetadataFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         metadataFilters_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>(metadataFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4283,7 +5091,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
       if (metadataFiltersBuilder_ == null) {
@@ -4302,7 +5110,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public int getMetadataFiltersCount() {
       if (metadataFiltersBuilder_ == null) {
@@ -4321,7 +5129,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -4340,7 +5148,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder setMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4365,7 +5173,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder setMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4388,7 +5196,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4413,7 +5221,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4438,7 +5246,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(
         com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4461,7 +5269,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4484,7 +5292,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addAllMetadataFilters(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.MetadataFilter> values) {
@@ -4507,12 +5315,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder clearMetadataFilters() {
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         metadataFiltersBuilder_.clear();
@@ -4529,7 +5337,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder removeMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -4551,7 +5359,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder getMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder().getBuilder(index);
@@ -4566,7 +5374,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
         int index) {
@@ -4586,7 +5394,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
         getMetadataFiltersOrBuilderList() {
@@ -4606,7 +5414,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder() {
       return getMetadataFiltersFieldBuilder()
@@ -4622,7 +5430,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder()
@@ -4638,7 +5446,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter.Builder>
         getMetadataFiltersBuilderList() {
@@ -4657,7 +5465,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.MetadataFilter.Builder,
                 com.google.cloud.compute.v1.MetadataFilterOrBuilder>(
                 metadataFilters_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         metadataFilters_ = null;
@@ -4666,6 +5474,20 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
     /**
      *
      *
@@ -4726,7 +5548,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       name_ = value;
       onChanged();
       return this;
@@ -4743,7 +5565,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4765,13 +5587,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00004000;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field is not used for external load balancing.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
     /**
      *
      *
@@ -4838,7 +5676,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       network_ = value;
       onChanged();
       return this;
@@ -4857,7 +5695,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -4881,7 +5719,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00008000;
       network_ = value;
       onChanged();
       return this;
@@ -4897,7 +5735,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     *
+     * @return Whether the networkTier field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetworkTier() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
+     * For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
+     * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
      *
      * @return The enum numeric value on the wire for networkTier.
      */
@@ -4914,13 +5769,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
      *
      * @param value The enum numeric value on the wire for networkTier to set.
      * @return This builder for chaining.
      */
     public Builder setNetworkTierValue(int value) {
-
+      bitField0_ |= 0x00010000;
       networkTier_ = value;
       onChanged();
       return this;
@@ -4934,7 +5789,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
      *
      * @return The networkTier.
      */
@@ -4956,7 +5811,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
      *
      * @param value The networkTier to set.
      * @return This builder for chaining.
@@ -4965,7 +5820,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       networkTier_ = value.getNumber();
       onChanged();
       return this;
@@ -4979,18 +5834,40 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       networkTier_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object portRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * Some types of forwarding target have constraints on the acceptable ports:
+     * - TargetHttpProxy: 80, 8080
+     * - TargetHttpsProxy: 443
+     * - TargetGrpcProxy: no constraints
+     * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+     * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+     * - TargetVpnGateway: 500, 4500
+     * </pre>
+     *
+     * <code>string port_range = 217518079;</code>
+     *
+     * @return Whether the portRange field is set.
+     */
+    public boolean hasPortRange() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
     /**
      *
      *
@@ -5075,7 +5952,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00020000;
       portRange_ = value;
       onChanged();
       return this;
@@ -5100,7 +5977,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortRange() {
-
+      bitField0_ = (bitField0_ & ~0x00020000);
       portRange_ = getDefaultInstance().getPortRange();
       onChanged();
       return this;
@@ -5130,7 +6007,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00020000;
       portRange_ = value;
       onChanged();
       return this;
@@ -5140,9 +6017,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00040000;
       }
     }
     /**
@@ -5309,7 +6186,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPorts() {
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5341,6 +6218,20 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
     /**
      *
      *
@@ -5401,7 +6292,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00080000;
       region_ = value;
       onChanged();
       return this;
@@ -5418,7 +6309,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -5440,7 +6331,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00080000;
       region_ = value;
       onChanged();
       return this;
@@ -5454,7 +6345,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -5476,7 +6381,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -5498,7 +6403,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -5507,7 +6412,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00100000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -5519,12 +6424,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -5536,7 +6441,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -5546,7 +6451,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00100000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -5562,7 +6467,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 148573418;</code>
+     * <code>string service_label = 417008874;</code>
+     *
+     * @return Whether the serviceLabel field is set.
+     */
+    public boolean hasServiceLabel() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
+     * The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * This field is only used for internal load balancing.
+     * </pre>
+     *
+     * <code>string service_label = 417008874;</code>
      *
      * @return The serviceLabel.
      */
@@ -5586,7 +6507,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 148573418;</code>
+     * <code>string service_label = 417008874;</code>
      *
      * @return The bytes for serviceLabel.
      */
@@ -5610,7 +6531,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 148573418;</code>
+     * <code>string service_label = 417008874;</code>
      *
      * @param value The serviceLabel to set.
      * @return This builder for chaining.
@@ -5619,7 +6540,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00200000;
       serviceLabel_ = value;
       onChanged();
       return this;
@@ -5633,12 +6554,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 148573418;</code>
+     * <code>string service_label = 417008874;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServiceLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00200000);
       serviceLabel_ = getDefaultInstance().getServiceLabel();
       onChanged();
       return this;
@@ -5652,7 +6573,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 148573418;</code>
+     * <code>string service_label = 417008874;</code>
      *
      * @param value The bytes for serviceLabel to set.
      * @return This builder for chaining.
@@ -5662,7 +6583,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00200000;
       serviceLabel_ = value;
       onChanged();
       return this;
@@ -5677,7 +6598,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 91444693;</code>
+     * <code>string service_name = 359880149;</code>
+     *
+     * @return Whether the serviceName field is set.
+     */
+    public boolean hasServiceName() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+     * This field is only used for internal load balancing.
+     * </pre>
+     *
+     * <code>string service_name = 359880149;</code>
      *
      * @return The serviceName.
      */
@@ -5700,7 +6636,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 91444693;</code>
+     * <code>string service_name = 359880149;</code>
      *
      * @return The bytes for serviceName.
      */
@@ -5723,7 +6659,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 91444693;</code>
+     * <code>string service_name = 359880149;</code>
      *
      * @param value The serviceName to set.
      * @return This builder for chaining.
@@ -5732,7 +6668,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00400000;
       serviceName_ = value;
       onChanged();
       return this;
@@ -5745,12 +6681,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 91444693;</code>
+     * <code>string service_name = 359880149;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
+      bitField0_ = (bitField0_ & ~0x00400000);
       serviceName_ = getDefaultInstance().getServiceName();
       onChanged();
       return this;
@@ -5763,7 +6699,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 91444693;</code>
+     * <code>string service_name = 359880149;</code>
      *
      * @param value The bytes for serviceName to set.
      * @return This builder for chaining.
@@ -5773,7 +6709,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00400000;
       serviceName_ = value;
       onChanged();
       return this;
@@ -5789,7 +6725,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return Whether the subnetwork field is set.
+     */
+    public boolean hasSubnetwork() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is only used for internal load balancing.
+     * For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
+     * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The subnetwork.
      */
@@ -5813,7 +6765,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -5837,7 +6789,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -5846,7 +6798,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00800000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -5860,12 +6812,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00800000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -5879,7 +6831,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -5889,13 +6841,30 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00800000;
       subnetwork_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object target_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
+     * </pre>
+     *
+     * <code>string target = 192835985;</code>
+     *
+     * @return Whether the target field is set.
+     */
+    public boolean hasTarget() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
     /**
      *
      *
@@ -5965,7 +6934,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x01000000;
       target_ = value;
       onChanged();
       return this;
@@ -5985,7 +6954,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
+      bitField0_ = (bitField0_ & ~0x01000000);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -6010,7 +6979,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x01000000;
       target_ = value;
       onChanged();
       return this;

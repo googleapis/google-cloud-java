@@ -76,15 +76,40 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
           case 408674:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               googleDemarc_ = s;
               break;
             }
-          case 742199674:
+          case 1801447818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              circuitId_ = s;
+              break;
+            }
+          case 1957738234:
+            {
+              com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000008) != 0)) {
+                subBuilder = receivingOpticalPower_.toBuilder();
+              }
+              receivingOpticalPower_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(receivingOpticalPower_);
+                receivingOpticalPower_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          case -1405283974:
             {
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.Builder subBuilder =
                   null;
-              if (lacpStatus_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = lacpStatus_.toBuilder();
               }
               lacpStatus_ =
@@ -95,10 +120,10 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
                 subBuilder.mergeFrom(lacpStatus_);
                 lacpStatus_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 1169250442:
+          case -978233206:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 arpCaches_ =
@@ -112,11 +137,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
                       extensionRegistry));
               break;
             }
-          case 1527965930:
+          case -619517718:
             {
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
                   subBuilder = null;
-              if (transmittingOpticalPower_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = transmittingOpticalPower_.toBuilder();
               }
               transmittingOpticalPower_ =
@@ -127,32 +152,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
                 subBuilder.mergeFrom(transmittingOpticalPower_);
                 transmittingOpticalPower_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 1801447818:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              circuitId_ = s;
-              break;
-            }
-          case 1957738234:
-            {
-              com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
-                  subBuilder = null;
-              if (receivingOpticalPower_ != null) {
-                subBuilder = receivingOpticalPower_.toBuilder();
-              }
-              receivingOpticalPower_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(receivingOpticalPower_);
-                receivingOpticalPower_ = subBuilder.buildPartial();
-              }
-
+              bitField0_ |= 0x00000010;
               break;
             }
           default:
@@ -192,7 +192,8 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.Builder.class);
   }
 
-  public static final int ARP_CACHES_FIELD_NUMBER = 146156305;
+  private int bitField0_;
+  public static final int ARP_CACHES_FIELD_NUMBER = 414591761;
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> arpCaches_;
   /**
    *
@@ -201,7 +202,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -216,7 +217,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -232,7 +233,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -246,7 +247,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -260,7 +261,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -271,6 +272,21 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
 
   public static final int CIRCUIT_ID_FIELD_NUMBER = 225180977;
   private volatile java.lang.Object circuitId_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique ID for this link assigned during turn up by Google.
+   * </pre>
+   *
+   * <code>string circuit_id = 225180977;</code>
+   *
+   * @return Whether the circuitId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCircuitId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -329,6 +345,21 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    *
    * <code>string google_demarc = 51084;</code>
    *
+   * @return Whether the googleDemarc field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleDemarc() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Demarc address assigned by Google and provided in the LoA.
+   * </pre>
+   *
+   * <code>string google_demarc = 51084;</code>
+   *
    * @return The googleDemarc.
    */
   @java.lang.Override
@@ -367,20 +398,20 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     }
   }
 
-  public static final int LACP_STATUS_FIELD_NUMBER = 92774959;
+  public static final int LACP_STATUS_FIELD_NUMBER = 361210415;
   private com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacpStatus_;
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return Whether the lacpStatus field is set.
    */
   @java.lang.Override
   public boolean hasLacpStatus() {
-    return lacpStatus_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    *
    * @return The lacpStatus.
@@ -392,13 +423,15 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         : lacpStatus_;
   }
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder
       getLacpStatusOrBuilder() {
-    return getLacpStatus();
+    return lacpStatus_ == null
+        ? com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.getDefaultInstance()
+        : lacpStatus_;
   }
 
   public static final int RECEIVING_OPTICAL_POWER_FIELD_NUMBER = 244717279;
@@ -419,7 +452,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasReceivingOpticalPower() {
-    return receivingOpticalPower_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -455,10 +488,12 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
       getReceivingOpticalPowerOrBuilder() {
-    return getReceivingOpticalPower();
+    return receivingOpticalPower_ == null
+        ? com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.getDefaultInstance()
+        : receivingOpticalPower_;
   }
 
-  public static final int TRANSMITTING_OPTICAL_POWER_FIELD_NUMBER = 190995741;
+  public static final int TRANSMITTING_OPTICAL_POWER_FIELD_NUMBER = 459431197;
   private com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
       transmittingOpticalPower_;
   /**
@@ -469,14 +504,14 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return Whether the transmittingOpticalPower field is set.
    */
   @java.lang.Override
   public boolean hasTransmittingOpticalPower() {
-    return transmittingOpticalPower_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -486,7 +521,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    *
    * @return The transmittingOpticalPower.
@@ -506,13 +541,15 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
       getTransmittingOpticalPowerOrBuilder() {
-    return getTransmittingOpticalPower();
+    return transmittingOpticalPower_ == null
+        ? com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.getDefaultInstance()
+        : transmittingOpticalPower_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -529,23 +566,23 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGoogleDemarcBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 51084, googleDemarc_);
     }
-    if (lacpStatus_ != null) {
-      output.writeMessage(92774959, getLacpStatus());
-    }
-    for (int i = 0; i < arpCaches_.size(); i++) {
-      output.writeMessage(146156305, arpCaches_.get(i));
-    }
-    if (transmittingOpticalPower_ != null) {
-      output.writeMessage(190995741, getTransmittingOpticalPower());
-    }
-    if (!getCircuitIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 225180977, circuitId_);
     }
-    if (receivingOpticalPower_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(244717279, getReceivingOpticalPower());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(361210415, getLacpStatus());
+    }
+    for (int i = 0; i < arpCaches_.size(); i++) {
+      output.writeMessage(414591761, arpCaches_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(459431197, getTransmittingOpticalPower());
     }
     unknownFields.writeTo(output);
   }
@@ -556,28 +593,28 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getGoogleDemarcBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(51084, googleDemarc_);
     }
-    if (lacpStatus_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(92774959, getLacpStatus());
-    }
-    for (int i = 0; i < arpCaches_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(146156305, arpCaches_.get(i));
-    }
-    if (transmittingOpticalPower_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              190995741, getTransmittingOpticalPower());
-    }
-    if (!getCircuitIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(225180977, circuitId_);
     }
-    if (receivingOpticalPower_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               244717279, getReceivingOpticalPower());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(361210415, getLacpStatus());
+    }
+    for (int i = 0; i < arpCaches_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(414591761, arpCaches_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              459431197, getTransmittingOpticalPower());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -596,8 +633,14 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         (com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus) obj;
 
     if (!getArpCachesList().equals(other.getArpCachesList())) return false;
-    if (!getCircuitId().equals(other.getCircuitId())) return false;
-    if (!getGoogleDemarc().equals(other.getGoogleDemarc())) return false;
+    if (hasCircuitId() != other.hasCircuitId()) return false;
+    if (hasCircuitId()) {
+      if (!getCircuitId().equals(other.getCircuitId())) return false;
+    }
+    if (hasGoogleDemarc() != other.hasGoogleDemarc()) return false;
+    if (hasGoogleDemarc()) {
+      if (!getGoogleDemarc().equals(other.getGoogleDemarc())) return false;
+    }
     if (hasLacpStatus() != other.hasLacpStatus()) return false;
     if (hasLacpStatus()) {
       if (!getLacpStatus().equals(other.getLacpStatus())) return false;
@@ -625,10 +668,14 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       hash = (37 * hash) + ARP_CACHES_FIELD_NUMBER;
       hash = (53 * hash) + getArpCachesList().hashCode();
     }
-    hash = (37 * hash) + CIRCUIT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCircuitId().hashCode();
-    hash = (37 * hash) + GOOGLE_DEMARC_FIELD_NUMBER;
-    hash = (53 * hash) + getGoogleDemarc().hashCode();
+    if (hasCircuitId()) {
+      hash = (37 * hash) + CIRCUIT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCircuitId().hashCode();
+    }
+    if (hasGoogleDemarc()) {
+      hash = (37 * hash) + GOOGLE_DEMARC_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleDemarc().hashCode();
+    }
     if (hasLacpStatus()) {
       hash = (37 * hash) + LACP_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getLacpStatus().hashCode();
@@ -782,6 +829,9 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getArpCachesFieldBuilder();
+        getLacpStatusFieldBuilder();
+        getReceivingOpticalPowerFieldBuilder();
+        getTransmittingOpticalPowerFieldBuilder();
       }
     }
 
@@ -795,27 +845,27 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         arpCachesBuilder_.clear();
       }
       circuitId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       googleDemarc_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (lacpStatusBuilder_ == null) {
         lacpStatus_ = null;
       } else {
-        lacpStatus_ = null;
-        lacpStatusBuilder_ = null;
+        lacpStatusBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (receivingOpticalPowerBuilder_ == null) {
         receivingOpticalPower_ = null;
       } else {
-        receivingOpticalPower_ = null;
-        receivingOpticalPowerBuilder_ = null;
+        receivingOpticalPowerBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (transmittingOpticalPowerBuilder_ == null) {
         transmittingOpticalPower_ = null;
       } else {
-        transmittingOpticalPower_ = null;
-        transmittingOpticalPowerBuilder_ = null;
+        transmittingOpticalPowerBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -845,6 +895,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (arpCachesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           arpCaches_ = java.util.Collections.unmodifiableList(arpCaches_);
@@ -854,23 +905,39 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         result.arpCaches_ = arpCachesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.circuitId_ = circuitId_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.googleDemarc_ = googleDemarc_;
-      if (lacpStatusBuilder_ == null) {
-        result.lacpStatus_ = lacpStatus_;
-      } else {
-        result.lacpStatus_ = lacpStatusBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (lacpStatusBuilder_ == null) {
+          result.lacpStatus_ = lacpStatus_;
+        } else {
+          result.lacpStatus_ = lacpStatusBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
-      if (receivingOpticalPowerBuilder_ == null) {
-        result.receivingOpticalPower_ = receivingOpticalPower_;
-      } else {
-        result.receivingOpticalPower_ = receivingOpticalPowerBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (receivingOpticalPowerBuilder_ == null) {
+          result.receivingOpticalPower_ = receivingOpticalPower_;
+        } else {
+          result.receivingOpticalPower_ = receivingOpticalPowerBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
       }
-      if (transmittingOpticalPowerBuilder_ == null) {
-        result.transmittingOpticalPower_ = transmittingOpticalPower_;
-      } else {
-        result.transmittingOpticalPower_ = transmittingOpticalPowerBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (transmittingOpticalPowerBuilder_ == null) {
+          result.transmittingOpticalPower_ = transmittingOpticalPower_;
+        } else {
+          result.transmittingOpticalPower_ = transmittingOpticalPowerBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -949,11 +1016,13 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
           }
         }
       }
-      if (!other.getCircuitId().isEmpty()) {
+      if (other.hasCircuitId()) {
+        bitField0_ |= 0x00000002;
         circuitId_ = other.circuitId_;
         onChanged();
       }
-      if (!other.getGoogleDemarc().isEmpty()) {
+      if (other.hasGoogleDemarc()) {
+        bitField0_ |= 0x00000004;
         googleDemarc_ = other.googleDemarc_;
         onChanged();
       }
@@ -1025,7 +1094,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry>
@@ -1044,7 +1113,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public int getArpCachesCount() {
@@ -1062,7 +1131,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index) {
@@ -1080,7 +1149,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder setArpCaches(
@@ -1105,7 +1174,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder setArpCaches(
@@ -1128,7 +1197,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry value) {
@@ -1152,7 +1221,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -1177,7 +1246,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -1199,7 +1268,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -1222,7 +1291,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addAllArpCaches(
@@ -1245,7 +1314,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder clearArpCaches() {
@@ -1266,7 +1335,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder removeArpCaches(int index) {
@@ -1287,7 +1356,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder getArpCachesBuilder(
@@ -1302,7 +1371,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder
@@ -1321,7 +1390,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<
@@ -1341,7 +1410,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder
@@ -1358,7 +1427,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder addArpCachesBuilder(
@@ -1376,7 +1445,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder>
@@ -1402,6 +1471,20 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     }
 
     private java.lang.Object circuitId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique ID for this link assigned during turn up by Google.
+     * </pre>
+     *
+     * <code>string circuit_id = 225180977;</code>
+     *
+     * @return Whether the circuitId field is set.
+     */
+    public boolean hasCircuitId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1462,7 +1545,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       circuitId_ = value;
       onChanged();
       return this;
@@ -1479,7 +1562,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearCircuitId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       circuitId_ = getDefaultInstance().getCircuitId();
       onChanged();
       return this;
@@ -1501,13 +1584,27 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       circuitId_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object googleDemarc_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Demarc address assigned by Google and provided in the LoA.
+     * </pre>
+     *
+     * <code>string google_demarc = 51084;</code>
+     *
+     * @return Whether the googleDemarc field is set.
+     */
+    public boolean hasGoogleDemarc() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1568,7 +1665,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       googleDemarc_ = value;
       onChanged();
       return this;
@@ -1585,7 +1682,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearGoogleDemarc() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       googleDemarc_ = getDefaultInstance().getGoogleDemarc();
       onChanged();
       return this;
@@ -1607,7 +1704,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       googleDemarc_ = value;
       onChanged();
       return this;
@@ -1620,16 +1717,16 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder>
         lacpStatusBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      *
      * @return Whether the lacpStatus field is set.
      */
     public boolean hasLacpStatus() {
-      return lacpStatusBuilder_ != null || lacpStatus_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      *
      * @return The lacpStatus.
@@ -1644,7 +1741,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder setLacpStatus(
@@ -1658,11 +1755,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         lacpStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder setLacpStatus(
@@ -1673,17 +1770,21 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         lacpStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder mergeLacpStatus(
         com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus value) {
       if (lacpStatusBuilder_ == null) {
-        if (lacpStatus_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && lacpStatus_ != null
+            && lacpStatus_
+                != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus
+                    .getDefaultInstance()) {
           lacpStatus_ =
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.newBuilder(
                       lacpStatus_)
@@ -1696,11 +1797,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         lacpStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public Builder clearLacpStatus() {
@@ -1708,24 +1809,23 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         lacpStatus_ = null;
         onChanged();
       } else {
-        lacpStatus_ = null;
-        lacpStatusBuilder_ = null;
+        lacpStatusBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.Builder
         getLacpStatusBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLacpStatusFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder
@@ -1739,7 +1839,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
+     * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1780,7 +1880,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * @return Whether the receivingOpticalPower field is set.
      */
     public boolean hasReceivingOpticalPower() {
-      return receivingOpticalPowerBuilder_ != null || receivingOpticalPower_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1828,7 +1928,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1851,7 +1951,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1868,7 +1968,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     public Builder mergeReceivingOpticalPower(
         com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower value) {
       if (receivingOpticalPowerBuilder_ == null) {
-        if (receivingOpticalPower_ != null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && receivingOpticalPower_ != null
+            && receivingOpticalPower_
+                != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
+                    .getDefaultInstance()) {
           receivingOpticalPower_ =
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.newBuilder(
                       receivingOpticalPower_)
@@ -1881,7 +1985,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1900,10 +2004,9 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         receivingOpticalPower_ = null;
         onChanged();
       } else {
-        receivingOpticalPower_ = null;
-        receivingOpticalPowerBuilder_ = null;
+        receivingOpticalPowerBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
     /**
@@ -1919,7 +2022,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
         getReceivingOpticalPowerBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReceivingOpticalPowerFieldBuilder().getBuilder();
     }
@@ -1988,13 +2091,13 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      *
      * @return Whether the transmittingOpticalPower field is set.
      */
     public boolean hasTransmittingOpticalPower() {
-      return transmittingOpticalPowerBuilder_ != null || transmittingOpticalPower_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2004,7 +2107,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      *
      * @return The transmittingOpticalPower.
@@ -2028,7 +2131,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder setTransmittingOpticalPower(
@@ -2042,7 +2145,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2053,7 +2156,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder setTransmittingOpticalPower(
@@ -2065,7 +2168,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2076,13 +2179,17 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder mergeTransmittingOpticalPower(
         com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower value) {
       if (transmittingOpticalPowerBuilder_ == null) {
-        if (transmittingOpticalPower_ != null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && transmittingOpticalPower_ != null
+            && transmittingOpticalPower_
+                != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
+                    .getDefaultInstance()) {
           transmittingOpticalPower_ =
               com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.newBuilder(
                       transmittingOpticalPower_)
@@ -2095,7 +2202,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2106,7 +2213,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public Builder clearTransmittingOpticalPower() {
@@ -2114,10 +2221,9 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         transmittingOpticalPower_ = null;
         onChanged();
       } else {
-        transmittingOpticalPower_ = null;
-        transmittingOpticalPowerBuilder_ = null;
+        transmittingOpticalPowerBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -2128,12 +2234,12 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
         getTransmittingOpticalPowerBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTransmittingOpticalPowerFieldBuilder().getBuilder();
     }
@@ -2145,7 +2251,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder
@@ -2167,7 +2273,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

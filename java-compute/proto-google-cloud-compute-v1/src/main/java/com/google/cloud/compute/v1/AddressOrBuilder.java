@@ -30,7 +30,19 @@ public interface AddressOrBuilder
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 194485236;</code>
+   * <code>string address = 462920692;</code>
+   *
+   * @return Whether the address field is set.
+   */
+  boolean hasAddress();
+  /**
+   *
+   *
+   * <pre>
+   * The static IP address represented by this resource.
+   * </pre>
+   *
+   * <code>string address = 462920692;</code>
    *
    * @return The address.
    */
@@ -42,12 +54,24 @@ public interface AddressOrBuilder
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 194485236;</code>
+   * <code>string address = 462920692;</code>
    *
    * @return The bytes for address.
    */
   com.google.protobuf.ByteString getAddressBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+   *
+   * @return Whether the addressType field is set.
+   */
+  boolean hasAddressType();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface AddressOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -105,7 +141,19 @@ public interface AddressOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -117,12 +165,24 @@ public interface AddressOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -155,7 +215,19 @@ public interface AddressOrBuilder
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  boolean hasIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -167,12 +239,24 @@ public interface AddressOrBuilder
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
    *
    * @return The ipVersion.
    */
   com.google.cloud.compute.v1.Address.IpVersion getIpVersion();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#address for addresses.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -207,6 +291,18 @@ public interface AddressOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -223,6 +319,18 @@ public interface AddressOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *
@@ -256,7 +364,20 @@ public interface AddressOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  boolean hasNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
+   * If this field is not specified, it is assumed to be PREMIUM.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -269,7 +390,7 @@ public interface AddressOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
    *
    * @return The networkTier.
    */
@@ -282,7 +403,19 @@ public interface AddressOrBuilder
    * The prefix length if the resource reprensents an IP range.
    * </pre>
    *
-   * <code>int32 prefix_length = 185130291;</code>
+   * <code>int32 prefix_length = 453565747;</code>
+   *
+   * @return Whether the prefixLength field is set.
+   */
+  boolean hasPrefixLength();
+  /**
+   *
+   *
+   * <pre>
+   * The prefix length if the resource reprensents an IP range.
+   * </pre>
+   *
+   * <code>int32 prefix_length = 453565747;</code>
    *
    * @return The prefixLength.
    */
@@ -300,7 +433,24 @@ public interface AddressOrBuilder
    * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   *
+   * @return Whether the purpose field is set.
+   */
+  boolean hasPurpose();
+  /**
+   *
+   *
+   * <pre>
+   * The purpose of this resource, which can be one of the following values:
+   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
+   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
+   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
+   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
    *
    * @return The enum numeric value on the wire for purpose.
    */
@@ -317,12 +467,24 @@ public interface AddressOrBuilder
    * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
    *
    * @return The purpose.
    */
   com.google.cloud.compute.v1.Address.Purpose getPurpose();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -355,7 +517,19 @@ public interface AddressOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -367,12 +541,24 @@ public interface AddressOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Address.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -405,7 +591,19 @@ public interface AddressOrBuilder
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  boolean hasSubnetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -417,7 +615,7 @@ public interface AddressOrBuilder
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */

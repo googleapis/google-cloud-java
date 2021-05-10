@@ -59,6 +59,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               name_ = s;
               break;
             }
@@ -110,8 +111,24 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.NetworksRemovePeeringRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the peering, which should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +190,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     unknownFields.writeTo(output);
@@ -185,7 +202,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     size += unknownFields.getSerializedSize();
@@ -204,7 +221,10 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.NetworksRemovePeeringRequest other =
         (com.google.cloud.compute.v1.NetworksRemovePeeringRequest) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,7 +386,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -392,7 +414,13 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.NetworksRemovePeeringRequest buildPartial() {
       com.google.cloud.compute.v1.NetworksRemovePeeringRequest result =
           new com.google.cloud.compute.v1.NetworksRemovePeeringRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.name_ = name_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -443,7 +471,8 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworksRemovePeeringRequest other) {
       if (other == com.google.cloud.compute.v1.NetworksRemovePeeringRequest.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
       }
@@ -477,7 +506,23 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the peering, which should conform to RFC1035.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -538,7 +583,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -555,7 +600,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -577,7 +622,7 @@ public final class NetworksRemovePeeringRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;

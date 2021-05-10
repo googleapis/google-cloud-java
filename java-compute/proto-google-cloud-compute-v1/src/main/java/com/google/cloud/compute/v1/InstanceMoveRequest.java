@@ -60,6 +60,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,18 +71,18 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case 170671130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetInstance_ = s;
-              break;
-            }
           case 1054837226:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               destinationZone_ = s;
+              break;
+            }
+          case -1976812518:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              targetInstance_ = s;
               break;
             }
           default:
@@ -118,8 +119,27 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.InstanceMoveRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESTINATION_ZONE_FIELD_NUMBER = 131854653;
   private volatile java.lang.Object destinationZone_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+   * - projects/project/zones/zone
+   * - zones/zone
+   * </pre>
+   *
+   * <code>string destination_zone = 131854653;</code>
+   *
+   * @return Whether the destinationZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationZone() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +193,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int TARGET_INSTANCE_FIELD_NUMBER = 21333891;
+  public static final int TARGET_INSTANCE_FIELD_NUMBER = 289769347;
   private volatile java.lang.Object targetInstance_;
   /**
    *
@@ -185,7 +205,25 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    * - zones/zone/instances/instance
    * </pre>
    *
-   * <code>string target_instance = 21333891;</code>
+   * <code>string target_instance = 289769347;</code>
+   *
+   * @return Whether the targetInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetInstance() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   * - projects/project/zones/zone/instances/instance
+   * - zones/zone/instances/instance
+   * </pre>
+   *
+   * <code>string target_instance = 289769347;</code>
    *
    * @return The targetInstance.
    */
@@ -211,7 +249,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    * - zones/zone/instances/instance
    * </pre>
    *
-   * <code>string target_instance = 21333891;</code>
+   * <code>string target_instance = 289769347;</code>
    *
    * @return The bytes for targetInstance.
    */
@@ -242,11 +280,11 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTargetInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21333891, targetInstance_);
-    }
-    if (!getDestinationZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 131854653, destinationZone_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 289769347, targetInstance_);
     }
     unknownFields.writeTo(output);
   }
@@ -257,11 +295,11 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21333891, targetInstance_);
-    }
-    if (!getDestinationZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(131854653, destinationZone_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(289769347, targetInstance_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -279,8 +317,14 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.compute.v1.InstanceMoveRequest other =
         (com.google.cloud.compute.v1.InstanceMoveRequest) obj;
 
-    if (!getDestinationZone().equals(other.getDestinationZone())) return false;
-    if (!getTargetInstance().equals(other.getTargetInstance())) return false;
+    if (hasDestinationZone() != other.hasDestinationZone()) return false;
+    if (hasDestinationZone()) {
+      if (!getDestinationZone().equals(other.getDestinationZone())) return false;
+    }
+    if (hasTargetInstance() != other.hasTargetInstance()) return false;
+    if (hasTargetInstance()) {
+      if (!getTargetInstance().equals(other.getTargetInstance())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -292,10 +336,14 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESTINATION_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getDestinationZone().hashCode();
-    hash = (37 * hash) + TARGET_INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getTargetInstance().hashCode();
+    if (hasDestinationZone()) {
+      hash = (37 * hash) + DESTINATION_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationZone().hashCode();
+    }
+    if (hasTargetInstance()) {
+      hash = (37 * hash) + TARGET_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetInstance().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,9 +489,9 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       destinationZone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetInstance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -471,8 +519,17 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.InstanceMoveRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceMoveRequest result =
           new com.google.cloud.compute.v1.InstanceMoveRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.destinationZone_ = destinationZone_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.targetInstance_ = targetInstance_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -523,11 +580,13 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceMoveRequest other) {
       if (other == com.google.cloud.compute.v1.InstanceMoveRequest.getDefaultInstance())
         return this;
-      if (!other.getDestinationZone().isEmpty()) {
+      if (other.hasDestinationZone()) {
+        bitField0_ |= 0x00000001;
         destinationZone_ = other.destinationZone_;
         onChanged();
       }
-      if (!other.getTargetInstance().isEmpty()) {
+      if (other.hasTargetInstance()) {
+        bitField0_ |= 0x00000002;
         targetInstance_ = other.targetInstance_;
         onChanged();
       }
@@ -560,7 +619,26 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object destinationZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     * - projects/project/zones/zone
+     * - zones/zone
+     * </pre>
+     *
+     * <code>string destination_zone = 131854653;</code>
+     *
+     * @return Whether the destinationZone field is set.
+     */
+    public boolean hasDestinationZone() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -630,7 +708,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       destinationZone_ = value;
       onChanged();
       return this;
@@ -650,7 +728,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDestinationZone() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       destinationZone_ = getDefaultInstance().getDestinationZone();
       onChanged();
       return this;
@@ -675,7 +753,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       destinationZone_ = value;
       onChanged();
       return this;
@@ -692,7 +770,24 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 21333891;</code>
+     * <code>string target_instance = 289769347;</code>
+     *
+     * @return Whether the targetInstance field is set.
+     */
+    public boolean hasTargetInstance() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     * - projects/project/zones/zone/instances/instance
+     * - zones/zone/instances/instance
+     * </pre>
+     *
+     * <code>string target_instance = 289769347;</code>
      *
      * @return The targetInstance.
      */
@@ -717,7 +812,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 21333891;</code>
+     * <code>string target_instance = 289769347;</code>
      *
      * @return The bytes for targetInstance.
      */
@@ -742,7 +837,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 21333891;</code>
+     * <code>string target_instance = 289769347;</code>
      *
      * @param value The targetInstance to set.
      * @return This builder for chaining.
@@ -751,7 +846,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       targetInstance_ = value;
       onChanged();
       return this;
@@ -766,12 +861,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 21333891;</code>
+     * <code>string target_instance = 289769347;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTargetInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetInstance_ = getDefaultInstance().getTargetInstance();
       onChanged();
       return this;
@@ -786,7 +881,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 21333891;</code>
+     * <code>string target_instance = 289769347;</code>
      *
      * @param value The bytes for targetInstance to set.
      * @return This builder for chaining.
@@ -796,7 +891,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       targetInstance_ = value;
       onChanged();
       return this;

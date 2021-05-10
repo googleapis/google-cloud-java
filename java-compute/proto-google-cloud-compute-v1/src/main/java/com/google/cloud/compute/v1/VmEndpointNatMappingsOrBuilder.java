@@ -32,6 +32,18 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    * <code>string instance_name = 227947509;</code>
    *
+   * @return Whether the instanceName field is set.
+   */
+  boolean hasInstanceName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the VM instance which the endpoint belongs to
+   * </pre>
+   *
+   * <code>string instance_name = 227947509;</code>
+   *
    * @return The instanceName.
    */
   java.lang.String getInstanceName();

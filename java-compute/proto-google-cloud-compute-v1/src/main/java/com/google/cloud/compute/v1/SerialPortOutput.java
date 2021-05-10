@@ -64,6 +64,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,35 +78,35 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               kind_ = s;
               break;
             }
           case 27023258:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               next_ = s;
               break;
             }
           case 878060306:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               start_ = s;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               selfLink_ = s;
               break;
             }
-          case 1903876306:
+          case -243607342:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               contents_ = s;
               break;
             }
@@ -143,7 +144,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.SerialPortOutput.Builder.class);
   }
 
-  public static final int CONTENTS_FIELD_NUMBER = 237984538;
+  private int bitField0_;
+  public static final int CONTENTS_FIELD_NUMBER = 506419994;
   private volatile java.lang.Object contents_;
   /**
    *
@@ -152,7 +154,22 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
+   *
+   * @return Whether the contents field is set.
+   */
+  @java.lang.Override
+  public boolean hasContents() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The contents of the console output.
+   * </pre>
+   *
+   * <code>string contents = 506419994;</code>
    *
    * @return The contents.
    */
@@ -175,7 +192,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
    *
    * @return The bytes for contents.
    */
@@ -194,6 +211,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#serialPortOutput for serial port output.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -252,6 +284,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    * <code>string next = 3377907;</code>
    *
+   * @return Whether the next field is set.
+   */
+  @java.lang.Override
+  public boolean hasNext() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
+   * </pre>
+   *
+   * <code>string next = 3377907;</code>
+   *
    * @return The next.
    */
   @java.lang.Override
@@ -290,7 +337,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -299,7 +346,22 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -322,7 +384,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -341,6 +403,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   public static final int START_FIELD_NUMBER = 109757538;
   private volatile java.lang.Object start_;
+  /**
+   *
+   *
+   * <pre>
+   * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
+   * </pre>
+   *
+   * <code>string start = 109757538;</code>
+   *
+   * @return Whether the start field is set.
+   */
+  @java.lang.Override
+  public boolean hasStart() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -402,20 +479,20 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNextBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3377907, next_);
     }
-    if (!getStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757538, start_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (!getContentsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 237984538, contents_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 506419994, contents_);
     }
     unknownFields.writeTo(output);
   }
@@ -426,20 +503,20 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNextBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3377907, next_);
     }
-    if (!getStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757538, start_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (!getContentsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(237984538, contents_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(506419994, contents_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -457,11 +534,26 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.SerialPortOutput other =
         (com.google.cloud.compute.v1.SerialPortOutput) obj;
 
-    if (!getContents().equals(other.getContents())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getNext().equals(other.getNext())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (!getStart().equals(other.getStart())) return false;
+    if (hasContents() != other.hasContents()) return false;
+    if (hasContents()) {
+      if (!getContents().equals(other.getContents())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasNext() != other.hasNext()) return false;
+    if (hasNext()) {
+      if (!getNext().equals(other.getNext())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasStart() != other.hasStart()) return false;
+    if (hasStart()) {
+      if (!getStart().equals(other.getStart())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -473,16 +565,26 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
-    hash = (53 * hash) + getContents().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NEXT_FIELD_NUMBER;
-    hash = (53 * hash) + getNext().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + START_FIELD_NUMBER;
-    hash = (53 * hash) + getStart().hashCode();
+    if (hasContents()) {
+      hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContents().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasNext()) {
+      hash = (37 * hash) + NEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getNext().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStart()) {
+      hash = (37 * hash) + START_FIELD_NUMBER;
+      hash = (53 * hash) + getStart().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -629,15 +731,15 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       contents_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       next_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       start_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -665,11 +767,29 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.SerialPortOutput buildPartial() {
       com.google.cloud.compute.v1.SerialPortOutput result =
           new com.google.cloud.compute.v1.SerialPortOutput(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.contents_ = contents_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.next_ = next_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.start_ = start_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -719,23 +839,28 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SerialPortOutput other) {
       if (other == com.google.cloud.compute.v1.SerialPortOutput.getDefaultInstance()) return this;
-      if (!other.getContents().isEmpty()) {
+      if (other.hasContents()) {
+        bitField0_ |= 0x00000001;
         contents_ = other.contents_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getNext().isEmpty()) {
+      if (other.hasNext()) {
+        bitField0_ |= 0x00000004;
         next_ = other.next_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000008;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (!other.getStart().isEmpty()) {
+      if (other.hasStart()) {
+        bitField0_ |= 0x00000010;
         start_ = other.start_;
         onChanged();
       }
@@ -768,6 +893,8 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object contents_ = "";
     /**
      *
@@ -776,7 +903,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
+     *
+     * @return Whether the contents field is set.
+     */
+    public boolean hasContents() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The contents of the console output.
+     * </pre>
+     *
+     * <code>string contents = 506419994;</code>
      *
      * @return The contents.
      */
@@ -798,7 +939,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @return The bytes for contents.
      */
@@ -820,7 +961,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @param value The contents to set.
      * @return This builder for chaining.
@@ -829,7 +970,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       contents_ = value;
       onChanged();
       return this;
@@ -841,12 +982,12 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       contents_ = getDefaultInstance().getContents();
       onChanged();
       return this;
@@ -858,7 +999,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @param value The bytes for contents to set.
      * @return This builder for chaining.
@@ -868,13 +1009,27 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       contents_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#serialPortOutput for serial port output.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -935,7 +1090,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;
@@ -952,7 +1107,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -974,13 +1129,27 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object next_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The position of the next byte of content, regardless of whether the content exists, following the output returned in the `contents` property. Use this value in the next request as the start parameter.
+     * </pre>
+     *
+     * <code>string next = 3377907;</code>
+     *
+     * @return Whether the next field is set.
+     */
+    public boolean hasNext() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1041,7 +1210,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       next_ = value;
       onChanged();
       return this;
@@ -1058,7 +1227,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNext() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       next_ = getDefaultInstance().getNext();
       onChanged();
       return this;
@@ -1080,7 +1249,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       next_ = value;
       onChanged();
       return this;
@@ -1094,7 +1263,21 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1116,7 +1299,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1138,7 +1321,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1147,7 +1330,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1159,12 +1342,12 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1176,7 +1359,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1186,13 +1369,27 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object start_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The starting byte position of the output that was returned. This should match the start parameter sent with the request. If the serial console output exceeds the size of the buffer (1 MB), older output is overwritten by newer content. The output start value will indicate the byte position of the output that was returned, which might be different than the `start` value that was specified in the request.
+     * </pre>
+     *
+     * <code>string start = 109757538;</code>
+     *
+     * @return Whether the start field is set.
+     */
+    public boolean hasStart() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1253,7 +1450,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       start_ = value;
       onChanged();
       return this;
@@ -1270,7 +1467,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       start_ = getDefaultInstance().getStart();
       onChanged();
       return this;
@@ -1292,7 +1489,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       start_ = value;
       onChanged();
       return this;

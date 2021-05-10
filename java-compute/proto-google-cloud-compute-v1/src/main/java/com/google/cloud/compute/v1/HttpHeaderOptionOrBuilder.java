@@ -32,6 +32,18 @@ public interface HttpHeaderOptionOrBuilder
    *
    * <code>string header_name = 110223613;</code>
    *
+   * @return Whether the headerName field is set.
+   */
+  boolean hasHeaderName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the header.
+   * </pre>
+   *
+   * <code>string header_name = 110223613;</code>
+   *
    * @return The headerName.
    */
   java.lang.String getHeaderName();
@@ -57,6 +69,18 @@ public interface HttpHeaderOptionOrBuilder
    *
    * <code>string header_value = 203094335;</code>
    *
+   * @return Whether the headerValue field is set.
+   */
+  boolean hasHeaderValue();
+  /**
+   *
+   *
+   * <pre>
+   * The value of the header to add.
+   * </pre>
+   *
+   * <code>string header_value = 203094335;</code>
+   *
    * @return The headerValue.
    */
   java.lang.String getHeaderValue();
@@ -73,6 +97,19 @@ public interface HttpHeaderOptionOrBuilder
    */
   com.google.protobuf.ByteString getHeaderValueBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * If false, headerValue is appended to any values that already exist for the header. If true, headerValue is set for the header, discarding any values that were set for that header.
+   * The default value is false.
+   * </pre>
+   *
+   * <code>bool replace = 20755124;</code>
+   *
+   * @return Whether the replace field is set.
+   */
+  boolean hasReplace();
   /**
    *
    *

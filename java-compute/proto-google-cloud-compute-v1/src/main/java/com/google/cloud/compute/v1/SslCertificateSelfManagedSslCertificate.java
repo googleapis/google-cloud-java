@@ -63,6 +63,7 @@ public final class SslCertificateSelfManagedSslCertificate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,17 +74,17 @@ public final class SslCertificateSelfManagedSslCertificate
           case 0:
             done = true;
             break;
-          case 586812602:
+          case -1560671046:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               certificate_ = s;
               break;
             }
-          case 743165210:
+          case -1404318438:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               privateKey_ = s;
               break;
             }
@@ -121,7 +122,8 @@ public final class SslCertificateSelfManagedSslCertificate
             com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.Builder.class);
   }
 
-  public static final int CERTIFICATE_FIELD_NUMBER = 73351575;
+  private int bitField0_;
+  public static final int CERTIFICATE_FIELD_NUMBER = 341787031;
   private volatile java.lang.Object certificate_;
   /**
    *
@@ -130,7 +132,22 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 73351575;</code>
+   * <code>string certificate = 341787031;</code>
+   *
+   * @return Whether the certificate field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertificate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * </pre>
+   *
+   * <code>string certificate = 341787031;</code>
    *
    * @return The certificate.
    */
@@ -153,7 +170,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 73351575;</code>
+   * <code>string certificate = 341787031;</code>
    *
    * @return The bytes for certificate.
    */
@@ -170,7 +187,7 @@ public final class SslCertificateSelfManagedSslCertificate
     }
   }
 
-  public static final int PRIVATE_KEY_FIELD_NUMBER = 92895651;
+  public static final int PRIVATE_KEY_FIELD_NUMBER = 361331107;
   private volatile java.lang.Object privateKey_;
   /**
    *
@@ -179,7 +196,22 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 92895651;</code>
+   * <code>string private_key = 361331107;</code>
+   *
+   * @return Whether the privateKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateKey() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A write-only private key in PEM format. Only insert requests will include this field.
+   * </pre>
+   *
+   * <code>string private_key = 361331107;</code>
    *
    * @return The privateKey.
    */
@@ -202,7 +234,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 92895651;</code>
+   * <code>string private_key = 361331107;</code>
    *
    * @return The bytes for privateKey.
    */
@@ -233,11 +265,11 @@ public final class SslCertificateSelfManagedSslCertificate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCertificateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 73351575, certificate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 341787031, certificate_);
     }
-    if (!getPrivateKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 92895651, privateKey_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 361331107, privateKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -248,11 +280,11 @@ public final class SslCertificateSelfManagedSslCertificate
     if (size != -1) return size;
 
     size = 0;
-    if (!getCertificateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(73351575, certificate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341787031, certificate_);
     }
-    if (!getPrivateKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92895651, privateKey_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(361331107, privateKey_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,8 +302,14 @@ public final class SslCertificateSelfManagedSslCertificate
     com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate other =
         (com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate) obj;
 
-    if (!getCertificate().equals(other.getCertificate())) return false;
-    if (!getPrivateKey().equals(other.getPrivateKey())) return false;
+    if (hasCertificate() != other.hasCertificate()) return false;
+    if (hasCertificate()) {
+      if (!getCertificate().equals(other.getCertificate())) return false;
+    }
+    if (hasPrivateKey() != other.hasPrivateKey()) return false;
+    if (hasPrivateKey()) {
+      if (!getPrivateKey().equals(other.getPrivateKey())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -283,10 +321,14 @@ public final class SslCertificateSelfManagedSslCertificate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CERTIFICATE_FIELD_NUMBER;
-    hash = (53 * hash) + getCertificate().hashCode();
-    hash = (37 * hash) + PRIVATE_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getPrivateKey().hashCode();
+    if (hasCertificate()) {
+      hash = (37 * hash) + CERTIFICATE_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificate().hashCode();
+    }
+    if (hasPrivateKey()) {
+      hash = (37 * hash) + PRIVATE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateKey().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -436,9 +478,9 @@ public final class SslCertificateSelfManagedSslCertificate
     public Builder clear() {
       super.clear();
       certificate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       privateKey_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -468,8 +510,17 @@ public final class SslCertificateSelfManagedSslCertificate
     public com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate buildPartial() {
       com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate result =
           new com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.certificate_ = certificate_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.privateKey_ = privateKey_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -523,11 +574,13 @@ public final class SslCertificateSelfManagedSslCertificate
       if (other
           == com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate
               .getDefaultInstance()) return this;
-      if (!other.getCertificate().isEmpty()) {
+      if (other.hasCertificate()) {
+        bitField0_ |= 0x00000001;
         certificate_ = other.certificate_;
         onChanged();
       }
-      if (!other.getPrivateKey().isEmpty()) {
+      if (other.hasPrivateKey()) {
+        bitField0_ |= 0x00000002;
         privateKey_ = other.privateKey_;
         onChanged();
       }
@@ -562,6 +615,8 @@ public final class SslCertificateSelfManagedSslCertificate
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object certificate_ = "";
     /**
      *
@@ -570,7 +625,21 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 73351575;</code>
+     * <code>string certificate = 341787031;</code>
+     *
+     * @return Whether the certificate field is set.
+     */
+    public boolean hasCertificate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+     * </pre>
+     *
+     * <code>string certificate = 341787031;</code>
      *
      * @return The certificate.
      */
@@ -592,7 +661,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 73351575;</code>
+     * <code>string certificate = 341787031;</code>
      *
      * @return The bytes for certificate.
      */
@@ -614,7 +683,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 73351575;</code>
+     * <code>string certificate = 341787031;</code>
      *
      * @param value The certificate to set.
      * @return This builder for chaining.
@@ -623,7 +692,7 @@ public final class SslCertificateSelfManagedSslCertificate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       certificate_ = value;
       onChanged();
       return this;
@@ -635,12 +704,12 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 73351575;</code>
+     * <code>string certificate = 341787031;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCertificate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       certificate_ = getDefaultInstance().getCertificate();
       onChanged();
       return this;
@@ -652,7 +721,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 73351575;</code>
+     * <code>string certificate = 341787031;</code>
      *
      * @param value The bytes for certificate to set.
      * @return This builder for chaining.
@@ -662,7 +731,7 @@ public final class SslCertificateSelfManagedSslCertificate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       certificate_ = value;
       onChanged();
       return this;
@@ -676,7 +745,21 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 92895651;</code>
+     * <code>string private_key = 361331107;</code>
+     *
+     * @return Whether the privateKey field is set.
+     */
+    public boolean hasPrivateKey() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A write-only private key in PEM format. Only insert requests will include this field.
+     * </pre>
+     *
+     * <code>string private_key = 361331107;</code>
      *
      * @return The privateKey.
      */
@@ -698,7 +781,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 92895651;</code>
+     * <code>string private_key = 361331107;</code>
      *
      * @return The bytes for privateKey.
      */
@@ -720,7 +803,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 92895651;</code>
+     * <code>string private_key = 361331107;</code>
      *
      * @param value The privateKey to set.
      * @return This builder for chaining.
@@ -729,7 +812,7 @@ public final class SslCertificateSelfManagedSslCertificate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       privateKey_ = value;
       onChanged();
       return this;
@@ -741,12 +824,12 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 92895651;</code>
+     * <code>string private_key = 361331107;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPrivateKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       privateKey_ = getDefaultInstance().getPrivateKey();
       onChanged();
       return this;
@@ -758,7 +841,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 92895651;</code>
+     * <code>string private_key = 361331107;</code>
      *
      * @param value The bytes for privateKey to set.
      * @return This builder for chaining.
@@ -768,7 +851,7 @@ public final class SslCertificateSelfManagedSslCertificate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       privateKey_ = value;
       onChanged();
       return this;

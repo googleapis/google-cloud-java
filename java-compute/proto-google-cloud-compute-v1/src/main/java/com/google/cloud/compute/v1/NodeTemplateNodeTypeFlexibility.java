@@ -62,6 +62,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,21 +76,21 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
           case 24485466:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               cpus_ = s;
               break;
             }
-          case 1098447234:
+          case -1049036414:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               localSsd_ = s;
               break;
             }
-          case 2115364874:
+          case -32118774:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               memory_ = s;
               break;
             }
@@ -127,8 +128,18 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
             com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CPUS_FIELD_NUMBER = 3060683;
   private volatile java.lang.Object cpus_;
+  /**
+   * <code>string cpus = 3060683;</code>
+   *
+   * @return Whether the cpus field is set.
+   */
+  @java.lang.Override
+  public boolean hasCpus() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    * <code>string cpus = 3060683;</code>
    *
@@ -164,10 +175,19 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
 
-  public static final int LOCAL_SSD_FIELD_NUMBER = 137305904;
+  public static final int LOCAL_SSD_FIELD_NUMBER = 405741360;
   private volatile java.lang.Object localSsd_;
   /**
-   * <code>string local_ssd = 137305904;</code>
+   * <code>string local_ssd = 405741360;</code>
+   *
+   * @return Whether the localSsd field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalSsd() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>string local_ssd = 405741360;</code>
    *
    * @return The localSsd.
    */
@@ -184,7 +204,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string local_ssd = 137305904;</code>
+   * <code>string local_ssd = 405741360;</code>
    *
    * @return The bytes for localSsd.
    */
@@ -201,10 +221,19 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
 
-  public static final int MEMORY_FIELD_NUMBER = 264420609;
+  public static final int MEMORY_FIELD_NUMBER = 532856065;
   private volatile java.lang.Object memory_;
   /**
-   * <code>string memory = 264420609;</code>
+   * <code>string memory = 532856065;</code>
+   *
+   * @return Whether the memory field is set.
+   */
+  @java.lang.Override
+  public boolean hasMemory() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>string memory = 532856065;</code>
    *
    * @return The memory.
    */
@@ -221,7 +250,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string memory = 264420609;</code>
+   * <code>string memory = 532856065;</code>
    *
    * @return The bytes for memory.
    */
@@ -252,14 +281,14 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCpusBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3060683, cpus_);
     }
-    if (!getLocalSsdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137305904, localSsd_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 405741360, localSsd_);
     }
-    if (!getMemoryBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 264420609, memory_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 532856065, memory_);
     }
     unknownFields.writeTo(output);
   }
@@ -270,14 +299,14 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getCpusBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3060683, cpus_);
     }
-    if (!getLocalSsdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137305904, localSsd_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(405741360, localSsd_);
     }
-    if (!getMemoryBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264420609, memory_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(532856065, memory_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -295,9 +324,18 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility other =
         (com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility) obj;
 
-    if (!getCpus().equals(other.getCpus())) return false;
-    if (!getLocalSsd().equals(other.getLocalSsd())) return false;
-    if (!getMemory().equals(other.getMemory())) return false;
+    if (hasCpus() != other.hasCpus()) return false;
+    if (hasCpus()) {
+      if (!getCpus().equals(other.getCpus())) return false;
+    }
+    if (hasLocalSsd() != other.hasLocalSsd()) return false;
+    if (hasLocalSsd()) {
+      if (!getLocalSsd().equals(other.getLocalSsd())) return false;
+    }
+    if (hasMemory() != other.hasMemory()) return false;
+    if (hasMemory()) {
+      if (!getMemory().equals(other.getMemory())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -309,12 +347,18 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CPUS_FIELD_NUMBER;
-    hash = (53 * hash) + getCpus().hashCode();
-    hash = (37 * hash) + LOCAL_SSD_FIELD_NUMBER;
-    hash = (53 * hash) + getLocalSsd().hashCode();
-    hash = (37 * hash) + MEMORY_FIELD_NUMBER;
-    hash = (53 * hash) + getMemory().hashCode();
+    if (hasCpus()) {
+      hash = (37 * hash) + CPUS_FIELD_NUMBER;
+      hash = (53 * hash) + getCpus().hashCode();
+    }
+    if (hasLocalSsd()) {
+      hash = (37 * hash) + LOCAL_SSD_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalSsd().hashCode();
+    }
+    if (hasMemory()) {
+      hash = (37 * hash) + MEMORY_FIELD_NUMBER;
+      hash = (53 * hash) + getMemory().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -461,11 +505,11 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       cpus_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       localSsd_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       memory_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,9 +537,21 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility buildPartial() {
       com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility result =
           new com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.cpus_ = cpus_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.localSsd_ = localSsd_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.memory_ = memory_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -546,15 +602,18 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     public Builder mergeFrom(com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility other) {
       if (other == com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.getDefaultInstance())
         return this;
-      if (!other.getCpus().isEmpty()) {
+      if (other.hasCpus()) {
+        bitField0_ |= 0x00000001;
         cpus_ = other.cpus_;
         onChanged();
       }
-      if (!other.getLocalSsd().isEmpty()) {
+      if (other.hasLocalSsd()) {
+        bitField0_ |= 0x00000002;
         localSsd_ = other.localSsd_;
         onChanged();
       }
-      if (!other.getMemory().isEmpty()) {
+      if (other.hasMemory()) {
+        bitField0_ |= 0x00000004;
         memory_ = other.memory_;
         onChanged();
       }
@@ -588,7 +647,17 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object cpus_ = "";
+    /**
+     * <code>string cpus = 3060683;</code>
+     *
+     * @return Whether the cpus field is set.
+     */
+    public boolean hasCpus() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      * <code>string cpus = 3060683;</code>
      *
@@ -631,7 +700,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       cpus_ = value;
       onChanged();
       return this;
@@ -642,7 +711,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearCpus() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cpus_ = getDefaultInstance().getCpus();
       onChanged();
       return this;
@@ -658,7 +727,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       cpus_ = value;
       onChanged();
       return this;
@@ -666,7 +735,15 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object localSsd_ = "";
     /**
-     * <code>string local_ssd = 137305904;</code>
+     * <code>string local_ssd = 405741360;</code>
+     *
+     * @return Whether the localSsd field is set.
+     */
+    public boolean hasLocalSsd() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>string local_ssd = 405741360;</code>
      *
      * @return The localSsd.
      */
@@ -682,7 +759,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 137305904;</code>
+     * <code>string local_ssd = 405741360;</code>
      *
      * @return The bytes for localSsd.
      */
@@ -698,7 +775,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 137305904;</code>
+     * <code>string local_ssd = 405741360;</code>
      *
      * @param value The localSsd to set.
      * @return This builder for chaining.
@@ -707,24 +784,24 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       localSsd_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string local_ssd = 137305904;</code>
+     * <code>string local_ssd = 405741360;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLocalSsd() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       localSsd_ = getDefaultInstance().getLocalSsd();
       onChanged();
       return this;
     }
     /**
-     * <code>string local_ssd = 137305904;</code>
+     * <code>string local_ssd = 405741360;</code>
      *
      * @param value The bytes for localSsd to set.
      * @return This builder for chaining.
@@ -734,7 +811,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       localSsd_ = value;
       onChanged();
       return this;
@@ -742,7 +819,15 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object memory_ = "";
     /**
-     * <code>string memory = 264420609;</code>
+     * <code>string memory = 532856065;</code>
+     *
+     * @return Whether the memory field is set.
+     */
+    public boolean hasMemory() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>string memory = 532856065;</code>
      *
      * @return The memory.
      */
@@ -758,7 +843,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 264420609;</code>
+     * <code>string memory = 532856065;</code>
      *
      * @return The bytes for memory.
      */
@@ -774,7 +859,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 264420609;</code>
+     * <code>string memory = 532856065;</code>
      *
      * @param value The memory to set.
      * @return This builder for chaining.
@@ -783,24 +868,24 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       memory_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string memory = 264420609;</code>
+     * <code>string memory = 532856065;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMemory() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       memory_ = getDefaultInstance().getMemory();
       onChanged();
       return this;
     }
     /**
-     * <code>string memory = 264420609;</code>
+     * <code>string memory = 532856065;</code>
      *
      * @param value The bytes for memory to set.
      * @return This builder for chaining.
@@ -810,7 +895,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       memory_ = value;
       onChanged();
       return this;

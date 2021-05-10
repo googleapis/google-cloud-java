@@ -73,7 +73,14 @@ public final class RegionInstanceGroupManagersListInstancesResponse
           case 0:
             done = true;
             break;
-          case 542273266:
+          case 638380202:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              nextPageToken_ = s;
+              break;
+            }
+          case -1605210382:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 managedInstances_ =
@@ -83,13 +90,6 @@ public final class RegionInstanceGroupManagersListInstancesResponse
               managedInstances_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.ManagedInstance.parser(), extensionRegistry));
-              break;
-            }
-          case 638380202:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextPageToken_ = s;
               break;
             }
           default:
@@ -130,7 +130,8 @@ public final class RegionInstanceGroupManagersListInstancesResponse
                 .class);
   }
 
-  public static final int MANAGED_INSTANCES_FIELD_NUMBER = 67784158;
+  private int bitField0_;
+  public static final int MANAGED_INSTANCES_FIELD_NUMBER = 336219614;
   private java.util.List<com.google.cloud.compute.v1.ManagedInstance> managedInstances_;
   /**
    *
@@ -139,7 +140,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
    * A list of managed instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList() {
@@ -152,7 +153,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
    * A list of managed instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceOrBuilder>
@@ -166,7 +167,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
    * A list of managed instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   @java.lang.Override
   public int getManagedInstancesCount() {
@@ -179,7 +180,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
    * A list of managed instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index) {
@@ -192,7 +193,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
    * A list of managed instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ManagedInstanceOrBuilder getManagedInstancesOrBuilder(
@@ -202,6 +203,21 @@ public final class RegionInstanceGroupManagersListInstancesResponse
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 79797525;
   private volatile java.lang.Object nextPageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -263,11 +279,11 @@ public final class RegionInstanceGroupManagersListInstancesResponse
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < managedInstances_.size(); i++) {
-      output.writeMessage(67784158, managedInstances_.get(i));
-    }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
+    }
+    for (int i = 0; i < managedInstances_.size(); i++) {
+      output.writeMessage(336219614, managedInstances_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,13 +294,13 @@ public final class RegionInstanceGroupManagersListInstancesResponse
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
+    }
     for (int i = 0; i < managedInstances_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              67784158, managedInstances_.get(i));
-    }
-    if (!getNextPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
+              336219614, managedInstances_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -304,7 +320,10 @@ public final class RegionInstanceGroupManagersListInstancesResponse
         (com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse) obj;
 
     if (!getManagedInstancesList().equals(other.getManagedInstancesList())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -320,8 +339,10 @@ public final class RegionInstanceGroupManagersListInstancesResponse
       hash = (37 * hash) + MANAGED_INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getManagedInstancesList().hashCode();
     }
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -484,7 +505,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
         managedInstancesBuilder_.clear();
       }
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -517,6 +538,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
       com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (managedInstancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           managedInstances_ = java.util.Collections.unmodifiableList(managedInstances_);
@@ -526,7 +548,11 @@ public final class RegionInstanceGroupManagersListInstancesResponse
       } else {
         result.managedInstances_ = managedInstancesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.nextPageToken_ = nextPageToken_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -608,7 +634,8 @@ public final class RegionInstanceGroupManagersListInstancesResponse
           }
         }
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000002;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
@@ -670,7 +697,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList() {
       if (managedInstancesBuilder_ == null) {
@@ -686,7 +713,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public int getManagedInstancesCount() {
       if (managedInstancesBuilder_ == null) {
@@ -702,7 +729,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index) {
       if (managedInstancesBuilder_ == null) {
@@ -718,7 +745,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder setManagedInstances(
         int index, com.google.cloud.compute.v1.ManagedInstance value) {
@@ -741,7 +768,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder setManagedInstances(
         int index, com.google.cloud.compute.v1.ManagedInstance.Builder builderForValue) {
@@ -761,7 +788,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder addManagedInstances(com.google.cloud.compute.v1.ManagedInstance value) {
       if (managedInstancesBuilder_ == null) {
@@ -783,7 +810,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder addManagedInstances(
         int index, com.google.cloud.compute.v1.ManagedInstance value) {
@@ -806,7 +833,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder addManagedInstances(
         com.google.cloud.compute.v1.ManagedInstance.Builder builderForValue) {
@@ -826,7 +853,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder addManagedInstances(
         int index, com.google.cloud.compute.v1.ManagedInstance.Builder builderForValue) {
@@ -846,7 +873,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder addAllManagedInstances(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.ManagedInstance> values) {
@@ -866,7 +893,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder clearManagedInstances() {
       if (managedInstancesBuilder_ == null) {
@@ -885,7 +912,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public Builder removeManagedInstances(int index) {
       if (managedInstancesBuilder_ == null) {
@@ -904,7 +931,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstance.Builder getManagedInstancesBuilder(
         int index) {
@@ -917,7 +944,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceOrBuilder getManagedInstancesOrBuilder(
         int index) {
@@ -934,7 +961,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceOrBuilder>
         getManagedInstancesOrBuilderList() {
@@ -951,7 +978,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstance.Builder addManagedInstancesBuilder() {
       return getManagedInstancesFieldBuilder()
@@ -964,7 +991,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstance.Builder addManagedInstancesBuilder(
         int index) {
@@ -978,7 +1005,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * A list of managed instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+     * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ManagedInstance.Builder>
         getManagedInstancesBuilderList() {
@@ -1006,6 +1033,20 @@ public final class RegionInstanceGroupManagersListInstancesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1066,7 +1107,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1083,7 +1124,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -1105,7 +1146,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;

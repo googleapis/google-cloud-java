@@ -73,7 +73,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 685410786:
+          case -1462072862:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nodeTemplates_ =
@@ -135,7 +135,8 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.NodeTemplatesScopedList.Builder.class);
   }
 
-  public static final int NODE_TEMPLATES_FIELD_NUMBER = 85676348;
+  private int bitField0_;
+  public static final int NODE_TEMPLATES_FIELD_NUMBER = 354111804;
   private java.util.List<com.google.cloud.compute.v1.NodeTemplate> nodeTemplates_;
   /**
    *
@@ -144,7 +145,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NodeTemplate> getNodeTemplatesList() {
@@ -157,7 +158,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NodeTemplateOrBuilder>
@@ -171,7 +172,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   @java.lang.Override
   public int getNodeTemplatesCount() {
@@ -184,7 +185,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeTemplate getNodeTemplates(int index) {
@@ -197,7 +198,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplatesOrBuilder(int index) {
@@ -219,7 +220,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -247,7 +248,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -264,11 +265,11 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < nodeTemplates_.size(); i++) {
-      output.writeMessage(85676348, nodeTemplates_.get(i));
+      output.writeMessage(354111804, nodeTemplates_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -279,12 +280,13 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < nodeTemplates_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(85676348, nodeTemplates_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              354111804, nodeTemplates_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -466,6 +468,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNodeTemplatesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -481,9 +484,9 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -512,6 +515,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       com.google.cloud.compute.v1.NodeTemplatesScopedList result =
           new com.google.cloud.compute.v1.NodeTemplatesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (nodeTemplatesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nodeTemplates_ = java.util.Collections.unmodifiableList(nodeTemplates_);
@@ -521,11 +525,15 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       } else {
         result.nodeTemplates_ = nodeTemplatesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -662,7 +670,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NodeTemplate> getNodeTemplatesList() {
       if (nodeTemplatesBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public int getNodeTemplatesCount() {
       if (nodeTemplatesBuilder_ == null) {
@@ -694,7 +702,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public com.google.cloud.compute.v1.NodeTemplate getNodeTemplates(int index) {
       if (nodeTemplatesBuilder_ == null) {
@@ -710,7 +718,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder setNodeTemplates(int index, com.google.cloud.compute.v1.NodeTemplate value) {
       if (nodeTemplatesBuilder_ == null) {
@@ -732,7 +740,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder setNodeTemplates(
         int index, com.google.cloud.compute.v1.NodeTemplate.Builder builderForValue) {
@@ -752,7 +760,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder addNodeTemplates(com.google.cloud.compute.v1.NodeTemplate value) {
       if (nodeTemplatesBuilder_ == null) {
@@ -774,7 +782,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder addNodeTemplates(int index, com.google.cloud.compute.v1.NodeTemplate value) {
       if (nodeTemplatesBuilder_ == null) {
@@ -796,7 +804,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder addNodeTemplates(
         com.google.cloud.compute.v1.NodeTemplate.Builder builderForValue) {
@@ -816,7 +824,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder addNodeTemplates(
         int index, com.google.cloud.compute.v1.NodeTemplate.Builder builderForValue) {
@@ -836,7 +844,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder addAllNodeTemplates(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NodeTemplate> values) {
@@ -856,7 +864,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder clearNodeTemplates() {
       if (nodeTemplatesBuilder_ == null) {
@@ -875,7 +883,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public Builder removeNodeTemplates(int index) {
       if (nodeTemplatesBuilder_ == null) {
@@ -894,7 +902,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public com.google.cloud.compute.v1.NodeTemplate.Builder getNodeTemplatesBuilder(int index) {
       return getNodeTemplatesFieldBuilder().getBuilder(index);
@@ -906,7 +914,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplatesOrBuilder(int index) {
       if (nodeTemplatesBuilder_ == null) {
@@ -922,7 +930,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NodeTemplateOrBuilder>
         getNodeTemplatesOrBuilderList() {
@@ -939,7 +947,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public com.google.cloud.compute.v1.NodeTemplate.Builder addNodeTemplatesBuilder() {
       return getNodeTemplatesFieldBuilder()
@@ -952,7 +960,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public com.google.cloud.compute.v1.NodeTemplate.Builder addNodeTemplatesBuilder(int index) {
       return getNodeTemplatesFieldBuilder()
@@ -965,7 +973,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * [Output Only] A list of node templates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NodeTemplate.Builder>
         getNodeTemplatesBuilderList() {
@@ -1010,7 +1018,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1051,7 +1059,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1070,7 +1078,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1084,7 +1092,9 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1096,7 +1106,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1113,10 +1123,9 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1129,7 +1138,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

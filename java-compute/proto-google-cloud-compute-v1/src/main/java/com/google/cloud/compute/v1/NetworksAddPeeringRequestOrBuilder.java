@@ -32,10 +32,34 @@ public interface NetworksAddPeeringRequestOrBuilder
    *
    * <code>bool auto_create_routes = 57454941;</code>
    *
+   * @return Whether the autoCreateRoutes field is set.
+   */
+  boolean hasAutoCreateRoutes();
+  /**
+   *
+   *
+   * <pre>
+   * This field will be deprecated soon. Use exchange_subnet_routes in network_peering instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * </pre>
+   *
+   * <code>bool auto_create_routes = 57454941;</code>
+   *
    * @return The autoCreateRoutes.
    */
   boolean getAutoCreateRoutes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the peering, which should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -68,7 +92,7 @@ public interface NetworksAddPeeringRequestOrBuilder
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return Whether the networkPeering field is set.
    */
@@ -80,7 +104,7 @@ public interface NetworksAddPeeringRequestOrBuilder
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return The networkPeering.
    */
@@ -92,7 +116,7 @@ public interface NetworksAddPeeringRequestOrBuilder
    * Network peering parameters. In order to specify route policies for peering using import and export custom routes, you must specify all peering related parameters (name, peer network, exchange_subnet_routes) in the network_peering field. The corresponding fields in NetworksAddPeeringRequest will be deprecated soon.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    */
   com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder();
 
@@ -103,7 +127,19 @@ public interface NetworksAddPeeringRequestOrBuilder
    * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string peer_network = 232190033;</code>
+   * <code>string peer_network = 500625489;</code>
+   *
+   * @return Whether the peerNetwork field is set.
+   */
+  boolean hasPeerNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+   * </pre>
+   *
+   * <code>string peer_network = 500625489;</code>
    *
    * @return The peerNetwork.
    */
@@ -115,7 +151,7 @@ public interface NetworksAddPeeringRequestOrBuilder
    * URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
    * </pre>
    *
-   * <code>string peer_network = 232190033;</code>
+   * <code>string peer_network = 500625489;</code>
    *
    * @return The bytes for peerNetwork.
    */

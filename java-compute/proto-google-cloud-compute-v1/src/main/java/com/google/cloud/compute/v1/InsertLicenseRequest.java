@@ -61,6 +61,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,11 +75,18 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
-          case 1356157538:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -791326110:
             {
               com.google.cloud.compute.v1.License.Builder subBuilder = null;
               if (licenseResource_ != null) {
@@ -92,13 +100,6 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
                 licenseResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -135,7 +136,8 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.InsertLicenseRequest.Builder.class);
   }
 
-  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 169519692;
+  private int bitField0_;
+  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 437955148;
   private com.google.cloud.compute.v1.License licenseResource_;
   /**
    *
@@ -145,7 +147,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the licenseResource field is set.
@@ -162,7 +164,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The licenseResource.
@@ -181,7 +183,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -251,6 +253,23 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -305,14 +324,14 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (licenseResource_ != null) {
-      output.writeMessage(169519692, getLicenseResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (licenseResource_ != null) {
+      output.writeMessage(437955148, getLicenseResource());
     }
     unknownFields.writeTo(output);
   }
@@ -323,15 +342,15 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (licenseResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(169519692, getLicenseResource());
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (licenseResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(437955148, getLicenseResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -354,7 +373,10 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
       if (!getLicenseResource().equals(other.getLicenseResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,8 +394,10 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -528,7 +552,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -556,13 +580,19 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.InsertLicenseRequest buildPartial() {
       com.google.cloud.compute.v1.InsertLicenseRequest result =
           new com.google.cloud.compute.v1.InsertLicenseRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (licenseResourceBuilder_ == null) {
         result.licenseResource_ = licenseResource_;
       } else {
         result.licenseResource_ = licenseResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -620,7 +650,8 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -653,6 +684,8 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.License licenseResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.License,
@@ -667,7 +700,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the licenseResource field is set.
@@ -683,7 +716,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The licenseResource.
@@ -705,7 +738,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setLicenseResource(com.google.cloud.compute.v1.License value) {
@@ -729,7 +762,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setLicenseResource(com.google.cloud.compute.v1.License.Builder builderForValue) {
@@ -750,7 +783,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeLicenseResource(com.google.cloud.compute.v1.License value) {
@@ -778,7 +811,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearLicenseResource() {
@@ -800,7 +833,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.License.Builder getLicenseResourceBuilder() {
@@ -816,7 +849,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.LicenseOrBuilder getLicenseResourceOrBuilder() {
@@ -836,7 +869,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.License license_resource = 437955148 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -974,6 +1007,22 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1029,7 +1078,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1048,7 +1097,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1072,7 +1121,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

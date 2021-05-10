@@ -61,6 +61,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,7 +75,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
           case 1282993136:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               proxyHeader_ = rawValue;
               break;
             }
@@ -134,8 +135,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     UNDEFINED_PROXY_HEADER(0),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>PROXY_V1 = 65917484;</code> */
-    PROXY_V1(65917484),
+    /** <code>PROXY_V1 = 334352940;</code> */
+    PROXY_V1(334352940),
     UNRECOGNIZED(-1),
     ;
 
@@ -151,8 +152,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>PROXY_V1 = 65917484;</code> */
-    public static final int PROXY_V1_VALUE = 65917484;
+    /** <code>PROXY_V1 = 334352940;</code> */
+    public static final int PROXY_V1_VALUE = 334352940;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -182,7 +183,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
           return UNDEFINED_PROXY_HEADER;
         case 2402104:
           return NONE;
-        case 65917484:
+        case 334352940:
           return PROXY_V1;
         default:
           return null;
@@ -239,8 +240,26 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader)
   }
 
+  private int bitField0_;
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
   private int proxyHeader_;
+  /**
+   *
+   *
+   * <pre>
+   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;
+   * </code>
+   *
+   * @return Whether the proxyHeader field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyHeader() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -297,10 +316,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (proxyHeader_
-        != com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader
-            .UNDEFINED_PROXY_HEADER
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(160374142, proxyHeader_);
     }
     unknownFields.writeTo(output);
@@ -312,10 +328,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     if (size != -1) return size;
 
     size = 0;
-    if (proxyHeader_
-        != com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader
-            .UNDEFINED_PROXY_HEADER
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(160374142, proxyHeader_);
     }
     size += unknownFields.getSerializedSize();
@@ -334,7 +347,10 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest other =
         (com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest) obj;
 
-    if (proxyHeader_ != other.proxyHeader_) return false;
+    if (hasProxyHeader() != other.hasProxyHeader()) return false;
+    if (hasProxyHeader()) {
+      if (proxyHeader_ != other.proxyHeader_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -346,8 +362,10 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
-    hash = (53 * hash) + proxyHeader_;
+    if (hasProxyHeader()) {
+      hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
+      hash = (53 * hash) + proxyHeader_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -496,7 +514,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     public Builder clear() {
       super.clear();
       proxyHeader_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -525,7 +543,13 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest buildPartial() {
       com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest result =
           new com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.proxyHeader_ = proxyHeader_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -578,8 +602,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
       if (other
           == com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.getDefaultInstance())
         return this;
-      if (other.proxyHeader_ != 0) {
-        setProxyHeaderValue(other.getProxyHeaderValue());
+      if (other.hasProxyHeader()) {
+        setProxyHeader(other.getProxyHeader());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -612,7 +636,26 @@ public final class TargetSslProxiesSetProxyHeaderRequest
       return this;
     }
 
+    private int bitField0_;
+
     private int proxyHeader_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;
+     * </code>
+     *
+     * @return Whether the proxyHeader field is set.
+     */
+    @java.lang.Override
+    public boolean hasProxyHeader() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -645,7 +688,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
      * @return This builder for chaining.
      */
     public Builder setProxyHeaderValue(int value) {
-
+      bitField0_ |= 0x00000001;
       proxyHeader_ = value;
       onChanged();
       return this;
@@ -694,7 +737,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       proxyHeader_ = value.getNumber();
       onChanged();
       return this;
@@ -713,7 +756,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
      * @return This builder for chaining.
      */
     public Builder clearProxyHeader() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       proxyHeader_ = 0;
       onChanged();
       return this;

@@ -31,7 +31,20 @@ public interface SchedulingOrBuilder
    * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 82385915;</code>
+   * <code>bool automatic_restart = 350821371;</code>
+   *
+   * @return Whether the automaticRestart field is set.
+   */
+  boolean hasAutomaticRestart();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
+   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * </pre>
+   *
+   * <code>bool automatic_restart = 350821371;</code>
    *
    * @return The automaticRestart.
    */
@@ -44,7 +57,19 @@ public interface SchedulingOrBuilder
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 82084049;</code>
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  boolean hasLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -56,7 +81,7 @@ public interface SchedulingOrBuilder
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 82084049;</code>
+   * <code>string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -69,7 +94,19 @@ public interface SchedulingOrBuilder
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 48796219;</code>
+   * <code>int32 min_node_cpus = 317231675;</code>
+   *
+   * @return Whether the minNodeCpus field is set.
+   */
+  boolean hasMinNodeCpus();
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+   * </pre>
+   *
+   * <code>int32 min_node_cpus = 317231675;</code>
    *
    * @return The minNodeCpus.
    */
@@ -82,7 +119,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity> getNodeAffinitiesList();
@@ -93,7 +130,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   com.google.cloud.compute.v1.SchedulingNodeAffinity getNodeAffinities(int index);
@@ -104,7 +141,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   int getNodeAffinitiesCount();
@@ -115,7 +152,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>
@@ -127,11 +164,24 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder getNodeAffinitiesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
+   * </code>
+   *
+   * @return Whether the onHostMaintenance field is set.
+   */
+  boolean hasOnHostMaintenance();
   /**
    *
    *
@@ -166,7 +216,19 @@ public interface SchedulingOrBuilder
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 55767713;</code>
+   * <code>bool preemptible = 324203169;</code>
+   *
+   * @return Whether the preemptible field is set.
+   */
+  boolean hasPreemptible();
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+   * </pre>
+   *
+   * <code>bool preemptible = 324203169;</code>
    *
    * @return The preemptible.
    */

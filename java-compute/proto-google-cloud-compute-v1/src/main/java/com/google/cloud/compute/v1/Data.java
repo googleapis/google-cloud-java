@@ -60,6 +60,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,14 +74,14 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
           case 848634:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               key_ = s;
               break;
             }
           case 895781770:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               value_ = s;
               break;
             }
@@ -117,8 +118,24 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Data.class, com.google.cloud.compute.v1.Data.Builder.class);
   }
 
+  private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 106079;
   private volatile java.lang.Object key_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
+   * </pre>
+   *
+   * <code>string key = 106079;</code>
+   *
+   * @return Whether the key field is set.
+   */
+  @java.lang.Override
+  public boolean hasKey() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -168,6 +185,21 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
   private volatile java.lang.Object value_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A warning data value corresponding to the key.
+   * </pre>
+   *
+   * <code>string value = 111972721;</code>
+   *
+   * @return Whether the value field is set.
+   */
+  @java.lang.Override
+  public boolean hasValue() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -229,10 +261,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKeyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106079, key_);
     }
-    if (!getValueBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111972721, value_);
     }
     unknownFields.writeTo(output);
@@ -244,10 +276,10 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106079, key_);
     }
-    if (!getValueBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111972721, value_);
     }
     size += unknownFields.getSerializedSize();
@@ -265,8 +297,14 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Data other = (com.google.cloud.compute.v1.Data) obj;
 
-    if (!getKey().equals(other.getKey())) return false;
-    if (!getValue().equals(other.getValue())) return false;
+    if (hasKey() != other.hasKey()) return false;
+    if (hasKey()) {
+      if (!getKey().equals(other.getKey())) return false;
+    }
+    if (hasValue() != other.hasValue()) return false;
+    if (hasValue()) {
+      if (!getValue().equals(other.getValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -278,10 +316,14 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getKey().hashCode();
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + getValue().hashCode();
+    if (hasKey()) {
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+    }
+    if (hasValue()) {
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,9 +468,9 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       key_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -455,8 +497,17 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Data buildPartial() {
       com.google.cloud.compute.v1.Data result = new com.google.cloud.compute.v1.Data(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.key_ = key_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.value_ = value_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -506,11 +557,13 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Data other) {
       if (other == com.google.cloud.compute.v1.Data.getDefaultInstance()) return this;
-      if (!other.getKey().isEmpty()) {
+      if (other.hasKey()) {
+        bitField0_ |= 0x00000001;
         key_ = other.key_;
         onChanged();
       }
-      if (!other.getValue().isEmpty()) {
+      if (other.hasValue()) {
+        bitField0_ |= 0x00000002;
         value_ = other.value_;
         onChanged();
       }
@@ -543,7 +596,23 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object key_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding).
+     * </pre>
+     *
+     * <code>string key = 106079;</code>
+     *
+     * @return Whether the key field is set.
+     */
+    public boolean hasKey() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -604,7 +673,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       key_ = value;
       onChanged();
       return this;
@@ -621,7 +690,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = getDefaultInstance().getKey();
       onChanged();
       return this;
@@ -643,13 +712,27 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       key_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object value_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A warning data value corresponding to the key.
+     * </pre>
+     *
+     * <code>string value = 111972721;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -710,7 +793,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       value_ = value;
       onChanged();
       return this;
@@ -727,7 +810,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;
@@ -749,7 +832,7 @@ public final class Data extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       value_ = value;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface RouterStatusResponseOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * Type of resource.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();

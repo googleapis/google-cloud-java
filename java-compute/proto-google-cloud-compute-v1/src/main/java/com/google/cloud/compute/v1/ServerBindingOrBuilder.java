@@ -26,6 +26,12 @@ public interface ServerBindingOrBuilder
   /**
    * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
    *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();

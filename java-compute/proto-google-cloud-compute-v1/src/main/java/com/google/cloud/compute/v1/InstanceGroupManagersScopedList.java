@@ -74,7 +74,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -84,7 +84,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1712580738:
@@ -137,6 +137,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
             com.google.cloud.compute.v1.InstanceGroupManagersScopedList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_GROUP_MANAGERS_FIELD_NUMBER = 214072592;
   private java.util.List<com.google.cloud.compute.v1.InstanceGroupManager> instanceGroupManagers_;
   /**
@@ -233,7 +234,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -261,7 +262,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -278,7 +279,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < instanceGroupManagers_.size(); i++) {
@@ -293,7 +294,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < instanceGroupManagers_.size(); i++) {
@@ -482,6 +483,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInstanceGroupManagersFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -497,9 +499,9 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -528,6 +530,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       com.google.cloud.compute.v1.InstanceGroupManagersScopedList result =
           new com.google.cloud.compute.v1.InstanceGroupManagersScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (instanceGroupManagersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instanceGroupManagers_ = java.util.Collections.unmodifiableList(instanceGroupManagers_);
@@ -537,11 +540,15 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       } else {
         result.instanceGroupManagers_ = instanceGroupManagersBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1071,7 +1078,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1112,7 +1119,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1131,7 +1138,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1145,7 +1152,9 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1157,7 +1166,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1174,10 +1183,9 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1190,7 +1198,7 @@ public final class InstanceGroupManagersScopedList extends com.google.protobuf.G
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

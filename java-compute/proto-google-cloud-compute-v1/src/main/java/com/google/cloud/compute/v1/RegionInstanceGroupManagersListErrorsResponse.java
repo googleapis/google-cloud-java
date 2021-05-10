@@ -76,7 +76,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
           case 638380202:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               nextPageToken_ = s;
               break;
             }
@@ -132,6 +132,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
                 .class);
   }
 
+  private int bitField0_;
   public static final int ITEMS_FIELD_NUMBER = 100526016;
   private java.util.List<com.google.cloud.compute.v1.InstanceManagedByIgmError> items_;
   /**
@@ -213,6 +214,21 @@ public final class RegionInstanceGroupManagersListErrorsResponse
    *
    * <code>string next_page_token = 79797525;</code>
    *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -265,7 +281,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
@@ -280,7 +296,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
     if (size != -1) return size;
 
     size = 0;
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
@@ -304,7 +320,10 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         (com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse) obj;
 
     if (!getItemsList().equals(other.getItemsList())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -320,8 +339,10 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
     }
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -479,7 +500,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         itemsBuilder_.clear();
       }
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -512,6 +533,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -521,7 +543,11 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       } else {
         result.items_ = itemsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.nextPageToken_ = nextPageToken_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -603,7 +629,8 @@ public final class RegionInstanceGroupManagersListErrorsResponse
           }
         }
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000002;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
@@ -1009,6 +1036,20 @@ public final class RegionInstanceGroupManagersListErrorsResponse
      *
      * <code>string next_page_token = 79797525;</code>
      *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -1060,7 +1101,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1077,7 +1118,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -1099,7 +1140,7 @@ public final class RegionInstanceGroupManagersListErrorsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;

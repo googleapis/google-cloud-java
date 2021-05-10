@@ -62,6 +62,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,68 +75,77 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
             break;
           case 140796637:
             {
+              bitField0_ |= 0x00000400;
               maxRatePerInstance_ = input.readFloat();
-              break;
-            }
-          case 380181613:
-            {
-              capacityScaler_ = input.readFloat();
               break;
             }
           case 789033978:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               group_ = s;
               break;
             }
           case 837375200:
             {
+              bitField0_ |= 0x00000080;
               maxConnectionsPerInstance_ = input.readInt32();
               break;
             }
           case 885217232:
             {
+              bitField0_ |= 0x00000020;
               maxConnections_ = input.readInt32();
               break;
             }
           case 1038658269:
             {
+              bitField0_ |= 0x00000200;
               maxRatePerEndpoint_ = input.readFloat();
               break;
             }
           case 1111140240:
             {
+              bitField0_ |= 0x00000008;
               failover_ = input.readBool();
-              break;
-            }
-          case 1116796632:
-            {
-              maxRate_ = input.readInt32();
               break;
             }
           case 1185537597:
             {
+              bitField0_ |= 0x00000800;
               maxUtilization_ = input.readFloat();
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1294806088:
-            {
-              int rawValue = input.readEnum();
-
-              balancingMode_ = rawValue;
               break;
             }
           case 1735236832:
             {
+              bitField0_ |= 0x00000040;
               maxConnectionsPerEndpoint_ = input.readInt32();
+              break;
+            }
+          case -1767302035:
+            {
+              bitField0_ |= 0x00000002;
+              capacityScaler_ = input.readFloat();
+              break;
+            }
+          case -1030687016:
+            {
+              bitField0_ |= 0x00000100;
+              maxRate_ = input.readInt32();
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -852677560:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              balancingMode_ = rawValue;
               break;
             }
           default:
@@ -312,7 +322,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Backend.BalancingMode)
   }
 
-  public static final int BALANCING_MODE_FIELD_NUMBER = 161850761;
+  private int bitField0_;
+  public static final int BALANCING_MODE_FIELD_NUMBER = 430286217;
   private int balancingMode_;
   /**
    *
@@ -330,7 +341,31 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+   * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+   *
+   * @return Whether the balancingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasBalancingMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the balancing mode for the backend.
+   * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
+   * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
+   * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
+   * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+   * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
+   * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
+   * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
+   * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
+   * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
    *
    * @return The enum numeric value on the wire for balancingMode.
    */
@@ -354,7 +389,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+   * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
    *
    * @return The balancingMode.
    */
@@ -366,7 +401,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Backend.BalancingMode.UNRECOGNIZED : result;
   }
 
-  public static final int CAPACITY_SCALER_FIELD_NUMBER = 47522701;
+  public static final int CAPACITY_SCALER_FIELD_NUMBER = 315958157;
   private float capacityScaler_;
   /**
    *
@@ -376,7 +411,23 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
    * </pre>
    *
-   * <code>float capacity_scaler = 47522701;</code>
+   * <code>float capacity_scaler = 315958157;</code>
+   *
+   * @return Whether the capacityScaler field is set.
+   */
+  @java.lang.Override
+  public boolean hasCapacityScaler() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+   * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * </pre>
+   *
+   * <code>float capacity_scaler = 315958157;</code>
    *
    * @return The capacityScaler.
    */
@@ -385,7 +436,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     return capacityScaler_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -394,7 +445,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -417,7 +483,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -445,6 +511,21 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool failover = 138892530;</code>
    *
+   * @return Whether the failover field is set.
+   */
+  @java.lang.Override
+  public boolean hasFailover() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field designates whether this is a failover backend. More than one failover backend can be configured for a given BackendService.
+   * </pre>
+   *
+   * <code>bool failover = 138892530;</code>
+   *
    * @return The failover.
    */
   @java.lang.Override
@@ -454,6 +535,25 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GROUP_FIELD_NUMBER = 98629247;
   private volatile java.lang.Object group_;
+  /**
+   *
+   *
+   * <pre>
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type of backend that a backend service supports depends on the backend service's loadBalancingScheme.
+   * - When the loadBalancingScheme for the backend service is EXTERNAL (except Network Load Balancing),  INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED , the backend can be either an instance group or a NEG. The backends on the backend service must be either all instance groups or all NEGs. You cannot mix instance group and NEG backends on the same backend service.
+   * - When the loadBalancingScheme for the backend service is EXTERNAL for Network Load Balancing or INTERNAL for Internal TCP/UDP Load Balancing, the backend must be an instance group. NEGs are not supported.
+   * For regional services, the backend must be in the same region as the backend service.
+   * You must use the fully-qualified URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * </pre>
+   *
+   * <code>string group = 98629247;</code>
+   *
+   * @return Whether the group field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroup() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -521,6 +621,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 max_connections = 110652154;</code>
    *
+   * @return Whether the maxConnections field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxConnections() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * </pre>
+   *
+   * <code>int32 max_connections = 110652154;</code>
+   *
    * @return The maxConnections.
    */
   @java.lang.Override
@@ -530,6 +646,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_CONNECTIONS_PER_ENDPOINT_FIELD_NUMBER = 216904604;
   private int maxConnectionsPerEndpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
+   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * </pre>
+   *
+   * <code>int32 max_connections_per_endpoint = 216904604;</code>
+   *
+   * @return Whether the maxConnectionsPerEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxConnectionsPerEndpoint() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -559,6 +691,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 max_connections_per_instance = 104671900;</code>
    *
+   * @return Whether the maxConnectionsPerInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxConnectionsPerInstance() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
+   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * </pre>
+   *
+   * <code>int32 max_connections_per_instance = 104671900;</code>
+   *
    * @return The maxConnectionsPerInstance.
    */
   @java.lang.Override
@@ -566,7 +714,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     return maxConnectionsPerInstance_;
   }
 
-  public static final int MAX_RATE_FIELD_NUMBER = 139599579;
+  public static final int MAX_RATE_FIELD_NUMBER = 408035035;
   private int maxRate_;
   /**
    *
@@ -577,7 +725,24 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
-   * <code>int32 max_rate = 139599579;</code>
+   * <code>int32 max_rate = 408035035;</code>
+   *
+   * @return Whether the maxRate field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRate() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
+   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+   * Not available if the backend's balancingMode is CONNECTION.
+   * </pre>
+   *
+   * <code>int32 max_rate = 408035035;</code>
    *
    * @return The maxRate.
    */
@@ -588,6 +753,23 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_RATE_PER_ENDPOINT_FIELD_NUMBER = 129832283;
   private float maxRatePerEndpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
+   * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+   * Not available if the backend's balancingMode is CONNECTION.
+   * </pre>
+   *
+   * <code>float max_rate_per_endpoint = 129832283;</code>
+   *
+   * @return Whether the maxRatePerEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRatePerEndpoint() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -619,6 +801,23 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>float max_rate_per_instance = 17599579;</code>
    *
+   * @return Whether the maxRatePerInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRatePerInstance() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
+   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+   * Not available if the backend's balancingMode is CONNECTION.
+   * </pre>
+   *
+   * <code>float max_rate_per_instance = 17599579;</code>
+   *
    * @return The maxRatePerInstance.
    */
   @java.lang.Override
@@ -628,6 +827,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_UTILIZATION_FIELD_NUMBER = 148192199;
   private float maxUtilization_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
+   * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
+   * </pre>
+   *
+   * <code>float max_utilization = 148192199;</code>
+   *
+   * @return Whether the maxUtilization field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxUtilization() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -659,42 +874,41 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (maxRatePerInstance_ != 0F) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeFloat(17599579, maxRatePerInstance_);
     }
-    if (capacityScaler_ != 0F) {
-      output.writeFloat(47522701, capacityScaler_);
-    }
-    if (!getGroupBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98629247, group_);
     }
-    if (maxConnectionsPerInstance_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(104671900, maxConnectionsPerInstance_);
     }
-    if (maxConnections_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(110652154, maxConnections_);
     }
-    if (maxRatePerEndpoint_ != 0F) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeFloat(129832283, maxRatePerEndpoint_);
     }
-    if (failover_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(138892530, failover_);
     }
-    if (maxRate_ != 0) {
-      output.writeInt32(139599579, maxRate_);
-    }
-    if (maxUtilization_ != 0F) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeFloat(148192199, maxUtilization_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (balancingMode_
-        != com.google.cloud.compute.v1.Backend.BalancingMode.UNDEFINED_BALANCING_MODE.getNumber()) {
-      output.writeEnum(161850761, balancingMode_);
-    }
-    if (maxConnectionsPerEndpoint_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(216904604, maxConnectionsPerEndpoint_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeFloat(315958157, capacityScaler_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(408035035, maxRate_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(430286217, balancingMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -705,47 +919,46 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (maxRatePerInstance_ != 0F) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(17599579, maxRatePerInstance_);
     }
-    if (capacityScaler_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(47522701, capacityScaler_);
-    }
-    if (!getGroupBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98629247, group_);
     }
-    if (maxConnectionsPerInstance_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               104671900, maxConnectionsPerInstance_);
     }
-    if (maxConnections_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(110652154, maxConnections_);
     }
-    if (maxRatePerEndpoint_ != 0F) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(129832283, maxRatePerEndpoint_);
     }
-    if (failover_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(138892530, failover_);
     }
-    if (maxRate_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(139599579, maxRate_);
-    }
-    if (maxUtilization_ != 0F) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(148192199, maxUtilization_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (balancingMode_
-        != com.google.cloud.compute.v1.Backend.BalancingMode.UNDEFINED_BALANCING_MODE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(161850761, balancingMode_);
-    }
-    if (maxConnectionsPerEndpoint_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               216904604, maxConnectionsPerEndpoint_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(315958157, capacityScaler_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(408035035, maxRate_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(430286217, balancingMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -762,22 +975,58 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Backend other = (com.google.cloud.compute.v1.Backend) obj;
 
-    if (balancingMode_ != other.balancingMode_) return false;
-    if (java.lang.Float.floatToIntBits(getCapacityScaler())
-        != java.lang.Float.floatToIntBits(other.getCapacityScaler())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (getFailover() != other.getFailover()) return false;
-    if (!getGroup().equals(other.getGroup())) return false;
-    if (getMaxConnections() != other.getMaxConnections()) return false;
-    if (getMaxConnectionsPerEndpoint() != other.getMaxConnectionsPerEndpoint()) return false;
-    if (getMaxConnectionsPerInstance() != other.getMaxConnectionsPerInstance()) return false;
-    if (getMaxRate() != other.getMaxRate()) return false;
-    if (java.lang.Float.floatToIntBits(getMaxRatePerEndpoint())
-        != java.lang.Float.floatToIntBits(other.getMaxRatePerEndpoint())) return false;
-    if (java.lang.Float.floatToIntBits(getMaxRatePerInstance())
-        != java.lang.Float.floatToIntBits(other.getMaxRatePerInstance())) return false;
-    if (java.lang.Float.floatToIntBits(getMaxUtilization())
-        != java.lang.Float.floatToIntBits(other.getMaxUtilization())) return false;
+    if (hasBalancingMode() != other.hasBalancingMode()) return false;
+    if (hasBalancingMode()) {
+      if (balancingMode_ != other.balancingMode_) return false;
+    }
+    if (hasCapacityScaler() != other.hasCapacityScaler()) return false;
+    if (hasCapacityScaler()) {
+      if (java.lang.Float.floatToIntBits(getCapacityScaler())
+          != java.lang.Float.floatToIntBits(other.getCapacityScaler())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasFailover() != other.hasFailover()) return false;
+    if (hasFailover()) {
+      if (getFailover() != other.getFailover()) return false;
+    }
+    if (hasGroup() != other.hasGroup()) return false;
+    if (hasGroup()) {
+      if (!getGroup().equals(other.getGroup())) return false;
+    }
+    if (hasMaxConnections() != other.hasMaxConnections()) return false;
+    if (hasMaxConnections()) {
+      if (getMaxConnections() != other.getMaxConnections()) return false;
+    }
+    if (hasMaxConnectionsPerEndpoint() != other.hasMaxConnectionsPerEndpoint()) return false;
+    if (hasMaxConnectionsPerEndpoint()) {
+      if (getMaxConnectionsPerEndpoint() != other.getMaxConnectionsPerEndpoint()) return false;
+    }
+    if (hasMaxConnectionsPerInstance() != other.hasMaxConnectionsPerInstance()) return false;
+    if (hasMaxConnectionsPerInstance()) {
+      if (getMaxConnectionsPerInstance() != other.getMaxConnectionsPerInstance()) return false;
+    }
+    if (hasMaxRate() != other.hasMaxRate()) return false;
+    if (hasMaxRate()) {
+      if (getMaxRate() != other.getMaxRate()) return false;
+    }
+    if (hasMaxRatePerEndpoint() != other.hasMaxRatePerEndpoint()) return false;
+    if (hasMaxRatePerEndpoint()) {
+      if (java.lang.Float.floatToIntBits(getMaxRatePerEndpoint())
+          != java.lang.Float.floatToIntBits(other.getMaxRatePerEndpoint())) return false;
+    }
+    if (hasMaxRatePerInstance() != other.hasMaxRatePerInstance()) return false;
+    if (hasMaxRatePerInstance()) {
+      if (java.lang.Float.floatToIntBits(getMaxRatePerInstance())
+          != java.lang.Float.floatToIntBits(other.getMaxRatePerInstance())) return false;
+    }
+    if (hasMaxUtilization() != other.hasMaxUtilization()) return false;
+    if (hasMaxUtilization()) {
+      if (java.lang.Float.floatToIntBits(getMaxUtilization())
+          != java.lang.Float.floatToIntBits(other.getMaxUtilization())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -789,30 +1038,54 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BALANCING_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + balancingMode_;
-    hash = (37 * hash) + CAPACITY_SCALER_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getCapacityScaler());
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + FAILOVER_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFailover());
-    hash = (37 * hash) + GROUP_FIELD_NUMBER;
-    hash = (53 * hash) + getGroup().hashCode();
-    hash = (37 * hash) + MAX_CONNECTIONS_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxConnections();
-    hash = (37 * hash) + MAX_CONNECTIONS_PER_ENDPOINT_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxConnectionsPerEndpoint();
-    hash = (37 * hash) + MAX_CONNECTIONS_PER_INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxConnectionsPerInstance();
-    hash = (37 * hash) + MAX_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxRate();
-    hash = (37 * hash) + MAX_RATE_PER_ENDPOINT_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxRatePerEndpoint());
-    hash = (37 * hash) + MAX_RATE_PER_INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxRatePerInstance());
-    hash = (37 * hash) + MAX_UTILIZATION_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxUtilization());
+    if (hasBalancingMode()) {
+      hash = (37 * hash) + BALANCING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + balancingMode_;
+    }
+    if (hasCapacityScaler()) {
+      hash = (37 * hash) + CAPACITY_SCALER_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getCapacityScaler());
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasFailover()) {
+      hash = (37 * hash) + FAILOVER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFailover());
+    }
+    if (hasGroup()) {
+      hash = (37 * hash) + GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getGroup().hashCode();
+    }
+    if (hasMaxConnections()) {
+      hash = (37 * hash) + MAX_CONNECTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxConnections();
+    }
+    if (hasMaxConnectionsPerEndpoint()) {
+      hash = (37 * hash) + MAX_CONNECTIONS_PER_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxConnectionsPerEndpoint();
+    }
+    if (hasMaxConnectionsPerInstance()) {
+      hash = (37 * hash) + MAX_CONNECTIONS_PER_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxConnectionsPerInstance();
+    }
+    if (hasMaxRate()) {
+      hash = (37 * hash) + MAX_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxRate();
+    }
+    if (hasMaxRatePerEndpoint()) {
+      hash = (37 * hash) + MAX_RATE_PER_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxRatePerEndpoint());
+    }
+    if (hasMaxRatePerInstance()) {
+      hash = (37 * hash) + MAX_RATE_PER_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxRatePerInstance());
+    }
+    if (hasMaxUtilization()) {
+      hash = (37 * hash) + MAX_UTILIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxUtilization());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -958,29 +1231,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       balancingMode_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       capacityScaler_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       failover_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       group_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxConnections_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxConnectionsPerEndpoint_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxConnectionsPerInstance_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxRate_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       maxRatePerEndpoint_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxRatePerInstance_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       maxUtilization_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1007,18 +1280,57 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Backend buildPartial() {
       com.google.cloud.compute.v1.Backend result = new com.google.cloud.compute.v1.Backend(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.balancingMode_ = balancingMode_;
-      result.capacityScaler_ = capacityScaler_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.capacityScaler_ = capacityScaler_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
-      result.failover_ = failover_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failover_ = failover_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.group_ = group_;
-      result.maxConnections_ = maxConnections_;
-      result.maxConnectionsPerEndpoint_ = maxConnectionsPerEndpoint_;
-      result.maxConnectionsPerInstance_ = maxConnectionsPerInstance_;
-      result.maxRate_ = maxRate_;
-      result.maxRatePerEndpoint_ = maxRatePerEndpoint_;
-      result.maxRatePerInstance_ = maxRatePerInstance_;
-      result.maxUtilization_ = maxUtilization_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.maxConnections_ = maxConnections_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.maxConnectionsPerEndpoint_ = maxConnectionsPerEndpoint_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.maxConnectionsPerInstance_ = maxConnectionsPerInstance_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.maxRate_ = maxRate_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.maxRatePerEndpoint_ = maxRatePerEndpoint_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.maxRatePerInstance_ = maxRatePerInstance_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.maxUtilization_ = maxUtilization_;
+        to_bitField0_ |= 0x00000800;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1068,42 +1380,44 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Backend other) {
       if (other == com.google.cloud.compute.v1.Backend.getDefaultInstance()) return this;
-      if (other.balancingMode_ != 0) {
-        setBalancingModeValue(other.getBalancingModeValue());
+      if (other.hasBalancingMode()) {
+        setBalancingMode(other.getBalancingMode());
       }
-      if (other.getCapacityScaler() != 0F) {
+      if (other.hasCapacityScaler()) {
         setCapacityScaler(other.getCapacityScaler());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (other.getFailover() != false) {
+      if (other.hasFailover()) {
         setFailover(other.getFailover());
       }
-      if (!other.getGroup().isEmpty()) {
+      if (other.hasGroup()) {
+        bitField0_ |= 0x00000010;
         group_ = other.group_;
         onChanged();
       }
-      if (other.getMaxConnections() != 0) {
+      if (other.hasMaxConnections()) {
         setMaxConnections(other.getMaxConnections());
       }
-      if (other.getMaxConnectionsPerEndpoint() != 0) {
+      if (other.hasMaxConnectionsPerEndpoint()) {
         setMaxConnectionsPerEndpoint(other.getMaxConnectionsPerEndpoint());
       }
-      if (other.getMaxConnectionsPerInstance() != 0) {
+      if (other.hasMaxConnectionsPerInstance()) {
         setMaxConnectionsPerInstance(other.getMaxConnectionsPerInstance());
       }
-      if (other.getMaxRate() != 0) {
+      if (other.hasMaxRate()) {
         setMaxRate(other.getMaxRate());
       }
-      if (other.getMaxRatePerEndpoint() != 0F) {
+      if (other.hasMaxRatePerEndpoint()) {
         setMaxRatePerEndpoint(other.getMaxRatePerEndpoint());
       }
-      if (other.getMaxRatePerInstance() != 0F) {
+      if (other.hasMaxRatePerInstance()) {
         setMaxRatePerInstance(other.getMaxRatePerInstance());
       }
-      if (other.getMaxUtilization() != 0F) {
+      if (other.hasMaxUtilization()) {
         setMaxUtilization(other.getMaxUtilization());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1135,6 +1449,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int balancingMode_ = 0;
     /**
      *
@@ -1152,7 +1468,31 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     *
+     * @return Whether the balancingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasBalancingMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the balancing mode for the backend.
+     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
+     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
+     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
+     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
+     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
+     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
+     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
+     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
      *
      * @return The enum numeric value on the wire for balancingMode.
      */
@@ -1176,13 +1516,13 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
      *
      * @param value The enum numeric value on the wire for balancingMode to set.
      * @return This builder for chaining.
      */
     public Builder setBalancingModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       balancingMode_ = value;
       onChanged();
       return this;
@@ -1203,7 +1543,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
      *
      * @return The balancingMode.
      */
@@ -1232,7 +1572,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
      *
      * @param value The balancingMode to set.
      * @return This builder for chaining.
@@ -1241,7 +1581,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       balancingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1262,12 +1602,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 161850761;</code>
+     * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBalancingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       balancingMode_ = 0;
       onChanged();
       return this;
@@ -1282,7 +1622,23 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>float capacity_scaler = 47522701;</code>
+     * <code>float capacity_scaler = 315958157;</code>
+     *
+     * @return Whether the capacityScaler field is set.
+     */
+    @java.lang.Override
+    public boolean hasCapacityScaler() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+     * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * </pre>
+     *
+     * <code>float capacity_scaler = 315958157;</code>
      *
      * @return The capacityScaler.
      */
@@ -1298,13 +1654,13 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>float capacity_scaler = 47522701;</code>
+     * <code>float capacity_scaler = 315958157;</code>
      *
      * @param value The capacityScaler to set.
      * @return This builder for chaining.
      */
     public Builder setCapacityScaler(float value) {
-
+      bitField0_ |= 0x00000002;
       capacityScaler_ = value;
       onChanged();
       return this;
@@ -1317,12 +1673,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
      * </pre>
      *
-     * <code>float capacity_scaler = 47522701;</code>
+     * <code>float capacity_scaler = 315958157;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCapacityScaler() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       capacityScaler_ = 0F;
       onChanged();
       return this;
@@ -1336,7 +1692,21 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1358,7 +1728,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1380,7 +1750,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1389,7 +1759,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1401,12 +1771,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1418,7 +1788,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1428,13 +1798,28 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
     }
 
     private boolean failover_;
+    /**
+     *
+     *
+     * <pre>
+     * This field designates whether this is a failover backend. More than one failover backend can be configured for a given BackendService.
+     * </pre>
+     *
+     * <code>bool failover = 138892530;</code>
+     *
+     * @return Whether the failover field is set.
+     */
+    @java.lang.Override
+    public boolean hasFailover() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1463,7 +1848,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFailover(boolean value) {
-
+      bitField0_ |= 0x00000008;
       failover_ = value;
       onChanged();
       return this;
@@ -1480,13 +1865,31 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailover() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       failover_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object group_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type of backend that a backend service supports depends on the backend service's loadBalancingScheme.
+     * - When the loadBalancingScheme for the backend service is EXTERNAL (except Network Load Balancing),  INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED , the backend can be either an instance group or a NEG. The backends on the backend service must be either all instance groups or all NEGs. You cannot mix instance group and NEG backends on the same backend service.
+     * - When the loadBalancingScheme for the backend service is EXTERNAL for Network Load Balancing or INTERNAL for Internal TCP/UDP Load Balancing, the backend must be an instance group. NEGs are not supported.
+     * For regional services, the backend must be in the same region as the backend service.
+     * You must use the fully-qualified URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * </pre>
+     *
+     * <code>string group = 98629247;</code>
+     *
+     * @return Whether the group field is set.
+     */
+    public boolean hasGroup() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1559,7 +1962,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       group_ = value;
       onChanged();
       return this;
@@ -1580,7 +1983,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       group_ = getDefaultInstance().getGroup();
       onChanged();
       return this;
@@ -1606,13 +2009,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       group_ = value;
       onChanged();
       return this;
     }
 
     private int maxConnections_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
+     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * </pre>
+     *
+     * <code>int32 max_connections = 110652154;</code>
+     *
+     * @return Whether the maxConnections field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxConnections() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1643,7 +2062,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnections(int value) {
-
+      bitField0_ |= 0x00000020;
       maxConnections_ = value;
       onChanged();
       return this;
@@ -1661,13 +2080,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnections() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxConnections_ = 0;
       onChanged();
       return this;
     }
 
     private int maxConnectionsPerEndpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
+     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * </pre>
+     *
+     * <code>int32 max_connections_per_endpoint = 216904604;</code>
+     *
+     * @return Whether the maxConnectionsPerEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxConnectionsPerEndpoint() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1698,7 +2133,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnectionsPerEndpoint(int value) {
-
+      bitField0_ |= 0x00000040;
       maxConnectionsPerEndpoint_ = value;
       onChanged();
       return this;
@@ -1716,13 +2151,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnectionsPerEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxConnectionsPerEndpoint_ = 0;
       onChanged();
       return this;
     }
 
     private int maxConnectionsPerInstance_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
+     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * </pre>
+     *
+     * <code>int32 max_connections_per_instance = 104671900;</code>
+     *
+     * @return Whether the maxConnectionsPerInstance field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxConnectionsPerInstance() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -1753,7 +2204,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxConnectionsPerInstance(int value) {
-
+      bitField0_ |= 0x00000080;
       maxConnectionsPerInstance_ = value;
       onChanged();
       return this;
@@ -1771,7 +2222,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnectionsPerInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxConnectionsPerInstance_ = 0;
       onChanged();
       return this;
@@ -1787,7 +2238,24 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
-     * <code>int32 max_rate = 139599579;</code>
+     * <code>int32 max_rate = 408035035;</code>
+     *
+     * @return Whether the maxRate field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxRate() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
+     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * Not available if the backend's balancingMode is CONNECTION.
+     * </pre>
+     *
+     * <code>int32 max_rate = 408035035;</code>
      *
      * @return The maxRate.
      */
@@ -1804,13 +2272,13 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
-     * <code>int32 max_rate = 139599579;</code>
+     * <code>int32 max_rate = 408035035;</code>
      *
      * @param value The maxRate to set.
      * @return This builder for chaining.
      */
     public Builder setMaxRate(int value) {
-
+      bitField0_ |= 0x00000100;
       maxRate_ = value;
       onChanged();
       return this;
@@ -1824,18 +2292,35 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
-     * <code>int32 max_rate = 139599579;</code>
+     * <code>int32 max_rate = 408035035;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMaxRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       maxRate_ = 0;
       onChanged();
       return this;
     }
 
     private float maxRatePerEndpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
+     * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+     * Not available if the backend's balancingMode is CONNECTION.
+     * </pre>
+     *
+     * <code>float max_rate_per_endpoint = 129832283;</code>
+     *
+     * @return Whether the maxRatePerEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxRatePerEndpoint() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -1868,7 +2353,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRatePerEndpoint(float value) {
-
+      bitField0_ |= 0x00000200;
       maxRatePerEndpoint_ = value;
       onChanged();
       return this;
@@ -1887,13 +2372,30 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxRatePerEndpoint_ = 0F;
       onChanged();
       return this;
     }
 
     private float maxRatePerInstance_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
+     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+     * Not available if the backend's balancingMode is CONNECTION.
+     * </pre>
+     *
+     * <code>float max_rate_per_instance = 17599579;</code>
+     *
+     * @return Whether the maxRatePerInstance field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxRatePerInstance() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -1926,7 +2428,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxRatePerInstance(float value) {
-
+      bitField0_ |= 0x00000400;
       maxRatePerInstance_ = value;
       onChanged();
       return this;
@@ -1945,13 +2447,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       maxRatePerInstance_ = 0F;
       onChanged();
       return this;
     }
 
     private float maxUtilization_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
+     * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
+     * </pre>
+     *
+     * <code>float max_utilization = 148192199;</code>
+     *
+     * @return Whether the maxUtilization field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxUtilization() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -1982,7 +2500,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxUtilization(float value) {
-
+      bitField0_ |= 0x00000800;
       maxUtilization_ = value;
       onChanged();
       return this;
@@ -2000,7 +2518,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxUtilization() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       maxUtilization_ = 0F;
       onChanged();
       return this;

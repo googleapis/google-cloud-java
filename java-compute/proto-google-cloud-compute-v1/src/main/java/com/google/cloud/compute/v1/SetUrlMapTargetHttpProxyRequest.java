@@ -63,6 +63,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,24 +77,8 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
-              break;
-            }
-          case 1042127018:
-            {
-              com.google.cloud.compute.v1.UrlMapReference.Builder subBuilder = null;
-              if (urlMapReferenceResource_ != null) {
-                subBuilder = urlMapReferenceResource_.toBuilder();
-              }
-              urlMapReferenceResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.UrlMapReference.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(urlMapReferenceResource_);
-                urlMapReferenceResource_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 1654979370:
@@ -108,6 +93,22 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1105356630:
+            {
+              com.google.cloud.compute.v1.UrlMapReference.Builder subBuilder = null;
+              if (urlMapReferenceResource_ != null) {
+                subBuilder = urlMapReferenceResource_.toBuilder();
+              }
+              urlMapReferenceResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.UrlMapReference.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(urlMapReferenceResource_);
+                urlMapReferenceResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -144,6 +145,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -195,6 +197,23 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -295,7 +314,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
     }
   }
 
-  public static final int URL_MAP_REFERENCE_RESOURCE_FIELD_NUMBER = 130265877;
+  public static final int URL_MAP_REFERENCE_RESOURCE_FIELD_NUMBER = 398701333;
   private com.google.cloud.compute.v1.UrlMapReference urlMapReferenceResource_;
   /**
    *
@@ -305,7 +324,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the urlMapReferenceResource field is set.
@@ -322,7 +341,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The urlMapReferenceResource.
@@ -341,7 +360,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -364,17 +383,17 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (urlMapReferenceResource_ != null) {
-      output.writeMessage(130265877, getUrlMapReferenceResource());
     }
     if (!getTargetHttpProxyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 206872421, targetHttpProxy_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (urlMapReferenceResource_ != null) {
+      output.writeMessage(398701333, getUrlMapReferenceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -385,19 +404,19 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (urlMapReferenceResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              130265877, getUrlMapReferenceResource());
     }
     if (!getTargetHttpProxyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(206872421, targetHttpProxy_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (urlMapReferenceResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              398701333, getUrlMapReferenceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -416,7 +435,10 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
         (com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getTargetHttpProxy().equals(other.getTargetHttpProxy())) return false;
     if (hasUrlMapReferenceResource() != other.hasUrlMapReferenceResource()) return false;
     if (hasUrlMapReferenceResource()) {
@@ -435,8 +457,10 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + TARGET_HTTP_PROXY_FIELD_NUMBER;
     hash = (53 * hash) + getTargetHttpProxy().hashCode();
     if (hasUrlMapReferenceResource()) {
@@ -592,7 +616,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetHttpProxy_ = "";
 
       if (urlMapReferenceResourceBuilder_ == null) {
@@ -628,7 +652,12 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest result =
           new com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.targetHttpProxy_ = targetHttpProxy_;
       if (urlMapReferenceResourceBuilder_ == null) {
@@ -636,6 +665,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
       } else {
         result.urlMapReferenceResource_ = urlMapReferenceResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -690,7 +720,8 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -730,6 +761,8 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -849,6 +882,22 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -904,7 +953,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -923,7 +972,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -947,7 +996,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1073,7 +1122,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the urlMapReferenceResource field is set.
@@ -1089,7 +1138,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The urlMapReferenceResource.
@@ -1111,7 +1160,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUrlMapReferenceResource(com.google.cloud.compute.v1.UrlMapReference value) {
@@ -1135,7 +1184,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUrlMapReferenceResource(
@@ -1157,7 +1206,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeUrlMapReferenceResource(com.google.cloud.compute.v1.UrlMapReference value) {
@@ -1185,7 +1234,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUrlMapReferenceResource() {
@@ -1207,7 +1256,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.UrlMapReference.Builder getUrlMapReferenceResourceBuilder() {
@@ -1223,7 +1272,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.UrlMapReferenceOrBuilder
@@ -1244,7 +1293,7 @@ public final class SetUrlMapTargetHttpProxyRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

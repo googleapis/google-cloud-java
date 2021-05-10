@@ -30,7 +30,19 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description. Provide this property when creating the disk.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -42,12 +54,24 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
+   * </pre>
+   *
+   * <code>string disk_name = 92807149;</code>
+   *
+   * @return Whether the diskName field is set.
+   */
+  boolean hasDiskName();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -92,12 +128,29 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
   com.google.protobuf.ByteString getDiskSizeGbBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
+   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
+   * - projects/project/zones/zone/diskTypes/diskType
+   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * </pre>
+   *
+   * <code>string disk_type = 93009052;</code>
+   *
+   * @return Whether the diskType field is set.
+   */
+  boolean hasDiskType();
   /**
    *
    *
@@ -140,7 +193,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
   /**
@@ -150,7 +203,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -163,7 +216,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -173,7 +226,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -183,10 +236,24 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
+   * </code>
+   *
+   * @return Whether the onUpdateAction field is set.
+   */
+  boolean hasOnUpdateAction();
   /**
    *
    *
@@ -285,6 +352,27 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    * <code>string source_image = 50443319;</code>
    *
+   * @return Whether the sourceImage field is set.
+   */
+  boolean hasSourceImage();
+  /**
+   *
+   *
+   * <pre>
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
+   * projects/debian-cloud/global/images/family/debian-9
+   * Alternatively, use a specific version of a public operating system image:
+   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+   * To create a disk with a custom image that you created, specify the image name in the following format:
+   * global/images/my-custom-image
+   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
+   * global/images/family/my-image-family
+   * If the source image is deleted later, this field will not be set.
+   * </pre>
+   *
+   * <code>string source_image = 50443319;</code>
+   *
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
@@ -318,7 +406,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -332,7 +420,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -346,11 +434,26 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceImageEncryptionKeyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
+   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
+   * global/snapshots/my-backup
+   * If the source snapshot is deleted later, this field will not be set.
+   * </pre>
+   *
+   * <code>string source_snapshot = 126061928;</code>
+   *
+   * @return Whether the sourceSnapshot field is set.
+   */
+  boolean hasSourceSnapshot();
   /**
    *
    *
@@ -389,7 +492,8 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -402,7 +506,8 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -415,7 +520,8 @@ public interface AttachedDiskInitializeParamsOrBuilder
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder

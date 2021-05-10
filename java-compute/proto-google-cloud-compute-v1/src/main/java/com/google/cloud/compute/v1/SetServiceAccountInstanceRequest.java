@@ -64,6 +64,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -81,7 +82,28 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
               zone_ = s;
               break;
             }
-          case 56916418:
+          case 146056362:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instance_ = s;
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -2090567230:
             {
               com.google.cloud.compute.v1.InstancesSetServiceAccountRequest.Builder subBuilder =
                   null;
@@ -97,27 +119,6 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
                 instancesSetServiceAccountRequestResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 146056362:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instance_ = s;
-              break;
-            }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -154,6 +155,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.SetServiceAccountInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -203,7 +205,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     }
   }
 
-  public static final int INSTANCES_SET_SERVICE_ACCOUNT_REQUEST_RESOURCE_FIELD_NUMBER = 7114552;
+  public static final int INSTANCES_SET_SERVICE_ACCOUNT_REQUEST_RESOURCE_FIELD_NUMBER = 275550008;
   private com.google.cloud.compute.v1.InstancesSetServiceAccountRequest
       instancesSetServiceAccountRequestResource_;
   /**
@@ -214,7 +216,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetServiceAccountRequestResource field is set.
@@ -231,7 +233,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetServiceAccountRequestResource.
@@ -251,7 +253,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -311,6 +313,23 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -428,17 +447,17 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (instancesSetServiceAccountRequestResource_ != null) {
-      output.writeMessage(7114552, getInstancesSetServiceAccountRequestResource());
-    }
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (instancesSetServiceAccountRequestResource_ != null) {
+      output.writeMessage(275550008, getInstancesSetServiceAccountRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -452,19 +471,19 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (instancesSetServiceAccountRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7114552, getInstancesSetServiceAccountRequestResource());
-    }
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (instancesSetServiceAccountRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              275550008, getInstancesSetServiceAccountRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -490,7 +509,10 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
           .equals(other.getInstancesSetServiceAccountRequestResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -511,8 +533,10 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -672,7 +696,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
 
       return this;
@@ -703,6 +727,8 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
     public com.google.cloud.compute.v1.SetServiceAccountInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.SetServiceAccountInstanceRequest result =
           new com.google.cloud.compute.v1.SetServiceAccountInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instance_ = instance_;
       if (instancesSetServiceAccountRequestResourceBuilder_ == null) {
         result.instancesSetServiceAccountRequestResource_ =
@@ -712,8 +738,12 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
             instancesSetServiceAccountRequestResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -777,7 +807,8 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -814,6 +845,8 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -936,7 +969,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instancesSetServiceAccountRequestResource field is set.
@@ -953,7 +986,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instancesSetServiceAccountRequestResource.
@@ -976,7 +1009,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesSetServiceAccountRequestResource(
@@ -1001,7 +1034,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesSetServiceAccountRequestResource(
@@ -1023,7 +1056,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstancesSetServiceAccountRequestResource(
@@ -1053,7 +1086,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstancesSetServiceAccountRequestResource() {
@@ -1075,7 +1108,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesSetServiceAccountRequest.Builder
@@ -1092,7 +1125,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesSetServiceAccountRequestOrBuilder
@@ -1113,7 +1146,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1251,6 +1284,22 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1306,7 +1355,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1325,7 +1374,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1349,7 +1398,7 @@ public final class SetServiceAccountInstanceRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

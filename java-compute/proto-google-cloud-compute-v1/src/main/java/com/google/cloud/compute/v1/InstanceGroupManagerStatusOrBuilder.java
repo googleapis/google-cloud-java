@@ -30,7 +30,19 @@ public interface InstanceGroupManagerStatusOrBuilder
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 248823511;</code>
+   * <code>string autoscaler = 517258967;</code>
+   *
+   * @return Whether the autoscaler field is set.
+   */
+  boolean hasAutoscaler();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * </pre>
+   *
+   * <code>string autoscaler = 517258967;</code>
    *
    * @return The autoscaler.
    */
@@ -42,12 +54,24 @@ public interface InstanceGroupManagerStatusOrBuilder
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 248823511;</code>
+   * <code>string autoscaler = 517258967;</code>
    *
    * @return The bytes for autoscaler.
    */
   com.google.protobuf.ByteString getAutoscalerBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * </pre>
+   *
+   * <code>bool is_stable = 108410864;</code>
+   *
+   * @return Whether the isStable field is set.
+   */
+  boolean hasIsStable();
   /**
    *
    *
@@ -104,7 +128,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return Whether the versionTarget field is set.
@@ -118,7 +142,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return The versionTarget.
@@ -132,7 +156,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder

@@ -71,7 +71,21 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
           case 0:
             done = true;
             break;
-          case 1074063898:
+          case 1368660106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityPolicy_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1073419750:
             {
               com.google.cloud.compute.v1.SecurityPolicyRule.Builder subBuilder = null;
               if (securityPolicyRuleResource_ != null) {
@@ -85,20 +99,6 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
                 securityPolicyRuleResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1368660106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              securityPolicy_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -233,7 +233,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER = 134257987;
+  public static final int SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER = 402693443;
   private com.google.cloud.compute.v1.SecurityPolicyRule securityPolicyRuleResource_;
   /**
    *
@@ -243,7 +243,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyRuleResource field is set.
@@ -260,7 +260,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyRuleResource.
@@ -279,7 +279,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -302,14 +302,14 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (securityPolicyRuleResource_ != null) {
-      output.writeMessage(134257987, getSecurityPolicyRuleResource());
-    }
     if (!getSecurityPolicyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (securityPolicyRuleResource_ != null) {
+      output.writeMessage(402693443, getSecurityPolicyRuleResource());
     }
     unknownFields.writeTo(output);
   }
@@ -320,16 +320,16 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (securityPolicyRuleResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              134257987, getSecurityPolicyRuleResource());
-    }
     if (!getSecurityPolicyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (securityPolicyRuleResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              402693443, getSecurityPolicyRuleResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -880,7 +880,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the securityPolicyRuleResource field is set.
@@ -896,7 +896,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The securityPolicyRuleResource.
@@ -918,7 +918,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyRuleResource(
@@ -943,7 +943,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyRuleResource(
@@ -965,7 +965,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSecurityPolicyRuleResource(
@@ -994,7 +994,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSecurityPolicyRuleResource() {
@@ -1016,7 +1016,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRule.Builder
@@ -1033,7 +1033,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder
@@ -1054,7 +1054,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

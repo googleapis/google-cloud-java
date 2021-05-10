@@ -59,6 +59,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
           case 841443738:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               organization_ = s;
               break;
             }
@@ -110,8 +111,24 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.ProjectsListXpnHostsRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ORGANIZATION_FIELD_NUMBER = 105180467;
   private volatile java.lang.Object organization_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+   * </pre>
+   *
+   * <code>string organization = 105180467;</code>
+   *
+   * @return Whether the organization field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganization() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +190,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getOrganizationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 105180467, organization_);
     }
     unknownFields.writeTo(output);
@@ -185,7 +202,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getOrganizationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105180467, organization_);
     }
     size += unknownFields.getSerializedSize();
@@ -204,7 +221,10 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.ProjectsListXpnHostsRequest other =
         (com.google.cloud.compute.v1.ProjectsListXpnHostsRequest) obj;
 
-    if (!getOrganization().equals(other.getOrganization())) return false;
+    if (hasOrganization() != other.hasOrganization()) return false;
+    if (hasOrganization()) {
+      if (!getOrganization().equals(other.getOrganization())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-    hash = (53 * hash) + getOrganization().hashCode();
+    if (hasOrganization()) {
+      hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganization().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,7 +386,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       organization_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -392,7 +414,13 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.ProjectsListXpnHostsRequest buildPartial() {
       com.google.cloud.compute.v1.ProjectsListXpnHostsRequest result =
           new com.google.cloud.compute.v1.ProjectsListXpnHostsRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.organization_ = organization_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -443,7 +471,8 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.ProjectsListXpnHostsRequest other) {
       if (other == com.google.cloud.compute.v1.ProjectsListXpnHostsRequest.getDefaultInstance())
         return this;
-      if (!other.getOrganization().isEmpty()) {
+      if (other.hasOrganization()) {
+        bitField0_ |= 0x00000001;
         organization_ = other.organization_;
         onChanged();
       }
@@ -477,7 +506,23 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object organization_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+     * </pre>
+     *
+     * <code>string organization = 105180467;</code>
+     *
+     * @return Whether the organization field is set.
+     */
+    public boolean hasOrganization() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -538,7 +583,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       organization_ = value;
       onChanged();
       return this;
@@ -555,7 +600,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearOrganization() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       organization_ = getDefaultInstance().getOrganization();
       onChanged();
       return this;
@@ -577,7 +622,7 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       organization_ = value;
       onChanged();
       return this;

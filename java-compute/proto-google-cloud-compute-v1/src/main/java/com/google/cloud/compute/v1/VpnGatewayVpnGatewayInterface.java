@@ -60,6 +60,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,13 +73,14 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
             break;
           case 26840:
             {
+              bitField0_ |= 0x00000001;
               id_ = input.readUInt32();
               break;
             }
-          case 1102694114:
+          case -1044789534:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               ipAddress_ = s;
               break;
             }
@@ -116,8 +118,24 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private int id_;
+  /**
+   *
+   *
+   * <pre>
+   * The numeric ID of this VPN gateway interface.
+   * </pre>
+   *
+   * <code>uint32 id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -134,7 +152,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     return id_;
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -143,7 +161,22 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAddress() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The external IP address for this VPN gateway interface.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -166,7 +199,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -197,11 +230,11 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (id_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(3355, id_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -212,11 +245,11 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3355, id_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -234,8 +267,14 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface other =
         (com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface) obj;
 
-    if (getId() != other.getId()) return false;
-    if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (getId() != other.getId()) return false;
+    }
+    if (hasIpAddress() != other.hasIpAddress()) return false;
+    if (hasIpAddress()) {
+      if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,10 +286,14 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId();
-    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddress().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+    }
+    if (hasIpAddress()) {
+      hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAddress().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -398,9 +441,9 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     public Builder clear() {
       super.clear();
       id_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ipAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -428,8 +471,17 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface result =
           new com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface(this);
-      result.id_ = id_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.ipAddress_ = ipAddress_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -480,10 +532,11 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     public Builder mergeFrom(com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface other) {
       if (other == com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface.getDefaultInstance())
         return this;
-      if (other.getId() != 0) {
+      if (other.hasId()) {
         setId(other.getId());
       }
-      if (!other.getIpAddress().isEmpty()) {
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000002;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
@@ -517,7 +570,24 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private int id_;
+    /**
+     *
+     *
+     * <pre>
+     * The numeric ID of this VPN gateway interface.
+     * </pre>
+     *
+     * <code>uint32 id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    @java.lang.Override
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -546,7 +616,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setId(int value) {
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -563,7 +633,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = 0;
       onChanged();
       return this;
@@ -577,7 +647,21 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
+     *
+     * @return Whether the ipAddress field is set.
+     */
+    public boolean hasIpAddress() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The external IP address for this VPN gateway interface.
+     * </pre>
+     *
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -599,7 +683,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -621,7 +705,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -630,7 +714,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -642,12 +726,12 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -659,7 +743,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -669,7 +753,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       ipAddress_ = value;
       onChanged();
       return this;

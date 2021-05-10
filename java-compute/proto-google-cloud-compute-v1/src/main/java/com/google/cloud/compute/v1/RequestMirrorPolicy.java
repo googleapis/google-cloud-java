@@ -60,6 +60,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case 308084818:
+          case -1839398830:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               backendService_ = s;
               break;
             }
@@ -111,7 +112,8 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.RequestMirrorPolicy.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
+  private int bitField0_;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -120,7 +122,22 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
+   *
+   * @return Whether the backendService field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackendService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full or partial URL to the BackendService resource being mirrored to.
+   * </pre>
+   *
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -143,7 +160,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
@@ -174,8 +191,8 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -186,8 +203,8 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,7 +222,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     com.google.cloud.compute.v1.RequestMirrorPolicy other =
         (com.google.cloud.compute.v1.RequestMirrorPolicy) obj;
 
-    if (!getBackendService().equals(other.getBackendService())) return false;
+    if (hasBackendService() != other.hasBackendService()) return false;
+    if (hasBackendService()) {
+      if (!getBackendService().equals(other.getBackendService())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -217,8 +237,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getBackendService().hashCode();
+    if (hasBackendService()) {
+      hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getBackendService().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,7 +387,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       backendService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -393,7 +415,13 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.RequestMirrorPolicy buildPartial() {
       com.google.cloud.compute.v1.RequestMirrorPolicy result =
           new com.google.cloud.compute.v1.RequestMirrorPolicy(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.backendService_ = backendService_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -444,7 +472,8 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.compute.v1.RequestMirrorPolicy other) {
       if (other == com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance())
         return this;
-      if (!other.getBackendService().isEmpty()) {
+      if (other.hasBackendService()) {
+        bitField0_ |= 0x00000001;
         backendService_ = other.backendService_;
         onChanged();
       }
@@ -477,6 +506,8 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object backendService_ = "";
     /**
      *
@@ -485,7 +516,21 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
+     *
+     * @return Whether the backendService field is set.
+     */
+    public boolean hasBackendService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full or partial URL to the BackendService resource being mirrored to.
+     * </pre>
+     *
+     * <code>string backend_service = 306946058;</code>
      *
      * @return The backendService.
      */
@@ -507,7 +552,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @return The bytes for backendService.
      */
@@ -529,7 +574,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -538,7 +583,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       backendService_ = value;
       onChanged();
       return this;
@@ -550,12 +595,12 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       backendService_ = getDefaultInstance().getBackendService();
       onChanged();
       return this;
@@ -567,7 +612,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 38510602;</code>
+     * <code>string backend_service = 306946058;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -577,7 +622,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       backendService_ = value;
       onChanged();
       return this;

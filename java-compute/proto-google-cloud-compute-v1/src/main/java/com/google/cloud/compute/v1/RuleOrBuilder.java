@@ -32,6 +32,18 @@ public interface RuleOrBuilder
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
    *
+   * @return Whether the action field is set.
+   */
+  boolean hasAction();
+  /**
+   *
+   *
+   * <pre>
+   * Required
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
+   *
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
@@ -107,7 +119,19 @@ public interface RuleOrBuilder
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Human-readable description of the rule.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -119,7 +143,7 @@ public interface RuleOrBuilder
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -235,7 +259,7 @@ public interface RuleOrBuilder
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @return A list containing the notIns.
    */
@@ -247,7 +271,7 @@ public interface RuleOrBuilder
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @return The count of notIns.
    */
@@ -259,7 +283,7 @@ public interface RuleOrBuilder
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @param index The index of the element to return.
    * @return The notIns at the given index.
@@ -272,7 +296,7 @@ public interface RuleOrBuilder
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notIns at the given index.

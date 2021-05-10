@@ -84,7 +84,19 @@ public interface HealthStatusOrBuilder
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   *
+   * @return Whether the healthState field is set.
+   */
+  boolean hasHealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
    *
    * @return The enum numeric value on the wire for healthState.
    */
@@ -96,12 +108,24 @@ public interface HealthStatusOrBuilder
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
    *
    * @return The healthState.
    */
   com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the instance resource.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  boolean hasInstance();
   /**
    *
    *
@@ -134,7 +158,19 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  boolean hasIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule IP address assigned to this instance.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -146,7 +182,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -161,31 +197,55 @@ public interface HealthStatusOrBuilder
    *
    * <code>int32 port = 3446913;</code>
    *
+   * @return Whether the port field is set.
+   */
+  boolean hasPort();
+  /**
+   *
+   *
+   * <pre>
+   * The named port of the instance group, not necessarily the port that is health-checked.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
    * @return The port.
    */
   int getPort();
 
   /**
-   * <code>string weight = 13714040;</code>
+   * <code>string weight = 282149496;</code>
+   *
+   * @return Whether the weight field is set.
+   */
+  boolean hasWeight();
+  /**
+   * <code>string weight = 282149496;</code>
    *
    * @return The weight.
    */
   java.lang.String getWeight();
   /**
-   * <code>string weight = 13714040;</code>
+   * <code>string weight = 282149496;</code>
    *
    * @return The bytes for weight.
    */
   com.google.protobuf.ByteString getWeightBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   * @return Whether the weightError field is set.
+   */
+  boolean hasWeightError();
+  /**
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
    * @return The enum numeric value on the wire for weightError.
    */
   int getWeightErrorValue();
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
    * @return The weightError.
    */

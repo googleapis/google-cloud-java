@@ -59,6 +59,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,10 +70,10 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case 1811951306:
+          case -335532342:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               sizeGb_ = s;
               break;
             }
@@ -110,7 +111,8 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.DisksResizeRequest.Builder.class);
   }
 
-  public static final int SIZE_GB_FIELD_NUMBER = 226493913;
+  private int bitField0_;
+  public static final int SIZE_GB_FIELD_NUMBER = 494929369;
   private volatile java.lang.Object sizeGb_;
   /**
    *
@@ -119,7 +121,22 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
    * The new size of the persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 226493913;</code>
+   * <code>string size_gb = 494929369;</code>
+   *
+   * @return Whether the sizeGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasSizeGb() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The new size of the persistent disk, which is specified in GB.
+   * </pre>
+   *
+   * <code>string size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
@@ -142,7 +159,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
    * The new size of the persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 226493913;</code>
+   * <code>string size_gb = 494929369;</code>
    *
    * @return The bytes for sizeGb.
    */
@@ -173,8 +190,8 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 226493913, sizeGb_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 494929369, sizeGb_);
     }
     unknownFields.writeTo(output);
   }
@@ -185,8 +202,8 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(226493913, sizeGb_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494929369, sizeGb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,7 +221,10 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.DisksResizeRequest other =
         (com.google.cloud.compute.v1.DisksResizeRequest) obj;
 
-    if (!getSizeGb().equals(other.getSizeGb())) return false;
+    if (hasSizeGb() != other.hasSizeGb()) return false;
+    if (hasSizeGb()) {
+      if (!getSizeGb().equals(other.getSizeGb())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getSizeGb().hashCode();
+    if (hasSizeGb()) {
+      hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getSizeGb().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -363,7 +385,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       sizeGb_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -391,7 +413,13 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.DisksResizeRequest buildPartial() {
       com.google.cloud.compute.v1.DisksResizeRequest result =
           new com.google.cloud.compute.v1.DisksResizeRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.sizeGb_ = sizeGb_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -441,7 +469,8 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.DisksResizeRequest other) {
       if (other == com.google.cloud.compute.v1.DisksResizeRequest.getDefaultInstance()) return this;
-      if (!other.getSizeGb().isEmpty()) {
+      if (other.hasSizeGb()) {
+        bitField0_ |= 0x00000001;
         sizeGb_ = other.sizeGb_;
         onChanged();
       }
@@ -474,6 +503,8 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object sizeGb_ = "";
     /**
      *
@@ -482,7 +513,21 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
      * The new size of the persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 226493913;</code>
+     * <code>string size_gb = 494929369;</code>
+     *
+     * @return Whether the sizeGb field is set.
+     */
+    public boolean hasSizeGb() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The new size of the persistent disk, which is specified in GB.
+     * </pre>
+     *
+     * <code>string size_gb = 494929369;</code>
      *
      * @return The sizeGb.
      */
@@ -504,7 +549,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
      * The new size of the persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 226493913;</code>
+     * <code>string size_gb = 494929369;</code>
      *
      * @return The bytes for sizeGb.
      */
@@ -526,7 +571,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
      * The new size of the persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 226493913;</code>
+     * <code>string size_gb = 494929369;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
@@ -535,7 +580,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       sizeGb_ = value;
       onChanged();
       return this;
@@ -547,12 +592,12 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
      * The new size of the persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 226493913;</code>
+     * <code>string size_gb = 494929369;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sizeGb_ = getDefaultInstance().getSizeGb();
       onChanged();
       return this;
@@ -564,7 +609,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
      * The new size of the persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 226493913;</code>
+     * <code>string size_gb = 494929369;</code>
      *
      * @param value The bytes for sizeGb to set.
      * @return This builder for chaining.
@@ -574,7 +619,7 @@ public final class DisksResizeRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       sizeGb_ = value;
       onChanged();
       return this;

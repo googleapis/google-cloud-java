@@ -41,6 +41,27 @@ public interface ManagedInstanceOrBuilder
    *
    * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
    *
+   * @return Whether the currentAction field is set.
+   */
+  boolean hasCurrentAction();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
+   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
+   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
+   * - RECREATING The managed instance group is recreating this instance.
+   * - DELETING The managed instance group is permanently deleting this instance.
+   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+   * - RESTARTING The managed instance group is restarting the instance.
+   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+   *
    * @return The enum numeric value on the wire for currentAction.
    */
   int getCurrentActionValue();
@@ -75,6 +96,18 @@ public interface ManagedInstanceOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -91,6 +124,18 @@ public interface ManagedInstanceOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  boolean hasInstance();
   /**
    *
    *
@@ -124,7 +169,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> getInstanceHealthList();
@@ -136,7 +181,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   com.google.cloud.compute.v1.ManagedInstanceInstanceHealth getInstanceHealth(int index);
@@ -148,7 +193,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   int getInstanceHealthCount();
@@ -160,7 +205,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder>
@@ -173,12 +218,25 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
    * </code>
    */
   com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder getInstanceHealthOrBuilder(
       int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;
+   * </code>
+   *
+   * @return Whether the instanceStatus field is set.
+   */
+  boolean hasInstanceStatus();
   /**
    *
    *
@@ -213,7 +271,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    *
    * @return Whether the lastAttempt field is set.
    */
@@ -225,7 +283,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    *
    * @return The lastAttempt.
    */
@@ -237,7 +295,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceLastAttemptOrBuilder getLastAttemptOrBuilder();
 
@@ -283,7 +341,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    *
    * @return Whether the preservedStateFromPolicy field is set.
    */
@@ -295,7 +353,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    *
    * @return The preservedStateFromPolicy.
    */
@@ -307,7 +365,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
    */
   com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateFromPolicyOrBuilder();
 
@@ -318,7 +376,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return Whether the version field is set.
    */
@@ -330,7 +388,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return The version.
    */
@@ -342,7 +400,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder();
 }

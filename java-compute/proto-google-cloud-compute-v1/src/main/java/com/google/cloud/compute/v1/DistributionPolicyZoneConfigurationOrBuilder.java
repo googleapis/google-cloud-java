@@ -32,6 +32,18 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    *
    * <code>string zone = 3744684;</code>
    *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
    * @return The zone.
    */
   java.lang.String getZone();

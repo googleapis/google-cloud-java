@@ -57,6 +57,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,7 +71,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
           case 1566449778:
             {
               com.google.cloud.compute.v1.UrlMap.Builder subBuilder = null;
-              if (resource_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = resource_.toBuilder();
               }
               resource_ =
@@ -79,7 +80,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
                 subBuilder.mergeFrom(resource_);
                 resource_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -116,6 +117,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.UrlMapsValidateRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.UrlMap resource_;
   /**
@@ -131,7 +133,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasResource() {
-    return resource_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -159,7 +161,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlMapOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.cloud.compute.v1.UrlMap.getDefaultInstance() : resource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -176,7 +178,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (resource_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(195806222, getResource());
     }
     unknownFields.writeTo(output);
@@ -188,7 +190,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (resource_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(195806222, getResource());
     }
     size += unknownFields.getSerializedSize();
@@ -364,7 +366,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getResourceFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -373,9 +377,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       if (resourceBuilder_ == null) {
         resource_ = null;
       } else {
-        resource_ = null;
-        resourceBuilder_ = null;
+        resourceBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -403,11 +407,17 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.UrlMapsValidateRequest buildPartial() {
       com.google.cloud.compute.v1.UrlMapsValidateRequest result =
           new com.google.cloud.compute.v1.UrlMapsValidateRequest(this);
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -491,6 +501,8 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.UrlMap resource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UrlMap,
@@ -509,7 +521,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -550,7 +562,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -569,7 +581,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -583,7 +595,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeResource(com.google.cloud.compute.v1.UrlMap value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && resource_ != null
+            && resource_ != com.google.cloud.compute.v1.UrlMap.getDefaultInstance()) {
           resource_ =
               com.google.cloud.compute.v1.UrlMap.newBuilder(resource_)
                   .mergeFrom(value)
@@ -595,7 +609,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -612,10 +626,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
         resource_ = null;
         onChanged();
       } else {
-        resource_ = null;
-        resourceBuilder_ = null;
+        resourceBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -628,7 +641,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.compute.v1.UrlMap resource = 195806222;</code>
      */
     public com.google.cloud.compute.v1.UrlMap.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

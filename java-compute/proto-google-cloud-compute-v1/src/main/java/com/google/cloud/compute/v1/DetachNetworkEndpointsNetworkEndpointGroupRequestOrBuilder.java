@@ -30,7 +30,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -43,7 +43,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -58,7 +58,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsDetachEndpointsRequestResource field is set.
@@ -72,7 +72,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsDetachEndpointsRequestResource.
@@ -87,7 +87,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequestOrBuilder
@@ -118,6 +118,20 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    */
   com.google.protobuf.ByteString getProjectBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  boolean hasRequestId();
   /**
    *
    *

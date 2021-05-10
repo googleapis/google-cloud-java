@@ -83,43 +83,36 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1404292250:
@@ -135,21 +128,28 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           case 1450082192:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000100;
               status_ = rawValue;
               break;
             }
-          case 1502234730:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
               break;
             }
-          case 1973628314:
+          case -173855334:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
-              if (deprecated_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = deprecated_.toBuilder();
               }
               deprecated_ =
@@ -159,7 +159,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(deprecated_);
                 deprecated_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -323,6 +323,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Zone.Status)
   }
 
+  private int bitField0_;
   public static final int AVAILABLE_CPU_PLATFORMS_FIELD_NUMBER = 175536531;
   private com.google.protobuf.LazyStringList availableCpuPlatforms_;
   /**
@@ -395,6 +396,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   @java.lang.Override
@@ -433,7 +449,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
+  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
   /**
    *
@@ -442,13 +458,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
   @java.lang.Override
   public boolean hasDeprecated() {
-    return deprecated_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -457,7 +473,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -474,14 +490,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this zone.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
-    return getDeprecated();
+    return deprecated_ == null
+        ? com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()
+        : deprecated_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -490,7 +508,22 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Textual description of the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -513,7 +546,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -532,6 +565,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -590,6 +638,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -630,6 +693,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -688,6 +766,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full URL reference to the region which hosts the zone.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -726,7 +819,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -735,7 +828,22 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -758,7 +866,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -777,6 +885,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private int status_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status of the zone, either UP or DOWN.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -825,36 +948,36 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     for (int i = 0; i < availableCpuPlatforms_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 175536531, availableCpuPlatforms_.getRaw(i));
     }
-    if (status_ != com.google.cloud.compute.v1.Zone.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (deprecated_ != null) {
-      output.writeMessage(246703539, getDeprecated());
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(515138995, getDeprecated());
     }
     unknownFields.writeTo(output);
   }
@@ -865,24 +988,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     {
       int dataSize = 0;
@@ -892,14 +1012,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getAvailableCpuPlatformsList().size();
     }
-    if (status_ != com.google.cloud.compute.v1.Zone.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (deprecated_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(246703539, getDeprecated());
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -917,18 +1040,42 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.Zone other = (com.google.cloud.compute.v1.Zone) obj;
 
     if (!getAvailableCpuPlatformsList().equals(other.getAvailableCpuPlatformsList())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
     if (hasDeprecated() != other.hasDeprecated()) return false;
     if (hasDeprecated()) {
       if (!getDeprecated().equals(other.getDeprecated())) return false;
     }
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (status_ != other.status_) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -944,26 +1091,42 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AVAILABLE_CPU_PLATFORMS_FIELD_NUMBER;
       hash = (53 * hash) + getAvailableCpuPlatformsList().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
     if (hasDeprecated()) {
       hash = (37 * hash) + DEPRECATED_FIELD_NUMBER;
       hash = (53 * hash) + getDeprecated().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1103,7 +1266,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDeprecatedFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1112,27 +1277,27 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (deprecatedBuilder_ == null) {
         deprecated_ = null;
       } else {
-        deprecated_ = null;
-        deprecatedBuilder_ = null;
+        deprecatedBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       status_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1160,24 +1325,53 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Zone buildPartial() {
       com.google.cloud.compute.v1.Zone result = new com.google.cloud.compute.v1.Zone(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         availableCpuPlatforms_ = availableCpuPlatforms_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.availableCpuPlatforms_ = availableCpuPlatforms_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
-      if (deprecatedBuilder_ == null) {
-        result.deprecated_ = deprecated_;
-      } else {
-        result.deprecated_ = deprecatedBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (deprecatedBuilder_ == null) {
+          result.deprecated_ = deprecated_;
+        } else {
+          result.deprecated_ = deprecatedBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.status_ = status_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1237,39 +1431,46 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDeprecated()) {
         mergeDeprecated(other.getDeprecated());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000010;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000020;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000040;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000080;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000100;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1481,6 +1682,20 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string creation_timestamp = 30525366;</code>
      *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
      * @return The creationTimestamp.
      */
     public java.lang.String getCreationTimestamp() {
@@ -1532,7 +1747,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1549,7 +1764,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1571,7 +1786,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1590,12 +1805,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return Whether the deprecated field is set.
      */
     public boolean hasDeprecated() {
-      return deprecatedBuilder_ != null || deprecated_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1604,7 +1819,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return The deprecated.
      */
@@ -1624,7 +1839,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1636,7 +1851,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1646,7 +1861,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1656,7 +1871,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1666,11 +1881,13 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
-        if (deprecated_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && deprecated_ != null
+            && deprecated_ != com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) {
           deprecated_ =
               com.google.cloud.compute.v1.DeprecationStatus.newBuilder(deprecated_)
                   .mergeFrom(value)
@@ -1682,7 +1899,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1692,17 +1909,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
         deprecated_ = null;
         onChanged();
       } else {
-        deprecated_ = null;
-        deprecatedBuilder_ = null;
+        deprecatedBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1712,10 +1928,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeprecatedFieldBuilder().getBuilder();
     }
@@ -1726,7 +1942,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1744,7 +1960,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this zone.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1771,7 +1987,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Textual description of the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1793,7 +2023,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1815,7 +2045,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1824,7 +2054,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1836,12 +2066,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1853,7 +2083,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1863,13 +2093,27 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1930,7 +2174,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       id_ = value;
       onChanged();
       return this;
@@ -1947,7 +2191,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1969,13 +2213,27 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2036,7 +2294,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       kind_ = value;
       onChanged();
       return this;
@@ -2053,7 +2311,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2075,13 +2333,27 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Name of the resource.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2142,7 +2414,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
@@ -2159,7 +2431,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2181,13 +2453,27 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Full URL reference to the region which hosts the zone.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2248,7 +2534,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2265,7 +2551,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -2287,7 +2573,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2301,7 +2587,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2323,7 +2623,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2345,7 +2645,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2354,7 +2654,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2366,12 +2666,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2383,7 +2683,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2393,13 +2693,28 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int status_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status of the zone, either UP or DOWN.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Zone.Status status = 181260274;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2428,7 +2743,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -2467,7 +2782,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -2484,7 +2799,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
       onChanged();
       return this;

@@ -80,16 +80,16 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 168524208:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               advertisedGroups_.add(rawValue);
               break;
@@ -100,9 +100,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 advertisedGroups_.add(rawValue);
               }
@@ -111,10 +111,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             }
           case 283599458:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 advertisedIpRanges_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.RouterAdvertisedIpRange>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               advertisedIpRanges_.add(
                   input.readMessage(
@@ -122,49 +122,51 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
-          case 349591000:
-            {
-              int rawValue = input.readEnum();
-
-              advertiseMode_ = rawValue;
-              break;
-            }
           case 556585208:
             {
+              bitField0_ |= 0x00000040;
               peerAsn_ = input.readUInt32();
-              break;
-            }
-          case 1102694114:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipAddress_ = s;
-              break;
-            }
-          case 1355353738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interfaceName_ = s;
               break;
             }
           case 1389628848:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000010;
               managementType_ = rawValue;
               break;
             }
           case 1491890656:
             {
+              bitField0_ |= 0x00000002;
               advertisedRoutePriority_ = input.readUInt32();
               break;
             }
           case 1661886154:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               peerIpAddress_ = s;
+              break;
+            }
+          case -1797892648:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              advertiseMode_ = rawValue;
+              break;
+            }
+          case -1044789534:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              ipAddress_ = s;
+              break;
+            }
+          case -792129910:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              interfaceName_ = s;
               break;
             }
           default:
@@ -181,10 +183,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
       }
       this.unknownFields = unknownFields.build();
@@ -227,8 +229,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     UNDEFINED_ADVERTISE_MODE(0),
-    /** <code>CUSTOM = 120160113;</code> */
-    CUSTOM(120160113),
+    /** <code>CUSTOM = 388595569;</code> */
+    CUSTOM(388595569),
     /** <code>DEFAULT = 115302945;</code> */
     DEFAULT(115302945),
     UNRECOGNIZED(-1),
@@ -244,8 +246,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISE_MODE_VALUE = 0;
-    /** <code>CUSTOM = 120160113;</code> */
-    public static final int CUSTOM_VALUE = 120160113;
+    /** <code>CUSTOM = 388595569;</code> */
+    public static final int CUSTOM_VALUE = 388595569;
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
 
@@ -275,7 +277,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_ADVERTISE_MODE;
-        case 120160113:
+        case 388595569:
           return CUSTOM;
         case 115302945:
           return DEFAULT;
@@ -474,10 +476,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     UNDEFINED_MANAGEMENT_TYPE(0),
-    /** <code>MANAGED_BY_ATTACHMENT = 190490955;</code> */
-    MANAGED_BY_ATTACHMENT(190490955),
-    /** <code>MANAGED_BY_USER = 48858611;</code> */
-    MANAGED_BY_USER(48858611),
+    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
+    MANAGED_BY_ATTACHMENT(458926411),
+    /** <code>MANAGED_BY_USER = 317294067;</code> */
+    MANAGED_BY_USER(317294067),
     UNRECOGNIZED(-1),
     ;
 
@@ -491,10 +493,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_MANAGEMENT_TYPE_VALUE = 0;
-    /** <code>MANAGED_BY_ATTACHMENT = 190490955;</code> */
-    public static final int MANAGED_BY_ATTACHMENT_VALUE = 190490955;
-    /** <code>MANAGED_BY_USER = 48858611;</code> */
-    public static final int MANAGED_BY_USER_VALUE = 48858611;
+    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
+    public static final int MANAGED_BY_ATTACHMENT_VALUE = 458926411;
+    /** <code>MANAGED_BY_USER = 317294067;</code> */
+    public static final int MANAGED_BY_USER_VALUE = 317294067;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -522,9 +524,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_MANAGEMENT_TYPE;
-        case 190490955:
+        case 458926411:
           return MANAGED_BY_ATTACHMENT;
-        case 48858611:
+        case 317294067:
           return MANAGED_BY_USER;
         default:
           return null;
@@ -579,7 +581,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterBgpPeer.ManagementType)
   }
 
-  public static final int ADVERTISE_MODE_FIELD_NUMBER = 43698875;
+  private int bitField0_;
+  public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
   private int advertiseMode_;
   /**
    *
@@ -588,7 +591,22 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   *
+   * @return Whether the advertiseMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertiseMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-specified flag to indicate which mode to use for advertisement.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -603,7 +621,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The advertiseMode.
    */
@@ -834,6 +852,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>uint32 advertised_route_priority = 186486332;</code>
    *
+   * @return Whether the advertisedRoutePriority field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertisedRoutePriority() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+   * </pre>
+   *
+   * <code>uint32 advertised_route_priority = 186486332;</code>
+   *
    * @return The advertisedRoutePriority.
    */
   @java.lang.Override
@@ -841,7 +874,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     return advertisedRoutePriority_;
   }
 
-  public static final int INTERFACE_NAME_FIELD_NUMBER = 169419217;
+  public static final int INTERFACE_NAME_FIELD_NUMBER = 437854673;
   private volatile java.lang.Object interfaceName_;
   /**
    *
@@ -850,7 +883,22 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 169419217;</code>
+   * <code>string interface_name = 437854673;</code>
+   *
+   * @return Whether the interfaceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterfaceName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the interface the BGP peer is associated with.
+   * </pre>
+   *
+   * <code>string interface_name = 437854673;</code>
    *
    * @return The interfaceName.
    */
@@ -873,7 +921,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 169419217;</code>
+   * <code>string interface_name = 437854673;</code>
    *
    * @return The bytes for interfaceName.
    */
@@ -890,7 +938,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -899,7 +947,22 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAddress() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -922,7 +985,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -941,6 +1004,23 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGEMENT_TYPE_FIELD_NUMBER = 173703606;
   private int managementType_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource that configures and manages this BGP peer.
+   * - MANAGED_BY_USER is the default value and can be managed by you or other users
+   * - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+   *
+   * @return Whether the managementType field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagementType() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -983,6 +1063,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -1041,6 +1136,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>uint32 peer_asn = 69573151;</code>
    *
+   * @return Whether the peerAsn field is set.
+   */
+  @java.lang.Override
+  public boolean hasPeerAsn() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+   * </pre>
+   *
+   * <code>uint32 peer_asn = 69573151;</code>
+   *
    * @return The peerAsn.
    */
   @java.lang.Override
@@ -1050,6 +1160,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PEER_IP_ADDRESS_FIELD_NUMBER = 207735769;
   private volatile java.lang.Object peerIpAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string peer_ip_address = 207735769;</code>
+   *
+   * @return Whether the peerIpAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasPeerIpAddress() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -1112,7 +1237,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (getAdvertisedGroupsList().size() > 0) {
@@ -1125,30 +1250,26 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (advertiseMode_
-        != com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
-            .getNumber()) {
-      output.writeEnum(43698875, advertiseMode_);
-    }
-    if (peerAsn_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt32(69573151, peerAsn_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
-    }
-    if (!getInterfaceNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 169419217, interfaceName_);
-    }
-    if (managementType_
-        != com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.UNDEFINED_MANAGEMENT_TYPE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(173703606, managementType_);
     }
-    if (advertisedRoutePriority_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(186486332, advertisedRoutePriority_);
     }
-    if (!getPeerIpAddressBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(312134331, advertiseMode_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 437854673, interfaceName_);
     }
     unknownFields.writeTo(output);
   }
@@ -1159,7 +1280,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     {
@@ -1180,32 +1301,28 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (advertiseMode_
-        != com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(43698875, advertiseMode_);
-    }
-    if (peerAsn_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(69573151, peerAsn_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
-    }
-    if (!getInterfaceNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(169419217, interfaceName_);
-    }
-    if (managementType_
-        != com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.UNDEFINED_MANAGEMENT_TYPE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(173703606, managementType_);
     }
-    if (advertisedRoutePriority_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               186486332, advertisedRoutePriority_);
     }
-    if (!getPeerIpAddressBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(312134331, advertiseMode_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(437854673, interfaceName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1223,16 +1340,40 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.RouterBgpPeer other =
         (com.google.cloud.compute.v1.RouterBgpPeer) obj;
 
-    if (advertiseMode_ != other.advertiseMode_) return false;
+    if (hasAdvertiseMode() != other.hasAdvertiseMode()) return false;
+    if (hasAdvertiseMode()) {
+      if (advertiseMode_ != other.advertiseMode_) return false;
+    }
     if (!advertisedGroups_.equals(other.advertisedGroups_)) return false;
     if (!getAdvertisedIpRangesList().equals(other.getAdvertisedIpRangesList())) return false;
-    if (getAdvertisedRoutePriority() != other.getAdvertisedRoutePriority()) return false;
-    if (!getInterfaceName().equals(other.getInterfaceName())) return false;
-    if (!getIpAddress().equals(other.getIpAddress())) return false;
-    if (managementType_ != other.managementType_) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (getPeerAsn() != other.getPeerAsn()) return false;
-    if (!getPeerIpAddress().equals(other.getPeerIpAddress())) return false;
+    if (hasAdvertisedRoutePriority() != other.hasAdvertisedRoutePriority()) return false;
+    if (hasAdvertisedRoutePriority()) {
+      if (getAdvertisedRoutePriority() != other.getAdvertisedRoutePriority()) return false;
+    }
+    if (hasInterfaceName() != other.hasInterfaceName()) return false;
+    if (hasInterfaceName()) {
+      if (!getInterfaceName().equals(other.getInterfaceName())) return false;
+    }
+    if (hasIpAddress() != other.hasIpAddress()) return false;
+    if (hasIpAddress()) {
+      if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasManagementType() != other.hasManagementType()) return false;
+    if (hasManagementType()) {
+      if (managementType_ != other.managementType_) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPeerAsn() != other.hasPeerAsn()) return false;
+    if (hasPeerAsn()) {
+      if (getPeerAsn() != other.getPeerAsn()) return false;
+    }
+    if (hasPeerIpAddress() != other.hasPeerIpAddress()) return false;
+    if (hasPeerIpAddress()) {
+      if (!getPeerIpAddress().equals(other.getPeerIpAddress())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1244,8 +1385,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + advertiseMode_;
+    if (hasAdvertiseMode()) {
+      hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + advertiseMode_;
+    }
     if (getAdvertisedGroupsCount() > 0) {
       hash = (37 * hash) + ADVERTISED_GROUPS_FIELD_NUMBER;
       hash = (53 * hash) + advertisedGroups_.hashCode();
@@ -1254,20 +1397,34 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADVERTISED_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertisedIpRangesList().hashCode();
     }
-    hash = (37 * hash) + ADVERTISED_ROUTE_PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getAdvertisedRoutePriority();
-    hash = (37 * hash) + INTERFACE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getInterfaceName().hashCode();
-    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddress().hashCode();
-    hash = (37 * hash) + MANAGEMENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + managementType_;
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PEER_ASN_FIELD_NUMBER;
-    hash = (53 * hash) + getPeerAsn();
-    hash = (37 * hash) + PEER_IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getPeerIpAddress().hashCode();
+    if (hasAdvertisedRoutePriority()) {
+      hash = (37 * hash) + ADVERTISED_ROUTE_PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertisedRoutePriority();
+    }
+    if (hasInterfaceName()) {
+      hash = (37 * hash) + INTERFACE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getInterfaceName().hashCode();
+    }
+    if (hasIpAddress()) {
+      hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasManagementType()) {
+      hash = (37 * hash) + MANAGEMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + managementType_;
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPeerAsn()) {
+      hash = (37 * hash) + PEER_ASN_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerAsn();
+    }
+    if (hasPeerIpAddress()) {
+      hash = (37 * hash) + PEER_IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerIpAddress().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1415,29 +1572,29 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       advertiseMode_ = 0;
-
-      advertisedGroups_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      advertisedGroups_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         advertisedIpRangesBuilder_.clear();
       }
       advertisedRoutePriority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       interfaceName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       ipAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       managementType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       peerAsn_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       peerIpAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1466,28 +1623,54 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.RouterBgpPeer result =
           new com.google.cloud.compute.v1.RouterBgpPeer(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.advertiseMode_ = advertiseMode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.advertisedGroups_ = advertisedGroups_;
       if (advertisedIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.advertisedIpRanges_ = advertisedIpRanges_;
       } else {
         result.advertisedIpRanges_ = advertisedIpRangesBuilder_.build();
       }
-      result.advertisedRoutePriority_ = advertisedRoutePriority_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.advertisedRoutePriority_ = advertisedRoutePriority_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.interfaceName_ = interfaceName_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.ipAddress_ = ipAddress_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.managementType_ = managementType_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
-      result.peerAsn_ = peerAsn_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.peerAsn_ = peerAsn_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.peerIpAddress_ = peerIpAddress_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1537,13 +1720,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterBgpPeer other) {
       if (other == com.google.cloud.compute.v1.RouterBgpPeer.getDefaultInstance()) return this;
-      if (other.advertiseMode_ != 0) {
-        setAdvertiseModeValue(other.getAdvertiseModeValue());
+      if (other.hasAdvertiseMode()) {
+        setAdvertiseMode(other.getAdvertiseMode());
       }
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
           advertisedGroups_ = other.advertisedGroups_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAdvertisedGroupsIsMutable();
           advertisedGroups_.addAll(other.advertisedGroups_);
@@ -1554,7 +1737,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         if (!other.advertisedIpRanges_.isEmpty()) {
           if (advertisedIpRanges_.isEmpty()) {
             advertisedIpRanges_ = other.advertisedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAdvertisedIpRangesIsMutable();
             advertisedIpRanges_.addAll(other.advertisedIpRanges_);
@@ -1567,7 +1750,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             advertisedIpRangesBuilder_.dispose();
             advertisedIpRangesBuilder_ = null;
             advertisedIpRanges_ = other.advertisedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             advertisedIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdvertisedIpRangesFieldBuilder()
@@ -1577,28 +1760,32 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.getAdvertisedRoutePriority() != 0) {
+      if (other.hasAdvertisedRoutePriority()) {
         setAdvertisedRoutePriority(other.getAdvertisedRoutePriority());
       }
-      if (!other.getInterfaceName().isEmpty()) {
+      if (other.hasInterfaceName()) {
+        bitField0_ |= 0x00000010;
         interfaceName_ = other.interfaceName_;
         onChanged();
       }
-      if (!other.getIpAddress().isEmpty()) {
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000020;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
-      if (other.managementType_ != 0) {
-        setManagementTypeValue(other.getManagementTypeValue());
+      if (other.hasManagementType()) {
+        setManagementType(other.getManagementType());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000080;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getPeerAsn() != 0) {
+      if (other.hasPeerAsn()) {
         setPeerAsn(other.getPeerAsn());
       }
-      if (!other.getPeerIpAddress().isEmpty()) {
+      if (other.hasPeerIpAddress()) {
+        bitField0_ |= 0x00000200;
         peerIpAddress_ = other.peerIpAddress_;
         onChanged();
       }
@@ -1641,7 +1828,22 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     *
+     * @return Whether the advertiseMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvertiseMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return The enum numeric value on the wire for advertiseMode.
      */
@@ -1656,13 +1858,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @param value The enum numeric value on the wire for advertiseMode to set.
      * @return This builder for chaining.
      */
     public Builder setAdvertiseModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       advertiseMode_ = value;
       onChanged();
       return this;
@@ -1674,7 +1876,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return The advertiseMode.
      */
@@ -1694,7 +1896,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @param value The advertiseMode to set.
      * @return This builder for chaining.
@@ -1703,7 +1905,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       advertiseMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1715,12 +1917,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAdvertiseMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       advertiseMode_ = 0;
       onChanged();
       return this;
@@ -1729,9 +1931,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> advertisedGroups_ = java.util.Collections.emptyList();
 
     private void ensureAdvertisedGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>(advertisedGroups_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1896,7 +2098,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAdvertisedGroups() {
       advertisedGroups_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2016,11 +2218,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         advertisedIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureAdvertisedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.RouterAdvertisedIpRange>(
                 advertisedIpRanges_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2262,7 +2464,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdvertisedIpRanges() {
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         advertisedIpRangesBuilder_.clear();
@@ -2404,7 +2606,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterAdvertisedIpRange.Builder,
                 com.google.cloud.compute.v1.RouterAdvertisedIpRangeOrBuilder>(
                 advertisedIpRanges_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         advertisedIpRanges_ = null;
@@ -2413,6 +2615,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int advertisedRoutePriority_;
+    /**
+     *
+     *
+     * <pre>
+     * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+     * </pre>
+     *
+     * <code>uint32 advertised_route_priority = 186486332;</code>
+     *
+     * @return Whether the advertisedRoutePriority field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvertisedRoutePriority() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -2441,7 +2658,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAdvertisedRoutePriority(int value) {
-
+      bitField0_ |= 0x00000008;
       advertisedRoutePriority_ = value;
       onChanged();
       return this;
@@ -2458,7 +2675,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvertisedRoutePriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       advertisedRoutePriority_ = 0;
       onChanged();
       return this;
@@ -2472,7 +2689,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * Name of the interface the BGP peer is associated with.
      * </pre>
      *
-     * <code>string interface_name = 169419217;</code>
+     * <code>string interface_name = 437854673;</code>
+     *
+     * @return Whether the interfaceName field is set.
+     */
+    public boolean hasInterfaceName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface the BGP peer is associated with.
+     * </pre>
+     *
+     * <code>string interface_name = 437854673;</code>
      *
      * @return The interfaceName.
      */
@@ -2494,7 +2725,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * Name of the interface the BGP peer is associated with.
      * </pre>
      *
-     * <code>string interface_name = 169419217;</code>
+     * <code>string interface_name = 437854673;</code>
      *
      * @return The bytes for interfaceName.
      */
@@ -2516,7 +2747,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * Name of the interface the BGP peer is associated with.
      * </pre>
      *
-     * <code>string interface_name = 169419217;</code>
+     * <code>string interface_name = 437854673;</code>
      *
      * @param value The interfaceName to set.
      * @return This builder for chaining.
@@ -2525,7 +2756,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       interfaceName_ = value;
       onChanged();
       return this;
@@ -2537,12 +2768,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * Name of the interface the BGP peer is associated with.
      * </pre>
      *
-     * <code>string interface_name = 169419217;</code>
+     * <code>string interface_name = 437854673;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInterfaceName() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       interfaceName_ = getDefaultInstance().getInterfaceName();
       onChanged();
       return this;
@@ -2554,7 +2785,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * Name of the interface the BGP peer is associated with.
      * </pre>
      *
-     * <code>string interface_name = 169419217;</code>
+     * <code>string interface_name = 437854673;</code>
      *
      * @param value The bytes for interfaceName to set.
      * @return This builder for chaining.
@@ -2564,7 +2795,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       interfaceName_ = value;
       onChanged();
       return this;
@@ -2578,7 +2809,21 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
+     *
+     * @return Whether the ipAddress field is set.
+     */
+    public boolean hasIpAddress() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+     * </pre>
+     *
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -2600,7 +2845,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -2622,7 +2867,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -2631,7 +2876,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -2643,12 +2888,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -2660,7 +2905,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -2670,13 +2915,31 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       ipAddress_ = value;
       onChanged();
       return this;
     }
 
     private int managementType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The resource that configures and manages this BGP peer.
+     * - MANAGED_BY_USER is the default value and can be managed by you or other users
+     * - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;
+     * </code>
+     *
+     * @return Whether the managementType field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagementType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2711,7 +2974,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setManagementTypeValue(int value) {
-
+      bitField0_ |= 0x00000040;
       managementType_ = value;
       onChanged();
       return this;
@@ -2759,7 +3022,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       managementType_ = value.getNumber();
       onChanged();
       return this;
@@ -2779,13 +3042,27 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManagementType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       managementType_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2846,7 +3123,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -2863,7 +3140,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2885,13 +3162,28 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
     }
 
     private int peerAsn_;
+    /**
+     *
+     *
+     * <pre>
+     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+     * </pre>
+     *
+     * <code>uint32 peer_asn = 69573151;</code>
+     *
+     * @return Whether the peerAsn field is set.
+     */
+    @java.lang.Override
+    public boolean hasPeerAsn() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2920,7 +3212,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeerAsn(int value) {
-
+      bitField0_ |= 0x00000100;
       peerAsn_ = value;
       onChanged();
       return this;
@@ -2937,13 +3229,27 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerAsn() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       peerAsn_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object peerIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+     * </pre>
+     *
+     * <code>string peer_ip_address = 207735769;</code>
+     *
+     * @return Whether the peerIpAddress field is set.
+     */
+    public boolean hasPeerIpAddress() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -3004,7 +3310,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       peerIpAddress_ = value;
       onChanged();
       return this;
@@ -3021,7 +3327,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
       onChanged();
       return this;
@@ -3043,7 +3349,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       peerIpAddress_ = value;
       onChanged();
       return this;

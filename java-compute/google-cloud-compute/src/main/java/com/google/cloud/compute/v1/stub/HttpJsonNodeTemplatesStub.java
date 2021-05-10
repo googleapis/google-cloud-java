@@ -96,17 +96,30 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AggregatedListNodeTemplatesRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "includeAllScopes", request.getIncludeAllScopes());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasIncludeAllScopes()) {
+                                serializer.putQueryParam(
+                                    fields, "includeAllScopes", request.getIncludeAllScopes());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -156,7 +169,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -256,10 +272,12 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetIamPolicyNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields,
-                                  "optionsRequestedPolicyVersion",
-                                  request.getOptionsRequestedPolicyVersion());
+                              if (request.hasOptionsRequestedPolicyVersion()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "optionsRequestedPolicyVersion",
+                                    request.getOptionsRequestedPolicyVersion());
+                              }
                               return fields;
                             }
                           })
@@ -307,7 +325,10 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<InsertNodeTemplateRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -357,15 +378,26 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListNodeTemplatesRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })

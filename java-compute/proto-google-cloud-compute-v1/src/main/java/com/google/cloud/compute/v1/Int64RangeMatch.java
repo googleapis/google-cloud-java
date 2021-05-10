@@ -61,6 +61,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,18 +72,18 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 432035530:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rangeEnd_ = s;
-              break;
-            }
           case 826668802:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               rangeStart_ = s;
+              break;
+            }
+          case -1715448118:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              rangeEnd_ = s;
               break;
             }
           default:
@@ -119,7 +120,8 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.Int64RangeMatch.Builder.class);
   }
 
-  public static final int RANGE_END_FIELD_NUMBER = 54004441;
+  private int bitField0_;
+  public static final int RANGE_END_FIELD_NUMBER = 322439897;
   private volatile java.lang.Object rangeEnd_;
   /**
    *
@@ -128,7 +130,22 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 54004441;</code>
+   * <code>string range_end = 322439897;</code>
+   *
+   * @return Whether the rangeEnd field is set.
+   */
+  @java.lang.Override
+  public boolean hasRangeEnd() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The end of the range (exclusive) in signed long integer format.
+   * </pre>
+   *
+   * <code>string range_end = 322439897;</code>
    *
    * @return The rangeEnd.
    */
@@ -151,7 +168,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 54004441;</code>
+   * <code>string range_end = 322439897;</code>
    *
    * @return The bytes for rangeEnd.
    */
@@ -170,6 +187,21 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
 
   public static final int RANGE_START_FIELD_NUMBER = 103333600;
   private volatile java.lang.Object rangeStart_;
+  /**
+   *
+   *
+   * <pre>
+   * The start of the range (inclusive) in signed long integer format.
+   * </pre>
+   *
+   * <code>string range_start = 103333600;</code>
+   *
+   * @return Whether the rangeStart field is set.
+   */
+  @java.lang.Override
+  public boolean hasRangeStart() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -231,11 +263,11 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRangeEndBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 54004441, rangeEnd_);
-    }
-    if (!getRangeStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103333600, rangeStart_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 322439897, rangeEnd_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getRangeEndBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54004441, rangeEnd_);
-    }
-    if (!getRangeStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103333600, rangeStart_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(322439897, rangeEnd_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,8 +300,14 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.Int64RangeMatch other =
         (com.google.cloud.compute.v1.Int64RangeMatch) obj;
 
-    if (!getRangeEnd().equals(other.getRangeEnd())) return false;
-    if (!getRangeStart().equals(other.getRangeStart())) return false;
+    if (hasRangeEnd() != other.hasRangeEnd()) return false;
+    if (hasRangeEnd()) {
+      if (!getRangeEnd().equals(other.getRangeEnd())) return false;
+    }
+    if (hasRangeStart() != other.hasRangeStart()) return false;
+    if (hasRangeStart()) {
+      if (!getRangeStart().equals(other.getRangeStart())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,10 +319,14 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RANGE_END_FIELD_NUMBER;
-    hash = (53 * hash) + getRangeEnd().hashCode();
-    hash = (37 * hash) + RANGE_START_FIELD_NUMBER;
-    hash = (53 * hash) + getRangeStart().hashCode();
+    if (hasRangeEnd()) {
+      hash = (37 * hash) + RANGE_END_FIELD_NUMBER;
+      hash = (53 * hash) + getRangeEnd().hashCode();
+    }
+    if (hasRangeStart()) {
+      hash = (37 * hash) + RANGE_START_FIELD_NUMBER;
+      hash = (53 * hash) + getRangeStart().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,9 +473,9 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       rangeEnd_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rangeStart_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -461,8 +503,17 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.Int64RangeMatch buildPartial() {
       com.google.cloud.compute.v1.Int64RangeMatch result =
           new com.google.cloud.compute.v1.Int64RangeMatch(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.rangeEnd_ = rangeEnd_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.rangeStart_ = rangeStart_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -512,11 +563,13 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Int64RangeMatch other) {
       if (other == com.google.cloud.compute.v1.Int64RangeMatch.getDefaultInstance()) return this;
-      if (!other.getRangeEnd().isEmpty()) {
+      if (other.hasRangeEnd()) {
+        bitField0_ |= 0x00000001;
         rangeEnd_ = other.rangeEnd_;
         onChanged();
       }
-      if (!other.getRangeStart().isEmpty()) {
+      if (other.hasRangeStart()) {
+        bitField0_ |= 0x00000002;
         rangeStart_ = other.rangeStart_;
         onChanged();
       }
@@ -549,6 +602,8 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object rangeEnd_ = "";
     /**
      *
@@ -557,7 +612,21 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>string range_end = 54004441;</code>
+     * <code>string range_end = 322439897;</code>
+     *
+     * @return Whether the rangeEnd field is set.
+     */
+    public boolean hasRangeEnd() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The end of the range (exclusive) in signed long integer format.
+     * </pre>
+     *
+     * <code>string range_end = 322439897;</code>
      *
      * @return The rangeEnd.
      */
@@ -579,7 +648,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>string range_end = 54004441;</code>
+     * <code>string range_end = 322439897;</code>
      *
      * @return The bytes for rangeEnd.
      */
@@ -601,7 +670,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>string range_end = 54004441;</code>
+     * <code>string range_end = 322439897;</code>
      *
      * @param value The rangeEnd to set.
      * @return This builder for chaining.
@@ -610,7 +679,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       rangeEnd_ = value;
       onChanged();
       return this;
@@ -622,12 +691,12 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>string range_end = 54004441;</code>
+     * <code>string range_end = 322439897;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRangeEnd() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rangeEnd_ = getDefaultInstance().getRangeEnd();
       onChanged();
       return this;
@@ -639,7 +708,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * The end of the range (exclusive) in signed long integer format.
      * </pre>
      *
-     * <code>string range_end = 54004441;</code>
+     * <code>string range_end = 322439897;</code>
      *
      * @param value The bytes for rangeEnd to set.
      * @return This builder for chaining.
@@ -649,13 +718,27 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       rangeEnd_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object rangeStart_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The start of the range (inclusive) in signed long integer format.
+     * </pre>
+     *
+     * <code>string range_start = 103333600;</code>
+     *
+     * @return Whether the rangeStart field is set.
+     */
+    public boolean hasRangeStart() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -716,7 +799,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       rangeStart_ = value;
       onChanged();
       return this;
@@ -733,7 +816,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRangeStart() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rangeStart_ = getDefaultInstance().getRangeStart();
       onChanged();
       return this;
@@ -755,7 +838,7 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       rangeStart_ = value;
       onChanged();
       return this;

@@ -30,7 +30,20 @@ public interface PreservedStatePreservedDiskOrBuilder
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+   * </code>
+   *
+   * @return Whether the autoDelete field is set.
+   */
+  boolean hasAutoDelete();
+  /**
+   *
+   *
+   * <pre>
+   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -43,13 +56,25 @@ public interface PreservedStatePreservedDiskOrBuilder
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The autoDelete.
    */
   com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete getAutoDelete();
 
+  /**
+   *
+   *
+   * <pre>
+   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
   /**
    *
    *
@@ -75,6 +100,18 @@ public interface PreservedStatePreservedDiskOrBuilder
    */
   com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode getMode();
 
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the disk resource that is stateful and should be attached to the VM instance.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
+   * @return Whether the source field is set.
+   */
+  boolean hasSource();
   /**
    *
    *

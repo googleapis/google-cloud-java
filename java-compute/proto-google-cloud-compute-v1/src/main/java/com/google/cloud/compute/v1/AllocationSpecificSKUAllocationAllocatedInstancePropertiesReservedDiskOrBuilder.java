@@ -30,7 +30,19 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -42,7 +54,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -56,7 +68,21 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
+   * </code>
+   *
+   * @return Whether the interface field is set.
+   */
+  boolean hasInterface();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
    * </code>
    *
    * @return The enum numeric value on the wire for interface.
@@ -70,7 +96,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
    * </code>
    *
    * @return The interface.

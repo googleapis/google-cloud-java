@@ -61,6 +61,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,11 +75,18 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
-          case 356584018:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1790899630:
             {
               com.google.cloud.compute.v1.DiskMoveRequest.Builder subBuilder = null;
               if (diskMoveRequestResource_ != null) {
@@ -92,13 +100,6 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
                 diskMoveRequestResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -135,7 +136,8 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.MoveDiskProjectRequest.Builder.class);
   }
 
-  public static final int DISK_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 44573002;
+  private int bitField0_;
+  public static final int DISK_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 313008458;
   private com.google.cloud.compute.v1.DiskMoveRequest diskMoveRequestResource_;
   /**
    *
@@ -145,7 +147,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the diskMoveRequestResource field is set.
@@ -162,7 +164,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The diskMoveRequestResource.
@@ -181,7 +183,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -252,6 +254,23 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -306,14 +325,14 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (diskMoveRequestResource_ != null) {
-      output.writeMessage(44573002, getDiskMoveRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (diskMoveRequestResource_ != null) {
+      output.writeMessage(313008458, getDiskMoveRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -324,16 +343,16 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (diskMoveRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              44573002, getDiskMoveRequestResource());
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+              313008458, getDiskMoveRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -356,7 +375,10 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       if (!getDiskMoveRequestResource().equals(other.getDiskMoveRequestResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -374,8 +396,10 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -530,7 +554,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -558,13 +582,19 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.MoveDiskProjectRequest buildPartial() {
       com.google.cloud.compute.v1.MoveDiskProjectRequest result =
           new com.google.cloud.compute.v1.MoveDiskProjectRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (diskMoveRequestResourceBuilder_ == null) {
         result.diskMoveRequestResource_ = diskMoveRequestResource_;
       } else {
         result.diskMoveRequestResource_ = diskMoveRequestResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -622,7 +652,8 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -656,6 +687,8 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.DiskMoveRequest diskMoveRequestResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DiskMoveRequest,
@@ -670,7 +703,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the diskMoveRequestResource field is set.
@@ -686,7 +719,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The diskMoveRequestResource.
@@ -708,7 +741,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDiskMoveRequestResource(com.google.cloud.compute.v1.DiskMoveRequest value) {
@@ -732,7 +765,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDiskMoveRequestResource(
@@ -754,7 +787,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeDiskMoveRequestResource(com.google.cloud.compute.v1.DiskMoveRequest value) {
@@ -782,7 +815,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearDiskMoveRequestResource() {
@@ -804,7 +837,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DiskMoveRequest.Builder getDiskMoveRequestResourceBuilder() {
@@ -820,7 +853,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DiskMoveRequestOrBuilder
@@ -841,7 +874,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -979,6 +1012,22 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1034,7 +1083,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1053,7 +1102,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1077,7 +1126,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

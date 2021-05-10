@@ -34,6 +34,20 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State state = 109757585;
    * </code>
    *
+   * @return Whether the state field is set.
+   */
+  boolean hasState();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State state = 109757585;
+   * </code>
+   *
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
@@ -52,6 +66,20 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    */
   com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State getState();
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.UnsatisfiedReason unsatisfied_reason = 55016330;
+   * </code>
+   *
+   * @return Whether the unsatisfiedReason field is set.
+   */
+  boolean hasUnsatisfiedReason();
   /**
    *
    *

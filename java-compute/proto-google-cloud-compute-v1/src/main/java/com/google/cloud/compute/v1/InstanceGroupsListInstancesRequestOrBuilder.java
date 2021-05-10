@@ -34,6 +34,20 @@ public interface InstanceGroupsListInstancesRequestOrBuilder
    * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
    * </code>
    *
+   * @return Whether the instanceState field is set.
+   */
+  boolean hasInstanceState();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
+   * </code>
+   *
    * @return The enum numeric value on the wire for instanceState.
    */
   int getInstanceStateValue();

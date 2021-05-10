@@ -76,12 +76,33 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case 142366514:
+          case 859102826:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              regexMatch_ = s;
+              break;
+            }
+          case 1716791002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              fullPathMatch_ = s;
+              break;
+            }
+          case 2063191746:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              prefixMatch_ = s;
+              break;
+            }
+          case -2005117134:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 queryParameterMatches_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.HttpQueryParameterMatch>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000020;
               }
               queryParameterMatches_.add(
                   input.readMessage(
@@ -89,54 +110,34 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                       extensionRegistry));
               break;
             }
-          case 747744266:
+          case -1399739382:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 headerMatches_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.HttpHeaderMatch>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               headerMatches_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.HttpHeaderMatch.parser(), extensionRegistry));
               break;
             }
-          case 859102826:
+          case -580367384:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              regexMatch_ = s;
-              break;
-            }
-          case 1567116264:
-            {
+              bitField0_ |= 0x00000002;
               ignoreCase_ = input.readBool();
               break;
             }
-          case 1570322266:
+          case -577161382:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 metadataFilters_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               metadataFilters_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
-              break;
-            }
-          case 1716791002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fullPathMatch_ = s;
-              break;
-            }
-          case 2063191746:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              prefixMatch_ = s;
               break;
             }
           default:
@@ -153,13 +154,13 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         queryParameterMatches_ = java.util.Collections.unmodifiableList(queryParameterMatches_);
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         headerMatches_ = java.util.Collections.unmodifiableList(headerMatches_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
       }
       this.unknownFields = unknownFields.build();
@@ -182,8 +183,26 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.HttpRouteRuleMatch.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FULL_PATH_MATCH_FIELD_NUMBER = 214598875;
   private volatile java.lang.Object fullPathMatch_;
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the path of the request must exactly match the value specified in fullPathMatch after removing any query parameters and anchor that may be part of the original URL.
+   * fullPathMatch must be between 1 and 1024 characters.
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * </pre>
+   *
+   * <code>string full_path_match = 214598875;</code>
+   *
+   * @return Whether the fullPathMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasFullPathMatch() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -235,7 +254,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int HEADER_MATCHES_FIELD_NUMBER = 93468033;
+  public static final int HEADER_MATCHES_FIELD_NUMBER = 361903489;
   private java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> headerMatches_;
   /**
    *
@@ -244,7 +263,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> getHeaderMatchesList() {
@@ -257,7 +276,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder>
@@ -271,7 +290,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   @java.lang.Override
   public int getHeaderMatchesCount() {
@@ -284,7 +303,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpHeaderMatch getHeaderMatches(int index) {
@@ -297,14 +316,14 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder getHeaderMatchesOrBuilder(int index) {
     return headerMatches_.get(index);
   }
 
-  public static final int IGNORE_CASE_FIELD_NUMBER = 195889533;
+  public static final int IGNORE_CASE_FIELD_NUMBER = 464324989;
   private boolean ignoreCase_;
   /**
    *
@@ -316,7 +335,25 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>bool ignore_case = 195889533;</code>
+   * <code>bool ignore_case = 464324989;</code>
+   *
+   * @return Whether the ignoreCase field is set.
+   */
+  @java.lang.Override
+  public boolean hasIgnoreCase() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
+   * The default value is false.
+   * ignoreCase must not be used with regexMatch.
+   * Not supported when the URL map is bound to target gRPC proxy.
+   * </pre>
+   *
+   * <code>bool ignore_case = 464324989;</code>
    *
    * @return The ignoreCase.
    */
@@ -325,7 +362,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     return ignoreCase_;
   }
 
-  public static final int METADATA_FILTERS_FIELD_NUMBER = 196290283;
+  public static final int METADATA_FILTERS_FIELD_NUMBER = 464725739;
   private java.util.List<com.google.cloud.compute.v1.MetadataFilter> metadataFilters_;
   /**
    *
@@ -338,7 +375,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
@@ -355,7 +392,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
@@ -373,7 +410,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public int getMetadataFiltersCount() {
@@ -390,7 +427,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
@@ -407,7 +444,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
@@ -417,6 +454,23 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
   public static final int PREFIX_MATCH_FIELD_NUMBER = 257898968;
   private volatile java.lang.Object prefixMatch_;
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /.
+   * The value must be between 1 and 1024 characters.
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * </pre>
+   *
+   * <code>string prefix_match = 257898968;</code>
+   *
+   * @return Whether the prefixMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrefixMatch() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -468,7 +522,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int QUERY_PARAMETER_MATCHES_FIELD_NUMBER = 17795814;
+  public static final int QUERY_PARAMETER_MATCHES_FIELD_NUMBER = 286231270;
   private java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch>
       queryParameterMatches_;
   /**
@@ -480,7 +534,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   @java.lang.Override
@@ -497,7 +551,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   @java.lang.Override
@@ -514,7 +568,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   @java.lang.Override
@@ -530,7 +584,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   @java.lang.Override
@@ -546,7 +600,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   @java.lang.Override
@@ -557,6 +611,23 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
   public static final int REGEX_MATCH_FIELD_NUMBER = 107387853;
   private volatile java.lang.Object regexMatch_;
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the path of the request must satisfy the regular expression specified in regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>string regex_match = 107387853;</code>
+   *
+   * @return Whether the regexMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegexMatch() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -622,26 +693,26 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < queryParameterMatches_.size(); i++) {
-      output.writeMessage(17795814, queryParameterMatches_.get(i));
-    }
-    for (int i = 0; i < headerMatches_.size(); i++) {
-      output.writeMessage(93468033, headerMatches_.get(i));
-    }
-    if (!getRegexMatchBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 107387853, regexMatch_);
     }
-    if (ignoreCase_ != false) {
-      output.writeBool(195889533, ignoreCase_);
-    }
-    for (int i = 0; i < metadataFilters_.size(); i++) {
-      output.writeMessage(196290283, metadataFilters_.get(i));
-    }
-    if (!getFullPathMatchBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 214598875, fullPathMatch_);
     }
-    if (!getPrefixMatchBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 257898968, prefixMatch_);
+    }
+    for (int i = 0; i < queryParameterMatches_.size(); i++) {
+      output.writeMessage(286231270, queryParameterMatches_.get(i));
+    }
+    for (int i = 0; i < headerMatches_.size(); i++) {
+      output.writeMessage(361903489, headerMatches_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(464324989, ignoreCase_);
+    }
+    for (int i = 0; i < metadataFilters_.size(); i++) {
+      output.writeMessage(464725739, metadataFilters_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -652,31 +723,32 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107387853, regexMatch_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(214598875, fullPathMatch_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(257898968, prefixMatch_);
+    }
     for (int i = 0; i < queryParameterMatches_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              17795814, queryParameterMatches_.get(i));
+              286231270, queryParameterMatches_.get(i));
     }
     for (int i = 0; i < headerMatches_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(93468033, headerMatches_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              361903489, headerMatches_.get(i));
     }
-    if (!getRegexMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107387853, regexMatch_);
-    }
-    if (ignoreCase_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(195889533, ignoreCase_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464324989, ignoreCase_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              196290283, metadataFilters_.get(i));
-    }
-    if (!getFullPathMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(214598875, fullPathMatch_);
-    }
-    if (!getPrefixMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(257898968, prefixMatch_);
+              464725739, metadataFilters_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -694,13 +766,25 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.HttpRouteRuleMatch other =
         (com.google.cloud.compute.v1.HttpRouteRuleMatch) obj;
 
-    if (!getFullPathMatch().equals(other.getFullPathMatch())) return false;
+    if (hasFullPathMatch() != other.hasFullPathMatch()) return false;
+    if (hasFullPathMatch()) {
+      if (!getFullPathMatch().equals(other.getFullPathMatch())) return false;
+    }
     if (!getHeaderMatchesList().equals(other.getHeaderMatchesList())) return false;
-    if (getIgnoreCase() != other.getIgnoreCase()) return false;
+    if (hasIgnoreCase() != other.hasIgnoreCase()) return false;
+    if (hasIgnoreCase()) {
+      if (getIgnoreCase() != other.getIgnoreCase()) return false;
+    }
     if (!getMetadataFiltersList().equals(other.getMetadataFiltersList())) return false;
-    if (!getPrefixMatch().equals(other.getPrefixMatch())) return false;
+    if (hasPrefixMatch() != other.hasPrefixMatch()) return false;
+    if (hasPrefixMatch()) {
+      if (!getPrefixMatch().equals(other.getPrefixMatch())) return false;
+    }
     if (!getQueryParameterMatchesList().equals(other.getQueryParameterMatchesList())) return false;
-    if (!getRegexMatch().equals(other.getRegexMatch())) return false;
+    if (hasRegexMatch() != other.hasRegexMatch()) return false;
+    if (hasRegexMatch()) {
+      if (!getRegexMatch().equals(other.getRegexMatch())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -712,26 +796,34 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FULL_PATH_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + getFullPathMatch().hashCode();
+    if (hasFullPathMatch()) {
+      hash = (37 * hash) + FULL_PATH_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getFullPathMatch().hashCode();
+    }
     if (getHeaderMatchesCount() > 0) {
       hash = (37 * hash) + HEADER_MATCHES_FIELD_NUMBER;
       hash = (53 * hash) + getHeaderMatchesList().hashCode();
     }
-    hash = (37 * hash) + IGNORE_CASE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreCase());
+    if (hasIgnoreCase()) {
+      hash = (37 * hash) + IGNORE_CASE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreCase());
+    }
     if (getMetadataFiltersCount() > 0) {
       hash = (37 * hash) + METADATA_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataFiltersList().hashCode();
     }
-    hash = (37 * hash) + PREFIX_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + getPrefixMatch().hashCode();
+    if (hasPrefixMatch()) {
+      hash = (37 * hash) + PREFIX_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getPrefixMatch().hashCode();
+    }
     if (getQueryParameterMatchesCount() > 0) {
       hash = (37 * hash) + QUERY_PARAMETER_MATCHES_FIELD_NUMBER;
       hash = (53 * hash) + getQueryParameterMatchesList().hashCode();
     }
-    hash = (37 * hash) + REGEX_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + getRegexMatch().hashCode();
+    if (hasRegexMatch()) {
+      hash = (37 * hash) + REGEX_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getRegexMatch().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -882,31 +974,31 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       fullPathMatch_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (headerMatchesBuilder_ == null) {
         headerMatches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         headerMatchesBuilder_.clear();
       }
       ignoreCase_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         metadataFiltersBuilder_.clear();
       }
       prefixMatch_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (queryParameterMatchesBuilder_ == null) {
         queryParameterMatches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         queryParameterMatchesBuilder_.clear();
       }
       regexMatch_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -935,37 +1027,51 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       com.google.cloud.compute.v1.HttpRouteRuleMatch result =
           new com.google.cloud.compute.v1.HttpRouteRuleMatch(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.fullPathMatch_ = fullPathMatch_;
       if (headerMatchesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           headerMatches_ = java.util.Collections.unmodifiableList(headerMatches_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.headerMatches_ = headerMatches_;
       } else {
         result.headerMatches_ = headerMatchesBuilder_.build();
       }
-      result.ignoreCase_ = ignoreCase_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ignoreCase_ = ignoreCase_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (metadataFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.metadataFilters_ = metadataFilters_;
       } else {
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.prefixMatch_ = prefixMatch_;
       if (queryParameterMatchesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           queryParameterMatches_ = java.util.Collections.unmodifiableList(queryParameterMatches_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.queryParameterMatches_ = queryParameterMatches_;
       } else {
         result.queryParameterMatches_ = queryParameterMatchesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.regexMatch_ = regexMatch_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1015,7 +1121,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRouteRuleMatch other) {
       if (other == com.google.cloud.compute.v1.HttpRouteRuleMatch.getDefaultInstance()) return this;
-      if (!other.getFullPathMatch().isEmpty()) {
+      if (other.hasFullPathMatch()) {
+        bitField0_ |= 0x00000001;
         fullPathMatch_ = other.fullPathMatch_;
         onChanged();
       }
@@ -1023,7 +1130,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         if (!other.headerMatches_.isEmpty()) {
           if (headerMatches_.isEmpty()) {
             headerMatches_ = other.headerMatches_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureHeaderMatchesIsMutable();
             headerMatches_.addAll(other.headerMatches_);
@@ -1036,7 +1143,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             headerMatchesBuilder_.dispose();
             headerMatchesBuilder_ = null;
             headerMatches_ = other.headerMatches_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             headerMatchesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHeaderMatchesFieldBuilder()
@@ -1046,14 +1153,14 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      if (other.getIgnoreCase() != false) {
+      if (other.hasIgnoreCase()) {
         setIgnoreCase(other.getIgnoreCase());
       }
       if (metadataFiltersBuilder_ == null) {
         if (!other.metadataFilters_.isEmpty()) {
           if (metadataFilters_.isEmpty()) {
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureMetadataFiltersIsMutable();
             metadataFilters_.addAll(other.metadataFilters_);
@@ -1066,7 +1173,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             metadataFiltersBuilder_.dispose();
             metadataFiltersBuilder_ = null;
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             metadataFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetadataFiltersFieldBuilder()
@@ -1076,7 +1183,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      if (!other.getPrefixMatch().isEmpty()) {
+      if (other.hasPrefixMatch()) {
+        bitField0_ |= 0x00000010;
         prefixMatch_ = other.prefixMatch_;
         onChanged();
       }
@@ -1084,7 +1192,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         if (!other.queryParameterMatches_.isEmpty()) {
           if (queryParameterMatches_.isEmpty()) {
             queryParameterMatches_ = other.queryParameterMatches_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureQueryParameterMatchesIsMutable();
             queryParameterMatches_.addAll(other.queryParameterMatches_);
@@ -1097,7 +1205,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             queryParameterMatchesBuilder_.dispose();
             queryParameterMatchesBuilder_ = null;
             queryParameterMatches_ = other.queryParameterMatches_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             queryParameterMatchesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQueryParameterMatchesFieldBuilder()
@@ -1107,7 +1215,8 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      if (!other.getRegexMatch().isEmpty()) {
+      if (other.hasRegexMatch()) {
+        bitField0_ |= 0x00000040;
         regexMatch_ = other.regexMatch_;
         onChanged();
       }
@@ -1143,6 +1252,22 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object fullPathMatch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For satisfying the matchRule condition, the path of the request must exactly match the value specified in fullPathMatch after removing any query parameters and anchor that may be part of the original URL.
+     * fullPathMatch must be between 1 and 1024 characters.
+     * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+     * </pre>
+     *
+     * <code>string full_path_match = 214598875;</code>
+     *
+     * @return Whether the fullPathMatch field is set.
+     */
+    public boolean hasFullPathMatch() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1209,7 +1334,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       fullPathMatch_ = value;
       onChanged();
       return this;
@@ -1228,7 +1353,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearFullPathMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fullPathMatch_ = getDefaultInstance().getFullPathMatch();
       onChanged();
       return this;
@@ -1252,7 +1377,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       fullPathMatch_ = value;
       onChanged();
       return this;
@@ -1262,10 +1387,10 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureHeaderMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         headerMatches_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.HttpHeaderMatch>(headerMatches_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1282,7 +1407,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> getHeaderMatchesList() {
       if (headerMatchesBuilder_ == null) {
@@ -1298,7 +1423,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public int getHeaderMatchesCount() {
       if (headerMatchesBuilder_ == null) {
@@ -1314,7 +1439,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderMatch getHeaderMatches(int index) {
       if (headerMatchesBuilder_ == null) {
@@ -1330,7 +1455,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder setHeaderMatches(int index, com.google.cloud.compute.v1.HttpHeaderMatch value) {
       if (headerMatchesBuilder_ == null) {
@@ -1352,7 +1477,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder setHeaderMatches(
         int index, com.google.cloud.compute.v1.HttpHeaderMatch.Builder builderForValue) {
@@ -1372,7 +1497,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder addHeaderMatches(com.google.cloud.compute.v1.HttpHeaderMatch value) {
       if (headerMatchesBuilder_ == null) {
@@ -1394,7 +1519,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder addHeaderMatches(int index, com.google.cloud.compute.v1.HttpHeaderMatch value) {
       if (headerMatchesBuilder_ == null) {
@@ -1416,7 +1541,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder addHeaderMatches(
         com.google.cloud.compute.v1.HttpHeaderMatch.Builder builderForValue) {
@@ -1436,7 +1561,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder addHeaderMatches(
         int index, com.google.cloud.compute.v1.HttpHeaderMatch.Builder builderForValue) {
@@ -1456,7 +1581,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder addAllHeaderMatches(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.HttpHeaderMatch> values) {
@@ -1476,12 +1601,12 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder clearHeaderMatches() {
       if (headerMatchesBuilder_ == null) {
         headerMatches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         headerMatchesBuilder_.clear();
@@ -1495,7 +1620,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public Builder removeHeaderMatches(int index) {
       if (headerMatchesBuilder_ == null) {
@@ -1514,7 +1639,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderMatch.Builder getHeaderMatchesBuilder(int index) {
       return getHeaderMatchesFieldBuilder().getBuilder(index);
@@ -1526,7 +1651,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder getHeaderMatchesOrBuilder(
         int index) {
@@ -1543,7 +1668,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder>
         getHeaderMatchesOrBuilderList() {
@@ -1560,7 +1685,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderMatch.Builder addHeaderMatchesBuilder() {
       return getHeaderMatchesFieldBuilder()
@@ -1573,7 +1698,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderMatch.Builder addHeaderMatchesBuilder(int index) {
       return getHeaderMatchesFieldBuilder()
@@ -1586,7 +1711,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+     * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch.Builder>
         getHeaderMatchesBuilderList() {
@@ -1605,7 +1730,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.HttpHeaderMatch.Builder,
                 com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder>(
                 headerMatches_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         headerMatches_ = null;
@@ -1624,7 +1749,25 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>bool ignore_case = 195889533;</code>
+     * <code>bool ignore_case = 464324989;</code>
+     *
+     * @return Whether the ignoreCase field is set.
+     */
+    @java.lang.Override
+    public boolean hasIgnoreCase() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
+     * The default value is false.
+     * ignoreCase must not be used with regexMatch.
+     * Not supported when the URL map is bound to target gRPC proxy.
+     * </pre>
+     *
+     * <code>bool ignore_case = 464324989;</code>
      *
      * @return The ignoreCase.
      */
@@ -1642,13 +1785,13 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>bool ignore_case = 195889533;</code>
+     * <code>bool ignore_case = 464324989;</code>
      *
      * @param value The ignoreCase to set.
      * @return This builder for chaining.
      */
     public Builder setIgnoreCase(boolean value) {
-
+      bitField0_ |= 0x00000004;
       ignoreCase_ = value;
       onChanged();
       return this;
@@ -1663,12 +1806,12 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>bool ignore_case = 195889533;</code>
+     * <code>bool ignore_case = 464324989;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIgnoreCase() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ignoreCase_ = false;
       onChanged();
       return this;
@@ -1678,10 +1821,10 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureMetadataFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         metadataFilters_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>(metadataFilters_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1702,7 +1845,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
       if (metadataFiltersBuilder_ == null) {
@@ -1722,7 +1865,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public int getMetadataFiltersCount() {
       if (metadataFiltersBuilder_ == null) {
@@ -1742,7 +1885,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -1762,7 +1905,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder setMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -1788,7 +1931,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder setMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -1812,7 +1955,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -1838,7 +1981,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -1864,7 +2007,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(
         com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -1888,7 +2031,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -1912,7 +2055,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder addAllMetadataFilters(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.MetadataFilter> values) {
@@ -1936,12 +2079,12 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder clearMetadataFilters() {
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         metadataFiltersBuilder_.clear();
@@ -1959,7 +2102,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public Builder removeMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -1982,7 +2125,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder getMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder().getBuilder(index);
@@ -1998,7 +2141,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
         int index) {
@@ -2019,7 +2162,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
         getMetadataFiltersOrBuilderList() {
@@ -2040,7 +2183,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder() {
       return getMetadataFiltersFieldBuilder()
@@ -2057,7 +2200,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder()
@@ -2074,7 +2217,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter.Builder>
         getMetadataFiltersBuilderList() {
@@ -2093,7 +2236,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.MetadataFilter.Builder,
                 com.google.cloud.compute.v1.MetadataFilterOrBuilder>(
                 metadataFilters_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         metadataFilters_ = null;
@@ -2102,6 +2245,22 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object prefixMatch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /.
+     * The value must be between 1 and 1024 characters.
+     * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+     * </pre>
+     *
+     * <code>string prefix_match = 257898968;</code>
+     *
+     * @return Whether the prefixMatch field is set.
+     */
+    public boolean hasPrefixMatch() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2168,7 +2327,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       prefixMatch_ = value;
       onChanged();
       return this;
@@ -2187,7 +2346,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrefixMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       prefixMatch_ = getDefaultInstance().getPrefixMatch();
       onChanged();
       return this;
@@ -2211,7 +2370,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       prefixMatch_ = value;
       onChanged();
       return this;
@@ -2221,11 +2380,11 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         queryParameterMatches_ = java.util.Collections.emptyList();
 
     private void ensureQueryParameterMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         queryParameterMatches_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.HttpQueryParameterMatch>(
                 queryParameterMatches_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2244,7 +2403,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch>
@@ -2264,7 +2423,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public int getQueryParameterMatchesCount() {
@@ -2283,7 +2442,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public com.google.cloud.compute.v1.HttpQueryParameterMatch getQueryParameterMatches(int index) {
@@ -2302,7 +2461,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder setQueryParameterMatches(
@@ -2328,7 +2487,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder setQueryParameterMatches(
@@ -2351,7 +2510,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder addQueryParameterMatches(
@@ -2377,7 +2536,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder addQueryParameterMatches(
@@ -2403,7 +2562,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder addQueryParameterMatches(
@@ -2426,7 +2585,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder addQueryParameterMatches(
@@ -2449,7 +2608,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder addAllQueryParameterMatches(
@@ -2472,13 +2631,13 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder clearQueryParameterMatches() {
       if (queryParameterMatchesBuilder_ == null) {
         queryParameterMatches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         queryParameterMatchesBuilder_.clear();
@@ -2494,7 +2653,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public Builder removeQueryParameterMatches(int index) {
@@ -2516,7 +2675,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder
@@ -2532,7 +2691,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder
@@ -2552,7 +2711,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder>
@@ -2572,7 +2731,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder
@@ -2589,7 +2748,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder
@@ -2607,7 +2766,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+     * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder>
@@ -2627,7 +2786,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder,
                 com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder>(
                 queryParameterMatches_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         queryParameterMatches_ = null;
@@ -2636,6 +2795,22 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object regexMatch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For satisfying the matchRule condition, the path of the request must satisfy the regular expression specified in regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+     * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>string regex_match = 107387853;</code>
+     *
+     * @return Whether the regexMatch field is set.
+     */
+    public boolean hasRegexMatch() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2702,7 +2877,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       regexMatch_ = value;
       onChanged();
       return this;
@@ -2721,7 +2896,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRegexMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       regexMatch_ = getDefaultInstance().getRegexMatch();
       onChanged();
       return this;
@@ -2745,7 +2920,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       regexMatch_ = value;
       onChanged();
       return this;

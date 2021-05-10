@@ -59,6 +59,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,8 +70,9 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
           case 0:
             done = true;
             break;
-          case 27084288:
+          case -2120399360:
             {
+              bitField0_ |= 0x00000001;
               tag8021Q_ = input.readUInt32();
               break;
             }
@@ -108,7 +110,8 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder.class);
   }
 
-  public static final int TAG8021Q_FIELD_NUMBER = 3385536;
+  private int bitField0_;
+  public static final int TAG8021Q_FIELD_NUMBER = 271820992;
   private int tag8021Q_;
   /**
    *
@@ -117,7 +120,22 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
    * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
    * </pre>
    *
-   * <code>uint32 tag8021q = 3385536;</code>
+   * <code>uint32 tag8021q = 271820992;</code>
+   *
+   * @return Whether the tag8021q field is set.
+   */
+  @java.lang.Override
+  public boolean hasTag8021Q() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
+   * </pre>
+   *
+   * <code>uint32 tag8021q = 271820992;</code>
    *
    * @return The tag8021q.
    */
@@ -140,8 +158,8 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (tag8021Q_ != 0) {
-      output.writeUInt32(3385536, tag8021Q_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeUInt32(271820992, tag8021Q_);
     }
     unknownFields.writeTo(output);
   }
@@ -152,8 +170,8 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (tag8021Q_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3385536, tag8021Q_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(271820992, tag8021Q_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,7 +189,10 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo other =
         (com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo) obj;
 
-    if (getTag8021Q() != other.getTag8021Q()) return false;
+    if (hasTag8021Q() != other.hasTag8021Q()) return false;
+    if (hasTag8021Q()) {
+      if (getTag8021Q() != other.getTag8021Q()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,8 +204,10 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TAG8021Q_FIELD_NUMBER;
-    hash = (53 * hash) + getTag8021Q();
+    if (hasTag8021Q()) {
+      hash = (37 * hash) + TAG8021Q_FIELD_NUMBER;
+      hash = (53 * hash) + getTag8021Q();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -332,7 +355,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     public Builder clear() {
       super.clear();
       tag8021Q_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,7 +384,13 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
     public com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo result =
           new com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo(this);
-      result.tag8021Q_ = tag8021Q_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tag8021Q_ = tag8021Q_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -413,7 +442,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
       if (other
           == com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.getDefaultInstance())
         return this;
-      if (other.getTag8021Q() != 0) {
+      if (other.hasTag8021Q()) {
         setTag8021Q(other.getTag8021Q());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -447,6 +476,8 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
       return this;
     }
 
+    private int bitField0_;
+
     private int tag8021Q_;
     /**
      *
@@ -455,7 +486,22 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 3385536;</code>
+     * <code>uint32 tag8021q = 271820992;</code>
+     *
+     * @return Whether the tag8021q field is set.
+     */
+    @java.lang.Override
+    public boolean hasTag8021Q() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
+     * </pre>
+     *
+     * <code>uint32 tag8021q = 271820992;</code>
      *
      * @return The tag8021q.
      */
@@ -470,13 +516,13 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 3385536;</code>
+     * <code>uint32 tag8021q = 271820992;</code>
      *
      * @param value The tag8021q to set.
      * @return This builder for chaining.
      */
     public Builder setTag8021Q(int value) {
-
+      bitField0_ |= 0x00000001;
       tag8021Q_ = value;
       onChanged();
       return this;
@@ -488,12 +534,12 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 3385536;</code>
+     * <code>uint32 tag8021q = 271820992;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTag8021Q() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tag8021Q_ = 0;
       onChanged();
       return this;

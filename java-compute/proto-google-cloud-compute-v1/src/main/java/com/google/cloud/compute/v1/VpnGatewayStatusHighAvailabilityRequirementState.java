@@ -63,6 +63,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,14 +77,14 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
           case 440130640:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               unsatisfiedReason_ = rawValue;
               break;
             }
           case 878060680:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               state_ = rawValue;
               break;
             }
@@ -143,10 +144,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>CONNECTION_REDUNDANCY_MET = 236807451;</code> */
-    CONNECTION_REDUNDANCY_MET(236807451),
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 243427855;</code> */
-    CONNECTION_REDUNDANCY_NOT_MET(243427855),
+    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
+    CONNECTION_REDUNDANCY_MET(505242907),
+    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
+    CONNECTION_REDUNDANCY_NOT_MET(511863311),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,10 +161,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>CONNECTION_REDUNDANCY_MET = 236807451;</code> */
-    public static final int CONNECTION_REDUNDANCY_MET_VALUE = 236807451;
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 243427855;</code> */
-    public static final int CONNECTION_REDUNDANCY_NOT_MET_VALUE = 243427855;
+    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
+    public static final int CONNECTION_REDUNDANCY_MET_VALUE = 505242907;
+    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
+    public static final int CONNECTION_REDUNDANCY_NOT_MET_VALUE = 511863311;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,9 +192,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 236807451:
+        case 505242907:
           return CONNECTION_REDUNDANCY_MET;
-        case 243427855:
+        case 511863311:
           return CONNECTION_REDUNDANCY_NOT_MET;
         default:
           return null;
@@ -377,8 +378,26 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.UnsatisfiedReason)
   }
 
+  private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State state = 109757585;
+   * </code>
+   *
+   * @return Whether the state field is set.
+   */
+  @java.lang.Override
+  public boolean hasState() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -424,6 +443,23 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
 
   public static final int UNSATISFIED_REASON_FIELD_NUMBER = 55016330;
   private int unsatisfiedReason_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.UnsatisfiedReason unsatisfied_reason = 55016330;
+   * </code>
+   *
+   * @return Whether the unsatisfiedReason field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnsatisfiedReason() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -483,16 +519,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (unsatisfiedReason_
-        != com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
-            .UnsatisfiedReason.UNDEFINED_UNSATISFIED_REASON
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(55016330, unsatisfiedReason_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State
-            .UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(109757585, state_);
     }
     unknownFields.writeTo(output);
@@ -504,16 +534,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     if (size != -1) return size;
 
     size = 0;
-    if (unsatisfiedReason_
-        != com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
-            .UnsatisfiedReason.UNDEFINED_UNSATISFIED_REASON
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(55016330, unsatisfiedReason_);
     }
-    if (state_
-        != com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State
-            .UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
     size += unknownFields.getSerializedSize();
@@ -533,8 +557,14 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState other =
         (com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState) obj;
 
-    if (state_ != other.state_) return false;
-    if (unsatisfiedReason_ != other.unsatisfiedReason_) return false;
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (state_ != other.state_) return false;
+    }
+    if (hasUnsatisfiedReason() != other.hasUnsatisfiedReason()) return false;
+    if (hasUnsatisfiedReason()) {
+      if (unsatisfiedReason_ != other.unsatisfiedReason_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -546,10 +576,14 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
-    hash = (37 * hash) + UNSATISFIED_REASON_FIELD_NUMBER;
-    hash = (53 * hash) + unsatisfiedReason_;
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+    }
+    if (hasUnsatisfiedReason()) {
+      hash = (37 * hash) + UNSATISFIED_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + unsatisfiedReason_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -705,9 +739,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
     public Builder clear() {
       super.clear();
       state_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       unsatisfiedReason_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -739,8 +773,17 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
         buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState result =
           new com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.state_ = state_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.unsatisfiedReason_ = unsatisfiedReason_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -795,11 +838,11 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       if (other
           == com.google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState
               .getDefaultInstance()) return this;
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
+      if (other.hasState()) {
+        setState(other.getState());
       }
-      if (other.unsatisfiedReason_ != 0) {
-        setUnsatisfiedReasonValue(other.getUnsatisfiedReasonValue());
+      if (other.hasUnsatisfiedReason()) {
+        setUnsatisfiedReason(other.getUnsatisfiedReason());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -833,7 +876,26 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       return this;
     }
 
+    private int bitField0_;
+
     private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.State state = 109757585;
+     * </code>
+     *
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -866,7 +928,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
+      bitField0_ |= 0x00000001;
       state_ = value;
       onChanged();
       return this;
@@ -915,7 +977,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -934,13 +996,30 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private int unsatisfiedReason_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState.UnsatisfiedReason unsatisfied_reason = 55016330;
+     * </code>
+     *
+     * @return Whether the unsatisfiedReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnsatisfiedReason() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -973,7 +1052,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder setUnsatisfiedReasonValue(int value) {
-
+      bitField0_ |= 0x00000002;
       unsatisfiedReason_ = value;
       onChanged();
       return this;
@@ -1026,7 +1105,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       unsatisfiedReason_ = value.getNumber();
       onChanged();
       return this;
@@ -1045,7 +1124,7 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * @return This builder for chaining.
      */
     public Builder clearUnsatisfiedReason() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       unsatisfiedReason_ = 0;
       onChanged();
       return this;

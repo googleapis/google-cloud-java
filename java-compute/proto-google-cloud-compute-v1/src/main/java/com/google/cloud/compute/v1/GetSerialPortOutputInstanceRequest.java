@@ -64,6 +64,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,6 +77,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
             break;
           case 27575304:
             {
+              bitField0_ |= 0x00000001;
               port_ = input.readInt32();
               break;
             }
@@ -96,7 +98,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
           case 878060306:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               start_ = s;
               break;
             }
@@ -141,6 +143,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
             com.google.cloud.compute.v1.GetSerialPortOutputInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -192,6 +195,21 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which COM or serial port to retrieve data from.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -259,6 +277,23 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   public static final int START_FIELD_NUMBER = 109757538;
   private volatile java.lang.Object start_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
+   * If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
+   * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
+   * </pre>
+   *
+   * <code>string start = 109757538;</code>
+   *
+   * @return Whether the start field is set.
+   */
+  @java.lang.Override
+  public boolean hasStart() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -373,7 +408,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(3446913, port_);
     }
     if (!getZoneBytes().isEmpty()) {
@@ -382,7 +417,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757538, start_);
     }
     if (!getProjectBytes().isEmpty()) {
@@ -397,7 +432,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     if (!getZoneBytes().isEmpty()) {
@@ -406,7 +441,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getStartBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757538, start_);
     }
     if (!getProjectBytes().isEmpty()) {
@@ -429,9 +464,15 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         (com.google.cloud.compute.v1.GetSerialPortOutputInstanceRequest) obj;
 
     if (!getInstance().equals(other.getInstance())) return false;
-    if (getPort() != other.getPort()) return false;
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getStart().equals(other.getStart())) return false;
+    if (hasStart() != other.hasStart()) return false;
+    if (hasStart()) {
+      if (!getStart().equals(other.getStart())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -446,12 +487,16 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + START_FIELD_NUMBER;
-    hash = (53 * hash) + getStart().hashCode();
+    if (hasStart()) {
+      hash = (37 * hash) + START_FIELD_NUMBER;
+      hash = (53 * hash) + getStart().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -603,11 +648,11 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       instance_ = "";
 
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       start_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
 
       return this;
@@ -638,11 +683,20 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
     public com.google.cloud.compute.v1.GetSerialPortOutputInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.GetSerialPortOutputInstanceRequest result =
           new com.google.cloud.compute.v1.GetSerialPortOutputInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instance_ = instance_;
-      result.port_ = port_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.start_ = start_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -698,14 +752,15 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         instance_ = other.instance_;
         onChanged();
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getStart().isEmpty()) {
+      if (other.hasStart()) {
+        bitField0_ |= 0x00000002;
         start_ = other.start_;
         onChanged();
       }
@@ -743,6 +798,8 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -860,6 +917,21 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      *
      * <code>int32 port = 3446913;</code>
      *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which COM or serial port to retrieve data from.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
      * @return The port.
      */
     @java.lang.Override
@@ -879,7 +951,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000001;
       port_ = value;
       onChanged();
       return this;
@@ -896,7 +968,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
       onChanged();
       return this;
@@ -1020,6 +1092,22 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      *
      * <code>string start = 109757538;</code>
      *
+     * @return Whether the start field is set.
+     */
+    public boolean hasStart() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the starting byte position of the output to return. To start with the first byte of output to the specified port, omit this field or set it to `0`.
+     * If the output for that byte position is available, this field matches the `start` parameter sent with the request. If the amount of serial console output exceeds the size of the buffer (1 MB), the oldest output is discarded and is no longer available. If the requested start position refers to discarded output, the start position is adjusted to the oldest output still available, and the adjusted start position is returned as the `start` property value.
+     * You can also provide a negative start position, which translates to the most recent number of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes written to the serial console.
+     * </pre>
+     *
+     * <code>string start = 109757538;</code>
+     *
      * @return The start.
      */
     public java.lang.String getStart() {
@@ -1075,7 +1163,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       start_ = value;
       onChanged();
       return this;
@@ -1094,7 +1182,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       start_ = getDefaultInstance().getStart();
       onChanged();
       return this;
@@ -1118,7 +1206,7 @@ public final class GetSerialPortOutputInstanceRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       start_ = value;
       onChanged();
       return this;

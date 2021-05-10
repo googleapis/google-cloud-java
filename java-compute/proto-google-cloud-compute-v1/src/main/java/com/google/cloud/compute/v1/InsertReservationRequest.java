@@ -62,6 +62,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -79,7 +80,21 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
               zone_ = s;
               break;
             }
-          case 132757770:
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -2014725878:
             {
               com.google.cloud.compute.v1.Reservation.Builder subBuilder = null;
               if (reservationResource_ != null) {
@@ -93,20 +108,6 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
                 reservationResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -143,6 +144,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.InsertReservationRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -205,6 +207,23 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -245,7 +264,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int RESERVATION_RESOURCE_FIELD_NUMBER = 16594721;
+  public static final int RESERVATION_RESOURCE_FIELD_NUMBER = 285030177;
   private com.google.cloud.compute.v1.Reservation reservationResource_;
   /**
    *
@@ -255,7 +274,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the reservationResource field is set.
@@ -272,7 +291,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The reservationResource.
@@ -291,7 +310,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -365,14 +384,14 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (reservationResource_ != null) {
-      output.writeMessage(16594721, getReservationResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (reservationResource_ != null) {
+      output.writeMessage(285030177, getReservationResource());
     }
     unknownFields.writeTo(output);
   }
@@ -386,16 +405,16 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (reservationResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              16594721, getReservationResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (reservationResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              285030177, getReservationResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -414,7 +433,10 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
         (com.google.cloud.compute.v1.InsertReservationRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasReservationResource() != other.hasReservationResource()) return false;
     if (hasReservationResource()) {
       if (!getReservationResource().equals(other.getReservationResource())) return false;
@@ -433,8 +455,10 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasReservationResource()) {
       hash = (37 * hash) + RESERVATION_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getReservationResource().hashCode();
@@ -589,7 +613,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (reservationResourceBuilder_ == null) {
         reservationResource_ = null;
       } else {
@@ -625,7 +649,12 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.InsertReservationRequest buildPartial() {
       com.google.cloud.compute.v1.InsertReservationRequest result =
           new com.google.cloud.compute.v1.InsertReservationRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (reservationResourceBuilder_ == null) {
         result.reservationResource_ = reservationResource_;
@@ -633,6 +662,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
         result.reservationResource_ = reservationResourceBuilder_.build();
       }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -687,7 +717,8 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -727,6 +758,8 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -846,6 +879,22 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -901,7 +950,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -920,7 +969,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -944,7 +993,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -964,7 +1013,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the reservationResource field is set.
@@ -980,7 +1029,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The reservationResource.
@@ -1002,7 +1051,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setReservationResource(com.google.cloud.compute.v1.Reservation value) {
@@ -1026,7 +1075,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setReservationResource(
@@ -1048,7 +1097,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeReservationResource(com.google.cloud.compute.v1.Reservation value) {
@@ -1076,7 +1125,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearReservationResource() {
@@ -1098,7 +1147,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder getReservationResourceBuilder() {
@@ -1114,7 +1163,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ReservationOrBuilder getReservationResourceOrBuilder() {
@@ -1134,7 +1183,7 @@ public final class InsertReservationRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Reservation reservation_resource = 285030177 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

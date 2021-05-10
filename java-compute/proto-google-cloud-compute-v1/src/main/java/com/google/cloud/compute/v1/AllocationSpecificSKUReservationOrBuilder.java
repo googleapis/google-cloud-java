@@ -32,6 +32,18 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    * <code>string count = 94851343;</code>
    *
+   * @return Whether the count field is set.
+   */
+  boolean hasCount();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the number of resources that are allocated.
+   * </pre>
+   *
+   * <code>string count = 94851343;</code>
+   *
    * @return The count.
    */
   java.lang.String getCount();
@@ -55,7 +67,19 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 225023421;</code>
+   * <code>string in_use_count = 493458877;</code>
+   *
+   * @return Whether the inUseCount field is set.
+   */
+  boolean hasInUseCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates how many instances are in use.
+   * </pre>
+   *
+   * <code>string in_use_count = 493458877;</code>
    *
    * @return The inUseCount.
    */
@@ -67,7 +91,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 225023421;</code>
+   * <code>string in_use_count = 493458877;</code>
    *
    * @return The bytes for inUseCount.
    */

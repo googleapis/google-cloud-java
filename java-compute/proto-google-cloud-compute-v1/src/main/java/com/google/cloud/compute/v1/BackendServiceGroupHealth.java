@@ -74,7 +74,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               kind_ = s;
               break;
             }
@@ -93,7 +93,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
               annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
               break;
             }
-          case 896883114:
+          case -1250600534:
             {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 healthStatus_ = new java.util.ArrayList<com.google.cloud.compute.v1.HealthStatus>();
@@ -152,6 +152,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.BackendServiceGroupHealth.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ANNOTATIONS_FIELD_NUMBER = 112032548;
 
   private static final class AnnotationsDefaultEntryHolder {
@@ -252,7 +253,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     return map.get(key);
   }
 
-  public static final int HEALTH_STATUS_FIELD_NUMBER = 112110389;
+  public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
   private java.util.List<com.google.cloud.compute.v1.HealthStatus> healthStatus_;
   /**
    *
@@ -261,7 +262,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList() {
@@ -274,7 +275,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
@@ -288,7 +289,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   @java.lang.Override
   public int getHealthStatusCount() {
@@ -301,7 +302,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index) {
@@ -314,7 +315,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index) {
@@ -323,6 +324,21 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -384,13 +400,13 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
     for (int i = 0; i < healthStatus_.size(); i++) {
-      output.writeMessage(112110389, healthStatus_.get(i));
+      output.writeMessage(380545845, healthStatus_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -401,7 +417,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -416,7 +432,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     }
     for (int i = 0; i < healthStatus_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(112110389, healthStatus_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(380545845, healthStatus_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -436,7 +452,10 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
 
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getHealthStatusList().equals(other.getHealthStatusList())) return false;
-    if (!getKind().equals(other.getKind())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -456,8 +475,10 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       hash = (37 * hash) + HEALTH_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getHealthStatusList().hashCode();
     }
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -633,7 +654,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         healthStatusBuilder_.clear();
       }
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -662,6 +683,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       com.google.cloud.compute.v1.BackendServiceGroupHealth result =
           new com.google.cloud.compute.v1.BackendServiceGroupHealth(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.annotations_ = internalGetAnnotations();
       result.annotations_.makeImmutable();
       if (healthStatusBuilder_ == null) {
@@ -673,7 +695,11 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       } else {
         result.healthStatus_ = healthStatusBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.kind_ = kind_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -752,7 +778,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
           }
         }
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
         onChanged();
       }
@@ -972,7 +999,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList() {
       if (healthStatusBuilder_ == null) {
@@ -988,7 +1015,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public int getHealthStatusCount() {
       if (healthStatusBuilder_ == null) {
@@ -1004,7 +1031,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index) {
       if (healthStatusBuilder_ == null) {
@@ -1020,7 +1047,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder setHealthStatus(int index, com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -1042,7 +1069,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder setHealthStatus(
         int index, com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -1062,7 +1089,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder addHealthStatus(com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -1084,7 +1111,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder addHealthStatus(int index, com.google.cloud.compute.v1.HealthStatus value) {
       if (healthStatusBuilder_ == null) {
@@ -1106,7 +1133,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder addHealthStatus(
         com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -1126,7 +1153,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder addHealthStatus(
         int index, com.google.cloud.compute.v1.HealthStatus.Builder builderForValue) {
@@ -1146,7 +1173,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder addAllHealthStatus(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.HealthStatus> values) {
@@ -1166,7 +1193,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder clearHealthStatus() {
       if (healthStatusBuilder_ == null) {
@@ -1185,7 +1212,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public Builder removeHealthStatus(int index) {
       if (healthStatusBuilder_ == null) {
@@ -1204,7 +1231,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public com.google.cloud.compute.v1.HealthStatus.Builder getHealthStatusBuilder(int index) {
       return getHealthStatusFieldBuilder().getBuilder(index);
@@ -1216,7 +1243,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index) {
       if (healthStatusBuilder_ == null) {
@@ -1232,7 +1259,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
         getHealthStatusOrBuilderList() {
@@ -1249,7 +1276,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public com.google.cloud.compute.v1.HealthStatus.Builder addHealthStatusBuilder() {
       return getHealthStatusFieldBuilder()
@@ -1262,7 +1289,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public com.google.cloud.compute.v1.HealthStatus.Builder addHealthStatusBuilder(int index) {
       return getHealthStatusFieldBuilder()
@@ -1275,7 +1302,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+     * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HealthStatus.Builder>
         getHealthStatusBuilderList() {
@@ -1300,6 +1327,20 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1360,7 +1401,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
@@ -1377,7 +1418,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1399,7 +1440,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;

@@ -118,7 +118,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AbandonInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -252,7 +255,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<CreateInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -313,7 +319,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -373,7 +382,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -554,7 +566,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<InsertRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -609,15 +624,26 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -678,15 +704,26 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListErrorsRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -755,15 +792,26 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ListManagedInstancesRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -832,15 +880,26 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       ListPerInstanceConfigsRegionInstanceGroupManagersRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -898,7 +957,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<PatchRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -963,7 +1025,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       PatchPerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1031,7 +1096,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       RecreateInstancesRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1092,7 +1160,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ResizeRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               serializer.putQueryParam(fields, "size", request.getSize());
                               return fields;
                             }
@@ -1155,7 +1226,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       SetInstanceTemplateRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1221,7 +1295,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetTargetPoolsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1289,7 +1366,10 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer<
                                       UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })

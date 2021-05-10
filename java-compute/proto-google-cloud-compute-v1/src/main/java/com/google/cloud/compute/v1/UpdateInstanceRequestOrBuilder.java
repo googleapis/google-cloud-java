@@ -96,7 +96,19 @@ public interface UpdateInstanceRequestOrBuilder
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
+   *
+   * @return Whether the minimalAction field is set.
+   */
+  boolean hasMinimalAction();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * </pre>
+   *
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The minimalAction.
    */
@@ -108,12 +120,24 @@ public interface UpdateInstanceRequestOrBuilder
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The bytes for minimalAction.
    */
   com.google.protobuf.ByteString getMinimalActionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * </pre>
+   *
+   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  boolean hasMostDisruptiveAllowedAction();
   /**
    *
    *
@@ -164,6 +188,20 @@ public interface UpdateInstanceRequestOrBuilder
    */
   com.google.protobuf.ByteString getProjectBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  boolean hasRequestId();
   /**
    *
    *

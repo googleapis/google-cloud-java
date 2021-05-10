@@ -32,6 +32,18 @@ public interface NodeGroupsAddNodesRequestOrBuilder
    *
    * <code>int32 additional_node_count = 134997930;</code>
    *
+   * @return Whether the additionalNodeCount field is set.
+   */
+  boolean hasAdditionalNodeCount();
+  /**
+   *
+   *
+   * <pre>
+   * Count of additional nodes to be added to the node group.
+   * </pre>
+   *
+   * <code>int32 additional_node_count = 134997930;</code>
+   *
    * @return The additionalNodeCount.
    */
   int getAdditionalNodeCount();

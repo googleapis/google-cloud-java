@@ -55,7 +55,19 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 191279312;</code>
+   * <code>string parent_id = 459714768;</code>
+   *
+   * @return Whether the parentId field is set.
+   */
+  boolean hasParentId();
+  /**
+   *
+   *
+   * <pre>
+   * Parent ID for this request.
+   * </pre>
+   *
+   * <code>string parent_id = 459714768;</code>
    *
    * @return The parentId.
    */
@@ -67,7 +79,7 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    * Parent ID for this request.
    * </pre>
    *
-   * <code>string parent_id = 191279312;</code>
+   * <code>string parent_id = 459714768;</code>
    *
    * @return The bytes for parentId.
    */

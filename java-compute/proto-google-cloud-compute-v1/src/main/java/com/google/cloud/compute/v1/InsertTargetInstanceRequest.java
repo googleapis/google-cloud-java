@@ -62,6 +62,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,11 +83,18 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
-          case 1296140882:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -851342766:
             {
               com.google.cloud.compute.v1.TargetInstance.Builder subBuilder = null;
               if (targetInstanceResource_ != null) {
@@ -100,13 +108,6 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
                 targetInstanceResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -143,6 +144,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.InsertTargetInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -205,6 +207,23 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -245,7 +264,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int TARGET_INSTANCE_RESOURCE_FIELD_NUMBER = 162017610;
+  public static final int TARGET_INSTANCE_RESOURCE_FIELD_NUMBER = 430453066;
   private com.google.cloud.compute.v1.TargetInstance targetInstanceResource_;
   /**
    *
@@ -255,7 +274,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetInstanceResource field is set.
@@ -272,7 +291,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetInstanceResource.
@@ -291,7 +310,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -365,14 +384,14 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (targetInstanceResource_ != null) {
-      output.writeMessage(162017610, getTargetInstanceResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (targetInstanceResource_ != null) {
+      output.writeMessage(430453066, getTargetInstanceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -386,16 +405,16 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (targetInstanceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              162017610, getTargetInstanceResource());
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+              430453066, getTargetInstanceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -414,7 +433,10 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
         (com.google.cloud.compute.v1.InsertTargetInstanceRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasTargetInstanceResource() != other.hasTargetInstanceResource()) return false;
     if (hasTargetInstanceResource()) {
       if (!getTargetInstanceResource().equals(other.getTargetInstanceResource())) return false;
@@ -433,8 +455,10 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasTargetInstanceResource()) {
       hash = (37 * hash) + TARGET_INSTANCE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetInstanceResource().hashCode();
@@ -590,7 +614,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (targetInstanceResourceBuilder_ == null) {
         targetInstanceResource_ = null;
       } else {
@@ -626,7 +650,12 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InsertTargetInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.InsertTargetInstanceRequest result =
           new com.google.cloud.compute.v1.InsertTargetInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (targetInstanceResourceBuilder_ == null) {
         result.targetInstanceResource_ = targetInstanceResource_;
@@ -634,6 +663,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
         result.targetInstanceResource_ = targetInstanceResourceBuilder_.build();
       }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -688,7 +718,8 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -728,6 +759,8 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -847,6 +880,22 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -902,7 +951,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -921,7 +970,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -945,7 +994,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -965,7 +1014,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetInstanceResource field is set.
@@ -981,7 +1030,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetInstanceResource.
@@ -1003,7 +1052,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetInstanceResource(com.google.cloud.compute.v1.TargetInstance value) {
@@ -1027,7 +1076,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetInstanceResource(
@@ -1049,7 +1098,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetInstanceResource(com.google.cloud.compute.v1.TargetInstance value) {
@@ -1077,7 +1126,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetInstanceResource() {
@@ -1099,7 +1148,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetInstance.Builder getTargetInstanceResourceBuilder() {
@@ -1115,7 +1164,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetInstanceOrBuilder
@@ -1136,7 +1185,7 @@ public final class InsertTargetInstanceRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

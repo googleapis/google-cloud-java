@@ -64,6 +64,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,28 +75,10 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
           case 0:
             done = true;
             break;
-          case 9103650:
-            {
-              com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.Builder subBuilder =
-                  null;
-              if (targetPoolsAddHealthCheckRequestResource_ != null) {
-                subBuilder = targetPoolsAddHealthCheckRequestResource_.toBuilder();
-              }
-              targetPoolsAddHealthCheckRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPoolsAddHealthCheckRequestResource_);
-                targetPoolsAddHealthCheckRequestResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -118,6 +101,24 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -2138379998:
+            {
+              com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.Builder subBuilder =
+                  null;
+              if (targetPoolsAddHealthCheckRequestResource_ != null) {
+                subBuilder = targetPoolsAddHealthCheckRequestResource_.toBuilder();
+              }
+              targetPoolsAddHealthCheckRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetPoolsAddHealthCheckRequestResource_);
+                targetPoolsAddHealthCheckRequestResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -154,6 +155,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -265,6 +267,23 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -354,7 +373,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
   }
 
-  public static final int TARGET_POOLS_ADD_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER = 1137956;
+  public static final int TARGET_POOLS_ADD_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER = 269573412;
   private com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest
       targetPoolsAddHealthCheckRequestResource_;
   /**
@@ -365,7 +384,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsAddHealthCheckRequestResource field is set.
@@ -382,7 +401,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsAddHealthCheckRequestResource.
@@ -402,7 +421,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -425,10 +444,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (targetPoolsAddHealthCheckRequestResource_ != null) {
-      output.writeMessage(1137956, getTargetPoolsAddHealthCheckRequestResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getTargetPoolBytes().isEmpty()) {
@@ -440,6 +456,9 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
+    if (targetPoolsAddHealthCheckRequestResource_ != null) {
+      output.writeMessage(269573412, getTargetPoolsAddHealthCheckRequestResource());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -449,12 +468,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (targetPoolsAddHealthCheckRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              1137956, getTargetPoolsAddHealthCheckRequestResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getTargetPoolBytes().isEmpty()) {
@@ -465,6 +479,11 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (targetPoolsAddHealthCheckRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              269573412, getTargetPoolsAddHealthCheckRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -484,7 +503,10 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
 
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getTargetPool().equals(other.getTargetPool())) return false;
     if (hasTargetPoolsAddHealthCheckRequestResource()
         != other.hasTargetPoolsAddHealthCheckRequestResource()) return false;
@@ -507,8 +529,10 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + TARGET_POOL_FIELD_NUMBER;
     hash = (53 * hash) + getTargetPool().hashCode();
     if (hasTargetPoolsAddHealthCheckRequestResource()) {
@@ -666,7 +690,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetPool_ = "";
 
       if (targetPoolsAddHealthCheckRequestResourceBuilder_ == null) {
@@ -702,8 +726,13 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest result =
           new com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.targetPool_ = targetPool_;
       if (targetPoolsAddHealthCheckRequestResourceBuilder_ == null) {
@@ -713,6 +742,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         result.targetPoolsAddHealthCheckRequestResource_ =
             targetPoolsAddHealthCheckRequestResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -771,7 +801,8 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -812,6 +843,8 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -1037,6 +1070,22 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1092,7 +1141,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1111,7 +1160,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1135,7 +1184,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1262,7 +1311,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetPoolsAddHealthCheckRequestResource field is set.
@@ -1279,7 +1328,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetPoolsAddHealthCheckRequestResource.
@@ -1302,7 +1351,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsAddHealthCheckRequestResource(
@@ -1327,7 +1376,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsAddHealthCheckRequestResource(
@@ -1349,7 +1398,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetPoolsAddHealthCheckRequestResource(
@@ -1379,7 +1428,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetPoolsAddHealthCheckRequestResource() {
@@ -1401,7 +1450,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.Builder
@@ -1418,7 +1467,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequestOrBuilder
@@ -1439,7 +1488,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

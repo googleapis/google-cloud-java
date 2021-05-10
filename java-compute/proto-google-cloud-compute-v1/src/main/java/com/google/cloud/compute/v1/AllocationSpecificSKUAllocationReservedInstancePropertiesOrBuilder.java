@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
@@ -41,7 +41,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
@@ -52,7 +52,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   int getGuestAcceleratorsCount();
@@ -63,7 +63,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -75,7 +75,7 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(int index);
@@ -160,6 +160,18 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    *
    * <code>string machine_type = 227711026;</code>
    *
+   * @return Whether the machineType field is set.
+   */
+  boolean hasMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
    * @return The machineType.
    */
   java.lang.String getMachineType();
@@ -176,6 +188,18 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu platform the reservation.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  boolean hasMinCpuPlatform();
   /**
    *
    *

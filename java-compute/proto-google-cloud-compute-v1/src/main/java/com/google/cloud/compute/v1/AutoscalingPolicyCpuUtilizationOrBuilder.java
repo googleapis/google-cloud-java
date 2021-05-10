@@ -34,6 +34,20 @@ public interface AutoscalingPolicyCpuUtilizationOrBuilder
    *
    * <code>double utilization_target = 215905870;</code>
    *
+   * @return Whether the utilizationTarget field is set.
+   */
+  boolean hasUtilizationTarget();
+  /**
+   *
+   *
+   * <pre>
+   * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6.
+   * If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization.
+   * If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+   * </pre>
+   *
+   * <code>double utilization_target = 215905870;</code>
+   *
    * @return The utilizationTarget.
    */
   double getUtilizationTarget();

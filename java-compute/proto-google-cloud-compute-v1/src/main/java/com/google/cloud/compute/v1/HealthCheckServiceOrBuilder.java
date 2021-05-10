@@ -32,6 +32,18 @@ public interface HealthCheckServiceOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface HealthCheckServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,12 +91,24 @@ public interface HealthCheckServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthCheckService. An up-to-date fingerprint must be provided in order to patch/update the HealthCheckService; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthCheckService.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
   /**
    *
    *
@@ -105,7 +141,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -117,7 +153,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return The count of healthChecks.
    */
@@ -129,7 +165,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -142,13 +178,29 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
    */
   com.google.protobuf.ByteString getHealthChecksBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
+   * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
+   * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;
+   * </code>
+   *
+   * @return Whether the healthStatusAggregationPolicy field is set.
+   */
+  boolean hasHealthStatusAggregationPolicy();
   /**
    *
    *
@@ -192,6 +244,18 @@ public interface HealthCheckServiceOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -217,6 +281,18 @@ public interface HealthCheckServiceOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Type of the resource. Always compute#healthCheckServicefor health check services.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -233,6 +309,18 @@ public interface HealthCheckServiceOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -316,7 +404,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 138293034;</code>
+   * <code>repeated string notification_endpoints = 406728490;</code>
    *
    * @return A list containing the notificationEndpoints.
    */
@@ -328,7 +416,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 138293034;</code>
+   * <code>repeated string notification_endpoints = 406728490;</code>
    *
    * @return The count of notificationEndpoints.
    */
@@ -340,7 +428,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 138293034;</code>
+   * <code>repeated string notification_endpoints = 406728490;</code>
    *
    * @param index The index of the element to return.
    * @return The notificationEndpoints at the given index.
@@ -353,13 +441,25 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 138293034;</code>
+   * <code>repeated string notification_endpoints = 406728490;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notificationEndpoints at the given index.
    */
   com.google.protobuf.ByteString getNotificationEndpointsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the health check service resides. This field is not applicable to global health check services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -392,7 +492,19 @@ public interface HealthCheckServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -404,7 +516,7 @@ public interface HealthCheckServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

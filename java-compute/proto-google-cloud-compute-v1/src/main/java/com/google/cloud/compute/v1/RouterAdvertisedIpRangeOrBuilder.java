@@ -30,7 +30,19 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * User-specified description for the IP range.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -42,12 +54,24 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The IP range to advertise. The value must be a CIDR-formatted string.
+   * </pre>
+   *
+   * <code>string range = 108280125;</code>
+   *
+   * @return Whether the range field is set.
+   */
+  boolean hasRange();
   /**
    *
    *

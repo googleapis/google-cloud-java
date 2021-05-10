@@ -73,7 +73,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,7 +83,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1297176090:
@@ -135,6 +135,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetHttpProxiesScopedList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TARGET_HTTP_PROXIES_FIELD_NUMBER = 162147011;
   private java.util.List<com.google.cloud.compute.v1.TargetHttpProxy> targetHttpProxies_;
   /**
@@ -220,7 +221,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -248,7 +249,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -265,7 +266,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < targetHttpProxies_.size(); i++) {
@@ -280,7 +281,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < targetHttpProxies_.size(); i++) {
@@ -469,6 +470,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTargetHttpProxiesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -484,9 +486,9 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -515,6 +517,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       com.google.cloud.compute.v1.TargetHttpProxiesScopedList result =
           new com.google.cloud.compute.v1.TargetHttpProxiesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (targetHttpProxiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           targetHttpProxies_ = java.util.Collections.unmodifiableList(targetHttpProxies_);
@@ -524,11 +527,15 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       } else {
         result.targetHttpProxies_ = targetHttpProxiesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1037,7 +1044,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1078,7 +1085,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1097,7 +1104,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1111,7 +1118,9 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1123,7 +1132,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1140,10 +1149,9 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1156,7 +1164,7 @@ public final class TargetHttpProxiesScopedList extends com.google.protobuf.Gener
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

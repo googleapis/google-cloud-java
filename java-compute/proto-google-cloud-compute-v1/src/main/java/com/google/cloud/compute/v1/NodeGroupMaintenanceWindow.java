@@ -60,6 +60,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,14 +74,14 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
           case 299738194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               startTime_ = s;
               break;
             }
-          case 2054851074:
+          case -92632574:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (maintenanceDuration_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = maintenanceDuration_.toBuilder();
               }
               maintenanceDuration_ =
@@ -90,7 +91,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
                 subBuilder.mergeFrom(maintenanceDuration_);
                 maintenanceDuration_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -127,7 +128,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder.class);
   }
 
-  public static final int MAINTENANCE_DURATION_FIELD_NUMBER = 256856384;
+  private int bitField0_;
+  public static final int MAINTENANCE_DURATION_FIELD_NUMBER = 525291840;
   private com.google.cloud.compute.v1.Duration maintenanceDuration_;
   /**
    *
@@ -136,13 +138,13 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    *
    * @return Whether the maintenanceDuration field is set.
    */
   @java.lang.Override
   public boolean hasMaintenanceDuration() {
-    return maintenanceDuration_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -151,7 +153,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    *
    * @return The maintenanceDuration.
    */
@@ -168,15 +170,32 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
    * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+   * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getMaintenanceDurationOrBuilder() {
-    return getMaintenanceDuration();
+    return maintenanceDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maintenanceDuration_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
   private volatile java.lang.Object startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -238,11 +257,11 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
-    if (maintenanceDuration_ != null) {
-      output.writeMessage(256856384, getMaintenanceDuration());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(525291840, getMaintenanceDuration());
     }
     unknownFields.writeTo(output);
   }
@@ -253,13 +272,13 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
-    if (maintenanceDuration_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              256856384, getMaintenanceDuration());
+              525291840, getMaintenanceDuration());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,7 +300,10 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     if (hasMaintenanceDuration()) {
       if (!getMaintenanceDuration().equals(other.getMaintenanceDuration())) return false;
     }
-    if (!getStartTime().equals(other.getStartTime())) return false;
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -297,8 +319,10 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       hash = (37 * hash) + MAINTENANCE_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceDuration().hashCode();
     }
-    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getStartTime().hashCode();
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,7 +463,9 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMaintenanceDurationFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -448,11 +474,11 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       if (maintenanceDurationBuilder_ == null) {
         maintenanceDuration_ = null;
       } else {
-        maintenanceDuration_ = null;
-        maintenanceDurationBuilder_ = null;
+        maintenanceDurationBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       startTime_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -480,12 +506,21 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow buildPartial() {
       com.google.cloud.compute.v1.NodeGroupMaintenanceWindow result =
           new com.google.cloud.compute.v1.NodeGroupMaintenanceWindow(this);
-      if (maintenanceDurationBuilder_ == null) {
-        result.maintenanceDuration_ = maintenanceDuration_;
-      } else {
-        result.maintenanceDuration_ = maintenanceDurationBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (maintenanceDurationBuilder_ == null) {
+          result.maintenanceDuration_ = maintenanceDuration_;
+        } else {
+          result.maintenanceDuration_ = maintenanceDurationBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.startTime_ = startTime_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -539,7 +574,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       if (other.hasMaintenanceDuration()) {
         mergeMaintenanceDuration(other.getMaintenanceDuration());
       }
-      if (!other.getStartTime().isEmpty()) {
+      if (other.hasStartTime()) {
+        bitField0_ |= 0x00000002;
         startTime_ = other.startTime_;
         onChanged();
       }
@@ -573,6 +609,8 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.Duration maintenanceDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -586,12 +624,12 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      *
      * @return Whether the maintenanceDuration field is set.
      */
     public boolean hasMaintenanceDuration() {
-      return maintenanceDurationBuilder_ != null || maintenanceDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,7 +638,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      *
      * @return The maintenanceDuration.
      */
@@ -620,7 +658,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder setMaintenanceDuration(com.google.cloud.compute.v1.Duration value) {
       if (maintenanceDurationBuilder_ == null) {
@@ -632,7 +670,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       } else {
         maintenanceDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -642,7 +680,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder setMaintenanceDuration(
         com.google.cloud.compute.v1.Duration.Builder builderForValue) {
@@ -652,7 +690,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       } else {
         maintenanceDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -662,11 +700,13 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder mergeMaintenanceDuration(com.google.cloud.compute.v1.Duration value) {
       if (maintenanceDurationBuilder_ == null) {
-        if (maintenanceDuration_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && maintenanceDuration_ != null
+            && maintenanceDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           maintenanceDuration_ =
               com.google.cloud.compute.v1.Duration.newBuilder(maintenanceDuration_)
                   .mergeFrom(value)
@@ -678,7 +718,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       } else {
         maintenanceDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -688,17 +728,16 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public Builder clearMaintenanceDuration() {
       if (maintenanceDurationBuilder_ == null) {
         maintenanceDuration_ = null;
         onChanged();
       } else {
-        maintenanceDuration_ = null;
-        maintenanceDurationBuilder_ = null;
+        maintenanceDurationBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -708,10 +747,10 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaintenanceDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMaintenanceDurationFieldBuilder().getBuilder();
     }
@@ -722,7 +761,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getMaintenanceDurationOrBuilder() {
       if (maintenanceDurationBuilder_ != null) {
@@ -740,7 +779,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 256856384;</code>
+     * <code>.google.cloud.compute.v1.Duration maintenance_duration = 525291840;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -760,6 +799,20 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
     }
 
     private java.lang.Object startTime_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
+     * </pre>
+     *
+     * <code>string start_time = 37467274;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -820,7 +873,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       startTime_ = value;
       onChanged();
       return this;
@@ -837,7 +890,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = getDefaultInstance().getStartTime();
       onChanged();
       return this;
@@ -859,7 +912,7 @@ public final class NodeGroupMaintenanceWindow extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       startTime_ = value;
       onChanged();
       return this;

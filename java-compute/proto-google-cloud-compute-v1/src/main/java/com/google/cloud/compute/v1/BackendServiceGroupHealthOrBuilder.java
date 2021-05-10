@@ -84,7 +84,7 @@ public interface BackendServiceGroupHealthOrBuilder
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList();
   /**
@@ -94,7 +94,7 @@ public interface BackendServiceGroupHealthOrBuilder
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index);
   /**
@@ -104,7 +104,7 @@ public interface BackendServiceGroupHealthOrBuilder
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   int getHealthStatusCount();
   /**
@@ -114,7 +114,7 @@ public interface BackendServiceGroupHealthOrBuilder
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
       getHealthStatusOrBuilderList();
@@ -125,10 +125,22 @@ public interface BackendServiceGroupHealthOrBuilder
    * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 112110389;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   com.google.cloud.compute.v1.HealthStatusOrBuilder getHealthStatusOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *

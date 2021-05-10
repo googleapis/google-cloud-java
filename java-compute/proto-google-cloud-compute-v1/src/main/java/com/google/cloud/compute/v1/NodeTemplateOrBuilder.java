@@ -23,18 +23,31 @@ public interface NodeTemplateOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.NodeTemplate)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
-  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
-  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   int getAcceleratorsCount();
-  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
-  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * CPU overcommit.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;
+   * </code>
+   *
+   * @return Whether the cpuOvercommitType field is set.
+   */
+  boolean hasCpuOvercommitType();
   /**
    *
    *
@@ -71,6 +84,18 @@ public interface NodeTemplateOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -94,7 +119,19 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -106,7 +143,7 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -123,6 +160,18 @@ public interface NodeTemplateOrBuilder
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -157,6 +206,18 @@ public interface NodeTemplateOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#nodeTemplate for node templates.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -173,6 +234,18 @@ public interface NodeTemplateOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -205,7 +278,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   int getNodeAffinityLabelsCount();
   /**
@@ -215,7 +288,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   boolean containsNodeAffinityLabels(java.lang.String key);
   /** Use {@link #getNodeAffinityLabelsMap()} instead. */
@@ -228,7 +301,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabelsMap();
   /**
@@ -238,7 +311,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   java.lang.String getNodeAffinityLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue);
@@ -249,7 +322,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key);
 
@@ -260,7 +333,19 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 197397335;</code>
+   * <code>string node_type = 465832791;</code>
+   *
+   * @return Whether the nodeType field is set.
+   */
+  boolean hasNodeType();
+  /**
+   *
+   *
+   * <pre>
+   * The node type to use for nodes group that are created from this template.
+   * </pre>
+   *
+   * <code>string node_type = 465832791;</code>
    *
    * @return The nodeType.
    */
@@ -272,7 +357,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 197397335;</code>
+   * <code>string node_type = 465832791;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -287,7 +372,7 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return Whether the nodeTypeFlexibility field is set.
@@ -302,7 +387,7 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    *
    * @return The nodeTypeFlexibility.
@@ -317,12 +402,24 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
    * </code>
    */
   com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibilityOrBuilder
       getNodeTypeFlexibilityOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the region where the node template resides, such as us-central1.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -355,7 +452,19 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -367,7 +476,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -426,6 +535,18 @@ public interface NodeTemplateOrBuilder
    *
    * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
    *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   *
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
@@ -449,7 +570,19 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 28992698;</code>
+   * <code>string status_message = 297428154;</code>
+   *
+   * @return Whether the statusMessage field is set.
+   */
+  boolean hasStatusMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional, human-readable explanation of the status.
+   * </pre>
+   *
+   * <code>string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -461,7 +594,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 28992698;</code>
+   * <code>string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */

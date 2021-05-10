@@ -63,6 +63,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,18 +74,18 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
           case 0:
             done = true;
             break;
-          case 310091458:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              function_ = s;
-              break;
-            }
           case 826818018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               urlMask_ = s;
+              break;
+            }
+          case -1837392190:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              function_ = s;
               break;
             }
           default:
@@ -121,7 +122,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder.class);
   }
 
-  public static final int FUNCTION_FIELD_NUMBER = 38761432;
+  private int bitField0_;
+  public static final int FUNCTION_FIELD_NUMBER = 307196888;
   private volatile java.lang.Object function_;
   /**
    *
@@ -132,7 +134,24 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 38761432;</code>
+   * <code>string function = 307196888;</code>
+   *
+   * @return Whether the function field is set.
+   */
+  @java.lang.Override
+  public boolean hasFunction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A user-defined name of the Cloud Function.
+   * The function name is case-sensitive and must be 1-63 characters long.
+   * Example value: "func1".
+   * </pre>
+   *
+   * <code>string function = 307196888;</code>
    *
    * @return The function.
    */
@@ -157,7 +176,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 38761432;</code>
+   * <code>string function = 307196888;</code>
    *
    * @return The bytes for function.
    */
@@ -176,6 +195,22 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   public static final int URL_MASK_FIELD_NUMBER = 103352252;
   private volatile java.lang.Object urlMask_;
+  /**
+   *
+   *
+   * <pre>
+   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
+   * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * </pre>
+   *
+   * <code>string url_mask = 103352252;</code>
+   *
+   * @return Whether the urlMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrlMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -239,11 +274,11 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFunctionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 38761432, function_);
-    }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307196888, function_);
     }
     unknownFields.writeTo(output);
   }
@@ -254,11 +289,11 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getFunctionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38761432, function_);
-    }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307196888, function_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,8 +311,14 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction other =
         (com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction) obj;
 
-    if (!getFunction().equals(other.getFunction())) return false;
-    if (!getUrlMask().equals(other.getUrlMask())) return false;
+    if (hasFunction() != other.hasFunction()) return false;
+    if (hasFunction()) {
+      if (!getFunction().equals(other.getFunction())) return false;
+    }
+    if (hasUrlMask() != other.hasUrlMask()) return false;
+    if (hasUrlMask()) {
+      if (!getUrlMask().equals(other.getUrlMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -289,10 +330,14 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
-    hash = (53 * hash) + getFunction().hashCode();
-    hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
-    hash = (53 * hash) + getUrlMask().hashCode();
+    if (hasFunction()) {
+      hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getFunction().hashCode();
+    }
+    if (hasUrlMask()) {
+      hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUrlMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,9 +486,9 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     public Builder clear() {
       super.clear();
       function_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       urlMask_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -472,8 +517,17 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.function_ = function_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.urlMask_ = urlMask_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -525,11 +579,13 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       if (other
           == com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance())
         return this;
-      if (!other.getFunction().isEmpty()) {
+      if (other.hasFunction()) {
+        bitField0_ |= 0x00000001;
         function_ = other.function_;
         onChanged();
       }
-      if (!other.getUrlMask().isEmpty()) {
+      if (other.hasUrlMask()) {
+        bitField0_ |= 0x00000002;
         urlMask_ = other.urlMask_;
         onChanged();
       }
@@ -564,6 +620,8 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object function_ = "";
     /**
      *
@@ -574,7 +632,23 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 38761432;</code>
+     * <code>string function = 307196888;</code>
+     *
+     * @return Whether the function field is set.
+     */
+    public boolean hasFunction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A user-defined name of the Cloud Function.
+     * The function name is case-sensitive and must be 1-63 characters long.
+     * Example value: "func1".
+     * </pre>
+     *
+     * <code>string function = 307196888;</code>
      *
      * @return The function.
      */
@@ -598,7 +672,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 38761432;</code>
+     * <code>string function = 307196888;</code>
      *
      * @return The bytes for function.
      */
@@ -622,7 +696,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 38761432;</code>
+     * <code>string function = 307196888;</code>
      *
      * @param value The function to set.
      * @return This builder for chaining.
@@ -631,7 +705,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       function_ = value;
       onChanged();
       return this;
@@ -645,12 +719,12 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 38761432;</code>
+     * <code>string function = 307196888;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       function_ = getDefaultInstance().getFunction();
       onChanged();
       return this;
@@ -664,7 +738,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 38761432;</code>
+     * <code>string function = 307196888;</code>
      *
      * @param value The bytes for function to set.
      * @return This builder for chaining.
@@ -674,13 +748,28 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       function_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object urlMask_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services.
+     * For example, request URLs "mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * </pre>
+     *
+     * <code>string url_mask = 103352252;</code>
+     *
+     * @return Whether the urlMask field is set.
+     */
+    public boolean hasUrlMask() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -744,7 +833,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       urlMask_ = value;
       onChanged();
       return this;
@@ -762,7 +851,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = getDefaultInstance().getUrlMask();
       onChanged();
       return this;
@@ -785,7 +874,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       urlMask_ = value;
       onChanged();
       return this;

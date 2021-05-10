@@ -32,6 +32,18 @@ public interface NamedPortOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -48,6 +60,18 @@ public interface NamedPortOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The port number, which can be a value between 1 and 65535.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  boolean hasPort();
   /**
    *
    *

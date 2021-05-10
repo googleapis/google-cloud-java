@@ -24,13 +24,19 @@ public interface ForwardingRuleReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string forwarding_rule = 1528574;</code>
+   * <code>string forwarding_rule = 269964030;</code>
+   *
+   * @return Whether the forwardingRule field is set.
+   */
+  boolean hasForwardingRule();
+  /**
+   * <code>string forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
   /**
-   * <code>string forwarding_rule = 1528574;</code>
+   * <code>string forwarding_rule = 269964030;</code>
    *
    * @return The bytes for forwardingRule.
    */

@@ -61,6 +61,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,27 +74,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
             break;
           case 27575304:
             {
+              bitField0_ |= 0x00000002;
               port_ = input.readInt32();
               break;
             }
           case 332274762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               portName_ = s;
               break;
             }
           case 412724776:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000008;
               portSpecification_ = rawValue;
               break;
             }
           case 1092264626:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               grpcServiceName_ = s;
               break;
             }
@@ -157,10 +159,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     UNDEFINED_PORT_SPECIFICATION(0),
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 80865215;</code> */
-    USE_NAMED_PORT(80865215),
-    /** <code>USE_SERVING_PORT = 94202060;</code> */
-    USE_SERVING_PORT(94202060),
+    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    USE_NAMED_PORT(349300671),
+    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    USE_SERVING_PORT(362637516),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,10 +178,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 80865215;</code> */
-    public static final int USE_NAMED_PORT_VALUE = 80865215;
-    /** <code>USE_SERVING_PORT = 94202060;</code> */
-    public static final int USE_SERVING_PORT_VALUE = 94202060;
+    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    public static final int USE_NAMED_PORT_VALUE = 349300671;
+    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    public static final int USE_SERVING_PORT_VALUE = 362637516;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -209,9 +211,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
           return UNDEFINED_PORT_SPECIFICATION;
         case 190235748:
           return USE_FIXED_PORT;
-        case 80865215:
+        case 349300671:
           return USE_NAMED_PORT;
-        case 94202060:
+        case 362637516:
           return USE_SERVING_PORT;
         default:
           return null;
@@ -269,8 +271,27 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.GRPCHealthCheck.PortSpecification)
   }
 
+  private int bitField0_;
   public static final int GRPC_SERVICE_NAME_FIELD_NUMBER = 136533078;
   private volatile java.lang.Object grpcServiceName_;
+  /**
+   *
+   *
+   * <pre>
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
+   * - Empty service_name means the overall status of all services at the backend.
+   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
+   * The grpc_service_name can only be ASCII.
+   * </pre>
+   *
+   * <code>string grpc_service_name = 136533078;</code>
+   *
+   * @return Whether the grpcServiceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasGrpcServiceName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -335,6 +356,21 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    * <code>int32 port = 3446913;</code>
    *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
    * @return The port.
    */
   @java.lang.Override
@@ -344,6 +380,21 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
   private volatile java.lang.Object portName_;
+  /**
+   *
+   *
+   * <pre>
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -407,6 +458,26 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
    * </code>
    *
+   * @return Whether the portSpecification field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortSpecification() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how port is selected for health checking, can be one of following values:
+   * USE_FIXED_PORT: The port number in port is used for health checking.
+   * USE_NAMED_PORT: The portName is used for health checking.
+   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
+   * </code>
+   *
    * @return The enum numeric value on the wire for portSpecification.
    */
   @java.lang.Override
@@ -453,19 +524,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(3446913, port_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (portSpecification_
-        != com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification
-            .UNDEFINED_PORT_SPECIFICATION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(51590597, portSpecification_);
     }
-    if (!getGrpcServiceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 136533078, grpcServiceName_);
     }
     unknownFields.writeTo(output);
@@ -477,19 +545,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (portSpecification_
-        != com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification
-            .UNDEFINED_PORT_SPECIFICATION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(51590597, portSpecification_);
     }
-    if (!getGrpcServiceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(136533078, grpcServiceName_);
     }
     size += unknownFields.getSerializedSize();
@@ -508,10 +573,22 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.GRPCHealthCheck other =
         (com.google.cloud.compute.v1.GRPCHealthCheck) obj;
 
-    if (!getGrpcServiceName().equals(other.getGrpcServiceName())) return false;
-    if (getPort() != other.getPort()) return false;
-    if (!getPortName().equals(other.getPortName())) return false;
-    if (portSpecification_ != other.portSpecification_) return false;
+    if (hasGrpcServiceName() != other.hasGrpcServiceName()) return false;
+    if (hasGrpcServiceName()) {
+      if (!getGrpcServiceName().equals(other.getGrpcServiceName())) return false;
+    }
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
+    if (hasPortName() != other.hasPortName()) return false;
+    if (hasPortName()) {
+      if (!getPortName().equals(other.getPortName())) return false;
+    }
+    if (hasPortSpecification() != other.hasPortSpecification()) return false;
+    if (hasPortSpecification()) {
+      if (portSpecification_ != other.portSpecification_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -523,14 +600,22 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GRPC_SERVICE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getGrpcServiceName().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
-    hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPortName().hashCode();
-    hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
-    hash = (53 * hash) + portSpecification_;
+    if (hasGrpcServiceName()) {
+      hash = (37 * hash) + GRPC_SERVICE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getGrpcServiceName().hashCode();
+    }
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
+    if (hasPortName()) {
+      hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPortName().hashCode();
+    }
+    if (hasPortSpecification()) {
+      hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + portSpecification_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -676,13 +761,13 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       grpcServiceName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       portSpecification_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -710,10 +795,25 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.GRPCHealthCheck buildPartial() {
       com.google.cloud.compute.v1.GRPCHealthCheck result =
           new com.google.cloud.compute.v1.GRPCHealthCheck(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.grpcServiceName_ = grpcServiceName_;
-      result.port_ = port_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.portName_ = portName_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.portSpecification_ = portSpecification_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -763,19 +863,21 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.GRPCHealthCheck other) {
       if (other == com.google.cloud.compute.v1.GRPCHealthCheck.getDefaultInstance()) return this;
-      if (!other.getGrpcServiceName().isEmpty()) {
+      if (other.hasGrpcServiceName()) {
+        bitField0_ |= 0x00000001;
         grpcServiceName_ = other.grpcServiceName_;
         onChanged();
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
-      if (!other.getPortName().isEmpty()) {
+      if (other.hasPortName()) {
+        bitField0_ |= 0x00000004;
         portName_ = other.portName_;
         onChanged();
       }
-      if (other.portSpecification_ != 0) {
-        setPortSpecificationValue(other.getPortSpecificationValue());
+      if (other.hasPortSpecification()) {
+        setPortSpecification(other.getPortSpecification());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -806,7 +908,26 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object grpcServiceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
+     * - Empty service_name means the overall status of all services at the backend.
+     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
+     * The grpc_service_name can only be ASCII.
+     * </pre>
+     *
+     * <code>string grpc_service_name = 136533078;</code>
+     *
+     * @return Whether the grpcServiceName field is set.
+     */
+    public boolean hasGrpcServiceName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -876,7 +997,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       grpcServiceName_ = value;
       onChanged();
       return this;
@@ -896,7 +1017,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearGrpcServiceName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       grpcServiceName_ = getDefaultInstance().getGrpcServiceName();
       onChanged();
       return this;
@@ -921,13 +1042,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       grpcServiceName_ = value;
       onChanged();
       return this;
     }
 
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * The port number for the health check request. Must be specified if port_name and port_specification are not set or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -956,7 +1092,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000002;
       port_ = value;
       onChanged();
       return this;
@@ -973,13 +1109,27 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object portName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence. The port_name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>string port_name = 41534345;</code>
+     *
+     * @return Whether the portName field is set.
+     */
+    public boolean hasPortName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1040,7 +1190,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       portName_ = value;
       onChanged();
       return this;
@@ -1057,7 +1207,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -1079,13 +1229,34 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       portName_ = value;
       onChanged();
       return this;
     }
 
     private int portSpecification_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking.
+     * USE_NAMED_PORT: The portName is used for health checking.
+     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
+     * </code>
+     *
+     * @return Whether the portSpecification field is set.
+     */
+    @java.lang.Override
+    public boolean hasPortSpecification() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1126,7 +1297,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPortSpecificationValue(int value) {
-
+      bitField0_ |= 0x00000008;
       portSpecification_ = value;
       onChanged();
       return this;
@@ -1180,7 +1351,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       portSpecification_ = value.getNumber();
       onChanged();
       return this;
@@ -1203,7 +1374,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPortSpecification() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       portSpecification_ = 0;
       onChanged();
       return this;

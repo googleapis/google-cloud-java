@@ -73,23 +73,6 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
           case 0:
             done = true;
             break;
-          case 64429082:
-            {
-              com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder subBuilder = null;
-              if (regionSetPolicyRequestResource_ != null) {
-                subBuilder = regionSetPolicyRequestResource_.toBuilder();
-              }
-              regionSetPolicyRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RegionSetPolicyRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regionSetPolicyRequestResource_);
-                regionSetPolicyRequestResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -109,6 +92,23 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -2083054566:
+            {
+              com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder subBuilder = null;
+              if (regionSetPolicyRequestResource_ != null) {
+                subBuilder = regionSetPolicyRequestResource_.toBuilder();
+              }
+              regionSetPolicyRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RegionSetPolicyRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(regionSetPolicyRequestResource_);
+                regionSetPolicyRequestResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -243,7 +243,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     }
   }
 
-  public static final int REGION_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 8053635;
+  public static final int REGION_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 276489091;
   private com.google.cloud.compute.v1.RegionSetPolicyRequest regionSetPolicyRequestResource_;
   /**
    *
@@ -253,7 +253,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionSetPolicyRequestResource field is set.
@@ -270,7 +270,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionSetPolicyRequestResource.
@@ -289,7 +289,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -361,9 +361,6 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (regionSetPolicyRequestResource_ != null) {
-      output.writeMessage(8053635, getRegionSetPolicyRequestResource());
-    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -372,6 +369,9 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (regionSetPolicyRequestResource_ != null) {
+      output.writeMessage(276489091, getRegionSetPolicyRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -382,11 +382,6 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (regionSetPolicyRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              8053635, getRegionSetPolicyRequestResource());
-    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
@@ -395,6 +390,11 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (regionSetPolicyRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              276489091, getRegionSetPolicyRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -956,7 +956,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionSetPolicyRequestResource field is set.
@@ -973,7 +973,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionSetPolicyRequestResource.
@@ -995,7 +995,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionSetPolicyRequestResource(
@@ -1020,7 +1020,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionSetPolicyRequestResource(
@@ -1042,7 +1042,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionSetPolicyRequestResource(
@@ -1072,7 +1072,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionSetPolicyRequestResource() {
@@ -1094,7 +1094,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder
@@ -1111,7 +1111,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionSetPolicyRequestOrBuilder
@@ -1132,7 +1132,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

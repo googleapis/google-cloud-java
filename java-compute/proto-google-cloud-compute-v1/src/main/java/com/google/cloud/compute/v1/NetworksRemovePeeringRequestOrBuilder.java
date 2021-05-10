@@ -32,6 +32,18 @@ public interface NetworksRemovePeeringRequestOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the peering, which should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();

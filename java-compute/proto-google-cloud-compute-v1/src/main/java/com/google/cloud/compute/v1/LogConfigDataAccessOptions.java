@@ -60,6 +60,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case 1075695088:
+          case -1071788560:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               logMode_ = rawValue;
               break;
             }
@@ -130,8 +131,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     UNDEFINED_LOG_MODE(0),
-    /** <code>LOG_FAIL_CLOSED = 92034322;</code> */
-    LOG_FAIL_CLOSED(92034322),
+    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    LOG_FAIL_CLOSED(360469778),
     /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
     LOG_MODE_UNSPECIFIED(88160822),
     UNRECOGNIZED(-1),
@@ -147,8 +148,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     public static final int UNDEFINED_LOG_MODE_VALUE = 0;
-    /** <code>LOG_FAIL_CLOSED = 92034322;</code> */
-    public static final int LOG_FAIL_CLOSED_VALUE = 92034322;
+    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    public static final int LOG_FAIL_CLOSED_VALUE = 360469778;
     /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
     public static final int LOG_MODE_UNSPECIFIED_VALUE = 88160822;
 
@@ -178,7 +179,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_LOG_MODE;
-        case 92034322:
+        case 360469778:
           return LOG_FAIL_CLOSED;
         case 88160822:
           return LOG_MODE_UNSPECIFIED;
@@ -237,10 +238,20 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode)
   }
 
-  public static final int LOG_MODE_FIELD_NUMBER = 134461886;
+  private int bitField0_;
+  public static final int LOG_MODE_FIELD_NUMBER = 402897342;
   private int logMode_;
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   *
+   * @return Whether the logMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The enum numeric value on the wire for logMode.
    */
@@ -249,7 +260,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return logMode_;
   }
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The logMode.
    */
@@ -277,10 +288,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (logMode_
-        != com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNDEFINED_LOG_MODE
-            .getNumber()) {
-      output.writeEnum(134461886, logMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(402897342, logMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -291,10 +300,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (logMode_
-        != com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNDEFINED_LOG_MODE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(134461886, logMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402897342, logMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -312,7 +319,10 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.LogConfigDataAccessOptions other =
         (com.google.cloud.compute.v1.LogConfigDataAccessOptions) obj;
 
-    if (logMode_ != other.logMode_) return false;
+    if (hasLogMode() != other.hasLogMode()) return false;
+    if (hasLogMode()) {
+      if (logMode_ != other.logMode_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,8 +334,10 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LOG_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + logMode_;
+    if (hasLogMode()) {
+      hash = (37 * hash) + LOG_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + logMode_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -473,7 +485,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       logMode_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -501,7 +513,13 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.LogConfigDataAccessOptions buildPartial() {
       com.google.cloud.compute.v1.LogConfigDataAccessOptions result =
           new com.google.cloud.compute.v1.LogConfigDataAccessOptions(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.logMode_ = logMode_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -552,8 +570,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.LogConfigDataAccessOptions other) {
       if (other == com.google.cloud.compute.v1.LogConfigDataAccessOptions.getDefaultInstance())
         return this;
-      if (other.logMode_ != 0) {
-        setLogModeValue(other.getLogModeValue());
+      if (other.hasLogMode()) {
+        setLogMode(other.getLogMode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -585,9 +603,21 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private int logMode_ = 0;
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * </code>
+     *
+     * @return Whether the logMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
      * @return The enum numeric value on the wire for logMode.
@@ -597,20 +627,20 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return logMode_;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
      * @param value The enum numeric value on the wire for logMode to set.
      * @return This builder for chaining.
      */
     public Builder setLogModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       logMode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
      * @return The logMode.
@@ -625,7 +655,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           : result;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
      * @param value The logMode to set.
@@ -636,19 +666,19 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       logMode_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLogMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       logMode_ = 0;
       onChanged();
       return this;

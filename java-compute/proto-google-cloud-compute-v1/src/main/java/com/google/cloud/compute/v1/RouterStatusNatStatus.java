@@ -79,11 +79,21 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
               break;
             }
-          case 294664778:
+          case 1702209210:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                userAllocatedNatIpResources_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              userAllocatedNatIpResources_.add(s);
+              break;
+            }
+          case -1852818870:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -93,7 +103,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
               drainUserAllocatedNatIps_.add(s);
               break;
             }
-          case 325992810:
+          case -1821490838:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -103,32 +113,23 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
               drainAutoAllocatedNatIps_.add(s);
               break;
             }
-          case 778807056:
+          case -1368676592:
             {
+              bitField0_ |= 0x00000001;
               minExtraNatIpsNeeded_ = input.readInt32();
               break;
             }
-          case 1702209210:
+          case -239941358:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                userAllocatedNatIpResources_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              userAllocatedNatIpResources_.add(s);
-              break;
-            }
-          case 1907542290:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 userAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000080;
               }
               userAllocatedNatIps_.add(s);
               break;
             }
-          case 1938870322:
+          case -208613326:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -138,8 +139,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
               autoAllocatedNatIps_.add(s);
               break;
             }
-          case 1951456096:
+          case -196027552:
             {
+              bitField0_ |= 0x00000004;
               numVmEndpointsWithNatMappings_ = input.readInt32();
               break;
             }
@@ -157,16 +159,16 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
+      }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         drainAutoAllocatedNatIps_ = drainAutoAllocatedNatIps_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIps_ = userAllocatedNatIps_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -192,7 +194,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.RouterStatusNatStatus.Builder.class);
   }
 
-  public static final int AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 242358790;
+  private int bitField0_;
+  public static final int AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 510794246;
   private com.google.protobuf.LazyStringList autoAllocatedNatIps_;
   /**
    *
@@ -201,7 +204,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
    *
    * @return A list containing the autoAllocatedNatIps.
    */
@@ -215,7 +218,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
    *
    * @return The count of autoAllocatedNatIps.
    */
@@ -229,7 +232,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
    *
    * @param index The index of the element to return.
    * @return The autoAllocatedNatIps at the given index.
@@ -244,7 +247,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the autoAllocatedNatIps at the given index.
@@ -253,7 +256,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     return autoAllocatedNatIps_.getByteString(index);
   }
 
-  public static final int DRAIN_AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 40749101;
+  public static final int DRAIN_AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 309184557;
   private com.google.protobuf.LazyStringList drainAutoAllocatedNatIps_;
   /**
    *
@@ -262,7 +265,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
    *
    * @return A list containing the drainAutoAllocatedNatIps.
    */
@@ -276,7 +279,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
    *
    * @return The count of drainAutoAllocatedNatIps.
    */
@@ -290,7 +293,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
    *
    * @param index The index of the element to return.
    * @return The drainAutoAllocatedNatIps at the given index.
@@ -305,7 +308,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainAutoAllocatedNatIps at the given index.
@@ -314,7 +317,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     return drainAutoAllocatedNatIps_.getByteString(index);
   }
 
-  public static final int DRAIN_USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 36833097;
+  public static final int DRAIN_USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 305268553;
   private com.google.protobuf.LazyStringList drainUserAllocatedNatIps_;
   /**
    *
@@ -323,7 +326,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
    *
    * @return A list containing the drainUserAllocatedNatIps.
    */
@@ -337,7 +340,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
    *
    * @return The count of drainUserAllocatedNatIps.
    */
@@ -351,7 +354,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
    *
    * @param index The index of the element to return.
    * @return The drainUserAllocatedNatIps at the given index.
@@ -366,7 +369,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainUserAllocatedNatIps at the given index.
@@ -375,7 +378,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     return drainUserAllocatedNatIps_.getByteString(index);
   }
 
-  public static final int MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER = 97350882;
+  public static final int MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER = 365786338;
   private int minExtraNatIpsNeeded_;
   /**
    *
@@ -384,7 +387,22 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 97350882;</code>
+   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   *
+   * @return Whether the minExtraNatIpsNeeded field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinExtraNatIpsNeeded() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
+   * </pre>
+   *
+   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
    *
    * @return The minExtraNatIpsNeeded.
    */
@@ -395,6 +413,21 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Unique name of this NAT.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -442,7 +475,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 243932012;
+  public static final int NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER = 512367468;
   private int numVmEndpointsWithNatMappings_;
   /**
    *
@@ -451,7 +484,22 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
+   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   *
+   * @return Whether the numVmEndpointsWithNatMappings field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumVmEndpointsWithNatMappings() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number of VM endpoints (i.e., Nics) that can use NAT.
+   * </pre>
+   *
+   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
    *
    * @return The numVmEndpointsWithNatMappings.
    */
@@ -521,7 +569,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     return userAllocatedNatIpResources_.getByteString(index);
   }
 
-  public static final int USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 238442786;
+  public static final int USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 506878242;
   private com.google.protobuf.LazyStringList userAllocatedNatIps_;
   /**
    *
@@ -530,7 +578,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
    *
    * @return A list containing the userAllocatedNatIps.
    */
@@ -544,7 +592,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
    *
    * @return The count of userAllocatedNatIps.
    */
@@ -558,7 +606,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
    *
    * @param index The index of the element to return.
    * @return The userAllocatedNatIps at the given index.
@@ -573,7 +621,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the userAllocatedNatIps at the given index.
@@ -596,34 +644,34 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
-    }
-    for (int i = 0; i < drainUserAllocatedNatIps_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 36833097, drainUserAllocatedNatIps_.getRaw(i));
-    }
-    for (int i = 0; i < drainAutoAllocatedNatIps_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 40749101, drainAutoAllocatedNatIps_.getRaw(i));
-    }
-    if (minExtraNatIpsNeeded_ != 0) {
-      output.writeInt32(97350882, minExtraNatIpsNeeded_);
     }
     for (int i = 0; i < userAllocatedNatIpResources_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 212776151, userAllocatedNatIpResources_.getRaw(i));
     }
+    for (int i = 0; i < drainUserAllocatedNatIps_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 305268553, drainUserAllocatedNatIps_.getRaw(i));
+    }
+    for (int i = 0; i < drainAutoAllocatedNatIps_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 309184557, drainAutoAllocatedNatIps_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(365786338, minExtraNatIpsNeeded_);
+    }
     for (int i = 0; i < userAllocatedNatIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 238442786, userAllocatedNatIps_.getRaw(i));
+          output, 506878242, userAllocatedNatIps_.getRaw(i));
     }
     for (int i = 0; i < autoAllocatedNatIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 242358790, autoAllocatedNatIps_.getRaw(i));
+          output, 510794246, autoAllocatedNatIps_.getRaw(i));
     }
-    if (numVmEndpointsWithNatMappings_ != 0) {
-      output.writeInt32(243932012, numVmEndpointsWithNatMappings_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(512367468, numVmEndpointsWithNatMappings_);
     }
     unknownFields.writeTo(output);
   }
@@ -634,8 +682,16 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < userAllocatedNatIpResources_.size(); i++) {
+        dataSize += computeStringSizeNoTag(userAllocatedNatIpResources_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getUserAllocatedNatIpResourcesList().size();
     }
     {
       int dataSize = 0;
@@ -653,17 +709,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 5 * getDrainAutoAllocatedNatIpsList().size();
     }
-    if (minExtraNatIpsNeeded_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(97350882, minExtraNatIpsNeeded_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < userAllocatedNatIpResources_.size(); i++) {
-        dataSize += computeStringSizeNoTag(userAllocatedNatIpResources_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getUserAllocatedNatIpResourcesList().size();
+          com.google.protobuf.CodedOutputStream.computeInt32Size(365786338, minExtraNatIpsNeeded_);
     }
     {
       int dataSize = 0;
@@ -681,10 +729,10 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 5 * getAutoAllocatedNatIpsList().size();
     }
-    if (numVmEndpointsWithNatMappings_ != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              243932012, numVmEndpointsWithNatMappings_);
+              512367468, numVmEndpointsWithNatMappings_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -707,10 +755,20 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       return false;
     if (!getDrainUserAllocatedNatIpsList().equals(other.getDrainUserAllocatedNatIpsList()))
       return false;
-    if (getMinExtraNatIpsNeeded() != other.getMinExtraNatIpsNeeded()) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (getNumVmEndpointsWithNatMappings() != other.getNumVmEndpointsWithNatMappings())
+    if (hasMinExtraNatIpsNeeded() != other.hasMinExtraNatIpsNeeded()) return false;
+    if (hasMinExtraNatIpsNeeded()) {
+      if (getMinExtraNatIpsNeeded() != other.getMinExtraNatIpsNeeded()) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNumVmEndpointsWithNatMappings() != other.hasNumVmEndpointsWithNatMappings())
       return false;
+    if (hasNumVmEndpointsWithNatMappings()) {
+      if (getNumVmEndpointsWithNatMappings() != other.getNumVmEndpointsWithNatMappings())
+        return false;
+    }
     if (!getUserAllocatedNatIpResourcesList().equals(other.getUserAllocatedNatIpResourcesList()))
       return false;
     if (!getUserAllocatedNatIpsList().equals(other.getUserAllocatedNatIpsList())) return false;
@@ -737,12 +795,18 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + DRAIN_USER_ALLOCATED_NAT_IPS_FIELD_NUMBER;
       hash = (53 * hash) + getDrainUserAllocatedNatIpsList().hashCode();
     }
-    hash = (37 * hash) + MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER;
-    hash = (53 * hash) + getMinExtraNatIpsNeeded();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER;
-    hash = (53 * hash) + getNumVmEndpointsWithNatMappings();
+    if (hasMinExtraNatIpsNeeded()) {
+      hash = (37 * hash) + MIN_EXTRA_NAT_IPS_NEEDED_FIELD_NUMBER;
+      hash = (53 * hash) + getMinExtraNatIpsNeeded();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNumVmEndpointsWithNatMappings()) {
+      hash = (37 * hash) + NUM_VM_ENDPOINTS_WITH_NAT_MAPPINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumVmEndpointsWithNatMappings();
+    }
     if (getUserAllocatedNatIpResourcesCount() > 0) {
       hash = (37 * hash) + USER_ALLOCATED_NAT_IP_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getUserAllocatedNatIpResourcesList().hashCode();
@@ -903,15 +967,15 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       minExtraNatIpsNeeded_ = 0;
-
-      name_ = "";
-
-      numVmEndpointsWithNatMappings_ = 0;
-
-      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
+      numVmEndpointsWithNatMappings_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -940,6 +1004,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       com.google.cloud.compute.v1.RouterStatusNatStatus result =
           new com.google.cloud.compute.v1.RouterStatusNatStatus(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         autoAllocatedNatIps_ = autoAllocatedNatIps_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -955,19 +1020,29 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_;
-      result.minExtraNatIpsNeeded_ = minExtraNatIpsNeeded_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.minExtraNatIpsNeeded_ = minExtraNatIpsNeeded_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.name_ = name_;
-      result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
         userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.userAllocatedNatIpResources_ = userAllocatedNatIpResources_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIps_ = userAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.userAllocatedNatIps_ = userAllocatedNatIps_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1048,20 +1123,21 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         }
         onChanged();
       }
-      if (other.getMinExtraNatIpsNeeded() != 0) {
+      if (other.hasMinExtraNatIpsNeeded()) {
         setMinExtraNatIpsNeeded(other.getMinExtraNatIpsNeeded());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000010;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getNumVmEndpointsWithNatMappings() != 0) {
+      if (other.hasNumVmEndpointsWithNatMappings()) {
         setNumVmEndpointsWithNatMappings(other.getNumVmEndpointsWithNatMappings());
       }
       if (!other.userAllocatedNatIpResources_.isEmpty()) {
         if (userAllocatedNatIpResources_.isEmpty()) {
           userAllocatedNatIpResources_ = other.userAllocatedNatIpResources_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureUserAllocatedNatIpResourcesIsMutable();
           userAllocatedNatIpResources_.addAll(other.userAllocatedNatIpResources_);
@@ -1071,7 +1147,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.userAllocatedNatIps_.isEmpty()) {
         if (userAllocatedNatIps_.isEmpty()) {
           userAllocatedNatIps_ = other.userAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureUserAllocatedNatIpsIsMutable();
           userAllocatedNatIps_.addAll(other.userAllocatedNatIps_);
@@ -1126,7 +1202,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @return A list containing the autoAllocatedNatIps.
      */
@@ -1140,7 +1216,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @return The count of autoAllocatedNatIps.
      */
@@ -1154,7 +1230,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param index The index of the element to return.
      * @return The autoAllocatedNatIps at the given index.
@@ -1169,7 +1245,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the autoAllocatedNatIps at the given index.
@@ -1184,7 +1260,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param index The index to set the value at.
      * @param value The autoAllocatedNatIps to set.
@@ -1206,7 +1282,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param value The autoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1227,7 +1303,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param values The autoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1245,7 +1321,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @return This builder for chaining.
      */
@@ -1262,7 +1338,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
      * </pre>
      *
-     * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
+     * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
      *
      * @param value The bytes of the autoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1295,7 +1371,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @return A list containing the drainAutoAllocatedNatIps.
      */
@@ -1309,7 +1385,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @return The count of drainAutoAllocatedNatIps.
      */
@@ -1323,7 +1399,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param index The index of the element to return.
      * @return The drainAutoAllocatedNatIps at the given index.
@@ -1338,7 +1414,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the drainAutoAllocatedNatIps at the given index.
@@ -1353,7 +1429,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param index The index to set the value at.
      * @param value The drainAutoAllocatedNatIps to set.
@@ -1375,7 +1451,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param value The drainAutoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1396,7 +1472,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param values The drainAutoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1414,7 +1490,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @return This builder for chaining.
      */
@@ -1431,7 +1507,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
+     * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
      *
      * @param value The bytes of the drainAutoAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1464,7 +1540,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @return A list containing the drainUserAllocatedNatIps.
      */
@@ -1478,7 +1554,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @return The count of drainUserAllocatedNatIps.
      */
@@ -1492,7 +1568,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param index The index of the element to return.
      * @return The drainUserAllocatedNatIps at the given index.
@@ -1507,7 +1583,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the drainUserAllocatedNatIps at the given index.
@@ -1522,7 +1598,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param index The index to set the value at.
      * @param value The drainUserAllocatedNatIps to set.
@@ -1544,7 +1620,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param value The drainUserAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1565,7 +1641,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param values The drainUserAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1583,7 +1659,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @return This builder for chaining.
      */
@@ -1600,7 +1676,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
      * </pre>
      *
-     * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
+     * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
      *
      * @param value The bytes of the drainUserAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -1624,7 +1700,22 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 97350882;</code>
+     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+     *
+     * @return Whether the minExtraNatIpsNeeded field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinExtraNatIpsNeeded() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
+     * </pre>
+     *
+     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @return The minExtraNatIpsNeeded.
      */
@@ -1639,13 +1730,13 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 97350882;</code>
+     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @param value The minExtraNatIpsNeeded to set.
      * @return This builder for chaining.
      */
     public Builder setMinExtraNatIpsNeeded(int value) {
-
+      bitField0_ |= 0x00000008;
       minExtraNatIpsNeeded_ = value;
       onChanged();
       return this;
@@ -1657,18 +1748,32 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
      * </pre>
      *
-     * <code>int32 min_extra_nat_ips_needed = 97350882;</code>
+     * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinExtraNatIpsNeeded() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       minExtraNatIpsNeeded_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique name of this NAT.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1729,7 +1834,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -1746,7 +1851,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1768,7 +1873,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -1782,7 +1887,22 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
+     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+     *
+     * @return Whether the numVmEndpointsWithNatMappings field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumVmEndpointsWithNatMappings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of VM endpoints (i.e., Nics) that can use NAT.
+     * </pre>
+     *
+     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @return The numVmEndpointsWithNatMappings.
      */
@@ -1797,13 +1917,13 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
+     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @param value The numVmEndpointsWithNatMappings to set.
      * @return This builder for chaining.
      */
     public Builder setNumVmEndpointsWithNatMappings(int value) {
-
+      bitField0_ |= 0x00000020;
       numVmEndpointsWithNatMappings_ = value;
       onChanged();
       return this;
@@ -1815,12 +1935,12 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * Number of VM endpoints (i.e., Nics) that can use NAT.
      * </pre>
      *
-     * <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
+     * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNumVmEndpointsWithNatMappings() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       numVmEndpointsWithNatMappings_ = 0;
       onChanged();
       return this;
@@ -1830,10 +1950,10 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUserAllocatedNatIpResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         userAllocatedNatIpResources_ =
             new com.google.protobuf.LazyStringArrayList(userAllocatedNatIpResources_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -1968,7 +2088,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      */
     public Builder clearUserAllocatedNatIpResources() {
       userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1999,9 +2119,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUserAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         userAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList(userAllocatedNatIps_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2011,7 +2131,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @return A list containing the userAllocatedNatIps.
      */
@@ -2025,7 +2145,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @return The count of userAllocatedNatIps.
      */
@@ -2039,7 +2159,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param index The index of the element to return.
      * @return The userAllocatedNatIps at the given index.
@@ -2054,7 +2174,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the userAllocatedNatIps at the given index.
@@ -2069,7 +2189,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param index The index to set the value at.
      * @param value The userAllocatedNatIps to set.
@@ -2091,7 +2211,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param value The userAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -2112,7 +2232,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param values The userAllocatedNatIps to add.
      * @return This builder for chaining.
@@ -2130,13 +2250,13 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearUserAllocatedNatIps() {
       userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2147,7 +2267,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
      * </pre>
      *
-     * <code>repeated string user_allocated_nat_ips = 238442786;</code>
+     * <code>repeated string user_allocated_nat_ips = 506878242;</code>
      *
      * @param value The bytes of the userAllocatedNatIps to add.
      * @return This builder for chaining.

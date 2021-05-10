@@ -60,6 +60,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
           case 1943302074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               minCpuPlatform_ = s;
               break;
             }
@@ -111,8 +112,24 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 242912759;
   private volatile java.lang.Object minCpuPlatform_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu/platform this instance should be started at.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinCpuPlatform() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -174,7 +191,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 242912759, minCpuPlatform_);
     }
     unknownFields.writeTo(output);
@@ -186,7 +203,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
     }
     size += unknownFields.getSerializedSize();
@@ -205,7 +222,10 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest other =
         (com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest) obj;
 
-    if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (hasMinCpuPlatform() != other.hasMinCpuPlatform()) return false;
+    if (hasMinCpuPlatform()) {
+      if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -217,8 +237,10 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    if (hasMinCpuPlatform()) {
+      hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,7 +387,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     public Builder clear() {
       super.clear();
       minCpuPlatform_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -394,7 +416,13 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest buildPartial() {
       com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest result =
           new com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.minCpuPlatform_ = minCpuPlatform_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -446,7 +474,8 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       if (other
           == com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest.getDefaultInstance())
         return this;
-      if (!other.getMinCpuPlatform().isEmpty()) {
+      if (other.hasMinCpuPlatform()) {
+        bitField0_ |= 0x00000001;
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
@@ -481,7 +510,23 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object minCpuPlatform_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Minimum cpu/platform this instance should be started at.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 242912759;</code>
+     *
+     * @return Whether the minCpuPlatform field is set.
+     */
+    public boolean hasMinCpuPlatform() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -542,7 +587,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       minCpuPlatform_ = value;
       onChanged();
       return this;
@@ -559,7 +604,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
       return this;
@@ -581,7 +626,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       minCpuPlatform_ = value;
       onChanged();
       return this;

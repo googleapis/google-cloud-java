@@ -61,6 +61,7 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,16 +79,17 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
               securityPolicy_ = s;
               break;
             }
-          case 1413729568:
-            {
-              priority_ = input.readInt32();
-              break;
-            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -733754080:
+            {
+              bitField0_ |= 0x00000001;
+              priority_ = input.readInt32();
               break;
             }
           default:
@@ -124,7 +126,8 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest.Builder.class);
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  private int bitField0_;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -133,7 +136,22 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
    * The priority of the rule to get from the security policy.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the rule to get from the security policy.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -257,11 +275,11 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (!getSecurityPolicyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
-    if (priority_ != 0) {
-      output.writeInt32(176716196, priority_);
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -275,11 +293,11 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (!getSecurityPolicyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
-    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,7 +315,10 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest other =
         (com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest) obj;
 
-    if (getPriority() != other.getPriority()) return false;
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -311,8 +332,10 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
@@ -464,7 +487,7 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       priority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       securityPolicy_ = "";
@@ -496,9 +519,15 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest result =
           new com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest(this);
-      result.priority_ = priority_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
       result.securityPolicy_ = securityPolicy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -549,7 +578,7 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest other) {
       if (other == com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest.getDefaultInstance())
         return this;
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
       if (!other.getProject().isEmpty()) {
@@ -590,6 +619,8 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private int priority_;
     /**
      *
@@ -598,7 +629,22 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority of the rule to get from the security policy.
+     * </pre>
+     *
+     * <code>int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -613,13 +659,13 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00000001;
       priority_ = value;
       onChanged();
       return this;
@@ -631,12 +677,12 @@ public final class GetRuleSecurityPolicyRequest extends com.google.protobuf.Gene
      * The priority of the rule to get from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       priority_ = 0;
       onChanged();
       return this;

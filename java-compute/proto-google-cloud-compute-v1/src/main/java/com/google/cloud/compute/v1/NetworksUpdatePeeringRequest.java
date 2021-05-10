@@ -57,6 +57,7 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,10 +68,10 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
           case 0:
             done = true;
             break;
-          case 483930490:
+          case -1663553158:
             {
               com.google.cloud.compute.v1.NetworkPeering.Builder subBuilder = null;
-              if (networkPeering_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = networkPeering_.toBuilder();
               }
               networkPeering_ =
@@ -80,7 +81,7 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
                 subBuilder.mergeFrom(networkPeering_);
                 networkPeering_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -117,19 +118,20 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.NetworksUpdatePeeringRequest.Builder.class);
   }
 
-  public static final int NETWORK_PEERING_FIELD_NUMBER = 60491311;
+  private int bitField0_;
+  public static final int NETWORK_PEERING_FIELD_NUMBER = 328926767;
   private com.google.cloud.compute.v1.NetworkPeering networkPeering_;
   /**
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return Whether the networkPeering field is set.
    */
   @java.lang.Override
   public boolean hasNetworkPeering() {
-    return networkPeering_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
    *
    * @return The networkPeering.
    */
@@ -139,10 +141,12 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.NetworkPeering.getDefaultInstance()
         : networkPeering_;
   }
-  /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+  /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder() {
-    return getNetworkPeering();
+    return networkPeering_ == null
+        ? com.google.cloud.compute.v1.NetworkPeering.getDefaultInstance()
+        : networkPeering_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -159,8 +163,8 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (networkPeering_ != null) {
-      output.writeMessage(60491311, getNetworkPeering());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(328926767, getNetworkPeering());
     }
     unknownFields.writeTo(output);
   }
@@ -171,9 +175,9 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (networkPeering_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(60491311, getNetworkPeering());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(328926767, getNetworkPeering());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -349,7 +353,9 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getNetworkPeeringFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -358,9 +364,9 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
       if (networkPeeringBuilder_ == null) {
         networkPeering_ = null;
       } else {
-        networkPeering_ = null;
-        networkPeeringBuilder_ = null;
+        networkPeeringBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -388,11 +394,17 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.NetworksUpdatePeeringRequest buildPartial() {
       com.google.cloud.compute.v1.NetworksUpdatePeeringRequest result =
           new com.google.cloud.compute.v1.NetworksUpdatePeeringRequest(this);
-      if (networkPeeringBuilder_ == null) {
-        result.networkPeering_ = networkPeering_;
-      } else {
-        result.networkPeering_ = networkPeeringBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (networkPeeringBuilder_ == null) {
+          result.networkPeering_ = networkPeering_;
+        } else {
+          result.networkPeering_ = networkPeeringBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -476,6 +488,8 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.NetworkPeering networkPeering_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkPeering,
@@ -483,15 +497,15 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.NetworkPeeringOrBuilder>
         networkPeeringBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      *
      * @return Whether the networkPeering field is set.
      */
     public boolean hasNetworkPeering() {
-      return networkPeeringBuilder_ != null || networkPeering_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
+     * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
      *
      * @return The networkPeering.
      */
@@ -504,7 +518,7 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
         return networkPeeringBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public Builder setNetworkPeering(com.google.cloud.compute.v1.NetworkPeering value) {
       if (networkPeeringBuilder_ == null) {
         if (value == null) {
@@ -515,10 +529,10 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
       } else {
         networkPeeringBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public Builder setNetworkPeering(
         com.google.cloud.compute.v1.NetworkPeering.Builder builderForValue) {
       if (networkPeeringBuilder_ == null) {
@@ -527,13 +541,15 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
       } else {
         networkPeeringBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public Builder mergeNetworkPeering(com.google.cloud.compute.v1.NetworkPeering value) {
       if (networkPeeringBuilder_ == null) {
-        if (networkPeering_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && networkPeering_ != null
+            && networkPeering_ != com.google.cloud.compute.v1.NetworkPeering.getDefaultInstance()) {
           networkPeering_ =
               com.google.cloud.compute.v1.NetworkPeering.newBuilder(networkPeering_)
                   .mergeFrom(value)
@@ -545,28 +561,27 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
       } else {
         networkPeeringBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public Builder clearNetworkPeering() {
       if (networkPeeringBuilder_ == null) {
         networkPeering_ = null;
         onChanged();
       } else {
-        networkPeering_ = null;
-        networkPeeringBuilder_ = null;
+        networkPeeringBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public com.google.cloud.compute.v1.NetworkPeering.Builder getNetworkPeeringBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNetworkPeeringFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     public com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder() {
       if (networkPeeringBuilder_ != null) {
         return networkPeeringBuilder_.getMessageOrBuilder();
@@ -576,7 +591,7 @@ public final class NetworksUpdatePeeringRequest extends com.google.protobuf.Gene
             : networkPeering_;
       }
     }
-    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
+    /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkPeering,
             com.google.cloud.compute.v1.NetworkPeering.Builder,

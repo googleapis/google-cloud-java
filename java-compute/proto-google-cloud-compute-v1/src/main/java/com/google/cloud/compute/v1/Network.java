@@ -84,89 +84,96 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               id_ = s;
               break;
             }
           case 867696:
             {
+              bitField0_ |= 0x00000080;
               mtu_ = input.readInt32();
               break;
             }
           case 15827634:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               iPv4Range_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
               break;
             }
           case 559065498:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000200;
               }
               peerings_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.NetworkPeering.parser(), extensionRegistry));
               break;
             }
-          case 1179341354:
+          case 1429431018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              bitField0_ |= 0x00000008;
+              gatewayIPv4_ = s;
+              break;
+            }
+          case 2049253520:
+            {
+              bitField0_ |= 0x00000001;
+              autoCreateSubnetworks_ = input.readBool();
+              break;
+            }
+          case -968142294:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 subnetworks_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00001000;
               }
               subnetworks_.add(s);
               break;
             }
-          case 1236017122:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               description_ = s;
               break;
             }
-          case 1429431018:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              gatewayIPv4_ = s;
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               selfLink_ = s;
               break;
             }
-          case 2040964826:
+          case -106518822:
             {
               com.google.cloud.compute.v1.NetworkRoutingConfig.Builder subBuilder = null;
-              if (routingConfig_ != null) {
+              if (((bitField0_ & 0x00000200) != 0)) {
                 subBuilder = routingConfig_.toBuilder();
               }
               routingConfig_ =
@@ -176,12 +183,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(routingConfig_);
                 routingConfig_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 2049253520:
-            {
-              autoCreateSubnetworks_ = input.readBool();
+              bitField0_ |= 0x00000200;
               break;
             }
           default:
@@ -198,10 +200,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         peerings_ = java.util.Collections.unmodifiableList(peerings_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         subnetworks_ = subnetworks_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -224,8 +226,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Network.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER = 256156690;
   private boolean autoCreateSubnetworks_;
+  /**
+   *
+   *
+   * <pre>
+   * Must be set to create a VPC network. If not set, a legacy network is created.
+   * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
+   * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
+   * For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+   * </pre>
+   *
+   * <code>bool auto_create_subnetworks = 256156690;</code>
+   *
+   * @return Whether the autoCreateSubnetworks field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoCreateSubnetworks() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -247,6 +268,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -294,7 +330,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -303,7 +339,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -326,7 +377,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -345,6 +396,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GATEWAY_I_PV4_FIELD_NUMBER = 178678877;
   private volatile java.lang.Object gatewayIPv4_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * </pre>
+   *
+   * <code>string gateway_i_pv4 = 178678877;</code>
+   *
+   * @return Whether the gatewayIPv4 field is set.
+   */
+  @java.lang.Override
+  public boolean hasGatewayIPv4() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -403,6 +469,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string i_pv4_range = 1978454;</code>
    *
+   * @return Whether the iPv4Range field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPv4Range() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string i_pv4_range = 1978454;</code>
+   *
    * @return The iPv4Range.
    */
   @java.lang.Override
@@ -443,6 +524,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -501,6 +597,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#network for networks.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -550,6 +661,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 mtu = 108462;</code>
    *
+   * @return Whether the mtu field is set.
+   */
+  @java.lang.Override
+  public boolean hasMtu() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+   * </pre>
+   *
+   * <code>int32 mtu = 108462;</code>
+   *
    * @return The mtu.
    */
   @java.lang.Override
@@ -559,6 +685,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -675,7 +816,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     return peerings_.get(index);
   }
 
-  public static final int ROUTING_CONFIG_FIELD_NUMBER = 255120603;
+  public static final int ROUTING_CONFIG_FIELD_NUMBER = 523556059;
   private com.google.cloud.compute.v1.NetworkRoutingConfig routingConfig_;
   /**
    *
@@ -684,13 +825,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return Whether the routingConfig field is set.
    */
   @java.lang.Override
   public boolean hasRoutingConfig() {
-    return routingConfig_ != null;
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -699,7 +840,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return The routingConfig.
    */
@@ -716,14 +857,16 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder() {
-    return getRoutingConfig();
+    return routingConfig_ == null
+        ? com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()
+        : routingConfig_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -732,7 +875,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -755,7 +913,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -772,7 +930,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SUBNETWORKS_FIELD_NUMBER = 147417669;
+  public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
   private com.google.protobuf.LazyStringList subnetworks_;
   /**
    *
@@ -781,7 +939,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @return A list containing the subnetworks.
    */
@@ -795,7 +953,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @return The count of subnetworks.
    */
@@ -809,7 +967,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @param index The index of the element to return.
    * @return The subnetworks at the given index.
@@ -824,7 +982,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subnetworks at the given index.
@@ -847,44 +1005,44 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (mtu_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(108462, mtu_);
     }
-    if (!getIPv4RangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1978454, iPv4Range_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     for (int i = 0; i < peerings_.size(); i++) {
       output.writeMessage(69883187, peerings_.get(i));
     }
-    for (int i = 0; i < subnetworks_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 147417669, subnetworks_.getRaw(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getGatewayIPv4Bytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178678877, gatewayIPv4_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (routingConfig_ != null) {
-      output.writeMessage(255120603, getRoutingConfig());
-    }
-    if (autoCreateSubnetworks_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(256156690, autoCreateSubnetworks_);
+    }
+    for (int i = 0; i < subnetworks_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 415853125, subnetworks_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(523556059, getRoutingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -895,27 +1053,34 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (mtu_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
     }
-    if (!getIPv4RangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1978454, iPv4Range_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     for (int i = 0; i < peerings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(69883187, peerings_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
     }
     {
       int dataSize = 0;
@@ -925,22 +1090,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSubnetworksList().size();
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (!getGatewayIPv4Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (routingConfig_ != null) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(255120603, getRoutingConfig());
-    }
-    if (autoCreateSubnetworks_ != false) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
+          com.google.protobuf.CodedOutputStream.computeMessageSize(523556059, getRoutingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -957,21 +1115,51 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Network other = (com.google.cloud.compute.v1.Network) obj;
 
-    if (getAutoCreateSubnetworks() != other.getAutoCreateSubnetworks()) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getGatewayIPv4().equals(other.getGatewayIPv4())) return false;
-    if (!getIPv4Range().equals(other.getIPv4Range())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (getMtu() != other.getMtu()) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasAutoCreateSubnetworks() != other.hasAutoCreateSubnetworks()) return false;
+    if (hasAutoCreateSubnetworks()) {
+      if (getAutoCreateSubnetworks() != other.getAutoCreateSubnetworks()) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasGatewayIPv4() != other.hasGatewayIPv4()) return false;
+    if (hasGatewayIPv4()) {
+      if (!getGatewayIPv4().equals(other.getGatewayIPv4())) return false;
+    }
+    if (hasIPv4Range() != other.hasIPv4Range()) return false;
+    if (hasIPv4Range()) {
+      if (!getIPv4Range().equals(other.getIPv4Range())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasMtu() != other.hasMtu()) return false;
+    if (hasMtu()) {
+      if (getMtu() != other.getMtu()) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!getPeeringsList().equals(other.getPeeringsList())) return false;
     if (hasRoutingConfig() != other.hasRoutingConfig()) return false;
     if (hasRoutingConfig()) {
       if (!getRoutingConfig().equals(other.getRoutingConfig())) return false;
     }
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!getSubnetworksList().equals(other.getSubnetworksList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -984,24 +1172,42 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateSubnetworks());
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + GATEWAY_I_PV4_FIELD_NUMBER;
-    hash = (53 * hash) + getGatewayIPv4().hashCode();
-    hash = (37 * hash) + I_PV4_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getIPv4Range().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + MTU_FIELD_NUMBER;
-    hash = (53 * hash) + getMtu();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasAutoCreateSubnetworks()) {
+      hash = (37 * hash) + AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateSubnetworks());
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasGatewayIPv4()) {
+      hash = (37 * hash) + GATEWAY_I_PV4_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayIPv4().hashCode();
+    }
+    if (hasIPv4Range()) {
+      hash = (37 * hash) + I_PV4_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIPv4Range().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasMtu()) {
+      hash = (37 * hash) + MTU_FIELD_NUMBER;
+      hash = (53 * hash) + getMtu();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (getPeeringsCount() > 0) {
       hash = (37 * hash) + PEERINGS_FIELD_NUMBER;
       hash = (53 * hash) + getPeeringsList().hashCode();
@@ -1010,8 +1216,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ROUTING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingConfig().hashCode();
     }
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (getSubnetworksCount() > 0) {
       hash = (37 * hash) + SUBNETWORKS_FIELD_NUMBER;
       hash = (53 * hash) + getSubnetworksList().hashCode();
@@ -1157,6 +1365,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPeeringsFieldBuilder();
+        getRoutingConfigFieldBuilder();
       }
     }
 
@@ -1164,39 +1373,39 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       autoCreateSubnetworks_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       gatewayIPv4_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       iPv4Range_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       mtu_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         peeringsBuilder_.clear();
       }
       if (routingConfigBuilder_ == null) {
         routingConfig_ = null;
       } else {
-        routingConfig_ = null;
-        routingConfigBuilder_ = null;
+        routingConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1224,35 +1433,70 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Network buildPartial() {
       com.google.cloud.compute.v1.Network result = new com.google.cloud.compute.v1.Network(this);
       int from_bitField0_ = bitField0_;
-      result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.gatewayIPv4_ = gatewayIPv4_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.iPv4Range_ = iPv4Range_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.kind_ = kind_;
-      result.mtu_ = mtu_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.mtu_ = mtu_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.name_ = name_;
       if (peeringsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           peerings_ = java.util.Collections.unmodifiableList(peerings_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.peerings_ = peerings_;
       } else {
         result.peerings_ = peeringsBuilder_.build();
       }
-      if (routingConfigBuilder_ == null) {
-        result.routingConfig_ = routingConfig_;
-      } else {
-        result.routingConfig_ = routingConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (routingConfigBuilder_ == null) {
+          result.routingConfig_ = routingConfig_;
+        } else {
+          result.routingConfig_ = routingConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
       }
       result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         subnetworks_ = subnetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.subnetworks_ = subnetworks_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1302,37 +1546,44 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Network other) {
       if (other == com.google.cloud.compute.v1.Network.getDefaultInstance()) return this;
-      if (other.getAutoCreateSubnetworks() != false) {
+      if (other.hasAutoCreateSubnetworks()) {
         setAutoCreateSubnetworks(other.getAutoCreateSubnetworks());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getGatewayIPv4().isEmpty()) {
+      if (other.hasGatewayIPv4()) {
+        bitField0_ |= 0x00000008;
         gatewayIPv4_ = other.gatewayIPv4_;
         onChanged();
       }
-      if (!other.getIPv4Range().isEmpty()) {
+      if (other.hasIPv4Range()) {
+        bitField0_ |= 0x00000010;
         iPv4Range_ = other.iPv4Range_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000020;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
-      if (other.getMtu() != 0) {
+      if (other.hasMtu()) {
         setMtu(other.getMtu());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
@@ -1340,7 +1591,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         if (!other.peerings_.isEmpty()) {
           if (peerings_.isEmpty()) {
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensurePeeringsIsMutable();
             peerings_.addAll(other.peerings_);
@@ -1353,7 +1604,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             peeringsBuilder_.dispose();
             peeringsBuilder_ = null;
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
             peeringsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPeeringsFieldBuilder()
@@ -1366,14 +1617,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRoutingConfig()) {
         mergeRoutingConfig(other.getRoutingConfig());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000800;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -1424,6 +1676,24 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool auto_create_subnetworks = 256156690;</code>
      *
+     * @return Whether the autoCreateSubnetworks field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoCreateSubnetworks() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Must be set to create a VPC network. If not set, a legacy network is created.
+     * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
+     * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
+     * For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+     * </pre>
+     *
+     * <code>bool auto_create_subnetworks = 256156690;</code>
+     *
      * @return The autoCreateSubnetworks.
      */
     @java.lang.Override
@@ -1446,7 +1716,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoCreateSubnetworks(boolean value) {
-
+      bitField0_ |= 0x00000001;
       autoCreateSubnetworks_ = value;
       onChanged();
       return this;
@@ -1466,13 +1736,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoCreateSubnetworks() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoCreateSubnetworks_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1533,7 +1817,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1550,7 +1834,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1572,7 +1856,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1586,7 +1870,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this field when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1608,7 +1906,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1630,7 +1928,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1639,7 +1937,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1651,12 +1949,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1668,7 +1966,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1678,13 +1976,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object gatewayIPv4_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * </pre>
+     *
+     * <code>string gateway_i_pv4 = 178678877;</code>
+     *
+     * @return Whether the gatewayIPv4 field is set.
+     */
+    public boolean hasGatewayIPv4() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1745,7 +2057,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       gatewayIPv4_ = value;
       onChanged();
       return this;
@@ -1762,7 +2074,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayIPv4() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       gatewayIPv4_ = getDefaultInstance().getGatewayIPv4();
       onChanged();
       return this;
@@ -1784,13 +2096,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       gatewayIPv4_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object iPv4Range_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string i_pv4_range = 1978454;</code>
+     *
+     * @return Whether the iPv4Range field is set.
+     */
+    public boolean hasIPv4Range() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1851,7 +2177,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       iPv4Range_ = value;
       onChanged();
       return this;
@@ -1868,7 +2194,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIPv4Range() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       iPv4Range_ = getDefaultInstance().getIPv4Range();
       onChanged();
       return this;
@@ -1890,13 +2216,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       iPv4Range_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1957,7 +2297,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -1974,7 +2314,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1996,13 +2336,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#network for networks.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2063,7 +2417,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -2080,7 +2434,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2102,13 +2456,28 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private int mtu_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+     * </pre>
+     *
+     * <code>int32 mtu = 108462;</code>
+     *
+     * @return Whether the mtu field is set.
+     */
+    @java.lang.Override
+    public boolean hasMtu() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2137,7 +2506,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMtu(int value) {
-
+      bitField0_ |= 0x00000080;
       mtu_ = value;
       onChanged();
       return this;
@@ -2154,13 +2523,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       mtu_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2221,7 +2604,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2238,7 +2621,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2260,7 +2643,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2270,9 +2653,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePeeringsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>(peerings_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -2487,7 +2870,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPeerings() {
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         peeringsBuilder_.clear();
@@ -2609,7 +2992,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.NetworkPeering,
                 com.google.cloud.compute.v1.NetworkPeering.Builder,
                 com.google.cloud.compute.v1.NetworkPeeringOrBuilder>(
-                peerings_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                peerings_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         peerings_ = null;
       }
       return peeringsBuilder_;
@@ -2628,12 +3011,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      *
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return routingConfigBuilder_ != null || routingConfig_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2642,7 +3025,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      *
      * @return The routingConfig.
      */
@@ -2662,7 +3045,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public Builder setRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
@@ -2674,7 +3057,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -2684,7 +3067,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public Builder setRoutingConfig(
         com.google.cloud.compute.v1.NetworkRoutingConfig.Builder builderForValue) {
@@ -2694,7 +3077,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -2704,11 +3087,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public Builder mergeRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (routingConfig_ != null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && routingConfig_ != null
+            && routingConfig_
+                != com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()) {
           routingConfig_ =
               com.google.cloud.compute.v1.NetworkRoutingConfig.newBuilder(routingConfig_)
                   .mergeFrom(value)
@@ -2720,7 +3106,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -2730,17 +3116,16 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public Builder clearRoutingConfig() {
       if (routingConfigBuilder_ == null) {
         routingConfig_ = null;
         onChanged();
       } else {
-        routingConfig_ = null;
-        routingConfigBuilder_ = null;
+        routingConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
     /**
@@ -2750,10 +3135,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfig.Builder getRoutingConfigBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }
@@ -2764,7 +3149,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder() {
       if (routingConfigBuilder_ != null) {
@@ -2782,7 +3167,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkRoutingConfig,
@@ -2809,7 +3194,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2831,7 +3230,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2853,7 +3252,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2862,7 +3261,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2874,12 +3273,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2891,7 +3290,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2901,7 +3300,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2911,9 +3310,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -2923,7 +3322,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @return A list containing the subnetworks.
      */
@@ -2937,7 +3336,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @return The count of subnetworks.
      */
@@ -2951,7 +3350,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param index The index of the element to return.
      * @return The subnetworks at the given index.
@@ -2966,7 +3365,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the subnetworks at the given index.
@@ -2981,7 +3380,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param index The index to set the value at.
      * @param value The subnetworks to set.
@@ -3003,7 +3402,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param value The subnetworks to add.
      * @return This builder for chaining.
@@ -3024,7 +3423,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param values The subnetworks to add.
      * @return This builder for chaining.
@@ -3042,13 +3441,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubnetworks() {
       subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3059,7 +3458,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 147417669;</code>
+     * <code>repeated string subnetworks = 415853125;</code>
      *
      * @param value The bytes of the subnetworks to add.
      * @return This builder for chaining.

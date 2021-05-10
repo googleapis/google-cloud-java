@@ -87,7 +87,9 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteLicenseRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -180,10 +182,12 @@ public class HttpJsonLicensesStub extends LicensesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetIamPolicyLicenseRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields,
-                                  "optionsRequestedPolicyVersion",
-                                  request.getOptionsRequestedPolicyVersion());
+                              if (request.hasOptionsRequestedPolicyVersion()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "optionsRequestedPolicyVersion",
+                                    request.getOptionsRequestedPolicyVersion());
+                              }
                               return fields;
                             }
                           })
@@ -227,7 +231,9 @@ public class HttpJsonLicensesStub extends LicensesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<InsertLicenseRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -273,15 +279,26 @@ public class HttpJsonLicensesStub extends LicensesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListLicensesRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })

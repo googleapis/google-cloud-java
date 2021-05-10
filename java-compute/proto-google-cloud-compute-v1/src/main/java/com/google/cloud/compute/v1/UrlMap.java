@@ -93,57 +93,82 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               id_ = s;
-              break;
-            }
-          case 25830106:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pathMatchers_ = new java.util.ArrayList<com.google.cloud.compute.v1.PathMatcher>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              pathMatchers_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.PathMatcher.parser(), extensionRegistry));
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000200;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
               break;
             }
-          case 346955010:
+          case 882012426:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                tests_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTest>();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              tests_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.UrlMapTest.parser(), extensionRegistry));
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              region_ = s;
+              break;
+            }
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              fingerprint_ = s;
+              break;
+            }
+          case -2121653542:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                pathMatchers_ = new java.util.ArrayList<com.google.cloud.compute.v1.PathMatcher>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              pathMatchers_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.PathMatcher.parser(), extensionRegistry));
+              break;
+            }
+          case -1800528638:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 hostRules_ = new java.util.ArrayList<com.google.cloud.compute.v1.HostRule>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000080;
               }
               hostRules_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.HostRule.parser(), extensionRegistry));
               break;
             }
-          case 477135170:
+          case -1670348478:
             {
               com.google.cloud.compute.v1.HttpHeaderAction.Builder subBuilder = null;
-              if (headerAction_ != null) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = headerAction_.toBuilder();
               }
               headerAction_ =
@@ -153,13 +178,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(headerAction_);
                 headerAction_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000040;
               break;
             }
-          case 728543058:
+          case -1418940590:
             {
               com.google.cloud.compute.v1.HttpRedirectAction.Builder subBuilder = null;
-              if (defaultUrlRedirect_ != null) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = defaultUrlRedirect_.toBuilder();
               }
               defaultUrlRedirect_ =
@@ -169,31 +194,20 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(defaultUrlRedirect_);
                 defaultUrlRedirect_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000008;
               break;
             }
-          case 814454202:
+          case -1333029446:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               defaultService_ = s;
               break;
             }
-          case 882012426:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                tests_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTest>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              tests_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.UrlMapTest.parser(), extensionRegistry));
-              break;
-            }
-          case 883872082:
+          case -1263611566:
             {
               com.google.cloud.compute.v1.HttpRouteAction.Builder subBuilder = null;
-              if (defaultRouteAction_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = defaultRouteAction_.toBuilder();
               }
               defaultRouteAction_ =
@@ -203,35 +217,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(defaultRouteAction_);
                 defaultRouteAction_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
-          case 1111570338:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               description_ = s;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               selfLink_ = s;
-              break;
-            }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
               break;
             }
           default:
@@ -248,14 +248,14 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+        tests_ = java.util.Collections.unmodifiableList(tests_);
+      }
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         pathMatchers_ = java.util.Collections.unmodifiableList(pathMatchers_);
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         hostRules_ = java.util.Collections.unmodifiableList(hostRules_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        tests_ = java.util.Collections.unmodifiableList(tests_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -277,8 +277,24 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.UrlMap.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -326,7 +342,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEFAULT_ROUTE_ACTION_FIELD_NUMBER = 110484010;
+  public static final int DEFAULT_ROUTE_ACTION_FIELD_NUMBER = 378919466;
   private com.google.cloud.compute.v1.HttpRouteAction defaultRouteAction_;
   /**
    *
@@ -338,13 +354,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
    *
    * @return Whether the defaultRouteAction field is set.
    */
   @java.lang.Override
   public boolean hasDefaultRouteAction() {
-    return defaultRouteAction_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -356,7 +372,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
    *
    * @return The defaultRouteAction.
    */
@@ -376,14 +392,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder() {
-    return getDefaultRouteAction();
+    return defaultRouteAction_ == null
+        ? com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()
+        : defaultRouteAction_;
   }
 
-  public static final int DEFAULT_SERVICE_FIELD_NUMBER = 101806775;
+  public static final int DEFAULT_SERVICE_FIELD_NUMBER = 370242231;
   private volatile java.lang.Object defaultService_;
   /**
    *
@@ -394,7 +412,24 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 101806775;</code>
+   * <code>string default_service = 370242231;</code>
+   *
+   * @return Whether the defaultService field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultService() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
+   * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
+   * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>string default_service = 370242231;</code>
    *
    * @return The defaultService.
    */
@@ -419,7 +454,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 101806775;</code>
+   * <code>string default_service = 370242231;</code>
    *
    * @return The bytes for defaultService.
    */
@@ -436,7 +471,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEFAULT_URL_REDIRECT_FIELD_NUMBER = 91067882;
+  public static final int DEFAULT_URL_REDIRECT_FIELD_NUMBER = 359503338;
   private com.google.cloud.compute.v1.HttpRedirectAction defaultUrlRedirect_;
   /**
    *
@@ -447,13 +482,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
    *
    * @return Whether the defaultUrlRedirect field is set.
    */
   @java.lang.Override
   public boolean hasDefaultUrlRedirect() {
-    return defaultUrlRedirect_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -464,7 +499,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
    *
    * @return The defaultUrlRedirect.
    */
@@ -483,14 +518,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getDefaultUrlRedirectOrBuilder() {
-    return getDefaultUrlRedirect();
+    return defaultUrlRedirect_ == null
+        ? com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()
+        : defaultUrlRedirect_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -499,7 +536,22 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -522,7 +574,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -541,6 +593,22 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -590,7 +658,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int HEADER_ACTION_FIELD_NUMBER = 59641896;
+  public static final int HEADER_ACTION_FIELD_NUMBER = 328077352;
   private com.google.cloud.compute.v1.HttpHeaderAction headerAction_;
   /**
    *
@@ -602,13 +670,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return Whether the headerAction field is set.
    */
   @java.lang.Override
   public boolean hasHeaderAction() {
-    return headerAction_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -620,7 +688,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    *
    * @return The headerAction.
    */
@@ -640,14 +708,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
-    return getHeaderAction();
+    return headerAction_ == null
+        ? com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()
+        : headerAction_;
   }
 
-  public static final int HOST_RULES_FIELD_NUMBER = 43369376;
+  public static final int HOST_RULES_FIELD_NUMBER = 311804832;
   private java.util.List<com.google.cloud.compute.v1.HostRule> hostRules_;
   /**
    *
@@ -656,7 +726,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.HostRule> getHostRulesList() {
@@ -669,7 +739,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.HostRuleOrBuilder>
@@ -683,7 +753,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   @java.lang.Override
   public int getHostRulesCount() {
@@ -696,7 +766,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HostRule getHostRules(int index) {
@@ -709,7 +779,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HostRuleOrBuilder getHostRulesOrBuilder(int index) {
@@ -718,6 +788,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -776,6 +861,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -825,6 +925,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -863,7 +978,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PATH_MATCHERS_FIELD_NUMBER = 3228763;
+  public static final int PATH_MATCHERS_FIELD_NUMBER = 271664219;
   private java.util.List<com.google.cloud.compute.v1.PathMatcher> pathMatchers_;
   /**
    *
@@ -872,7 +987,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.PathMatcher> getPathMatchersList() {
@@ -885,7 +1000,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.PathMatcherOrBuilder>
@@ -899,7 +1014,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   @java.lang.Override
   public int getPathMatchersCount() {
@@ -912,7 +1027,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PathMatcher getPathMatchers(int index) {
@@ -925,7 +1040,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PathMatcherOrBuilder getPathMatchersOrBuilder(int index) {
@@ -934,6 +1049,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
   /**
    *
    *
@@ -981,7 +1111,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -990,7 +1120,22 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1013,7 +1158,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1118,50 +1263,50 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    for (int i = 0; i < pathMatchers_.size(); i++) {
-      output.writeMessage(3228763, pathMatchers_.get(i));
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
-    }
-    for (int i = 0; i < hostRules_.size(); i++) {
-      output.writeMessage(43369376, hostRules_.get(i));
-    }
-    if (headerAction_ != null) {
-      output.writeMessage(59641896, getHeaderAction());
-    }
-    if (defaultUrlRedirect_ != null) {
-      output.writeMessage(91067882, getDefaultUrlRedirect());
-    }
-    if (!getDefaultServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 101806775, defaultService_);
     }
     for (int i = 0; i < tests_.size(); i++) {
       output.writeMessage(110251553, tests_.get(i));
     }
-    if (defaultRouteAction_ != null) {
-      output.writeMessage(110484010, getDefaultRouteAction());
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    }
+    for (int i = 0; i < pathMatchers_.size(); i++) {
+      output.writeMessage(271664219, pathMatchers_.get(i));
+    }
+    for (int i = 0; i < hostRules_.size(); i++) {
+      output.writeMessage(311804832, hostRules_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(328077352, getHeaderAction());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(359503338, getDefaultUrlRedirect());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 370242231, defaultService_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(378919466, getDefaultRouteAction());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -1172,56 +1317,58 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    for (int i = 0; i < pathMatchers_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(3228763, pathMatchers_.get(i));
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
-    }
-    for (int i = 0; i < hostRules_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43369376, hostRules_.get(i));
-    }
-    if (headerAction_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(59641896, getHeaderAction());
-    }
-    if (defaultUrlRedirect_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              91067882, getDefaultUrlRedirect());
-    }
-    if (!getDefaultServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101806775, defaultService_);
     }
     for (int i = 0; i < tests_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(110251553, tests_.get(i));
     }
-    if (defaultRouteAction_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              110484010, getDefaultRouteAction());
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
+    for (int i = 0; i < pathMatchers_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(271664219, pathMatchers_.get(i));
+    }
+    for (int i = 0; i < hostRules_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(311804832, hostRules_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              359503338, getDefaultUrlRedirect());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(370242231, defaultService_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              378919466, getDefaultRouteAction());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1238,29 +1385,56 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.UrlMap other = (com.google.cloud.compute.v1.UrlMap) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
     if (hasDefaultRouteAction() != other.hasDefaultRouteAction()) return false;
     if (hasDefaultRouteAction()) {
       if (!getDefaultRouteAction().equals(other.getDefaultRouteAction())) return false;
     }
-    if (!getDefaultService().equals(other.getDefaultService())) return false;
+    if (hasDefaultService() != other.hasDefaultService()) return false;
+    if (hasDefaultService()) {
+      if (!getDefaultService().equals(other.getDefaultService())) return false;
+    }
     if (hasDefaultUrlRedirect() != other.hasDefaultUrlRedirect()) return false;
     if (hasDefaultUrlRedirect()) {
       if (!getDefaultUrlRedirect().equals(other.getDefaultUrlRedirect())) return false;
     }
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
     if (hasHeaderAction() != other.hasHeaderAction()) return false;
     if (hasHeaderAction()) {
       if (!getHeaderAction().equals(other.getHeaderAction())) return false;
     }
     if (!getHostRulesList().equals(other.getHostRulesList())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!getPathMatchersList().equals(other.getPathMatchersList())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!getTestsList().equals(other.getTestsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1273,22 +1447,30 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
     if (hasDefaultRouteAction()) {
       hash = (37 * hash) + DEFAULT_ROUTE_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultRouteAction().hashCode();
     }
-    hash = (37 * hash) + DEFAULT_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getDefaultService().hashCode();
+    if (hasDefaultService()) {
+      hash = (37 * hash) + DEFAULT_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultService().hashCode();
+    }
     if (hasDefaultUrlRedirect()) {
       hash = (37 * hash) + DEFAULT_URL_REDIRECT_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultUrlRedirect().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
     if (hasHeaderAction()) {
       hash = (37 * hash) + HEADER_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getHeaderAction().hashCode();
@@ -1297,20 +1479,30 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HOST_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getHostRulesList().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (getPathMatchersCount() > 0) {
       hash = (37 * hash) + PATH_MATCHERS_FIELD_NUMBER;
       hash = (53 * hash) + getPathMatchersList().hashCode();
     }
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (getTestsCount() > 0) {
       hash = (37 * hash) + TESTS_FIELD_NUMBER;
       hash = (53 * hash) + getTestsList().hashCode();
@@ -1462,6 +1654,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDefaultRouteActionFieldBuilder();
+        getDefaultUrlRedirectFieldBuilder();
+        getHeaderActionFieldBuilder();
         getHostRulesFieldBuilder();
         getPathMatchersFieldBuilder();
         getTestsFieldBuilder();
@@ -1472,56 +1667,56 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (defaultRouteActionBuilder_ == null) {
         defaultRouteAction_ = null;
       } else {
-        defaultRouteAction_ = null;
-        defaultRouteActionBuilder_ = null;
+        defaultRouteActionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       defaultService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (defaultUrlRedirectBuilder_ == null) {
         defaultUrlRedirect_ = null;
       } else {
-        defaultUrlRedirect_ = null;
-        defaultUrlRedirectBuilder_ = null;
+        defaultUrlRedirectBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       fingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (headerActionBuilder_ == null) {
         headerAction_ = null;
       } else {
-        headerAction_ = null;
-        headerActionBuilder_ = null;
+        headerActionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (hostRulesBuilder_ == null) {
         hostRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         hostRulesBuilder_.clear();
       }
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (pathMatchersBuilder_ == null) {
         pathMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         pathMatchersBuilder_.clear();
       }
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (testsBuilder_ == null) {
         tests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00004000);
       } else {
         testsBuilder_.clear();
       }
@@ -1552,57 +1747,95 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.UrlMap buildPartial() {
       com.google.cloud.compute.v1.UrlMap result = new com.google.cloud.compute.v1.UrlMap(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
-      if (defaultRouteActionBuilder_ == null) {
-        result.defaultRouteAction_ = defaultRouteAction_;
-      } else {
-        result.defaultRouteAction_ = defaultRouteActionBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (defaultRouteActionBuilder_ == null) {
+          result.defaultRouteAction_ = defaultRouteAction_;
+        } else {
+          result.defaultRouteAction_ = defaultRouteActionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.defaultService_ = defaultService_;
-      if (defaultUrlRedirectBuilder_ == null) {
-        result.defaultUrlRedirect_ = defaultUrlRedirect_;
-      } else {
-        result.defaultUrlRedirect_ = defaultUrlRedirectBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (defaultUrlRedirectBuilder_ == null) {
+          result.defaultUrlRedirect_ = defaultUrlRedirect_;
+        } else {
+          result.defaultUrlRedirect_ = defaultUrlRedirectBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
       }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.fingerprint_ = fingerprint_;
-      if (headerActionBuilder_ == null) {
-        result.headerAction_ = headerAction_;
-      } else {
-        result.headerAction_ = headerActionBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (headerActionBuilder_ == null) {
+          result.headerAction_ = headerAction_;
+        } else {
+          result.headerAction_ = headerActionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
       }
       if (hostRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           hostRules_ = java.util.Collections.unmodifiableList(hostRules_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.hostRules_ = hostRules_;
       } else {
         result.hostRules_ = hostRulesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.name_ = name_;
       if (pathMatchersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           pathMatchers_ = java.util.Collections.unmodifiableList(pathMatchers_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.pathMatchers_ = pathMatchers_;
       } else {
         result.pathMatchers_ = pathMatchersBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.selfLink_ = selfLink_;
       if (testsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           tests_ = java.util.Collections.unmodifiableList(tests_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.tests_ = tests_;
       } else {
         result.tests_ = testsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1652,25 +1885,29 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlMap other) {
       if (other == com.google.cloud.compute.v1.UrlMap.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDefaultRouteAction()) {
         mergeDefaultRouteAction(other.getDefaultRouteAction());
       }
-      if (!other.getDefaultService().isEmpty()) {
+      if (other.hasDefaultService()) {
+        bitField0_ |= 0x00000004;
         defaultService_ = other.defaultService_;
         onChanged();
       }
       if (other.hasDefaultUrlRedirect()) {
         mergeDefaultUrlRedirect(other.getDefaultUrlRedirect());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000010;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000020;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
@@ -1681,7 +1918,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         if (!other.hostRules_.isEmpty()) {
           if (hostRules_.isEmpty()) {
             hostRules_ = other.hostRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureHostRulesIsMutable();
             hostRules_.addAll(other.hostRules_);
@@ -1694,7 +1931,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             hostRulesBuilder_.dispose();
             hostRulesBuilder_ = null;
             hostRules_ = other.hostRules_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             hostRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHostRulesFieldBuilder()
@@ -1704,15 +1941,18 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000100;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000200;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000400;
         name_ = other.name_;
         onChanged();
       }
@@ -1720,7 +1960,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         if (!other.pathMatchers_.isEmpty()) {
           if (pathMatchers_.isEmpty()) {
             pathMatchers_ = other.pathMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensurePathMatchersIsMutable();
             pathMatchers_.addAll(other.pathMatchers_);
@@ -1733,7 +1973,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             pathMatchersBuilder_.dispose();
             pathMatchersBuilder_ = null;
             pathMatchers_ = other.pathMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000800);
             pathMatchersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPathMatchersFieldBuilder()
@@ -1743,11 +1983,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00001000;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1755,7 +1997,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         if (!other.tests_.isEmpty()) {
           if (tests_.isEmpty()) {
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureTestsIsMutable();
             tests_.addAll(other.tests_);
@@ -1768,7 +2010,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             testsBuilder_.dispose();
             testsBuilder_ = null;
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00004000);
             testsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTestsFieldBuilder()
@@ -1810,6 +2052,20 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1870,7 +2126,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1887,7 +2143,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1909,7 +2165,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1931,12 +2187,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      *
      * @return Whether the defaultRouteAction field is set.
      */
     public boolean hasDefaultRouteAction() {
-      return defaultRouteActionBuilder_ != null || defaultRouteAction_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1948,7 +2204,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      *
      * @return The defaultRouteAction.
      */
@@ -1971,7 +2227,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public Builder setDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
@@ -1983,7 +2239,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1996,7 +2252,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public Builder setDefaultRouteAction(
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
@@ -2006,7 +2262,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2019,11 +2275,14 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public Builder mergeDefaultRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (defaultRouteActionBuilder_ == null) {
-        if (defaultRouteAction_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && defaultRouteAction_ != null
+            && defaultRouteAction_
+                != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
           defaultRouteAction_ =
               com.google.cloud.compute.v1.HttpRouteAction.newBuilder(defaultRouteAction_)
                   .mergeFrom(value)
@@ -2035,7 +2294,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultRouteActionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2048,17 +2307,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public Builder clearDefaultRouteAction() {
       if (defaultRouteActionBuilder_ == null) {
         defaultRouteAction_ = null;
         onChanged();
       } else {
-        defaultRouteAction_ = null;
-        defaultRouteActionBuilder_ = null;
+        defaultRouteActionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -2071,10 +2329,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getDefaultRouteActionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDefaultRouteActionFieldBuilder().getBuilder();
     }
@@ -2088,7 +2346,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder() {
       if (defaultRouteActionBuilder_ != null) {
@@ -2109,7 +2367,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -2138,7 +2396,23 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 101806775;</code>
+     * <code>string default_service = 370242231;</code>
+     *
+     * @return Whether the defaultService field is set.
+     */
+    public boolean hasDefaultService() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified.
+     * Only one of defaultService, defaultUrlRedirect  or defaultRouteAction.weightedBackendService must be set.
+     * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>string default_service = 370242231;</code>
      *
      * @return The defaultService.
      */
@@ -2162,7 +2436,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 101806775;</code>
+     * <code>string default_service = 370242231;</code>
      *
      * @return The bytes for defaultService.
      */
@@ -2186,7 +2460,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 101806775;</code>
+     * <code>string default_service = 370242231;</code>
      *
      * @param value The defaultService to set.
      * @return This builder for chaining.
@@ -2195,7 +2469,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       defaultService_ = value;
       onChanged();
       return this;
@@ -2209,12 +2483,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 101806775;</code>
+     * <code>string default_service = 370242231;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDefaultService() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       defaultService_ = getDefaultInstance().getDefaultService();
       onChanged();
       return this;
@@ -2228,7 +2502,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>string default_service = 101806775;</code>
+     * <code>string default_service = 370242231;</code>
      *
      * @param value The bytes for defaultService to set.
      * @return This builder for chaining.
@@ -2238,7 +2512,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       defaultService_ = value;
       onChanged();
       return this;
@@ -2259,12 +2533,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      *
      * @return Whether the defaultUrlRedirect field is set.
      */
     public boolean hasDefaultUrlRedirect() {
-      return defaultUrlRedirectBuilder_ != null || defaultUrlRedirect_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2275,7 +2549,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      *
      * @return The defaultUrlRedirect.
      */
@@ -2297,7 +2571,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public Builder setDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
@@ -2309,7 +2583,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2321,7 +2595,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public Builder setDefaultUrlRedirect(
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
@@ -2331,7 +2605,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2343,11 +2617,14 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public Builder mergeDefaultUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (defaultUrlRedirectBuilder_ == null) {
-        if (defaultUrlRedirect_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && defaultUrlRedirect_ != null
+            && defaultUrlRedirect_
+                != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
           defaultUrlRedirect_ =
               com.google.cloud.compute.v1.HttpRedirectAction.newBuilder(defaultUrlRedirect_)
                   .mergeFrom(value)
@@ -2359,7 +2636,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         defaultUrlRedirectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2371,17 +2648,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public Builder clearDefaultUrlRedirect() {
       if (defaultUrlRedirectBuilder_ == null) {
         defaultUrlRedirect_ = null;
         onChanged();
       } else {
-        defaultUrlRedirect_ = null;
-        defaultUrlRedirectBuilder_ = null;
+        defaultUrlRedirectBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -2393,10 +2669,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getDefaultUrlRedirectBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDefaultUrlRedirectFieldBuilder().getBuilder();
     }
@@ -2409,7 +2685,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder
         getDefaultUrlRedirectOrBuilder() {
@@ -2430,7 +2706,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRedirectAction,
@@ -2457,7 +2733,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2479,7 +2769,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2501,7 +2791,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2510,7 +2800,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
@@ -2522,12 +2812,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -2539,7 +2829,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2549,13 +2839,28 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet.
+     * To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2619,7 +2924,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2637,7 +2942,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -2660,7 +2965,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2682,12 +2987,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      *
      * @return Whether the headerAction field is set.
      */
     public boolean hasHeaderAction() {
-      return headerActionBuilder_ != null || headerAction_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2699,7 +3004,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      *
      * @return The headerAction.
      */
@@ -2722,7 +3027,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder setHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
@@ -2734,7 +3039,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2747,7 +3052,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder setHeaderAction(
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
@@ -2757,7 +3062,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2770,11 +3075,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder mergeHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
-        if (headerAction_ != null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && headerAction_ != null
+            && headerAction_ != com.google.cloud.compute.v1.HttpHeaderAction.getDefaultInstance()) {
           headerAction_ =
               com.google.cloud.compute.v1.HttpHeaderAction.newBuilder(headerAction_)
                   .mergeFrom(value)
@@ -2786,7 +3093,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         headerActionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2799,17 +3106,16 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public Builder clearHeaderAction() {
       if (headerActionBuilder_ == null) {
         headerAction_ = null;
         onChanged();
       } else {
-        headerAction_ = null;
-        headerActionBuilder_ = null;
+        headerActionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -2822,10 +3128,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderAction.Builder getHeaderActionBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getHeaderActionFieldBuilder().getBuilder();
     }
@@ -2839,7 +3145,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
       if (headerActionBuilder_ != null) {
@@ -2860,7 +3166,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpHeaderAction,
@@ -2883,9 +3189,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHostRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         hostRules_ = new java.util.ArrayList<com.google.cloud.compute.v1.HostRule>(hostRules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2902,7 +3208,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HostRule> getHostRulesList() {
       if (hostRulesBuilder_ == null) {
@@ -2918,7 +3224,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public int getHostRulesCount() {
       if (hostRulesBuilder_ == null) {
@@ -2934,7 +3240,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public com.google.cloud.compute.v1.HostRule getHostRules(int index) {
       if (hostRulesBuilder_ == null) {
@@ -2950,7 +3256,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder setHostRules(int index, com.google.cloud.compute.v1.HostRule value) {
       if (hostRulesBuilder_ == null) {
@@ -2972,7 +3278,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder setHostRules(
         int index, com.google.cloud.compute.v1.HostRule.Builder builderForValue) {
@@ -2992,7 +3298,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder addHostRules(com.google.cloud.compute.v1.HostRule value) {
       if (hostRulesBuilder_ == null) {
@@ -3014,7 +3320,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder addHostRules(int index, com.google.cloud.compute.v1.HostRule value) {
       if (hostRulesBuilder_ == null) {
@@ -3036,7 +3342,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder addHostRules(com.google.cloud.compute.v1.HostRule.Builder builderForValue) {
       if (hostRulesBuilder_ == null) {
@@ -3055,7 +3361,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder addHostRules(
         int index, com.google.cloud.compute.v1.HostRule.Builder builderForValue) {
@@ -3075,7 +3381,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder addAllHostRules(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.HostRule> values) {
@@ -3095,12 +3401,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder clearHostRules() {
       if (hostRulesBuilder_ == null) {
         hostRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         hostRulesBuilder_.clear();
@@ -3114,7 +3420,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public Builder removeHostRules(int index) {
       if (hostRulesBuilder_ == null) {
@@ -3133,7 +3439,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public com.google.cloud.compute.v1.HostRule.Builder getHostRulesBuilder(int index) {
       return getHostRulesFieldBuilder().getBuilder(index);
@@ -3145,7 +3451,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public com.google.cloud.compute.v1.HostRuleOrBuilder getHostRulesOrBuilder(int index) {
       if (hostRulesBuilder_ == null) {
@@ -3161,7 +3467,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.HostRuleOrBuilder>
         getHostRulesOrBuilderList() {
@@ -3178,7 +3484,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public com.google.cloud.compute.v1.HostRule.Builder addHostRulesBuilder() {
       return getHostRulesFieldBuilder()
@@ -3191,7 +3497,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public com.google.cloud.compute.v1.HostRule.Builder addHostRulesBuilder(int index) {
       return getHostRulesFieldBuilder()
@@ -3204,7 +3510,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of HostRules to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
+     * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.HostRule.Builder> getHostRulesBuilderList() {
       return getHostRulesFieldBuilder().getBuilderList();
@@ -3221,13 +3527,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.HostRule,
                 com.google.cloud.compute.v1.HostRule.Builder,
                 com.google.cloud.compute.v1.HostRuleOrBuilder>(
-                hostRules_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                hostRules_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         hostRules_ = null;
       }
       return hostRulesBuilder_;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3288,7 +3608,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       id_ = value;
       onChanged();
       return this;
@@ -3305,7 +3625,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -3327,13 +3647,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#urlMaps for url maps.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -3394,7 +3728,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       kind_ = value;
       onChanged();
       return this;
@@ -3411,7 +3745,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3433,13 +3767,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -3500,7 +3848,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       name_ = value;
       onChanged();
       return this;
@@ -3517,7 +3865,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3539,7 +3887,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       name_ = value;
       onChanged();
       return this;
@@ -3549,10 +3897,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePathMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         pathMatchers_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.PathMatcher>(pathMatchers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3569,7 +3917,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.PathMatcher> getPathMatchersList() {
       if (pathMatchersBuilder_ == null) {
@@ -3585,7 +3933,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public int getPathMatchersCount() {
       if (pathMatchersBuilder_ == null) {
@@ -3601,7 +3949,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public com.google.cloud.compute.v1.PathMatcher getPathMatchers(int index) {
       if (pathMatchersBuilder_ == null) {
@@ -3617,7 +3965,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder setPathMatchers(int index, com.google.cloud.compute.v1.PathMatcher value) {
       if (pathMatchersBuilder_ == null) {
@@ -3639,7 +3987,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder setPathMatchers(
         int index, com.google.cloud.compute.v1.PathMatcher.Builder builderForValue) {
@@ -3659,7 +4007,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder addPathMatchers(com.google.cloud.compute.v1.PathMatcher value) {
       if (pathMatchersBuilder_ == null) {
@@ -3681,7 +4029,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder addPathMatchers(int index, com.google.cloud.compute.v1.PathMatcher value) {
       if (pathMatchersBuilder_ == null) {
@@ -3703,7 +4051,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder addPathMatchers(
         com.google.cloud.compute.v1.PathMatcher.Builder builderForValue) {
@@ -3723,7 +4071,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder addPathMatchers(
         int index, com.google.cloud.compute.v1.PathMatcher.Builder builderForValue) {
@@ -3743,7 +4091,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder addAllPathMatchers(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.PathMatcher> values) {
@@ -3763,12 +4111,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder clearPathMatchers() {
       if (pathMatchersBuilder_ == null) {
         pathMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         pathMatchersBuilder_.clear();
@@ -3782,7 +4130,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public Builder removePathMatchers(int index) {
       if (pathMatchersBuilder_ == null) {
@@ -3801,7 +4149,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public com.google.cloud.compute.v1.PathMatcher.Builder getPathMatchersBuilder(int index) {
       return getPathMatchersFieldBuilder().getBuilder(index);
@@ -3813,7 +4161,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public com.google.cloud.compute.v1.PathMatcherOrBuilder getPathMatchersOrBuilder(int index) {
       if (pathMatchersBuilder_ == null) {
@@ -3829,7 +4177,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.PathMatcherOrBuilder>
         getPathMatchersOrBuilderList() {
@@ -3846,7 +4194,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public com.google.cloud.compute.v1.PathMatcher.Builder addPathMatchersBuilder() {
       return getPathMatchersFieldBuilder()
@@ -3859,7 +4207,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public com.google.cloud.compute.v1.PathMatcher.Builder addPathMatchersBuilder(int index) {
       return getPathMatchersFieldBuilder()
@@ -3872,7 +4220,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * The list of named PathMatchers to use against the URL.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
+     * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.PathMatcher.Builder>
         getPathMatchersBuilderList() {
@@ -3890,13 +4238,27 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.PathMatcher,
                 com.google.cloud.compute.v1.PathMatcher.Builder,
                 com.google.cloud.compute.v1.PathMatcherOrBuilder>(
-                pathMatchers_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                pathMatchers_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         pathMatchers_ = null;
       }
       return pathMatchersBuilder_;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -3957,7 +4319,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -3974,7 +4336,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3996,7 +4358,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -4010,7 +4372,21 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4032,7 +4408,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4054,7 +4430,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4063,7 +4439,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4075,12 +4451,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4092,7 +4468,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4102,7 +4478,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4112,9 +4488,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTestsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         tests_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTest>(tests_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4340,7 +4716,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTests() {
       if (testsBuilder_ == null) {
         tests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         testsBuilder_.clear();
@@ -4468,7 +4844,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.UrlMapTest,
                 com.google.cloud.compute.v1.UrlMapTest.Builder,
                 com.google.cloud.compute.v1.UrlMapTestOrBuilder>(
-                tests_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                tests_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         tests_ = null;
       }
       return testsBuilder_;

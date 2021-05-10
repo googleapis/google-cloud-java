@@ -24,7 +24,13 @@ public interface SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool private_ip_google_access = 153056334;</code>
+   * <code>bool private_ip_google_access = 421491790;</code>
+   *
+   * @return Whether the privateIpGoogleAccess field is set.
+   */
+  boolean hasPrivateIpGoogleAccess();
+  /**
+   * <code>bool private_ip_google_access = 421491790;</code>
    *
    * @return The privateIpGoogleAccess.
    */

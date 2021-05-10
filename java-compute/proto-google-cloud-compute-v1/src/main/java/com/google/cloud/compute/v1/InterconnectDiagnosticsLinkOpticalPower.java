@@ -61,6 +61,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,12 +75,13 @@ public final class InterconnectDiagnosticsLinkOpticalPower
           case 878060680:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               state_ = rawValue;
               break;
             }
           case 895781773:
             {
+              bitField0_ |= 0x00000002;
               value_ = input.readFloat();
               break;
             }
@@ -142,14 +144,14 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>HIGH_ALARM = 36927828;</code> */
-    HIGH_ALARM(36927828),
+    /** <code>HIGH_ALARM = 305363284;</code> */
+    HIGH_ALARM(305363284),
     /** <code>HIGH_WARNING = 220984799;</code> */
     HIGH_WARNING(220984799),
-    /** <code>LOW_ALARM = 48223590;</code> */
-    LOW_ALARM(48223590),
-    /** <code>LOW_WARNING = 70358385;</code> */
-    LOW_WARNING(70358385),
+    /** <code>LOW_ALARM = 316659046;</code> */
+    LOW_ALARM(316659046),
+    /** <code>LOW_WARNING = 338793841;</code> */
+    LOW_WARNING(338793841),
     /** <code>OK = 2524;</code> */
     OK(2524),
     UNRECOGNIZED(-1),
@@ -165,14 +167,14 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>HIGH_ALARM = 36927828;</code> */
-    public static final int HIGH_ALARM_VALUE = 36927828;
+    /** <code>HIGH_ALARM = 305363284;</code> */
+    public static final int HIGH_ALARM_VALUE = 305363284;
     /** <code>HIGH_WARNING = 220984799;</code> */
     public static final int HIGH_WARNING_VALUE = 220984799;
-    /** <code>LOW_ALARM = 48223590;</code> */
-    public static final int LOW_ALARM_VALUE = 48223590;
-    /** <code>LOW_WARNING = 70358385;</code> */
-    public static final int LOW_WARNING_VALUE = 70358385;
+    /** <code>LOW_ALARM = 316659046;</code> */
+    public static final int LOW_ALARM_VALUE = 316659046;
+    /** <code>LOW_WARNING = 338793841;</code> */
+    public static final int LOW_WARNING_VALUE = 338793841;
     /** <code>OK = 2524;</code> */
     public static final int OK_VALUE = 2524;
 
@@ -202,13 +204,13 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 36927828:
+        case 305363284:
           return HIGH_ALARM;
         case 220984799:
           return HIGH_WARNING;
-        case 48223590:
+        case 316659046:
           return LOW_ALARM;
-        case 70358385:
+        case 338793841:
           return LOW_WARNING;
         case 2524:
           return OK;
@@ -267,8 +269,30 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State)
   }
 
+  private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
+   * - OK: The value has not crossed a warning threshold.
+   * - LOW_WARNING: The value has crossed below the low warning threshold.
+   * - HIGH_WARNING: The value has crossed above the high warning threshold.
+   * - LOW_ALARM: The value has crossed below the low alarm threshold.
+   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
+   * </code>
+   *
+   * @return Whether the state field is set.
+   */
+  @java.lang.Override
+  public boolean hasState() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -328,6 +352,21 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    * <code>float value = 111972721;</code>
    *
+   * @return Whether the value field is set.
+   */
+  @java.lang.Override
+  public boolean hasValue() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
+   * </pre>
+   *
+   * <code>float value = 111972721;</code>
+   *
    * @return The value.
    */
   @java.lang.Override
@@ -349,12 +388,10 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(109757585, state_);
     }
-    if (value_ != 0F) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeFloat(111972721, value_);
     }
     unknownFields.writeTo(output);
@@ -366,12 +403,10 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     if (size != -1) return size;
 
     size = 0;
-    if (state_
-        != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State.UNDEFINED_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
-    if (value_ != 0F) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(111972721, value_);
     }
     size += unknownFields.getSerializedSize();
@@ -390,9 +425,15 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower other =
         (com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower) obj;
 
-    if (state_ != other.state_) return false;
-    if (java.lang.Float.floatToIntBits(getValue())
-        != java.lang.Float.floatToIntBits(other.getValue())) return false;
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (state_ != other.state_) return false;
+    }
+    if (hasValue() != other.hasValue()) return false;
+    if (hasValue()) {
+      if (java.lang.Float.floatToIntBits(getValue())
+          != java.lang.Float.floatToIntBits(other.getValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -404,10 +445,14 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getValue());
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+    }
+    if (hasValue()) {
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getValue());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -556,9 +601,9 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public Builder clear() {
       super.clear();
       state_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       value_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -588,8 +633,17 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.state_ = state_;
-      result.value_ = value_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -643,10 +697,10 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       if (other
           == com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
               .getDefaultInstance()) return this;
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
+      if (other.hasState()) {
+        setState(other.getState());
       }
-      if (other.getValue() != 0F) {
+      if (other.hasValue()) {
         setValue(other.getValue());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -680,7 +734,31 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       return this;
     }
 
+    private int bitField0_;
+
     private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
+     * - OK: The value has not crossed a warning threshold.
+     * - LOW_WARNING: The value has crossed below the low warning threshold.
+     * - HIGH_WARNING: The value has crossed above the high warning threshold.
+     * - LOW_ALARM: The value has crossed below the low alarm threshold.
+     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
+     * </code>
+     *
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -723,7 +801,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
+      bitField0_ |= 0x00000001;
       state_ = value;
       onChanged();
       return this;
@@ -779,7 +857,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -803,13 +881,28 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private float value_;
+    /**
+     *
+     *
+     * <pre>
+     * Value of the current receiving or transmitting optical power, read in dBm. Take a known good optical value, give it a 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm alarm are good optical value estimates for most links.
+     * </pre>
+     *
+     * <code>float value = 111972721;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -838,7 +931,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder setValue(float value) {
-
+      bitField0_ |= 0x00000002;
       value_ = value;
       onChanged();
       return this;
@@ -855,7 +948,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = 0F;
       onChanged();
       return this;

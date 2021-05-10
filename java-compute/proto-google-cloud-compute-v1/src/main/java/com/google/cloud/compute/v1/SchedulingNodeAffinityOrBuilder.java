@@ -32,6 +32,18 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    * <code>string key = 106079;</code>
    *
+   * @return Whether the key field is set.
+   */
+  boolean hasKey();
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to the label key of Node resource.
+   * </pre>
+   *
+   * <code>string key = 106079;</code>
+   *
    * @return The key.
    */
   java.lang.String getKey();
@@ -48,6 +60,18 @@ public interface SchedulingNodeAffinityOrBuilder
    */
   com.google.protobuf.ByteString getKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+   *
+   * @return Whether the operator field is set.
+   */
+  boolean hasOperator();
   /**
    *
    *

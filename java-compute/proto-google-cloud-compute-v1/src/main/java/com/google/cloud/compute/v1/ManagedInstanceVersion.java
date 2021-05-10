@@ -60,6 +60,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,14 +74,14 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
               break;
             }
-          case 326502178:
+          case -1820981470:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               instanceTemplate_ = s;
               break;
             }
@@ -118,7 +119,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.ManagedInstanceVersion.Builder.class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
+  private int bitField0_;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
@@ -127,7 +129,22 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceTemplate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -150,7 +167,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -169,6 +186,21 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the version.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -230,11 +262,11 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -245,11 +277,12 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,8 +300,14 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.ManagedInstanceVersion other =
         (com.google.cloud.compute.v1.ManagedInstanceVersion) obj;
 
-    if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasInstanceTemplate() != other.hasInstanceTemplate()) return false;
+    if (hasInstanceTemplate()) {
+      if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,10 +319,14 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceTemplate().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasInstanceTemplate()) {
+      hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceTemplate().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,9 +472,9 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       instanceTemplate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -459,8 +502,17 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ManagedInstanceVersion buildPartial() {
       com.google.cloud.compute.v1.ManagedInstanceVersion result =
           new com.google.cloud.compute.v1.ManagedInstanceVersion(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instanceTemplate_ = instanceTemplate_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.name_ = name_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,11 +563,13 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.ManagedInstanceVersion other) {
       if (other == com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance())
         return this;
-      if (!other.getInstanceTemplate().isEmpty()) {
+      if (other.hasInstanceTemplate()) {
+        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000002;
         name_ = other.name_;
         onChanged();
       }
@@ -549,6 +603,8 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object instanceTemplate_ = "";
     /**
      *
@@ -557,7 +613,21 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
+     *
+     * @return Whether the instanceTemplate field is set.
+     */
+    public boolean hasInstanceTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+     * </pre>
+     *
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -579,7 +649,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -601,7 +671,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -610,7 +680,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;
@@ -622,12 +692,12 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
       onChanged();
       return this;
@@ -639,7 +709,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -649,13 +719,27 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Name of the version.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -716,7 +800,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -733,7 +817,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -755,7 +839,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;

@@ -61,6 +61,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,19 +75,20 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
           case 299738194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               startTime_ = s;
               break;
             }
           case 1243770018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               duration_ = s;
               break;
             }
-          case 2066621408:
+          case -80862240:
             {
+              bitField0_ |= 0x00000002;
               hoursInCycle_ = input.readInt32();
               break;
             }
@@ -124,8 +126,24 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DURATION_FIELD_NUMBER = 155471252;
   private volatile java.lang.Object duration_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * </pre>
+   *
+   * <code>string duration = 155471252;</code>
+   *
+   * @return Whether the duration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDuration() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +191,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     }
   }
 
-  public static final int HOURS_IN_CYCLE_FIELD_NUMBER = 258327676;
+  public static final int HOURS_IN_CYCLE_FIELD_NUMBER = 526763132;
   private int hoursInCycle_;
   /**
    *
@@ -182,7 +200,22 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
    * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 hours_in_cycle = 258327676;</code>
+   * <code>int32 hours_in_cycle = 526763132;</code>
+   *
+   * @return Whether the hoursInCycle field is set.
+   */
+  @java.lang.Override
+  public boolean hasHoursInCycle() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
+   * </pre>
+   *
+   * <code>int32 hours_in_cycle = 526763132;</code>
    *
    * @return The hoursInCycle.
    */
@@ -193,6 +226,21 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
   private volatile java.lang.Object startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -254,14 +302,14 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 155471252, duration_);
     }
-    if (hoursInCycle_ != 0) {
-      output.writeInt32(258327676, hoursInCycle_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(526763132, hoursInCycle_);
     }
     unknownFields.writeTo(output);
   }
@@ -272,14 +320,14 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(155471252, duration_);
     }
-    if (hoursInCycle_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(258327676, hoursInCycle_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(526763132, hoursInCycle_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,9 +345,18 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     com.google.cloud.compute.v1.ResourcePolicyHourlyCycle other =
         (com.google.cloud.compute.v1.ResourcePolicyHourlyCycle) obj;
 
-    if (!getDuration().equals(other.getDuration())) return false;
-    if (getHoursInCycle() != other.getHoursInCycle()) return false;
-    if (!getStartTime().equals(other.getStartTime())) return false;
+    if (hasDuration() != other.hasDuration()) return false;
+    if (hasDuration()) {
+      if (!getDuration().equals(other.getDuration())) return false;
+    }
+    if (hasHoursInCycle() != other.hasHoursInCycle()) return false;
+    if (hasHoursInCycle()) {
+      if (getHoursInCycle() != other.getHoursInCycle()) return false;
+    }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -311,12 +368,18 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DURATION_FIELD_NUMBER;
-    hash = (53 * hash) + getDuration().hashCode();
-    hash = (37 * hash) + HOURS_IN_CYCLE_FIELD_NUMBER;
-    hash = (53 * hash) + getHoursInCycle();
-    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getStartTime().hashCode();
+    if (hasDuration()) {
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
+    }
+    if (hasHoursInCycle()) {
+      hash = (37 * hash) + HOURS_IN_CYCLE_FIELD_NUMBER;
+      hash = (53 * hash) + getHoursInCycle();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,11 +527,11 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       duration_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hoursInCycle_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -496,9 +559,21 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.ResourcePolicyHourlyCycle buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyHourlyCycle result =
           new com.google.cloud.compute.v1.ResourcePolicyHourlyCycle(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.duration_ = duration_;
-      result.hoursInCycle_ = hoursInCycle_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.hoursInCycle_ = hoursInCycle_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.startTime_ = startTime_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -549,14 +624,16 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourcePolicyHourlyCycle other) {
       if (other == com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.getDefaultInstance())
         return this;
-      if (!other.getDuration().isEmpty()) {
+      if (other.hasDuration()) {
+        bitField0_ |= 0x00000001;
         duration_ = other.duration_;
         onChanged();
       }
-      if (other.getHoursInCycle() != 0) {
+      if (other.hasHoursInCycle()) {
         setHoursInCycle(other.getHoursInCycle());
       }
-      if (!other.getStartTime().isEmpty()) {
+      if (other.hasStartTime()) {
+        bitField0_ |= 0x00000004;
         startTime_ = other.startTime_;
         onChanged();
       }
@@ -590,7 +667,23 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object duration_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * </pre>
+     *
+     * <code>string duration = 155471252;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -651,7 +744,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       duration_ = value;
       onChanged();
       return this;
@@ -668,7 +761,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = getDefaultInstance().getDuration();
       onChanged();
       return this;
@@ -690,7 +783,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       duration_ = value;
       onChanged();
       return this;
@@ -704,7 +797,22 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 258327676;</code>
+     * <code>int32 hours_in_cycle = 526763132;</code>
+     *
+     * @return Whether the hoursInCycle field is set.
+     */
+    @java.lang.Override
+    public boolean hasHoursInCycle() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
+     * </pre>
+     *
+     * <code>int32 hours_in_cycle = 526763132;</code>
      *
      * @return The hoursInCycle.
      */
@@ -719,13 +827,13 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 258327676;</code>
+     * <code>int32 hours_in_cycle = 526763132;</code>
      *
      * @param value The hoursInCycle to set.
      * @return This builder for chaining.
      */
     public Builder setHoursInCycle(int value) {
-
+      bitField0_ |= 0x00000002;
       hoursInCycle_ = value;
       onChanged();
       return this;
@@ -737,18 +845,32 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 258327676;</code>
+     * <code>int32 hours_in_cycle = 526763132;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHoursInCycle() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       hoursInCycle_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object startTime_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * </pre>
+     *
+     * <code>string start_time = 37467274;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -809,7 +931,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;
@@ -826,7 +948,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       startTime_ = getDefaultInstance().getStartTime();
       onChanged();
       return this;
@@ -848,7 +970,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;

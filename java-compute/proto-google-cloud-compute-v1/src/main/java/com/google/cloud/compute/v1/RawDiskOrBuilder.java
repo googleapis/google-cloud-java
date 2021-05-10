@@ -30,7 +30,19 @@ public interface RawDiskOrBuilder
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   *
+   * @return Whether the containerType field is set.
+   */
+  boolean hasContainerType();
+  /**
+   *
+   *
+   * <pre>
+   * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
    *
    * @return The enum numeric value on the wire for containerType.
    */
@@ -42,7 +54,7 @@ public interface RawDiskOrBuilder
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
    *
    * @return The containerType.
    */
@@ -55,7 +67,19 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 46008893;</code>
+   * <code>string sha1_checksum = 314444349;</code>
+   *
+   * @return Whether the sha1Checksum field is set.
+   */
+  boolean hasSha1Checksum();
+  /**
+   *
+   *
+   * <pre>
+   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+   * </pre>
+   *
+   * <code>string sha1_checksum = 314444349;</code>
    *
    * @return The sha1Checksum.
    */
@@ -67,12 +91,24 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 46008893;</code>
+   * <code>string sha1_checksum = 314444349;</code>
    *
    * @return The bytes for sha1Checksum.
    */
   com.google.protobuf.ByteString getSha1ChecksumBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
+   * @return Whether the source field is set.
+   */
+  boolean hasSource();
   /**
    *
    *

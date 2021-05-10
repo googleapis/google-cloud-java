@@ -73,7 +73,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 541097290:
+          case -1606386358:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetPools_ = new java.util.ArrayList<com.google.cloud.compute.v1.TargetPool>();
@@ -134,7 +134,8 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.TargetPoolsScopedList.Builder.class);
   }
 
-  public static final int TARGET_POOLS_FIELD_NUMBER = 67637161;
+  private int bitField0_;
+  public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
   private java.util.List<com.google.cloud.compute.v1.TargetPool> targetPools_;
   /**
    *
@@ -143,7 +144,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.TargetPool> getTargetPoolsList() {
@@ -156,7 +157,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.TargetPoolOrBuilder>
@@ -170,7 +171,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   @java.lang.Override
   public int getTargetPoolsCount() {
@@ -183,7 +184,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetPool getTargetPools(int index) {
@@ -196,7 +197,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolsOrBuilder(int index) {
@@ -218,7 +219,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,11 +264,11 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < targetPools_.size(); i++) {
-      output.writeMessage(67637161, targetPools_.get(i));
+      output.writeMessage(336072617, targetPools_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,12 +279,12 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < targetPools_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(67637161, targetPools_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(336072617, targetPools_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +466,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTargetPoolsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       com.google.cloud.compute.v1.TargetPoolsScopedList result =
           new com.google.cloud.compute.v1.TargetPoolsScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (targetPoolsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           targetPools_ = java.util.Collections.unmodifiableList(targetPools_);
@@ -520,11 +523,15 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         result.targetPools_ = targetPoolsBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -661,7 +668,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetPool> getTargetPoolsList() {
       if (targetPoolsBuilder_ == null) {
@@ -677,7 +684,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public int getTargetPoolsCount() {
       if (targetPoolsBuilder_ == null) {
@@ -693,7 +700,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public com.google.cloud.compute.v1.TargetPool getTargetPools(int index) {
       if (targetPoolsBuilder_ == null) {
@@ -709,7 +716,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder setTargetPools(int index, com.google.cloud.compute.v1.TargetPool value) {
       if (targetPoolsBuilder_ == null) {
@@ -731,7 +738,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder setTargetPools(
         int index, com.google.cloud.compute.v1.TargetPool.Builder builderForValue) {
@@ -751,7 +758,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder addTargetPools(com.google.cloud.compute.v1.TargetPool value) {
       if (targetPoolsBuilder_ == null) {
@@ -773,7 +780,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder addTargetPools(int index, com.google.cloud.compute.v1.TargetPool value) {
       if (targetPoolsBuilder_ == null) {
@@ -795,7 +802,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder addTargetPools(com.google.cloud.compute.v1.TargetPool.Builder builderForValue) {
       if (targetPoolsBuilder_ == null) {
@@ -814,7 +821,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder addTargetPools(
         int index, com.google.cloud.compute.v1.TargetPool.Builder builderForValue) {
@@ -834,7 +841,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder addAllTargetPools(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.TargetPool> values) {
@@ -854,7 +861,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder clearTargetPools() {
       if (targetPoolsBuilder_ == null) {
@@ -873,7 +880,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public Builder removeTargetPools(int index) {
       if (targetPoolsBuilder_ == null) {
@@ -892,7 +899,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public com.google.cloud.compute.v1.TargetPool.Builder getTargetPoolsBuilder(int index) {
       return getTargetPoolsFieldBuilder().getBuilder(index);
@@ -904,7 +911,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolsOrBuilder(int index) {
       if (targetPoolsBuilder_ == null) {
@@ -920,7 +927,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.TargetPoolOrBuilder>
         getTargetPoolsOrBuilderList() {
@@ -937,7 +944,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public com.google.cloud.compute.v1.TargetPool.Builder addTargetPoolsBuilder() {
       return getTargetPoolsFieldBuilder()
@@ -950,7 +957,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public com.google.cloud.compute.v1.TargetPool.Builder addTargetPoolsBuilder(int index) {
       return getTargetPoolsFieldBuilder()
@@ -963,7 +970,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * A list of target pools contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
+     * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetPool.Builder>
         getTargetPoolsBuilderList() {
@@ -1005,7 +1012,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1046,7 +1053,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1065,7 +1072,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1079,7 +1086,9 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1091,7 +1100,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1108,10 +1117,9 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1124,7 +1132,7 @@ public final class TargetPoolsScopedList extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

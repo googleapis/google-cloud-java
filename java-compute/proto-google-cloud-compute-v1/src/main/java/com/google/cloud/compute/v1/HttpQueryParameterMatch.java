@@ -62,6 +62,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,26 +76,27 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
               break;
             }
           case 539486728:
             {
+              bitField0_ |= 0x00000004;
               presentMatch_ = input.readBool();
               break;
             }
           case 859102826:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               regexMatch_ = s;
               break;
             }
-          case 1513645098:
+          case -633838550:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               exactMatch_ = s;
               break;
             }
@@ -132,7 +134,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder.class);
   }
 
-  public static final int EXACT_MATCH_FIELD_NUMBER = 189205637;
+  private int bitField0_;
+  public static final int EXACT_MATCH_FIELD_NUMBER = 457641093;
   private volatile java.lang.Object exactMatch_;
   /**
    *
@@ -142,7 +145,23 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
+   *
+   * @return Whether the exactMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasExactMatch() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch.
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * </pre>
+   *
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The exactMatch.
    */
@@ -166,7 +185,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The bytes for exactMatch.
    */
@@ -185,6 +204,21 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -244,6 +278,22 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    * <code>bool present_match = 67435841;</code>
    *
+   * @return Whether the presentMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasPresentMatch() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not.
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * </pre>
+   *
+   * <code>bool present_match = 67435841;</code>
+   *
    * @return The presentMatch.
    */
   @java.lang.Override
@@ -253,6 +303,23 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   public static final int REGEX_MATCH_FIELD_NUMBER = 107387853;
   private volatile java.lang.Object regexMatch_;
+  /**
+   *
+   *
+   * <pre>
+   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>string regex_match = 107387853;</code>
+   *
+   * @return Whether the regexMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegexMatch() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -318,17 +385,17 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (presentMatch_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(67435841, presentMatch_);
     }
-    if (!getRegexMatchBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 107387853, regexMatch_);
     }
-    if (!getExactMatchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 189205637, exactMatch_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 457641093, exactMatch_);
     }
     unknownFields.writeTo(output);
   }
@@ -339,17 +406,17 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (presentMatch_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(67435841, presentMatch_);
     }
-    if (!getRegexMatchBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107387853, regexMatch_);
     }
-    if (!getExactMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(189205637, exactMatch_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(457641093, exactMatch_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -367,10 +434,22 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.HttpQueryParameterMatch other =
         (com.google.cloud.compute.v1.HttpQueryParameterMatch) obj;
 
-    if (!getExactMatch().equals(other.getExactMatch())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (getPresentMatch() != other.getPresentMatch()) return false;
-    if (!getRegexMatch().equals(other.getRegexMatch())) return false;
+    if (hasExactMatch() != other.hasExactMatch()) return false;
+    if (hasExactMatch()) {
+      if (!getExactMatch().equals(other.getExactMatch())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPresentMatch() != other.hasPresentMatch()) return false;
+    if (hasPresentMatch()) {
+      if (getPresentMatch() != other.getPresentMatch()) return false;
+    }
+    if (hasRegexMatch() != other.hasRegexMatch()) return false;
+    if (hasRegexMatch()) {
+      if (!getRegexMatch().equals(other.getRegexMatch())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -382,14 +461,22 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EXACT_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + getExactMatch().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PRESENT_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPresentMatch());
-    hash = (37 * hash) + REGEX_MATCH_FIELD_NUMBER;
-    hash = (53 * hash) + getRegexMatch().hashCode();
+    if (hasExactMatch()) {
+      hash = (37 * hash) + EXACT_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getExactMatch().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPresentMatch()) {
+      hash = (37 * hash) + PRESENT_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPresentMatch());
+    }
+    if (hasRegexMatch()) {
+      hash = (37 * hash) + REGEX_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getRegexMatch().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -536,13 +623,13 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       exactMatch_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       presentMatch_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       regexMatch_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -570,10 +657,25 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.HttpQueryParameterMatch buildPartial() {
       com.google.cloud.compute.v1.HttpQueryParameterMatch result =
           new com.google.cloud.compute.v1.HttpQueryParameterMatch(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.exactMatch_ = exactMatch_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.name_ = name_;
-      result.presentMatch_ = presentMatch_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.presentMatch_ = presentMatch_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.regexMatch_ = regexMatch_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -624,18 +726,21 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpQueryParameterMatch other) {
       if (other == com.google.cloud.compute.v1.HttpQueryParameterMatch.getDefaultInstance())
         return this;
-      if (!other.getExactMatch().isEmpty()) {
+      if (other.hasExactMatch()) {
+        bitField0_ |= 0x00000001;
         exactMatch_ = other.exactMatch_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000002;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getPresentMatch() != false) {
+      if (other.hasPresentMatch()) {
         setPresentMatch(other.getPresentMatch());
       }
-      if (!other.getRegexMatch().isEmpty()) {
+      if (other.hasRegexMatch()) {
+        bitField0_ |= 0x00000008;
         regexMatch_ = other.regexMatch_;
         onChanged();
       }
@@ -669,6 +774,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object exactMatch_ = "";
     /**
      *
@@ -678,7 +785,22 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 189205637;</code>
+     * <code>string exact_match = 457641093;</code>
+     *
+     * @return Whether the exactMatch field is set.
+     */
+    public boolean hasExactMatch() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch.
+     * Only one of presentMatch, exactMatch or regexMatch must be set.
+     * </pre>
+     *
+     * <code>string exact_match = 457641093;</code>
      *
      * @return The exactMatch.
      */
@@ -701,7 +823,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 189205637;</code>
+     * <code>string exact_match = 457641093;</code>
      *
      * @return The bytes for exactMatch.
      */
@@ -724,7 +846,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 189205637;</code>
+     * <code>string exact_match = 457641093;</code>
      *
      * @param value The exactMatch to set.
      * @return This builder for chaining.
@@ -733,7 +855,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       exactMatch_ = value;
       onChanged();
       return this;
@@ -746,12 +868,12 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 189205637;</code>
+     * <code>string exact_match = 457641093;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearExactMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       exactMatch_ = getDefaultInstance().getExactMatch();
       onChanged();
       return this;
@@ -764,7 +886,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 189205637;</code>
+     * <code>string exact_match = 457641093;</code>
      *
      * @param value The bytes for exactMatch to set.
      * @return This builder for chaining.
@@ -774,13 +896,27 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       exactMatch_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -841,7 +977,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -858,7 +994,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -880,13 +1016,29 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
     }
 
     private boolean presentMatch_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not.
+     * Only one of presentMatch, exactMatch or regexMatch must be set.
+     * </pre>
+     *
+     * <code>bool present_match = 67435841;</code>
+     *
+     * @return Whether the presentMatch field is set.
+     */
+    @java.lang.Override
+    public boolean hasPresentMatch() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -917,7 +1069,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setPresentMatch(boolean value) {
-
+      bitField0_ |= 0x00000004;
       presentMatch_ = value;
       onChanged();
       return this;
@@ -935,13 +1087,29 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPresentMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       presentMatch_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object regexMatch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Only one of presentMatch, exactMatch or regexMatch must be set.
+     * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>string regex_match = 107387853;</code>
+     *
+     * @return Whether the regexMatch field is set.
+     */
+    public boolean hasRegexMatch() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1008,7 +1176,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       regexMatch_ = value;
       onChanged();
       return this;
@@ -1027,7 +1195,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRegexMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       regexMatch_ = getDefaultInstance().getRegexMatch();
       onChanged();
       return this;
@@ -1051,7 +1219,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       regexMatch_ = value;
       onChanged();
       return this;

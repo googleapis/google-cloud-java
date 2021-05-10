@@ -72,20 +72,20 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
-          case 492752634:
+          case -1654731014:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 subjectAltNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               subjectAltNames_.add(s);
               break;
             }
-          case 1551118162:
+          case -596365486:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               clientTlsPolicy_ = s;
               break;
             }
@@ -103,7 +103,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         subjectAltNames_ = subjectAltNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -126,7 +126,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.SecuritySettings.Builder.class);
   }
 
-  public static final int CLIENT_TLS_POLICY_FIELD_NUMBER = 193889770;
+  private int bitField0_;
+  public static final int CLIENT_TLS_POLICY_FIELD_NUMBER = 462325226;
   private volatile java.lang.Object clientTlsPolicy_;
   /**
    *
@@ -138,7 +139,25 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string client_tls_policy = 193889770;</code>
+   * <code>string client_tls_policy = 462325226;</code>
+   *
+   * @return Whether the clientTlsPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientTlsPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.ClientTlsPolicy resource that describes how clients should authenticate with this service's backends.
+   * clientTlsPolicy only applies to a global BackendService with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * If left blank, communications are not encrypted.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string client_tls_policy = 462325226;</code>
    *
    * @return The clientTlsPolicy.
    */
@@ -164,7 +183,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string client_tls_policy = 193889770;</code>
+   * <code>string client_tls_policy = 462325226;</code>
    *
    * @return The bytes for clientTlsPolicy.
    */
@@ -181,7 +200,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SUBJECT_ALT_NAMES_FIELD_NUMBER = 61594079;
+  public static final int SUBJECT_ALT_NAMES_FIELD_NUMBER = 330029535;
   private com.google.protobuf.LazyStringList subjectAltNames_;
   /**
    *
@@ -193,7 +212,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @return A list containing the subjectAltNames.
    */
@@ -210,7 +229,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @return The count of subjectAltNames.
    */
@@ -227,7 +246,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @param index The index of the element to return.
    * @return The subjectAltNames at the given index.
@@ -245,7 +264,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectAltNames at the given index.
@@ -270,10 +289,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < subjectAltNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 61594079, subjectAltNames_.getRaw(i));
+          output, 330029535, subjectAltNames_.getRaw(i));
     }
-    if (!getClientTlsPolicyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 193889770, clientTlsPolicy_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 462325226, clientTlsPolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -292,8 +311,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSubjectAltNamesList().size();
     }
-    if (!getClientTlsPolicyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(193889770, clientTlsPolicy_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462325226, clientTlsPolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,7 +330,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.SecuritySettings other =
         (com.google.cloud.compute.v1.SecuritySettings) obj;
 
-    if (!getClientTlsPolicy().equals(other.getClientTlsPolicy())) return false;
+    if (hasClientTlsPolicy() != other.hasClientTlsPolicy()) return false;
+    if (hasClientTlsPolicy()) {
+      if (!getClientTlsPolicy().equals(other.getClientTlsPolicy())) return false;
+    }
     if (!getSubjectAltNamesList().equals(other.getSubjectAltNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -324,8 +346,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CLIENT_TLS_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + getClientTlsPolicy().hashCode();
+    if (hasClientTlsPolicy()) {
+      hash = (37 * hash) + CLIENT_TLS_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getClientTlsPolicy().hashCode();
+    }
     if (getSubjectAltNamesCount() > 0) {
       hash = (37 * hash) + SUBJECT_ALT_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getSubjectAltNamesList().hashCode();
@@ -476,9 +500,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       clientTlsPolicy_ = "";
-
-      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -507,12 +531,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       com.google.cloud.compute.v1.SecuritySettings result =
           new com.google.cloud.compute.v1.SecuritySettings(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.clientTlsPolicy_ = clientTlsPolicy_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         subjectAltNames_ = subjectAltNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.subjectAltNames_ = subjectAltNames_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -562,14 +591,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SecuritySettings other) {
       if (other == com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) return this;
-      if (!other.getClientTlsPolicy().isEmpty()) {
+      if (other.hasClientTlsPolicy()) {
+        bitField0_ |= 0x00000001;
         clientTlsPolicy_ = other.clientTlsPolicy_;
         onChanged();
       }
       if (!other.subjectAltNames_.isEmpty()) {
         if (subjectAltNames_.isEmpty()) {
           subjectAltNames_ = other.subjectAltNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureSubjectAltNamesIsMutable();
           subjectAltNames_.addAll(other.subjectAltNames_);
@@ -618,7 +648,24 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>string client_tls_policy = 193889770;</code>
+     * <code>string client_tls_policy = 462325226;</code>
+     *
+     * @return Whether the clientTlsPolicy field is set.
+     */
+    public boolean hasClientTlsPolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ClientTlsPolicy resource that describes how clients should authenticate with this service's backends.
+     * clientTlsPolicy only applies to a global BackendService with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string client_tls_policy = 462325226;</code>
      *
      * @return The clientTlsPolicy.
      */
@@ -643,7 +690,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>string client_tls_policy = 193889770;</code>
+     * <code>string client_tls_policy = 462325226;</code>
      *
      * @return The bytes for clientTlsPolicy.
      */
@@ -668,7 +715,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>string client_tls_policy = 193889770;</code>
+     * <code>string client_tls_policy = 462325226;</code>
      *
      * @param value The clientTlsPolicy to set.
      * @return This builder for chaining.
@@ -677,7 +724,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       clientTlsPolicy_ = value;
       onChanged();
       return this;
@@ -692,12 +739,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>string client_tls_policy = 193889770;</code>
+     * <code>string client_tls_policy = 462325226;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearClientTlsPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       clientTlsPolicy_ = getDefaultInstance().getClientTlsPolicy();
       onChanged();
       return this;
@@ -712,7 +759,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>string client_tls_policy = 193889770;</code>
+     * <code>string client_tls_policy = 462325226;</code>
      *
      * @param value The bytes for clientTlsPolicy to set.
      * @return This builder for chaining.
@@ -722,7 +769,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       clientTlsPolicy_ = value;
       onChanged();
       return this;
@@ -732,9 +779,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubjectAltNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         subjectAltNames_ = new com.google.protobuf.LazyStringArrayList(subjectAltNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -747,7 +794,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @return A list containing the subjectAltNames.
      */
@@ -764,7 +811,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @return The count of subjectAltNames.
      */
@@ -781,7 +828,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param index The index of the element to return.
      * @return The subjectAltNames at the given index.
@@ -799,7 +846,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the subjectAltNames at the given index.
@@ -817,7 +864,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param index The index to set the value at.
      * @param value The subjectAltNames to set.
@@ -842,7 +889,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param value The subjectAltNames to add.
      * @return This builder for chaining.
@@ -866,7 +913,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param values The subjectAltNames to add.
      * @return This builder for chaining.
@@ -887,13 +934,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubjectAltNames() {
       subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -907,7 +954,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Note: This field currently has no impact.
      * </pre>
      *
-     * <code>repeated string subject_alt_names = 61594079;</code>
+     * <code>repeated string subject_alt_names = 330029535;</code>
      *
      * @param value The bytes of the subjectAltNames to add.
      * @return This builder for chaining.

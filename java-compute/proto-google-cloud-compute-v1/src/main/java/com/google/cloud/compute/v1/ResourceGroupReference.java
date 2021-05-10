@@ -59,6 +59,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
           case 789033978:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               group_ = s;
               break;
             }
@@ -110,8 +111,24 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.ResourceGroupReference.Builder.class);
   }
 
+  private int bitField0_;
   public static final int GROUP_FIELD_NUMBER = 98629247;
   private volatile java.lang.Object group_;
+  /**
+   *
+   *
+   * <pre>
+   * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+   * </pre>
+   *
+   * <code>string group = 98629247;</code>
+   *
+   * @return Whether the group field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroup() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +190,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGroupBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98629247, group_);
     }
     unknownFields.writeTo(output);
@@ -185,7 +202,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getGroupBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98629247, group_);
     }
     size += unknownFields.getSerializedSize();
@@ -204,7 +221,10 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.ResourceGroupReference other =
         (com.google.cloud.compute.v1.ResourceGroupReference) obj;
 
-    if (!getGroup().equals(other.getGroup())) return false;
+    if (hasGroup() != other.hasGroup()) return false;
+    if (hasGroup()) {
+      if (!getGroup().equals(other.getGroup())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GROUP_FIELD_NUMBER;
-    hash = (53 * hash) + getGroup().hashCode();
+    if (hasGroup()) {
+      hash = (37 * hash) + GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getGroup().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -363,7 +385,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       group_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -391,7 +413,13 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.ResourceGroupReference buildPartial() {
       com.google.cloud.compute.v1.ResourceGroupReference result =
           new com.google.cloud.compute.v1.ResourceGroupReference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.group_ = group_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -442,7 +470,8 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourceGroupReference other) {
       if (other == com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance())
         return this;
-      if (!other.getGroup().isEmpty()) {
+      if (other.hasGroup()) {
+        bitField0_ |= 0x00000001;
         group_ = other.group_;
         onChanged();
       }
@@ -476,7 +505,23 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object group_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+     * </pre>
+     *
+     * <code>string group = 98629247;</code>
+     *
+     * @return Whether the group field is set.
+     */
+    public boolean hasGroup() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -537,7 +582,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       group_ = value;
       onChanged();
       return this;
@@ -554,7 +599,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearGroup() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       group_ = getDefaultInstance().getGroup();
       onChanged();
       return this;
@@ -576,7 +621,7 @@ public final class ResourceGroupReference extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       group_ = value;
       onChanged();
       return this;

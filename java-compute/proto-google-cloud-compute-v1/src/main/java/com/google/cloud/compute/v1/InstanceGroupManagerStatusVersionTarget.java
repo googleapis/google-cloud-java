@@ -59,6 +59,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,8 +70,9 @@ public final class InstanceGroupManagerStatusVersionTarget
           case 0:
             done = true;
             break;
-          case 1318189544:
+          case -829294104:
             {
+              bitField0_ |= 0x00000001;
               isReached_ = input.readBool();
               break;
             }
@@ -108,7 +110,8 @@ public final class InstanceGroupManagerStatusVersionTarget
             com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder.class);
   }
 
-  public static final int IS_REACHED_FIELD_NUMBER = 164773693;
+  private int bitField0_;
+  public static final int IS_REACHED_FIELD_NUMBER = 433209149;
   private boolean isReached_;
   /**
    *
@@ -117,7 +120,22 @@ public final class InstanceGroupManagerStatusVersionTarget
    * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
    * </pre>
    *
-   * <code>bool is_reached = 164773693;</code>
+   * <code>bool is_reached = 433209149;</code>
+   *
+   * @return Whether the isReached field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsReached() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
+   * </pre>
+   *
+   * <code>bool is_reached = 433209149;</code>
    *
    * @return The isReached.
    */
@@ -140,8 +158,8 @@ public final class InstanceGroupManagerStatusVersionTarget
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (isReached_ != false) {
-      output.writeBool(164773693, isReached_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(433209149, isReached_);
     }
     unknownFields.writeTo(output);
   }
@@ -152,8 +170,8 @@ public final class InstanceGroupManagerStatusVersionTarget
     if (size != -1) return size;
 
     size = 0;
-    if (isReached_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(164773693, isReached_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(433209149, isReached_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,7 +189,10 @@ public final class InstanceGroupManagerStatusVersionTarget
     com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget other =
         (com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget) obj;
 
-    if (getIsReached() != other.getIsReached()) return false;
+    if (hasIsReached() != other.hasIsReached()) return false;
+    if (hasIsReached()) {
+      if (getIsReached() != other.getIsReached()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,8 +204,10 @@ public final class InstanceGroupManagerStatusVersionTarget
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IS_REACHED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsReached());
+    if (hasIsReached()) {
+      hash = (37 * hash) + IS_REACHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsReached());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,7 +356,7 @@ public final class InstanceGroupManagerStatusVersionTarget
     public Builder clear() {
       super.clear();
       isReached_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -363,7 +386,13 @@ public final class InstanceGroupManagerStatusVersionTarget
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget(this);
-      result.isReached_ = isReached_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isReached_ = isReached_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -417,7 +446,7 @@ public final class InstanceGroupManagerStatusVersionTarget
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
               .getDefaultInstance()) return this;
-      if (other.getIsReached() != false) {
+      if (other.hasIsReached()) {
         setIsReached(other.getIsReached());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -451,6 +480,8 @@ public final class InstanceGroupManagerStatusVersionTarget
       return this;
     }
 
+    private int bitField0_;
+
     private boolean isReached_;
     /**
      *
@@ -459,7 +490,22 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 164773693;</code>
+     * <code>bool is_reached = 433209149;</code>
+     *
+     * @return Whether the isReached field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsReached() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
+     * </pre>
+     *
+     * <code>bool is_reached = 433209149;</code>
      *
      * @return The isReached.
      */
@@ -474,13 +520,13 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 164773693;</code>
+     * <code>bool is_reached = 433209149;</code>
      *
      * @param value The isReached to set.
      * @return This builder for chaining.
      */
     public Builder setIsReached(boolean value) {
-
+      bitField0_ |= 0x00000001;
       isReached_ = value;
       onChanged();
       return this;
@@ -492,12 +538,12 @@ public final class InstanceGroupManagerStatusVersionTarget
      * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
      * </pre>
      *
-     * <code>bool is_reached = 164773693;</code>
+     * <code>bool is_reached = 433209149;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIsReached() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isReached_ = false;
       onChanged();
       return this;

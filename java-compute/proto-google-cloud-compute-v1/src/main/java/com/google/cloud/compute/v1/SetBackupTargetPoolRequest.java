@@ -63,6 +63,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               requestId_ = s;
               break;
             }
@@ -96,6 +97,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             }
           case 1701336053:
             {
+              bitField0_ |= 0x00000001;
               failoverRatio_ = input.readFloat();
               break;
             }
@@ -106,7 +108,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
               project_ = s;
               break;
             }
-          case 2042290050:
+          case -105193598:
             {
               com.google.cloud.compute.v1.TargetReference.Builder subBuilder = null;
               if (targetReferenceResource_ != null) {
@@ -156,8 +158,24 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.SetBackupTargetPoolRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
   private float failoverRatio_;
+  /**
+   *
+   *
+   * <pre>
+   * New failoverRatio value for the target pool.
+   * </pre>
+   *
+   * <code>float failover_ratio = 212667006;</code>
+   *
+   * @return Whether the failoverRatio field is set.
+   */
+  @java.lang.Override
+  public boolean hasFailoverRatio() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -285,6 +303,23 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -374,7 +409,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
   }
 
-  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 255286256;
+  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
   /**
    *
@@ -384,7 +419,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetReferenceResource field is set.
@@ -401,7 +436,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetReferenceResource.
@@ -420,7 +455,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -443,7 +478,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getTargetPoolBytes().isEmpty()) {
@@ -452,14 +487,14 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (failoverRatio_ != 0F) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(212667006, failoverRatio_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (targetReferenceResource_ != null) {
-      output.writeMessage(255286256, getTargetReferenceResource());
+      output.writeMessage(523721712, getTargetReferenceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -470,7 +505,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getTargetPoolBytes().isEmpty()) {
@@ -479,7 +514,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (failoverRatio_ != 0F) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
     }
     if (!getProjectBytes().isEmpty()) {
@@ -488,7 +523,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (targetReferenceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              255286256, getTargetReferenceResource());
+              523721712, getTargetReferenceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -506,11 +541,17 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.SetBackupTargetPoolRequest other =
         (com.google.cloud.compute.v1.SetBackupTargetPoolRequest) obj;
 
-    if (java.lang.Float.floatToIntBits(getFailoverRatio())
-        != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    if (hasFailoverRatio() != other.hasFailoverRatio()) return false;
+    if (hasFailoverRatio()) {
+      if (java.lang.Float.floatToIntBits(getFailoverRatio())
+          != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getTargetPool().equals(other.getTargetPool())) return false;
     if (hasTargetReferenceResource() != other.hasTargetReferenceResource()) return false;
     if (hasTargetReferenceResource()) {
@@ -527,14 +568,18 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    if (hasFailoverRatio()) {
+      hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + TARGET_POOL_FIELD_NUMBER;
     hash = (53 * hash) + getTargetPool().hashCode();
     if (hasTargetReferenceResource()) {
@@ -688,13 +733,13 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       failoverRatio_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetPool_ = "";
 
       if (targetReferenceResourceBuilder_ == null) {
@@ -730,9 +775,17 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.SetBackupTargetPoolRequest buildPartial() {
       com.google.cloud.compute.v1.SetBackupTargetPoolRequest result =
           new com.google.cloud.compute.v1.SetBackupTargetPoolRequest(this);
-      result.failoverRatio_ = failoverRatio_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.failoverRatio_ = failoverRatio_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.requestId_ = requestId_;
       result.targetPool_ = targetPool_;
       if (targetReferenceResourceBuilder_ == null) {
@@ -740,6 +793,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       } else {
         result.targetReferenceResource_ = targetReferenceResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -790,7 +844,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.SetBackupTargetPoolRequest other) {
       if (other == com.google.cloud.compute.v1.SetBackupTargetPoolRequest.getDefaultInstance())
         return this;
-      if (other.getFailoverRatio() != 0F) {
+      if (other.hasFailoverRatio()) {
         setFailoverRatio(other.getFailoverRatio());
       }
       if (!other.getProject().isEmpty()) {
@@ -801,7 +855,8 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -842,7 +897,24 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private float failoverRatio_;
+    /**
+     *
+     *
+     * <pre>
+     * New failoverRatio value for the target pool.
+     * </pre>
+     *
+     * <code>float failover_ratio = 212667006;</code>
+     *
+     * @return Whether the failoverRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasFailoverRatio() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -871,7 +943,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setFailoverRatio(float value) {
-
+      bitField0_ |= 0x00000001;
       failoverRatio_ = value;
       onChanged();
       return this;
@@ -888,7 +960,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearFailoverRatio() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       failoverRatio_ = 0F;
       onChanged();
       return this;
@@ -1118,6 +1190,22 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1173,7 +1261,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1192,7 +1280,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1216,7 +1304,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1342,7 +1430,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetReferenceResource field is set.
@@ -1358,7 +1446,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetReferenceResource.
@@ -1380,7 +1468,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
@@ -1404,7 +1492,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetReferenceResource(
@@ -1426,7 +1514,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
@@ -1454,7 +1542,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetReferenceResource() {
@@ -1476,7 +1564,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetReference.Builder getTargetReferenceResourceBuilder() {
@@ -1492,7 +1580,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetReferenceOrBuilder
@@ -1513,7 +1601,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 523721712 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

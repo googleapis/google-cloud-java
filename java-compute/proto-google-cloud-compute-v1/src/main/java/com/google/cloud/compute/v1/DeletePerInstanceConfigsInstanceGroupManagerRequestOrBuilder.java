@@ -58,7 +58,7 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersDeletePerInstanceConfigsReqResource field is set.
@@ -72,7 +72,7 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersDeletePerInstanceConfigsReqResource.
@@ -87,7 +87,7 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder

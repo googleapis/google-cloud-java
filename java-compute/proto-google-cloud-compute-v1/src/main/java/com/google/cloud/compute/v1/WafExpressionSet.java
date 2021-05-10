@@ -75,7 +75,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               id_ = s;
               break;
             }
@@ -143,6 +143,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.WafExpressionSet.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ALIASES_FIELD_NUMBER = 159207166;
   private com.google.protobuf.LazyStringList aliases_;
   /**
@@ -291,6 +292,21 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   @java.lang.Override
@@ -343,7 +359,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
     for (int i = 0; i < aliases_.size(); i++) {
@@ -361,7 +377,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
     {
@@ -394,7 +410,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
     if (!getAliasesList().equals(other.getAliasesList())) return false;
     if (!getExpressionsList().equals(other.getExpressionsList())) return false;
-    if (!getId().equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -414,8 +433,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + EXPRESSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExpressionsList().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -571,7 +592,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         expressionsBuilder_.clear();
       }
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -600,6 +621,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       com.google.cloud.compute.v1.WafExpressionSet result =
           new com.google.cloud.compute.v1.WafExpressionSet(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         aliases_ = aliases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -614,7 +636,11 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -701,7 +727,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000004;
         id_ = other.id_;
         onChanged();
       }
@@ -1292,6 +1319,20 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      *
      * <code>string id = 3355;</code>
      *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1343,7 +1384,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
@@ -1360,7 +1401,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1382,7 +1423,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;

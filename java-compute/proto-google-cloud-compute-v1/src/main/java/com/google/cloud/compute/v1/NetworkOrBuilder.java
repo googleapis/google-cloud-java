@@ -35,10 +35,37 @@ public interface NetworkOrBuilder
    *
    * <code>bool auto_create_subnetworks = 256156690;</code>
    *
+   * @return Whether the autoCreateSubnetworks field is set.
+   */
+  boolean hasAutoCreateSubnetworks();
+  /**
+   *
+   *
+   * <pre>
+   * Must be set to create a VPC network. If not set, a legacy network is created.
+   * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
+   * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
+   * For custom mode VPC networks, you can add subnets using the subnetworks insert method.
+   * </pre>
+   *
+   * <code>bool auto_create_subnetworks = 256156690;</code>
+   *
    * @return The autoCreateSubnetworks.
    */
   boolean getAutoCreateSubnetworks();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -71,7 +98,19 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -83,12 +122,24 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * </pre>
+   *
+   * <code>string gateway_i_pv4 = 178678877;</code>
+   *
+   * @return Whether the gatewayIPv4 field is set.
+   */
+  boolean hasGatewayIPv4();
   /**
    *
    *
@@ -123,6 +174,18 @@ public interface NetworkOrBuilder
    *
    * <code>string i_pv4_range = 1978454;</code>
    *
+   * @return Whether the iPv4Range field is set.
+   */
+  boolean hasIPv4Range();
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string i_pv4_range = 1978454;</code>
+   *
    * @return The iPv4Range.
    */
   java.lang.String getIPv4Range();
@@ -139,6 +202,18 @@ public interface NetworkOrBuilder
    */
   com.google.protobuf.ByteString getIPv4RangeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -173,6 +248,18 @@ public interface NetworkOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#network for networks.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -198,10 +285,34 @@ public interface NetworkOrBuilder
    *
    * <code>int32 mtu = 108462;</code>
    *
+   * @return Whether the mtu field is set.
+   */
+  boolean hasMtu();
+  /**
+   *
+   *
+   * <pre>
+   * Maximum Transmission Unit in bytes. The minimum value for this field is 1460 and the maximum value is 1500 bytes.
+   * </pre>
+   *
+   * <code>int32 mtu = 108462;</code>
+   *
    * @return The mtu.
    */
   int getMtu();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -286,7 +397,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return Whether the routingConfig field is set.
    */
@@ -298,7 +409,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    *
    * @return The routingConfig.
    */
@@ -310,7 +421,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
    */
   com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder();
 
@@ -321,7 +432,19 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -333,7 +456,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -346,7 +469,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @return A list containing the subnetworks.
    */
@@ -358,7 +481,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @return The count of subnetworks.
    */
@@ -370,7 +493,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @param index The index of the element to return.
    * @return The subnetworks at the given index.
@@ -383,7 +506,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 147417669;</code>
+   * <code>repeated string subnetworks = 415853125;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subnetworks at the given index.

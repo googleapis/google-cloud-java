@@ -63,6 +63,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,36 +74,37 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
           case 0:
             done = true;
             break;
-          case 255382754:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              payloadName_ = s;
-              break;
-            }
           case 925448936:
             {
+              bitField0_ |= 0x00000010;
               retryDurationSec_ = input.readUInt32();
               break;
             }
           case 1043917994:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               endpoint_ = s;
               break;
             }
-          case 1067465242:
+          case -1892100894:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              payloadName_ = s;
+              break;
+            }
+          case -1080018406:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               authority_ = s;
               break;
             }
-          case 1678828106:
+          case -468655542:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (resendInterval_ != null) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = resendInterval_.toBuilder();
               }
               resendInterval_ =
@@ -112,7 +114,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
                 subBuilder.mergeFrom(resendInterval_);
                 resendInterval_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000008;
               break;
             }
           default:
@@ -149,7 +151,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
             com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder.class);
   }
 
-  public static final int AUTHORITY_FIELD_NUMBER = 133433155;
+  private int bitField0_;
+  public static final int AUTHORITY_FIELD_NUMBER = 401868611;
   private volatile java.lang.Object authority_;
   /**
    *
@@ -158,7 +161,22 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 133433155;</code>
+   * <code>string authority = 401868611;</code>
+   *
+   * @return Whether the authority field is set.
+   */
+  @java.lang.Override
+  public boolean hasAuthority() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+   * </pre>
+   *
+   * <code>string authority = 401868611;</code>
    *
    * @return The authority.
    */
@@ -181,7 +199,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 133433155;</code>
+   * <code>string authority = 401868611;</code>
    *
    * @return The bytes for authority.
    */
@@ -200,6 +218,21 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   public static final int ENDPOINT_FIELD_NUMBER = 130489749;
   private volatile java.lang.Object endpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+   * </pre>
+   *
+   * <code>string endpoint = 130489749;</code>
+   *
+   * @return Whether the endpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndpoint() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -247,7 +280,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
   }
 
-  public static final int PAYLOAD_NAME_FIELD_NUMBER = 31922844;
+  public static final int PAYLOAD_NAME_FIELD_NUMBER = 300358300;
   private volatile java.lang.Object payloadName_;
   /**
    *
@@ -256,7 +289,22 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 31922844;</code>
+   * <code>string payload_name = 300358300;</code>
+   *
+   * @return Whether the payloadName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPayloadName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+   * </pre>
+   *
+   * <code>string payload_name = 300358300;</code>
    *
    * @return The payloadName.
    */
@@ -279,7 +327,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 31922844;</code>
+   * <code>string payload_name = 300358300;</code>
    *
    * @return The bytes for payloadName.
    */
@@ -296,7 +344,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
   }
 
-  public static final int RESEND_INTERVAL_FIELD_NUMBER = 209853513;
+  public static final int RESEND_INTERVAL_FIELD_NUMBER = 478288969;
   private com.google.cloud.compute.v1.Duration resendInterval_;
   /**
    *
@@ -305,13 +353,13 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    *
    * @return Whether the resendInterval field is set.
    */
   @java.lang.Override
   public boolean hasResendInterval() {
-    return resendInterval_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -320,7 +368,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    *
    * @return The resendInterval.
    */
@@ -337,15 +385,32 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getResendIntervalOrBuilder() {
-    return getResendInterval();
+    return resendInterval_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : resendInterval_;
   }
 
   public static final int RETRY_DURATION_SEC_FIELD_NUMBER = 115681117;
   private int retryDurationSec_;
+  /**
+   *
+   *
+   * <pre>
+   * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+   * </pre>
+   *
+   * <code>uint32 retry_duration_sec = 115681117;</code>
+   *
+   * @return Whether the retryDurationSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetryDurationSec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -376,20 +441,20 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPayloadNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 31922844, payloadName_);
-    }
-    if (retryDurationSec_ != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt32(115681117, retryDurationSec_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 130489749, endpoint_);
     }
-    if (!getAuthorityBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 133433155, authority_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 300358300, payloadName_);
     }
-    if (resendInterval_ != null) {
-      output.writeMessage(209853513, getResendInterval());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 401868611, authority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(478288969, getResendInterval());
     }
     unknownFields.writeTo(output);
   }
@@ -400,21 +465,21 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (!getPayloadNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31922844, payloadName_);
-    }
-    if (retryDurationSec_ != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(115681117, retryDurationSec_);
     }
-    if (!getEndpointBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(130489749, endpoint_);
     }
-    if (!getAuthorityBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(133433155, authority_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(300358300, payloadName_);
     }
-    if (resendInterval_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(401868611, authority_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(209853513, getResendInterval());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(478288969, getResendInterval());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,14 +497,26 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     com.google.cloud.compute.v1.NotificationEndpointGrpcSettings other =
         (com.google.cloud.compute.v1.NotificationEndpointGrpcSettings) obj;
 
-    if (!getAuthority().equals(other.getAuthority())) return false;
-    if (!getEndpoint().equals(other.getEndpoint())) return false;
-    if (!getPayloadName().equals(other.getPayloadName())) return false;
+    if (hasAuthority() != other.hasAuthority()) return false;
+    if (hasAuthority()) {
+      if (!getAuthority().equals(other.getAuthority())) return false;
+    }
+    if (hasEndpoint() != other.hasEndpoint()) return false;
+    if (hasEndpoint()) {
+      if (!getEndpoint().equals(other.getEndpoint())) return false;
+    }
+    if (hasPayloadName() != other.hasPayloadName()) return false;
+    if (hasPayloadName()) {
+      if (!getPayloadName().equals(other.getPayloadName())) return false;
+    }
     if (hasResendInterval() != other.hasResendInterval()) return false;
     if (hasResendInterval()) {
       if (!getResendInterval().equals(other.getResendInterval())) return false;
     }
-    if (getRetryDurationSec() != other.getRetryDurationSec()) return false;
+    if (hasRetryDurationSec() != other.hasRetryDurationSec()) return false;
+    if (hasRetryDurationSec()) {
+      if (getRetryDurationSec() != other.getRetryDurationSec()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -451,18 +528,26 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getAuthority().hashCode();
-    hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
-    hash = (53 * hash) + getEndpoint().hashCode();
-    hash = (37 * hash) + PAYLOAD_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPayloadName().hashCode();
+    if (hasAuthority()) {
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+    }
+    if (hasEndpoint()) {
+      hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpoint().hashCode();
+    }
+    if (hasPayloadName()) {
+      hash = (37 * hash) + PAYLOAD_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPayloadName().hashCode();
+    }
     if (hasResendInterval()) {
       hash = (37 * hash) + RESEND_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getResendInterval().hashCode();
     }
-    hash = (37 * hash) + RETRY_DURATION_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getRetryDurationSec();
+    if (hasRetryDurationSec()) {
+      hash = (37 * hash) + RETRY_DURATION_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryDurationSec();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -603,26 +688,28 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getResendIntervalFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       authority_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       endpoint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       payloadName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (resendIntervalBuilder_ == null) {
         resendInterval_ = null;
       } else {
-        resendInterval_ = null;
-        resendIntervalBuilder_ = null;
+        resendIntervalBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       retryDurationSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -651,15 +738,33 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettings buildPartial() {
       com.google.cloud.compute.v1.NotificationEndpointGrpcSettings result =
           new com.google.cloud.compute.v1.NotificationEndpointGrpcSettings(this);
-      result.authority_ = authority_;
-      result.endpoint_ = endpoint_;
-      result.payloadName_ = payloadName_;
-      if (resendIntervalBuilder_ == null) {
-        result.resendInterval_ = resendInterval_;
-      } else {
-        result.resendInterval_ = resendIntervalBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
-      result.retryDurationSec_ = retryDurationSec_;
+      result.authority_ = authority_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.endpoint_ = endpoint_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.payloadName_ = payloadName_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (resendIntervalBuilder_ == null) {
+          result.resendInterval_ = resendInterval_;
+        } else {
+          result.resendInterval_ = resendIntervalBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.retryDurationSec_ = retryDurationSec_;
+        to_bitField0_ |= 0x00000010;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -711,22 +816,25 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (other
           == com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.getDefaultInstance())
         return this;
-      if (!other.getAuthority().isEmpty()) {
+      if (other.hasAuthority()) {
+        bitField0_ |= 0x00000001;
         authority_ = other.authority_;
         onChanged();
       }
-      if (!other.getEndpoint().isEmpty()) {
+      if (other.hasEndpoint()) {
+        bitField0_ |= 0x00000002;
         endpoint_ = other.endpoint_;
         onChanged();
       }
-      if (!other.getPayloadName().isEmpty()) {
+      if (other.hasPayloadName()) {
+        bitField0_ |= 0x00000004;
         payloadName_ = other.payloadName_;
         onChanged();
       }
       if (other.hasResendInterval()) {
         mergeResendInterval(other.getResendInterval());
       }
-      if (other.getRetryDurationSec() != 0) {
+      if (other.hasRetryDurationSec()) {
         setRetryDurationSec(other.getRetryDurationSec());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -759,6 +867,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object authority_ = "";
     /**
      *
@@ -767,7 +877,21 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
-     * <code>string authority = 133433155;</code>
+     * <code>string authority = 401868611;</code>
+     *
+     * @return Whether the authority field is set.
+     */
+    public boolean hasAuthority() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * </pre>
+     *
+     * <code>string authority = 401868611;</code>
      *
      * @return The authority.
      */
@@ -789,7 +913,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
-     * <code>string authority = 133433155;</code>
+     * <code>string authority = 401868611;</code>
      *
      * @return The bytes for authority.
      */
@@ -811,7 +935,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
-     * <code>string authority = 133433155;</code>
+     * <code>string authority = 401868611;</code>
      *
      * @param value The authority to set.
      * @return This builder for chaining.
@@ -820,7 +944,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       authority_ = value;
       onChanged();
       return this;
@@ -832,12 +956,12 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
-     * <code>string authority = 133433155;</code>
+     * <code>string authority = 401868611;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAuthority() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       authority_ = getDefaultInstance().getAuthority();
       onChanged();
       return this;
@@ -849,7 +973,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
-     * <code>string authority = 133433155;</code>
+     * <code>string authority = 401868611;</code>
      *
      * @param value The bytes for authority to set.
      * @return This builder for chaining.
@@ -859,13 +983,27 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       authority_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object endpoint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * </pre>
+     *
+     * <code>string endpoint = 130489749;</code>
+     *
+     * @return Whether the endpoint field is set.
+     */
+    public boolean hasEndpoint() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -926,7 +1064,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       endpoint_ = value;
       onChanged();
       return this;
@@ -943,7 +1081,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       endpoint_ = getDefaultInstance().getEndpoint();
       onChanged();
       return this;
@@ -965,7 +1103,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       endpoint_ = value;
       onChanged();
       return this;
@@ -979,7 +1117,21 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
      * </pre>
      *
-     * <code>string payload_name = 31922844;</code>
+     * <code>string payload_name = 300358300;</code>
+     *
+     * @return Whether the payloadName field is set.
+     */
+    public boolean hasPayloadName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * </pre>
+     *
+     * <code>string payload_name = 300358300;</code>
      *
      * @return The payloadName.
      */
@@ -1001,7 +1153,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
      * </pre>
      *
-     * <code>string payload_name = 31922844;</code>
+     * <code>string payload_name = 300358300;</code>
      *
      * @return The bytes for payloadName.
      */
@@ -1023,7 +1175,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
      * </pre>
      *
-     * <code>string payload_name = 31922844;</code>
+     * <code>string payload_name = 300358300;</code>
      *
      * @param value The payloadName to set.
      * @return This builder for chaining.
@@ -1032,7 +1184,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       payloadName_ = value;
       onChanged();
       return this;
@@ -1044,12 +1196,12 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
      * </pre>
      *
-     * <code>string payload_name = 31922844;</code>
+     * <code>string payload_name = 300358300;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPayloadName() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       payloadName_ = getDefaultInstance().getPayloadName();
       onChanged();
       return this;
@@ -1061,7 +1213,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
      * </pre>
      *
-     * <code>string payload_name = 31922844;</code>
+     * <code>string payload_name = 300358300;</code>
      *
      * @param value The bytes for payloadName to set.
      * @return This builder for chaining.
@@ -1071,7 +1223,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       payloadName_ = value;
       onChanged();
       return this;
@@ -1090,12 +1242,12 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      *
      * @return Whether the resendInterval field is set.
      */
     public boolean hasResendInterval() {
-      return resendIntervalBuilder_ != null || resendInterval_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1104,7 +1256,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      *
      * @return The resendInterval.
      */
@@ -1124,7 +1276,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public Builder setResendInterval(com.google.cloud.compute.v1.Duration value) {
       if (resendIntervalBuilder_ == null) {
@@ -1136,7 +1288,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       } else {
         resendIntervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1146,7 +1298,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public Builder setResendInterval(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (resendIntervalBuilder_ == null) {
@@ -1155,7 +1307,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       } else {
         resendIntervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1165,11 +1317,13 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public Builder mergeResendInterval(com.google.cloud.compute.v1.Duration value) {
       if (resendIntervalBuilder_ == null) {
-        if (resendInterval_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && resendInterval_ != null
+            && resendInterval_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           resendInterval_ =
               com.google.cloud.compute.v1.Duration.newBuilder(resendInterval_)
                   .mergeFrom(value)
@@ -1181,7 +1335,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       } else {
         resendIntervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1191,17 +1345,16 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public Builder clearResendInterval() {
       if (resendIntervalBuilder_ == null) {
         resendInterval_ = null;
         onChanged();
       } else {
-        resendInterval_ = null;
-        resendIntervalBuilder_ = null;
+        resendIntervalBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1211,10 +1364,10 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getResendIntervalBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResendIntervalFieldBuilder().getBuilder();
     }
@@ -1225,7 +1378,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getResendIntervalOrBuilder() {
       if (resendIntervalBuilder_ != null) {
@@ -1243,7 +1396,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
+     * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -1272,6 +1425,21 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      * <code>uint32 retry_duration_sec = 115681117;</code>
      *
+     * @return Whether the retryDurationSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasRetryDurationSec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+     * </pre>
+     *
+     * <code>uint32 retry_duration_sec = 115681117;</code>
+     *
      * @return The retryDurationSec.
      */
     @java.lang.Override
@@ -1291,7 +1459,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setRetryDurationSec(int value) {
-
+      bitField0_ |= 0x00000010;
       retryDurationSec_ = value;
       onChanged();
       return this;
@@ -1308,7 +1476,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRetryDurationSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       retryDurationSec_ = 0;
       onChanged();
       return this;

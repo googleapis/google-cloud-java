@@ -77,22 +77,10 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           case 0:
             done = true;
             break;
-          case 1561277306:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                guestAccelerators_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              guestAccelerators_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
-              break;
-            }
           case 1821688210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               machineType_ = s;
               break;
             }
@@ -116,8 +104,20 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           case 1943302074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               minCpuPlatform_ = s;
+              break;
+            }
+          case -586206342:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                guestAccelerators_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              guestAccelerators_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
               break;
             }
           default:
@@ -134,11 +134,11 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
-      }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         localSsds_ = java.util.Collections.unmodifiableList(localSsds_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -162,7 +162,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
                 .Builder.class);
   }
 
-  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 195159663;
+  private int bitField0_;
+  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -171,7 +172,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -185,7 +186,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -200,7 +201,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -214,7 +215,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -228,7 +229,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    * Specifies accelerator type and count.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -340,6 +341,21 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    * <code>string machine_type = 227711026;</code>
    *
+   * @return Whether the machineType field is set.
+   */
+  @java.lang.Override
+  public boolean hasMachineType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
    * @return The machineType.
    */
   @java.lang.Override
@@ -380,6 +396,21 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 242912759;
   private volatile java.lang.Object minCpuPlatform_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu platform the reservation.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinCpuPlatform() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -441,17 +472,17 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < guestAccelerators_.size(); i++) {
-      output.writeMessage(195159663, guestAccelerators_.get(i));
-    }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227711026, machineType_);
     }
     for (int i = 0; i < localSsds_.size(); i++) {
       output.writeMessage(229951299, localSsds_.get(i));
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 242912759, minCpuPlatform_);
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      output.writeMessage(463595119, guestAccelerators_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -462,20 +493,20 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < guestAccelerators_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              195159663, guestAccelerators_.get(i));
-    }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
     }
     for (int i = 0; i < localSsds_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(229951299, localSsds_.get(i));
     }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              463595119, guestAccelerators_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -497,8 +528,14 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
     if (!getGuestAcceleratorsList().equals(other.getGuestAcceleratorsList())) return false;
     if (!getLocalSsdsList().equals(other.getLocalSsdsList())) return false;
-    if (!getMachineType().equals(other.getMachineType())) return false;
-    if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (hasMachineType() != other.hasMachineType()) return false;
+    if (hasMachineType()) {
+      if (!getMachineType().equals(other.getMachineType())) return false;
+    }
+    if (hasMinCpuPlatform() != other.hasMinCpuPlatform()) return false;
+    if (hasMinCpuPlatform()) {
+      if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -518,10 +555,14 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       hash = (37 * hash) + LOCAL_SSDS_FIELD_NUMBER;
       hash = (53 * hash) + getLocalSsdsList().hashCode();
     }
-    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getMachineType().hashCode();
-    hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    if (hasMachineType()) {
+      hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMachineType().hashCode();
+    }
+    if (hasMinCpuPlatform()) {
+      hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -708,9 +749,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         localSsdsBuilder_.clear();
       }
       machineType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minCpuPlatform_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -745,6 +786,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           new com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties(
               this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (guestAcceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
@@ -763,8 +805,15 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       } else {
         result.localSsds_ = localSsdsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.machineType_ = machineType_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.minCpuPlatform_ = minCpuPlatform_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -876,11 +925,13 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           }
         }
       }
-      if (!other.getMachineType().isEmpty()) {
+      if (other.hasMachineType()) {
+        bitField0_ |= 0x00000004;
         machineType_ = other.machineType_;
         onChanged();
       }
-      if (!other.getMinCpuPlatform().isEmpty()) {
+      if (other.hasMinCpuPlatform()) {
+        bitField0_ |= 0x00000008;
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
@@ -943,7 +994,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig>
@@ -961,7 +1012,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public int getGuestAcceleratorsCount() {
@@ -978,7 +1029,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
@@ -995,7 +1046,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -1019,7 +1070,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -1040,7 +1091,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
@@ -1063,7 +1114,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -1087,7 +1138,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -1108,7 +1159,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -1129,7 +1180,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addAllGuestAccelerators(
@@ -1150,7 +1201,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder clearGuestAccelerators() {
@@ -1170,7 +1221,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder removeGuestAccelerators(int index) {
@@ -1190,7 +1241,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder getGuestAcceleratorsBuilder(
@@ -1204,7 +1255,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
@@ -1222,7 +1273,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -1240,7 +1291,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder() {
@@ -1254,7 +1305,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder(
@@ -1269,7 +1320,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * Specifies accelerator type and count.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>
@@ -1756,6 +1807,20 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      * <code>string machine_type = 227711026;</code>
      *
+     * @return Whether the machineType field is set.
+     */
+    public boolean hasMachineType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * </pre>
+     *
+     * <code>string machine_type = 227711026;</code>
+     *
      * @return The machineType.
      */
     public java.lang.String getMachineType() {
@@ -1807,7 +1872,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       machineType_ = value;
       onChanged();
       return this;
@@ -1824,7 +1889,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       machineType_ = getDefaultInstance().getMachineType();
       onChanged();
       return this;
@@ -1846,13 +1911,27 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       machineType_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object minCpuPlatform_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Minimum cpu platform the reservation.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 242912759;</code>
+     *
+     * @return Whether the minCpuPlatform field is set.
+     */
+    public boolean hasMinCpuPlatform() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1913,7 +1992,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       minCpuPlatform_ = value;
       onChanged();
       return this;
@@ -1930,7 +2009,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
       return this;
@@ -1952,7 +2031,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       minCpuPlatform_ = value;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface GuestOsFeatureOrBuilder
    *
    * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
    *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();

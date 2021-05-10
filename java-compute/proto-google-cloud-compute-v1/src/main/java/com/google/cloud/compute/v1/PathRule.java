@@ -72,13 +72,6 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 840840618:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              service_ = s;
-              break;
-            }
           case 851511154:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -89,10 +82,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
               paths_.add(s);
               break;
             }
-          case 1093698914:
+          case -1306643030:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              service_ = s;
+              break;
+            }
+          case -1053784734:
             {
               com.google.cloud.compute.v1.HttpRedirectAction.Builder subBuilder = null;
-              if (urlRedirect_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = urlRedirect_.toBuilder();
               }
               urlRedirect_ =
@@ -102,13 +102,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(urlRedirect_);
                 urlRedirect_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 1249027938:
+          case -898455710:
             {
               com.google.cloud.compute.v1.HttpRouteAction.Builder subBuilder = null;
-              if (routeAction_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = routeAction_.toBuilder();
               }
               routeAction_ =
@@ -118,7 +118,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(routeAction_);
                 routeAction_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -158,6 +158,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.PathRule.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PATHS_FIELD_NUMBER = 106438894;
   private com.google.protobuf.LazyStringList paths_;
   /**
@@ -219,7 +220,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     return paths_.getByteString(index);
   }
 
-  public static final int ROUTE_ACTION_FIELD_NUMBER = 156128492;
+  public static final int ROUTE_ACTION_FIELD_NUMBER = 424563948;
   private com.google.cloud.compute.v1.HttpRouteAction routeAction_;
   /**
    *
@@ -230,13 +231,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    *
    * @return Whether the routeAction field is set.
    */
   @java.lang.Override
   public boolean hasRouteAction() {
-    return routeAction_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -247,7 +248,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    *
    * @return The routeAction.
    */
@@ -266,14 +267,16 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder() {
-    return getRouteAction();
+    return routeAction_ == null
+        ? com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()
+        : routeAction_;
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 105105077;
+  public static final int SERVICE_FIELD_NUMBER = 373540533;
   private volatile java.lang.Object service_;
   /**
    *
@@ -283,7 +286,23 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
+   * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -307,7 +326,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -324,7 +343,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int URL_REDIRECT_FIELD_NUMBER = 136712364;
+  public static final int URL_REDIRECT_FIELD_NUMBER = 405147820;
   private com.google.cloud.compute.v1.HttpRedirectAction urlRedirect_;
   /**
    *
@@ -335,13 +354,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    *
    * @return Whether the urlRedirect field is set.
    */
   @java.lang.Override
   public boolean hasUrlRedirect() {
-    return urlRedirect_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -352,7 +371,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    *
    * @return The urlRedirect.
    */
@@ -371,11 +390,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder() {
-    return getUrlRedirect();
+    return urlRedirect_ == null
+        ? com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()
+        : urlRedirect_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,17 +413,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
-    }
     for (int i = 0; i < paths_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106438894, paths_.getRaw(i));
     }
-    if (urlRedirect_ != null) {
-      output.writeMessage(136712364, getUrlRedirect());
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
-    if (routeAction_ != null) {
-      output.writeMessage(156128492, getRouteAction());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(405147820, getUrlRedirect());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(424563948, getRouteAction());
     }
     unknownFields.writeTo(output);
   }
@@ -413,9 +434,6 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < paths_.size(); i++) {
@@ -424,11 +442,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getPathsList().size();
     }
-    if (urlRedirect_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(136712364, getUrlRedirect());
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
-    if (routeAction_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(156128492, getRouteAction());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(405147820, getUrlRedirect());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(424563948, getRouteAction());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -450,7 +471,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     if (hasRouteAction()) {
       if (!getRouteAction().equals(other.getRouteAction())) return false;
     }
-    if (!getService().equals(other.getService())) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
     if (hasUrlRedirect() != other.hasUrlRedirect()) return false;
     if (hasUrlRedirect()) {
       if (!getUrlRedirect().equals(other.getUrlRedirect())) return false;
@@ -474,8 +498,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ROUTE_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getRouteAction().hashCode();
     }
-    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getService().hashCode();
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+    }
     if (hasUrlRedirect()) {
       hash = (37 * hash) + URL_REDIRECT_FIELD_NUMBER;
       hash = (53 * hash) + getUrlRedirect().hashCode();
@@ -618,7 +644,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRouteActionFieldBuilder();
+        getUrlRedirectFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -629,17 +658,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       if (routeActionBuilder_ == null) {
         routeAction_ = null;
       } else {
-        routeAction_ = null;
-        routeActionBuilder_ = null;
+        routeActionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       service_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (urlRedirectBuilder_ == null) {
         urlRedirect_ = null;
       } else {
-        urlRedirect_ = null;
-        urlRedirectBuilder_ = null;
+        urlRedirectBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -667,22 +696,33 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.PathRule buildPartial() {
       com.google.cloud.compute.v1.PathRule result = new com.google.cloud.compute.v1.PathRule(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         paths_ = paths_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.paths_ = paths_;
-      if (routeActionBuilder_ == null) {
-        result.routeAction_ = routeAction_;
-      } else {
-        result.routeAction_ = routeActionBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (routeActionBuilder_ == null) {
+          result.routeAction_ = routeAction_;
+        } else {
+          result.routeAction_ = routeActionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.service_ = service_;
-      if (urlRedirectBuilder_ == null) {
-        result.urlRedirect_ = urlRedirect_;
-      } else {
-        result.urlRedirect_ = urlRedirectBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (urlRedirectBuilder_ == null) {
+          result.urlRedirect_ = urlRedirect_;
+        } else {
+          result.urlRedirect_ = urlRedirectBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -745,7 +785,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRouteAction()) {
         mergeRouteAction(other.getRouteAction());
       }
-      if (!other.getService().isEmpty()) {
+      if (other.hasService()) {
+        bitField0_ |= 0x00000004;
         service_ = other.service_;
         onChanged();
       }
@@ -966,12 +1007,12 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      *
      * @return Whether the routeAction field is set.
      */
     public boolean hasRouteAction() {
-      return routeActionBuilder_ != null || routeAction_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -982,7 +1023,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      *
      * @return The routeAction.
      */
@@ -1004,7 +1045,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder setRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (routeActionBuilder_ == null) {
@@ -1016,7 +1057,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         routeActionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1028,7 +1069,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder setRouteAction(
         com.google.cloud.compute.v1.HttpRouteAction.Builder builderForValue) {
@@ -1038,7 +1079,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         routeActionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1050,11 +1091,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder mergeRouteAction(com.google.cloud.compute.v1.HttpRouteAction value) {
       if (routeActionBuilder_ == null) {
-        if (routeAction_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && routeAction_ != null
+            && routeAction_ != com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) {
           routeAction_ =
               com.google.cloud.compute.v1.HttpRouteAction.newBuilder(routeAction_)
                   .mergeFrom(value)
@@ -1066,7 +1109,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         routeActionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1078,17 +1121,16 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public Builder clearRouteAction() {
       if (routeActionBuilder_ == null) {
         routeAction_ = null;
         onChanged();
       } else {
-        routeAction_ = null;
-        routeActionBuilder_ = null;
+        routeActionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1100,10 +1142,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteAction.Builder getRouteActionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRouteActionFieldBuilder().getBuilder();
     }
@@ -1116,7 +1158,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     public com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder() {
       if (routeActionBuilder_ != null) {
@@ -1136,7 +1178,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
+     * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRouteAction,
@@ -1164,7 +1206,22 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is additionally specified, advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction specifies any  weightedBackendServices, service must not be specified.
+     * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * </pre>
+     *
+     * <code>string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -1187,7 +1244,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -1210,7 +1267,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -1219,7 +1276,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       service_ = value;
       onChanged();
       return this;
@@ -1232,12 +1289,12 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -1250,7 +1307,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -1260,7 +1317,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       service_ = value;
       onChanged();
       return this;
@@ -1281,12 +1338,12 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      *
      * @return Whether the urlRedirect field is set.
      */
     public boolean hasUrlRedirect() {
-      return urlRedirectBuilder_ != null || urlRedirect_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1297,7 +1354,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      *
      * @return The urlRedirect.
      */
@@ -1319,7 +1376,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder setUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (urlRedirectBuilder_ == null) {
@@ -1331,7 +1388,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlRedirectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1343,7 +1400,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder setUrlRedirect(
         com.google.cloud.compute.v1.HttpRedirectAction.Builder builderForValue) {
@@ -1353,7 +1410,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlRedirectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1365,11 +1422,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder mergeUrlRedirect(com.google.cloud.compute.v1.HttpRedirectAction value) {
       if (urlRedirectBuilder_ == null) {
-        if (urlRedirect_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && urlRedirect_ != null
+            && urlRedirect_
+                != com.google.cloud.compute.v1.HttpRedirectAction.getDefaultInstance()) {
           urlRedirect_ =
               com.google.cloud.compute.v1.HttpRedirectAction.newBuilder(urlRedirect_)
                   .mergeFrom(value)
@@ -1381,7 +1441,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlRedirectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1393,17 +1453,16 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public Builder clearUrlRedirect() {
       if (urlRedirectBuilder_ == null) {
         urlRedirect_ = null;
         onChanged();
       } else {
-        urlRedirect_ = null;
-        urlRedirectBuilder_ = null;
+        urlRedirectBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1415,10 +1474,10 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectAction.Builder getUrlRedirectBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUrlRedirectFieldBuilder().getBuilder();
     }
@@ -1431,7 +1490,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     public com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder() {
       if (urlRedirectBuilder_ != null) {
@@ -1451,7 +1510,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
+     * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpRedirectAction,

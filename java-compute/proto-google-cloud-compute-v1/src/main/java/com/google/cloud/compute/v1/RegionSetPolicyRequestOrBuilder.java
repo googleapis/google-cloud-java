@@ -30,7 +30,7 @@ public interface RegionSetPolicyRequestOrBuilder
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList();
   /**
@@ -40,7 +40,7 @@ public interface RegionSetPolicyRequestOrBuilder
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   com.google.cloud.compute.v1.Binding getBindings(int index);
   /**
@@ -50,7 +50,7 @@ public interface RegionSetPolicyRequestOrBuilder
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   int getBindingsCount();
   /**
@@ -60,7 +60,7 @@ public interface RegionSetPolicyRequestOrBuilder
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder> getBindingsOrBuilderList();
   /**
@@ -70,10 +70,22 @@ public interface RegionSetPolicyRequestOrBuilder
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+   * </pre>
+   *
+   * <code>string etag = 3123477;</code>
+   *
+   * @return Whether the etag field is set.
+   */
+  boolean hasEtag();
   /**
    *
    *

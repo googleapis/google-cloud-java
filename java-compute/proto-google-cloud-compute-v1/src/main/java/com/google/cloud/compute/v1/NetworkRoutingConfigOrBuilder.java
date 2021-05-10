@@ -30,7 +30,20 @@ public interface NetworkRoutingConfigOrBuilder
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
+   * </code>
+   *
+   * @return Whether the routingMode field is set.
+   */
+  boolean hasRoutingMode();
+  /**
+   *
+   *
+   * <pre>
+   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
    * </code>
    *
    * @return The enum numeric value on the wire for routingMode.
@@ -43,7 +56,7 @@ public interface NetworkRoutingConfigOrBuilder
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
    * </code>
    *
    * @return The routingMode.

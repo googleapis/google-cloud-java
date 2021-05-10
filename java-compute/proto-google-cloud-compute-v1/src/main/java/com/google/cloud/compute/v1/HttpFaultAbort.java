@@ -58,6 +58,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,11 +71,13 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
             break;
           case 1215272145:
             {
+              bitField0_ |= 0x00000002;
               percentage_ = input.readDouble();
               break;
             }
-          case 1604115528:
+          case -543368120:
             {
+              bitField0_ |= 0x00000001;
               httpStatus_ = input.readUInt32();
               break;
             }
@@ -112,7 +115,8 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpFaultAbort.Builder.class);
   }
 
-  public static final int HTTP_STATUS_FIELD_NUMBER = 200514441;
+  private int bitField0_;
+  public static final int HTTP_STATUS_FIELD_NUMBER = 468949897;
   private int httpStatus_;
   /**
    *
@@ -122,7 +126,23 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    * The value must be between 200 and 599 inclusive.
    * </pre>
    *
-   * <code>uint32 http_status = 200514441;</code>
+   * <code>uint32 http_status = 468949897;</code>
+   *
+   * @return Whether the httpStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpStatus() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The HTTP status code used to abort the request.
+   * The value must be between 200 and 599 inclusive.
+   * </pre>
+   *
+   * <code>uint32 http_status = 468949897;</code>
    *
    * @return The httpStatus.
    */
@@ -133,6 +153,22 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
   private double percentage_;
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
+   * The value must be between 0.0 and 100.0 inclusive.
+   * </pre>
+   *
+   * <code>double percentage = 151909018;</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -164,11 +200,11 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (percentage_ != 0D) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(151909018, percentage_);
     }
-    if (httpStatus_ != 0) {
-      output.writeUInt32(200514441, httpStatus_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeUInt32(468949897, httpStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -179,11 +215,11 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (percentage_ != 0D) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(151909018, percentage_);
     }
-    if (httpStatus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(200514441, httpStatus_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(468949897, httpStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -201,9 +237,15 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.HttpFaultAbort other =
         (com.google.cloud.compute.v1.HttpFaultAbort) obj;
 
-    if (getHttpStatus() != other.getHttpStatus()) return false;
-    if (java.lang.Double.doubleToLongBits(getPercentage())
-        != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    if (hasHttpStatus() != other.hasHttpStatus()) return false;
+    if (hasHttpStatus()) {
+      if (getHttpStatus() != other.getHttpStatus()) return false;
+    }
+    if (hasPercentage() != other.hasPercentage()) return false;
+    if (hasPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getPercentage())
+          != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -215,13 +257,17 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HTTP_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getHttpStatus();
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getPercentage()));
+    if (hasHttpStatus()) {
+      hash = (37 * hash) + HTTP_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpStatus();
+    }
+    if (hasPercentage()) {
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPercentage()));
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -368,9 +414,9 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       httpStatus_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       percentage_ = 0D;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -398,8 +444,17 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HttpFaultAbort buildPartial() {
       com.google.cloud.compute.v1.HttpFaultAbort result =
           new com.google.cloud.compute.v1.HttpFaultAbort(this);
-      result.httpStatus_ = httpStatus_;
-      result.percentage_ = percentage_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.httpStatus_ = httpStatus_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.percentage_ = percentage_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -449,10 +504,10 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpFaultAbort other) {
       if (other == com.google.cloud.compute.v1.HttpFaultAbort.getDefaultInstance()) return this;
-      if (other.getHttpStatus() != 0) {
+      if (other.hasHttpStatus()) {
         setHttpStatus(other.getHttpStatus());
       }
-      if (other.getPercentage() != 0D) {
+      if (other.hasPercentage()) {
         setPercentage(other.getPercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -484,6 +539,8 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int httpStatus_;
     /**
      *
@@ -493,7 +550,23 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 200514441;</code>
+     * <code>uint32 http_status = 468949897;</code>
+     *
+     * @return Whether the httpStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpStatus() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The HTTP status code used to abort the request.
+     * The value must be between 200 and 599 inclusive.
+     * </pre>
+     *
+     * <code>uint32 http_status = 468949897;</code>
      *
      * @return The httpStatus.
      */
@@ -509,13 +582,13 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 200514441;</code>
+     * <code>uint32 http_status = 468949897;</code>
      *
      * @param value The httpStatus to set.
      * @return This builder for chaining.
      */
     public Builder setHttpStatus(int value) {
-
+      bitField0_ |= 0x00000001;
       httpStatus_ = value;
       onChanged();
       return this;
@@ -528,18 +601,34 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 200514441;</code>
+     * <code>uint32 http_status = 468949897;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHttpStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       httpStatus_ = 0;
       onChanged();
       return this;
     }
 
     private double percentage_;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
+     * The value must be between 0.0 and 100.0 inclusive.
+     * </pre>
+     *
+     * <code>double percentage = 151909018;</code>
+     *
+     * @return Whether the percentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -570,7 +659,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercentage(double value) {
-
+      bitField0_ |= 0x00000002;
       percentage_ = value;
       onChanged();
       return this;
@@ -588,7 +677,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPercentage() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       percentage_ = 0D;
       onChanged();
       return this;

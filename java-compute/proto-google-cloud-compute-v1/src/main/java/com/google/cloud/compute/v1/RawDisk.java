@@ -62,6 +62,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,25 +73,25 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 368071146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sha1Checksum_ = s;
-              break;
-            }
-          case 402989504:
-            {
-              int rawValue = input.readEnum();
-
-              containerType_ = rawValue;
-              break;
-            }
           case 1417887962:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               source_ = s;
+              break;
+            }
+          case -1779412502:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              sha1Checksum_ = s;
+              break;
+            }
+          case -1744494144:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              containerType_ = rawValue;
               break;
             }
           default:
@@ -246,7 +247,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RawDisk.ContainerType)
   }
 
-  public static final int CONTAINER_TYPE_FIELD_NUMBER = 50373688;
+  private int bitField0_;
+  public static final int CONTAINER_TYPE_FIELD_NUMBER = 318809144;
   private int containerType_;
   /**
    *
@@ -255,7 +257,22 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   *
+   * @return Whether the containerType field is set.
+   */
+  @java.lang.Override
+  public boolean hasContainerType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
    *
    * @return The enum numeric value on the wire for containerType.
    */
@@ -270,7 +287,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
    *
    * @return The containerType.
    */
@@ -282,7 +299,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.RawDisk.ContainerType.UNRECOGNIZED : result;
   }
 
-  public static final int SHA1_CHECKSUM_FIELD_NUMBER = 46008893;
+  public static final int SHA1_CHECKSUM_FIELD_NUMBER = 314444349;
   private volatile java.lang.Object sha1Checksum_;
   /**
    *
@@ -291,7 +308,22 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 46008893;</code>
+   * <code>string sha1_checksum = 314444349;</code>
+   *
+   * @return Whether the sha1Checksum field is set.
+   */
+  @java.lang.Override
+  public boolean hasSha1Checksum() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+   * </pre>
+   *
+   * <code>string sha1_checksum = 314444349;</code>
    *
    * @return The sha1Checksum.
    */
@@ -314,7 +346,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 46008893;</code>
+   * <code>string sha1_checksum = 314444349;</code>
    *
    * @return The bytes for sha1Checksum.
    */
@@ -333,6 +365,21 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
   private volatile java.lang.Object source_;
+  /**
+   *
+   *
+   * <pre>
+   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
+   * @return Whether the source field is set.
+   */
+  @java.lang.Override
+  public boolean hasSource() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -394,15 +441,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSha1ChecksumBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 46008893, sha1Checksum_);
-    }
-    if (containerType_
-        != com.google.cloud.compute.v1.RawDisk.ContainerType.UNDEFINED_CONTAINER_TYPE.getNumber()) {
-      output.writeEnum(50373688, containerType_);
-    }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 314444349, sha1Checksum_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(318809144, containerType_);
     }
     unknownFields.writeTo(output);
   }
@@ -413,15 +459,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSha1ChecksumBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46008893, sha1Checksum_);
-    }
-    if (containerType_
-        != com.google.cloud.compute.v1.RawDisk.ContainerType.UNDEFINED_CONTAINER_TYPE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(50373688, containerType_);
-    }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(314444349, sha1Checksum_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(318809144, containerType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -438,9 +483,18 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.RawDisk other = (com.google.cloud.compute.v1.RawDisk) obj;
 
-    if (containerType_ != other.containerType_) return false;
-    if (!getSha1Checksum().equals(other.getSha1Checksum())) return false;
-    if (!getSource().equals(other.getSource())) return false;
+    if (hasContainerType() != other.hasContainerType()) return false;
+    if (hasContainerType()) {
+      if (containerType_ != other.containerType_) return false;
+    }
+    if (hasSha1Checksum() != other.hasSha1Checksum()) return false;
+    if (hasSha1Checksum()) {
+      if (!getSha1Checksum().equals(other.getSha1Checksum())) return false;
+    }
+    if (hasSource() != other.hasSource()) return false;
+    if (hasSource()) {
+      if (!getSource().equals(other.getSource())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -452,12 +506,18 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTAINER_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + containerType_;
-    hash = (37 * hash) + SHA1_CHECKSUM_FIELD_NUMBER;
-    hash = (53 * hash) + getSha1Checksum().hashCode();
-    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSource().hashCode();
+    if (hasContainerType()) {
+      hash = (37 * hash) + CONTAINER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + containerType_;
+    }
+    if (hasSha1Checksum()) {
+      hash = (37 * hash) + SHA1_CHECKSUM_FIELD_NUMBER;
+      hash = (53 * hash) + getSha1Checksum().hashCode();
+    }
+    if (hasSource()) {
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -603,11 +663,11 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       containerType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sha1Checksum_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -634,9 +694,21 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.RawDisk buildPartial() {
       com.google.cloud.compute.v1.RawDisk result = new com.google.cloud.compute.v1.RawDisk(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.containerType_ = containerType_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.sha1Checksum_ = sha1Checksum_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.source_ = source_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -686,14 +758,16 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.RawDisk other) {
       if (other == com.google.cloud.compute.v1.RawDisk.getDefaultInstance()) return this;
-      if (other.containerType_ != 0) {
-        setContainerTypeValue(other.getContainerTypeValue());
+      if (other.hasContainerType()) {
+        setContainerType(other.getContainerType());
       }
-      if (!other.getSha1Checksum().isEmpty()) {
+      if (other.hasSha1Checksum()) {
+        bitField0_ |= 0x00000002;
         sha1Checksum_ = other.sha1Checksum_;
         onChanged();
       }
-      if (!other.getSource().isEmpty()) {
+      if (other.hasSource()) {
+        bitField0_ |= 0x00000004;
         source_ = other.source_;
         onChanged();
       }
@@ -726,6 +800,8 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int containerType_ = 0;
     /**
      *
@@ -734,7 +810,22 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     *
+     * @return Whether the containerType field is set.
+     */
+    @java.lang.Override
+    public boolean hasContainerType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
      *
      * @return The enum numeric value on the wire for containerType.
      */
@@ -749,13 +840,13 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
      *
      * @param value The enum numeric value on the wire for containerType to set.
      * @return This builder for chaining.
      */
     public Builder setContainerTypeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       containerType_ = value;
       onChanged();
       return this;
@@ -767,7 +858,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
      *
      * @return The containerType.
      */
@@ -787,7 +878,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
      *
      * @param value The containerType to set.
      * @return This builder for chaining.
@@ -796,7 +887,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       containerType_ = value.getNumber();
       onChanged();
       return this;
@@ -808,12 +899,12 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearContainerType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       containerType_ = 0;
       onChanged();
       return this;
@@ -827,7 +918,21 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 46008893;</code>
+     * <code>string sha1_checksum = 314444349;</code>
+     *
+     * @return Whether the sha1Checksum field is set.
+     */
+    public boolean hasSha1Checksum() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+     * </pre>
+     *
+     * <code>string sha1_checksum = 314444349;</code>
      *
      * @return The sha1Checksum.
      */
@@ -849,7 +954,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 46008893;</code>
+     * <code>string sha1_checksum = 314444349;</code>
      *
      * @return The bytes for sha1Checksum.
      */
@@ -871,7 +976,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 46008893;</code>
+     * <code>string sha1_checksum = 314444349;</code>
      *
      * @param value The sha1Checksum to set.
      * @return This builder for chaining.
@@ -880,7 +985,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       sha1Checksum_ = value;
       onChanged();
       return this;
@@ -892,12 +997,12 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 46008893;</code>
+     * <code>string sha1_checksum = 314444349;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSha1Checksum() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sha1Checksum_ = getDefaultInstance().getSha1Checksum();
       onChanged();
       return this;
@@ -909,7 +1014,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 46008893;</code>
+     * <code>string sha1_checksum = 314444349;</code>
      *
      * @param value The bytes for sha1Checksum to set.
      * @return This builder for chaining.
@@ -919,13 +1024,27 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       sha1Checksum_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object source_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * </pre>
+     *
+     * <code>string source = 177235995;</code>
+     *
+     * @return Whether the source field is set.
+     */
+    public boolean hasSource() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -986,7 +1105,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       source_ = value;
       onChanged();
       return this;
@@ -1003,7 +1122,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
@@ -1025,7 +1144,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       source_ = value;
       onChanged();
       return this;

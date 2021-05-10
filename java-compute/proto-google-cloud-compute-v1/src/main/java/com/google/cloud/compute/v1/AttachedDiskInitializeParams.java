@@ -82,17 +82,52 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
           case 177763082:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000040;
               }
               resourcePolicies_.add(s);
               break;
             }
-          case 281950930:
+          case 403546554:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              sourceImage_ = s;
+              break;
+            }
+          case 742457194:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              diskName_ = s;
+              break;
+            }
+          case 744072418:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              diskType_ = s;
+              break;
+            }
+          case 1008495426:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              sourceSnapshot_ = s;
+              break;
+            }
+          case 1619615840:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000010;
+              onUpdateAction_ = rawValue;
+              break;
+            }
+          case -1865532718:
             {
               com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (sourceSnapshotEncryptionKey_ != null) {
+              if (((bitField0_ & 0x00000100) != 0)) {
                 subBuilder = sourceSnapshotEncryptionKey_.toBuilder();
               }
               sourceSnapshotEncryptionKey_ =
@@ -103,41 +138,20 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 subBuilder.mergeFrom(sourceSnapshotEncryptionKey_);
                 sourceSnapshotEncryptionKey_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000100;
               break;
             }
-          case 382626234:
+          case -1764857414:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               diskSizeGb_ = s;
               break;
             }
-          case 403546554:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceImage_ = s;
-              break;
-            }
-          case 742457194:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              diskName_ = s;
-              break;
-            }
-          case 744072418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              diskType_ = s;
-              break;
-            }
-          case 904545626:
+          case -1242938022:
             {
               com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (sourceImageEncryptionKey_ != null) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = sourceImageEncryptionKey_.toBuilder();
               }
               sourceImageEncryptionKey_ =
@@ -148,36 +162,22 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 subBuilder.mergeFrom(sourceImageEncryptionKey_);
                 sourceImageEncryptionKey_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000040;
               break;
             }
-          case 1008495426:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              sourceSnapshot_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               description_ = s;
               break;
             }
-          case 1619615840:
+          case -293404678:
             {
-              int rawValue = input.readEnum();
-
-              onUpdateAction_ = rawValue;
-              break;
-            }
-          case 1854078970:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000010;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -199,7 +199,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -216,7 +216,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 231759871:
+      case 500195327:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -253,10 +253,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * <code>UNDEFINED_ON_UPDATE_ACTION = 0;</code>
      */
     UNDEFINED_ON_UPDATE_ACTION(0),
-    /** <code>RECREATE_DISK = 226332397;</code> */
-    RECREATE_DISK(226332397),
-    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 129664256;</code> */
-    RECREATE_DISK_IF_SOURCE_CHANGED(129664256),
+    /** <code>RECREATE_DISK = 494767853;</code> */
+    RECREATE_DISK(494767853),
+    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code> */
+    RECREATE_DISK_IF_SOURCE_CHANGED(398099712),
     /** <code>USE_EXISTING_DISK = 232682233;</code> */
     USE_EXISTING_DISK(232682233),
     UNRECOGNIZED(-1),
@@ -272,10 +272,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * <code>UNDEFINED_ON_UPDATE_ACTION = 0;</code>
      */
     public static final int UNDEFINED_ON_UPDATE_ACTION_VALUE = 0;
-    /** <code>RECREATE_DISK = 226332397;</code> */
-    public static final int RECREATE_DISK_VALUE = 226332397;
-    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 129664256;</code> */
-    public static final int RECREATE_DISK_IF_SOURCE_CHANGED_VALUE = 129664256;
+    /** <code>RECREATE_DISK = 494767853;</code> */
+    public static final int RECREATE_DISK_VALUE = 494767853;
+    /** <code>RECREATE_DISK_IF_SOURCE_CHANGED = 398099712;</code> */
+    public static final int RECREATE_DISK_IF_SOURCE_CHANGED_VALUE = 398099712;
     /** <code>USE_EXISTING_DISK = 232682233;</code> */
     public static final int USE_EXISTING_DISK_VALUE = 232682233;
 
@@ -305,9 +305,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       switch (value) {
         case 0:
           return UNDEFINED_ON_UPDATE_ACTION;
-        case 226332397:
+        case 494767853:
           return RECREATE_DISK;
-        case 129664256:
+        case 398099712:
           return RECREATE_DISK_IF_SOURCE_CHANGED;
         case 232682233:
           return USE_EXISTING_DISK;
@@ -366,7 +366,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction)
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  private int bitField0_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -375,7 +376,22 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description. Provide this property when creating the disk.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -398,7 +414,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -417,6 +433,21 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
 
   public static final int DISK_NAME_FIELD_NUMBER = 92807149;
   private volatile java.lang.Object diskName_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
+   * </pre>
+   *
+   * <code>string disk_name = 92807149;</code>
+   *
+   * @return Whether the diskName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -464,7 +495,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
   }
 
-  public static final int DISK_SIZE_GB_FIELD_NUMBER = 47828279;
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private volatile java.lang.Object diskSizeGb_;
   /**
    *
@@ -473,7 +504,22 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskSizeGb() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -496,7 +542,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -515,6 +561,26 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
 
   public static final int DISK_TYPE_FIELD_NUMBER = 93009052;
   private volatile java.lang.Object diskType_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
+   * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
+   * - projects/project/zones/zone/diskTypes/diskType
+   * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+   * </pre>
+   *
+   * <code>string disk_type = 93009052;</code>
+   *
+   * @return Whether the diskType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskType() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -572,7 +638,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 231759871;
+  public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -604,7 +670,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -626,7 +692,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -639,7 +705,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -656,7 +722,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -672,6 +738,23 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
 
   public static final int ON_UPDATE_ACTION_FIELD_NUMBER = 202451980;
   private int onUpdateAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
+   * </code>
+   *
+   * @return Whether the onUpdateAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnUpdateAction() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -795,6 +878,30 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    * <code>string source_image = 50443319;</code>
    *
+   * @return Whether the sourceImage field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceImage() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+   * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
+   * projects/debian-cloud/global/images/family/debian-9
+   * Alternatively, use a specific version of a public operating system image:
+   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+   * To create a disk with a custom image that you created, specify the image name in the following format:
+   * global/images/my-custom-image
+   * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
+   * global/images/family/my-image-family
+   * If the source image is deleted later, this field will not be set.
+   * </pre>
+   *
+   * <code>string source_image = 50443319;</code>
+   *
    * @return The sourceImage.
    */
   @java.lang.Override
@@ -842,7 +949,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
   }
 
-  public static final int SOURCE_IMAGE_ENCRYPTION_KEY_FIELD_NUMBER = 113068203;
+  public static final int SOURCE_IMAGE_ENCRYPTION_KEY_FIELD_NUMBER = 381503659;
   private com.google.cloud.compute.v1.CustomerEncryptionKey sourceImageEncryptionKey_;
   /**
    *
@@ -852,14 +959,14 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
    */
   @java.lang.Override
   public boolean hasSourceImageEncryptionKey() {
-    return sourceImageEncryptionKey_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -869,7 +976,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -888,17 +995,37 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
       getSourceImageEncryptionKeyOrBuilder() {
-    return getSourceImageEncryptionKey();
+    return sourceImageEncryptionKey_ == null
+        ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+        : sourceImageEncryptionKey_;
   }
 
   public static final int SOURCE_SNAPSHOT_FIELD_NUMBER = 126061928;
   private volatile java.lang.Object sourceSnapshot_;
+  /**
+   *
+   *
+   * <pre>
+   * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
+   * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
+   * global/snapshots/my-backup
+   * If the source snapshot is deleted later, this field will not be set.
+   * </pre>
+   *
+   * <code>string source_snapshot = 126061928;</code>
+   *
+   * @return Whether the sourceSnapshot field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceSnapshot() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -952,7 +1079,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
   }
 
-  public static final int SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER = 35243866;
+  public static final int SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER = 303679322;
   private com.google.cloud.compute.v1.CustomerEncryptionKey sourceSnapshotEncryptionKey_;
   /**
    *
@@ -961,14 +1088,15 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
    */
   @java.lang.Override
   public boolean hasSourceSnapshotEncryptionKey() {
-    return sourceSnapshotEncryptionKey_ != null;
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -977,7 +1105,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -995,13 +1124,16 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    * The customer-supplied encryption key of the source snapshot.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
       getSourceSnapshotEncryptionKeyOrBuilder() {
-    return getSourceSnapshotEncryptionKey();
+    return sourceSnapshotEncryptionKey_ == null
+        ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+        : sourceSnapshotEncryptionKey_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1022,38 +1154,35 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 22220385, resourcePolicies_.getRaw(i));
     }
-    if (sourceSnapshotEncryptionKey_ != null) {
-      output.writeMessage(35243866, getSourceSnapshotEncryptionKey());
-    }
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 47828279, diskSizeGb_);
-    }
-    if (!getSourceImageBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50443319, sourceImage_);
     }
-    if (!getDiskNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 92807149, diskName_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 93009052, diskType_);
     }
-    if (sourceImageEncryptionKey_ != null) {
-      output.writeMessage(113068203, getSourceImageEncryptionKey());
-    }
-    if (!getSourceSnapshotBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (onUpdateAction_
-        != com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction
-            .UNDEFINED_ON_UPDATE_ACTION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(202451980, onUpdateAction_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(381503659, getSourceImageEncryptionKey());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -1071,39 +1200,36 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       size += dataSize;
       size += 4 * getResourcePoliciesList().size();
     }
-    if (sourceSnapshotEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              35243866, getSourceSnapshotEncryptionKey());
-    }
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47828279, diskSizeGb_);
-    }
-    if (!getSourceImageBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50443319, sourceImage_);
     }
-    if (!getDiskNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92807149, diskName_);
     }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93009052, diskType_);
     }
-    if (sourceImageEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              113068203, getSourceImageEncryptionKey());
-    }
-    if (!getSourceSnapshotBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (onUpdateAction_
-        != com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction
-            .UNDEFINED_ON_UPDATE_ACTION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(202451980, onUpdateAction_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              303679322, getSourceSnapshotEncryptionKey());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              381503659, getSourceImageEncryptionKey());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -1113,7 +1239,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1131,19 +1257,40 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.AttachedDiskInitializeParams other =
         (com.google.cloud.compute.v1.AttachedDiskInitializeParams) obj;
 
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getDiskName().equals(other.getDiskName())) return false;
-    if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
-    if (!getDiskType().equals(other.getDiskType())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasDiskName() != other.hasDiskName()) return false;
+    if (hasDiskName()) {
+      if (!getDiskName().equals(other.getDiskName())) return false;
+    }
+    if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
+    if (hasDiskSizeGb()) {
+      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+    }
+    if (hasDiskType() != other.hasDiskType()) return false;
+    if (hasDiskType()) {
+      if (!getDiskType().equals(other.getDiskType())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (onUpdateAction_ != other.onUpdateAction_) return false;
+    if (hasOnUpdateAction() != other.hasOnUpdateAction()) return false;
+    if (hasOnUpdateAction()) {
+      if (onUpdateAction_ != other.onUpdateAction_) return false;
+    }
     if (!getResourcePoliciesList().equals(other.getResourcePoliciesList())) return false;
-    if (!getSourceImage().equals(other.getSourceImage())) return false;
+    if (hasSourceImage() != other.hasSourceImage()) return false;
+    if (hasSourceImage()) {
+      if (!getSourceImage().equals(other.getSourceImage())) return false;
+    }
     if (hasSourceImageEncryptionKey() != other.hasSourceImageEncryptionKey()) return false;
     if (hasSourceImageEncryptionKey()) {
       if (!getSourceImageEncryptionKey().equals(other.getSourceImageEncryptionKey())) return false;
     }
-    if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
+    if (hasSourceSnapshot() != other.hasSourceSnapshot()) return false;
+    if (hasSourceSnapshot()) {
+      if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
+    }
     if (hasSourceSnapshotEncryptionKey() != other.hasSourceSnapshotEncryptionKey()) return false;
     if (hasSourceSnapshotEncryptionKey()) {
       if (!getSourceSnapshotEncryptionKey().equals(other.getSourceSnapshotEncryptionKey()))
@@ -1160,32 +1307,46 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + DISK_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskName().hashCode();
-    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskSizeGb().hashCode();
-    hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskType().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasDiskName()) {
+      hash = (37 * hash) + DISK_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskName().hashCode();
+    }
+    if (hasDiskSizeGb()) {
+      hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskSizeGb().hashCode();
+    }
+    if (hasDiskType()) {
+      hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskType().hashCode();
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (37 * hash) + ON_UPDATE_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + onUpdateAction_;
+    if (hasOnUpdateAction()) {
+      hash = (37 * hash) + ON_UPDATE_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + onUpdateAction_;
+    }
     if (getResourcePoliciesCount() > 0) {
       hash = (37 * hash) + RESOURCE_POLICIES_FIELD_NUMBER;
       hash = (53 * hash) + getResourcePoliciesList().hashCode();
     }
-    hash = (37 * hash) + SOURCE_IMAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceImage().hashCode();
+    if (hasSourceImage()) {
+      hash = (37 * hash) + SOURCE_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceImage().hashCode();
+    }
     if (hasSourceImageEncryptionKey()) {
       hash = (37 * hash) + SOURCE_IMAGE_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSourceImageEncryptionKey().hashCode();
     }
-    hash = (37 * hash) + SOURCE_SNAPSHOT_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceSnapshot().hashCode();
+    if (hasSourceSnapshot()) {
+      hash = (37 * hash) + SOURCE_SNAPSHOT_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceSnapshot().hashCode();
+    }
     if (hasSourceSnapshotEncryptionKey()) {
       hash = (37 * hash) + SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSnapshotEncryptionKey().hashCode();
@@ -1313,7 +1474,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1323,7 +1484,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1351,41 +1512,44 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSourceImageEncryptionKeyFieldBuilder();
+        getSourceSnapshotEncryptionKeyFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       diskName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       diskSizeGb_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       diskType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
       onUpdateAction_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sourceImage_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (sourceImageEncryptionKeyBuilder_ == null) {
         sourceImageEncryptionKey_ = null;
       } else {
-        sourceImageEncryptionKey_ = null;
-        sourceImageEncryptionKeyBuilder_ = null;
+        sourceImageEncryptionKeyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000100);
       sourceSnapshot_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
         sourceSnapshotEncryptionKey_ = null;
       } else {
-        sourceSnapshotEncryptionKey_ = null;
-        sourceSnapshotEncryptionKeyBuilder_ = null;
+        sourceSnapshotEncryptionKeyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1414,30 +1578,59 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       com.google.cloud.compute.v1.AttachedDiskInitializeParams result =
           new com.google.cloud.compute.v1.AttachedDiskInitializeParams(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.diskName_ = diskName_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.diskSizeGb_ = diskSizeGb_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.diskType_ = diskType_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.onUpdateAction_ = onUpdateAction_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.resourcePolicies_ = resourcePolicies_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.sourceImage_ = sourceImage_;
-      if (sourceImageEncryptionKeyBuilder_ == null) {
-        result.sourceImageEncryptionKey_ = sourceImageEncryptionKey_;
-      } else {
-        result.sourceImageEncryptionKey_ = sourceImageEncryptionKeyBuilder_.build();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (sourceImageEncryptionKeyBuilder_ == null) {
+          result.sourceImageEncryptionKey_ = sourceImageEncryptionKey_;
+        } else {
+          result.sourceImageEncryptionKey_ = sourceImageEncryptionKeyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000080;
       }
       result.sourceSnapshot_ = sourceSnapshot_;
-      if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        result.sourceSnapshotEncryptionKey_ = sourceSnapshotEncryptionKey_;
-      } else {
-        result.sourceSnapshotEncryptionKey_ = sourceSnapshotEncryptionKeyBuilder_.build();
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (sourceSnapshotEncryptionKeyBuilder_ == null) {
+          result.sourceSnapshotEncryptionKey_ = sourceSnapshotEncryptionKey_;
+        } else {
+          result.sourceSnapshotEncryptionKey_ = sourceSnapshotEncryptionKeyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1488,44 +1681,50 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.AttachedDiskInitializeParams other) {
       if (other == com.google.cloud.compute.v1.AttachedDiskInitializeParams.getDefaultInstance())
         return this;
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000001;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getDiskName().isEmpty()) {
+      if (other.hasDiskName()) {
+        bitField0_ |= 0x00000002;
         diskName_ = other.diskName_;
         onChanged();
       }
-      if (!other.getDiskSizeGb().isEmpty()) {
+      if (other.hasDiskSizeGb()) {
+        bitField0_ |= 0x00000004;
         diskSizeGb_ = other.diskSizeGb_;
         onChanged();
       }
-      if (!other.getDiskType().isEmpty()) {
+      if (other.hasDiskType()) {
+        bitField0_ |= 0x00000008;
         diskType_ = other.diskType_;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      if (other.onUpdateAction_ != 0) {
-        setOnUpdateActionValue(other.getOnUpdateActionValue());
+      if (other.hasOnUpdateAction()) {
+        setOnUpdateAction(other.getOnUpdateAction());
       }
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
         }
         onChanged();
       }
-      if (!other.getSourceImage().isEmpty()) {
+      if (other.hasSourceImage()) {
+        bitField0_ |= 0x00000080;
         sourceImage_ = other.sourceImage_;
         onChanged();
       }
       if (other.hasSourceImageEncryptionKey()) {
         mergeSourceImageEncryptionKey(other.getSourceImageEncryptionKey());
       }
-      if (!other.getSourceSnapshot().isEmpty()) {
+      if (other.hasSourceSnapshot()) {
+        bitField0_ |= 0x00000200;
         sourceSnapshot_ = other.sourceSnapshot_;
         onChanged();
       }
@@ -1572,7 +1771,21 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description. Provide this property when creating the disk.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1594,7 +1807,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1616,7 +1829,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1625,7 +1838,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -1637,12 +1850,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1654,7 +1867,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * An optional description. Provide this property when creating the disk.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1664,13 +1877,27 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object diskName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the disk name. If not specified, the default is to use the name of the instance. If a disk with the same name already exists in the given region, the existing disk is attached to the new instance and the new disk is not created.
+     * </pre>
+     *
+     * <code>string disk_name = 92807149;</code>
+     *
+     * @return Whether the diskName field is set.
+     */
+    public boolean hasDiskName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1731,7 +1958,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       diskName_ = value;
       onChanged();
       return this;
@@ -1748,7 +1975,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDiskName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       diskName_ = getDefaultInstance().getDiskName();
       onChanged();
       return this;
@@ -1770,7 +1997,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       diskName_ = value;
       onChanged();
       return this;
@@ -1784,7 +2011,21 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
+     *
+     * @return Whether the diskSizeGb field is set.
+     */
+    public boolean hasDiskSizeGb() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
+     * </pre>
+     *
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -1806,7 +2047,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return The bytes for diskSizeGb.
      */
@@ -1828,7 +2069,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -1837,7 +2078,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       diskSizeGb_ = value;
       onChanged();
       return this;
@@ -1849,12 +2090,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
       onChanged();
       return this;
@@ -1866,7 +2107,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Specifies the size of the disk in base-2 GB. The size must be at least 10 GB. If you specify a sourceImage, which is required for boot disks, the default size is the size of the sourceImage. If you do not specify a sourceImage, the default disk size is 500 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @param value The bytes for diskSizeGb to set.
      * @return This builder for chaining.
@@ -1876,13 +2117,32 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       diskSizeGb_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object diskType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
+     * Other values include pd-ssd and local-ssd. If you define this field, you can provide either the full or partial URL. For example, the following are valid values:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
+     * - projects/project/zones/zone/diskTypes/diskType
+     * - zones/zone/diskTypes/diskType  Note that for InstanceTemplate, this is the name of the disk type, not URL.
+     * </pre>
+     *
+     * <code>string disk_type = 93009052;</code>
+     *
+     * @return Whether the diskType field is set.
+     */
+    public boolean hasDiskType() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1958,7 +2218,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       diskType_ = value;
       onChanged();
       return this;
@@ -1980,7 +2240,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       diskType_ = getDefaultInstance().getDiskType();
       onChanged();
       return this;
@@ -2007,7 +2267,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       diskType_ = value;
       onChanged();
       return this;
@@ -2045,7 +2305,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2067,7 +2327,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2080,7 +2340,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -2098,7 +2358,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2123,7 +2383,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2144,7 +2404,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2163,7 +2423,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2171,6 +2431,23 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
 
     private int onUpdateAction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;
+     * </code>
+     *
+     * @return Whether the onUpdateAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasOnUpdateAction() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2203,7 +2480,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setOnUpdateActionValue(int value) {
-
+      bitField0_ |= 0x00000020;
       onUpdateAction_ = value;
       onChanged();
       return this;
@@ -2251,7 +2528,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       onUpdateAction_ = value.getNumber();
       onChanged();
       return this;
@@ -2270,7 +2547,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearOnUpdateAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       onUpdateAction_ = 0;
       onChanged();
       return this;
@@ -2280,9 +2557,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2417,7 +2694,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public Builder clearResourcePolicies() {
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2445,6 +2722,29 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
 
     private java.lang.Object sourceImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The source image to create this disk. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD.
+     * To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image:
+     * projects/debian-cloud/global/images/family/debian-9
+     * Alternatively, use a specific version of a public operating system image:
+     * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+     * To create a disk with a custom image that you created, specify the image name in the following format:
+     * global/images/my-custom-image
+     * You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name:
+     * global/images/family/my-image-family
+     * If the source image is deleted later, this field will not be set.
+     * </pre>
+     *
+     * <code>string source_image = 50443319;</code>
+     *
+     * @return Whether the sourceImage field is set.
+     */
+    public boolean hasSourceImage() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2532,7 +2832,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       sourceImage_ = value;
       onChanged();
       return this;
@@ -2558,7 +2858,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSourceImage() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       sourceImage_ = getDefaultInstance().getSourceImage();
       onChanged();
       return this;
@@ -2589,7 +2889,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       sourceImage_ = value;
       onChanged();
       return this;
@@ -2609,13 +2909,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return Whether the sourceImageEncryptionKey field is set.
      */
     public boolean hasSourceImageEncryptionKey() {
-      return sourceImageEncryptionKeyBuilder_ != null || sourceImageEncryptionKey_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2625,7 +2925,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      *
      * @return The sourceImageEncryptionKey.
@@ -2647,7 +2947,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -2661,7 +2961,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2672,7 +2972,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -2683,7 +2983,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2694,13 +2994,16 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder mergeSourceImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceImageEncryptionKeyBuilder_ == null) {
-        if (sourceImageEncryptionKey_ != null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && sourceImageEncryptionKey_ != null
+            && sourceImageEncryptionKey_
+                != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
           sourceImageEncryptionKey_ =
               com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(
                       sourceImageEncryptionKey_)
@@ -2713,7 +3016,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2724,7 +3027,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
@@ -2732,10 +3035,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         sourceImageEncryptionKey_ = null;
         onChanged();
       } else {
-        sourceImageEncryptionKey_ = null;
-        sourceImageEncryptionKeyBuilder_ = null;
+        sourceImageEncryptionKeyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
     /**
@@ -2746,12 +3048,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceImageEncryptionKeyBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSourceImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -2763,7 +3065,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -2784,7 +3086,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2805,6 +3107,23 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
 
     private java.lang.Object sourceSnapshot_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The source snapshot to create this disk. When creating a new instance, one of initializeParams.sourceSnapshot or initializeParams.sourceImage or disks.source is required except for local SSD.
+     * To create a disk with a snapshot that you created, specify the snapshot name in the following format:
+     * global/snapshots/my-backup
+     * If the source snapshot is deleted later, this field will not be set.
+     * </pre>
+     *
+     * <code>string source_snapshot = 126061928;</code>
+     *
+     * @return Whether the sourceSnapshot field is set.
+     */
+    public boolean hasSourceSnapshot() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2874,7 +3193,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       sourceSnapshot_ = value;
       onChanged();
       return this;
@@ -2894,7 +3213,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSourceSnapshot() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
       onChanged();
       return this;
@@ -2919,7 +3238,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       sourceSnapshot_ = value;
       onChanged();
       return this;
@@ -2939,13 +3258,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return sourceSnapshotEncryptionKeyBuilder_ != null || sourceSnapshotEncryptionKey_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2955,7 +3274,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      *
      * @return The sourceSnapshotEncryptionKey.
@@ -2977,7 +3296,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -2991,7 +3310,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3002,7 +3321,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -3013,7 +3332,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3024,13 +3343,16 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (sourceSnapshotEncryptionKey_ != null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && sourceSnapshotEncryptionKey_ != null
+            && sourceSnapshotEncryptionKey_
+                != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
           sourceSnapshotEncryptionKey_ =
               com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(
                       sourceSnapshotEncryptionKey_)
@@ -3043,7 +3365,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3054,7 +3376,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
@@ -3062,10 +3384,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         sourceSnapshotEncryptionKey_ = null;
         onChanged();
       } else {
-        sourceSnapshotEncryptionKey_ = null;
-        sourceSnapshotEncryptionKeyBuilder_ = null;
+        sourceSnapshotEncryptionKeyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
     /**
@@ -3076,12 +3397,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -3093,7 +3414,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -3114,7 +3435,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

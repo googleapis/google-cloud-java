@@ -64,6 +64,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,17 +75,17 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
           case 0:
             done = true;
             break;
-          case 382626234:
+          case -1764857414:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               diskSizeGb_ = s;
               break;
             }
-          case 1873504712:
+          case -273978936:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               interface_ = rawValue;
               break;
             }
@@ -254,7 +255,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface)
   }
 
-  public static final int DISK_SIZE_GB_FIELD_NUMBER = 47828279;
+  private int bitField0_;
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private volatile java.lang.Object diskSizeGb_;
   /**
    *
@@ -263,7 +265,22 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskSizeGb() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB.
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -286,7 +303,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -303,7 +320,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     }
   }
 
-  public static final int INTERFACE_FIELD_NUMBER = 234188089;
+  public static final int INTERFACE_FIELD_NUMBER = 502623545;
   private int interface_;
   /**
    *
@@ -313,7 +330,24 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
+   * </code>
+   *
+   * @return Whether the interface field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterface() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
    * </code>
    *
    * @return The enum numeric value on the wire for interface.
@@ -330,7 +364,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
    * </code>
    *
    * @return The interface.
@@ -367,15 +401,11 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 47828279, diskSizeGb_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
     }
-    if (interface_
-        != com.google.cloud.compute.v1
-            .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface
-            .UNDEFINED_INTERFACE
-            .getNumber()) {
-      output.writeEnum(234188089, interface_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(502623545, interface_);
     }
     unknownFields.writeTo(output);
   }
@@ -386,15 +416,11 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     if (size != -1) return size;
 
     size = 0;
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47828279, diskSizeGb_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
     }
-    if (interface_
-        != com.google.cloud.compute.v1
-            .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface
-            .UNDEFINED_INTERFACE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(234188089, interface_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(502623545, interface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -419,8 +445,14 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
                     .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk)
                 obj;
 
-    if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
-    if (interface_ != other.interface_) return false;
+    if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
+    if (hasDiskSizeGb()) {
+      if (!getDiskSizeGb().equals(other.getDiskSizeGb())) return false;
+    }
+    if (hasInterface() != other.hasInterface()) return false;
+    if (hasInterface()) {
+      if (interface_ != other.interface_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -432,10 +464,14 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskSizeGb().hashCode();
-    hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
-    hash = (53 * hash) + interface_;
+    if (hasDiskSizeGb()) {
+      hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskSizeGb().hashCode();
+    }
+    if (hasInterface()) {
+      hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
+      hash = (53 * hash) + interface_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -608,9 +644,9 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     public Builder clear() {
       super.clear();
       diskSizeGb_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       interface_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -651,8 +687,17 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
           result =
               new com.google.cloud.compute.v1
                   .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.diskSizeGb_ = diskSizeGb_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.interface_ = interface_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -714,12 +759,13 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
           == com.google.cloud.compute.v1
               .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
               .getDefaultInstance()) return this;
-      if (!other.getDiskSizeGb().isEmpty()) {
+      if (other.hasDiskSizeGb()) {
+        bitField0_ |= 0x00000001;
         diskSizeGb_ = other.diskSizeGb_;
         onChanged();
       }
-      if (other.interface_ != 0) {
-        setInterfaceValue(other.getInterfaceValue());
+      if (other.hasInterface()) {
+        setInterface(other.getInterface());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -755,6 +801,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object diskSizeGb_ = "";
     /**
      *
@@ -763,7 +811,21 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
+     *
+     * @return Whether the diskSizeGb field is set.
+     */
+    public boolean hasDiskSizeGb() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the size of the disk in base-2 GB.
+     * </pre>
+     *
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -785,7 +847,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return The bytes for diskSizeGb.
      */
@@ -807,7 +869,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -816,7 +878,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       diskSizeGb_ = value;
       onChanged();
       return this;
@@ -828,12 +890,12 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       diskSizeGb_ = getDefaultInstance().getDiskSizeGb();
       onChanged();
       return this;
@@ -845,7 +907,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 47828279;</code>
+     * <code>string disk_size_gb = 316263735;</code>
      *
      * @param value The bytes for diskSizeGb to set.
      * @return This builder for chaining.
@@ -855,7 +917,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       diskSizeGb_ = value;
       onChanged();
       return this;
@@ -870,7 +932,24 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
+     * </code>
+     *
+     * @return Whether the interface field is set.
+     */
+    @java.lang.Override
+    public boolean hasInterface() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
      * </code>
      *
      * @return The enum numeric value on the wire for interface.
@@ -887,14 +966,14 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
      * </code>
      *
      * @param value The enum numeric value on the wire for interface to set.
      * @return This builder for chaining.
      */
     public Builder setInterfaceValue(int value) {
-
+      bitField0_ |= 0x00000002;
       interface_ = value;
       onChanged();
       return this;
@@ -907,7 +986,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
      * </code>
      *
      * @return The interface.
@@ -937,7 +1016,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
      * </code>
      *
      * @param value The interface to set.
@@ -950,7 +1029,7 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       interface_ = value.getNumber();
       onChanged();
       return this;
@@ -963,13 +1042,13 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
+     * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInterface() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       interface_ = 0;
       onChanged();
       return this;

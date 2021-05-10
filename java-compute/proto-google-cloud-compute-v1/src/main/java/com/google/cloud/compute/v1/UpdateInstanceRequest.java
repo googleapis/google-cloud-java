@@ -65,6 +65,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,13 +76,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
           case 0:
             done = true;
             break;
-          case 17052834:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minimalAction_ = s;
-              break;
-            }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -99,14 +93,14 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               requestId_ = s;
               break;
             }
           case 528824426:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               mostDisruptiveAllowedAction_ = s;
               break;
             }
@@ -131,6 +125,13 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -2130430814:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              minimalAction_ = s;
               break;
             }
           default:
@@ -167,6 +168,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.UpdateInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -270,7 +272,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     return getInstanceResource();
   }
 
-  public static final int MINIMAL_ACTION_FIELD_NUMBER = 2131604;
+  public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
   private volatile java.lang.Object minimalAction_;
   /**
    *
@@ -279,7 +281,22 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
+   *
+   * @return Whether the minimalAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinimalAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * </pre>
+   *
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The minimalAction.
    */
@@ -302,7 +319,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -321,6 +338,21 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER = 66103053;
   private volatile java.lang.Object mostDisruptiveAllowedAction_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * </pre>
+   *
+   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasMostDisruptiveAllowedAction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -419,6 +451,23 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -533,19 +582,16 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMinimalActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2131604, minimalAction_);
-    }
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getMostDisruptiveAllowedActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 66103053, mostDisruptiveAllowedAction_);
     }
@@ -554,6 +600,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
     }
     unknownFields.writeTo(output);
   }
@@ -564,19 +613,16 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getMinimalActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2131604, minimalAction_);
-    }
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getMostDisruptiveAllowedActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               66103053, mostDisruptiveAllowedAction_);
@@ -588,6 +634,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -610,11 +659,20 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (hasInstanceResource()) {
       if (!getInstanceResource().equals(other.getInstanceResource())) return false;
     }
-    if (!getMinimalAction().equals(other.getMinimalAction())) return false;
-    if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
-      return false;
+    if (hasMinimalAction() != other.hasMinimalAction()) return false;
+    if (hasMinimalAction()) {
+      if (!getMinimalAction().equals(other.getMinimalAction())) return false;
+    }
+    if (hasMostDisruptiveAllowedAction() != other.hasMostDisruptiveAllowedAction()) return false;
+    if (hasMostDisruptiveAllowedAction()) {
+      if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
+        return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -633,14 +691,20 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + INSTANCE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceResource().hashCode();
     }
-    hash = (37 * hash) + MINIMAL_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getMinimalAction().hashCode();
-    hash = (37 * hash) + MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getMostDisruptiveAllowedAction().hashCode();
+    if (hasMinimalAction()) {
+      hash = (37 * hash) + MINIMAL_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimalAction().hashCode();
+    }
+    if (hasMostDisruptiveAllowedAction()) {
+      hash = (37 * hash) + MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMostDisruptiveAllowedAction().hashCode();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -797,13 +861,13 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         instanceResourceBuilder_ = null;
       }
       minimalAction_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       mostDisruptiveAllowedAction_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       zone_ = "";
 
       return this;
@@ -833,17 +897,29 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.UpdateInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateInstanceRequest result =
           new com.google.cloud.compute.v1.UpdateInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instance_ = instance_;
       if (instanceResourceBuilder_ == null) {
         result.instanceResource_ = instanceResource_;
       } else {
         result.instanceResource_ = instanceResourceBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.minimalAction_ = minimalAction_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.requestId_ = requestId_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -901,11 +977,13 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (other.hasInstanceResource()) {
         mergeInstanceResource(other.getInstanceResource());
       }
-      if (!other.getMinimalAction().isEmpty()) {
+      if (other.hasMinimalAction()) {
+        bitField0_ |= 0x00000001;
         minimalAction_ = other.minimalAction_;
         onChanged();
       }
-      if (!other.getMostDisruptiveAllowedAction().isEmpty()) {
+      if (other.hasMostDisruptiveAllowedAction()) {
+        bitField0_ |= 0x00000002;
         mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
         onChanged();
       }
@@ -913,7 +991,8 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000004;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -950,6 +1029,8 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -1269,7 +1350,21 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
+     *
+     * @return Whether the minimalAction field is set.
+     */
+    public boolean hasMinimalAction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * </pre>
+     *
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return The minimalAction.
      */
@@ -1291,7 +1386,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -1313,7 +1408,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -1322,7 +1417,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       minimalAction_ = value;
       onChanged();
       return this;
@@ -1334,12 +1429,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinimalAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minimalAction_ = getDefaultInstance().getMinimalAction();
       onChanged();
       return this;
@@ -1351,7 +1446,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.
@@ -1361,13 +1456,27 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       minimalAction_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object mostDisruptiveAllowedAction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * </pre>
+     *
+     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return Whether the mostDisruptiveAllowedAction field is set.
+     */
+    public boolean hasMostDisruptiveAllowedAction() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1428,7 +1537,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       mostDisruptiveAllowedAction_ = value;
       onChanged();
       return this;
@@ -1445,7 +1554,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearMostDisruptiveAllowedAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
       onChanged();
       return this;
@@ -1467,7 +1576,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       mostDisruptiveAllowedAction_ = value;
       onChanged();
       return this;
@@ -1591,6 +1700,22 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1646,7 +1771,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       requestId_ = value;
       onChanged();
       return this;
@@ -1665,7 +1790,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1689,7 +1814,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       requestId_ = value;
       onChanged();
       return this;

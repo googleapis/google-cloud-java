@@ -141,6 +141,18 @@ public interface WafExpressionSetOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();

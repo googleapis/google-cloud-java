@@ -30,7 +30,19 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 73351575;</code>
+   * <code>string certificate = 341787031;</code>
+   *
+   * @return Whether the certificate field is set.
+   */
+  boolean hasCertificate();
+  /**
+   *
+   *
+   * <pre>
+   * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * </pre>
+   *
+   * <code>string certificate = 341787031;</code>
    *
    * @return The certificate.
    */
@@ -42,12 +54,24 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 73351575;</code>
+   * <code>string certificate = 341787031;</code>
    *
    * @return The bytes for certificate.
    */
   com.google.protobuf.ByteString getCertificateBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface SslCertificateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -92,7 +128,7 @@ public interface SslCertificateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -105,7 +141,19 @@ public interface SslCertificateOrBuilder
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 172255725;</code>
+   * <code>string expire_time = 440691181;</code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Expire time of the certificate. RFC3339
+   * </pre>
+   *
+   * <code>string expire_time = 440691181;</code>
    *
    * @return The expireTime.
    */
@@ -117,12 +165,24 @@ public interface SslCertificateOrBuilder
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 172255725;</code>
+   * <code>string expire_time = 440691181;</code>
    *
    * @return The bytes for expireTime.
    */
   com.google.protobuf.ByteString getExpireTimeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -157,6 +217,18 @@ public interface SslCertificateOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -180,7 +252,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
    *
    * @return Whether the managed field is set.
    */
@@ -192,7 +264,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
    *
    * @return The managed.
    */
@@ -204,10 +276,22 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
    */
   com.google.cloud.compute.v1.SslCertificateManagedSslCertificateOrBuilder getManagedOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -240,7 +324,19 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 92895651;</code>
+   * <code>string private_key = 361331107;</code>
+   *
+   * @return Whether the privateKey field is set.
+   */
+  boolean hasPrivateKey();
+  /**
+   *
+   *
+   * <pre>
+   * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+   * </pre>
+   *
+   * <code>string private_key = 361331107;</code>
    *
    * @return The privateKey.
    */
@@ -252,12 +348,24 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 92895651;</code>
+   * <code>string private_key = 361331107;</code>
    *
    * @return The bytes for privateKey.
    */
   com.google.protobuf.ByteString getPrivateKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -290,7 +398,19 @@ public interface SslCertificateOrBuilder
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -302,7 +422,7 @@ public interface SslCertificateOrBuilder
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -315,7 +435,8 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
+   * <code>
+   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    *
    * @return Whether the selfManaged field is set.
@@ -328,7 +449,8 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
+   * <code>
+   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    *
    * @return The selfManaged.
@@ -341,7 +463,8 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
+   * <code>
+   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
    * </code>
    */
   com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificateOrBuilder
@@ -354,7 +477,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 260372451;</code>
+   * <code>repeated string subject_alternative_names = 528807907;</code>
    *
    * @return A list containing the subjectAlternativeNames.
    */
@@ -366,7 +489,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 260372451;</code>
+   * <code>repeated string subject_alternative_names = 528807907;</code>
    *
    * @return The count of subjectAlternativeNames.
    */
@@ -378,7 +501,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 260372451;</code>
+   * <code>repeated string subject_alternative_names = 528807907;</code>
    *
    * @param index The index of the element to return.
    * @return The subjectAlternativeNames at the given index.
@@ -391,13 +514,25 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 260372451;</code>
+   * <code>repeated string subject_alternative_names = 528807907;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectAlternativeNames at the given index.
    */
   com.google.protobuf.ByteString getSubjectAlternativeNamesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
   /**
    *
    *

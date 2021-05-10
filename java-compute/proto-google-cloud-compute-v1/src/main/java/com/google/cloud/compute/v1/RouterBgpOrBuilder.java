@@ -30,7 +30,19 @@ public interface RouterBgpOrBuilder
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   *
+   * @return Whether the advertiseMode field is set.
+   */
+  boolean hasAdvertiseMode();
+  /**
+   *
+   *
+   * <pre>
+   * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -42,7 +54,7 @@ public interface RouterBgpOrBuilder
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The advertiseMode.
    */
@@ -184,6 +196,18 @@ public interface RouterBgpOrBuilder
   com.google.cloud.compute.v1.RouterAdvertisedIpRangeOrBuilder getAdvertisedIpRangesOrBuilder(
       int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
+   * </pre>
+   *
+   * <code>uint32 asn = 96892;</code>
+   *
+   * @return Whether the asn field is set.
+   */
+  boolean hasAsn();
   /**
    *
    *

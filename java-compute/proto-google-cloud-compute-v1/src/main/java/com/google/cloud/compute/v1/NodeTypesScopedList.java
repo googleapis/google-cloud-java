@@ -73,7 +73,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 1709899746:
+          case -437583902:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nodeTypes_ = new java.util.ArrayList<com.google.cloud.compute.v1.NodeType>();
@@ -134,7 +134,8 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.NodeTypesScopedList.Builder.class);
   }
 
-  public static final int NODE_TYPES_FIELD_NUMBER = 213737468;
+  private int bitField0_;
+  public static final int NODE_TYPES_FIELD_NUMBER = 482172924;
   private java.util.List<com.google.cloud.compute.v1.NodeType> nodeTypes_;
   /**
    *
@@ -143,7 +144,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NodeType> getNodeTypesList() {
@@ -156,7 +157,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NodeTypeOrBuilder>
@@ -170,7 +171,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   @java.lang.Override
   public int getNodeTypesCount() {
@@ -183,7 +184,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeType getNodeTypes(int index) {
@@ -196,7 +197,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeTypeOrBuilder getNodeTypesOrBuilder(int index) {
@@ -218,7 +219,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,11 +264,11 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < nodeTypes_.size(); i++) {
-      output.writeMessage(213737468, nodeTypes_.get(i));
+      output.writeMessage(482172924, nodeTypes_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,12 +279,12 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < nodeTypes_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(213737468, nodeTypes_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(482172924, nodeTypes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +466,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNodeTypesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       com.google.cloud.compute.v1.NodeTypesScopedList result =
           new com.google.cloud.compute.v1.NodeTypesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (nodeTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nodeTypes_ = java.util.Collections.unmodifiableList(nodeTypes_);
@@ -520,11 +523,15 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         result.nodeTypes_ = nodeTypesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -659,7 +666,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NodeType> getNodeTypesList() {
       if (nodeTypesBuilder_ == null) {
@@ -675,7 +682,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public int getNodeTypesCount() {
       if (nodeTypesBuilder_ == null) {
@@ -691,7 +698,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public com.google.cloud.compute.v1.NodeType getNodeTypes(int index) {
       if (nodeTypesBuilder_ == null) {
@@ -707,7 +714,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder setNodeTypes(int index, com.google.cloud.compute.v1.NodeType value) {
       if (nodeTypesBuilder_ == null) {
@@ -729,7 +736,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder setNodeTypes(
         int index, com.google.cloud.compute.v1.NodeType.Builder builderForValue) {
@@ -749,7 +756,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder addNodeTypes(com.google.cloud.compute.v1.NodeType value) {
       if (nodeTypesBuilder_ == null) {
@@ -771,7 +778,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder addNodeTypes(int index, com.google.cloud.compute.v1.NodeType value) {
       if (nodeTypesBuilder_ == null) {
@@ -793,7 +800,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder addNodeTypes(com.google.cloud.compute.v1.NodeType.Builder builderForValue) {
       if (nodeTypesBuilder_ == null) {
@@ -812,7 +819,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder addNodeTypes(
         int index, com.google.cloud.compute.v1.NodeType.Builder builderForValue) {
@@ -832,7 +839,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder addAllNodeTypes(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NodeType> values) {
@@ -852,7 +859,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder clearNodeTypes() {
       if (nodeTypesBuilder_ == null) {
@@ -871,7 +878,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public Builder removeNodeTypes(int index) {
       if (nodeTypesBuilder_ == null) {
@@ -890,7 +897,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public com.google.cloud.compute.v1.NodeType.Builder getNodeTypesBuilder(int index) {
       return getNodeTypesFieldBuilder().getBuilder(index);
@@ -902,7 +909,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public com.google.cloud.compute.v1.NodeTypeOrBuilder getNodeTypesOrBuilder(int index) {
       if (nodeTypesBuilder_ == null) {
@@ -918,7 +925,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NodeTypeOrBuilder>
         getNodeTypesOrBuilderList() {
@@ -935,7 +942,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public com.google.cloud.compute.v1.NodeType.Builder addNodeTypesBuilder() {
       return getNodeTypesFieldBuilder()
@@ -948,7 +955,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public com.google.cloud.compute.v1.NodeType.Builder addNodeTypesBuilder(int index) {
       return getNodeTypesFieldBuilder()
@@ -961,7 +968,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of node types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
+     * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NodeType.Builder> getNodeTypesBuilderList() {
       return getNodeTypesFieldBuilder().getBuilderList();
@@ -1002,7 +1009,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1043,7 +1050,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1062,7 +1069,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1076,7 +1083,9 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1088,7 +1097,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1105,10 +1114,9 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1121,7 +1129,7 @@ public final class NodeTypesScopedList extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

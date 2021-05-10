@@ -32,6 +32,18 @@ public interface InterconnectCircuitInfoOrBuilder
    *
    * <code>string customer_demarc_id = 28771859;</code>
    *
+   * @return Whether the customerDemarcId field is set.
+   */
+  boolean hasCustomerDemarcId();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-side demarc ID for this circuit.
+   * </pre>
+   *
+   * <code>string customer_demarc_id = 28771859;</code>
+   *
    * @return The customerDemarcId.
    */
   java.lang.String getCustomerDemarcId();
@@ -48,6 +60,18 @@ public interface InterconnectCircuitInfoOrBuilder
    */
   com.google.protobuf.ByteString getCustomerDemarcIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
+   * </pre>
+   *
+   * <code>string google_circuit_id = 262014711;</code>
+   *
+   * @return Whether the googleCircuitId field is set.
+   */
+  boolean hasGoogleCircuitId();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface InterconnectCircuitInfoOrBuilder
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 179760814;</code>
+   * <code>string google_demarc_id = 448196270;</code>
+   *
+   * @return Whether the googleDemarcId field is set.
+   */
+  boolean hasGoogleDemarcId();
+  /**
+   *
+   *
+   * <pre>
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+   * </pre>
+   *
+   * <code>string google_demarc_id = 448196270;</code>
    *
    * @return The googleDemarcId.
    */
@@ -92,7 +128,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 179760814;</code>
+   * <code>string google_demarc_id = 448196270;</code>
    *
    * @return The bytes for googleDemarcId.
    */

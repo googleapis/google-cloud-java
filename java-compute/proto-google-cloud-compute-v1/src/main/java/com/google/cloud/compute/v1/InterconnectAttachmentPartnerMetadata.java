@@ -64,6 +64,7 @@ public final class InterconnectAttachmentPartnerMetadata
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,24 +75,24 @@ public final class InterconnectAttachmentPartnerMetadata
           case 0:
             done = true;
             break;
-          case 5978338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portalUrl_ = s;
-              break;
-            }
           case 1293982994:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               partnerName_ = s;
               break;
             }
-          case 1972223202:
+          case -2141505310:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              portalUrl_ = s;
+              break;
+            }
+          case -175260446:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               interconnectName_ = s;
               break;
             }
@@ -129,7 +130,8 @@ public final class InterconnectAttachmentPartnerMetadata
             com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder.class);
   }
 
-  public static final int INTERCONNECT_NAME_FIELD_NUMBER = 246527900;
+  private int bitField0_;
+  public static final int INTERCONNECT_NAME_FIELD_NUMBER = 514963356;
   private volatile java.lang.Object interconnectName_;
   /**
    *
@@ -138,7 +140,22 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 246527900;</code>
+   * <code>string interconnect_name = 514963356;</code>
+   *
+   * @return Whether the interconnectName field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterconnectName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string interconnect_name = 514963356;</code>
    *
    * @return The interconnectName.
    */
@@ -161,7 +178,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 246527900;</code>
+   * <code>string interconnect_name = 514963356;</code>
    *
    * @return The bytes for interconnectName.
    */
@@ -180,6 +197,21 @@ public final class InterconnectAttachmentPartnerMetadata
 
   public static final int PARTNER_NAME_FIELD_NUMBER = 161747874;
   private volatile java.lang.Object partnerName_;
+  /**
+   *
+   *
+   * <pre>
+   * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string partner_name = 161747874;</code>
+   *
+   * @return Whether the partnerName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartnerName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -227,7 +259,7 @@ public final class InterconnectAttachmentPartnerMetadata
     }
   }
 
-  public static final int PORTAL_URL_FIELD_NUMBER = 747292;
+  public static final int PORTAL_URL_FIELD_NUMBER = 269182748;
   private volatile java.lang.Object portalUrl_;
   /**
    *
@@ -236,7 +268,22 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 747292;</code>
+   * <code>string portal_url = 269182748;</code>
+   *
+   * @return Whether the portalUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortalUrl() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string portal_url = 269182748;</code>
    *
    * @return The portalUrl.
    */
@@ -259,7 +306,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 747292;</code>
+   * <code>string portal_url = 269182748;</code>
    *
    * @return The bytes for portalUrl.
    */
@@ -290,14 +337,14 @@ public final class InterconnectAttachmentPartnerMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPortalUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 747292, portalUrl_);
-    }
-    if (!getPartnerNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 161747874, partnerName_);
     }
-    if (!getInterconnectNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 246527900, interconnectName_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 269182748, portalUrl_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 514963356, interconnectName_);
     }
     unknownFields.writeTo(output);
   }
@@ -308,15 +355,15 @@ public final class InterconnectAttachmentPartnerMetadata
     if (size != -1) return size;
 
     size = 0;
-    if (!getPortalUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(747292, portalUrl_);
-    }
-    if (!getPartnerNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(161747874, partnerName_);
     }
-    if (!getInterconnectNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269182748, portalUrl_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(246527900, interconnectName_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(514963356, interconnectName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -334,9 +381,18 @@ public final class InterconnectAttachmentPartnerMetadata
     com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata other =
         (com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata) obj;
 
-    if (!getInterconnectName().equals(other.getInterconnectName())) return false;
-    if (!getPartnerName().equals(other.getPartnerName())) return false;
-    if (!getPortalUrl().equals(other.getPortalUrl())) return false;
+    if (hasInterconnectName() != other.hasInterconnectName()) return false;
+    if (hasInterconnectName()) {
+      if (!getInterconnectName().equals(other.getInterconnectName())) return false;
+    }
+    if (hasPartnerName() != other.hasPartnerName()) return false;
+    if (hasPartnerName()) {
+      if (!getPartnerName().equals(other.getPartnerName())) return false;
+    }
+    if (hasPortalUrl() != other.hasPortalUrl()) return false;
+    if (hasPortalUrl()) {
+      if (!getPortalUrl().equals(other.getPortalUrl())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,12 +404,18 @@ public final class InterconnectAttachmentPartnerMetadata
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INTERCONNECT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getInterconnectName().hashCode();
-    hash = (37 * hash) + PARTNER_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerName().hashCode();
-    hash = (37 * hash) + PORTAL_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getPortalUrl().hashCode();
+    if (hasInterconnectName()) {
+      hash = (37 * hash) + INTERCONNECT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getInterconnectName().hashCode();
+    }
+    if (hasPartnerName()) {
+      hash = (37 * hash) + PARTNER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPartnerName().hashCode();
+    }
+    if (hasPortalUrl()) {
+      hash = (37 * hash) + PORTAL_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getPortalUrl().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -503,11 +565,11 @@ public final class InterconnectAttachmentPartnerMetadata
     public Builder clear() {
       super.clear();
       interconnectName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       partnerName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       portalUrl_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -536,9 +598,21 @@ public final class InterconnectAttachmentPartnerMetadata
     public com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata result =
           new com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.interconnectName_ = interconnectName_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.partnerName_ = partnerName_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.portalUrl_ = portalUrl_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -591,15 +665,18 @@ public final class InterconnectAttachmentPartnerMetadata
       if (other
           == com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.getDefaultInstance())
         return this;
-      if (!other.getInterconnectName().isEmpty()) {
+      if (other.hasInterconnectName()) {
+        bitField0_ |= 0x00000001;
         interconnectName_ = other.interconnectName_;
         onChanged();
       }
-      if (!other.getPartnerName().isEmpty()) {
+      if (other.hasPartnerName()) {
+        bitField0_ |= 0x00000002;
         partnerName_ = other.partnerName_;
         onChanged();
       }
-      if (!other.getPortalUrl().isEmpty()) {
+      if (other.hasPortalUrl()) {
+        bitField0_ |= 0x00000004;
         portalUrl_ = other.portalUrl_;
         onChanged();
       }
@@ -634,6 +711,8 @@ public final class InterconnectAttachmentPartnerMetadata
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object interconnectName_ = "";
     /**
      *
@@ -642,7 +721,21 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 246527900;</code>
+     * <code>string interconnect_name = 514963356;</code>
+     *
+     * @return Whether the interconnectName field is set.
+     */
+    public boolean hasInterconnectName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * </pre>
+     *
+     * <code>string interconnect_name = 514963356;</code>
      *
      * @return The interconnectName.
      */
@@ -664,7 +757,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 246527900;</code>
+     * <code>string interconnect_name = 514963356;</code>
      *
      * @return The bytes for interconnectName.
      */
@@ -686,7 +779,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 246527900;</code>
+     * <code>string interconnect_name = 514963356;</code>
      *
      * @param value The interconnectName to set.
      * @return This builder for chaining.
@@ -695,7 +788,7 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       interconnectName_ = value;
       onChanged();
       return this;
@@ -707,12 +800,12 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 246527900;</code>
+     * <code>string interconnect_name = 514963356;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInterconnectName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       interconnectName_ = getDefaultInstance().getInterconnectName();
       onChanged();
       return this;
@@ -724,7 +817,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 246527900;</code>
+     * <code>string interconnect_name = 514963356;</code>
      *
      * @param value The bytes for interconnectName to set.
      * @return This builder for chaining.
@@ -734,13 +827,27 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       interconnectName_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object partnerName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * </pre>
+     *
+     * <code>string partner_name = 161747874;</code>
+     *
+     * @return Whether the partnerName field is set.
+     */
+    public boolean hasPartnerName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -801,7 +908,7 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       partnerName_ = value;
       onChanged();
       return this;
@@ -818,7 +925,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * @return This builder for chaining.
      */
     public Builder clearPartnerName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       partnerName_ = getDefaultInstance().getPartnerName();
       onChanged();
       return this;
@@ -840,7 +947,7 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       partnerName_ = value;
       onChanged();
       return this;
@@ -854,7 +961,21 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 747292;</code>
+     * <code>string portal_url = 269182748;</code>
+     *
+     * @return Whether the portalUrl field is set.
+     */
+    public boolean hasPortalUrl() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * </pre>
+     *
+     * <code>string portal_url = 269182748;</code>
      *
      * @return The portalUrl.
      */
@@ -876,7 +997,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 747292;</code>
+     * <code>string portal_url = 269182748;</code>
      *
      * @return The bytes for portalUrl.
      */
@@ -898,7 +1019,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 747292;</code>
+     * <code>string portal_url = 269182748;</code>
      *
      * @param value The portalUrl to set.
      * @return This builder for chaining.
@@ -907,7 +1028,7 @@ public final class InterconnectAttachmentPartnerMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       portalUrl_ = value;
       onChanged();
       return this;
@@ -919,12 +1040,12 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 747292;</code>
+     * <code>string portal_url = 269182748;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPortalUrl() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       portalUrl_ = getDefaultInstance().getPortalUrl();
       onChanged();
       return this;
@@ -936,7 +1057,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 747292;</code>
+     * <code>string portal_url = 269182748;</code>
      *
      * @param value The bytes for portalUrl to set.
      * @return This builder for chaining.
@@ -946,7 +1067,7 @@ public final class InterconnectAttachmentPartnerMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       portalUrl_ = value;
       onChanged();
       return this;

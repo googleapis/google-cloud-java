@@ -30,7 +30,19 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
+   *
+   * @return Whether the contents field is set.
+   */
+  boolean hasContents();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The Base64-encoded screenshot data.
+   * </pre>
+   *
+   * <code>string contents = 506419994;</code>
    *
    * @return The contents.
    */
@@ -42,12 +54,24 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
    *
    * @return The bytes for contents.
    */
   com.google.protobuf.ByteString getContentsBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *

@@ -63,6 +63,7 @@ public final class GetIamPolicyInstanceTemplateRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -87,8 +88,9 @@ public final class GetIamPolicyInstanceTemplateRequest
               project_ = s;
               break;
             }
-          case 1846276584:
+          case -301207064:
             {
+              bitField0_ |= 0x00000001;
               optionsRequestedPolicyVersion_ = input.readInt32();
               break;
             }
@@ -126,7 +128,8 @@ public final class GetIamPolicyInstanceTemplateRequest
             com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest.Builder.class);
   }
 
-  public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 230784573;
+  private int bitField0_;
+  public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 499220029;
   private int optionsRequestedPolicyVersion_;
   /**
    *
@@ -135,7 +138,22 @@ public final class GetIamPolicyInstanceTemplateRequest
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 230784573;</code>
+   * <code>int32 options_requested_policy_version = 499220029;</code>
+   *
+   * @return Whether the optionsRequestedPolicyVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptionsRequestedPolicyVersion() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Requested IAM Policy version.
+   * </pre>
+   *
+   * <code>int32 options_requested_policy_version = 499220029;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */
@@ -262,8 +280,8 @@ public final class GetIamPolicyInstanceTemplateRequest
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (optionsRequestedPolicyVersion_ != 0) {
-      output.writeInt32(230784573, optionsRequestedPolicyVersion_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(499220029, optionsRequestedPolicyVersion_);
     }
     unknownFields.writeTo(output);
   }
@@ -280,10 +298,10 @@ public final class GetIamPolicyInstanceTemplateRequest
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (optionsRequestedPolicyVersion_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              230784573, optionsRequestedPolicyVersion_);
+              499220029, optionsRequestedPolicyVersion_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -301,8 +319,12 @@ public final class GetIamPolicyInstanceTemplateRequest
     com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest other =
         (com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest) obj;
 
-    if (getOptionsRequestedPolicyVersion() != other.getOptionsRequestedPolicyVersion())
+    if (hasOptionsRequestedPolicyVersion() != other.hasOptionsRequestedPolicyVersion())
       return false;
+    if (hasOptionsRequestedPolicyVersion()) {
+      if (getOptionsRequestedPolicyVersion() != other.getOptionsRequestedPolicyVersion())
+        return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getResource().equals(other.getResource())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -316,8 +338,10 @@ public final class GetIamPolicyInstanceTemplateRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getOptionsRequestedPolicyVersion();
+    if (hasOptionsRequestedPolicyVersion()) {
+      hash = (37 * hash) + OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOptionsRequestedPolicyVersion();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
@@ -469,7 +493,7 @@ public final class GetIamPolicyInstanceTemplateRequest
     public Builder clear() {
       super.clear();
       optionsRequestedPolicyVersion_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       resource_ = "";
@@ -502,9 +526,15 @@ public final class GetIamPolicyInstanceTemplateRequest
     public com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest buildPartial() {
       com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest result =
           new com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest(this);
-      result.optionsRequestedPolicyVersion_ = optionsRequestedPolicyVersion_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.optionsRequestedPolicyVersion_ = optionsRequestedPolicyVersion_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
       result.resource_ = resource_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -557,7 +587,7 @@ public final class GetIamPolicyInstanceTemplateRequest
       if (other
           == com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest.getDefaultInstance())
         return this;
-      if (other.getOptionsRequestedPolicyVersion() != 0) {
+      if (other.hasOptionsRequestedPolicyVersion()) {
         setOptionsRequestedPolicyVersion(other.getOptionsRequestedPolicyVersion());
       }
       if (!other.getProject().isEmpty()) {
@@ -599,6 +629,8 @@ public final class GetIamPolicyInstanceTemplateRequest
       return this;
     }
 
+    private int bitField0_;
+
     private int optionsRequestedPolicyVersion_;
     /**
      *
@@ -607,7 +639,22 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 230784573;</code>
+     * <code>int32 options_requested_policy_version = 499220029;</code>
+     *
+     * @return Whether the optionsRequestedPolicyVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasOptionsRequestedPolicyVersion() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Requested IAM Policy version.
+     * </pre>
+     *
+     * <code>int32 options_requested_policy_version = 499220029;</code>
      *
      * @return The optionsRequestedPolicyVersion.
      */
@@ -622,13 +669,13 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 230784573;</code>
+     * <code>int32 options_requested_policy_version = 499220029;</code>
      *
      * @param value The optionsRequestedPolicyVersion to set.
      * @return This builder for chaining.
      */
     public Builder setOptionsRequestedPolicyVersion(int value) {
-
+      bitField0_ |= 0x00000001;
       optionsRequestedPolicyVersion_ = value;
       onChanged();
       return this;
@@ -640,12 +687,12 @@ public final class GetIamPolicyInstanceTemplateRequest
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 230784573;</code>
+     * <code>int32 options_requested_policy_version = 499220029;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearOptionsRequestedPolicyVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       optionsRequestedPolicyVersion_ = 0;
       onChanged();
       return this;

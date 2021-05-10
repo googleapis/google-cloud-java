@@ -30,7 +30,19 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * Maximum age of the snapshot that is allowed to be kept.
    * </pre>
    *
-   * <code>int32 max_retention_days = 55861523;</code>
+   * <code>int32 max_retention_days = 324296979;</code>
+   *
+   * @return Whether the maxRetentionDays field is set.
+   */
+  boolean hasMaxRetentionDays();
+  /**
+   *
+   *
+   * <pre>
+   * Maximum age of the snapshot that is allowed to be kept.
+   * </pre>
+   *
+   * <code>int32 max_retention_days = 324296979;</code>
    *
    * @return The maxRetentionDays.
    */
@@ -44,7 +56,21 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+   * </code>
+   *
+   * @return Whether the onSourceDiskDelete field is set.
+   */
+  boolean hasOnSourceDiskDelete();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
    * </code>
    *
    * @return The enum numeric value on the wire for onSourceDiskDelete.
@@ -58,7 +84,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
    * </code>
    *
    * @return The onSourceDiskDelete.

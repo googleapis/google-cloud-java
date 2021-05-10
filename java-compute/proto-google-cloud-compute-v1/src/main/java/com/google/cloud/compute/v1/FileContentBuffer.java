@@ -60,6 +60,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,17 +71,17 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
-          case 207290600:
+          case -1940193048:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               fileType_ = rawValue;
               break;
             }
-          case 1169793994:
+          case -977689654:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               content_ = s;
               break;
             }
@@ -249,7 +250,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FileContentBuffer.FileType)
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 146224249;
+  private int bitField0_;
+  public static final int CONTENT_FIELD_NUMBER = 414659705;
   private volatile java.lang.Object content_;
   /**
    *
@@ -258,7 +260,22 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 146224249;</code>
+   * <code>string content = 414659705;</code>
+   *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The raw content in the secure keys file.
+   * </pre>
+   *
+   * <code>string content = 414659705;</code>
    *
    * @return The content.
    */
@@ -281,7 +298,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 146224249;</code>
+   * <code>string content = 414659705;</code>
    *
    * @return The bytes for content.
    */
@@ -298,7 +315,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int FILE_TYPE_FIELD_NUMBER = 25911325;
+  public static final int FILE_TYPE_FIELD_NUMBER = 294346781;
   private int fileType_;
   /**
    *
@@ -307,7 +324,22 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   *
+   * @return Whether the fileType field is set.
+   */
+  @java.lang.Override
+  public boolean hasFileType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The file type of source file.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
    *
    * @return The enum numeric value on the wire for fileType.
    */
@@ -322,7 +354,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
    *
    * @return The fileType.
    */
@@ -350,12 +382,11 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (fileType_
-        != com.google.cloud.compute.v1.FileContentBuffer.FileType.UNDEFINED_FILE_TYPE.getNumber()) {
-      output.writeEnum(25911325, fileType_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(294346781, fileType_);
     }
-    if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 146224249, content_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 414659705, content_);
     }
     unknownFields.writeTo(output);
   }
@@ -366,12 +397,11 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (fileType_
-        != com.google.cloud.compute.v1.FileContentBuffer.FileType.UNDEFINED_FILE_TYPE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(25911325, fileType_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294346781, fileType_);
     }
-    if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(146224249, content_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(414659705, content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -389,8 +419,14 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     com.google.cloud.compute.v1.FileContentBuffer other =
         (com.google.cloud.compute.v1.FileContentBuffer) obj;
 
-    if (!getContent().equals(other.getContent())) return false;
-    if (fileType_ != other.fileType_) return false;
+    if (hasContent() != other.hasContent()) return false;
+    if (hasContent()) {
+      if (!getContent().equals(other.getContent())) return false;
+    }
+    if (hasFileType() != other.hasFileType()) return false;
+    if (hasFileType()) {
+      if (fileType_ != other.fileType_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -402,10 +438,14 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-    hash = (53 * hash) + getContent().hashCode();
-    hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + fileType_;
+    if (hasContent()) {
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+    }
+    if (hasFileType()) {
+      hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + fileType_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -551,9 +591,9 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       content_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fileType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -581,8 +621,17 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.FileContentBuffer buildPartial() {
       com.google.cloud.compute.v1.FileContentBuffer result =
           new com.google.cloud.compute.v1.FileContentBuffer(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.content_ = content_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.fileType_ = fileType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -632,12 +681,13 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.compute.v1.FileContentBuffer other) {
       if (other == com.google.cloud.compute.v1.FileContentBuffer.getDefaultInstance()) return this;
-      if (!other.getContent().isEmpty()) {
+      if (other.hasContent()) {
+        bitField0_ |= 0x00000001;
         content_ = other.content_;
         onChanged();
       }
-      if (other.fileType_ != 0) {
-        setFileTypeValue(other.getFileTypeValue());
+      if (other.hasFileType()) {
+        setFileType(other.getFileType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -668,6 +718,8 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object content_ = "";
     /**
      *
@@ -676,7 +728,21 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 146224249;</code>
+     * <code>string content = 414659705;</code>
+     *
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content in the secure keys file.
+     * </pre>
+     *
+     * <code>string content = 414659705;</code>
      *
      * @return The content.
      */
@@ -698,7 +764,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 146224249;</code>
+     * <code>string content = 414659705;</code>
      *
      * @return The bytes for content.
      */
@@ -720,7 +786,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 146224249;</code>
+     * <code>string content = 414659705;</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -729,7 +795,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       content_ = value;
       onChanged();
       return this;
@@ -741,12 +807,12 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 146224249;</code>
+     * <code>string content = 414659705;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
@@ -758,7 +824,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 146224249;</code>
+     * <code>string content = 414659705;</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.
@@ -768,7 +834,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       content_ = value;
       onChanged();
       return this;
@@ -782,7 +848,22 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     *
+     * @return Whether the fileType field is set.
+     */
+    @java.lang.Override
+    public boolean hasFileType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file type of source file.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
      *
      * @return The enum numeric value on the wire for fileType.
      */
@@ -797,13 +878,13 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
      *
      * @param value The enum numeric value on the wire for fileType to set.
      * @return This builder for chaining.
      */
     public Builder setFileTypeValue(int value) {
-
+      bitField0_ |= 0x00000002;
       fileType_ = value;
       onChanged();
       return this;
@@ -815,7 +896,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
      *
      * @return The fileType.
      */
@@ -835,7 +916,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
      *
      * @param value The fileType to set.
      * @return This builder for chaining.
@@ -844,7 +925,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       fileType_ = value.getNumber();
       onChanged();
       return this;
@@ -856,12 +937,12 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFileType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fileType_ = 0;
       onChanged();
       return this;

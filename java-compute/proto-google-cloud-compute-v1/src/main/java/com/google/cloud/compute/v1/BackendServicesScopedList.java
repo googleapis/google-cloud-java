@@ -73,7 +73,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 960695626:
+          case -1186788022:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 backendServices_ =
@@ -135,7 +135,8 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.BackendServicesScopedList.Builder.class);
   }
 
-  public static final int BACKEND_SERVICES_FIELD_NUMBER = 120086953;
+  private int bitField0_;
+  public static final int BACKEND_SERVICES_FIELD_NUMBER = 388522409;
   private java.util.List<com.google.cloud.compute.v1.BackendService> backendServices_;
   /**
    *
@@ -144,7 +145,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    * A list of BackendServices contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.BackendService> getBackendServicesList() {
@@ -157,7 +158,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    * A list of BackendServices contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.BackendServiceOrBuilder>
@@ -171,7 +172,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    * A list of BackendServices contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   @java.lang.Override
   public int getBackendServicesCount() {
@@ -184,7 +185,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    * A list of BackendServices contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendService getBackendServices(int index) {
@@ -197,7 +198,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    * A list of BackendServices contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+   * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServicesOrBuilder(
@@ -220,7 +221,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -248,7 +249,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -265,11 +266,11 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < backendServices_.size(); i++) {
-      output.writeMessage(120086953, backendServices_.get(i));
+      output.writeMessage(388522409, backendServices_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -280,13 +281,13 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < backendServices_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              120086953, backendServices_.get(i));
+              388522409, backendServices_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -469,6 +470,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBackendServicesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -484,9 +486,9 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -515,6 +517,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       com.google.cloud.compute.v1.BackendServicesScopedList result =
           new com.google.cloud.compute.v1.BackendServicesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (backendServicesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           backendServices_ = java.util.Collections.unmodifiableList(backendServices_);
@@ -524,11 +527,15 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       } else {
         result.backendServices_ = backendServicesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -665,7 +672,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.BackendService> getBackendServicesList() {
       if (backendServicesBuilder_ == null) {
@@ -681,7 +688,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public int getBackendServicesCount() {
       if (backendServicesBuilder_ == null) {
@@ -697,7 +704,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public com.google.cloud.compute.v1.BackendService getBackendServices(int index) {
       if (backendServicesBuilder_ == null) {
@@ -713,7 +720,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder setBackendServices(int index, com.google.cloud.compute.v1.BackendService value) {
       if (backendServicesBuilder_ == null) {
@@ -735,7 +742,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder setBackendServices(
         int index, com.google.cloud.compute.v1.BackendService.Builder builderForValue) {
@@ -755,7 +762,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder addBackendServices(com.google.cloud.compute.v1.BackendService value) {
       if (backendServicesBuilder_ == null) {
@@ -777,7 +784,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder addBackendServices(int index, com.google.cloud.compute.v1.BackendService value) {
       if (backendServicesBuilder_ == null) {
@@ -799,7 +806,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder addBackendServices(
         com.google.cloud.compute.v1.BackendService.Builder builderForValue) {
@@ -819,7 +826,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder addBackendServices(
         int index, com.google.cloud.compute.v1.BackendService.Builder builderForValue) {
@@ -839,7 +846,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder addAllBackendServices(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.BackendService> values) {
@@ -859,7 +866,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder clearBackendServices() {
       if (backendServicesBuilder_ == null) {
@@ -878,7 +885,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public Builder removeBackendServices(int index) {
       if (backendServicesBuilder_ == null) {
@@ -897,7 +904,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public com.google.cloud.compute.v1.BackendService.Builder getBackendServicesBuilder(int index) {
       return getBackendServicesFieldBuilder().getBuilder(index);
@@ -909,7 +916,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServicesOrBuilder(
         int index) {
@@ -926,7 +933,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.BackendServiceOrBuilder>
         getBackendServicesOrBuilderList() {
@@ -943,7 +950,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public com.google.cloud.compute.v1.BackendService.Builder addBackendServicesBuilder() {
       return getBackendServicesFieldBuilder()
@@ -956,7 +963,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public com.google.cloud.compute.v1.BackendService.Builder addBackendServicesBuilder(int index) {
       return getBackendServicesFieldBuilder()
@@ -969,7 +976,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * A list of BackendServices contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 120086953;</code>
+     * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.BackendService.Builder>
         getBackendServicesBuilderList() {
@@ -1014,7 +1021,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1055,7 +1062,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1074,7 +1081,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1088,7 +1095,9 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1100,7 +1109,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1117,10 +1126,9 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1133,7 +1141,7 @@ public final class BackendServicesScopedList extends com.google.protobuf.Generat
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

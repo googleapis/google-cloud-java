@@ -60,6 +60,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
-          case 12228594:
+          case -2135255054:
             {
               com.google.cloud.compute.v1.ForwardingRuleReference.Builder subBuilder = null;
-              if (forwardingRule_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = forwardingRule_.toBuilder();
               }
               forwardingRule_ =
@@ -84,13 +85,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
                 subBuilder.mergeFrom(forwardingRule_);
                 forwardingRule_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
-          case 308084818:
+          case -1839398830:
             {
               com.google.cloud.compute.v1.BackendServiceReference.Builder subBuilder = null;
-              if (backendService_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = backendService_.toBuilder();
               }
               backendService_ =
@@ -101,13 +102,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
                 subBuilder.mergeFrom(backendService_);
                 backendService_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 323529514:
+          case -1823954134:
             {
               com.google.cloud.compute.v1.HealthCheckReference.Builder subBuilder = null;
-              if (healthCheck_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = healthCheck_.toBuilder();
               }
               healthCheck_ =
@@ -117,20 +118,20 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
                 subBuilder.mergeFrom(healthCheck_);
                 healthCheck_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 444573552:
+          case -1702910096:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000010;
               healthState_ = rawValue;
               break;
             }
-          case 1119514330:
+          case -1027969318:
             {
               com.google.cloud.compute.v1.HealthCheckServiceReference.Builder subBuilder = null;
-              if (healthCheckService_ != null) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = healthCheckService_.toBuilder();
               }
               healthCheckService_ =
@@ -141,7 +142,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
                 subBuilder.mergeFrom(healthCheckService_);
                 healthCheckService_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000008;
               break;
             }
           default:
@@ -198,14 +199,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_HEALTH_STATE(0),
-    /** <code>DRAINING = 212019946;</code> */
-    DRAINING(212019946),
-    /** <code>HEALTHY = 171365757;</code> */
-    HEALTHY(171365757),
-    /** <code>UNHEALTHY = 193682628;</code> */
-    UNHEALTHY(193682628),
-    /** <code>UNKNOWN = 164706346;</code> */
-    UNKNOWN(164706346),
+    /** <code>DRAINING = 480455402;</code> */
+    DRAINING(480455402),
+    /** <code>HEALTHY = 439801213;</code> */
+    HEALTHY(439801213),
+    /** <code>UNHEALTHY = 462118084;</code> */
+    UNHEALTHY(462118084),
+    /** <code>UNKNOWN = 433141802;</code> */
+    UNKNOWN(433141802),
     UNRECOGNIZED(-1),
     ;
 
@@ -219,14 +220,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
-    /** <code>DRAINING = 212019946;</code> */
-    public static final int DRAINING_VALUE = 212019946;
-    /** <code>HEALTHY = 171365757;</code> */
-    public static final int HEALTHY_VALUE = 171365757;
-    /** <code>UNHEALTHY = 193682628;</code> */
-    public static final int UNHEALTHY_VALUE = 193682628;
-    /** <code>UNKNOWN = 164706346;</code> */
-    public static final int UNKNOWN_VALUE = 164706346;
+    /** <code>DRAINING = 480455402;</code> */
+    public static final int DRAINING_VALUE = 480455402;
+    /** <code>HEALTHY = 439801213;</code> */
+    public static final int HEALTHY_VALUE = 439801213;
+    /** <code>UNHEALTHY = 462118084;</code> */
+    public static final int UNHEALTHY_VALUE = 462118084;
+    /** <code>UNKNOWN = 433141802;</code> */
+    public static final int UNKNOWN_VALUE = 433141802;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -254,13 +255,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       switch (value) {
         case 0:
           return UNDEFINED_HEALTH_STATE;
-        case 212019946:
+        case 480455402:
           return DRAINING;
-        case 171365757:
+        case 439801213:
           return HEALTHY;
-        case 193682628:
+        case 462118084:
           return UNHEALTHY;
-        case 164706346:
+        case 433141802:
           return UNKNOWN;
         default:
           return null;
@@ -317,7 +318,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState)
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
+  private int bitField0_;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
   private com.google.cloud.compute.v1.BackendServiceReference backendService_;
   /**
    *
@@ -326,13 +328,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
   @java.lang.Override
   public boolean hasBackendService() {
-    return backendService_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -341,7 +343,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -358,14 +360,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceReferenceOrBuilder getBackendServiceOrBuilder() {
-    return getBackendService();
+    return backendService_ == null
+        ? com.google.cloud.compute.v1.BackendServiceReference.getDefaultInstance()
+        : backendService_;
   }
 
-  public static final int FORWARDING_RULE_FIELD_NUMBER = 1528574;
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
   private com.google.cloud.compute.v1.ForwardingRuleReference forwardingRule_;
   /**
    *
@@ -374,13 +378,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    *
    * @return Whether the forwardingRule field is set.
    */
   @java.lang.Override
   public boolean hasForwardingRule() {
-    return forwardingRule_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -389,7 +393,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
@@ -406,14 +410,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ForwardingRuleReferenceOrBuilder getForwardingRuleOrBuilder() {
-    return getForwardingRule();
+    return forwardingRule_ == null
+        ? com.google.cloud.compute.v1.ForwardingRuleReference.getDefaultInstance()
+        : forwardingRule_;
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
   private com.google.cloud.compute.v1.HealthCheckReference healthCheck_;
   /**
    *
@@ -422,13 +428,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    *
    * @return Whether the healthCheck field is set.
    */
   @java.lang.Override
   public boolean hasHealthCheck() {
-    return healthCheck_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -437,7 +443,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -454,14 +460,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder getHealthCheckOrBuilder() {
-    return getHealthCheck();
+    return healthCheck_ == null
+        ? com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance()
+        : healthCheck_;
   }
 
-  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 139939291;
+  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
   private com.google.cloud.compute.v1.HealthCheckServiceReference healthCheckService_;
   /**
    *
@@ -470,14 +478,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    *
    * @return Whether the healthCheckService field is set.
    */
   @java.lang.Override
   public boolean hasHealthCheckService() {
-    return healthCheckService_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -486,7 +494,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    *
    * @return The healthCheckService.
@@ -504,16 +512,18 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthCheckServiceReferenceOrBuilder
       getHealthCheckServiceOrBuilder() {
-    return getHealthCheckService();
+    return healthCheckService_ == null
+        ? com.google.cloud.compute.v1.HealthCheckServiceReference.getDefaultInstance()
+        : healthCheckService_;
   }
 
-  public static final int HEALTH_STATE_FIELD_NUMBER = 55571694;
+  public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
   private int healthState_;
   /**
    *
@@ -523,7 +533,24 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
+   * </code>
+   *
+   * @return Whether the healthState field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthState() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the network endpoint determined based on the health checks configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
    * </code>
    *
    * @return The enum numeric value on the wire for healthState.
@@ -540,7 +567,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
    * </code>
    *
    * @return The healthState.
@@ -570,23 +597,20 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (forwardingRule_ != null) {
-      output.writeMessage(1528574, getForwardingRule());
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(269964030, getForwardingRule());
     }
-    if (backendService_ != null) {
-      output.writeMessage(38510602, getBackendService());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(306946058, getBackendService());
     }
-    if (healthCheck_ != null) {
-      output.writeMessage(40441189, getHealthCheck());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(308876645, getHealthCheck());
     }
-    if (healthState_
-        != com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState
-            .UNDEFINED_HEALTH_STATE
-            .getNumber()) {
-      output.writeEnum(55571694, healthState_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeEnum(324007150, healthState_);
     }
-    if (healthCheckService_ != null) {
-      output.writeMessage(139939291, getHealthCheckService());
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(408374747, getHealthCheckService());
     }
     unknownFields.writeTo(output);
   }
@@ -597,27 +621,24 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (forwardingRule_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(1528574, getForwardingRule());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(269964030, getForwardingRule());
     }
-    if (backendService_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(38510602, getBackendService());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(306946058, getBackendService());
     }
-    if (healthCheck_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(40441189, getHealthCheck());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(308876645, getHealthCheck());
     }
-    if (healthState_
-        != com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState
-            .UNDEFINED_HEALTH_STATE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(55571694, healthState_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(324007150, healthState_);
     }
-    if (healthCheckService_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              139939291, getHealthCheckService());
+              408374747, getHealthCheckService());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -651,7 +672,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (hasHealthCheckService()) {
       if (!getHealthCheckService().equals(other.getHealthCheckService())) return false;
     }
-    if (healthState_ != other.healthState_) return false;
+    if (hasHealthState() != other.hasHealthState()) return false;
+    if (hasHealthState()) {
+      if (healthState_ != other.healthState_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -679,8 +703,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       hash = (37 * hash) + HEALTH_CHECK_SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getHealthCheckService().hashCode();
     }
-    hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + healthState_;
+    if (hasHealthState()) {
+      hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + healthState_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -820,7 +846,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBackendServiceFieldBuilder();
+        getForwardingRuleFieldBuilder();
+        getHealthCheckFieldBuilder();
+        getHealthCheckServiceFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -829,29 +860,29 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       if (backendServiceBuilder_ == null) {
         backendService_ = null;
       } else {
-        backendService_ = null;
-        backendServiceBuilder_ = null;
+        backendServiceBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (forwardingRuleBuilder_ == null) {
         forwardingRule_ = null;
       } else {
-        forwardingRule_ = null;
-        forwardingRuleBuilder_ = null;
+        forwardingRuleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (healthCheckBuilder_ == null) {
         healthCheck_ = null;
       } else {
-        healthCheck_ = null;
-        healthCheckBuilder_ = null;
+        healthCheckBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (healthCheckServiceBuilder_ == null) {
         healthCheckService_ = null;
       } else {
-        healthCheckService_ = null;
-        healthCheckServiceBuilder_ = null;
+        healthCheckServiceBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       healthState_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -879,27 +910,45 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint buildPartial() {
       com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint result =
           new com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint(this);
-      if (backendServiceBuilder_ == null) {
-        result.backendService_ = backendService_;
-      } else {
-        result.backendService_ = backendServiceBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (backendServiceBuilder_ == null) {
+          result.backendService_ = backendService_;
+        } else {
+          result.backendService_ = backendServiceBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (forwardingRuleBuilder_ == null) {
-        result.forwardingRule_ = forwardingRule_;
-      } else {
-        result.forwardingRule_ = forwardingRuleBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (forwardingRuleBuilder_ == null) {
+          result.forwardingRule_ = forwardingRule_;
+        } else {
+          result.forwardingRule_ = forwardingRuleBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
-      if (healthCheckBuilder_ == null) {
-        result.healthCheck_ = healthCheck_;
-      } else {
-        result.healthCheck_ = healthCheckBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (healthCheckBuilder_ == null) {
+          result.healthCheck_ = healthCheck_;
+        } else {
+          result.healthCheck_ = healthCheckBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
-      if (healthCheckServiceBuilder_ == null) {
-        result.healthCheckService_ = healthCheckService_;
-      } else {
-        result.healthCheckService_ = healthCheckServiceBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (healthCheckServiceBuilder_ == null) {
+          result.healthCheckService_ = healthCheckService_;
+        } else {
+          result.healthCheckService_ = healthCheckServiceBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
       }
       result.healthState_ = healthState_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -962,8 +1011,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       if (other.hasHealthCheckService()) {
         mergeHealthCheckService(other.getHealthCheckService());
       }
-      if (other.healthState_ != 0) {
-        setHealthStateValue(other.getHealthStateValue());
+      if (other.hasHealthState()) {
+        setHealthState(other.getHealthState());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -995,6 +1044,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.BackendServiceReference backendService_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceReference,
@@ -1008,12 +1059,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      *
      * @return Whether the backendService field is set.
      */
     public boolean hasBackendService() {
-      return backendServiceBuilder_ != null || backendService_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1022,7 +1073,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      *
      * @return The backendService.
      */
@@ -1042,7 +1093,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public Builder setBackendService(com.google.cloud.compute.v1.BackendServiceReference value) {
       if (backendServiceBuilder_ == null) {
@@ -1054,7 +1105,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         backendServiceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1064,7 +1115,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public Builder setBackendService(
         com.google.cloud.compute.v1.BackendServiceReference.Builder builderForValue) {
@@ -1074,7 +1125,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         backendServiceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1084,11 +1135,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public Builder mergeBackendService(com.google.cloud.compute.v1.BackendServiceReference value) {
       if (backendServiceBuilder_ == null) {
-        if (backendService_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && backendService_ != null
+            && backendService_
+                != com.google.cloud.compute.v1.BackendServiceReference.getDefaultInstance()) {
           backendService_ =
               com.google.cloud.compute.v1.BackendServiceReference.newBuilder(backendService_)
                   .mergeFrom(value)
@@ -1100,7 +1154,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         backendServiceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1110,17 +1164,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public Builder clearBackendService() {
       if (backendServiceBuilder_ == null) {
         backendService_ = null;
         onChanged();
       } else {
-        backendService_ = null;
-        backendServiceBuilder_ = null;
+        backendServiceBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -1130,10 +1183,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceReference.Builder getBackendServiceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBackendServiceFieldBuilder().getBuilder();
     }
@@ -1144,7 +1197,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceReferenceOrBuilder
         getBackendServiceOrBuilder() {
@@ -1163,7 +1216,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the backend service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+     * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceReference,
@@ -1195,12 +1248,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      *
      * @return Whether the forwardingRule field is set.
      */
     public boolean hasForwardingRule() {
-      return forwardingRuleBuilder_ != null || forwardingRule_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1209,7 +1262,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      *
      * @return The forwardingRule.
      */
@@ -1229,7 +1282,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public Builder setForwardingRule(com.google.cloud.compute.v1.ForwardingRuleReference value) {
       if (forwardingRuleBuilder_ == null) {
@@ -1241,7 +1294,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         forwardingRuleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1251,7 +1304,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public Builder setForwardingRule(
         com.google.cloud.compute.v1.ForwardingRuleReference.Builder builderForValue) {
@@ -1261,7 +1314,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         forwardingRuleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1271,11 +1324,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public Builder mergeForwardingRule(com.google.cloud.compute.v1.ForwardingRuleReference value) {
       if (forwardingRuleBuilder_ == null) {
-        if (forwardingRule_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && forwardingRule_ != null
+            && forwardingRule_
+                != com.google.cloud.compute.v1.ForwardingRuleReference.getDefaultInstance()) {
           forwardingRule_ =
               com.google.cloud.compute.v1.ForwardingRuleReference.newBuilder(forwardingRule_)
                   .mergeFrom(value)
@@ -1287,7 +1343,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         forwardingRuleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1297,17 +1353,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public Builder clearForwardingRule() {
       if (forwardingRuleBuilder_ == null) {
         forwardingRule_ = null;
         onChanged();
       } else {
-        forwardingRule_ = null;
-        forwardingRuleBuilder_ = null;
+        forwardingRuleBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1317,10 +1372,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRuleReference.Builder getForwardingRuleBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getForwardingRuleFieldBuilder().getBuilder();
     }
@@ -1331,7 +1386,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRuleReferenceOrBuilder
         getForwardingRuleOrBuilder() {
@@ -1350,7 +1405,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the forwarding rule associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ForwardingRuleReference,
@@ -1382,12 +1437,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      *
      * @return Whether the healthCheck field is set.
      */
     public boolean hasHealthCheck() {
-      return healthCheckBuilder_ != null || healthCheck_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1396,7 +1451,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      *
      * @return The healthCheck.
      */
@@ -1416,7 +1471,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public Builder setHealthCheck(com.google.cloud.compute.v1.HealthCheckReference value) {
       if (healthCheckBuilder_ == null) {
@@ -1428,7 +1483,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1438,7 +1493,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public Builder setHealthCheck(
         com.google.cloud.compute.v1.HealthCheckReference.Builder builderForValue) {
@@ -1448,7 +1503,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1458,11 +1513,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public Builder mergeHealthCheck(com.google.cloud.compute.v1.HealthCheckReference value) {
       if (healthCheckBuilder_ == null) {
-        if (healthCheck_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && healthCheck_ != null
+            && healthCheck_
+                != com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance()) {
           healthCheck_ =
               com.google.cloud.compute.v1.HealthCheckReference.newBuilder(healthCheck_)
                   .mergeFrom(value)
@@ -1474,7 +1532,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1484,17 +1542,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public Builder clearHealthCheck() {
       if (healthCheckBuilder_ == null) {
         healthCheck_ = null;
         onChanged();
       } else {
-        healthCheck_ = null;
-        healthCheckBuilder_ = null;
+        healthCheckBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1504,10 +1561,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public com.google.cloud.compute.v1.HealthCheckReference.Builder getHealthCheckBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getHealthCheckFieldBuilder().getBuilder();
     }
@@ -1518,7 +1575,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     public com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder getHealthCheckOrBuilder() {
       if (healthCheckBuilder_ != null) {
@@ -1536,7 +1593,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+     * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HealthCheckReference,
@@ -1568,13 +1625,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      *
      * @return Whether the healthCheckService field is set.
      */
     public boolean hasHealthCheckService() {
-      return healthCheckServiceBuilder_ != null || healthCheckService_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1583,7 +1640,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      *
      * @return The healthCheckService.
@@ -1604,7 +1661,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public Builder setHealthCheckService(
@@ -1618,7 +1675,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckServiceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1628,7 +1685,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public Builder setHealthCheckService(
@@ -1639,7 +1696,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckServiceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1649,13 +1706,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public Builder mergeHealthCheckService(
         com.google.cloud.compute.v1.HealthCheckServiceReference value) {
       if (healthCheckServiceBuilder_ == null) {
-        if (healthCheckService_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && healthCheckService_ != null
+            && healthCheckService_
+                != com.google.cloud.compute.v1.HealthCheckServiceReference.getDefaultInstance()) {
           healthCheckService_ =
               com.google.cloud.compute.v1.HealthCheckServiceReference.newBuilder(
                       healthCheckService_)
@@ -1668,7 +1728,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       } else {
         healthCheckServiceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1678,7 +1738,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public Builder clearHealthCheckService() {
@@ -1686,10 +1746,9 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         healthCheckService_ = null;
         onChanged();
       } else {
-        healthCheckService_ = null;
-        healthCheckServiceBuilder_ = null;
+        healthCheckServiceBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1699,12 +1758,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckServiceReference.Builder
         getHealthCheckServiceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getHealthCheckServiceFieldBuilder().getBuilder();
     }
@@ -1715,7 +1774,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckServiceReferenceOrBuilder
@@ -1735,7 +1794,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * URL of the health check service associated with the health state of the network endpoint.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+     * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1764,7 +1823,24 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
+     * </code>
+     *
+     * @return Whether the healthState field is set.
+     */
+    @java.lang.Override
+    public boolean hasHealthState() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the network endpoint determined based on the health checks configured.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
      * </code>
      *
      * @return The enum numeric value on the wire for healthState.
@@ -1781,14 +1857,14 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
      * </code>
      *
      * @param value The enum numeric value on the wire for healthState to set.
      * @return This builder for chaining.
      */
     public Builder setHealthStateValue(int value) {
-
+      bitField0_ |= 0x00000010;
       healthState_ = value;
       onChanged();
       return this;
@@ -1801,7 +1877,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
      * </code>
      *
      * @return The healthState.
@@ -1824,7 +1900,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
      * </code>
      *
      * @param value The healthState to set.
@@ -1835,7 +1911,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       healthState_ = value.getNumber();
       onChanged();
       return this;
@@ -1848,13 +1924,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+     * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       healthState_ = 0;
       onChanged();
       return this;

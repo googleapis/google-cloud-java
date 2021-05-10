@@ -58,6 +58,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,15 +71,16 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             break;
           case 883793792:
             {
+              bitField0_ |= 0x00000001;
               hasStatefulConfig_ = input.readBool();
               break;
             }
-          case 2062636362:
+          case -84847286:
             {
               com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
                       .Builder
                   subBuilder = null;
-              if (perInstanceConfigs_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = perInstanceConfigs_.toBuilder();
               }
               perInstanceConfigs_ =
@@ -90,7 +92,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
                 subBuilder.mergeFrom(perInstanceConfigs_);
                 perInstanceConfigs_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -127,8 +129,24 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HAS_STATEFUL_CONFIG_FIELD_NUMBER = 110474224;
   private boolean hasStatefulConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
+   * </pre>
+   *
+   * <code>bool has_stateful_config = 110474224;</code>
+   *
+   * @return Whether the hasStatefulConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHasStatefulConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -145,7 +163,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     return hasStatefulConfig_;
   }
 
-  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 257829545;
+  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 526265001;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
       perInstanceConfigs_;
   /**
@@ -156,14 +174,14 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return Whether the perInstanceConfigs field is set.
    */
   @java.lang.Override
   public boolean hasPerInstanceConfigs() {
-    return perInstanceConfigs_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -173,7 +191,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    *
    * @return The perInstanceConfigs.
@@ -194,13 +212,16 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
       getPerInstanceConfigsOrBuilder() {
-    return getPerInstanceConfigs();
+    return perInstanceConfigs_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
+            .getDefaultInstance()
+        : perInstanceConfigs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -217,11 +238,11 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (hasStatefulConfig_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(110474224, hasStatefulConfig_);
     }
-    if (perInstanceConfigs_ != null) {
-      output.writeMessage(257829545, getPerInstanceConfigs());
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(526265001, getPerInstanceConfigs());
     }
     unknownFields.writeTo(output);
   }
@@ -232,13 +253,13 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (hasStatefulConfig_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(110474224, hasStatefulConfig_);
     }
-    if (perInstanceConfigs_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              257829545, getPerInstanceConfigs());
+              526265001, getPerInstanceConfigs());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -256,7 +277,10 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful other =
         (com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful) obj;
 
-    if (getHasStatefulConfig() != other.getHasStatefulConfig()) return false;
+    if (hasHasStatefulConfig() != other.hasHasStatefulConfig()) return false;
+    if (hasHasStatefulConfig()) {
+      if (getHasStatefulConfig() != other.getHasStatefulConfig()) return false;
+    }
     if (hasPerInstanceConfigs() != other.hasPerInstanceConfigs()) return false;
     if (hasPerInstanceConfigs()) {
       if (!getPerInstanceConfigs().equals(other.getPerInstanceConfigs())) return false;
@@ -272,8 +296,10 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HAS_STATEFUL_CONFIG_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasStatefulConfig());
+    if (hasHasStatefulConfig()) {
+      hash = (37 * hash) + HAS_STATEFUL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasStatefulConfig());
+    }
     if (hasPerInstanceConfigs()) {
       hash = (37 * hash) + PER_INSTANCE_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getPerInstanceConfigs().hashCode();
@@ -417,20 +443,22 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPerInstanceConfigsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       hasStatefulConfig_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (perInstanceConfigsBuilder_ == null) {
         perInstanceConfigs_ = null;
       } else {
-        perInstanceConfigs_ = null;
-        perInstanceConfigsBuilder_ = null;
+        perInstanceConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -459,12 +487,21 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful(this);
-      result.hasStatefulConfig_ = hasStatefulConfig_;
-      if (perInstanceConfigsBuilder_ == null) {
-        result.perInstanceConfigs_ = perInstanceConfigs_;
-      } else {
-        result.perInstanceConfigs_ = perInstanceConfigsBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hasStatefulConfig_ = hasStatefulConfig_;
+        to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (perInstanceConfigsBuilder_ == null) {
+          result.perInstanceConfigs_ = perInstanceConfigs_;
+        } else {
+          result.perInstanceConfigs_ = perInstanceConfigsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -516,7 +553,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.getDefaultInstance())
         return this;
-      if (other.getHasStatefulConfig() != false) {
+      if (other.hasHasStatefulConfig()) {
         setHasStatefulConfig(other.getHasStatefulConfig());
       }
       if (other.hasPerInstanceConfigs()) {
@@ -553,7 +590,24 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private boolean hasStatefulConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful config even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
+     * </pre>
+     *
+     * <code>bool has_stateful_config = 110474224;</code>
+     *
+     * @return Whether the hasStatefulConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasHasStatefulConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -582,7 +636,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setHasStatefulConfig(boolean value) {
-
+      bitField0_ |= 0x00000001;
       hasStatefulConfig_ = value;
       onChanged();
       return this;
@@ -599,7 +653,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearHasStatefulConfig() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hasStatefulConfig_ = false;
       onChanged();
       return this;
@@ -622,13 +676,13 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      *
      * @return Whether the perInstanceConfigs field is set.
      */
     public boolean hasPerInstanceConfigs() {
-      return perInstanceConfigsBuilder_ != null || perInstanceConfigs_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -638,7 +692,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      *
      * @return The perInstanceConfigs.
@@ -662,7 +716,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -676,7 +730,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       } else {
         perInstanceConfigsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -687,7 +741,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -699,7 +753,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       } else {
         perInstanceConfigsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -710,13 +764,17 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder mergePerInstanceConfigs(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs value) {
       if (perInstanceConfigsBuilder_ == null) {
-        if (perInstanceConfigs_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && perInstanceConfigs_ != null
+            && perInstanceConfigs_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
+                    .getDefaultInstance()) {
           perInstanceConfigs_ =
               com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
                   .newBuilder(perInstanceConfigs_)
@@ -729,7 +787,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       } else {
         perInstanceConfigsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -740,7 +798,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public Builder clearPerInstanceConfigs() {
@@ -748,10 +806,9 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
         perInstanceConfigs_ = null;
         onChanged();
       } else {
-        perInstanceConfigs_ = null;
-        perInstanceConfigsBuilder_ = null;
+        perInstanceConfigsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -762,12 +819,12 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs.Builder
         getPerInstanceConfigsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPerInstanceConfigsFieldBuilder().getBuilder();
     }
@@ -779,7 +836,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
@@ -801,7 +858,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

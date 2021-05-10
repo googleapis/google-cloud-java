@@ -63,6 +63,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -80,17 +81,10 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
               zone_ = s;
               break;
             }
-          case 170671130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetInstance_ = s;
-              break;
-            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -99,6 +93,13 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1976812518:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetInstance_ = s;
               break;
             }
           default:
@@ -135,6 +136,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.DeleteTargetInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -197,6 +199,23 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -237,7 +256,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int TARGET_INSTANCE_FIELD_NUMBER = 21333891;
+  public static final int TARGET_INSTANCE_FIELD_NUMBER = 289769347;
   private volatile java.lang.Object targetInstance_;
   /**
    *
@@ -246,7 +265,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
    * Name of the TargetInstance resource to delete.
    * </pre>
    *
-   * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetInstance.
    */
@@ -269,7 +288,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
    * Name of the TargetInstance resource to delete.
    * </pre>
    *
-   * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetInstance.
    */
@@ -352,14 +371,14 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21333891, targetInstance_);
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getTargetInstanceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 289769347, targetInstance_);
     }
     unknownFields.writeTo(output);
   }
@@ -373,14 +392,14 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21333891, targetInstance_);
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (!getTargetInstanceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(289769347, targetInstance_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -399,7 +418,10 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
         (com.google.cloud.compute.v1.DeleteTargetInstanceRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getTargetInstance().equals(other.getTargetInstance())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -415,8 +437,10 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + TARGET_INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getTargetInstance().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -570,7 +594,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetInstance_ = "";
 
       zone_ = "";
@@ -602,10 +626,16 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.DeleteTargetInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteTargetInstanceRequest result =
           new com.google.cloud.compute.v1.DeleteTargetInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.targetInstance_ = targetInstance_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -660,7 +690,8 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -701,6 +732,8 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -820,6 +853,22 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -875,7 +924,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -894,7 +943,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -918,7 +967,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -932,7 +981,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetInstance.
      */
@@ -954,7 +1003,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetInstance.
      */
@@ -976,7 +1025,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetInstance to set.
      * @return This builder for chaining.
@@ -997,7 +1046,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1014,7 +1063,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetInstance to set.
      * @return This builder for chaining.

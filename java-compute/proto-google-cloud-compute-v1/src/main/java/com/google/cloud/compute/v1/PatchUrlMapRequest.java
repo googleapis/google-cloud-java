@@ -62,6 +62,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,15 +76,8 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
-              break;
-            }
-          case 788681826:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlMap_ = s;
               break;
             }
           case 1349403402:
@@ -106,6 +100,13 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1358801822:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              urlMap_ = s;
               break;
             }
           default:
@@ -142,6 +143,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.PatchUrlMapRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -204,6 +206,23 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -244,7 +263,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 98585228;
+  public static final int URL_MAP_FIELD_NUMBER = 367020684;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -253,7 +272,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
    * Name of the UrlMap resource to patch.
    * </pre>
    *
-   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -276,7 +295,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
    * Name of the UrlMap resource to patch.
    * </pre>
    *
-   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */
@@ -361,17 +380,17 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
     }
     if (urlMapResource_ != null) {
       output.writeMessage(168675425, getUrlMapResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
   }
@@ -382,11 +401,8 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
     }
     if (urlMapResource_ != null) {
       size +=
@@ -394,6 +410,9 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (!getUrlMapBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -412,7 +431,10 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.compute.v1.PatchUrlMapRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getUrlMap().equals(other.getUrlMap())) return false;
     if (hasUrlMapResource() != other.hasUrlMapResource()) return false;
     if (hasUrlMapResource()) {
@@ -431,8 +453,10 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + URL_MAP_FIELD_NUMBER;
     hash = (53 * hash) + getUrlMap().hashCode();
     if (hasUrlMapResource()) {
@@ -587,7 +611,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       urlMap_ = "";
 
       if (urlMapResourceBuilder_ == null) {
@@ -623,7 +647,12 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.PatchUrlMapRequest buildPartial() {
       com.google.cloud.compute.v1.PatchUrlMapRequest result =
           new com.google.cloud.compute.v1.PatchUrlMapRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.urlMap_ = urlMap_;
       if (urlMapResourceBuilder_ == null) {
@@ -631,6 +660,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
       } else {
         result.urlMapResource_ = urlMapResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -684,7 +714,8 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -723,6 +754,8 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -842,6 +875,22 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -897,7 +946,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -916,7 +965,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -940,7 +989,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -954,7 +1003,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * Name of the UrlMap resource to patch.
      * </pre>
      *
-     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The urlMap.
      */
@@ -976,7 +1025,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * Name of the UrlMap resource to patch.
      * </pre>
      *
-     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for urlMap.
      */
@@ -998,7 +1047,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * Name of the UrlMap resource to patch.
      * </pre>
      *
-     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -1019,7 +1068,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * Name of the UrlMap resource to patch.
      * </pre>
      *
-     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1036,7 +1085,7 @@ public final class PatchUrlMapRequest extends com.google.protobuf.GeneratedMessa
      * Name of the UrlMap resource to patch.
      * </pre>
      *
-     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

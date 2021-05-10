@@ -30,7 +30,7 @@ public interface PacketMirroringFilterOrBuilder
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 219466241;</code>
+   * <code>repeated string cidr_ranges = 487901697;</code>
    *
    * @return A list containing the cidrRanges.
    */
@@ -42,7 +42,7 @@ public interface PacketMirroringFilterOrBuilder
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 219466241;</code>
+   * <code>repeated string cidr_ranges = 487901697;</code>
    *
    * @return The count of cidrRanges.
    */
@@ -54,7 +54,7 @@ public interface PacketMirroringFilterOrBuilder
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 219466241;</code>
+   * <code>repeated string cidr_ranges = 487901697;</code>
    *
    * @param index The index of the element to return.
    * @return The cidrRanges at the given index.
@@ -67,13 +67,25 @@ public interface PacketMirroringFilterOrBuilder
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 219466241;</code>
+   * <code>repeated string cidr_ranges = 487901697;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the cidrRanges at the given index.
    */
   com.google.protobuf.ByteString getCidrRangesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   *
+   * @return Whether the direction field is set.
+   */
+  boolean hasDirection();
   /**
    *
    *
@@ -106,7 +118,7 @@ public interface PacketMirroringFilterOrBuilder
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 104889590;</code>
+   * <code>repeated string i_p_protocols = 373325046;</code>
    *
    * @return A list containing the iPProtocols.
    */
@@ -118,7 +130,7 @@ public interface PacketMirroringFilterOrBuilder
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 104889590;</code>
+   * <code>repeated string i_p_protocols = 373325046;</code>
    *
    * @return The count of iPProtocols.
    */
@@ -130,7 +142,7 @@ public interface PacketMirroringFilterOrBuilder
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 104889590;</code>
+   * <code>repeated string i_p_protocols = 373325046;</code>
    *
    * @param index The index of the element to return.
    * @return The iPProtocols at the given index.
@@ -143,7 +155,7 @@ public interface PacketMirroringFilterOrBuilder
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 104889590;</code>
+   * <code>repeated string i_p_protocols = 373325046;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the iPProtocols at the given index.

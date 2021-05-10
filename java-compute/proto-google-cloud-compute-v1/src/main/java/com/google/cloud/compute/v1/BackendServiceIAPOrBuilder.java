@@ -32,6 +32,18 @@ public interface BackendServiceIAPOrBuilder
    *
    * <code>bool enabled = 1018689;</code>
    *
+   * @return Whether the enabled field is set.
+   */
+  boolean hasEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+   * </pre>
+   *
+   * <code>bool enabled = 1018689;</code>
+   *
    * @return The enabled.
    */
   boolean getEnabled();
@@ -43,7 +55,19 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 45582155;</code>
+   * <code>string oauth2_client_id = 314017611;</code>
+   *
+   * @return Whether the oauth2ClientId field is set.
+   */
+  boolean hasOauth2ClientId();
+  /**
+   *
+   *
+   * <pre>
+   * OAuth2 client ID to use for the authentication flow.
+   * </pre>
+   *
+   * <code>string oauth2_client_id = 314017611;</code>
    *
    * @return The oauth2ClientId.
    */
@@ -55,12 +79,24 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 45582155;</code>
+   * <code>string oauth2_client_id = 314017611;</code>
    *
    * @return The bytes for oauth2ClientId.
    */
   com.google.protobuf.ByteString getOauth2ClientIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
+   * </pre>
+   *
+   * <code>string oauth2_client_secret = 50999520;</code>
+   *
+   * @return Whether the oauth2ClientSecret field is set.
+   */
+  boolean hasOauth2ClientSecret();
   /**
    *
    *
@@ -86,6 +122,18 @@ public interface BackendServiceIAPOrBuilder
    */
   com.google.protobuf.ByteString getOauth2ClientSecretBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+   * </pre>
+   *
+   * <code>string oauth2_client_secret_sha256 = 112903782;</code>
+   *
+   * @return Whether the oauth2ClientSecretSha256 field is set.
+   */
+  boolean hasOauth2ClientSecretSha256();
   /**
    *
    *

@@ -76,31 +76,14 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
           case 28050354:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               role_ = s;
-              break;
-            }
-          case 1148602570:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                members_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              members_.add(s);
-              break;
-            }
-          case 1381222570:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bindingId_ = s;
               break;
             }
           case 1699440858:
             {
               com.google.cloud.compute.v1.Expr.Builder subBuilder = null;
-              if (condition_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = condition_.toBuilder();
               }
               condition_ =
@@ -109,7 +92,24 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(condition_);
                 condition_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
+              break;
+            }
+          case -998881078:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                members_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              members_.add(s);
+              break;
+            }
+          case -766261078:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              bindingId_ = s;
               break;
             }
           default:
@@ -126,7 +126,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         members_ = members_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -149,10 +149,20 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Binding.Builder.class);
   }
 
-  public static final int BINDING_ID_FIELD_NUMBER = 172652821;
+  private int bitField0_;
+  public static final int BINDING_ID_FIELD_NUMBER = 441088277;
   private volatile java.lang.Object bindingId_;
   /**
-   * <code>string binding_id = 172652821;</code>
+   * <code>string binding_id = 441088277;</code>
+   *
+   * @return Whether the bindingId field is set.
+   */
+  @java.lang.Override
+  public boolean hasBindingId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>string binding_id = 441088277;</code>
    *
    * @return The bindingId.
    */
@@ -169,7 +179,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string binding_id = 172652821;</code>
+   * <code>string binding_id = 441088277;</code>
    *
    * @return The bytes for bindingId.
    */
@@ -204,7 +214,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCondition() {
-    return condition_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -238,10 +248,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ExprOrBuilder getConditionOrBuilder() {
-    return getCondition();
+    return condition_ == null ? com.google.cloud.compute.v1.Expr.getDefaultInstance() : condition_;
   }
 
-  public static final int MEMBERS_FIELD_NUMBER = 143575321;
+  public static final int MEMBERS_FIELD_NUMBER = 412010777;
   private com.google.protobuf.LazyStringList members_;
   /**
    *
@@ -259,7 +269,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @return A list containing the members.
    */
@@ -282,7 +292,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @return The count of members.
    */
@@ -305,7 +315,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @param index The index of the element to return.
    * @return The members at the given index.
@@ -329,7 +339,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the members at the given index.
@@ -340,6 +350,21 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLE_FIELD_NUMBER = 3506294;
   private volatile java.lang.Object role_;
+  /**
+   *
+   *
+   * <pre>
+   * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+   * </pre>
+   *
+   * <code>string role = 3506294;</code>
+   *
+   * @return Whether the role field is set.
+   */
+  @java.lang.Override
+  public boolean hasRole() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -401,17 +426,17 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRoleBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3506294, role_);
     }
-    for (int i = 0; i < members_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 143575321, members_.getRaw(i));
-    }
-    if (!getBindingIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 172652821, bindingId_);
-    }
-    if (condition_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(212430107, getCondition());
+    }
+    for (int i = 0; i < members_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 412010777, members_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 441088277, bindingId_);
     }
     unknownFields.writeTo(output);
   }
@@ -422,8 +447,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getRoleBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3506294, role_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(212430107, getCondition());
     }
     {
       int dataSize = 0;
@@ -433,11 +461,8 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getMembersList().size();
     }
-    if (!getBindingIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(172652821, bindingId_);
-    }
-    if (condition_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(212430107, getCondition());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(441088277, bindingId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -454,13 +479,19 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Binding other = (com.google.cloud.compute.v1.Binding) obj;
 
-    if (!getBindingId().equals(other.getBindingId())) return false;
+    if (hasBindingId() != other.hasBindingId()) return false;
+    if (hasBindingId()) {
+      if (!getBindingId().equals(other.getBindingId())) return false;
+    }
     if (hasCondition() != other.hasCondition()) return false;
     if (hasCondition()) {
       if (!getCondition().equals(other.getCondition())) return false;
     }
     if (!getMembersList().equals(other.getMembersList())) return false;
-    if (!getRole().equals(other.getRole())) return false;
+    if (hasRole() != other.hasRole()) return false;
+    if (hasRole()) {
+      if (!getRole().equals(other.getRole())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -472,8 +503,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BINDING_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getBindingId().hashCode();
+    if (hasBindingId()) {
+      hash = (37 * hash) + BINDING_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBindingId().hashCode();
+    }
     if (hasCondition()) {
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getCondition().hashCode();
@@ -482,8 +515,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MEMBERS_FIELD_NUMBER;
       hash = (53 * hash) + getMembersList().hashCode();
     }
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRole().hashCode();
+    if (hasRole()) {
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -622,24 +657,26 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConditionFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bindingId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (conditionBuilder_ == null) {
         condition_ = null;
       } else {
-        condition_ = null;
-        conditionBuilder_ = null;
+        conditionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       role_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -667,18 +704,29 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Binding buildPartial() {
       com.google.cloud.compute.v1.Binding result = new com.google.cloud.compute.v1.Binding(this);
       int from_bitField0_ = bitField0_;
-      result.bindingId_ = bindingId_;
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
+      result.bindingId_ = bindingId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (conditionBuilder_ == null) {
+          result.condition_ = condition_;
+        } else {
+          result.condition_ = conditionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         members_ = members_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.members_ = members_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.role_ = role_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -728,7 +776,8 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Binding other) {
       if (other == com.google.cloud.compute.v1.Binding.getDefaultInstance()) return this;
-      if (!other.getBindingId().isEmpty()) {
+      if (other.hasBindingId()) {
+        bitField0_ |= 0x00000001;
         bindingId_ = other.bindingId_;
         onChanged();
       }
@@ -738,14 +787,15 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       if (!other.members_.isEmpty()) {
         if (members_.isEmpty()) {
           members_ = other.members_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureMembersIsMutable();
           members_.addAll(other.members_);
         }
         onChanged();
       }
-      if (!other.getRole().isEmpty()) {
+      if (other.hasRole()) {
+        bitField0_ |= 0x00000008;
         role_ = other.role_;
         onChanged();
       }
@@ -782,7 +832,15 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object bindingId_ = "";
     /**
-     * <code>string binding_id = 172652821;</code>
+     * <code>string binding_id = 441088277;</code>
+     *
+     * @return Whether the bindingId field is set.
+     */
+    public boolean hasBindingId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>string binding_id = 441088277;</code>
      *
      * @return The bindingId.
      */
@@ -798,7 +856,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string binding_id = 172652821;</code>
+     * <code>string binding_id = 441088277;</code>
      *
      * @return The bytes for bindingId.
      */
@@ -814,7 +872,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string binding_id = 172652821;</code>
+     * <code>string binding_id = 441088277;</code>
      *
      * @param value The bindingId to set.
      * @return This builder for chaining.
@@ -823,24 +881,24 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       bindingId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string binding_id = 172652821;</code>
+     * <code>string binding_id = 441088277;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBindingId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       bindingId_ = getDefaultInstance().getBindingId();
       onChanged();
       return this;
     }
     /**
-     * <code>string binding_id = 172652821;</code>
+     * <code>string binding_id = 441088277;</code>
      *
      * @param value The bytes for bindingId to set.
      * @return This builder for chaining.
@@ -850,7 +908,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       bindingId_ = value;
       onChanged();
       return this;
@@ -877,7 +935,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -924,7 +982,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -946,7 +1004,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -963,7 +1021,9 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCondition(com.google.cloud.compute.v1.Expr value) {
       if (conditionBuilder_ == null) {
-        if (condition_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && condition_ != null
+            && condition_ != com.google.cloud.compute.v1.Expr.getDefaultInstance()) {
           condition_ =
               com.google.cloud.compute.v1.Expr.newBuilder(condition_)
                   .mergeFrom(value)
@@ -975,7 +1035,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -995,10 +1055,9 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         condition_ = null;
         onChanged();
       } else {
-        condition_ = null;
-        conditionBuilder_ = null;
+        conditionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1014,7 +1073,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.Expr condition = 212430107;</code>
      */
     public com.google.cloud.compute.v1.Expr.Builder getConditionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
@@ -1072,9 +1131,9 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1093,7 +1152,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @return A list containing the members.
      */
@@ -1116,7 +1175,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @return The count of members.
      */
@@ -1139,7 +1198,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param index The index of the element to return.
      * @return The members at the given index.
@@ -1163,7 +1222,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the members at the given index.
@@ -1187,7 +1246,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param index The index to set the value at.
      * @param value The members to set.
@@ -1218,7 +1277,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param value The members to add.
      * @return This builder for chaining.
@@ -1248,7 +1307,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param values The members to add.
      * @return This builder for chaining.
@@ -1275,13 +1334,13 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMembers() {
       members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1301,7 +1360,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 143575321;</code>
+     * <code>repeated string members = 412010777;</code>
      *
      * @param value The bytes of the members to add.
      * @return This builder for chaining.
@@ -1318,6 +1377,20 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object role_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * </pre>
+     *
+     * <code>string role = 3506294;</code>
+     *
+     * @return Whether the role field is set.
+     */
+    public boolean hasRole() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1378,7 +1451,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       role_ = value;
       onChanged();
       return this;
@@ -1395,7 +1468,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       role_ = getDefaultInstance().getRole();
       onChanged();
       return this;
@@ -1417,7 +1490,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       role_ = value;
       onChanged();
       return this;

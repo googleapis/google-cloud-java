@@ -65,6 +65,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,47 +79,48 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
               break;
             }
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000040;
               type_ = rawValue;
-              break;
-            }
-          case 385309690:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              publicPtrDomainName_ = s;
               break;
             }
           case 941076450:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               natIP_ = s;
               break;
             }
-          case 1991699096:
+          case -1762173958:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              publicPtrDomainName_ = s;
+              break;
+            }
+          case -155784552:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000008;
               networkTier_ = rawValue;
               break;
             }
-          case 2043478184:
+          case -104005464:
             {
+              bitField0_ |= 0x00000020;
               setPublicPtr_ = input.readBool();
               break;
             }
@@ -178,10 +180,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 131095095;</code> */
-    PREMIUM(131095095),
-    /** <code>STANDARD = 216207037;</code> */
-    STANDARD(216207037),
+    /** <code>PREMIUM = 399530551;</code> */
+    PREMIUM(399530551),
+    /** <code>STANDARD = 484642493;</code> */
+    STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
 
@@ -195,10 +197,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 131095095;</code> */
-    public static final int PREMIUM_VALUE = 131095095;
-    /** <code>STANDARD = 216207037;</code> */
-    public static final int STANDARD_VALUE = 216207037;
+    /** <code>PREMIUM = 399530551;</code> */
+    public static final int PREMIUM_VALUE = 399530551;
+    /** <code>STANDARD = 484642493;</code> */
+    public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -226,9 +228,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
-        case 131095095:
+        case 399530551:
           return PREMIUM;
-        case 216207037:
+        case 484642493:
           return STANDARD;
         default:
           return null;
@@ -402,8 +404,24 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AccessConfig.Type)
   }
 
+  private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -462,6 +480,21 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -511,6 +544,21 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string nat_i_p = 117634556;</code>
    *
+   * @return Whether the natIP field is set.
+   */
+  @java.lang.Override
+  public boolean hasNatIP() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+   * </pre>
+   *
+   * <code>string nat_i_p = 117634556;</code>
+   *
    * @return The natIP.
    */
   @java.lang.Override
@@ -549,7 +597,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NETWORK_TIER_FIELD_NUMBER = 248962387;
+  public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
   private int networkTier_;
   /**
    *
@@ -560,7 +608,24 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkTier() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
+   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
+   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -577,7 +642,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
    *
    * @return The networkTier.
    */
@@ -591,7 +656,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER = 48163711;
+  public static final int PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER = 316599167;
   private volatile java.lang.Object publicPtrDomainName_;
   /**
    *
@@ -600,7 +665,22 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 48163711;</code>
+   * <code>string public_ptr_domain_name = 316599167;</code>
+   *
+   * @return Whether the publicPtrDomainName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublicPtrDomainName() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * </pre>
+   *
+   * <code>string public_ptr_domain_name = 316599167;</code>
    *
    * @return The publicPtrDomainName.
    */
@@ -623,7 +703,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 48163711;</code>
+   * <code>string public_ptr_domain_name = 316599167;</code>
    *
    * @return The bytes for publicPtrDomainName.
    */
@@ -640,7 +720,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SET_PUBLIC_PTR_FIELD_NUMBER = 255434773;
+  public static final int SET_PUBLIC_PTR_FIELD_NUMBER = 523870229;
   private boolean setPublicPtr_;
   /**
    *
@@ -649,7 +729,22 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
    * </pre>
    *
-   * <code>bool set_public_ptr = 255434773;</code>
+   * <code>bool set_public_ptr = 523870229;</code>
+   *
+   * @return Whether the setPublicPtr field is set.
+   */
+  @java.lang.Override
+  public boolean hasSetPublicPtr() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * </pre>
+   *
+   * <code>bool set_public_ptr = 523870229;</code>
    *
    * @return The setPublicPtr.
    */
@@ -660,6 +755,21 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
   private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -708,28 +818,26 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (type_ != com.google.cloud.compute.v1.AccessConfig.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(3575610, type_);
     }
-    if (!getPublicPtrDomainNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 48163711, publicPtrDomainName_);
-    }
-    if (!getNatIPBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 117634556, natIP_);
     }
-    if (networkTier_
-        != com.google.cloud.compute.v1.AccessConfig.NetworkTier.UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      output.writeEnum(248962387, networkTier_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316599167, publicPtrDomainName_);
     }
-    if (setPublicPtr_ != false) {
-      output.writeBool(255434773, setPublicPtr_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(517397843, networkTier_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(523870229, setPublicPtr_);
     }
     unknownFields.writeTo(output);
   }
@@ -740,29 +848,27 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (type_ != com.google.cloud.compute.v1.AccessConfig.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
-    if (!getPublicPtrDomainNameBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(48163711, publicPtrDomainName_);
-    }
-    if (!getNatIPBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(117634556, natIP_);
     }
-    if (networkTier_
-        != com.google.cloud.compute.v1.AccessConfig.NetworkTier.UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(248962387, networkTier_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(316599167, publicPtrDomainName_);
     }
-    if (setPublicPtr_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(255434773, setPublicPtr_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(523870229, setPublicPtr_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -779,13 +885,34 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.AccessConfig other = (com.google.cloud.compute.v1.AccessConfig) obj;
 
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNatIP().equals(other.getNatIP())) return false;
-    if (networkTier_ != other.networkTier_) return false;
-    if (!getPublicPtrDomainName().equals(other.getPublicPtrDomainName())) return false;
-    if (getSetPublicPtr() != other.getSetPublicPtr()) return false;
-    if (type_ != other.type_) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNatIP() != other.hasNatIP()) return false;
+    if (hasNatIP()) {
+      if (!getNatIP().equals(other.getNatIP())) return false;
+    }
+    if (hasNetworkTier() != other.hasNetworkTier()) return false;
+    if (hasNetworkTier()) {
+      if (networkTier_ != other.networkTier_) return false;
+    }
+    if (hasPublicPtrDomainName() != other.hasPublicPtrDomainName()) return false;
+    if (hasPublicPtrDomainName()) {
+      if (!getPublicPtrDomainName().equals(other.getPublicPtrDomainName())) return false;
+    }
+    if (hasSetPublicPtr() != other.hasSetPublicPtr()) return false;
+    if (hasSetPublicPtr()) {
+      if (getSetPublicPtr() != other.getSetPublicPtr()) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -797,20 +924,34 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NAT_I_P_FIELD_NUMBER;
-    hash = (53 * hash) + getNatIP().hashCode();
-    hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-    hash = (53 * hash) + networkTier_;
-    hash = (37 * hash) + PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPublicPtrDomainName().hashCode();
-    hash = (37 * hash) + SET_PUBLIC_PTR_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSetPublicPtr());
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNatIP()) {
+      hash = (37 * hash) + NAT_I_P_FIELD_NUMBER;
+      hash = (53 * hash) + getNatIP().hashCode();
+    }
+    if (hasNetworkTier()) {
+      hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + networkTier_;
+    }
+    if (hasPublicPtrDomainName()) {
+      hash = (37 * hash) + PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicPtrDomainName().hashCode();
+    }
+    if (hasSetPublicPtr()) {
+      hash = (37 * hash) + SET_PUBLIC_PTR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSetPublicPtr());
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -957,19 +1098,19 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       natIP_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       networkTier_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       publicPtrDomainName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       setPublicPtr_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -997,13 +1138,37 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AccessConfig buildPartial() {
       com.google.cloud.compute.v1.AccessConfig result =
           new com.google.cloud.compute.v1.AccessConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.natIP_ = natIP_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.networkTier_ = networkTier_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.publicPtrDomainName_ = publicPtrDomainName_;
-      result.setPublicPtr_ = setPublicPtr_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.setPublicPtr_ = setPublicPtr_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1053,30 +1218,34 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.AccessConfig other) {
       if (other == com.google.cloud.compute.v1.AccessConfig.getDefaultInstance()) return this;
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000002;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNatIP().isEmpty()) {
+      if (other.hasNatIP()) {
+        bitField0_ |= 0x00000004;
         natIP_ = other.natIP_;
         onChanged();
       }
-      if (other.networkTier_ != 0) {
-        setNetworkTierValue(other.getNetworkTierValue());
+      if (other.hasNetworkTier()) {
+        setNetworkTier(other.getNetworkTier());
       }
-      if (!other.getPublicPtrDomainName().isEmpty()) {
+      if (other.hasPublicPtrDomainName()) {
+        bitField0_ |= 0x00000010;
         publicPtrDomainName_ = other.publicPtrDomainName_;
         onChanged();
       }
-      if (other.getSetPublicPtr() != false) {
+      if (other.hasSetPublicPtr()) {
         setSetPublicPtr(other.getSetPublicPtr());
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1107,7 +1276,23 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1168,7 +1353,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
@@ -1185,7 +1370,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1207,13 +1392,27 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1274,7 +1473,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -1291,7 +1490,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1313,13 +1512,27 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object natIP_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+     * </pre>
+     *
+     * <code>string nat_i_p = 117634556;</code>
+     *
+     * @return Whether the natIP field is set.
+     */
+    public boolean hasNatIP() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1380,7 +1593,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       natIP_ = value;
       onChanged();
       return this;
@@ -1397,7 +1610,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNatIP() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       natIP_ = getDefaultInstance().getNatIP();
       onChanged();
       return this;
@@ -1419,7 +1632,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       natIP_ = value;
       onChanged();
       return this;
@@ -1435,7 +1648,24 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+     *
+     * @return Whether the networkTier field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetworkTier() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
+     * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
+     * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
      *
      * @return The enum numeric value on the wire for networkTier.
      */
@@ -1452,13 +1682,13 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
      *
      * @param value The enum numeric value on the wire for networkTier to set.
      * @return This builder for chaining.
      */
     public Builder setNetworkTierValue(int value) {
-
+      bitField0_ |= 0x00000008;
       networkTier_ = value;
       onChanged();
       return this;
@@ -1472,7 +1702,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
      *
      * @return The networkTier.
      */
@@ -1494,7 +1724,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
      *
      * @param value The networkTier to set.
      * @return This builder for chaining.
@@ -1503,7 +1733,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       networkTier_ = value.getNumber();
       onChanged();
       return this;
@@ -1517,12 +1747,12 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+     * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       networkTier_ = 0;
       onChanged();
       return this;
@@ -1536,7 +1766,21 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      * </pre>
      *
-     * <code>string public_ptr_domain_name = 48163711;</code>
+     * <code>string public_ptr_domain_name = 316599167;</code>
+     *
+     * @return Whether the publicPtrDomainName field is set.
+     */
+    public boolean hasPublicPtrDomainName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+     * </pre>
+     *
+     * <code>string public_ptr_domain_name = 316599167;</code>
      *
      * @return The publicPtrDomainName.
      */
@@ -1558,7 +1802,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      * </pre>
      *
-     * <code>string public_ptr_domain_name = 48163711;</code>
+     * <code>string public_ptr_domain_name = 316599167;</code>
      *
      * @return The bytes for publicPtrDomainName.
      */
@@ -1580,7 +1824,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      * </pre>
      *
-     * <code>string public_ptr_domain_name = 48163711;</code>
+     * <code>string public_ptr_domain_name = 316599167;</code>
      *
      * @param value The publicPtrDomainName to set.
      * @return This builder for chaining.
@@ -1589,7 +1833,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       publicPtrDomainName_ = value;
       onChanged();
       return this;
@@ -1601,12 +1845,12 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      * </pre>
      *
-     * <code>string public_ptr_domain_name = 48163711;</code>
+     * <code>string public_ptr_domain_name = 316599167;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPublicPtrDomainName() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       publicPtrDomainName_ = getDefaultInstance().getPublicPtrDomainName();
       onChanged();
       return this;
@@ -1618,7 +1862,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      * </pre>
      *
-     * <code>string public_ptr_domain_name = 48163711;</code>
+     * <code>string public_ptr_domain_name = 316599167;</code>
      *
      * @param value The bytes for publicPtrDomainName to set.
      * @return This builder for chaining.
@@ -1628,7 +1872,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       publicPtrDomainName_ = value;
       onChanged();
       return this;
@@ -1642,7 +1886,22 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
      * </pre>
      *
-     * <code>bool set_public_ptr = 255434773;</code>
+     * <code>bool set_public_ptr = 523870229;</code>
+     *
+     * @return Whether the setPublicPtr field is set.
+     */
+    @java.lang.Override
+    public boolean hasSetPublicPtr() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+     * </pre>
+     *
+     * <code>bool set_public_ptr = 523870229;</code>
      *
      * @return The setPublicPtr.
      */
@@ -1657,13 +1916,13 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
      * </pre>
      *
-     * <code>bool set_public_ptr = 255434773;</code>
+     * <code>bool set_public_ptr = 523870229;</code>
      *
      * @param value The setPublicPtr to set.
      * @return This builder for chaining.
      */
     public Builder setSetPublicPtr(boolean value) {
-
+      bitField0_ |= 0x00000020;
       setPublicPtr_ = value;
       onChanged();
       return this;
@@ -1675,18 +1934,33 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
      * </pre>
      *
-     * <code>bool set_public_ptr = 255434773;</code>
+     * <code>bool set_public_ptr = 523870229;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSetPublicPtr() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       setPublicPtr_ = false;
       onChanged();
       return this;
     }
 
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1715,7 +1989,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000040;
       type_ = value;
       onChanged();
       return this;
@@ -1754,7 +2028,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1771,7 +2045,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
       onChanged();
       return this;

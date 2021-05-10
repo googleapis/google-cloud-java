@@ -74,7 +74,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
           case 454313010:
             {
               com.google.cloud.compute.v1.NetworkEndpoint.Builder subBuilder = null;
-              if (networkEndpoint_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = networkEndpoint_.toBuilder();
               }
               networkEndpoint_ =
@@ -84,7 +84,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
                 subBuilder.mergeFrom(networkEndpoint_);
                 networkEndpoint_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 2069515450:
@@ -138,6 +138,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
             com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HEALTHS_FIELD_NUMBER = 258689431;
   private java.util.List<com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint> healths_;
   /**
@@ -230,7 +231,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasNetworkEndpoint() {
-    return networkEndpoint_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -260,7 +261,9 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointOrBuilder getNetworkEndpointOrBuilder() {
-    return getNetworkEndpoint();
+    return networkEndpoint_ == null
+        ? com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance()
+        : networkEndpoint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -277,7 +280,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (networkEndpoint_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(56789126, getNetworkEndpoint());
     }
     for (int i = 0; i < healths_.size(); i++) {
@@ -292,7 +295,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (networkEndpoint_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(56789126, getNetworkEndpoint());
     }
@@ -480,6 +483,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getHealthsFieldBuilder();
+        getNetworkEndpointFieldBuilder();
       }
     }
 
@@ -495,9 +499,9 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       if (networkEndpointBuilder_ == null) {
         networkEndpoint_ = null;
       } else {
-        networkEndpoint_ = null;
-        networkEndpointBuilder_ = null;
+        networkEndpointBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -526,6 +530,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus result =
           new com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (healthsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           healths_ = java.util.Collections.unmodifiableList(healths_);
@@ -535,11 +540,15 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       } else {
         result.healths_ = healthsBuilder_.build();
       }
-      if (networkEndpointBuilder_ == null) {
-        result.networkEndpoint_ = networkEndpoint_;
-      } else {
-        result.networkEndpoint_ = networkEndpointBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (networkEndpointBuilder_ == null) {
+          result.networkEndpoint_ = networkEndpoint_;
+        } else {
+          result.networkEndpoint_ = networkEndpointBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1053,7 +1062,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * @return Whether the networkEndpoint field is set.
      */
     public boolean hasNetworkEndpoint() {
-      return networkEndpointBuilder_ != null || networkEndpoint_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1094,7 +1103,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       } else {
         networkEndpointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1114,7 +1123,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       } else {
         networkEndpointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1128,7 +1137,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      */
     public Builder mergeNetworkEndpoint(com.google.cloud.compute.v1.NetworkEndpoint value) {
       if (networkEndpointBuilder_ == null) {
-        if (networkEndpoint_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && networkEndpoint_ != null
+            && networkEndpoint_
+                != com.google.cloud.compute.v1.NetworkEndpoint.getDefaultInstance()) {
           networkEndpoint_ =
               com.google.cloud.compute.v1.NetworkEndpoint.newBuilder(networkEndpoint_)
                   .mergeFrom(value)
@@ -1140,7 +1152,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
       } else {
         networkEndpointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1157,10 +1169,9 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
         networkEndpoint_ = null;
         onChanged();
       } else {
-        networkEndpoint_ = null;
-        networkEndpointBuilder_ = null;
+        networkEndpointBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1173,7 +1184,7 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      * <code>.google.cloud.compute.v1.NetworkEndpoint network_endpoint = 56789126;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpoint.Builder getNetworkEndpointBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNetworkEndpointFieldBuilder().getBuilder();
     }

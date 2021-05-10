@@ -32,10 +32,34 @@ public interface SSLHealthCheckOrBuilder
    *
    * <code>int32 port = 3446913;</code>
    *
+   * @return Whether the port field is set.
+   */
+  boolean hasPort();
+  /**
+   *
+   *
+   * <pre>
+   * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
    * @return The port.
    */
   int getPort();
 
+  /**
+   *
+   *
+   * <pre>
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  boolean hasPortName();
   /**
    *
    *
@@ -61,6 +85,23 @@ public interface SSLHealthCheckOrBuilder
    */
   com.google.protobuf.ByteString getPortNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how port is selected for health checking, can be one of following values:
+   * USE_FIXED_PORT: The port number in port is used for health checking.
+   * USE_NAMED_PORT: The portName is used for health checking.
+   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+   * If not specified, SSL health check follows behavior specified in port and portName fields.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
+   * </code>
+   *
+   * @return Whether the portSpecification field is set.
+   */
+  boolean hasPortSpecification();
   /**
    *
    *
@@ -105,6 +146,18 @@ public interface SSLHealthCheckOrBuilder
    *
    * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
    *
+   * @return Whether the proxyHeader field is set.
+   */
+  boolean hasProxyHeader();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   *
    * @return The enum numeric value on the wire for proxyHeader.
    */
   int getProxyHeaderValue();
@@ -130,6 +183,18 @@ public interface SSLHealthCheckOrBuilder
    *
    * <code>string request = 21951119;</code>
    *
+   * @return Whether the request field is set.
+   */
+  boolean hasRequest();
+  /**
+   *
+   *
+   * <pre>
+   * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+   * </pre>
+   *
+   * <code>string request = 21951119;</code>
+   *
    * @return The request.
    */
   java.lang.String getRequest();
@@ -146,6 +211,18 @@ public interface SSLHealthCheckOrBuilder
    */
   com.google.protobuf.ByteString getRequestBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+   * </pre>
+   *
+   * <code>string response = 196547649;</code>
+   *
+   * @return Whether the response field is set.
+   */
+  boolean hasResponse();
   /**
    *
    *

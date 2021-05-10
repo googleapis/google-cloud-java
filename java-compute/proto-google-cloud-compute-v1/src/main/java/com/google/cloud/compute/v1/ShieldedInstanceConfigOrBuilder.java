@@ -30,7 +30,19 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 140635574;</code>
+   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   *
+   * @return Whether the enableIntegrityMonitoring field is set.
+   */
+  boolean hasEnableIntegrityMonitoring();
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance has integrity monitoring enabled. Enabled by default.
+   * </pre>
+   *
+   * <code>bool enable_integrity_monitoring = 409071030;</code>
    *
    * @return The enableIntegrityMonitoring.
    */
@@ -45,10 +57,34 @@ public interface ShieldedInstanceConfigOrBuilder
    *
    * <code>bool enable_secure_boot = 123568638;</code>
    *
+   * @return Whether the enableSecureBoot field is set.
+   */
+  boolean hasEnableSecureBoot();
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance has Secure Boot enabled. Disabled by default.
+   * </pre>
+   *
+   * <code>bool enable_secure_boot = 123568638;</code>
+   *
    * @return The enableSecureBoot.
    */
   boolean getEnableSecureBoot();
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance has the vTPM enabled. Enabled by default.
+   * </pre>
+   *
+   * <code>bool enable_vtpm = 181858935;</code>
+   *
+   * @return Whether the enableVtpm field is set.
+   */
+  boolean hasEnableVtpm();
   /**
    *
    *

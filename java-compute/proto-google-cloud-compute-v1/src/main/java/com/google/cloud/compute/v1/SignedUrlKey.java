@@ -61,6 +61,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,17 +72,17 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 1860027226:
+          case -287456422:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               keyName_ = s;
               break;
             }
-          case 1885371530:
+          case -262112118:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               keyValue_ = s;
               break;
             }
@@ -119,7 +120,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SignedUrlKey.Builder.class);
   }
 
-  public static final int KEY_NAME_FIELD_NUMBER = 232503403;
+  private int bitField0_;
+  public static final int KEY_NAME_FIELD_NUMBER = 500938859;
   private volatile java.lang.Object keyName_;
   /**
    *
@@ -128,7 +130,22 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
    * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string key_name = 232503403;</code>
+   * <code>string key_name = 500938859;</code>
+   *
+   * @return Whether the keyName field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string key_name = 500938859;</code>
    *
    * @return The keyName.
    */
@@ -151,7 +168,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
    * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string key_name = 232503403;</code>
+   * <code>string key_name = 500938859;</code>
    *
    * @return The bytes for keyName.
    */
@@ -168,7 +185,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int KEY_VALUE_FIELD_NUMBER = 235671441;
+  public static final int KEY_VALUE_FIELD_NUMBER = 504106897;
   private volatile java.lang.Object keyValue_;
   /**
    *
@@ -177,7 +194,22 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
    * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
    * </pre>
    *
-   * <code>string key_value = 235671441;</code>
+   * <code>string key_value = 504106897;</code>
+   *
+   * @return Whether the keyValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyValue() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
+   * </pre>
+   *
+   * <code>string key_value = 504106897;</code>
    *
    * @return The keyValue.
    */
@@ -200,7 +232,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
    * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
    * </pre>
    *
-   * <code>string key_value = 235671441;</code>
+   * <code>string key_value = 504106897;</code>
    *
    * @return The bytes for keyValue.
    */
@@ -231,11 +263,11 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKeyNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 232503403, keyName_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 500938859, keyName_);
     }
-    if (!getKeyValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 235671441, keyValue_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504106897, keyValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232503403, keyName_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500938859, keyName_);
     }
-    if (!getKeyValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(235671441, keyValue_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504106897, keyValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,8 +299,14 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.SignedUrlKey other = (com.google.cloud.compute.v1.SignedUrlKey) obj;
 
-    if (!getKeyName().equals(other.getKeyName())) return false;
-    if (!getKeyValue().equals(other.getKeyValue())) return false;
+    if (hasKeyName() != other.hasKeyName()) return false;
+    if (hasKeyName()) {
+      if (!getKeyName().equals(other.getKeyName())) return false;
+    }
+    if (hasKeyValue() != other.hasKeyValue()) return false;
+    if (hasKeyValue()) {
+      if (!getKeyValue().equals(other.getKeyValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,10 +318,14 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KEY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getKeyName().hashCode();
-    hash = (37 * hash) + KEY_VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + getKeyValue().hashCode();
+    if (hasKeyName()) {
+      hash = (37 * hash) + KEY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyName().hashCode();
+    }
+    if (hasKeyValue()) {
+      hash = (37 * hash) + KEY_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyValue().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,9 +472,9 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       keyName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       keyValue_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -460,8 +502,17 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SignedUrlKey buildPartial() {
       com.google.cloud.compute.v1.SignedUrlKey result =
           new com.google.cloud.compute.v1.SignedUrlKey(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.keyName_ = keyName_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.keyValue_ = keyValue_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,11 +562,13 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SignedUrlKey other) {
       if (other == com.google.cloud.compute.v1.SignedUrlKey.getDefaultInstance()) return this;
-      if (!other.getKeyName().isEmpty()) {
+      if (other.hasKeyName()) {
+        bitField0_ |= 0x00000001;
         keyName_ = other.keyName_;
         onChanged();
       }
-      if (!other.getKeyValue().isEmpty()) {
+      if (other.hasKeyValue()) {
+        bitField0_ |= 0x00000002;
         keyValue_ = other.keyValue_;
         onChanged();
       }
@@ -548,6 +601,8 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object keyName_ = "";
     /**
      *
@@ -556,7 +611,21 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string key_name = 232503403;</code>
+     * <code>string key_name = 500938859;</code>
+     *
+     * @return Whether the keyName field is set.
+     */
+    public boolean hasKeyName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string key_name = 500938859;</code>
      *
      * @return The keyName.
      */
@@ -578,7 +647,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string key_name = 232503403;</code>
+     * <code>string key_name = 500938859;</code>
      *
      * @return The bytes for keyName.
      */
@@ -600,7 +669,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string key_name = 232503403;</code>
+     * <code>string key_name = 500938859;</code>
      *
      * @param value The keyName to set.
      * @return This builder for chaining.
@@ -609,7 +678,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       keyName_ = value;
       onChanged();
       return this;
@@ -621,12 +690,12 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string key_name = 232503403;</code>
+     * <code>string key_name = 500938859;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearKeyName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       keyName_ = getDefaultInstance().getKeyName();
       onChanged();
       return this;
@@ -638,7 +707,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
-     * <code>string key_name = 232503403;</code>
+     * <code>string key_name = 500938859;</code>
      *
      * @param value The bytes for keyName to set.
      * @return This builder for chaining.
@@ -648,7 +717,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       keyName_ = value;
       onChanged();
       return this;
@@ -662,7 +731,21 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
      * </pre>
      *
-     * <code>string key_value = 235671441;</code>
+     * <code>string key_value = 504106897;</code>
+     *
+     * @return Whether the keyValue field is set.
+     */
+    public boolean hasKeyValue() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
+     * </pre>
+     *
+     * <code>string key_value = 504106897;</code>
      *
      * @return The keyValue.
      */
@@ -684,7 +767,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
      * </pre>
      *
-     * <code>string key_value = 235671441;</code>
+     * <code>string key_value = 504106897;</code>
      *
      * @return The bytes for keyValue.
      */
@@ -706,7 +789,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
      * </pre>
      *
-     * <code>string key_value = 235671441;</code>
+     * <code>string key_value = 504106897;</code>
      *
      * @param value The keyValue to set.
      * @return This builder for chaining.
@@ -715,7 +798,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       keyValue_ = value;
       onChanged();
       return this;
@@ -727,12 +810,12 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
      * </pre>
      *
-     * <code>string key_value = 235671441;</code>
+     * <code>string key_value = 504106897;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearKeyValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       keyValue_ = getDefaultInstance().getKeyValue();
       onChanged();
       return this;
@@ -744,7 +827,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
      * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
      * </pre>
      *
-     * <code>string key_value = 235671441;</code>
+     * <code>string key_value = 504106897;</code>
      *
      * @param value The bytes for keyValue to set.
      * @return This builder for chaining.
@@ -754,7 +837,7 @@ public final class SignedUrlKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       keyValue_ = value;
       onChanged();
       return this;

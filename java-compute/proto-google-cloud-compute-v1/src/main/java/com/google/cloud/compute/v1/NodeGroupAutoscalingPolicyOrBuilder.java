@@ -30,7 +30,19 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
-   * <code>int32 max_nodes = 29327382;</code>
+   * <code>int32 max_nodes = 297762838;</code>
+   *
+   * @return Whether the maxNodes field is set.
+   */
+  boolean hasMaxNodes();
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+   * </pre>
+   *
+   * <code>int32 max_nodes = 297762838;</code>
    *
    * @return The maxNodes.
    */
@@ -43,12 +55,36 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The minimum number of nodes that the group should have.
    * </pre>
    *
-   * <code>int32 min_nodes = 264935044;</code>
+   * <code>int32 min_nodes = 533370500;</code>
+   *
+   * @return Whether the minNodes field is set.
+   */
+  boolean hasMinNodes();
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of nodes that the group should have.
+   * </pre>
+   *
+   * <code>int32 min_nodes = 533370500;</code>
    *
    * @return The minNodes.
    */
   int getMinNodes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
   /**
    *
    *

@@ -72,7 +72,19 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case 333694754:
+          case 1026609728:
+            {
+              bitField0_ |= 0x00000001;
+              loadSucceeded_ = input.readBool();
+              break;
+            }
+          case 1541670376:
+            {
+              bitField0_ |= 0x00000002;
+              testPassed_ = input.readBool();
+              break;
+            }
+          case -1813788894:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -82,21 +94,11 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
               loadErrors_.add(s);
               break;
             }
-          case 1026609728:
+          case -247494222:
             {
-              loadSucceeded_ = input.readBool();
-              break;
-            }
-          case 1541670376:
-            {
-              testPassed_ = input.readBool();
-              break;
-            }
-          case 1899989426:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 testFailures_ = new java.util.ArrayList<com.google.cloud.compute.v1.TestFailure>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               testFailures_.add(
                   input.readMessage(
@@ -120,7 +122,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         loadErrors_ = loadErrors_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         testFailures_ = java.util.Collections.unmodifiableList(testFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -143,10 +145,11 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.UrlMapValidationResult.Builder.class);
   }
 
-  public static final int LOAD_ERRORS_FIELD_NUMBER = 41711844;
+  private int bitField0_;
+  public static final int LOAD_ERRORS_FIELD_NUMBER = 310147300;
   private com.google.protobuf.LazyStringList loadErrors_;
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @return A list containing the loadErrors.
    */
@@ -154,7 +157,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     return loadErrors_;
   }
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @return The count of loadErrors.
    */
@@ -162,7 +165,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     return loadErrors_.size();
   }
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @param index The index of the element to return.
    * @return The loadErrors at the given index.
@@ -171,7 +174,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     return loadErrors_.get(index);
   }
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the loadErrors at the given index.
@@ -191,6 +194,21 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    *
    * <code>bool load_succeeded = 128326216;</code>
    *
+   * @return Whether the loadSucceeded field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadSucceeded() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
+   * </pre>
+   *
+   * <code>bool load_succeeded = 128326216;</code>
+   *
    * @return The loadSucceeded.
    */
   @java.lang.Override
@@ -198,30 +216,30 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     return loadSucceeded_;
   }
 
-  public static final int TEST_FAILURES_FIELD_NUMBER = 237498678;
+  public static final int TEST_FAILURES_FIELD_NUMBER = 505934134;
   private java.util.List<com.google.cloud.compute.v1.TestFailure> testFailures_;
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList() {
     return testFailures_;
   }
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
       getTestFailuresOrBuilderList() {
     return testFailures_;
   }
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public int getTestFailuresCount() {
     return testFailures_.size();
   }
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.TestFailure getTestFailures(int index) {
     return testFailures_.get(index);
   }
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index) {
     return testFailures_.get(index);
@@ -229,6 +247,21 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
   public static final int TEST_PASSED_FIELD_NUMBER = 192708797;
   private boolean testPassed_;
+  /**
+   *
+   *
+   * <pre>
+   * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
+   * </pre>
+   *
+   * <code>bool test_passed = 192708797;</code>
+   *
+   * @return Whether the testPassed field is set.
+   */
+  @java.lang.Override
+  public boolean hasTestPassed() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -259,17 +292,17 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < loadErrors_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 41711844, loadErrors_.getRaw(i));
-    }
-    if (loadSucceeded_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(128326216, loadSucceeded_);
     }
-    if (testPassed_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(192708797, testPassed_);
     }
+    for (int i = 0; i < loadErrors_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 310147300, loadErrors_.getRaw(i));
+    }
     for (int i = 0; i < testFailures_.size(); i++) {
-      output.writeMessage(237498678, testFailures_.get(i));
+      output.writeMessage(505934134, testFailures_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -280,6 +313,12 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(128326216, loadSucceeded_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(192708797, testPassed_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < loadErrors_.size(); i++) {
@@ -288,15 +327,9 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 5 * getLoadErrorsList().size();
     }
-    if (loadSucceeded_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(128326216, loadSucceeded_);
-    }
-    if (testPassed_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(192708797, testPassed_);
-    }
     for (int i = 0; i < testFailures_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(237498678, testFailures_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(505934134, testFailures_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,9 +348,15 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         (com.google.cloud.compute.v1.UrlMapValidationResult) obj;
 
     if (!getLoadErrorsList().equals(other.getLoadErrorsList())) return false;
-    if (getLoadSucceeded() != other.getLoadSucceeded()) return false;
+    if (hasLoadSucceeded() != other.hasLoadSucceeded()) return false;
+    if (hasLoadSucceeded()) {
+      if (getLoadSucceeded() != other.getLoadSucceeded()) return false;
+    }
     if (!getTestFailuresList().equals(other.getTestFailuresList())) return false;
-    if (getTestPassed() != other.getTestPassed()) return false;
+    if (hasTestPassed() != other.hasTestPassed()) return false;
+    if (hasTestPassed()) {
+      if (getTestPassed() != other.getTestPassed()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -333,14 +372,18 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + LOAD_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getLoadErrorsList().hashCode();
     }
-    hash = (37 * hash) + LOAD_SUCCEEDED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLoadSucceeded());
+    if (hasLoadSucceeded()) {
+      hash = (37 * hash) + LOAD_SUCCEEDED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLoadSucceeded());
+    }
     if (getTestFailuresCount() > 0) {
       hash = (37 * hash) + TEST_FAILURES_FIELD_NUMBER;
       hash = (53 * hash) + getTestFailuresList().hashCode();
     }
-    hash = (37 * hash) + TEST_PASSED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTestPassed());
+    if (hasTestPassed()) {
+      hash = (37 * hash) + TEST_PASSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTestPassed());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -491,15 +534,15 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       loadErrors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       loadSucceeded_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (testFailuresBuilder_ == null) {
         testFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         testFailuresBuilder_.clear();
       }
       testPassed_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -528,22 +571,30 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.UrlMapValidationResult result =
           new com.google.cloud.compute.v1.UrlMapValidationResult(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         loadErrors_ = loadErrors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.loadErrors_ = loadErrors_;
-      result.loadSucceeded_ = loadSucceeded_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.loadSucceeded_ = loadSucceeded_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (testFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           testFailures_ = java.util.Collections.unmodifiableList(testFailures_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.testFailures_ = testFailures_;
       } else {
         result.testFailures_ = testFailuresBuilder_.build();
       }
-      result.testPassed_ = testPassed_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.testPassed_ = testPassed_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -604,14 +655,14 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         }
         onChanged();
       }
-      if (other.getLoadSucceeded() != false) {
+      if (other.hasLoadSucceeded()) {
         setLoadSucceeded(other.getLoadSucceeded());
       }
       if (testFailuresBuilder_ == null) {
         if (!other.testFailures_.isEmpty()) {
           if (testFailures_.isEmpty()) {
             testFailures_ = other.testFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTestFailuresIsMutable();
             testFailures_.addAll(other.testFailures_);
@@ -624,7 +675,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
             testFailuresBuilder_.dispose();
             testFailuresBuilder_ = null;
             testFailures_ = other.testFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             testFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTestFailuresFieldBuilder()
@@ -634,7 +685,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
           }
         }
       }
-      if (other.getTestPassed() != false) {
+      if (other.hasTestPassed()) {
         setTestPassed(other.getTestPassed());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -679,7 +730,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @return A list containing the loadErrors.
      */
@@ -687,7 +738,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return loadErrors_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @return The count of loadErrors.
      */
@@ -695,7 +746,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return loadErrors_.size();
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param index The index of the element to return.
      * @return The loadErrors at the given index.
@@ -704,7 +755,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return loadErrors_.get(index);
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the loadErrors at the given index.
@@ -713,7 +764,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return loadErrors_.getByteString(index);
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param index The index to set the value at.
      * @param value The loadErrors to set.
@@ -729,7 +780,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param value The loadErrors to add.
      * @return This builder for chaining.
@@ -744,7 +795,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param values The loadErrors to add.
      * @return This builder for chaining.
@@ -756,7 +807,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @return This builder for chaining.
      */
@@ -767,7 +818,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>repeated string load_errors = 41711844;</code>
+     * <code>repeated string load_errors = 310147300;</code>
      *
      * @param value The bytes of the loadErrors to add.
      * @return This builder for chaining.
@@ -784,6 +835,21 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     }
 
     private boolean loadSucceeded_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
+     * </pre>
+     *
+     * <code>bool load_succeeded = 128326216;</code>
+     *
+     * @return Whether the loadSucceeded field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoadSucceeded() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -812,7 +878,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setLoadSucceeded(boolean value) {
-
+      bitField0_ |= 0x00000002;
       loadSucceeded_ = value;
       onChanged();
       return this;
@@ -829,7 +895,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLoadSucceeded() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       loadSucceeded_ = false;
       onChanged();
       return this;
@@ -839,10 +905,10 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureTestFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         testFailures_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.TestFailure>(testFailures_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -852,7 +918,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.TestFailureOrBuilder>
         testFailuresBuilder_;
 
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList() {
       if (testFailuresBuilder_ == null) {
         return java.util.Collections.unmodifiableList(testFailures_);
@@ -860,7 +926,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessageList();
       }
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public int getTestFailuresCount() {
       if (testFailuresBuilder_ == null) {
         return testFailures_.size();
@@ -868,7 +934,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getCount();
       }
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure getTestFailures(int index) {
       if (testFailuresBuilder_ == null) {
         return testFailures_.get(index);
@@ -876,7 +942,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessage(index);
       }
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder setTestFailures(int index, com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
         if (value == null) {
@@ -890,7 +956,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder setTestFailures(
         int index, com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
       if (testFailuresBuilder_ == null) {
@@ -902,7 +968,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
         if (value == null) {
@@ -916,7 +982,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(int index, com.google.cloud.compute.v1.TestFailure value) {
       if (testFailuresBuilder_ == null) {
         if (value == null) {
@@ -930,7 +996,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(
         com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
       if (testFailuresBuilder_ == null) {
@@ -942,7 +1008,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addTestFailures(
         int index, com.google.cloud.compute.v1.TestFailure.Builder builderForValue) {
       if (testFailuresBuilder_ == null) {
@@ -954,7 +1020,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder addAllTestFailures(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.TestFailure> values) {
       if (testFailuresBuilder_ == null) {
@@ -966,18 +1032,18 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder clearTestFailures() {
       if (testFailuresBuilder_ == null) {
         testFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         testFailuresBuilder_.clear();
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public Builder removeTestFailures(int index) {
       if (testFailuresBuilder_ == null) {
         ensureTestFailuresIsMutable();
@@ -988,11 +1054,11 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder getTestFailuresBuilder(int index) {
       return getTestFailuresFieldBuilder().getBuilder(index);
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index) {
       if (testFailuresBuilder_ == null) {
         return testFailures_.get(index);
@@ -1000,7 +1066,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return testFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
         getTestFailuresOrBuilderList() {
       if (testFailuresBuilder_ != null) {
@@ -1009,17 +1075,17 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(testFailures_);
       }
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder addTestFailuresBuilder() {
       return getTestFailuresFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.TestFailure.getDefaultInstance());
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public com.google.cloud.compute.v1.TestFailure.Builder addTestFailuresBuilder(int index) {
       return getTestFailuresFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.TestFailure.getDefaultInstance());
     }
-    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+    /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
     public java.util.List<com.google.cloud.compute.v1.TestFailure.Builder>
         getTestFailuresBuilderList() {
       return getTestFailuresFieldBuilder().getBuilderList();
@@ -1036,13 +1102,28 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
                 com.google.cloud.compute.v1.TestFailure,
                 com.google.cloud.compute.v1.TestFailure.Builder,
                 com.google.cloud.compute.v1.TestFailureOrBuilder>(
-                testFailures_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                testFailures_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         testFailures_ = null;
       }
       return testFailuresBuilder_;
     }
 
     private boolean testPassed_;
+    /**
+     *
+     *
+     * <pre>
+     * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
+     * </pre>
+     *
+     * <code>bool test_passed = 192708797;</code>
+     *
+     * @return Whether the testPassed field is set.
+     */
+    @java.lang.Override
+    public boolean hasTestPassed() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1071,7 +1152,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setTestPassed(boolean value) {
-
+      bitField0_ |= 0x00000008;
       testPassed_ = value;
       onChanged();
       return this;
@@ -1088,7 +1169,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTestPassed() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       testPassed_ = false;
       onChanged();
       return this;

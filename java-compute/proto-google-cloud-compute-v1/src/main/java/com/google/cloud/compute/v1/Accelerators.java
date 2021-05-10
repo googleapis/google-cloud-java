@@ -59,6 +59,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,15 +70,16 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 197034154:
+          case -1950449494:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               guestAcceleratorType_ = s;
               break;
             }
-          case 1685150880:
+          case -462332768:
             {
+              bitField0_ |= 0x00000001;
               guestAcceleratorCount_ = input.readInt32();
               break;
             }
@@ -115,7 +117,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Accelerators.Builder.class);
   }
 
-  public static final int GUEST_ACCELERATOR_COUNT_FIELD_NUMBER = 210643860;
+  private int bitField0_;
+  public static final int GUEST_ACCELERATOR_COUNT_FIELD_NUMBER = 479079316;
   private int guestAcceleratorCount_;
   /**
    *
@@ -124,7 +127,22 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * Number of accelerator cards exposed to the guest.
    * </pre>
    *
-   * <code>int32 guest_accelerator_count = 210643860;</code>
+   * <code>int32 guest_accelerator_count = 479079316;</code>
+   *
+   * @return Whether the guestAcceleratorCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasGuestAcceleratorCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number of accelerator cards exposed to the guest.
+   * </pre>
+   *
+   * <code>int32 guest_accelerator_count = 479079316;</code>
    *
    * @return The guestAcceleratorCount.
    */
@@ -133,7 +151,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     return guestAcceleratorCount_;
   }
 
-  public static final int GUEST_ACCELERATOR_TYPE_FIELD_NUMBER = 24629269;
+  public static final int GUEST_ACCELERATOR_TYPE_FIELD_NUMBER = 293064725;
   private volatile java.lang.Object guestAcceleratorType_;
   /**
    *
@@ -142,7 +160,22 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 24629269;</code>
+   * <code>string guest_accelerator_type = 293064725;</code>
+   *
+   * @return Whether the guestAcceleratorType field is set.
+   */
+  @java.lang.Override
+  public boolean hasGuestAcceleratorType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+   * </pre>
+   *
+   * <code>string guest_accelerator_type = 293064725;</code>
    *
    * @return The guestAcceleratorType.
    */
@@ -165,7 +198,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
    * </pre>
    *
-   * <code>string guest_accelerator_type = 24629269;</code>
+   * <code>string guest_accelerator_type = 293064725;</code>
    *
    * @return The bytes for guestAcceleratorType.
    */
@@ -196,11 +229,11 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getGuestAcceleratorTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 24629269, guestAcceleratorType_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 293064725, guestAcceleratorType_);
     }
-    if (guestAcceleratorCount_ != 0) {
-      output.writeInt32(210643860, guestAcceleratorCount_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(479079316, guestAcceleratorCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -211,13 +244,14 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getGuestAcceleratorTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(24629269, guestAcceleratorType_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              293064725, guestAcceleratorType_);
     }
-    if (guestAcceleratorCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(210643860, guestAcceleratorCount_);
+          com.google.protobuf.CodedOutputStream.computeInt32Size(479079316, guestAcceleratorCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -234,8 +268,14 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Accelerators other = (com.google.cloud.compute.v1.Accelerators) obj;
 
-    if (getGuestAcceleratorCount() != other.getGuestAcceleratorCount()) return false;
-    if (!getGuestAcceleratorType().equals(other.getGuestAcceleratorType())) return false;
+    if (hasGuestAcceleratorCount() != other.hasGuestAcceleratorCount()) return false;
+    if (hasGuestAcceleratorCount()) {
+      if (getGuestAcceleratorCount() != other.getGuestAcceleratorCount()) return false;
+    }
+    if (hasGuestAcceleratorType() != other.hasGuestAcceleratorType()) return false;
+    if (hasGuestAcceleratorType()) {
+      if (!getGuestAcceleratorType().equals(other.getGuestAcceleratorType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,10 +287,14 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GUEST_ACCELERATOR_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getGuestAcceleratorCount();
-    hash = (37 * hash) + GUEST_ACCELERATOR_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getGuestAcceleratorType().hashCode();
+    if (hasGuestAcceleratorCount()) {
+      hash = (37 * hash) + GUEST_ACCELERATOR_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getGuestAcceleratorCount();
+    }
+    if (hasGuestAcceleratorType()) {
+      hash = (37 * hash) + GUEST_ACCELERATOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getGuestAcceleratorType().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -396,9 +440,9 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       guestAcceleratorCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       guestAcceleratorType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -426,8 +470,17 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Accelerators buildPartial() {
       com.google.cloud.compute.v1.Accelerators result =
           new com.google.cloud.compute.v1.Accelerators(this);
-      result.guestAcceleratorCount_ = guestAcceleratorCount_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.guestAcceleratorCount_ = guestAcceleratorCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.guestAcceleratorType_ = guestAcceleratorType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -477,10 +530,11 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Accelerators other) {
       if (other == com.google.cloud.compute.v1.Accelerators.getDefaultInstance()) return this;
-      if (other.getGuestAcceleratorCount() != 0) {
+      if (other.hasGuestAcceleratorCount()) {
         setGuestAcceleratorCount(other.getGuestAcceleratorCount());
       }
-      if (!other.getGuestAcceleratorType().isEmpty()) {
+      if (other.hasGuestAcceleratorType()) {
+        bitField0_ |= 0x00000002;
         guestAcceleratorType_ = other.guestAcceleratorType_;
         onChanged();
       }
@@ -513,6 +567,8 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int guestAcceleratorCount_;
     /**
      *
@@ -521,7 +577,22 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 210643860;</code>
+     * <code>int32 guest_accelerator_count = 479079316;</code>
+     *
+     * @return Whether the guestAcceleratorCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasGuestAcceleratorCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of accelerator cards exposed to the guest.
+     * </pre>
+     *
+     * <code>int32 guest_accelerator_count = 479079316;</code>
      *
      * @return The guestAcceleratorCount.
      */
@@ -536,13 +607,13 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 210643860;</code>
+     * <code>int32 guest_accelerator_count = 479079316;</code>
      *
      * @param value The guestAcceleratorCount to set.
      * @return This builder for chaining.
      */
     public Builder setGuestAcceleratorCount(int value) {
-
+      bitField0_ |= 0x00000001;
       guestAcceleratorCount_ = value;
       onChanged();
       return this;
@@ -554,12 +625,12 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * Number of accelerator cards exposed to the guest.
      * </pre>
      *
-     * <code>int32 guest_accelerator_count = 210643860;</code>
+     * <code>int32 guest_accelerator_count = 479079316;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGuestAcceleratorCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       guestAcceleratorCount_ = 0;
       onChanged();
       return this;
@@ -573,7 +644,21 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 24629269;</code>
+     * <code>string guest_accelerator_type = 293064725;</code>
+     *
+     * @return Whether the guestAcceleratorType field is set.
+     */
+    public boolean hasGuestAcceleratorType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+     * </pre>
+     *
+     * <code>string guest_accelerator_type = 293064725;</code>
      *
      * @return The guestAcceleratorType.
      */
@@ -595,7 +680,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 24629269;</code>
+     * <code>string guest_accelerator_type = 293064725;</code>
      *
      * @return The bytes for guestAcceleratorType.
      */
@@ -617,7 +702,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 24629269;</code>
+     * <code>string guest_accelerator_type = 293064725;</code>
      *
      * @param value The guestAcceleratorType to set.
      * @return This builder for chaining.
@@ -626,7 +711,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       guestAcceleratorType_ = value;
       onChanged();
       return this;
@@ -638,12 +723,12 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 24629269;</code>
+     * <code>string guest_accelerator_type = 293064725;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGuestAcceleratorType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       guestAcceleratorType_ = getDefaultInstance().getGuestAcceleratorType();
       onChanged();
       return this;
@@ -655,7 +740,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      * The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
      * </pre>
      *
-     * <code>string guest_accelerator_type = 24629269;</code>
+     * <code>string guest_accelerator_type = 293064725;</code>
      *
      * @param value The bytes for guestAcceleratorType to set.
      * @return This builder for chaining.
@@ -665,7 +750,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       guestAcceleratorType_ = value;
       onChanged();
       return this;

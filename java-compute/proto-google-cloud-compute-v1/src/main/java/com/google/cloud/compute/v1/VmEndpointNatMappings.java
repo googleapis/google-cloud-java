@@ -75,17 +75,17 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
           case 1823580074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               instanceName_ = s;
               break;
             }
           case 2049572938:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 interfaceNatMappings_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               interfaceNatMappings_.add(
                   input.readMessage(
@@ -108,7 +108,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         interfaceNatMappings_ = java.util.Collections.unmodifiableList(interfaceNatMappings_);
       }
       this.unknownFields = unknownFields.build();
@@ -131,8 +131,24 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.VmEndpointNatMappings.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_NAME_FIELD_NUMBER = 227947509;
   private volatile java.lang.Object instanceName_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the VM instance which the endpoint belongs to
+   * </pre>
+   *
+   * <code>string instance_name = 227947509;</code>
+   *
+   * @return Whether the instanceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -248,7 +264,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstanceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227947509, instanceName_);
     }
     for (int i = 0; i < interfaceNatMappings_.size(); i++) {
@@ -263,7 +279,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227947509, instanceName_);
     }
     for (int i = 0; i < interfaceNatMappings_.size(); i++) {
@@ -287,7 +303,10 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     com.google.cloud.compute.v1.VmEndpointNatMappings other =
         (com.google.cloud.compute.v1.VmEndpointNatMappings) obj;
 
-    if (!getInstanceName().equals(other.getInstanceName())) return false;
+    if (hasInstanceName() != other.hasInstanceName()) return false;
+    if (hasInstanceName()) {
+      if (!getInstanceName().equals(other.getInstanceName())) return false;
+    }
     if (!getInterfaceNatMappingsList().equals(other.getInterfaceNatMappingsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -300,8 +319,10 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceName().hashCode();
+    if (hasInstanceName()) {
+      hash = (37 * hash) + INSTANCE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceName().hashCode();
+    }
     if (getInterfaceNatMappingsCount() > 0) {
       hash = (37 * hash) + INTERFACE_NAT_MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getInterfaceNatMappingsList().hashCode();
@@ -454,10 +475,10 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       instanceName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (interfaceNatMappingsBuilder_ == null) {
         interfaceNatMappings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         interfaceNatMappingsBuilder_.clear();
       }
@@ -489,16 +510,21 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       com.google.cloud.compute.v1.VmEndpointNatMappings result =
           new com.google.cloud.compute.v1.VmEndpointNatMappings(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instanceName_ = instanceName_;
       if (interfaceNatMappingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           interfaceNatMappings_ = java.util.Collections.unmodifiableList(interfaceNatMappings_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.interfaceNatMappings_ = interfaceNatMappings_;
       } else {
         result.interfaceNatMappings_ = interfaceNatMappingsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -549,7 +575,8 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.compute.v1.VmEndpointNatMappings other) {
       if (other == com.google.cloud.compute.v1.VmEndpointNatMappings.getDefaultInstance())
         return this;
-      if (!other.getInstanceName().isEmpty()) {
+      if (other.hasInstanceName()) {
+        bitField0_ |= 0x00000001;
         instanceName_ = other.instanceName_;
         onChanged();
       }
@@ -557,7 +584,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         if (!other.interfaceNatMappings_.isEmpty()) {
           if (interfaceNatMappings_.isEmpty()) {
             interfaceNatMappings_ = other.interfaceNatMappings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureInterfaceNatMappingsIsMutable();
             interfaceNatMappings_.addAll(other.interfaceNatMappings_);
@@ -570,7 +597,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
             interfaceNatMappingsBuilder_.dispose();
             interfaceNatMappingsBuilder_ = null;
             interfaceNatMappings_ = other.interfaceNatMappings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             interfaceNatMappingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInterfaceNatMappingsFieldBuilder()
@@ -613,6 +640,20 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object instanceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the VM instance which the endpoint belongs to
+     * </pre>
+     *
+     * <code>string instance_name = 227947509;</code>
+     *
+     * @return Whether the instanceName field is set.
+     */
+    public boolean hasInstanceName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -673,7 +714,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceName_ = value;
       onChanged();
       return this;
@@ -690,7 +731,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInstanceName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceName_ = getDefaultInstance().getInstanceName();
       onChanged();
       return this;
@@ -712,7 +753,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       instanceName_ = value;
       onChanged();
       return this;
@@ -722,12 +763,12 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         interfaceNatMappings_ = java.util.Collections.emptyList();
 
     private void ensureInterfaceNatMappingsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         interfaceNatMappings_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings>(
                 interfaceNatMappings_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -911,7 +952,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     public Builder clearInterfaceNatMappings() {
       if (interfaceNatMappingsBuilder_ == null) {
         interfaceNatMappings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         interfaceNatMappingsBuilder_.clear();
@@ -1018,7 +1059,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
                 com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings.Builder,
                 com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsOrBuilder>(
                 interfaceNatMappings_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         interfaceNatMappings_ = null;

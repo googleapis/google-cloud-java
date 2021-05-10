@@ -63,6 +63,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,63 +77,70 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               name_ = s;
               break;
             }
           case 115357832:
             {
+              bitField0_ |= 0x00000020;
               importSubnetRoutesWithPublicIp_ = input.readBool();
               break;
             }
           case 210578048:
             {
+              bitField0_ |= 0x00000002;
               exchangeSubnetRoutes_ = input.readBool();
               break;
             }
           case 459639528:
             {
+              bitField0_ |= 0x00000001;
               autoCreateRoutes_ = input.readBool();
               break;
             }
           case 482251880:
             {
+              bitField0_ |= 0x00000004;
               exportCustomRoutes_ = input.readBool();
               break;
             }
           case 556677768:
             {
+              bitField0_ |= 0x00000100;
               peerMtu_ = input.readInt32();
               break;
             }
           case 764535970:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               stateDetails_ = s;
               break;
             }
           case 783526672:
             {
+              bitField0_ |= 0x00000008;
               exportSubnetRoutesWithPublicIp_ = input.readBool();
               break;
             }
           case 878060680:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000200;
               state_ = rawValue;
               break;
             }
           case 1583859184:
             {
+              bitField0_ |= 0x00000010;
               importCustomRoutes_ = input.readBool();
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               network_ = s;
               break;
             }
@@ -190,10 +198,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 46297862;</code> */
-    ACTIVE(46297862),
-    /** <code>INACTIVE = 1985643;</code> */
-    INACTIVE(1985643),
+    /** <code>ACTIVE = 314733318;</code> */
+    ACTIVE(314733318),
+    /** <code>INACTIVE = 270421099;</code> */
+    INACTIVE(270421099),
     UNRECOGNIZED(-1),
     ;
 
@@ -207,10 +215,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 46297862;</code> */
-    public static final int ACTIVE_VALUE = 46297862;
-    /** <code>INACTIVE = 1985643;</code> */
-    public static final int INACTIVE_VALUE = 1985643;
+    /** <code>ACTIVE = 314733318;</code> */
+    public static final int ACTIVE_VALUE = 314733318;
+    /** <code>INACTIVE = 270421099;</code> */
+    public static final int INACTIVE_VALUE = 270421099;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -238,9 +246,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 46297862:
+        case 314733318:
           return ACTIVE;
-        case 1985643:
+        case 270421099:
           return INACTIVE;
         default:
           return null;
@@ -295,8 +303,24 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkPeering.State)
   }
 
+  private int bitField0_;
   public static final int AUTO_CREATE_ROUTES_FIELD_NUMBER = 57454941;
   private boolean autoCreateRoutes_;
+  /**
+   *
+   *
+   * <pre>
+   * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * </pre>
+   *
+   * <code>bool auto_create_routes = 57454941;</code>
+   *
+   * @return Whether the autoCreateRoutes field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoCreateRoutes() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -324,6 +348,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool exchange_subnet_routes = 26322256;</code>
    *
+   * @return Whether the exchangeSubnetRoutes field is set.
+   */
+  @java.lang.Override
+  public boolean hasExchangeSubnetRoutes() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * </pre>
+   *
+   * <code>bool exchange_subnet_routes = 26322256;</code>
+   *
    * @return The exchangeSubnetRoutes.
    */
   @java.lang.Override
@@ -333,6 +372,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_CUSTOM_ROUTES_FIELD_NUMBER = 60281485;
   private boolean exportCustomRoutes_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to export the custom routes to peer network.
+   * </pre>
+   *
+   * <code>bool export_custom_routes = 60281485;</code>
+   *
+   * @return Whether the exportCustomRoutes field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportCustomRoutes() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -360,6 +414,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
    *
+   * @return Whether the exportSubnetRoutesWithPublicIp field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportSubnetRoutesWithPublicIp() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * </pre>
+   *
+   * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+   *
    * @return The exportSubnetRoutesWithPublicIp.
    */
   @java.lang.Override
@@ -369,6 +438,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_CUSTOM_ROUTES_FIELD_NUMBER = 197982398;
   private boolean importCustomRoutes_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to import the custom routes from peer network.
+   * </pre>
+   *
+   * <code>bool import_custom_routes = 197982398;</code>
+   *
+   * @return Whether the importCustomRoutes field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportCustomRoutes() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -396,6 +480,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
    *
+   * @return Whether the importSubnetRoutesWithPublicIp field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportSubnetRoutesWithPublicIp() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * </pre>
+   *
+   * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+   *
    * @return The importSubnetRoutesWithPublicIp.
    */
   @java.lang.Override
@@ -405,6 +504,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -463,6 +577,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -512,6 +641,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 peer_mtu = 69584721;</code>
    *
+   * @return Whether the peerMtu field is set.
+   */
+  @java.lang.Override
+  public boolean hasPeerMtu() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maximum Transmission Unit in bytes.
+   * </pre>
+   *
+   * <code>int32 peer_mtu = 69584721;</code>
+   *
    * @return The peerMtu.
    */
   @java.lang.Override
@@ -521,6 +665,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   *
+   * @return Whether the state field is set.
+   */
+  @java.lang.Override
+  public boolean hasState() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -557,6 +716,21 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_DETAILS_FIELD_NUMBER = 95566996;
   private volatile java.lang.Object stateDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Details about the current state of the peering.
+   * </pre>
+   *
+   * <code>string state_details = 95566996;</code>
+   *
+   * @return Whether the stateDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasStateDetails() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
   /**
    *
    *
@@ -618,37 +792,37 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (importSubnetRoutesWithPublicIp_ != false) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(14419729, importSubnetRoutesWithPublicIp_);
     }
-    if (exchangeSubnetRoutes_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(26322256, exchangeSubnetRoutes_);
     }
-    if (autoCreateRoutes_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(57454941, autoCreateRoutes_);
     }
-    if (exportCustomRoutes_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(60281485, exportCustomRoutes_);
     }
-    if (peerMtu_ != 0) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeInt32(69584721, peerMtu_);
     }
-    if (!getStateDetailsBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 95566996, stateDetails_);
     }
-    if (exportSubnetRoutesWithPublicIp_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(97940834, exportSubnetRoutesWithPublicIp_);
     }
-    if (state_ != com.google.cloud.compute.v1.NetworkPeering.State.UNDEFINED_STATE.getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(109757585, state_);
     }
-    if (importCustomRoutes_ != false) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(197982398, importCustomRoutes_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     unknownFields.writeTo(output);
@@ -660,42 +834,42 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (importSubnetRoutesWithPublicIp_ != false) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               14419729, importSubnetRoutesWithPublicIp_);
     }
-    if (exchangeSubnetRoutes_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(26322256, exchangeSubnetRoutes_);
     }
-    if (autoCreateRoutes_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(57454941, autoCreateRoutes_);
     }
-    if (exportCustomRoutes_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(60281485, exportCustomRoutes_);
     }
-    if (peerMtu_ != 0) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(69584721, peerMtu_);
     }
-    if (!getStateDetailsBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(95566996, stateDetails_);
     }
-    if (exportSubnetRoutesWithPublicIp_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               97940834, exportSubnetRoutesWithPublicIp_);
     }
-    if (state_ != com.google.cloud.compute.v1.NetworkPeering.State.UNDEFINED_STATE.getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
-    if (importCustomRoutes_ != false) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(197982398, importCustomRoutes_);
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     size += unknownFields.getSerializedSize();
@@ -714,19 +888,54 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.NetworkPeering other =
         (com.google.cloud.compute.v1.NetworkPeering) obj;
 
-    if (getAutoCreateRoutes() != other.getAutoCreateRoutes()) return false;
-    if (getExchangeSubnetRoutes() != other.getExchangeSubnetRoutes()) return false;
-    if (getExportCustomRoutes() != other.getExportCustomRoutes()) return false;
-    if (getExportSubnetRoutesWithPublicIp() != other.getExportSubnetRoutesWithPublicIp())
+    if (hasAutoCreateRoutes() != other.hasAutoCreateRoutes()) return false;
+    if (hasAutoCreateRoutes()) {
+      if (getAutoCreateRoutes() != other.getAutoCreateRoutes()) return false;
+    }
+    if (hasExchangeSubnetRoutes() != other.hasExchangeSubnetRoutes()) return false;
+    if (hasExchangeSubnetRoutes()) {
+      if (getExchangeSubnetRoutes() != other.getExchangeSubnetRoutes()) return false;
+    }
+    if (hasExportCustomRoutes() != other.hasExportCustomRoutes()) return false;
+    if (hasExportCustomRoutes()) {
+      if (getExportCustomRoutes() != other.getExportCustomRoutes()) return false;
+    }
+    if (hasExportSubnetRoutesWithPublicIp() != other.hasExportSubnetRoutesWithPublicIp())
       return false;
-    if (getImportCustomRoutes() != other.getImportCustomRoutes()) return false;
-    if (getImportSubnetRoutesWithPublicIp() != other.getImportSubnetRoutesWithPublicIp())
+    if (hasExportSubnetRoutesWithPublicIp()) {
+      if (getExportSubnetRoutesWithPublicIp() != other.getExportSubnetRoutesWithPublicIp())
+        return false;
+    }
+    if (hasImportCustomRoutes() != other.hasImportCustomRoutes()) return false;
+    if (hasImportCustomRoutes()) {
+      if (getImportCustomRoutes() != other.getImportCustomRoutes()) return false;
+    }
+    if (hasImportSubnetRoutesWithPublicIp() != other.hasImportSubnetRoutesWithPublicIp())
       return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (getPeerMtu() != other.getPeerMtu()) return false;
-    if (state_ != other.state_) return false;
-    if (!getStateDetails().equals(other.getStateDetails())) return false;
+    if (hasImportSubnetRoutesWithPublicIp()) {
+      if (getImportSubnetRoutesWithPublicIp() != other.getImportSubnetRoutesWithPublicIp())
+        return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasPeerMtu() != other.hasPeerMtu()) return false;
+    if (hasPeerMtu()) {
+      if (getPeerMtu() != other.getPeerMtu()) return false;
+    }
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (state_ != other.state_) return false;
+    }
+    if (hasStateDetails() != other.hasStateDetails()) return false;
+    if (hasStateDetails()) {
+      if (!getStateDetails().equals(other.getStateDetails())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -738,30 +947,54 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTO_CREATE_ROUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateRoutes());
-    hash = (37 * hash) + EXCHANGE_SUBNET_ROUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExchangeSubnetRoutes());
-    hash = (37 * hash) + EXPORT_CUSTOM_ROUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportCustomRoutes());
-    hash = (37 * hash) + EXPORT_SUBNET_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER;
-    hash =
-        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportSubnetRoutesWithPublicIp());
-    hash = (37 * hash) + IMPORT_CUSTOM_ROUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportCustomRoutes());
-    hash = (37 * hash) + IMPORT_SUBNET_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER;
-    hash =
-        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportSubnetRoutesWithPublicIp());
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + PEER_MTU_FIELD_NUMBER;
-    hash = (53 * hash) + getPeerMtu();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
-    hash = (37 * hash) + STATE_DETAILS_FIELD_NUMBER;
-    hash = (53 * hash) + getStateDetails().hashCode();
+    if (hasAutoCreateRoutes()) {
+      hash = (37 * hash) + AUTO_CREATE_ROUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateRoutes());
+    }
+    if (hasExchangeSubnetRoutes()) {
+      hash = (37 * hash) + EXCHANGE_SUBNET_ROUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExchangeSubnetRoutes());
+    }
+    if (hasExportCustomRoutes()) {
+      hash = (37 * hash) + EXPORT_CUSTOM_ROUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportCustomRoutes());
+    }
+    if (hasExportSubnetRoutesWithPublicIp()) {
+      hash = (37 * hash) + EXPORT_SUBNET_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getExportSubnetRoutesWithPublicIp());
+    }
+    if (hasImportCustomRoutes()) {
+      hash = (37 * hash) + IMPORT_CUSTOM_ROUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportCustomRoutes());
+    }
+    if (hasImportSubnetRoutesWithPublicIp()) {
+      hash = (37 * hash) + IMPORT_SUBNET_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getImportSubnetRoutesWithPublicIp());
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasPeerMtu()) {
+      hash = (37 * hash) + PEER_MTU_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerMtu();
+    }
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+    }
+    if (hasStateDetails()) {
+      hash = (37 * hash) + STATE_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getStateDetails().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -908,27 +1141,27 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       autoCreateRoutes_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       exchangeSubnetRoutes_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       exportCustomRoutes_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       exportSubnetRoutesWithPublicIp_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       importCustomRoutes_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       importSubnetRoutesWithPublicIp_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       peerMtu_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       stateDetails_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -956,17 +1189,53 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.NetworkPeering buildPartial() {
       com.google.cloud.compute.v1.NetworkPeering result =
           new com.google.cloud.compute.v1.NetworkPeering(this);
-      result.autoCreateRoutes_ = autoCreateRoutes_;
-      result.exchangeSubnetRoutes_ = exchangeSubnetRoutes_;
-      result.exportCustomRoutes_ = exportCustomRoutes_;
-      result.exportSubnetRoutesWithPublicIp_ = exportSubnetRoutesWithPublicIp_;
-      result.importCustomRoutes_ = importCustomRoutes_;
-      result.importSubnetRoutesWithPublicIp_ = importSubnetRoutesWithPublicIp_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoCreateRoutes_ = autoCreateRoutes_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exchangeSubnetRoutes_ = exchangeSubnetRoutes_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.exportCustomRoutes_ = exportCustomRoutes_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.exportSubnetRoutesWithPublicIp_ = exportSubnetRoutesWithPublicIp_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.importCustomRoutes_ = importCustomRoutes_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.importSubnetRoutesWithPublicIp_ = importSubnetRoutesWithPublicIp_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.network_ = network_;
-      result.peerMtu_ = peerMtu_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.peerMtu_ = peerMtu_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.state_ = state_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.stateDetails_ = stateDetails_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1016,39 +1285,42 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkPeering other) {
       if (other == com.google.cloud.compute.v1.NetworkPeering.getDefaultInstance()) return this;
-      if (other.getAutoCreateRoutes() != false) {
+      if (other.hasAutoCreateRoutes()) {
         setAutoCreateRoutes(other.getAutoCreateRoutes());
       }
-      if (other.getExchangeSubnetRoutes() != false) {
+      if (other.hasExchangeSubnetRoutes()) {
         setExchangeSubnetRoutes(other.getExchangeSubnetRoutes());
       }
-      if (other.getExportCustomRoutes() != false) {
+      if (other.hasExportCustomRoutes()) {
         setExportCustomRoutes(other.getExportCustomRoutes());
       }
-      if (other.getExportSubnetRoutesWithPublicIp() != false) {
+      if (other.hasExportSubnetRoutesWithPublicIp()) {
         setExportSubnetRoutesWithPublicIp(other.getExportSubnetRoutesWithPublicIp());
       }
-      if (other.getImportCustomRoutes() != false) {
+      if (other.hasImportCustomRoutes()) {
         setImportCustomRoutes(other.getImportCustomRoutes());
       }
-      if (other.getImportSubnetRoutesWithPublicIp() != false) {
+      if (other.hasImportSubnetRoutesWithPublicIp()) {
         setImportSubnetRoutesWithPublicIp(other.getImportSubnetRoutesWithPublicIp());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000040;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000080;
         network_ = other.network_;
         onChanged();
       }
-      if (other.getPeerMtu() != 0) {
+      if (other.hasPeerMtu()) {
         setPeerMtu(other.getPeerMtu());
       }
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
+      if (other.hasState()) {
+        setState(other.getState());
       }
-      if (!other.getStateDetails().isEmpty()) {
+      if (other.hasStateDetails()) {
+        bitField0_ |= 0x00000400;
         stateDetails_ = other.stateDetails_;
         onChanged();
       }
@@ -1081,7 +1353,24 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private boolean autoCreateRoutes_;
+    /**
+     *
+     *
+     * <pre>
+     * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+     * </pre>
+     *
+     * <code>bool auto_create_routes = 57454941;</code>
+     *
+     * @return Whether the autoCreateRoutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoCreateRoutes() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1110,7 +1399,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoCreateRoutes(boolean value) {
-
+      bitField0_ |= 0x00000001;
       autoCreateRoutes_ = value;
       onChanged();
       return this;
@@ -1127,13 +1416,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoCreateRoutes() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoCreateRoutes_ = false;
       onChanged();
       return this;
     }
 
     private boolean exchangeSubnetRoutes_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+     * </pre>
+     *
+     * <code>bool exchange_subnet_routes = 26322256;</code>
+     *
+     * @return Whether the exchangeSubnetRoutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasExchangeSubnetRoutes() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1162,7 +1466,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExchangeSubnetRoutes(boolean value) {
-
+      bitField0_ |= 0x00000002;
       exchangeSubnetRoutes_ = value;
       onChanged();
       return this;
@@ -1179,13 +1483,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExchangeSubnetRoutes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       exchangeSubnetRoutes_ = false;
       onChanged();
       return this;
     }
 
     private boolean exportCustomRoutes_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to export the custom routes to peer network.
+     * </pre>
+     *
+     * <code>bool export_custom_routes = 60281485;</code>
+     *
+     * @return Whether the exportCustomRoutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportCustomRoutes() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1214,7 +1533,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExportCustomRoutes(boolean value) {
-
+      bitField0_ |= 0x00000004;
       exportCustomRoutes_ = value;
       onChanged();
       return this;
@@ -1231,13 +1550,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExportCustomRoutes() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       exportCustomRoutes_ = false;
       onChanged();
       return this;
     }
 
     private boolean exportSubnetRoutesWithPublicIp_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * </pre>
+     *
+     * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
+     *
+     * @return Whether the exportSubnetRoutesWithPublicIp field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportSubnetRoutesWithPublicIp() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1266,7 +1600,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExportSubnetRoutesWithPublicIp(boolean value) {
-
+      bitField0_ |= 0x00000008;
       exportSubnetRoutesWithPublicIp_ = value;
       onChanged();
       return this;
@@ -1283,13 +1617,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExportSubnetRoutesWithPublicIp() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       exportSubnetRoutesWithPublicIp_ = false;
       onChanged();
       return this;
     }
 
     private boolean importCustomRoutes_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import the custom routes from peer network.
+     * </pre>
+     *
+     * <code>bool import_custom_routes = 197982398;</code>
+     *
+     * @return Whether the importCustomRoutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasImportCustomRoutes() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1318,7 +1667,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setImportCustomRoutes(boolean value) {
-
+      bitField0_ |= 0x00000010;
       importCustomRoutes_ = value;
       onChanged();
       return this;
@@ -1335,13 +1684,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportCustomRoutes() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       importCustomRoutes_ = false;
       onChanged();
       return this;
     }
 
     private boolean importSubnetRoutesWithPublicIp_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * </pre>
+     *
+     * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
+     *
+     * @return Whether the importSubnetRoutesWithPublicIp field is set.
+     */
+    @java.lang.Override
+    public boolean hasImportSubnetRoutesWithPublicIp() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1370,7 +1734,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setImportSubnetRoutesWithPublicIp(boolean value) {
-
+      bitField0_ |= 0x00000020;
       importSubnetRoutesWithPublicIp_ = value;
       onChanged();
       return this;
@@ -1387,13 +1751,27 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportSubnetRoutesWithPublicIp() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       importSubnetRoutesWithPublicIp_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1454,7 +1832,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
@@ -1471,7 +1849,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1493,13 +1871,27 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -1560,7 +1952,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       network_ = value;
       onChanged();
       return this;
@@ -1577,7 +1969,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -1599,13 +1991,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       network_ = value;
       onChanged();
       return this;
     }
 
     private int peerMtu_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum Transmission Unit in bytes.
+     * </pre>
+     *
+     * <code>int32 peer_mtu = 69584721;</code>
+     *
+     * @return Whether the peerMtu field is set.
+     */
+    @java.lang.Override
+    public boolean hasPeerMtu() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -1634,7 +2041,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeerMtu(int value) {
-
+      bitField0_ |= 0x00000100;
       peerMtu_ = value;
       onChanged();
       return this;
@@ -1651,13 +2058,28 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerMtu() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       peerMtu_ = 0;
       onChanged();
       return this;
     }
 
     private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     *
+     * @return Whether the state field is set.
+     */
+    @java.lang.Override
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -1686,7 +2108,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
+      bitField0_ |= 0x00000200;
       state_ = value;
       onChanged();
       return this;
@@ -1727,7 +2149,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1744,13 +2166,27 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object stateDetails_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Details about the current state of the peering.
+     * </pre>
+     *
+     * <code>string state_details = 95566996;</code>
+     *
+     * @return Whether the stateDetails field is set.
+     */
+    public boolean hasStateDetails() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -1811,7 +2247,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       stateDetails_ = value;
       onChanged();
       return this;
@@ -1828,7 +2264,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateDetails() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       stateDetails_ = getDefaultInstance().getStateDetails();
       onChanged();
       return this;
@@ -1850,7 +2286,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       stateDetails_ = value;
       onChanged();
       return this;

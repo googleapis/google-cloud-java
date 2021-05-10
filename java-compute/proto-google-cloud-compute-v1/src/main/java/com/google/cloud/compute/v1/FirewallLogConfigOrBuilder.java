@@ -30,12 +30,36 @@ public interface FirewallLogConfigOrBuilder
    * This field denotes whether to enable logging for a particular firewall rule.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  boolean hasEnable();
+  /**
+   *
+   *
+   * <pre>
+   * This field denotes whether to enable logging for a particular firewall rule.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */
   boolean getEnable();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
   /**
    *
    *

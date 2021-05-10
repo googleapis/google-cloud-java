@@ -32,6 +32,18 @@ public interface TargetVpnGatewayOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface TargetVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,7 +91,7 @@ public interface TargetVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -80,7 +104,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @return A list containing the forwardingRules.
    */
@@ -92,7 +116,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @return The count of forwardingRules.
    */
@@ -104,7 +128,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @param index The index of the element to return.
    * @return The forwardingRules at the given index.
@@ -117,13 +141,25 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the forwardingRules at the given index.
    */
   com.google.protobuf.ByteString getForwardingRulesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -158,6 +194,18 @@ public interface TargetVpnGatewayOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -174,6 +222,18 @@ public interface TargetVpnGatewayOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -208,6 +268,18 @@ public interface TargetVpnGatewayOrBuilder
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   java.lang.String getNetwork();
@@ -224,6 +296,18 @@ public interface TargetVpnGatewayOrBuilder
    */
   com.google.protobuf.ByteString getNetworkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -256,7 +340,19 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -268,12 +364,24 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetVpnGateway.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *

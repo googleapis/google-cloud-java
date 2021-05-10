@@ -32,6 +32,18 @@ public interface ConditionOrBuilder
    *
    * <code>string iam = 104021;</code>
    *
+   * @return Whether the iam field is set.
+   */
+  boolean hasIam();
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes supplied by the IAM system.
+   * </pre>
+   *
+   * <code>string iam = 104021;</code>
+   *
    * @return The iam.
    */
   java.lang.String getIam();
@@ -48,6 +60,18 @@ public interface ConditionOrBuilder
    */
   com.google.protobuf.ByteString getIamBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * An operator to apply the subject with.
+   * </pre>
+   *
+   * <code>string op = 3553;</code>
+   *
+   * @return Whether the op field is set.
+   */
+  boolean hasOp();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface ConditionOrBuilder
    *
    * <code>string svc = 114272;</code>
    *
+   * @return Whether the svc field is set.
+   */
+  boolean hasSvc();
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes discharged by the service.
+   * </pre>
+   *
+   * <code>string svc = 114272;</code>
+   *
    * @return The svc.
    */
   java.lang.String getSvc();
@@ -98,6 +134,18 @@ public interface ConditionOrBuilder
    */
   com.google.protobuf.ByteString getSvcBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * </pre>
+   *
+   * <code>string sys = 114381;</code>
+   *
+   * @return Whether the sys field is set.
+   */
+  boolean hasSys();
   /**
    *
    *

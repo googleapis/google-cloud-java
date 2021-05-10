@@ -32,7 +32,21 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>int32 affinity_cookie_ttl_sec = 101561498;</code>
+   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
+   *
+   * @return Whether the affinityCookieTtlSec field is set.
+   */
+  boolean hasAffinityCookieTtlSec();
+  /**
+   *
+   *
+   * <pre>
+   * Lifetime of cookies in seconds. Only applicable if the loadBalancingScheme is EXTERNAL, INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, the protocol is HTTP or HTTPS, and the sessionAffinity is GENERATED_COOKIE, or HTTP_COOKIE.
+   * If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400).
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>int32 affinity_cookie_ttl_sec = 369996954;</code>
    *
    * @return The affinityCookieTtlSec.
    */
@@ -45,7 +59,7 @@ public interface BackendServiceOrBuilder
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Backend> getBackendsList();
   /**
@@ -55,7 +69,7 @@ public interface BackendServiceOrBuilder
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   com.google.cloud.compute.v1.Backend getBackends(int index);
   /**
@@ -65,7 +79,7 @@ public interface BackendServiceOrBuilder
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   int getBackendsCount();
   /**
@@ -75,7 +89,7 @@ public interface BackendServiceOrBuilder
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendOrBuilder> getBackendsOrBuilderList();
   /**
@@ -85,7 +99,7 @@ public interface BackendServiceOrBuilder
    * The list of backends that serve this BackendService.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Backend backends = 242404447;</code>
+   * <code>repeated .google.cloud.compute.v1.Backend backends = 510839903;</code>
    */
   com.google.cloud.compute.v1.BackendOrBuilder getBackendsOrBuilder(int index);
 
@@ -135,7 +149,7 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return Whether the circuitBreakers field is set.
    */
@@ -151,7 +165,7 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    *
    * @return The circuitBreakers.
    */
@@ -167,23 +181,23 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 152904605;</code>
+   * <code>.google.cloud.compute.v1.CircuitBreakers circuit_breakers = 421340061;</code>
    */
   com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
    *
    * @return Whether the connectionDraining field is set.
    */
   boolean hasConnectionDraining();
   /**
-   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code>
+   * <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code>
    *
    * @return The connectionDraining.
    */
   com.google.cloud.compute.v1.ConnectionDraining getConnectionDraining();
-  /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 192661291;</code> */
+  /** <code>.google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;</code> */
   com.google.cloud.compute.v1.ConnectionDrainingOrBuilder getConnectionDrainingOrBuilder();
 
   /**
@@ -237,6 +251,18 @@ public interface BackendServiceOrBuilder
   com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsOrBuilder
       getConsistentHashOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -320,7 +346,7 @@ public interface BackendServiceOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return A list containing the customResponseHeaders.
    */
@@ -332,7 +358,7 @@ public interface BackendServiceOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return The count of customResponseHeaders.
    */
@@ -344,7 +370,7 @@ public interface BackendServiceOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the element to return.
    * @return The customResponseHeaders at the given index.
@@ -357,7 +383,7 @@ public interface BackendServiceOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the customResponseHeaders at the given index.
@@ -371,7 +397,19 @@ public interface BackendServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -383,12 +421,24 @@ public interface BackendServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * If true, enables Cloud CDN for the backend service. Only applicable if the loadBalancingScheme is EXTERNAL and the protocol is HTTP or HTTPS.
+   * </pre>
+   *
+   * <code>bool enable_c_d_n = 250733499;</code>
+   *
+   * @return Whether the enableCDN field is set.
+   */
+  boolean hasEnableCDN();
   /**
    *
    *
@@ -447,6 +497,19 @@ public interface BackendServiceOrBuilder
    *
    * <code>string fingerprint = 234678500;</code>
    *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
@@ -471,7 +534,7 @@ public interface BackendServiceOrBuilder
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -483,7 +546,7 @@ public interface BackendServiceOrBuilder
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return The count of healthChecks.
    */
@@ -495,7 +558,7 @@ public interface BackendServiceOrBuilder
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -508,7 +571,7 @@ public interface BackendServiceOrBuilder
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See  Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check. Backend services with internet or serverless NEG backends must not have a health check.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -559,6 +622,18 @@ public interface BackendServiceOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -575,6 +650,18 @@ public interface BackendServiceOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#backendService for backend services.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -608,7 +695,21 @@ public interface BackendServiceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * </code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  boolean hasLoadBalancingScheme();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type. Choose EXTERNAL for external HTTP(S), SSL Proxy, TCP Proxy and Network Load Balancing. Choose  INTERNAL for Internal TCP/UDP Load Balancing. Choose  INTERNAL_MANAGED for Internal HTTP(S) Load Balancing.  INTERNAL_SELF_MANAGED for Traffic Director. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -622,13 +723,37 @@ public interface BackendServiceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The loadBalancingScheme.
    */
   com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme();
 
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing algorithm used within the scope of the locality. The possible values are:
+   * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+   * - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+   * - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+   * - RANDOM: The load balancer selects a random healthy host.
+   * - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+   * - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+   * This field is applicable to either:
+   * - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED.
+   * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   * If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect.
+   * Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;
+   * </code>
+   *
+   * @return Whether the localityLbPolicy field is set.
+   */
+  boolean hasLocalityLbPolicy();
   /**
    *
    *
@@ -685,7 +810,7 @@ public interface BackendServiceOrBuilder
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -697,7 +822,7 @@ public interface BackendServiceOrBuilder
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -709,10 +834,22 @@ public interface BackendServiceOrBuilder
    * This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.BackendServiceLogConfigOrBuilder getLogConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -738,6 +875,18 @@ public interface BackendServiceOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network to which this backend service belongs. This field can only be specified when the load balancing scheme is set to INTERNAL.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *
@@ -774,7 +923,7 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return Whether the outlierDetection field is set.
    */
@@ -790,7 +939,7 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    *
    * @return The outlierDetection.
    */
@@ -806,10 +955,23 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 86189630;</code>
+   * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
    */
   com.google.cloud.compute.v1.OutlierDetectionOrBuilder getOutlierDetectionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
+   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  boolean hasPort();
   /**
    *
    *
@@ -824,6 +986,19 @@ public interface BackendServiceOrBuilder
    */
   int getPort();
 
+  /**
+   *
+   *
+   * <pre>
+   * A named port on a backend instance group representing the port for communication to the backend VMs in that group. Required when the loadBalancingScheme is EXTERNAL (except Network Load Balancing), INTERNAL_MANAGED, or  INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on each backend instance group. This parameter has no meaning if the backends are NEGs.
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port_name.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  boolean hasPortName();
   /**
    *
    *
@@ -862,6 +1037,20 @@ public interface BackendServiceOrBuilder
    *
    * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
    *
+   * @return Whether the protocol field is set.
+   */
+  boolean hasProtocol();
+  /**
+   *
+   *
+   * <pre>
+   * The protocol this BackendService uses to communicate with backends.
+   * Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic Director for more information.
+   * Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   *
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
@@ -880,6 +1069,18 @@ public interface BackendServiceOrBuilder
    */
   com.google.cloud.compute.v1.BackendService.Protocol getProtocol();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -914,6 +1115,18 @@ public interface BackendServiceOrBuilder
    *
    * <code>string security_policy = 171082513;</code>
    *
+   * @return Whether the securityPolicy field is set.
+   */
+  boolean hasSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this backend service.
+   * </pre>
+   *
+   * <code>string security_policy = 171082513;</code>
+   *
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
@@ -939,7 +1152,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return Whether the securitySettings field is set.
    */
@@ -953,7 +1166,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    *
    * @return The securitySettings.
    */
@@ -967,7 +1180,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 210214466;</code>
+   * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
    */
   com.google.cloud.compute.v1.SecuritySettingsOrBuilder getSecuritySettingsOrBuilder();
 
@@ -978,7 +1191,19 @@ public interface BackendServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -990,7 +1215,7 @@ public interface BackendServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1007,7 +1232,24 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
+   * </code>
+   *
+   * @return Whether the sessionAffinity field is set.
+   */
+  boolean hasSessionAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Type of session affinity to use. The default is NONE.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
+   * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
+   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
    * </code>
    *
    * @return The enum numeric value on the wire for sessionAffinity.
@@ -1024,13 +1266,25 @@ public interface BackendServiceOrBuilder
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 195453105;
+   * <code>.google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;
    * </code>
    *
    * @return The sessionAffinity.
    */
   com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity();
 
+  /**
+   *
+   *
+   * <pre>
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * </pre>
+   *
+   * <code>int32 timeout_sec = 79994995;</code>
+   *
+   * @return Whether the timeoutSec field is set.
+   */
+  boolean hasTimeoutSec();
   /**
    *
    *

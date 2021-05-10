@@ -58,6 +58,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,14 +69,16 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case 346631192:
-            {
-              enable_ = input.readBool();
-              break;
-            }
           case 1225544365:
             {
+              bitField0_ |= 0x00000002;
               sampleRate_ = input.readFloat();
+              break;
+            }
+          case -1800852456:
+            {
+              bitField0_ |= 0x00000001;
+              enable_ = input.readBool();
               break;
             }
           default:
@@ -112,7 +115,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.BackendServiceLogConfig.Builder.class);
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 43328899;
+  private int bitField0_;
+  public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_;
   /**
    *
@@ -121,7 +125,22 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnable() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -132,6 +151,21 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   public static final int SAMPLE_RATE_FIELD_NUMBER = 153193045;
   private float sampleRate_;
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+   * </pre>
+   *
+   * <code>float sample_rate = 153193045;</code>
+   *
+   * @return Whether the sampleRate field is set.
+   */
+  @java.lang.Override
+  public boolean hasSampleRate() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -162,11 +196,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enable_ != false) {
-      output.writeBool(43328899, enable_);
-    }
-    if (sampleRate_ != 0F) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeFloat(153193045, sampleRate_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(311764355, enable_);
     }
     unknownFields.writeTo(output);
   }
@@ -177,11 +211,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
-    }
-    if (sampleRate_ != 0F) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(153193045, sampleRate_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -199,9 +233,15 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.BackendServiceLogConfig other =
         (com.google.cloud.compute.v1.BackendServiceLogConfig) obj;
 
-    if (getEnable() != other.getEnable()) return false;
-    if (java.lang.Float.floatToIntBits(getSampleRate())
-        != java.lang.Float.floatToIntBits(other.getSampleRate())) return false;
+    if (hasEnable() != other.hasEnable()) return false;
+    if (hasEnable()) {
+      if (getEnable() != other.getEnable()) return false;
+    }
+    if (hasSampleRate() != other.hasSampleRate()) return false;
+    if (hasSampleRate()) {
+      if (java.lang.Float.floatToIntBits(getSampleRate())
+          != java.lang.Float.floatToIntBits(other.getSampleRate())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -213,10 +253,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
-    hash = (37 * hash) + SAMPLE_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSampleRate());
+    if (hasEnable()) {
+      hash = (37 * hash) + ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
+    if (hasSampleRate()) {
+      hash = (37 * hash) + SAMPLE_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getSampleRate());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -363,9 +407,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       enable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sampleRate_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -393,8 +437,17 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceLogConfig buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLogConfig result =
           new com.google.cloud.compute.v1.BackendServiceLogConfig(this);
-      result.enable_ = enable_;
-      result.sampleRate_ = sampleRate_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enable_ = enable_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sampleRate_ = sampleRate_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -445,10 +498,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendServiceLogConfig other) {
       if (other == com.google.cloud.compute.v1.BackendServiceLogConfig.getDefaultInstance())
         return this;
-      if (other.getEnable() != false) {
+      if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
-      if (other.getSampleRate() != 0F) {
+      if (other.hasSampleRate()) {
         setSampleRate(other.getSampleRate());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -481,6 +534,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enable_;
     /**
      *
@@ -489,7 +544,22 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
+     *
+     * @return Whether the enable field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnable() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+     * </pre>
+     *
+     * <code>bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -504,13 +574,13 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enable_ = value;
       onChanged();
       return this;
@@ -522,18 +592,33 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       onChanged();
       return this;
     }
 
     private float sampleRate_;
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+     * </pre>
+     *
+     * <code>float sample_rate = 153193045;</code>
+     *
+     * @return Whether the sampleRate field is set.
+     */
+    @java.lang.Override
+    public boolean hasSampleRate() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -562,7 +647,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setSampleRate(float value) {
-
+      bitField0_ |= 0x00000002;
       sampleRate_ = value;
       onChanged();
       return this;
@@ -579,7 +664,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSampleRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sampleRate_ = 0F;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface SslPolicyOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -110,7 +122,19 @@ public interface SslPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -122,7 +146,7 @@ public interface SslPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -135,7 +159,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 200582011;</code>
+   * <code>repeated string enabled_features = 469017467;</code>
    *
    * @return A list containing the enabledFeatures.
    */
@@ -147,7 +171,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 200582011;</code>
+   * <code>repeated string enabled_features = 469017467;</code>
    *
    * @return The count of enabledFeatures.
    */
@@ -159,7 +183,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 200582011;</code>
+   * <code>repeated string enabled_features = 469017467;</code>
    *
    * @param index The index of the element to return.
    * @return The enabledFeatures at the given index.
@@ -172,13 +196,26 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 200582011;</code>
+   * <code>repeated string enabled_features = 469017467;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the enabledFeatures at the given index.
    */
   com.google.protobuf.ByteString getEnabledFeaturesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
   /**
    *
    *
@@ -215,6 +252,18 @@ public interface SslPolicyOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -231,6 +280,18 @@ public interface SslPolicyOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -265,6 +326,18 @@ public interface SslPolicyOrBuilder
    *
    * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
    *
+   * @return Whether the minTlsVersion field is set.
+   */
+  boolean hasMinTlsVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   *
    * @return The enum numeric value on the wire for minTlsVersion.
    */
   int getMinTlsVersionValue();
@@ -281,6 +354,18 @@ public interface SslPolicyOrBuilder
    */
   com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -315,6 +400,18 @@ public interface SslPolicyOrBuilder
    *
    * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
    *
+   * @return Whether the profile field is set.
+   */
+  boolean hasProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   *
    * @return The enum numeric value on the wire for profile.
    */
   int getProfileValue();
@@ -338,7 +435,19 @@ public interface SslPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -350,7 +459,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -363,7 +472,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -373,7 +482,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -383,7 +492,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
   /**
@@ -393,7 +502,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -404,7 +513,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 }

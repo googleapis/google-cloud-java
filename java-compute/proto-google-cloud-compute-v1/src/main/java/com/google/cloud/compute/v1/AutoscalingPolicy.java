@@ -75,24 +75,40 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           case 26856728:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000020;
               mode_ = rawValue;
               break;
             }
           case 498619000:
             {
+              bitField0_ |= 0x00000008;
               maxNumReplicas_ = input.readInt32();
               break;
             }
           case 861543632:
             {
+              bitField0_ |= 0x00000001;
               coolDownPeriodSec_ = input.readInt32();
               break;
             }
-          case 902205530:
+          case 1055782802:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                customMetricUtilizations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              customMetricUtilizations_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case -1245278118:
             {
               com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder subBuilder = null;
-              if (cpuUtilization_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = cpuUtilization_.toBuilder();
               }
               cpuUtilization_ =
@@ -103,28 +119,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 subBuilder.mergeFrom(cpuUtilization_);
                 cpuUtilization_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
-          case 1055782802:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                customMetricUtilizations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              customMetricUtilizations_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1290487578:
+          case -856996070:
             {
               com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.Builder
                   subBuilder = null;
-              if (loadBalancingUtilization_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = loadBalancingUtilization_.toBuilder();
               }
               loadBalancingUtilization_ =
@@ -136,13 +138,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 subBuilder.mergeFrom(loadBalancingUtilization_);
                 loadBalancingUtilization_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 2073883330:
+          case -73600318:
             {
               com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.Builder subBuilder = null;
-              if (scaleInControl_ != null) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = scaleInControl_.toBuilder();
               }
               scaleInControl_ =
@@ -153,11 +155,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 subBuilder.mergeFrom(scaleInControl_);
                 scaleInControl_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000040;
               break;
             }
-          case 2135154952:
+          case -12328696:
             {
+              bitField0_ |= 0x00000010;
               minNumReplicas_ = input.readInt32();
               break;
             }
@@ -175,7 +178,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         customMetricUtilizations_ =
             java.util.Collections.unmodifiableList(customMetricUtilizations_);
       }
@@ -225,8 +228,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     ON(2527),
     /** <code>ONLY_SCALE_OUT = 152713670;</code> */
     ONLY_SCALE_OUT(152713670),
-    /** <code>ONLY_UP = 209659918;</code> */
-    ONLY_UP(209659918),
+    /** <code>ONLY_UP = 478095374;</code> */
+    ONLY_UP(478095374),
     UNRECOGNIZED(-1),
     ;
 
@@ -246,8 +249,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public static final int ON_VALUE = 2527;
     /** <code>ONLY_SCALE_OUT = 152713670;</code> */
     public static final int ONLY_SCALE_OUT_VALUE = 152713670;
-    /** <code>ONLY_UP = 209659918;</code> */
-    public static final int ONLY_UP_VALUE = 209659918;
+    /** <code>ONLY_UP = 478095374;</code> */
+    public static final int ONLY_UP_VALUE = 478095374;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -281,7 +284,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           return ON;
         case 152713670:
           return ONLY_SCALE_OUT;
-        case 209659918:
+        case 478095374:
           return ONLY_UP;
         default:
           return null;
@@ -336,8 +339,25 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AutoscalingPolicy.Mode)
   }
 
+  private int bitField0_;
   public static final int COOL_DOWN_PERIOD_SEC_FIELD_NUMBER = 107692954;
   private int coolDownPeriodSec_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * </pre>
+   *
+   * <code>int32 cool_down_period_sec = 107692954;</code>
+   *
+   * @return Whether the coolDownPeriodSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasCoolDownPeriodSec() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -355,7 +375,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return coolDownPeriodSec_;
   }
 
-  public static final int CPU_UTILIZATION_FIELD_NUMBER = 112775691;
+  public static final int CPU_UTILIZATION_FIELD_NUMBER = 381211147;
   private com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpuUtilization_;
   /**
    *
@@ -364,14 +384,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return Whether the cpuUtilization field is set.
    */
   @java.lang.Override
   public boolean hasCpuUtilization() {
-    return cpuUtilization_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -380,7 +400,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return The cpuUtilization.
@@ -398,13 +418,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilizationOrBuilder
       getCpuUtilizationOrBuilder() {
-    return getCpuUtilization();
+    return cpuUtilization_ == null
+        ? com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDefaultInstance()
+        : cpuUtilization_;
   }
 
   public static final int CUSTOM_METRIC_UTILIZATIONS_FIELD_NUMBER = 131972850;
@@ -491,7 +513,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return customMetricUtilizations_.get(index);
   }
 
-  public static final int LOAD_BALANCING_UTILIZATION_FIELD_NUMBER = 161310947;
+  public static final int LOAD_BALANCING_UTILIZATION_FIELD_NUMBER = 429746403;
   private com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization
       loadBalancingUtilization_;
   /**
@@ -502,14 +524,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return Whether the loadBalancingUtilization field is set.
    */
   @java.lang.Override
   public boolean hasLoadBalancingUtilization() {
-    return loadBalancingUtilization_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -519,7 +541,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return The loadBalancingUtilization.
@@ -539,17 +561,34 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilizationOrBuilder
       getLoadBalancingUtilizationOrBuilder() {
-    return getLoadBalancingUtilization();
+    return loadBalancingUtilization_ == null
+        ? com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.getDefaultInstance()
+        : loadBalancingUtilization_;
   }
 
   public static final int MAX_NUM_REPLICAS_FIELD_NUMBER = 62327375;
   private int maxNumReplicas_;
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+   * </pre>
+   *
+   * <code>int32 max_num_replicas = 62327375;</code>
+   *
+   * @return Whether the maxNumReplicas field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxNumReplicas() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -566,7 +605,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return maxNumReplicas_;
   }
 
-  public static final int MIN_NUM_REPLICAS_FIELD_NUMBER = 266894369;
+  public static final int MIN_NUM_REPLICAS_FIELD_NUMBER = 535329825;
   private int minNumReplicas_;
   /**
    *
@@ -575,7 +614,22 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
    * </pre>
    *
-   * <code>int32 min_num_replicas = 266894369;</code>
+   * <code>int32 min_num_replicas = 535329825;</code>
+   *
+   * @return Whether the minNumReplicas field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinNumReplicas() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+   * </pre>
+   *
+   * <code>int32 min_num_replicas = 535329825;</code>
    *
    * @return The minNumReplicas.
    */
@@ -586,6 +640,21 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   public static final int MODE_FIELD_NUMBER = 3357091;
   private int mode_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines operating mode for this policy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  @java.lang.Override
+  public boolean hasMode() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -622,20 +691,20 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
-  public static final int SCALE_IN_CONTROL_FIELD_NUMBER = 259235416;
+  public static final int SCALE_IN_CONTROL_FIELD_NUMBER = 527670872;
   private com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scaleInControl_;
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return Whether the scaleInControl field is set.
    */
   @java.lang.Override
   public boolean hasScaleInControl() {
-    return scaleInControl_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return The scaleInControl.
@@ -647,13 +716,15 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         : scaleInControl_;
   }
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder
       getScaleInControlOrBuilder() {
-    return getScaleInControl();
+    return scaleInControl_ == null
+        ? com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.getDefaultInstance()
+        : scaleInControl_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -670,29 +741,29 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (mode_ != com.google.cloud.compute.v1.AutoscalingPolicy.Mode.UNDEFINED_MODE.getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeEnum(3357091, mode_);
     }
-    if (maxNumReplicas_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(62327375, maxNumReplicas_);
     }
-    if (coolDownPeriodSec_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(107692954, coolDownPeriodSec_);
-    }
-    if (cpuUtilization_ != null) {
-      output.writeMessage(112775691, getCpuUtilization());
     }
     for (int i = 0; i < customMetricUtilizations_.size(); i++) {
       output.writeMessage(131972850, customMetricUtilizations_.get(i));
     }
-    if (loadBalancingUtilization_ != null) {
-      output.writeMessage(161310947, getLoadBalancingUtilization());
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(381211147, getCpuUtilization());
     }
-    if (scaleInControl_ != null) {
-      output.writeMessage(259235416, getScaleInControl());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(429746403, getLoadBalancingUtilization());
     }
-    if (minNumReplicas_ != 0) {
-      output.writeInt32(266894369, minNumReplicas_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(527670872, getScaleInControl());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeInt32(535329825, minNumReplicas_);
     }
     unknownFields.writeTo(output);
   }
@@ -703,35 +774,35 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (mode_ != com.google.cloud.compute.v1.AutoscalingPolicy.Mode.UNDEFINED_MODE.getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3357091, mode_);
     }
-    if (maxNumReplicas_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(62327375, maxNumReplicas_);
     }
-    if (coolDownPeriodSec_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(107692954, coolDownPeriodSec_);
-    }
-    if (cpuUtilization_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(112775691, getCpuUtilization());
     }
     for (int i = 0; i < customMetricUtilizations_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               131972850, customMetricUtilizations_.get(i));
     }
-    if (loadBalancingUtilization_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(381211147, getCpuUtilization());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              161310947, getLoadBalancingUtilization());
+              429746403, getLoadBalancingUtilization());
     }
-    if (scaleInControl_ != null) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(259235416, getScaleInControl());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(527670872, getScaleInControl());
     }
-    if (minNumReplicas_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(266894369, minNumReplicas_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(535329825, minNumReplicas_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -749,7 +820,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     com.google.cloud.compute.v1.AutoscalingPolicy other =
         (com.google.cloud.compute.v1.AutoscalingPolicy) obj;
 
-    if (getCoolDownPeriodSec() != other.getCoolDownPeriodSec()) return false;
+    if (hasCoolDownPeriodSec() != other.hasCoolDownPeriodSec()) return false;
+    if (hasCoolDownPeriodSec()) {
+      if (getCoolDownPeriodSec() != other.getCoolDownPeriodSec()) return false;
+    }
     if (hasCpuUtilization() != other.hasCpuUtilization()) return false;
     if (hasCpuUtilization()) {
       if (!getCpuUtilization().equals(other.getCpuUtilization())) return false;
@@ -760,9 +834,18 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (hasLoadBalancingUtilization()) {
       if (!getLoadBalancingUtilization().equals(other.getLoadBalancingUtilization())) return false;
     }
-    if (getMaxNumReplicas() != other.getMaxNumReplicas()) return false;
-    if (getMinNumReplicas() != other.getMinNumReplicas()) return false;
-    if (mode_ != other.mode_) return false;
+    if (hasMaxNumReplicas() != other.hasMaxNumReplicas()) return false;
+    if (hasMaxNumReplicas()) {
+      if (getMaxNumReplicas() != other.getMaxNumReplicas()) return false;
+    }
+    if (hasMinNumReplicas() != other.hasMinNumReplicas()) return false;
+    if (hasMinNumReplicas()) {
+      if (getMinNumReplicas() != other.getMinNumReplicas()) return false;
+    }
+    if (hasMode() != other.hasMode()) return false;
+    if (hasMode()) {
+      if (mode_ != other.mode_) return false;
+    }
     if (hasScaleInControl() != other.hasScaleInControl()) return false;
     if (hasScaleInControl()) {
       if (!getScaleInControl().equals(other.getScaleInControl())) return false;
@@ -778,8 +861,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + COOL_DOWN_PERIOD_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getCoolDownPeriodSec();
+    if (hasCoolDownPeriodSec()) {
+      hash = (37 * hash) + COOL_DOWN_PERIOD_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getCoolDownPeriodSec();
+    }
     if (hasCpuUtilization()) {
       hash = (37 * hash) + CPU_UTILIZATION_FIELD_NUMBER;
       hash = (53 * hash) + getCpuUtilization().hashCode();
@@ -792,12 +877,18 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + LOAD_BALANCING_UTILIZATION_FIELD_NUMBER;
       hash = (53 * hash) + getLoadBalancingUtilization().hashCode();
     }
-    hash = (37 * hash) + MAX_NUM_REPLICAS_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxNumReplicas();
-    hash = (37 * hash) + MIN_NUM_REPLICAS_FIELD_NUMBER;
-    hash = (53 * hash) + getMinNumReplicas();
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + mode_;
+    if (hasMaxNumReplicas()) {
+      hash = (37 * hash) + MAX_NUM_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxNumReplicas();
+    }
+    if (hasMinNumReplicas()) {
+      hash = (37 * hash) + MIN_NUM_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinNumReplicas();
+    }
+    if (hasMode()) {
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+    }
     if (hasScaleInControl()) {
       hash = (37 * hash) + SCALE_IN_CONTROL_FIELD_NUMBER;
       hash = (53 * hash) + getScaleInControl().hashCode();
@@ -942,7 +1033,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCpuUtilizationFieldBuilder();
         getCustomMetricUtilizationsFieldBuilder();
+        getLoadBalancingUtilizationFieldBuilder();
+        getScaleInControlFieldBuilder();
       }
     }
 
@@ -950,37 +1044,37 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       coolDownPeriodSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (cpuUtilizationBuilder_ == null) {
         cpuUtilization_ = null;
       } else {
-        cpuUtilization_ = null;
-        cpuUtilizationBuilder_ = null;
+        cpuUtilizationBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (customMetricUtilizationsBuilder_ == null) {
         customMetricUtilizations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         customMetricUtilizationsBuilder_.clear();
       }
       if (loadBalancingUtilizationBuilder_ == null) {
         loadBalancingUtilization_ = null;
       } else {
-        loadBalancingUtilization_ = null;
-        loadBalancingUtilizationBuilder_ = null;
+        loadBalancingUtilizationBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxNumReplicas_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       minNumReplicas_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       mode_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (scaleInControlBuilder_ == null) {
         scaleInControl_ = null;
       } else {
-        scaleInControl_ = null;
-        scaleInControlBuilder_ = null;
+        scaleInControlBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1009,35 +1103,58 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       com.google.cloud.compute.v1.AutoscalingPolicy result =
           new com.google.cloud.compute.v1.AutoscalingPolicy(this);
       int from_bitField0_ = bitField0_;
-      result.coolDownPeriodSec_ = coolDownPeriodSec_;
-      if (cpuUtilizationBuilder_ == null) {
-        result.cpuUtilization_ = cpuUtilization_;
-      } else {
-        result.cpuUtilization_ = cpuUtilizationBuilder_.build();
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.coolDownPeriodSec_ = coolDownPeriodSec_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (cpuUtilizationBuilder_ == null) {
+          result.cpuUtilization_ = cpuUtilization_;
+        } else {
+          result.cpuUtilization_ = cpuUtilizationBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
       if (customMetricUtilizationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           customMetricUtilizations_ =
               java.util.Collections.unmodifiableList(customMetricUtilizations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.customMetricUtilizations_ = customMetricUtilizations_;
       } else {
         result.customMetricUtilizations_ = customMetricUtilizationsBuilder_.build();
       }
-      if (loadBalancingUtilizationBuilder_ == null) {
-        result.loadBalancingUtilization_ = loadBalancingUtilization_;
-      } else {
-        result.loadBalancingUtilization_ = loadBalancingUtilizationBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (loadBalancingUtilizationBuilder_ == null) {
+          result.loadBalancingUtilization_ = loadBalancingUtilization_;
+        } else {
+          result.loadBalancingUtilization_ = loadBalancingUtilizationBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
-      result.maxNumReplicas_ = maxNumReplicas_;
-      result.minNumReplicas_ = minNumReplicas_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxNumReplicas_ = maxNumReplicas_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.minNumReplicas_ = minNumReplicas_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.mode_ = mode_;
-      if (scaleInControlBuilder_ == null) {
-        result.scaleInControl_ = scaleInControl_;
-      } else {
-        result.scaleInControl_ = scaleInControlBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (scaleInControlBuilder_ == null) {
+          result.scaleInControl_ = scaleInControl_;
+        } else {
+          result.scaleInControl_ = scaleInControlBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1087,7 +1204,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.compute.v1.AutoscalingPolicy other) {
       if (other == com.google.cloud.compute.v1.AutoscalingPolicy.getDefaultInstance()) return this;
-      if (other.getCoolDownPeriodSec() != 0) {
+      if (other.hasCoolDownPeriodSec()) {
         setCoolDownPeriodSec(other.getCoolDownPeriodSec());
       }
       if (other.hasCpuUtilization()) {
@@ -1097,7 +1214,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         if (!other.customMetricUtilizations_.isEmpty()) {
           if (customMetricUtilizations_.isEmpty()) {
             customMetricUtilizations_ = other.customMetricUtilizations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureCustomMetricUtilizationsIsMutable();
             customMetricUtilizations_.addAll(other.customMetricUtilizations_);
@@ -1110,7 +1227,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             customMetricUtilizationsBuilder_.dispose();
             customMetricUtilizationsBuilder_ = null;
             customMetricUtilizations_ = other.customMetricUtilizations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             customMetricUtilizationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCustomMetricUtilizationsFieldBuilder()
@@ -1123,14 +1240,14 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (other.hasLoadBalancingUtilization()) {
         mergeLoadBalancingUtilization(other.getLoadBalancingUtilization());
       }
-      if (other.getMaxNumReplicas() != 0) {
+      if (other.hasMaxNumReplicas()) {
         setMaxNumReplicas(other.getMaxNumReplicas());
       }
-      if (other.getMinNumReplicas() != 0) {
+      if (other.hasMinNumReplicas()) {
         setMinNumReplicas(other.getMinNumReplicas());
       }
-      if (other.mode_ != 0) {
-        setModeValue(other.getModeValue());
+      if (other.hasMode()) {
+        setMode(other.getMode());
       }
       if (other.hasScaleInControl()) {
         mergeScaleInControl(other.getScaleInControl());
@@ -1177,6 +1294,22 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <code>int32 cool_down_period_sec = 107692954;</code>
      *
+     * @return Whether the coolDownPeriodSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasCoolDownPeriodSec() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * </pre>
+     *
+     * <code>int32 cool_down_period_sec = 107692954;</code>
+     *
      * @return The coolDownPeriodSec.
      */
     @java.lang.Override
@@ -1197,7 +1330,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCoolDownPeriodSec(int value) {
-
+      bitField0_ |= 0x00000001;
       coolDownPeriodSec_ = value;
       onChanged();
       return this;
@@ -1215,7 +1348,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCoolDownPeriodSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       coolDownPeriodSec_ = 0;
       onChanged();
       return this;
@@ -1234,13 +1367,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      *
      * @return Whether the cpuUtilization field is set.
      */
     public boolean hasCpuUtilization() {
-      return cpuUtilizationBuilder_ != null || cpuUtilization_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1249,7 +1382,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      *
      * @return The cpuUtilization.
@@ -1270,7 +1403,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder setCpuUtilization(
@@ -1284,7 +1417,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         cpuUtilizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1294,7 +1427,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder setCpuUtilization(
@@ -1305,7 +1438,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         cpuUtilizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1315,13 +1448,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder mergeCpuUtilization(
         com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization value) {
       if (cpuUtilizationBuilder_ == null) {
-        if (cpuUtilization_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && cpuUtilization_ != null
+            && cpuUtilization_
+                != com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization
+                    .getDefaultInstance()) {
           cpuUtilization_ =
               com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.newBuilder(
                       cpuUtilization_)
@@ -1334,7 +1471,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         cpuUtilizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1344,7 +1481,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public Builder clearCpuUtilization() {
@@ -1352,10 +1489,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         cpuUtilization_ = null;
         onChanged();
       } else {
-        cpuUtilization_ = null;
-        cpuUtilizationBuilder_ = null;
+        cpuUtilizationBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1365,12 +1501,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder
         getCpuUtilizationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCpuUtilizationFieldBuilder().getBuilder();
     }
@@ -1381,7 +1517,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilizationOrBuilder
@@ -1401,7 +1537,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1425,12 +1561,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         customMetricUtilizations_ = java.util.Collections.emptyList();
 
     private void ensureCustomMetricUtilizationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         customMetricUtilizations_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization>(
                 customMetricUtilizations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1680,7 +1816,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public Builder clearCustomMetricUtilizations() {
       if (customMetricUtilizationsBuilder_ == null) {
         customMetricUtilizations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         customMetricUtilizationsBuilder_.clear();
@@ -1828,7 +1964,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.Builder,
                 com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilizationOrBuilder>(
                 customMetricUtilizations_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         customMetricUtilizations_ = null;
@@ -1851,13 +1987,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      *
      * @return Whether the loadBalancingUtilization field is set.
      */
     public boolean hasLoadBalancingUtilization() {
-      return loadBalancingUtilizationBuilder_ != null || loadBalancingUtilization_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1867,7 +2003,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      *
      * @return The loadBalancingUtilization.
@@ -1891,7 +2027,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder setLoadBalancingUtilization(
@@ -1905,7 +2041,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         loadBalancingUtilizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1916,7 +2052,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder setLoadBalancingUtilization(
@@ -1928,7 +2064,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         loadBalancingUtilizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1939,13 +2075,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder mergeLoadBalancingUtilization(
         com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization value) {
       if (loadBalancingUtilizationBuilder_ == null) {
-        if (loadBalancingUtilization_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && loadBalancingUtilization_ != null
+            && loadBalancingUtilization_
+                != com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization
+                    .getDefaultInstance()) {
           loadBalancingUtilization_ =
               com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.newBuilder(
                       loadBalancingUtilization_)
@@ -1958,7 +2098,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         loadBalancingUtilizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1969,7 +2109,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public Builder clearLoadBalancingUtilization() {
@@ -1977,10 +2117,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         loadBalancingUtilization_ = null;
         onChanged();
       } else {
-        loadBalancingUtilization_ = null;
-        loadBalancingUtilizationBuilder_ = null;
+        loadBalancingUtilizationBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1991,12 +2130,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.Builder
         getLoadBalancingUtilizationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLoadBalancingUtilizationFieldBuilder().getBuilder();
     }
@@ -2008,7 +2147,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilizationOrBuilder
@@ -2030,7 +2169,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+     * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2060,6 +2199,21 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <code>int32 max_num_replicas = 62327375;</code>
      *
+     * @return Whether the maxNumReplicas field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxNumReplicas() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+     * </pre>
+     *
+     * <code>int32 max_num_replicas = 62327375;</code>
+     *
      * @return The maxNumReplicas.
      */
     @java.lang.Override
@@ -2079,7 +2233,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setMaxNumReplicas(int value) {
-
+      bitField0_ |= 0x00000010;
       maxNumReplicas_ = value;
       onChanged();
       return this;
@@ -2096,7 +2250,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxNumReplicas() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxNumReplicas_ = 0;
       onChanged();
       return this;
@@ -2110,7 +2264,22 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 266894369;</code>
+     * <code>int32 min_num_replicas = 535329825;</code>
+     *
+     * @return Whether the minNumReplicas field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinNumReplicas() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+     * </pre>
+     *
+     * <code>int32 min_num_replicas = 535329825;</code>
      *
      * @return The minNumReplicas.
      */
@@ -2125,13 +2294,13 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 266894369;</code>
+     * <code>int32 min_num_replicas = 535329825;</code>
      *
      * @param value The minNumReplicas to set.
      * @return This builder for chaining.
      */
     public Builder setMinNumReplicas(int value) {
-
+      bitField0_ |= 0x00000020;
       minNumReplicas_ = value;
       onChanged();
       return this;
@@ -2143,18 +2312,33 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
      * </pre>
      *
-     * <code>int32 min_num_replicas = 266894369;</code>
+     * <code>int32 min_num_replicas = 535329825;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinNumReplicas() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       minNumReplicas_ = 0;
       onChanged();
       return this;
     }
 
     private int mode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines operating mode for this policy.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     *
+     * @return Whether the mode field is set.
+     */
+    @java.lang.Override
+    public boolean hasMode() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2183,7 +2367,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
+      bitField0_ |= 0x00000040;
       mode_ = value;
       onChanged();
       return this;
@@ -2224,7 +2408,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -2241,7 +2425,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       mode_ = 0;
       onChanged();
       return this;
@@ -2254,16 +2438,16 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder>
         scaleInControlBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      *
      * @return Whether the scaleInControl field is set.
      */
     public boolean hasScaleInControl() {
-      return scaleInControlBuilder_ != null || scaleInControl_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      *
      * @return The scaleInControl.
@@ -2278,7 +2462,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder setScaleInControl(
@@ -2292,11 +2476,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         scaleInControlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder setScaleInControl(
@@ -2307,17 +2491,21 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         scaleInControlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder mergeScaleInControl(
         com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl value) {
       if (scaleInControlBuilder_ == null) {
-        if (scaleInControl_ != null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && scaleInControl_ != null
+            && scaleInControl_
+                != com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl
+                    .getDefaultInstance()) {
           scaleInControl_ =
               com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.newBuilder(
                       scaleInControl_)
@@ -2330,11 +2518,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       } else {
         scaleInControlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public Builder clearScaleInControl() {
@@ -2342,24 +2530,23 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         scaleInControl_ = null;
         onChanged();
       } else {
-        scaleInControl_ = null;
-        scaleInControlBuilder_ = null;
+        scaleInControlBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl.Builder
         getScaleInControlBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getScaleInControlFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder
@@ -2373,7 +2560,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+     * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

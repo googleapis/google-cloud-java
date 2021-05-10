@@ -59,6 +59,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
           case 1368660106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               securityPolicy_ = s;
               break;
             }
@@ -110,8 +111,18 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.SecurityPolicyReference.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SECURITY_POLICY_FIELD_NUMBER = 171082513;
   private volatile java.lang.Object securityPolicy_;
+  /**
+   * <code>string security_policy = 171082513;</code>
+   *
+   * @return Whether the securityPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    * <code>string security_policy = 171082513;</code>
    *
@@ -161,7 +172,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSecurityPolicyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
     unknownFields.writeTo(output);
@@ -173,7 +184,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getSecurityPolicyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
     size += unknownFields.getSerializedSize();
@@ -192,7 +203,10 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.SecurityPolicyReference other =
         (com.google.cloud.compute.v1.SecurityPolicyReference) obj;
 
-    if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
+    if (hasSecurityPolicy() != other.hasSecurityPolicy()) return false;
+    if (hasSecurityPolicy()) {
+      if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -204,8 +218,10 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + getSecurityPolicy().hashCode();
+    if (hasSecurityPolicy()) {
+      hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPolicy().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +367,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       securityPolicy_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -379,7 +395,13 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.SecurityPolicyReference buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyReference result =
           new com.google.cloud.compute.v1.SecurityPolicyReference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.securityPolicy_ = securityPolicy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -430,7 +452,8 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.SecurityPolicyReference other) {
       if (other == com.google.cloud.compute.v1.SecurityPolicyReference.getDefaultInstance())
         return this;
-      if (!other.getSecurityPolicy().isEmpty()) {
+      if (other.hasSecurityPolicy()) {
+        bitField0_ |= 0x00000001;
         securityPolicy_ = other.securityPolicy_;
         onChanged();
       }
@@ -464,7 +487,17 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object securityPolicy_ = "";
+    /**
+     * <code>string security_policy = 171082513;</code>
+     *
+     * @return Whether the securityPolicy field is set.
+     */
+    public boolean hasSecurityPolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      * <code>string security_policy = 171082513;</code>
      *
@@ -507,7 +540,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -518,7 +551,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
       onChanged();
       return this;
@@ -534,7 +567,7 @@ public final class SecurityPolicyReference extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       securityPolicy_ = value;
       onChanged();
       return this;

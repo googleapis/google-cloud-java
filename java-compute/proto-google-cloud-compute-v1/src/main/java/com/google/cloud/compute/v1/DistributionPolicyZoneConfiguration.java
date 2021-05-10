@@ -61,6 +61,7 @@ public final class DistributionPolicyZoneConfiguration
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,7 +75,7 @@ public final class DistributionPolicyZoneConfiguration
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               zone_ = s;
               break;
             }
@@ -112,8 +113,24 @@ public final class DistributionPolicyZoneConfiguration
             com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -175,7 +192,7 @@ public final class DistributionPolicyZoneConfiguration
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     unknownFields.writeTo(output);
@@ -187,7 +204,7 @@ public final class DistributionPolicyZoneConfiguration
     if (size != -1) return size;
 
     size = 0;
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     size += unknownFields.getSerializedSize();
@@ -206,7 +223,10 @@ public final class DistributionPolicyZoneConfiguration
     com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration other =
         (com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration) obj;
 
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -218,8 +238,10 @@ public final class DistributionPolicyZoneConfiguration
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,7 +388,7 @@ public final class DistributionPolicyZoneConfiguration
     public Builder clear() {
       super.clear();
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -395,7 +417,13 @@ public final class DistributionPolicyZoneConfiguration
     public com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration buildPartial() {
       com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration result =
           new com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -448,7 +476,8 @@ public final class DistributionPolicyZoneConfiguration
       if (other
           == com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.getDefaultInstance())
         return this;
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00000001;
         zone_ = other.zone_;
         onChanged();
       }
@@ -483,7 +512,23 @@ public final class DistributionPolicyZoneConfiguration
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -544,7 +589,7 @@ public final class DistributionPolicyZoneConfiguration
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       zone_ = value;
       onChanged();
       return this;
@@ -561,7 +606,7 @@ public final class DistributionPolicyZoneConfiguration
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -583,7 +628,7 @@ public final class DistributionPolicyZoneConfiguration
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       zone_ = value;
       onChanged();
       return this;

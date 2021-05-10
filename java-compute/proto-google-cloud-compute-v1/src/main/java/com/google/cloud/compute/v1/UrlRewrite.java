@@ -61,6 +61,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
           case 329490890:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               pathPrefixRewrite_ = s;
               break;
             }
           case 1278554026:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               hostRewrite_ = s;
               break;
             }
@@ -119,8 +120,25 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.UrlRewrite.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HOST_REWRITE_FIELD_NUMBER = 159819253;
   private volatile java.lang.Object hostRewrite_;
+  /**
+   *
+   *
+   * <pre>
+   * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
+   * The value must be between 1 and 255 characters.
+   * </pre>
+   *
+   * <code>string host_rewrite = 159819253;</code>
+   *
+   * @return Whether the hostRewrite field is set.
+   */
+  @java.lang.Override
+  public boolean hasHostRewrite() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -172,6 +190,22 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PATH_PREFIX_REWRITE_FIELD_NUMBER = 41186361;
   private volatile java.lang.Object pathPrefixRewrite_;
+  /**
+   *
+   *
+   * <pre>
+   * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
+   * The value must be between 1 and 1024 characters.
+   * </pre>
+   *
+   * <code>string path_prefix_rewrite = 41186361;</code>
+   *
+   * @return Whether the pathPrefixRewrite field is set.
+   */
+  @java.lang.Override
+  public boolean hasPathPrefixRewrite() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -235,10 +269,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPathPrefixRewriteBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41186361, pathPrefixRewrite_);
     }
-    if (!getHostRewriteBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 159819253, hostRewrite_);
     }
     unknownFields.writeTo(output);
@@ -250,11 +284,11 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathPrefixRewriteBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(41186361, pathPrefixRewrite_);
     }
-    if (!getHostRewriteBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(159819253, hostRewrite_);
     }
     size += unknownFields.getSerializedSize();
@@ -272,8 +306,14 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.UrlRewrite other = (com.google.cloud.compute.v1.UrlRewrite) obj;
 
-    if (!getHostRewrite().equals(other.getHostRewrite())) return false;
-    if (!getPathPrefixRewrite().equals(other.getPathPrefixRewrite())) return false;
+    if (hasHostRewrite() != other.hasHostRewrite()) return false;
+    if (hasHostRewrite()) {
+      if (!getHostRewrite().equals(other.getHostRewrite())) return false;
+    }
+    if (hasPathPrefixRewrite() != other.hasPathPrefixRewrite()) return false;
+    if (hasPathPrefixRewrite()) {
+      if (!getPathPrefixRewrite().equals(other.getPathPrefixRewrite())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -285,10 +325,14 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HOST_REWRITE_FIELD_NUMBER;
-    hash = (53 * hash) + getHostRewrite().hashCode();
-    hash = (37 * hash) + PATH_PREFIX_REWRITE_FIELD_NUMBER;
-    hash = (53 * hash) + getPathPrefixRewrite().hashCode();
+    if (hasHostRewrite()) {
+      hash = (37 * hash) + HOST_REWRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getHostRewrite().hashCode();
+    }
+    if (hasPathPrefixRewrite()) {
+      hash = (37 * hash) + PATH_PREFIX_REWRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getPathPrefixRewrite().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -435,9 +479,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       hostRewrite_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       pathPrefixRewrite_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -465,8 +509,17 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.UrlRewrite buildPartial() {
       com.google.cloud.compute.v1.UrlRewrite result =
           new com.google.cloud.compute.v1.UrlRewrite(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.hostRewrite_ = hostRewrite_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.pathPrefixRewrite_ = pathPrefixRewrite_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -516,11 +569,13 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlRewrite other) {
       if (other == com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) return this;
-      if (!other.getHostRewrite().isEmpty()) {
+      if (other.hasHostRewrite()) {
+        bitField0_ |= 0x00000001;
         hostRewrite_ = other.hostRewrite_;
         onChanged();
       }
-      if (!other.getPathPrefixRewrite().isEmpty()) {
+      if (other.hasPathPrefixRewrite()) {
+        bitField0_ |= 0x00000002;
         pathPrefixRewrite_ = other.pathPrefixRewrite_;
         onChanged();
       }
@@ -553,7 +608,24 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object hostRewrite_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Prior to forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite.
+     * The value must be between 1 and 255 characters.
+     * </pre>
+     *
+     * <code>string host_rewrite = 159819253;</code>
+     *
+     * @return Whether the hostRewrite field is set.
+     */
+    public boolean hasHostRewrite() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -617,7 +689,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       hostRewrite_ = value;
       onChanged();
       return this;
@@ -635,7 +707,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHostRewrite() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hostRewrite_ = getDefaultInstance().getHostRewrite();
       onChanged();
       return this;
@@ -658,13 +730,28 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       hostRewrite_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object pathPrefixRewrite_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Prior to forwarding the request to the selected backend service, the matching portion of the request's path is replaced by pathPrefixRewrite.
+     * The value must be between 1 and 1024 characters.
+     * </pre>
+     *
+     * <code>string path_prefix_rewrite = 41186361;</code>
+     *
+     * @return Whether the pathPrefixRewrite field is set.
+     */
+    public boolean hasPathPrefixRewrite() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -728,7 +815,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       pathPrefixRewrite_ = value;
       onChanged();
       return this;
@@ -746,7 +833,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPathPrefixRewrite() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pathPrefixRewrite_ = getDefaultInstance().getPathPrefixRewrite();
       onChanged();
       return this;
@@ -769,7 +856,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       pathPrefixRewrite_ = value;
       onChanged();
       return this;

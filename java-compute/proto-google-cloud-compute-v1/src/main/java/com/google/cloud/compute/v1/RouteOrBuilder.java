@@ -32,6 +32,18 @@ public interface RouteOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface RouteOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,7 +91,7 @@ public interface RouteOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -80,7 +104,19 @@ public interface RouteOrBuilder
    * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 112892256;</code>
+   * <code>string dest_range = 381327712;</code>
+   *
+   * @return Whether the destRange field is set.
+   */
+  boolean hasDestRange();
+  /**
+   *
+   *
+   * <pre>
+   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
+   * </pre>
+   *
+   * <code>string dest_range = 381327712;</code>
    *
    * @return The destRange.
    */
@@ -92,12 +128,24 @@ public interface RouteOrBuilder
    * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 112892256;</code>
+   * <code>string dest_range = 381327712;</code>
    *
    * @return The bytes for destRange.
    */
   com.google.protobuf.ByteString getDestRangeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -132,6 +180,18 @@ public interface RouteOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of this resource. Always compute#routes for Route resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -148,6 +208,18 @@ public interface RouteOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -182,6 +254,18 @@ public interface RouteOrBuilder
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Fully-qualified URL of the network that this route applies to.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   java.lang.String getNetwork();
@@ -205,7 +289,19 @@ public interface RouteOrBuilder
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 108739842;</code>
+   * <code>string next_hop_gateway = 377175298;</code>
+   *
+   * @return Whether the nextHopGateway field is set.
+   */
+  boolean hasNextHopGateway();
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+   * </pre>
+   *
+   * <code>string next_hop_gateway = 377175298;</code>
    *
    * @return The nextHopGateway.
    */
@@ -217,12 +313,27 @@ public interface RouteOrBuilder
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 108739842;</code>
+   * <code>string next_hop_gateway = 377175298;</code>
    *
    * @return The bytes for nextHopGateway.
    */
   com.google.protobuf.ByteString getNextHopGatewayBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+   * - 10.128.0.56
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - regions/region/forwardingRules/forwardingRule
+   * </pre>
+   *
+   * <code>string next_hop_ilb = 198679901;</code>
+   *
+   * @return Whether the nextHopIlb field is set.
+   */
+  boolean hasNextHopIlb();
   /**
    *
    *
@@ -262,7 +373,20 @@ public interface RouteOrBuilder
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 125072791;</code>
+   * <code>string next_hop_instance = 393508247;</code>
+   *
+   * @return Whether the nextHopInstance field is set.
+   */
+  boolean hasNextHopInstance();
+  /**
+   *
+   *
+   * <pre>
+   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * </pre>
+   *
+   * <code>string next_hop_instance = 393508247;</code>
    *
    * @return The nextHopInstance.
    */
@@ -275,12 +399,24 @@ public interface RouteOrBuilder
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 125072791;</code>
+   * <code>string next_hop_instance = 393508247;</code>
    *
    * @return The bytes for nextHopInstance.
    */
   com.google.protobuf.ByteString getNextHopInstanceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The network IP address of an instance that should handle matching packets. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string next_hop_ip = 110319529;</code>
+   *
+   * @return Whether the nextHopIp field is set.
+   */
+  boolean hasNextHopIp();
   /**
    *
    *
@@ -315,6 +451,18 @@ public interface RouteOrBuilder
    *
    * <code>string next_hop_network = 262295788;</code>
    *
+   * @return Whether the nextHopNetwork field is set.
+   */
+  boolean hasNextHopNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the local network if it should handle matching packets.
+   * </pre>
+   *
+   * <code>string next_hop_network = 262295788;</code>
+   *
    * @return The nextHopNetwork.
    */
   java.lang.String getNextHopNetwork();
@@ -338,7 +486,19 @@ public interface RouteOrBuilder
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 144247294;</code>
+   * <code>string next_hop_peering = 412682750;</code>
+   *
+   * @return Whether the nextHopPeering field is set.
+   */
+  boolean hasNextHopPeering();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string next_hop_peering = 412682750;</code>
    *
    * @return The nextHopPeering.
    */
@@ -350,7 +510,7 @@ public interface RouteOrBuilder
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 144247294;</code>
+   * <code>string next_hop_peering = 412682750;</code>
    *
    * @return The bytes for nextHopPeering.
    */
@@ -363,7 +523,19 @@ public interface RouteOrBuilder
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 251409045;</code>
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
+   *
+   * @return Whether the nextHopVpnTunnel field is set.
+   */
+  boolean hasNextHopVpnTunnel();
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a VpnTunnel that should handle matching packets.
+   * </pre>
+   *
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
    *
    * @return The nextHopVpnTunnel.
    */
@@ -375,7 +547,7 @@ public interface RouteOrBuilder
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 251409045;</code>
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
    *
    * @return The bytes for nextHopVpnTunnel.
    */
@@ -388,7 +560,19 @@ public interface RouteOrBuilder
    * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
    * </pre>
    *
-   * <code>uint32 priority = 176716196;</code>
+   * <code>uint32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+   * </pre>
+   *
+   * <code>uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -401,7 +585,19 @@ public interface RouteOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -413,7 +609,7 @@ public interface RouteOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -477,7 +673,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -487,7 +683,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -497,7 +693,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
   /**
@@ -507,7 +703,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -518,7 +714,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 }

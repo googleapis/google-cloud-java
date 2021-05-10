@@ -33,6 +33,19 @@ public interface AutoscalingPolicyOrBuilder
    *
    * <code>int32 cool_down_period_sec = 107692954;</code>
    *
+   * @return Whether the coolDownPeriodSec field is set.
+   */
+  boolean hasCoolDownPeriodSec();
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
+   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * </pre>
+   *
+   * <code>int32 cool_down_period_sec = 107692954;</code>
+   *
    * @return The coolDownPeriodSec.
    */
   int getCoolDownPeriodSec();
@@ -44,7 +57,7 @@ public interface AutoscalingPolicyOrBuilder
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return Whether the cpuUtilization field is set.
@@ -57,7 +70,7 @@ public interface AutoscalingPolicyOrBuilder
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    *
    * @return The cpuUtilization.
@@ -70,7 +83,7 @@ public interface AutoscalingPolicyOrBuilder
    * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 112775691;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization cpu_utilization = 381211147;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilizationOrBuilder getCpuUtilizationOrBuilder();
@@ -149,7 +162,7 @@ public interface AutoscalingPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return Whether the loadBalancingUtilization field is set.
@@ -163,7 +176,7 @@ public interface AutoscalingPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    *
    * @return The loadBalancingUtilization.
@@ -178,12 +191,24 @@ public interface AutoscalingPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 161310947;
+   * .google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization load_balancing_utilization = 429746403;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilizationOrBuilder
       getLoadBalancingUtilizationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+   * </pre>
+   *
+   * <code>int32 max_num_replicas = 62327375;</code>
+   *
+   * @return Whether the maxNumReplicas field is set.
+   */
+  boolean hasMaxNumReplicas();
   /**
    *
    *
@@ -204,12 +229,36 @@ public interface AutoscalingPolicyOrBuilder
    * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
    * </pre>
    *
-   * <code>int32 min_num_replicas = 266894369;</code>
+   * <code>int32 min_num_replicas = 535329825;</code>
+   *
+   * @return Whether the minNumReplicas field is set.
+   */
+  boolean hasMinNumReplicas();
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+   * </pre>
+   *
+   * <code>int32 min_num_replicas = 535329825;</code>
    *
    * @return The minNumReplicas.
    */
   int getMinNumReplicas();
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines operating mode for this policy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  boolean hasMode();
   /**
    *
    *
@@ -236,21 +285,21 @@ public interface AutoscalingPolicyOrBuilder
   com.google.cloud.compute.v1.AutoscalingPolicy.Mode getMode();
 
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return Whether the scaleInControl field is set.
    */
   boolean hasScaleInControl();
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    *
    * @return The scaleInControl.
    */
   com.google.cloud.compute.v1.AutoscalingPolicyScaleInControl getScaleInControl();
   /**
-   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 259235416;
+   * <code>.google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder getScaleInControlOrBuilder();

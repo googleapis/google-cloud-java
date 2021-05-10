@@ -30,7 +30,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    *
    * @return Whether the backendService field is set.
    */
@@ -42,7 +42,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -54,7 +54,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the backend service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 38510602;</code>
+   * <code>.google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;</code>
    */
   com.google.cloud.compute.v1.BackendServiceReferenceOrBuilder getBackendServiceOrBuilder();
 
@@ -65,7 +65,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    *
    * @return Whether the forwardingRule field is set.
    */
@@ -77,7 +77,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    *
    * @return The forwardingRule.
    */
@@ -89,7 +89,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the forwarding rule associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 1528574;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;</code>
    */
   com.google.cloud.compute.v1.ForwardingRuleReferenceOrBuilder getForwardingRuleOrBuilder();
 
@@ -100,7 +100,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    *
    * @return Whether the healthCheck field is set.
    */
@@ -112,7 +112,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    *
    * @return The healthCheck.
    */
@@ -124,7 +124,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 40441189;</code>
+   * <code>.google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
    */
   com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder getHealthCheckOrBuilder();
 
@@ -135,7 +135,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    *
    * @return Whether the healthCheckService field is set.
@@ -148,7 +148,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    *
    * @return The healthCheckService.
@@ -161,7 +161,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * URL of the health check service associated with the health state of the network endpoint.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 139939291;
+   * <code>.google.cloud.compute.v1.HealthCheckServiceReference health_check_service = 408374747;
    * </code>
    */
   com.google.cloud.compute.v1.HealthCheckServiceReferenceOrBuilder getHealthCheckServiceOrBuilder();
@@ -174,7 +174,21 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
+   * </code>
+   *
+   * @return Whether the healthState field is set.
+   */
+  boolean hasHealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the network endpoint determined based on the health checks configured.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
    * </code>
    *
    * @return The enum numeric value on the wire for healthState.
@@ -188,7 +202,7 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 55571694;
+   * .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;
    * </code>
    *
    * @return The healthState.

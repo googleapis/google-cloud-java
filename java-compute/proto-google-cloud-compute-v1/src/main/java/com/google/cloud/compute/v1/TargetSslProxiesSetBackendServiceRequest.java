@@ -61,6 +61,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,10 +72,10 @@ public final class TargetSslProxiesSetBackendServiceRequest
           case 0:
             done = true;
             break;
-          case 840840618:
+          case -1306643030:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               service_ = s;
               break;
             }
@@ -112,7 +113,8 @@ public final class TargetSslProxiesSetBackendServiceRequest
             com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.Builder.class);
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 105105077;
+  private int bitField0_;
+  public static final int SERVICE_FIELD_NUMBER = 373540533;
   private volatile java.lang.Object service_;
   /**
    *
@@ -121,7 +123,22 @@ public final class TargetSslProxiesSetBackendServiceRequest
    * The URL of the new BackendService resource for the targetSslProxy.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the new BackendService resource for the targetSslProxy.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -144,7 +161,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
    * The URL of the new BackendService resource for the targetSslProxy.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -175,8 +192,8 @@ public final class TargetSslProxiesSetBackendServiceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     unknownFields.writeTo(output);
   }
@@ -187,8 +204,8 @@ public final class TargetSslProxiesSetBackendServiceRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -206,7 +223,10 @@ public final class TargetSslProxiesSetBackendServiceRequest
     com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest other =
         (com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest) obj;
 
-    if (!getService().equals(other.getService())) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -218,8 +238,10 @@ public final class TargetSslProxiesSetBackendServiceRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getService().hashCode();
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -368,7 +390,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
     public Builder clear() {
       super.clear();
       service_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -398,7 +420,13 @@ public final class TargetSslProxiesSetBackendServiceRequest
     public com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest buildPartial() {
       com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest result =
           new com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.service_ = service_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -452,7 +480,8 @@ public final class TargetSslProxiesSetBackendServiceRequest
       if (other
           == com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
               .getDefaultInstance()) return this;
-      if (!other.getService().isEmpty()) {
+      if (other.hasService()) {
+        bitField0_ |= 0x00000001;
         service_ = other.service_;
         onChanged();
       }
@@ -487,6 +516,8 @@ public final class TargetSslProxiesSetBackendServiceRequest
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object service_ = "";
     /**
      *
@@ -495,7 +526,21 @@ public final class TargetSslProxiesSetBackendServiceRequest
      * The URL of the new BackendService resource for the targetSslProxy.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the new BackendService resource for the targetSslProxy.
+     * </pre>
+     *
+     * <code>string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -517,7 +562,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
      * The URL of the new BackendService resource for the targetSslProxy.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -539,7 +584,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
      * The URL of the new BackendService resource for the targetSslProxy.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -548,7 +593,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;
@@ -560,12 +605,12 @@ public final class TargetSslProxiesSetBackendServiceRequest
      * The URL of the new BackendService resource for the targetSslProxy.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -577,7 +622,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
      * The URL of the new BackendService resource for the targetSslProxy.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -587,7 +632,7 @@ public final class TargetSslProxiesSetBackendServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;

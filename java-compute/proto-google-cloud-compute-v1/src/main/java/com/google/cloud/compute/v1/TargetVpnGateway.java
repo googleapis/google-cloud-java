@@ -85,47 +85,37 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 379087274:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forwardingRules_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forwardingRules_.add(s);
               break;
             }
           case 836495450:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 tunnels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000400;
               }
               tunnels_.add(s);
               break;
@@ -133,36 +123,46 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1450082192:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000100;
               status_ = rawValue;
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               network_ = s;
+              break;
+            }
+          case -1768396374:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                forwardingRules_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              forwardingRules_.add(s);
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              selfLink_ = s;
               break;
             }
           default:
@@ -179,11 +179,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        forwardingRules_ = forwardingRules_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         tunnels_ = tunnels_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        forwardingRules_ = forwardingRules_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -225,12 +225,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 187129529;</code> */
-    CREATING(187129529),
-    /** <code>DELETING = 260166568;</code> */
-    DELETING(260166568),
-    /** <code>FAILED = 187271229;</code> */
-    FAILED(187271229),
+    /** <code>CREATING = 455564985;</code> */
+    CREATING(455564985),
+    /** <code>DELETING = 528602024;</code> */
+    DELETING(528602024),
+    /** <code>FAILED = 455706685;</code> */
+    FAILED(455706685),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -246,12 +246,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 187129529;</code> */
-    public static final int CREATING_VALUE = 187129529;
-    /** <code>DELETING = 260166568;</code> */
-    public static final int DELETING_VALUE = 260166568;
-    /** <code>FAILED = 187271229;</code> */
-    public static final int FAILED_VALUE = 187271229;
+    /** <code>CREATING = 455564985;</code> */
+    public static final int CREATING_VALUE = 455564985;
+    /** <code>DELETING = 528602024;</code> */
+    public static final int DELETING_VALUE = 528602024;
+    /** <code>FAILED = 455706685;</code> */
+    public static final int FAILED_VALUE = 455706685;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -281,11 +281,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 187129529:
+        case 455564985:
           return CREATING;
-        case 260166568:
+        case 528602024:
           return DELETING;
-        case 187271229:
+        case 455706685:
           return FAILED;
         case 77848963:
           return READY;
@@ -342,8 +342,24 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetVpnGateway.Status)
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -391,7 +407,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -400,7 +416,22 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -423,7 +454,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -440,7 +471,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int FORWARDING_RULES_FIELD_NUMBER = 47385909;
+  public static final int FORWARDING_RULES_FIELD_NUMBER = 315821365;
   private com.google.protobuf.LazyStringList forwardingRules_;
   /**
    *
@@ -449,7 +480,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @return A list containing the forwardingRules.
    */
@@ -463,7 +494,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @return The count of forwardingRules.
    */
@@ -477,7 +508,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @param index The index of the element to return.
    * @return The forwardingRules at the given index.
@@ -492,7 +523,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 47385909;</code>
+   * <code>repeated string forwarding_rules = 315821365;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the forwardingRules at the given index.
@@ -503,6 +534,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -561,6 +607,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -601,6 +662,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -659,6 +735,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -708,6 +799,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -746,7 +852,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -755,7 +861,22 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -778,7 +899,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -797,6 +918,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private int status_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetVpnGateway.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -908,40 +1044,39 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
-    }
-    for (int i = 0; i < forwardingRules_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 47385909, forwardingRules_.getRaw(i));
     }
     for (int i = 0; i < tunnels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104561931, tunnels_.getRaw(i));
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (status_
-        != com.google.cloud.compute.v1.TargetVpnGateway.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
+    }
+    for (int i = 0; i < forwardingRules_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 315821365, forwardingRules_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -952,26 +1087,18 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < forwardingRules_.size(); i++) {
-        dataSize += computeStringSizeNoTag(forwardingRules_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getForwardingRulesList().size();
     }
     {
       int dataSize = 0;
@@ -981,21 +1108,28 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getTunnelsList().size();
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (status_
-        != com.google.cloud.compute.v1.TargetVpnGateway.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < forwardingRules_.size(); i++) {
+        dataSize += computeStringSizeNoTag(forwardingRules_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getForwardingRulesList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1013,16 +1147,43 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.TargetVpnGateway other =
         (com.google.cloud.compute.v1.TargetVpnGateway) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (!getForwardingRulesList().equals(other.getForwardingRulesList())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (status_ != other.status_) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!getTunnelsList().equals(other.getTunnelsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1035,28 +1196,46 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (getForwardingRulesCount() > 0) {
       hash = (37 * hash) + FORWARDING_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getForwardingRulesList().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     if (getTunnelsCount() > 0) {
       hash = (37 * hash) + TUNNELS_FIELD_NUMBER;
       hash = (53 * hash) + getTunnelsList().hashCode();
@@ -1208,27 +1387,27 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
-      description_ = "";
-
-      forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = "";
-
-      kind_ = "";
-
-      name_ = "";
-
-      network_ = "";
-
-      region_ = "";
-
-      selfLink_ = "";
-
-      status_ = 0;
-
-      tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      id_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
+      network_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
+      region_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x00000100);
+      status_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1257,25 +1436,54 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       com.google.cloud.compute.v1.TargetVpnGateway result =
           new com.google.cloud.compute.v1.TargetVpnGateway(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         forwardingRules_ = forwardingRules_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.forwardingRules_ = forwardingRules_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.network_ = network_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.status_ = status_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         tunnels_ = tunnels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.tunnels_ = tunnels_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1325,55 +1533,63 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetVpnGateway other) {
       if (other == com.google.cloud.compute.v1.TargetVpnGateway.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
       if (!other.forwardingRules_.isEmpty()) {
         if (forwardingRules_.isEmpty()) {
           forwardingRules_ = other.forwardingRules_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureForwardingRulesIsMutable();
           forwardingRules_.addAll(other.forwardingRules_);
         }
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000040;
         network_ = other.network_;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000080;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000100;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       if (!other.tunnels_.isEmpty()) {
         if (tunnels_.isEmpty()) {
           tunnels_ = other.tunnels_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureTunnelsIsMutable();
           tunnels_.addAll(other.tunnels_);
@@ -1412,6 +1628,20 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1472,7 +1702,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1489,7 +1719,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1511,7 +1741,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1525,7 +1755,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1547,7 +1791,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1569,7 +1813,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1578,7 +1822,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1590,12 +1834,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1607,7 +1851,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1617,7 +1861,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1627,9 +1871,9 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureForwardingRulesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         forwardingRules_ = new com.google.protobuf.LazyStringArrayList(forwardingRules_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1639,7 +1883,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @return A list containing the forwardingRules.
      */
@@ -1653,7 +1897,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @return The count of forwardingRules.
      */
@@ -1667,7 +1911,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param index The index of the element to return.
      * @return The forwardingRules at the given index.
@@ -1682,7 +1926,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the forwardingRules at the given index.
@@ -1697,7 +1941,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param index The index to set the value at.
      * @param value The forwardingRules to set.
@@ -1719,7 +1963,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param value The forwardingRules to add.
      * @return This builder for chaining.
@@ -1740,7 +1984,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param values The forwardingRules to add.
      * @return This builder for chaining.
@@ -1758,13 +2002,13 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearForwardingRules() {
       forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1775,7 +2019,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 47385909;</code>
+     * <code>repeated string forwarding_rules = 315821365;</code>
      *
      * @param value The bytes of the forwardingRules to add.
      * @return This builder for chaining.
@@ -1792,6 +2036,20 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1852,7 +2110,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -1869,7 +2127,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1891,13 +2149,27 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1958,7 +2230,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -1975,7 +2247,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1997,13 +2269,27 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2064,7 +2350,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -2081,7 +2367,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2103,13 +2389,27 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2170,7 +2470,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       network_ = value;
       onChanged();
       return this;
@@ -2187,7 +2487,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -2209,13 +2509,27 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       network_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2276,7 +2590,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2293,7 +2607,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -2315,7 +2629,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2329,7 +2643,21 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2351,7 +2679,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2373,7 +2701,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2382,7 +2710,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2394,12 +2722,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2411,7 +2739,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2421,13 +2749,28 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int status_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.TargetVpnGateway.Status status = 181260274;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2456,7 +2799,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -2497,7 +2840,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -2514,7 +2857,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
       onChanged();
       return this;
@@ -2524,9 +2867,9 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTunnelsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         tunnels_ = new com.google.protobuf.LazyStringArrayList(tunnels_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -2661,7 +3004,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTunnels() {
       tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }

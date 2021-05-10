@@ -32,6 +32,18 @@ public interface AcceleratorTypeOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -67,7 +79,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -79,7 +91,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -90,7 +102,19 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional textual description of the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -102,12 +126,24 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -142,6 +178,18 @@ public interface AcceleratorTypeOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -167,10 +215,34 @@ public interface AcceleratorTypeOrBuilder
    *
    * <code>int32 maximum_cards_per_instance = 263814482;</code>
    *
+   * @return Whether the maximumCardsPerInstance field is set.
+   */
+  boolean hasMaximumCardsPerInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Maximum number of accelerator cards allowed per instance.
+   * </pre>
+   *
+   * <code>int32 maximum_cards_per_instance = 263814482;</code>
+   *
    * @return The maximumCardsPerInstance.
    */
   int getMaximumCardsPerInstance();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -203,7 +275,19 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -215,12 +299,24 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

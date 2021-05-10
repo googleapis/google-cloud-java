@@ -30,7 +30,19 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 112657994;</code>
+   * <code>string archive_size_bytes = 381093450;</code>
+   *
+   * @return Whether the archiveSizeBytes field is set.
+   */
+  boolean hasArchiveSizeBytes();
+  /**
+   *
+   *
+   * <pre>
+   * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+   * </pre>
+   *
+   * <code>string archive_size_bytes = 381093450;</code>
    *
    * @return The archiveSizeBytes.
    */
@@ -42,12 +54,24 @@ public interface ImageOrBuilder
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *
-   * <code>string archive_size_bytes = 112657994;</code>
+   * <code>string archive_size_bytes = 381093450;</code>
    *
    * @return The bytes for archiveSizeBytes.
    */
   com.google.protobuf.ByteString getArchiveSizeBytesBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -80,7 +104,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -92,7 +116,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -104,7 +128,7 @@ public interface ImageOrBuilder
    * The deprecation status associated with this image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -115,7 +139,19 @@ public interface ImageOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -127,7 +163,7 @@ public interface ImageOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -140,7 +176,19 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * Size of the image when restored onto a persistent disk (in GB).
+   * </pre>
+   *
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -152,7 +200,7 @@ public interface ImageOrBuilder
    * Size of the image when restored onto a persistent disk (in GB).
    * </pre>
    *
-   * <code>string disk_size_gb = 47828279;</code>
+   * <code>string disk_size_gb = 316263735;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -165,7 +213,19 @@ public interface ImageOrBuilder
    * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
-   * <code>string family = 60316516;</code>
+   * <code>string family = 328751972;</code>
+   *
+   * @return Whether the family field is set.
+   */
+  boolean hasFamily();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+   * </pre>
+   *
+   * <code>string family = 328751972;</code>
    *
    * @return The family.
    */
@@ -177,7 +237,7 @@ public interface ImageOrBuilder
    * The name of the image family to which this image belongs. You can create disks by specifying an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
-   * <code>string family = 60316516;</code>
+   * <code>string family = 328751972;</code>
    *
    * @return The bytes for family.
    */
@@ -244,6 +304,18 @@ public interface ImageOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -270,7 +342,7 @@ public interface ImageOrBuilder
    * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
    *
    * @return Whether the imageEncryptionKey field is set.
    */
@@ -285,7 +357,7 @@ public interface ImageOrBuilder
    * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
    *
    * @return The imageEncryptionKey.
    */
@@ -300,10 +372,22 @@ public interface ImageOrBuilder
    * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 111077127;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getImageEncryptionKeyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#image for images.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -339,6 +423,19 @@ public interface ImageOrBuilder
    *
    * <code>string label_fingerprint = 178124825;</code>
    *
+   * @return Whether the labelFingerprint field is set.
+   */
+  boolean hasLabelFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * </pre>
+   *
+   * <code>string label_fingerprint = 178124825;</code>
+   *
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
@@ -363,7 +460,7 @@ public interface ImageOrBuilder
    * Labels to apply to this image. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
   /**
@@ -373,7 +470,7 @@ public interface ImageOrBuilder
    * Labels to apply to this image. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -386,7 +483,7 @@ public interface ImageOrBuilder
    * Labels to apply to this image. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -396,7 +493,7 @@ public interface ImageOrBuilder
    * Labels to apply to this image. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -406,7 +503,7 @@ public interface ImageOrBuilder
    * Labels to apply to this image. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -468,7 +565,7 @@ public interface ImageOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return A list containing the licenses.
    */
@@ -480,7 +577,7 @@ public interface ImageOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @return The count of licenses.
    */
@@ -492,7 +589,7 @@ public interface ImageOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -505,13 +602,25 @@ public interface ImageOrBuilder
    * Any applicable license URI.
    * </pre>
    *
-   * <code>repeated string licenses = 69207122;</code>
+   * <code>repeated string licenses = 337642578;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
    */
   com.google.protobuf.ByteString getLicensesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -544,7 +653,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
+   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    *
    * @return Whether the rawDisk field is set.
    */
@@ -556,7 +665,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
+   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    *
    * @return The rawDisk.
    */
@@ -568,7 +677,7 @@ public interface ImageOrBuilder
    * The parameters of the raw disk image.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 234678100;</code>
+   * <code>.google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
    */
   com.google.cloud.compute.v1.RawDiskOrBuilder getRawDiskOrBuilder();
 
@@ -579,7 +688,19 @@ public interface ImageOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -591,7 +712,7 @@ public interface ImageOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -646,7 +767,22 @@ public interface ImageOrBuilder
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 183318337;</code>
+   * <code>string source_disk = 451753793;</code>
+   *
+   * @return Whether the sourceDisk field is set.
+   */
+  boolean hasSourceDisk();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   * - projects/project/zones/zone/disks/disk
+   * - zones/zone/disks/disk
+   * </pre>
+   *
+   * <code>string source_disk = 451753793;</code>
    *
    * @return The sourceDisk.
    */
@@ -661,7 +797,7 @@ public interface ImageOrBuilder
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 183318337;</code>
+   * <code>string source_disk = 451753793;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -674,7 +810,7 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return Whether the sourceDiskEncryptionKey field is set.
@@ -687,7 +823,7 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    *
    * @return The sourceDiskEncryptionKey.
@@ -700,7 +836,7 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 263065697;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_disk_encryption_key = 531501153;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceDiskEncryptionKeyOrBuilder();
@@ -712,7 +848,19 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 185755353;</code>
+   * <code>string source_disk_id = 454190809;</code>
+   *
+   * @return Whether the sourceDiskId field is set.
+   */
+  boolean hasSourceDiskId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+   * </pre>
+   *
+   * <code>string source_disk_id = 454190809;</code>
    *
    * @return The sourceDiskId.
    */
@@ -724,12 +872,29 @@ public interface ImageOrBuilder
    * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
    * </pre>
    *
-   * <code>string source_disk_id = 185755353;</code>
+   * <code>string source_disk_id = 454190809;</code>
    *
    * @return The bytes for sourceDiskId.
    */
   com.google.protobuf.ByteString getSourceDiskIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the source image used to create this image.
+   * In order to create an image, you must provide the full or partial URL of one of the following:
+   * - The selfLink URL
+   * - This property
+   * - The rawDisk.source URL
+   * - The sourceDisk URL
+   * </pre>
+   *
+   * <code>string source_image = 50443319;</code>
+   *
+   * @return Whether the sourceImage field is set.
+   */
+  boolean hasSourceImage();
   /**
    *
    *
@@ -772,7 +937,7 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -785,7 +950,7 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -798,11 +963,23 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceImageEncryptionKeyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+   * </pre>
+   *
+   * <code>string source_image_id = 55328291;</code>
+   *
+   * @return Whether the sourceImageId field is set.
+   */
+  boolean hasSourceImageId();
   /**
    *
    *
@@ -828,6 +1005,24 @@ public interface ImageOrBuilder
    */
   com.google.protobuf.ByteString getSourceImageIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the source snapshot used to create this image.
+   * In order to create an image, you must provide the full or partial URL of one of the following:
+   * - The selfLink URL
+   * - This property
+   * - The sourceImage URL
+   * - The rawDisk.source URL
+   * - The sourceDisk URL
+   * </pre>
+   *
+   * <code>string source_snapshot = 126061928;</code>
+   *
+   * @return Whether the sourceSnapshot field is set.
+   */
+  boolean hasSourceSnapshot();
   /**
    *
    *
@@ -872,7 +1067,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -885,7 +1081,8 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -898,12 +1095,25 @@ public interface ImageOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
+   * <code>
+   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
       getSourceSnapshotEncryptionKeyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+   * </pre>
+   *
+   * <code>string source_snapshot_id = 98962258;</code>
+   *
+   * @return Whether the sourceSnapshotId field is set.
+   */
+  boolean hasSourceSnapshotId();
   /**
    *
    *
@@ -936,7 +1146,19 @@ public interface ImageOrBuilder
    * The type of the image used to create this disk. The default and only value is RAW
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 183810270;</code>
+   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   *
+   * @return Whether the sourceType field is set.
+   */
+  boolean hasSourceType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of the image used to create this disk. The default and only value is RAW
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
    *
    * @return The enum numeric value on the wire for sourceType.
    */
@@ -948,12 +1170,24 @@ public interface ImageOrBuilder
    * The type of the image used to create this disk. The default and only value is RAW
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 183810270;</code>
+   * <code>.google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
    *
    * @return The sourceType.
    */
   com.google.cloud.compute.v1.Image.SourceType getSourceType();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -986,7 +1220,7 @@ public interface ImageOrBuilder
    * Cloud Storage bucket storage location of the image (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return A list containing the storageLocations.
    */
@@ -998,7 +1232,7 @@ public interface ImageOrBuilder
    * Cloud Storage bucket storage location of the image (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return The count of storageLocations.
    */
@@ -1010,7 +1244,7 @@ public interface ImageOrBuilder
    * Cloud Storage bucket storage location of the image (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the element to return.
    * @return The storageLocations at the given index.
@@ -1023,7 +1257,7 @@ public interface ImageOrBuilder
    * Cloud Storage bucket storage location of the image (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the storageLocations at the given index.

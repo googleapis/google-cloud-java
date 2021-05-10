@@ -62,6 +62,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,7 +76,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -86,7 +87,14 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
               image_ = s;
               break;
             }
-          case 821891986:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1325591662:
             {
               com.google.cloud.compute.v1.Image.Builder subBuilder = null;
               if (imageResource_ != null) {
@@ -99,13 +107,6 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
                 imageResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -142,6 +143,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.PatchImageRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IMAGE_FIELD_NUMBER = 100313435;
   private volatile java.lang.Object image_;
   /**
@@ -191,7 +193,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 102736498;
+  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 371171954;
   private com.google.cloud.compute.v1.Image imageResource_;
   /**
    *
@@ -201,7 +203,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the imageResource field is set.
@@ -218,7 +220,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The imageResource.
@@ -237,7 +239,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -307,6 +309,23 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -361,17 +380,17 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getImageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100313435, image_);
     }
-    if (imageResource_ != null) {
-      output.writeMessage(102736498, getImageResource());
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (imageResource_ != null) {
+      output.writeMessage(371171954, getImageResource());
     }
     unknownFields.writeTo(output);
   }
@@ -382,18 +401,18 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getImageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100313435, image_);
     }
-    if (imageResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(102736498, getImageResource());
-    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (imageResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(371171954, getImageResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -417,7 +436,10 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       if (!getImageResource().equals(other.getImageResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -437,8 +459,10 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -595,7 +619,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -623,6 +647,8 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.PatchImageRequest buildPartial() {
       com.google.cloud.compute.v1.PatchImageRequest result =
           new com.google.cloud.compute.v1.PatchImageRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.image_ = image_;
       if (imageResourceBuilder_ == null) {
         result.imageResource_ = imageResource_;
@@ -630,7 +656,11 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         result.imageResource_ = imageResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -691,7 +721,8 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -723,6 +754,8 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object image_ = "";
     /**
@@ -844,7 +877,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the imageResource field is set.
@@ -860,7 +893,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The imageResource.
@@ -882,7 +915,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setImageResource(com.google.cloud.compute.v1.Image value) {
@@ -906,7 +939,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setImageResource(com.google.cloud.compute.v1.Image.Builder builderForValue) {
@@ -927,7 +960,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeImageResource(com.google.cloud.compute.v1.Image value) {
@@ -955,7 +988,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearImageResource() {
@@ -977,7 +1010,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.Image.Builder getImageResourceBuilder() {
@@ -993,7 +1026,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ImageOrBuilder getImageResourceOrBuilder() {
@@ -1013,7 +1046,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1151,6 +1184,22 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1206,7 +1255,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1225,7 +1274,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1249,7 +1298,7 @@ public final class PatchImageRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

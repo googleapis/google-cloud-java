@@ -30,7 +30,19 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
-   * <code>bool all_instances = 135241056;</code>
+   * <code>bool all_instances = 403676512;</code>
+   *
+   * @return Whether the allInstances field is set.
+   */
+  boolean hasAllInstances();
+  /**
+   *
+   *
+   * <pre>
+   * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+   * </pre>
+   *
+   * <code>bool all_instances = 403676512;</code>
    *
    * @return The allInstances.
    */
@@ -98,7 +110,23 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
+   *
+   * @return Whether the minimalAction field is set.
+   */
+  boolean hasMinimalAction();
+  /**
+   *
+   *
+   * <pre>
+   * The minimal action that you want to perform on each instance during the update:
+   * - REPLACE: At minimum, delete the instance and create it again.
+   * - RESTART: Stop the instance and start it again.
+   * - REFRESH: Do not stop the instance.
+   * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * </pre>
+   *
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The minimalAction.
    */
@@ -114,12 +142,28 @@ public interface InstanceGroupManagersApplyUpdatesRequestOrBuilder
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The bytes for minimalAction.
    */
   com.google.protobuf.ByteString getMinimalActionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The most disruptive action that you want to perform on each instance during the update:
+   * - REPLACE: Delete the instance and create it again.
+   * - RESTART: Stop the instance and start it again.
+   * - REFRESH: Do not stop the instance.
+   * - NONE: Do not disrupt the instance at all.  By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * </pre>
+   *
+   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  boolean hasMostDisruptiveAllowedAction();
   /**
    *
    *

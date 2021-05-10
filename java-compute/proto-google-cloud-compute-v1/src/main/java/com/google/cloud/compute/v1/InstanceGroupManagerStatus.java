@@ -59,6 +59,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,26 +70,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case 167605954:
-            {
-              com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
-                  subBuilder = null;
-              if (versionTarget_ != null) {
-                subBuilder = versionTarget_.toBuilder();
-              }
-              versionTarget_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(versionTarget_);
-                versionTarget_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 867286912:
             {
+              bitField0_ |= 0x00000002;
               isStable_ = input.readBool();
               break;
             }
@@ -96,7 +80,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             {
               com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder subBuilder =
                   null;
-              if (stateful_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = stateful_.toBuilder();
               }
               stateful_ =
@@ -107,13 +91,31 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
                 subBuilder.mergeFrom(stateful_);
                 stateful_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 1990588090:
+          case -1979877694:
+            {
+              com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000008) != 0)) {
+                subBuilder = versionTarget_.toBuilder();
+              }
+              versionTarget_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(versionTarget_);
+                versionTarget_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          case -156895558:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               autoscaler_ = s;
               break;
             }
@@ -151,7 +153,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceGroupManagerStatus.Builder.class);
   }
 
-  public static final int AUTOSCALER_FIELD_NUMBER = 248823511;
+  private int bitField0_;
+  public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
   private volatile java.lang.Object autoscaler_;
   /**
    *
@@ -160,7 +163,22 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 248823511;</code>
+   * <code>string autoscaler = 517258967;</code>
+   *
+   * @return Whether the autoscaler field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscaler() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * </pre>
+   *
+   * <code>string autoscaler = 517258967;</code>
    *
    * @return The autoscaler.
    */
@@ -183,7 +201,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 248823511;</code>
+   * <code>string autoscaler = 517258967;</code>
    *
    * @return The bytes for autoscaler.
    */
@@ -202,6 +220,21 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   public static final int IS_STABLE_FIELD_NUMBER = 108410864;
   private boolean isStable_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * </pre>
+   *
+   * <code>bool is_stable = 108410864;</code>
+   *
+   * @return Whether the isStable field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsStable() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -233,7 +266,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasStateful() {
-    return stateful_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -264,10 +297,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulOrBuilder
       getStatefulOrBuilder() {
-    return getStateful();
+    return stateful_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.getDefaultInstance()
+        : stateful_;
   }
 
-  public static final int VERSION_TARGET_FIELD_NUMBER = 20950744;
+  public static final int VERSION_TARGET_FIELD_NUMBER = 289386200;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget versionTarget_;
   /**
    *
@@ -277,14 +312,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return Whether the versionTarget field is set.
    */
   @java.lang.Override
   public boolean hasVersionTarget() {
-    return versionTarget_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -294,7 +329,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    *
    * @return The versionTarget.
@@ -313,13 +348,15 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder
       getVersionTargetOrBuilder() {
-    return getVersionTarget();
+    return versionTarget_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.getDefaultInstance()
+        : versionTarget_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -336,17 +373,17 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (versionTarget_ != null) {
-      output.writeMessage(20950744, getVersionTarget());
-    }
-    if (isStable_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(108410864, isStable_);
     }
-    if (stateful_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(244462412, getStateful());
     }
-    if (!getAutoscalerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 248823511, autoscaler_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(289386200, getVersionTarget());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517258967, autoscaler_);
     }
     unknownFields.writeTo(output);
   }
@@ -357,18 +394,18 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (versionTarget_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(20950744, getVersionTarget());
-    }
-    if (isStable_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(108410864, isStable_);
     }
-    if (stateful_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(244462412, getStateful());
     }
-    if (!getAutoscalerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(248823511, autoscaler_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(289386200, getVersionTarget());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517258967, autoscaler_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -386,8 +423,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.InstanceGroupManagerStatus other =
         (com.google.cloud.compute.v1.InstanceGroupManagerStatus) obj;
 
-    if (!getAutoscaler().equals(other.getAutoscaler())) return false;
-    if (getIsStable() != other.getIsStable()) return false;
+    if (hasAutoscaler() != other.hasAutoscaler()) return false;
+    if (hasAutoscaler()) {
+      if (!getAutoscaler().equals(other.getAutoscaler())) return false;
+    }
+    if (hasIsStable() != other.hasIsStable()) return false;
+    if (hasIsStable()) {
+      if (getIsStable() != other.getIsStable()) return false;
+    }
     if (hasStateful() != other.hasStateful()) return false;
     if (hasStateful()) {
       if (!getStateful().equals(other.getStateful())) return false;
@@ -407,10 +450,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTOSCALER_FIELD_NUMBER;
-    hash = (53 * hash) + getAutoscaler().hashCode();
-    hash = (37 * hash) + IS_STABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsStable());
+    if (hasAutoscaler()) {
+      hash = (37 * hash) + AUTOSCALER_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscaler().hashCode();
+    }
+    if (hasIsStable()) {
+      hash = (37 * hash) + IS_STABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsStable());
+    }
     if (hasStateful()) {
       hash = (37 * hash) + STATEFUL_FIELD_NUMBER;
       hash = (53 * hash) + getStateful().hashCode();
@@ -558,28 +605,31 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getStatefulFieldBuilder();
+        getVersionTargetFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       autoscaler_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isStable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (statefulBuilder_ == null) {
         stateful_ = null;
       } else {
-        stateful_ = null;
-        statefulBuilder_ = null;
+        statefulBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (versionTargetBuilder_ == null) {
         versionTarget_ = null;
       } else {
-        versionTarget_ = null;
-        versionTargetBuilder_ = null;
+        versionTargetBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -607,18 +657,33 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.InstanceGroupManagerStatus buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerStatus result =
           new com.google.cloud.compute.v1.InstanceGroupManagerStatus(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.autoscaler_ = autoscaler_;
-      result.isStable_ = isStable_;
-      if (statefulBuilder_ == null) {
-        result.stateful_ = stateful_;
-      } else {
-        result.stateful_ = statefulBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isStable_ = isStable_;
+        to_bitField0_ |= 0x00000002;
       }
-      if (versionTargetBuilder_ == null) {
-        result.versionTarget_ = versionTarget_;
-      } else {
-        result.versionTarget_ = versionTargetBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (statefulBuilder_ == null) {
+          result.stateful_ = stateful_;
+        } else {
+          result.stateful_ = statefulBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (versionTargetBuilder_ == null) {
+          result.versionTarget_ = versionTarget_;
+        } else {
+          result.versionTarget_ = versionTargetBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -669,11 +734,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceGroupManagerStatus other) {
       if (other == com.google.cloud.compute.v1.InstanceGroupManagerStatus.getDefaultInstance())
         return this;
-      if (!other.getAutoscaler().isEmpty()) {
+      if (other.hasAutoscaler()) {
+        bitField0_ |= 0x00000001;
         autoscaler_ = other.autoscaler_;
         onChanged();
       }
-      if (other.getIsStable() != false) {
+      if (other.hasIsStable()) {
         setIsStable(other.getIsStable());
       }
       if (other.hasStateful()) {
@@ -712,6 +778,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object autoscaler_ = "";
     /**
      *
@@ -720,7 +788,21 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 248823511;</code>
+     * <code>string autoscaler = 517258967;</code>
+     *
+     * @return Whether the autoscaler field is set.
+     */
+    public boolean hasAutoscaler() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * </pre>
+     *
+     * <code>string autoscaler = 517258967;</code>
      *
      * @return The autoscaler.
      */
@@ -742,7 +824,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 248823511;</code>
+     * <code>string autoscaler = 517258967;</code>
      *
      * @return The bytes for autoscaler.
      */
@@ -764,7 +846,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 248823511;</code>
+     * <code>string autoscaler = 517258967;</code>
      *
      * @param value The autoscaler to set.
      * @return This builder for chaining.
@@ -773,7 +855,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       autoscaler_ = value;
       onChanged();
       return this;
@@ -785,12 +867,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 248823511;</code>
+     * <code>string autoscaler = 517258967;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAutoscaler() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoscaler_ = getDefaultInstance().getAutoscaler();
       onChanged();
       return this;
@@ -802,7 +884,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * [Output Only] The URL of the Autoscaler that targets this instance group manager.
      * </pre>
      *
-     * <code>string autoscaler = 248823511;</code>
+     * <code>string autoscaler = 517258967;</code>
      *
      * @param value The bytes for autoscaler to set.
      * @return This builder for chaining.
@@ -812,13 +894,28 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       autoscaler_ = value;
       onChanged();
       return this;
     }
 
     private boolean isStable_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+     * </pre>
+     *
+     * <code>bool is_stable = 108410864;</code>
+     *
+     * @return Whether the isStable field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsStable() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -847,7 +944,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setIsStable(boolean value) {
-
+      bitField0_ |= 0x00000002;
       isStable_ = value;
       onChanged();
       return this;
@@ -864,7 +961,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsStable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isStable_ = false;
       onChanged();
       return this;
@@ -889,7 +986,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the stateful field is set.
      */
     public boolean hasStateful() {
-      return statefulBuilder_ != null || stateful_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -933,7 +1030,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -954,7 +1051,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -970,7 +1067,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeStateful(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful value) {
       if (statefulBuilder_ == null) {
-        if (stateful_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && stateful_ != null
+            && stateful_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful
+                    .getDefaultInstance()) {
           stateful_ =
               com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.newBuilder(stateful_)
                   .mergeFrom(value)
@@ -982,7 +1083,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1000,10 +1101,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         stateful_ = null;
         onChanged();
       } else {
-        stateful_ = null;
-        statefulBuilder_ = null;
+        statefulBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1018,7 +1118,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder
         getStatefulBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStatefulFieldBuilder().getBuilder();
     }
@@ -1083,13 +1183,13 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      *
      * @return Whether the versionTarget field is set.
      */
     public boolean hasVersionTarget() {
-      return versionTargetBuilder_ != null || versionTarget_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1099,7 +1199,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      *
      * @return The versionTarget.
@@ -1122,7 +1222,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder setVersionTarget(
@@ -1136,7 +1236,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1147,7 +1247,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder setVersionTarget(
@@ -1159,7 +1259,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1170,13 +1270,17 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder mergeVersionTarget(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget value) {
       if (versionTargetBuilder_ == null) {
-        if (versionTarget_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && versionTarget_ != null
+            && versionTarget_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
+                    .getDefaultInstance()) {
           versionTarget_ =
               com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.newBuilder(
                       versionTarget_)
@@ -1189,7 +1293,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1200,7 +1304,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public Builder clearVersionTarget() {
@@ -1208,10 +1312,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         versionTarget_ = null;
         onChanged();
       } else {
-        versionTarget_ = null;
-        versionTargetBuilder_ = null;
+        versionTargetBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1222,12 +1325,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
         getVersionTargetBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getVersionTargetFieldBuilder().getBuilder();
     }
@@ -1239,7 +1342,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder
@@ -1261,7 +1364,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

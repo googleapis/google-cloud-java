@@ -60,6 +60,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
           case 306627882:
             {
               com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.Builder subBuilder = null;
-              if (hourlySchedule_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = hourlySchedule_.toBuilder();
               }
               hourlySchedule_ =
@@ -84,13 +85,13 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
                 subBuilder.mergeFrom(hourlySchedule_);
                 hourlySchedule_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           case 689278954:
             {
               com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder subBuilder = null;
-              if (dailySchedule_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = dailySchedule_.toBuilder();
               }
               dailySchedule_ =
@@ -101,13 +102,13 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
                 subBuilder.mergeFrom(dailySchedule_);
                 dailySchedule_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 728900778:
+          case -1418582870:
             {
               com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.Builder subBuilder = null;
-              if (weeklySchedule_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = weeklySchedule_.toBuilder();
               }
               weeklySchedule_ =
@@ -118,7 +119,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
                 subBuilder.mergeFrom(weeklySchedule_);
                 weeklySchedule_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
           default:
@@ -155,6 +156,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DAILY_SCHEDULE_FIELD_NUMBER = 86159869;
   private com.google.cloud.compute.v1.ResourcePolicyDailyCycle dailySchedule_;
   /**
@@ -164,7 +166,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
    */
   @java.lang.Override
   public boolean hasDailySchedule() {
-    return dailySchedule_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
@@ -180,7 +182,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
   /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyDailyCycleOrBuilder getDailyScheduleOrBuilder() {
-    return getDailySchedule();
+    return dailySchedule_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyDailyCycle.getDefaultInstance()
+        : dailySchedule_;
   }
 
   public static final int HOURLY_SCHEDULE_FIELD_NUMBER = 38328485;
@@ -192,7 +196,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
    */
   @java.lang.Override
   public boolean hasHourlySchedule() {
-    return hourlySchedule_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
@@ -209,22 +213,24 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyHourlyCycleOrBuilder
       getHourlyScheduleOrBuilder() {
-    return getHourlySchedule();
+    return hourlySchedule_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.getDefaultInstance()
+        : hourlySchedule_;
   }
 
-  public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 91112597;
+  public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 359548053;
   private com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weeklySchedule_;
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
    *
    * @return Whether the weeklySchedule field is set.
    */
   @java.lang.Override
   public boolean hasWeeklySchedule() {
-    return weeklySchedule_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
    *
    * @return The weeklySchedule.
    */
@@ -234,11 +240,15 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         ? com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.getDefaultInstance()
         : weeklySchedule_;
   }
-  /** <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code> */
+  /**
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder
       getWeeklyScheduleOrBuilder() {
-    return getWeeklySchedule();
+    return weeklySchedule_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.getDefaultInstance()
+        : weeklySchedule_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -255,14 +265,14 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (hourlySchedule_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(38328485, getHourlySchedule());
     }
-    if (dailySchedule_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(86159869, getDailySchedule());
     }
-    if (weeklySchedule_ != null) {
-      output.writeMessage(91112597, getWeeklySchedule());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(359548053, getWeeklySchedule());
     }
     unknownFields.writeTo(output);
   }
@@ -273,17 +283,17 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     if (size != -1) return size;
 
     size = 0;
-    if (hourlySchedule_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(38328485, getHourlySchedule());
     }
-    if (dailySchedule_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(86159869, getDailySchedule());
     }
-    if (weeklySchedule_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(91112597, getWeeklySchedule());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(359548053, getWeeklySchedule());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -480,7 +490,11 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDailyScheduleFieldBuilder();
+        getHourlyScheduleFieldBuilder();
+        getWeeklyScheduleFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -489,21 +503,21 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       if (dailyScheduleBuilder_ == null) {
         dailySchedule_ = null;
       } else {
-        dailySchedule_ = null;
-        dailyScheduleBuilder_ = null;
+        dailyScheduleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (hourlyScheduleBuilder_ == null) {
         hourlySchedule_ = null;
       } else {
-        hourlySchedule_ = null;
-        hourlyScheduleBuilder_ = null;
+        hourlyScheduleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (weeklyScheduleBuilder_ == null) {
         weeklySchedule_ = null;
       } else {
-        weeklySchedule_ = null;
-        weeklyScheduleBuilder_ = null;
+        weeklyScheduleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -534,21 +548,33 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule(this);
-      if (dailyScheduleBuilder_ == null) {
-        result.dailySchedule_ = dailySchedule_;
-      } else {
-        result.dailySchedule_ = dailyScheduleBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (dailyScheduleBuilder_ == null) {
+          result.dailySchedule_ = dailySchedule_;
+        } else {
+          result.dailySchedule_ = dailyScheduleBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (hourlyScheduleBuilder_ == null) {
-        result.hourlySchedule_ = hourlySchedule_;
-      } else {
-        result.hourlySchedule_ = hourlyScheduleBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (hourlyScheduleBuilder_ == null) {
+          result.hourlySchedule_ = hourlySchedule_;
+        } else {
+          result.hourlySchedule_ = hourlyScheduleBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
-      if (weeklyScheduleBuilder_ == null) {
-        result.weeklySchedule_ = weeklySchedule_;
-      } else {
-        result.weeklySchedule_ = weeklyScheduleBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (weeklyScheduleBuilder_ == null) {
+          result.weeklySchedule_ = weeklySchedule_;
+        } else {
+          result.weeklySchedule_ = weeklyScheduleBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -643,6 +669,8 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.ResourcePolicyDailyCycle dailySchedule_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyDailyCycle,
@@ -655,7 +683,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
      * @return Whether the dailySchedule field is set.
      */
     public boolean hasDailySchedule() {
-      return dailyScheduleBuilder_ != null || dailySchedule_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code>
@@ -682,7 +710,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         dailyScheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
@@ -694,13 +722,16 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         dailyScheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
     public Builder mergeDailySchedule(com.google.cloud.compute.v1.ResourcePolicyDailyCycle value) {
       if (dailyScheduleBuilder_ == null) {
-        if (dailySchedule_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && dailySchedule_ != null
+            && dailySchedule_
+                != com.google.cloud.compute.v1.ResourcePolicyDailyCycle.getDefaultInstance()) {
           dailySchedule_ =
               com.google.cloud.compute.v1.ResourcePolicyDailyCycle.newBuilder(dailySchedule_)
                   .mergeFrom(value)
@@ -712,7 +743,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         dailyScheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
@@ -721,15 +752,14 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         dailySchedule_ = null;
         onChanged();
       } else {
-        dailySchedule_ = null;
-        dailyScheduleBuilder_ = null;
+        dailyScheduleBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /** <code>.google.cloud.compute.v1.ResourcePolicyDailyCycle daily_schedule = 86159869;</code> */
     public com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder getDailyScheduleBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDailyScheduleFieldBuilder().getBuilder();
     }
@@ -774,7 +804,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
      * @return Whether the hourlySchedule field is set.
      */
     public boolean hasHourlySchedule() {
-      return hourlyScheduleBuilder_ != null || hourlySchedule_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.cloud.compute.v1.ResourcePolicyHourlyCycle hourly_schedule = 38328485;</code>
@@ -803,7 +833,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         hourlyScheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -817,7 +847,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         hourlyScheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -826,7 +856,10 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
     public Builder mergeHourlySchedule(
         com.google.cloud.compute.v1.ResourcePolicyHourlyCycle value) {
       if (hourlyScheduleBuilder_ == null) {
-        if (hourlySchedule_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && hourlySchedule_ != null
+            && hourlySchedule_
+                != com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.getDefaultInstance()) {
           hourlySchedule_ =
               com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.newBuilder(hourlySchedule_)
                   .mergeFrom(value)
@@ -838,7 +871,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         hourlyScheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -849,10 +882,9 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
         hourlySchedule_ = null;
         onChanged();
       } else {
-        hourlySchedule_ = null;
-        hourlyScheduleBuilder_ = null;
+        hourlyScheduleBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -860,7 +892,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
      */
     public com.google.cloud.compute.v1.ResourcePolicyHourlyCycle.Builder
         getHourlyScheduleBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHourlyScheduleFieldBuilder().getBuilder();
     }
@@ -904,15 +936,15 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
             com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder>
         weeklyScheduleBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      *
      * @return Whether the weeklySchedule field is set.
      */
     public boolean hasWeeklySchedule() {
-      return weeklyScheduleBuilder_ != null || weeklySchedule_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      *
      * @return The weeklySchedule.
      */
@@ -926,7 +958,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public Builder setWeeklySchedule(com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle value) {
       if (weeklyScheduleBuilder_ == null) {
@@ -938,11 +970,11 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         weeklyScheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public Builder setWeeklySchedule(
         com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.Builder builderForValue) {
@@ -952,16 +984,19 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         weeklyScheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public Builder mergeWeeklySchedule(
         com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle value) {
       if (weeklyScheduleBuilder_ == null) {
-        if (weeklySchedule_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && weeklySchedule_ != null
+            && weeklySchedule_
+                != com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.getDefaultInstance()) {
           weeklySchedule_ =
               com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.newBuilder(weeklySchedule_)
                   .mergeFrom(value)
@@ -973,34 +1008,33 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       } else {
         weeklyScheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public Builder clearWeeklySchedule() {
       if (weeklyScheduleBuilder_ == null) {
         weeklySchedule_ = null;
         onChanged();
       } else {
-        weeklySchedule_ = null;
-        weeklyScheduleBuilder_ = null;
+        weeklyScheduleBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle.Builder
         getWeeklyScheduleBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getWeeklyScheduleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder
         getWeeklyScheduleOrBuilder() {
@@ -1013,7 +1047,7 @@ public final class ResourcePolicySnapshotSchedulePolicySchedule
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle,

@@ -30,7 +30,19 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 171944196;</code>
+   * <code>string actual_service = 440379652;</code>
+   *
+   * @return Whether the actualService field is set.
+   */
+  boolean hasActualService();
+  /**
+   *
+   *
+   * <pre>
+   * BackendService or BackendBucket returned by load balancer.
+   * </pre>
+   *
+   * <code>string actual_service = 440379652;</code>
    *
    * @return The actualService.
    */
@@ -42,12 +54,24 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 171944196;</code>
+   * <code>string actual_service = 440379652;</code>
    *
    * @return The bytes for actualService.
    */
   com.google.protobuf.ByteString getActualServiceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * </pre>
+   *
+   * <code>string expected_service = 133987374;</code>
+   *
+   * @return Whether the expectedService field is set.
+   */
+  boolean hasExpectedService();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface TestFailureOrBuilder
    *
    * <code>string host = 3208616;</code>
    *
+   * @return Whether the host field is set.
+   */
+  boolean hasHost();
+  /**
+   *
+   *
+   * <pre>
+   * Host portion of the URL.
+   * </pre>
+   *
+   * <code>string host = 3208616;</code>
+   *
    * @return The host.
    */
   java.lang.String getHost();
@@ -98,6 +134,18 @@ public interface TestFailureOrBuilder
    */
   com.google.protobuf.ByteString getHostBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Path portion including query parameters in the URL.
+   * </pre>
+   *
+   * <code>string path = 3433509;</code>
+   *
+   * @return Whether the path field is set.
+   */
+  boolean hasPath();
   /**
    *
    *

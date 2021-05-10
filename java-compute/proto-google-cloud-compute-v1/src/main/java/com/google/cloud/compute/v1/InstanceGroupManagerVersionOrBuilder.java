@@ -30,7 +30,19 @@ public interface InstanceGroupManagerVersionOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  boolean hasInstanceTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -42,12 +54,24 @@ public interface InstanceGroupManagerVersionOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
   com.google.protobuf.ByteString getInstanceTemplateBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the version. Unique among all versions in the scope of this managed instance group.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *

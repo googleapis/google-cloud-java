@@ -62,6 +62,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -91,7 +92,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -143,6 +144,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -243,6 +245,23 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -366,7 +385,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     if (targetVpnGatewayResource_ != null) {
       output.writeMessage(498050, getTargetVpnGatewayResource());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -389,7 +408,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               498050, getTargetVpnGatewayResource());
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -416,7 +435,10 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
 
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasTargetVpnGatewayResource() != other.hasTargetVpnGatewayResource()) return false;
     if (hasTargetVpnGatewayResource()) {
       if (!getTargetVpnGatewayResource().equals(other.getTargetVpnGatewayResource())) return false;
@@ -436,8 +458,10 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasTargetVpnGatewayResource()) {
       hash = (37 * hash) + TARGET_VPN_GATEWAY_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetVpnGatewayResource().hashCode();
@@ -593,7 +617,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (targetVpnGatewayResourceBuilder_ == null) {
         targetVpnGatewayResource_ = null;
       } else {
@@ -627,14 +651,20 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest buildPartial() {
       com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest result =
           new com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (targetVpnGatewayResourceBuilder_ == null) {
         result.targetVpnGatewayResource_ = targetVpnGatewayResource_;
       } else {
         result.targetVpnGatewayResource_ = targetVpnGatewayResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -693,7 +723,8 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -729,6 +760,8 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -954,6 +987,22 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1009,7 +1058,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1028,7 +1077,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1052,7 +1101,7 @@ public final class InsertTargetVpnGatewayRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

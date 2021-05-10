@@ -81,7 +81,21 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
               zone_ = s;
               break;
             }
-          case 1366234418:
+          case 1566449778:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -781249230:
             {
               com.google.cloud.compute.v1.TestPermissionsRequest.Builder subBuilder = null;
               if (testPermissionsRequestResource_ != null) {
@@ -96,20 +110,6 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
                 testPermissionsRequestResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -245,7 +245,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     }
   }
 
-  public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 170779302;
+  public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
   /**
    *
@@ -255,7 +255,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the testPermissionsRequestResource field is set.
@@ -272,7 +272,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The testPermissionsRequestResource.
@@ -291,7 +291,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -366,14 +366,14 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (testPermissionsRequestResource_ != null) {
-      output.writeMessage(170779302, getTestPermissionsRequestResource());
-    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (testPermissionsRequestResource_ != null) {
+      output.writeMessage(439214758, getTestPermissionsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -387,16 +387,16 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (testPermissionsRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              170779302, getTestPermissionsRequestResource());
-    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (testPermissionsRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              439214758, getTestPermissionsRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -972,7 +972,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the testPermissionsRequestResource field is set.
@@ -989,7 +989,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The testPermissionsRequestResource.
@@ -1011,7 +1011,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTestPermissionsRequestResource(
@@ -1036,7 +1036,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTestPermissionsRequestResource(
@@ -1058,7 +1058,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTestPermissionsRequestResource(
@@ -1088,7 +1088,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTestPermissionsRequestResource() {
@@ -1110,7 +1110,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TestPermissionsRequest.Builder
@@ -1127,7 +1127,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder
@@ -1148,7 +1148,7 @@ public final class TestIamPermissionsNetworkEndpointGroupRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

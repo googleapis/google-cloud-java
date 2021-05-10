@@ -69,6 +69,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,63 +83,63 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               zone_ = s;
               break;
             }
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               instance_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
               break;
             }
-          case 1236017122:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               description_ = s;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
               break;
             }
-          case 1930760320:
+          case -216723328:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000040;
               natPolicy_ = rawValue;
               break;
             }
@@ -295,8 +296,24 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetInstance.NatPolicy)
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -344,7 +361,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -353,7 +370,22 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -376,7 +408,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -395,6 +427,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -444,6 +491,24 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
+  /**
+   *
+   *
+   * <pre>
+   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   * - projects/project/zones/zone/instances/instance
+   * - zones/zone/instances/instance
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -508,6 +573,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#targetInstance for target instances.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -557,6 +637,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -595,7 +690,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NAT_POLICY_FIELD_NUMBER = 241345040;
+  public static final int NAT_POLICY_FIELD_NUMBER = 509780496;
   private int natPolicy_;
   /**
    *
@@ -604,7 +699,22 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+   * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+   *
+   * @return Whether the natPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasNatPolicy() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
    *
    * @return The enum numeric value on the wire for natPolicy.
    */
@@ -619,7 +729,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+   * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
    *
    * @return The natPolicy.
    */
@@ -633,7 +743,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -642,7 +752,22 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -665,7 +790,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -684,6 +809,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the zone where the target instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -745,33 +885,32 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (natPolicy_
-        != com.google.cloud.compute.v1.TargetInstance.NatPolicy.UNDEFINED_NAT_POLICY.getNumber()) {
-      output.writeEnum(241345040, natPolicy_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(509780496, natPolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -782,34 +921,33 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (natPolicy_
-        != com.google.cloud.compute.v1.TargetInstance.NatPolicy.UNDEFINED_NAT_POLICY.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(241345040, natPolicy_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(509780496, natPolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -827,15 +965,42 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.TargetInstance other =
         (com.google.cloud.compute.v1.TargetInstance) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getInstance().equals(other.getInstance())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (natPolicy_ != other.natPolicy_) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNatPolicy() != other.hasNatPolicy()) return false;
+    if (hasNatPolicy()) {
+      if (natPolicy_ != other.natPolicy_) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -847,24 +1012,42 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NAT_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + natPolicy_;
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNatPolicy()) {
+      hash = (37 * hash) + NAT_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + natPolicy_;
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1012,23 +1195,23 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       natPolicy_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1056,15 +1239,45 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.TargetInstance buildPartial() {
       com.google.cloud.compute.v1.TargetInstance result =
           new com.google.cloud.compute.v1.TargetInstance(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.instance_ = instance_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.natPolicy_ = natPolicy_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1114,38 +1327,46 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetInstance other) {
       if (other == com.google.cloud.compute.v1.TargetInstance.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000004;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000008;
         instance_ = other.instance_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
-      if (other.natPolicy_ != 0) {
-        setNatPolicyValue(other.getNatPolicyValue());
+      if (other.hasNatPolicy()) {
+        setNatPolicy(other.getNatPolicy());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000080;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00000100;
         zone_ = other.zone_;
         onChanged();
       }
@@ -1178,7 +1399,23 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1239,7 +1476,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1256,7 +1493,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1278,7 +1515,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1292,7 +1529,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1314,7 +1565,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1336,7 +1587,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1345,7 +1596,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1357,12 +1608,12 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1374,7 +1625,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1384,13 +1635,27 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1451,7 +1716,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
@@ -1468,7 +1733,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1490,13 +1755,30 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     * - projects/project/zones/zone/instances/instance
+     * - zones/zone/instances/instance
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1566,7 +1848,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       instance_ = value;
       onChanged();
       return this;
@@ -1586,7 +1868,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -1611,13 +1893,27 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       instance_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The type of the resource. Always compute#targetInstance for target instances.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1678,7 +1974,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -1695,7 +1991,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1717,13 +2013,27 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1784,7 +2094,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -1801,7 +2111,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1823,7 +2133,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -1837,7 +2147,22 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+     *
+     * @return Whether the natPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasNatPolicy() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
      *
      * @return The enum numeric value on the wire for natPolicy.
      */
@@ -1852,13 +2177,13 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
      *
      * @param value The enum numeric value on the wire for natPolicy to set.
      * @return This builder for chaining.
      */
     public Builder setNatPolicyValue(int value) {
-
+      bitField0_ |= 0x00000040;
       natPolicy_ = value;
       onChanged();
       return this;
@@ -1870,7 +2195,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
      *
      * @return The natPolicy.
      */
@@ -1890,7 +2215,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
      *
      * @param value The natPolicy to set.
      * @return This builder for chaining.
@@ -1899,7 +2224,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       natPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -1911,12 +2236,12 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 241345040;</code>
+     * <code>.google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNatPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       natPolicy_ = 0;
       onChanged();
       return this;
@@ -1930,7 +2255,21 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1952,7 +2291,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1974,7 +2313,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1983,7 +2322,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1995,12 +2334,12 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2012,7 +2351,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2022,13 +2361,27 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the zone where the target instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2089,7 +2442,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       zone_ = value;
       onChanged();
       return this;
@@ -2106,7 +2459,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -2128,7 +2481,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       zone_ = value;
       onChanged();
       return this;

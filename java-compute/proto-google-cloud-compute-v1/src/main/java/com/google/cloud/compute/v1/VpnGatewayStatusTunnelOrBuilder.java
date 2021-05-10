@@ -32,6 +32,18 @@ public interface VpnGatewayStatusTunnelOrBuilder
    *
    * <code>uint32 local_gateway_interface = 158764330;</code>
    *
+   * @return Whether the localGatewayInterface field is set.
+   */
+  boolean hasLocalGatewayInterface();
+  /**
+   *
+   *
+   * <pre>
+   * The VPN gateway interface this VPN tunnel is associated with.
+   * </pre>
+   *
+   * <code>uint32 local_gateway_interface = 158764330;</code>
+   *
    * @return The localGatewayInterface.
    */
   int getLocalGatewayInterface();
@@ -45,10 +57,34 @@ public interface VpnGatewayStatusTunnelOrBuilder
    *
    * <code>uint32 peer_gateway_interface = 214380385;</code>
    *
+   * @return Whether the peerGatewayInterface field is set.
+   */
+  boolean hasPeerGatewayInterface();
+  /**
+   *
+   *
+   * <pre>
+   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+   * </pre>
+   *
+   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   *
    * @return The peerGatewayInterface.
    */
   int getPeerGatewayInterface();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL reference to the VPN tunnel.
+   * </pre>
+   *
+   * <code>string tunnel_url = 78975256;</code>
+   *
+   * @return Whether the tunnelUrl field is set.
+   */
+  boolean hasTunnelUrl();
   /**
    *
    *

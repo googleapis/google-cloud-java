@@ -32,6 +32,18 @@ public interface TargetSslProxyOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface TargetSslProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,12 +91,24 @@ public interface TargetSslProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -107,6 +143,18 @@ public interface TargetSslProxyOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -123,6 +171,18 @@ public interface TargetSslProxyOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -157,6 +217,18 @@ public interface TargetSslProxyOrBuilder
    *
    * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
    *
+   * @return Whether the proxyHeader field is set.
+   */
+  boolean hasProxyHeader();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+   *
    * @return The enum numeric value on the wire for proxyHeader.
    */
   int getProxyHeaderValue();
@@ -180,7 +252,19 @@ public interface TargetSslProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -192,7 +276,7 @@ public interface TargetSslProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -205,7 +289,19 @@ public interface TargetSslProxyOrBuilder
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  boolean hasService();
+  /**
+   *
+   *
+   * <pre>
+   * URL to the BackendService resource.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -217,7 +313,7 @@ public interface TargetSslProxyOrBuilder
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -230,7 +326,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @return A list containing the sslCertificates.
    */
@@ -242,7 +338,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @return The count of sslCertificates.
    */
@@ -254,7 +350,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @param index The index of the element to return.
    * @return The sslCertificates at the given index.
@@ -267,7 +363,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 97571087;</code>
+   * <code>repeated string ssl_certificates = 366006543;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sslCertificates at the given index.
@@ -281,7 +377,19 @@ public interface TargetSslProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 26754757;</code>
+   * <code>string ssl_policy = 295190213;</code>
+   *
+   * @return Whether the sslPolicy field is set.
+   */
+  boolean hasSslPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
+   * </pre>
+   *
+   * <code>string ssl_policy = 295190213;</code>
    *
    * @return The sslPolicy.
    */
@@ -293,7 +401,7 @@ public interface TargetSslProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 26754757;</code>
+   * <code>string ssl_policy = 295190213;</code>
    *
    * @return The bytes for sslPolicy.
    */

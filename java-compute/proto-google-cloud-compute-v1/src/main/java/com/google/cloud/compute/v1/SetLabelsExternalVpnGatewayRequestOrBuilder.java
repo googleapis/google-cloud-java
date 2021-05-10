@@ -31,7 +31,7 @@ public interface SetLabelsExternalVpnGatewayRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetLabelsRequestResource field is set.
@@ -45,7 +45,7 @@ public interface SetLabelsExternalVpnGatewayRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetLabelsRequestResource.
@@ -59,7 +59,7 @@ public interface SetLabelsExternalVpnGatewayRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder

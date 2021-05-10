@@ -60,6 +60,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
           case 1821688210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               machineType_ = s;
               break;
             }
@@ -111,8 +112,24 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.InstancesSetMachineTypeRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MACHINE_TYPE_FIELD_NUMBER = 227711026;
   private volatile java.lang.Object machineType_;
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of the machine type resource. See Machine Types for a full list of machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
+   * @return Whether the machineType field is set.
+   */
+  @java.lang.Override
+  public boolean hasMachineType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -174,7 +191,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227711026, machineType_);
     }
     unknownFields.writeTo(output);
@@ -186,7 +203,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
     }
     size += unknownFields.getSerializedSize();
@@ -205,7 +222,10 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     com.google.cloud.compute.v1.InstancesSetMachineTypeRequest other =
         (com.google.cloud.compute.v1.InstancesSetMachineTypeRequest) obj;
 
-    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (hasMachineType() != other.hasMachineType()) return false;
+    if (hasMachineType()) {
+      if (!getMachineType().equals(other.getMachineType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -217,8 +237,10 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getMachineType().hashCode();
+    if (hasMachineType()) {
+      hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMachineType().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,7 +387,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       machineType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -393,7 +415,13 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.InstancesSetMachineTypeRequest buildPartial() {
       com.google.cloud.compute.v1.InstancesSetMachineTypeRequest result =
           new com.google.cloud.compute.v1.InstancesSetMachineTypeRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.machineType_ = machineType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -444,7 +472,8 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
     public Builder mergeFrom(com.google.cloud.compute.v1.InstancesSetMachineTypeRequest other) {
       if (other == com.google.cloud.compute.v1.InstancesSetMachineTypeRequest.getDefaultInstance())
         return this;
-      if (!other.getMachineType().isEmpty()) {
+      if (other.hasMachineType()) {
+        bitField0_ |= 0x00000001;
         machineType_ = other.machineType_;
         onChanged();
       }
@@ -478,7 +507,23 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object machineType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Full or partial URL of the machine type resource. See Machine Types for a full list of machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+     * </pre>
+     *
+     * <code>string machine_type = 227711026;</code>
+     *
+     * @return Whether the machineType field is set.
+     */
+    public boolean hasMachineType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -539,7 +584,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       machineType_ = value;
       onChanged();
       return this;
@@ -556,7 +601,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       machineType_ = getDefaultInstance().getMachineType();
       onChanged();
       return this;
@@ -578,7 +623,7 @@ public final class InstancesSetMachineTypeRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       machineType_ = value;
       onChanged();
       return this;

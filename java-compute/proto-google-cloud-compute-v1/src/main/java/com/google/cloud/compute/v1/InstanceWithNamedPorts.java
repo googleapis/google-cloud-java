@@ -75,26 +75,26 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               instance_ = s;
-              break;
-            }
-          case 1273306210:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              namedPorts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
               break;
             }
           case 1450082192:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               status_ = rawValue;
+              break;
+            }
+          case -874177438:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              namedPorts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
               break;
             }
           default:
@@ -111,7 +111,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
       }
       this.unknownFields = unknownFields.build();
@@ -154,24 +154,24 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DEPROVISIONING = 160500206;</code> */
-    DEPROVISIONING(160500206),
-    /** <code>PROVISIONING = 22461165;</code> */
-    PROVISIONING(22461165),
-    /** <code>REPAIRING = 145047829;</code> */
-    REPAIRING(145047829),
+    /** <code>DEPROVISIONING = 428935662;</code> */
+    DEPROVISIONING(428935662),
+    /** <code>PROVISIONING = 290896621;</code> */
+    PROVISIONING(290896621),
+    /** <code>REPAIRING = 413483285;</code> */
+    REPAIRING(413483285),
     /** <code>RUNNING = 121282975;</code> */
     RUNNING(121282975),
-    /** <code>STAGING = 162636827;</code> */
-    STAGING(162636827),
-    /** <code>STOPPED = 175840685;</code> */
-    STOPPED(175840685),
-    /** <code>STOPPING = 82356340;</code> */
-    STOPPING(82356340),
+    /** <code>STAGING = 431072283;</code> */
+    STAGING(431072283),
+    /** <code>STOPPED = 444276141;</code> */
+    STOPPED(444276141),
+    /** <code>STOPPING = 350791796;</code> */
+    STOPPING(350791796),
     /** <code>SUSPENDED = 51223995;</code> */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 245770790;</code> */
-    SUSPENDING(245770790),
+    /** <code>SUSPENDING = 514206246;</code> */
+    SUSPENDING(514206246),
     /** <code>TERMINATED = 250018339;</code> */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
@@ -187,24 +187,24 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 160500206;</code> */
-    public static final int DEPROVISIONING_VALUE = 160500206;
-    /** <code>PROVISIONING = 22461165;</code> */
-    public static final int PROVISIONING_VALUE = 22461165;
-    /** <code>REPAIRING = 145047829;</code> */
-    public static final int REPAIRING_VALUE = 145047829;
+    /** <code>DEPROVISIONING = 428935662;</code> */
+    public static final int DEPROVISIONING_VALUE = 428935662;
+    /** <code>PROVISIONING = 290896621;</code> */
+    public static final int PROVISIONING_VALUE = 290896621;
+    /** <code>REPAIRING = 413483285;</code> */
+    public static final int REPAIRING_VALUE = 413483285;
     /** <code>RUNNING = 121282975;</code> */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 162636827;</code> */
-    public static final int STAGING_VALUE = 162636827;
-    /** <code>STOPPED = 175840685;</code> */
-    public static final int STOPPED_VALUE = 175840685;
-    /** <code>STOPPING = 82356340;</code> */
-    public static final int STOPPING_VALUE = 82356340;
+    /** <code>STAGING = 431072283;</code> */
+    public static final int STAGING_VALUE = 431072283;
+    /** <code>STOPPED = 444276141;</code> */
+    public static final int STOPPED_VALUE = 444276141;
+    /** <code>STOPPING = 350791796;</code> */
+    public static final int STOPPING_VALUE = 350791796;
     /** <code>SUSPENDED = 51223995;</code> */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 245770790;</code> */
-    public static final int SUSPENDING_VALUE = 245770790;
+    /** <code>SUSPENDING = 514206246;</code> */
+    public static final int SUSPENDING_VALUE = 514206246;
     /** <code>TERMINATED = 250018339;</code> */
     public static final int TERMINATED_VALUE = 250018339;
 
@@ -234,23 +234,23 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 160500206:
+        case 428935662:
           return DEPROVISIONING;
-        case 22461165:
+        case 290896621:
           return PROVISIONING;
-        case 145047829:
+        case 413483285:
           return REPAIRING;
         case 121282975:
           return RUNNING;
-        case 162636827:
+        case 431072283:
           return STAGING;
-        case 175840685:
+        case 444276141:
           return STOPPED;
-        case 82356340:
+        case 350791796:
           return STOPPING;
         case 51223995:
           return SUSPENDED;
-        case 245770790:
+        case 514206246:
           return SUSPENDING;
         case 250018339:
           return TERMINATED;
@@ -309,8 +309,24 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceWithNamedPorts.Status)
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the instance.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -358,7 +374,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int NAMED_PORTS_FIELD_NUMBER = 159163276;
+  public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -367,7 +383,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
@@ -380,7 +396,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
@@ -394,7 +410,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public int getNamedPortsCount() {
@@ -407,7 +423,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
@@ -420,7 +436,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
@@ -429,6 +445,21 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private int status_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -479,15 +510,14 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      output.writeMessage(159163276, namedPorts_.get(i));
-    }
-    if (status_
-        != com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(181260274, status_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      output.writeMessage(427598732, namedPorts_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -498,16 +528,15 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(159163276, namedPorts_.get(i));
-    }
-    if (status_
-        != com.google.cloud.compute.v1.InstanceWithNamedPorts.Status.UNDEFINED_STATUS.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+          com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -525,9 +554,15 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.InstanceWithNamedPorts other =
         (com.google.cloud.compute.v1.InstanceWithNamedPorts) obj;
 
-    if (!getInstance().equals(other.getInstance())) return false;
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
     if (!getNamedPortsList().equals(other.getNamedPortsList())) return false;
-    if (status_ != other.status_) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,14 +574,18 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
     if (getNamedPortsCount() > 0) {
       hash = (37 * hash) + NAMED_PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getNamedPortsList().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -694,15 +733,15 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         namedPortsBuilder_.clear();
       }
       status_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -731,17 +770,25 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.InstanceWithNamedPorts result =
           new com.google.cloud.compute.v1.InstanceWithNamedPorts(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instance_ = instance_;
       if (namedPortsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.namedPorts_ = namedPorts_;
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.status_ = status_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -792,7 +839,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceWithNamedPorts other) {
       if (other == com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance())
         return this;
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000001;
         instance_ = other.instance_;
         onChanged();
       }
@@ -800,7 +848,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         if (!other.namedPorts_.isEmpty()) {
           if (namedPorts_.isEmpty()) {
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureNamedPortsIsMutable();
             namedPorts_.addAll(other.namedPorts_);
@@ -813,7 +861,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
             namedPortsBuilder_.dispose();
             namedPortsBuilder_ = null;
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             namedPortsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNamedPortsFieldBuilder()
@@ -823,8 +871,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
           }
         }
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -859,6 +907,20 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the instance.
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -919,7 +981,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instance_ = value;
       onChanged();
       return this;
@@ -936,7 +998,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -958,7 +1020,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       instance_ = value;
       onChanged();
       return this;
@@ -968,9 +1030,9 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureNamedPortsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>(namedPorts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -987,7 +1049,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
       if (namedPortsBuilder_ == null) {
@@ -1003,7 +1065,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public int getNamedPortsCount() {
       if (namedPortsBuilder_ == null) {
@@ -1019,7 +1081,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -1035,7 +1097,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder setNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -1057,7 +1119,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder setNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -1077,7 +1139,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -1099,7 +1161,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -1121,7 +1183,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
       if (namedPortsBuilder_ == null) {
@@ -1140,7 +1202,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -1160,7 +1222,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addAllNamedPorts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NamedPort> values) {
@@ -1180,12 +1242,12 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         namedPortsBuilder_.clear();
@@ -1199,7 +1261,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder removeNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -1218,7 +1280,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
@@ -1230,7 +1292,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
       if (namedPortsBuilder_ == null) {
@@ -1246,7 +1308,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
         getNamedPortsOrBuilderList() {
@@ -1263,7 +1325,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder() {
       return getNamedPortsFieldBuilder()
@@ -1276,7 +1338,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder()
@@ -1289,7 +1351,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort.Builder>
         getNamedPortsBuilderList() {
@@ -1307,13 +1369,28 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
                 com.google.cloud.compute.v1.NamedPort,
                 com.google.cloud.compute.v1.NamedPort.Builder,
                 com.google.cloud.compute.v1.NamedPortOrBuilder>(
-                namedPorts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                namedPorts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         namedPorts_ = null;
       }
       return namedPortsBuilder_;
     }
 
     private int status_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1342,7 +1419,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
+      bitField0_ |= 0x00000004;
       status_ = value;
       onChanged();
       return this;
@@ -1383,7 +1460,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1400,7 +1477,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = 0;
       onChanged();
       return this;

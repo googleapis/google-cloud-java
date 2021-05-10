@@ -30,7 +30,7 @@ public interface NodeGroupNodeOrBuilder
    * Accelerators for this node.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
   /**
@@ -40,7 +40,7 @@ public interface NodeGroupNodeOrBuilder
    * Accelerators for this node.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
   /**
@@ -50,7 +50,7 @@ public interface NodeGroupNodeOrBuilder
    * Accelerators for this node.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   int getAcceleratorsCount();
   /**
@@ -60,7 +60,7 @@ public interface NodeGroupNodeOrBuilder
    * Accelerators for this node.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
@@ -71,10 +71,23 @@ public interface NodeGroupNodeOrBuilder
    * Accelerators for this node.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code>
    */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * CPU overcommit.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;
+   * </code>
+   *
+   * @return Whether the cpuOvercommitType field is set.
+   */
+  boolean hasCpuOvercommitType();
   /**
    *
    *
@@ -213,6 +226,18 @@ public interface NodeGroupNodeOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the node.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -236,7 +261,19 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 197397335;</code>
+   * <code>string node_type = 465832791;</code>
+   *
+   * @return Whether the nodeType field is set.
+   */
+  boolean hasNodeType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of this node.
+   * </pre>
+   *
+   * <code>string node_type = 465832791;</code>
    *
    * @return The nodeType.
    */
@@ -248,7 +285,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 197397335;</code>
+   * <code>string node_type = 465832791;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -296,7 +333,19 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 70997911;</code>
+   * <code>string server_id = 339433367;</code>
+   *
+   * @return Whether the serverId field is set.
+   */
+  boolean hasServerId();
+  /**
+   *
+   *
+   * <pre>
+   * Server ID associated with this node.
+   * </pre>
+   *
+   * <code>string server_id = 339433367;</code>
    *
    * @return The serverId.
    */
@@ -308,12 +357,18 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 70997911;</code>
+   * <code>string server_id = 339433367;</code>
    *
    * @return The bytes for serverId.
    */
   com.google.protobuf.ByteString getServerIdBytes();
 
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
    *

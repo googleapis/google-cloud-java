@@ -65,6 +65,7 @@ public final class AddResourcePoliciesRegionDiskRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,28 +83,10 @@ public final class AddResourcePoliciesRegionDiskRequest
               disk_ = s;
               break;
             }
-          case 126090354:
-            {
-              com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.Builder subBuilder =
-                  null;
-              if (regionDisksAddResourcePoliciesRequestResource_ != null) {
-                subBuilder = regionDisksAddResourcePoliciesRequestResource_.toBuilder();
-              }
-              regionDisksAddResourcePoliciesRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regionDisksAddResourcePoliciesRequestResource_);
-                regionDisksAddResourcePoliciesRequestResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -119,6 +102,24 @@ public final class AddResourcePoliciesRegionDiskRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -2021393294:
+            {
+              com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.Builder subBuilder =
+                  null;
+              if (regionDisksAddResourcePoliciesRequestResource_ != null) {
+                subBuilder = regionDisksAddResourcePoliciesRequestResource_.toBuilder();
+              }
+              regionDisksAddResourcePoliciesRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(regionDisksAddResourcePoliciesRequestResource_);
+                regionDisksAddResourcePoliciesRequestResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -155,6 +156,7 @@ public final class AddResourcePoliciesRegionDiskRequest
             com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISK_FIELD_NUMBER = 3083677;
   private volatile java.lang.Object disk_;
   /**
@@ -303,7 +305,7 @@ public final class AddResourcePoliciesRegionDiskRequest
   }
 
   public static final int REGION_DISKS_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER =
-      15761294;
+      284196750;
   private com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest
       regionDisksAddResourcePoliciesRequestResource_;
   /**
@@ -314,7 +316,7 @@ public final class AddResourcePoliciesRegionDiskRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionDisksAddResourcePoliciesRequestResource field is set.
@@ -331,7 +333,7 @@ public final class AddResourcePoliciesRegionDiskRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionDisksAddResourcePoliciesRequestResource.
@@ -351,7 +353,7 @@ public final class AddResourcePoliciesRegionDiskRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -362,6 +364,23 @@ public final class AddResourcePoliciesRegionDiskRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -430,10 +449,7 @@ public final class AddResourcePoliciesRegionDiskRequest
     if (!getDiskBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3083677, disk_);
     }
-    if (regionDisksAddResourcePoliciesRequestResource_ != null) {
-      output.writeMessage(15761294, getRegionDisksAddResourcePoliciesRequestResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -441,6 +457,9 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (regionDisksAddResourcePoliciesRequestResource_ != null) {
+      output.writeMessage(284196750, getRegionDisksAddResourcePoliciesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -454,12 +473,7 @@ public final class AddResourcePoliciesRegionDiskRequest
     if (!getDiskBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3083677, disk_);
     }
-    if (regionDisksAddResourcePoliciesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              15761294, getRegionDisksAddResourcePoliciesRequestResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -467,6 +481,11 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (regionDisksAddResourcePoliciesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              284196750, getRegionDisksAddResourcePoliciesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -493,7 +512,10 @@ public final class AddResourcePoliciesRegionDiskRequest
       if (!getRegionDisksAddResourcePoliciesRequestResource()
           .equals(other.getRegionDisksAddResourcePoliciesRequestResource())) return false;
     }
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -515,8 +537,10 @@ public final class AddResourcePoliciesRegionDiskRequest
       hash = (37 * hash) + REGION_DISKS_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getRegionDisksAddResourcePoliciesRequestResource().hashCode();
     }
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -676,7 +700,7 @@ public final class AddResourcePoliciesRegionDiskRequest
         regionDisksAddResourcePoliciesRequestResourceBuilder_ = null;
       }
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -705,6 +729,8 @@ public final class AddResourcePoliciesRegionDiskRequest
     public com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest buildPartial() {
       com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest result =
           new com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.disk_ = disk_;
       result.project_ = project_;
       result.region_ = region_;
@@ -715,7 +741,11 @@ public final class AddResourcePoliciesRegionDiskRequest
         result.regionDisksAddResourcePoliciesRequestResource_ =
             regionDisksAddResourcePoliciesRequestResourceBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -784,7 +814,8 @@ public final class AddResourcePoliciesRegionDiskRequest
         mergeRegionDisksAddResourcePoliciesRequestResource(
             other.getRegionDisksAddResourcePoliciesRequestResource());
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -818,6 +849,8 @@ public final class AddResourcePoliciesRegionDiskRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object disk_ = "";
     /**
@@ -1152,7 +1185,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionDisksAddResourcePoliciesRequestResource field is set.
@@ -1169,7 +1202,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionDisksAddResourcePoliciesRequestResource.
@@ -1192,7 +1225,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionDisksAddResourcePoliciesRequestResource(
@@ -1217,7 +1250,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionDisksAddResourcePoliciesRequestResource(
@@ -1239,7 +1272,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionDisksAddResourcePoliciesRequestResource(
@@ -1269,7 +1302,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionDisksAddResourcePoliciesRequestResource() {
@@ -1291,7 +1324,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.Builder
@@ -1308,7 +1341,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequestOrBuilder
@@ -1329,7 +1362,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 15761294 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest region_disks_add_resource_policies_request_resource = 284196750 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1352,6 +1385,22 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
 
     private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1418,7 +1467,7 @@ public final class AddResourcePoliciesRegionDiskRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1437,7 +1486,7 @@ public final class AddResourcePoliciesRegionDiskRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1461,7 +1510,7 @@ public final class AddResourcePoliciesRegionDiskRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

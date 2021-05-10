@@ -31,7 +31,20 @@ public interface HttpQueryParameterMatchOrBuilder
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
+   *
+   * @return Whether the exactMatch field is set.
+   */
+  boolean hasExactMatch();
+  /**
+   *
+   *
+   * <pre>
+   * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch.
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * </pre>
+   *
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The exactMatch.
    */
@@ -44,12 +57,24 @@ public interface HttpQueryParameterMatchOrBuilder
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The bytes for exactMatch.
    */
   com.google.protobuf.ByteString getExactMatchBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -85,10 +110,37 @@ public interface HttpQueryParameterMatchOrBuilder
    *
    * <code>bool present_match = 67435841;</code>
    *
+   * @return Whether the presentMatch field is set.
+   */
+  boolean hasPresentMatch();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not.
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * </pre>
+   *
+   * <code>bool present_match = 67435841;</code>
+   *
    * @return The presentMatch.
    */
   boolean getPresentMatch();
 
+  /**
+   *
+   *
+   * <pre>
+   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Only one of presentMatch, exactMatch or regexMatch must be set.
+   * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>string regex_match = 107387853;</code>
+   *
+   * @return Whether the regexMatch field is set.
+   */
+  boolean hasRegexMatch();
   /**
    *
    *

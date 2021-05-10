@@ -32,6 +32,18 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    * <code>string code = 3059181;</code>
    *
+   * @return Whether the code field is set.
+   */
+  boolean hasCode();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Error code.
+   * </pre>
+   *
+   * <code>string code = 3059181;</code>
+   *
    * @return The code.
    */
   java.lang.String getCode();
@@ -55,7 +67,19 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  boolean hasMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Error message.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -67,7 +91,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

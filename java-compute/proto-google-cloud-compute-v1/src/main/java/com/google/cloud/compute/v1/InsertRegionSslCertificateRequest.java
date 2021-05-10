@@ -63,6 +63,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -144,6 +145,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InsertRegionSslCertificateRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -244,6 +246,23 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -363,7 +382,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -384,7 +403,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -416,7 +435,10 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
 
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasSslCertificateResource() != other.hasSslCertificateResource()) return false;
     if (hasSslCertificateResource()) {
       if (!getSslCertificateResource().equals(other.getSslCertificateResource())) return false;
@@ -436,8 +458,10 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasSslCertificateResource()) {
       hash = (37 * hash) + SSL_CERTIFICATE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSslCertificateResource().hashCode();
@@ -593,7 +617,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (sslCertificateResourceBuilder_ == null) {
         sslCertificateResource_ = null;
       } else {
@@ -628,14 +652,20 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InsertRegionSslCertificateRequest buildPartial() {
       com.google.cloud.compute.v1.InsertRegionSslCertificateRequest result =
           new com.google.cloud.compute.v1.InsertRegionSslCertificateRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (sslCertificateResourceBuilder_ == null) {
         result.sslCertificateResource_ = sslCertificateResource_;
       } else {
         result.sslCertificateResource_ = sslCertificateResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -695,7 +725,8 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -732,6 +763,8 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -957,6 +990,22 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1012,7 +1061,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1031,7 +1080,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1055,7 +1104,7 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

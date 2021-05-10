@@ -30,7 +30,19 @@ public interface InterconnectAttachmentPrivateInfoOrBuilder
    * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
    * </pre>
    *
-   * <code>uint32 tag8021q = 3385536;</code>
+   * <code>uint32 tag8021q = 271820992;</code>
+   *
+   * @return Whether the tag8021q field is set.
+   */
+  boolean hasTag8021Q();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
+   * </pre>
+   *
+   * <code>uint32 tag8021q = 271820992;</code>
    *
    * @return The tag8021q.
    */

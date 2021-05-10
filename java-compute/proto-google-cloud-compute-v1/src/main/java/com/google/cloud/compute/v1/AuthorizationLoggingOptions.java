@@ -60,6 +60,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
           case 0:
             done = true;
             break;
-          case 2060344656:
+          case -87138992:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               permissionType_ = rawValue;
               break;
             }
@@ -135,12 +136,12 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     ADMIN_READ(128951462),
     /** <code>ADMIN_WRITE = 244412079;</code> */
     ADMIN_WRITE(244412079),
-    /** <code>DATA_READ = 36789515;</code> */
-    DATA_READ(36789515),
-    /** <code>DATA_WRITE = 71746282;</code> */
-    DATA_WRITE(71746282),
-    /** <code>PERMISSION_TYPE_UNSPECIFIED = 171877890;</code> */
-    PERMISSION_TYPE_UNSPECIFIED(171877890),
+    /** <code>DATA_READ = 305224971;</code> */
+    DATA_READ(305224971),
+    /** <code>DATA_WRITE = 340181738;</code> */
+    DATA_WRITE(340181738),
+    /** <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code> */
+    PERMISSION_TYPE_UNSPECIFIED(440313346),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,12 +159,12 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     public static final int ADMIN_READ_VALUE = 128951462;
     /** <code>ADMIN_WRITE = 244412079;</code> */
     public static final int ADMIN_WRITE_VALUE = 244412079;
-    /** <code>DATA_READ = 36789515;</code> */
-    public static final int DATA_READ_VALUE = 36789515;
-    /** <code>DATA_WRITE = 71746282;</code> */
-    public static final int DATA_WRITE_VALUE = 71746282;
-    /** <code>PERMISSION_TYPE_UNSPECIFIED = 171877890;</code> */
-    public static final int PERMISSION_TYPE_UNSPECIFIED_VALUE = 171877890;
+    /** <code>DATA_READ = 305224971;</code> */
+    public static final int DATA_READ_VALUE = 305224971;
+    /** <code>DATA_WRITE = 340181738;</code> */
+    public static final int DATA_WRITE_VALUE = 340181738;
+    /** <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code> */
+    public static final int PERMISSION_TYPE_UNSPECIFIED_VALUE = 440313346;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -195,11 +196,11 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
           return ADMIN_READ;
         case 244412079:
           return ADMIN_WRITE;
-        case 36789515:
+        case 305224971:
           return DATA_READ;
-        case 71746282:
+        case 340181738:
           return DATA_WRITE;
-        case 171877890:
+        case 440313346:
           return PERMISSION_TYPE_UNSPECIFIED;
         default:
           return null;
@@ -256,7 +257,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType)
   }
 
-  public static final int PERMISSION_TYPE_FIELD_NUMBER = 257543082;
+  private int bitField0_;
+  public static final int PERMISSION_TYPE_FIELD_NUMBER = 525978538;
   private int permissionType_;
   /**
    *
@@ -266,7 +268,24 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
+   * </code>
+   *
+   * @return Whether the permissionType field is set.
+   */
+  @java.lang.Override
+  public boolean hasPermissionType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of the permission that was checked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
    * </code>
    *
    * @return The enum numeric value on the wire for permissionType.
@@ -283,7 +302,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
    * </code>
    *
    * @return The permissionType.
@@ -314,11 +333,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (permissionType_
-        != com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType
-            .UNDEFINED_PERMISSION_TYPE
-            .getNumber()) {
-      output.writeEnum(257543082, permissionType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(525978538, permissionType_);
     }
     unknownFields.writeTo(output);
   }
@@ -329,11 +345,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (permissionType_
-        != com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType
-            .UNDEFINED_PERMISSION_TYPE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(257543082, permissionType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(525978538, permissionType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,7 +364,10 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.AuthorizationLoggingOptions other =
         (com.google.cloud.compute.v1.AuthorizationLoggingOptions) obj;
 
-    if (permissionType_ != other.permissionType_) return false;
+    if (hasPermissionType() != other.hasPermissionType()) return false;
+    if (hasPermissionType()) {
+      if (permissionType_ != other.permissionType_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -363,8 +379,10 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PERMISSION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + permissionType_;
+    if (hasPermissionType()) {
+      hash = (37 * hash) + PERMISSION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + permissionType_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -512,7 +530,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       permissionType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -540,7 +558,13 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.AuthorizationLoggingOptions buildPartial() {
       com.google.cloud.compute.v1.AuthorizationLoggingOptions result =
           new com.google.cloud.compute.v1.AuthorizationLoggingOptions(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.permissionType_ = permissionType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -591,8 +615,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.AuthorizationLoggingOptions other) {
       if (other == com.google.cloud.compute.v1.AuthorizationLoggingOptions.getDefaultInstance())
         return this;
-      if (other.permissionType_ != 0) {
-        setPermissionTypeValue(other.getPermissionTypeValue());
+      if (other.hasPermissionType()) {
+        setPermissionType(other.getPermissionType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -624,6 +648,8 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private int permissionType_ = 0;
     /**
      *
@@ -633,7 +659,24 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
+     * </code>
+     *
+     * @return Whether the permissionType field is set.
+     */
+    @java.lang.Override
+    public boolean hasPermissionType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the permission that was checked.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
      * </code>
      *
      * @return The enum numeric value on the wire for permissionType.
@@ -650,14 +693,14 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
      * </code>
      *
      * @param value The enum numeric value on the wire for permissionType to set.
      * @return This builder for chaining.
      */
     public Builder setPermissionTypeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       permissionType_ = value;
       onChanged();
       return this;
@@ -670,7 +713,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
      * </code>
      *
      * @return The permissionType.
@@ -694,7 +737,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
      * </code>
      *
      * @param value The permissionType to set.
@@ -705,7 +748,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       permissionType_ = value.getNumber();
       onChanged();
       return this;
@@ -718,13 +761,13 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+     * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPermissionType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       permissionType_ = 0;
       onChanged();
       return this;

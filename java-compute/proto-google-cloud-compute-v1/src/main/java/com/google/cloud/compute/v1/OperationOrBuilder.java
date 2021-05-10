@@ -30,7 +30,19 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 28804839;</code>
+   * <code>string client_operation_id = 297240295;</code>
+   *
+   * @return Whether the clientOperationId field is set.
+   */
+  boolean hasClientOperationId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+   * </pre>
+   *
+   * <code>string client_operation_id = 297240295;</code>
    *
    * @return The clientOperationId.
    */
@@ -42,12 +54,24 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 28804839;</code>
+   * <code>string client_operation_id = 297240295;</code>
    *
    * @return The bytes for clientOperationId.
    */
   com.google.protobuf.ByteString getClientOperationIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Deprecated] This field is deprecated.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A textual description of the operation, which is set when the operation is created.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -92,12 +128,24 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string end_time = 114938801;</code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  boolean hasEndTime();
   /**
    *
    *
@@ -167,6 +215,18 @@ public interface OperationOrBuilder
    *
    * <code>string http_error_message = 202521945;</code>
    *
+   * @return Whether the httpErrorMessage field is set.
+   */
+  boolean hasHttpErrorMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+   * </pre>
+   *
+   * <code>string http_error_message = 202521945;</code>
+   *
    * @return The httpErrorMessage.
    */
   java.lang.String getHttpErrorMessage();
@@ -190,12 +250,36 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 43909740;</code>
+   * <code>int32 http_error_status_code = 312345196;</code>
+   *
+   * @return Whether the httpErrorStatusCode field is set.
+   */
+  boolean hasHttpErrorStatusCode();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+   * </pre>
+   *
+   * <code>int32 http_error_status_code = 312345196;</code>
    *
    * @return The httpErrorStatusCode.
    */
   int getHttpErrorStatusCode();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -228,7 +312,19 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 165287059;</code>
+   * <code>string insert_time = 433722515;</code>
+   *
+   * @return Whether the insertTime field is set.
+   */
+  boolean hasInsertTime();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string insert_time = 433722515;</code>
    *
    * @return The insertTime.
    */
@@ -240,12 +336,24 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 165287059;</code>
+   * <code>string insert_time = 433722515;</code>
    *
    * @return The bytes for insertTime.
    */
   com.google.protobuf.ByteString getInsertTimeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -280,6 +388,18 @@ public interface OperationOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the operation.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -296,6 +416,18 @@ public interface OperationOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+   * </pre>
+   *
+   * <code>string operation_type = 177650450;</code>
+   *
+   * @return Whether the operationType field is set.
+   */
+  boolean hasOperationType();
   /**
    *
    *
@@ -330,10 +462,34 @@ public interface OperationOrBuilder
    *
    * <code>int32 progress = 72663597;</code>
    *
+   * @return Whether the progress field is set.
+   */
+  boolean hasProgress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+   * </pre>
+   *
+   * <code>int32 progress = 72663597;</code>
+   *
    * @return The progress.
    */
   int getProgress();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -366,7 +522,19 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -378,12 +546,24 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
   /**
    *
    *
@@ -418,6 +598,18 @@ public interface OperationOrBuilder
    *
    * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
    *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Operation.Status status = 181260274;</code>
+   *
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
@@ -441,7 +633,19 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 28992698;</code>
+   * <code>string status_message = 297428154;</code>
+   *
+   * @return Whether the statusMessage field is set.
+   */
+  boolean hasStatusMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional textual description of the current status of the operation.
+   * </pre>
+   *
+   * <code>string status_message = 297428154;</code>
    *
    * @return The statusMessage.
    */
@@ -453,12 +657,24 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 28992698;</code>
+   * <code>string status_message = 297428154;</code>
    *
    * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+   * </pre>
+   *
+   * <code>string target_id = 258165385;</code>
+   *
+   * @return Whether the targetId field is set.
+   */
+  boolean hasTargetId();
   /**
    *
    *
@@ -493,6 +709,18 @@ public interface OperationOrBuilder
    *
    * <code>string target_link = 62671336;</code>
    *
+   * @return Whether the targetLink field is set.
+   */
+  boolean hasTargetLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+   * </pre>
+   *
+   * <code>string target_link = 62671336;</code>
+   *
    * @return The targetLink.
    */
   java.lang.String getTargetLink();
@@ -509,6 +737,18 @@ public interface OperationOrBuilder
    */
   com.google.protobuf.ByteString getTargetLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * </pre>
+   *
+   * <code>string user = 3599307;</code>
+   *
+   * @return Whether the user field is set.
+   */
+  boolean hasUser();
   /**
    *
    *
@@ -541,7 +781,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -551,7 +791,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -561,7 +801,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
   /**
@@ -571,7 +811,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -582,10 +822,22 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

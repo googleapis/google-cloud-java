@@ -58,6 +58,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,20 +69,16 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
-          case 103919208:
-            {
-              successRateRequestVolume_ = input.readInt32();
-              break;
-            }
           case 147495104:
             {
+              bitField0_ |= 0x00000080;
               maxEjectionPercent_ = input.readInt32();
               break;
             }
           case 268379690:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (interval_ != null) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = interval_.toBuilder();
               }
               interval_ =
@@ -91,13 +88,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
                 subBuilder.mergeFrom(interval_);
                 interval_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000040;
               break;
             }
           case 647978042:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (baseEjectionTime_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = baseEjectionTime_.toBuilder();
               }
               baseEjectionTime_ =
@@ -107,41 +104,54 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
                 subBuilder.mergeFrom(baseEjectionTime_);
                 baseEjectionTime_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 950062336:
-            {
-              consecutiveErrors_ = input.readInt32();
-              break;
-            }
-          case 1008041680:
-            {
-              enforcingConsecutiveGatewayFailure_ = input.readInt32();
-              break;
-            }
-          case 1192550352:
-            {
-              consecutiveGatewayFailure_ = input.readInt32();
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1397886184:
             {
+              bitField0_ |= 0x00000400;
               successRateStdevFactor_ = input.readInt32();
               break;
             }
           case 1556069856:
             {
+              bitField0_ |= 0x00000020;
               enforcingSuccessRate_ = input.readInt32();
               break;
             }
           case 1705070080:
             {
+              bitField0_ |= 0x00000008;
               enforcingConsecutiveErrors_ = input.readInt32();
               break;
             }
-          case 2058651576:
+          case -2043564440:
             {
+              bitField0_ |= 0x00000200;
+              successRateRequestVolume_ = input.readInt32();
+              break;
+            }
+          case -1197421312:
+            {
+              bitField0_ |= 0x00000002;
+              consecutiveErrors_ = input.readInt32();
+              break;
+            }
+          case -1139441968:
+            {
+              bitField0_ |= 0x00000010;
+              enforcingConsecutiveGatewayFailure_ = input.readInt32();
+              break;
+            }
+          case -954933296:
+            {
+              bitField0_ |= 0x00000004;
+              consecutiveGatewayFailure_ = input.readInt32();
+              break;
+            }
+          case -88832072:
+            {
+              bitField0_ |= 0x00000100;
               successRateMinimumHosts_ = input.readInt32();
               break;
             }
@@ -179,6 +189,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.OutlierDetection.Builder.class);
   }
 
+  private int bitField0_;
   public static final int BASE_EJECTION_TIME_FIELD_NUMBER = 80997255;
   private com.google.cloud.compute.v1.Duration baseEjectionTime_;
   /**
@@ -194,7 +205,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBaseEjectionTime() {
-    return baseEjectionTime_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -224,10 +235,12 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getBaseEjectionTimeOrBuilder() {
-    return getBaseEjectionTime();
+    return baseEjectionTime_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : baseEjectionTime_;
   }
 
-  public static final int CONSECUTIVE_ERRORS_FIELD_NUMBER = 118757792;
+  public static final int CONSECUTIVE_ERRORS_FIELD_NUMBER = 387193248;
   private int consecutiveErrors_;
   /**
    *
@@ -236,7 +249,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
    * </pre>
    *
-   * <code>int32 consecutive_errors = 118757792;</code>
+   * <code>int32 consecutive_errors = 387193248;</code>
+   *
+   * @return Whether the consecutiveErrors field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsecutiveErrors() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
+   * </pre>
+   *
+   * <code>int32 consecutive_errors = 387193248;</code>
    *
    * @return The consecutiveErrors.
    */
@@ -245,7 +273,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return consecutiveErrors_;
   }
 
-  public static final int CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 149068794;
+  public static final int CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 417504250;
   private int consecutiveGatewayFailure_;
   /**
    *
@@ -254,7 +282,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
    * </pre>
    *
-   * <code>int32 consecutive_gateway_failure = 149068794;</code>
+   * <code>int32 consecutive_gateway_failure = 417504250;</code>
+   *
+   * @return Whether the consecutiveGatewayFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsecutiveGatewayFailure() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
+   * </pre>
+   *
+   * <code>int32 consecutive_gateway_failure = 417504250;</code>
    *
    * @return The consecutiveGatewayFailure.
    */
@@ -274,6 +317,21 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    *
    * <code>int32 enforcing_consecutive_errors = 213133760;</code>
    *
+   * @return Whether the enforcingConsecutiveErrors field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforcingConsecutiveErrors() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive 5xx. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 0.
+   * </pre>
+   *
+   * <code>int32 enforcing_consecutive_errors = 213133760;</code>
+   *
    * @return The enforcingConsecutiveErrors.
    */
   @java.lang.Override
@@ -281,7 +339,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return enforcingConsecutiveErrors_;
   }
 
-  public static final int ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 126005210;
+  public static final int ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 394440666;
   private int enforcingConsecutiveGatewayFailure_;
   /**
    *
@@ -290,7 +348,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
    * </pre>
    *
-   * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
+   * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+   *
+   * @return Whether the enforcingConsecutiveGatewayFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforcingConsecutiveGatewayFailure() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
+   * </pre>
+   *
+   * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
    *
    * @return The enforcingConsecutiveGatewayFailure.
    */
@@ -301,6 +374,21 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
 
   public static final int ENFORCING_SUCCESS_RATE_FIELD_NUMBER = 194508732;
   private int enforcingSuccessRate_;
+  /**
+   *
+   *
+   * <pre>
+   * The percentage chance that a host will be actually ejected when an outlier status is detected through success rate statistics. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
+   * </pre>
+   *
+   * <code>int32 enforcing_success_rate = 194508732;</code>
+   *
+   * @return Whether the enforcingSuccessRate field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforcingSuccessRate() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -332,7 +420,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasInterval() {
-    return interval_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -362,11 +450,28 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : interval_;
   }
 
   public static final int MAX_EJECTION_PERCENT_FIELD_NUMBER = 18436888;
   private int maxEjectionPercent_;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum percentage of hosts in the load balancing pool for the backend service that can be ejected. Defaults to 50%.
+   * </pre>
+   *
+   * <code>int32 max_ejection_percent = 18436888;</code>
+   *
+   * @return Whether the maxEjectionPercent field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxEjectionPercent() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -383,7 +488,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return maxEjectionPercent_;
   }
 
-  public static final int SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER = 257331447;
+  public static final int SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER = 525766903;
   private int successRateMinimumHosts_;
   /**
    *
@@ -392,7 +497,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
    * </pre>
    *
-   * <code>int32 success_rate_minimum_hosts = 257331447;</code>
+   * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+   *
+   * @return Whether the successRateMinimumHosts field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuccessRateMinimumHosts() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
+   * </pre>
+   *
+   * <code>int32 success_rate_minimum_hosts = 525766903;</code>
    *
    * @return The successRateMinimumHosts.
    */
@@ -401,7 +521,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return successRateMinimumHosts_;
   }
 
-  public static final int SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER = 12989901;
+  public static final int SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER = 281425357;
   private int successRateRequestVolume_;
   /**
    *
@@ -410,7 +530,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
    * </pre>
    *
-   * <code>int32 success_rate_request_volume = 12989901;</code>
+   * <code>int32 success_rate_request_volume = 281425357;</code>
+   *
+   * @return Whether the successRateRequestVolume field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuccessRateRequestVolume() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
+   * </pre>
+   *
+   * <code>int32 success_rate_request_volume = 281425357;</code>
    *
    * @return The successRateRequestVolume.
    */
@@ -421,6 +556,21 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
 
   public static final int SUCCESS_RATE_STDEV_FACTOR_FIELD_NUMBER = 174735773;
   private int successRateStdevFactor_;
+  /**
+   *
+   *
+   * <pre>
+   * This factor is used to determine the ejection threshold for success rate outlier ejection. The ejection threshold is the difference between the mean success rate, and the product of this factor and the standard deviation of the mean success rate: mean - (stdev * success_rate_stdev_factor). This factor is divided by a thousand to get a double. That is, if the desired factor is 1.9, the runtime value should be 1900. Defaults to 1900.
+   * </pre>
+   *
+   * <code>int32 success_rate_stdev_factor = 174735773;</code>
+   *
+   * @return Whether the successRateStdevFactor field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuccessRateStdevFactor() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
   /**
    *
    *
@@ -451,38 +601,38 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (successRateRequestVolume_ != 0) {
-      output.writeInt32(12989901, successRateRequestVolume_);
-    }
-    if (maxEjectionPercent_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(18436888, maxEjectionPercent_);
     }
-    if (interval_ != null) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(33547461, getInterval());
     }
-    if (baseEjectionTime_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(80997255, getBaseEjectionTime());
     }
-    if (consecutiveErrors_ != 0) {
-      output.writeInt32(118757792, consecutiveErrors_);
-    }
-    if (enforcingConsecutiveGatewayFailure_ != 0) {
-      output.writeInt32(126005210, enforcingConsecutiveGatewayFailure_);
-    }
-    if (consecutiveGatewayFailure_ != 0) {
-      output.writeInt32(149068794, consecutiveGatewayFailure_);
-    }
-    if (successRateStdevFactor_ != 0) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(174735773, successRateStdevFactor_);
     }
-    if (enforcingSuccessRate_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(194508732, enforcingSuccessRate_);
     }
-    if (enforcingConsecutiveErrors_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(213133760, enforcingConsecutiveErrors_);
     }
-    if (successRateMinimumHosts_ != 0) {
-      output.writeInt32(257331447, successRateMinimumHosts_);
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(281425357, successRateRequestVolume_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(387193248, consecutiveErrors_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeInt32(394440666, enforcingConsecutiveGatewayFailure_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(417504250, consecutiveGatewayFailure_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(525766903, successRateMinimumHosts_);
     }
     unknownFields.writeTo(output);
   }
@@ -493,52 +643,52 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (successRateRequestVolume_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              12989901, successRateRequestVolume_);
-    }
-    if (maxEjectionPercent_ != 0) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(18436888, maxEjectionPercent_);
     }
-    if (interval_ != null) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(33547461, getInterval());
     }
-    if (baseEjectionTime_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(80997255, getBaseEjectionTime());
     }
-    if (consecutiveErrors_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(118757792, consecutiveErrors_);
-    }
-    if (enforcingConsecutiveGatewayFailure_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              126005210, enforcingConsecutiveGatewayFailure_);
-    }
-    if (consecutiveGatewayFailure_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              149068794, consecutiveGatewayFailure_);
-    }
-    if (successRateStdevFactor_ != 0) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               174735773, successRateStdevFactor_);
     }
-    if (enforcingSuccessRate_ != 0) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(194508732, enforcingSuccessRate_);
     }
-    if (enforcingConsecutiveErrors_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               213133760, enforcingConsecutiveErrors_);
     }
-    if (successRateMinimumHosts_ != 0) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              257331447, successRateMinimumHosts_);
+              281425357, successRateRequestVolume_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(387193248, consecutiveErrors_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              394440666, enforcingConsecutiveGatewayFailure_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              417504250, consecutiveGatewayFailure_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              525766903, successRateMinimumHosts_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -560,20 +710,48 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (hasBaseEjectionTime()) {
       if (!getBaseEjectionTime().equals(other.getBaseEjectionTime())) return false;
     }
-    if (getConsecutiveErrors() != other.getConsecutiveErrors()) return false;
-    if (getConsecutiveGatewayFailure() != other.getConsecutiveGatewayFailure()) return false;
-    if (getEnforcingConsecutiveErrors() != other.getEnforcingConsecutiveErrors()) return false;
-    if (getEnforcingConsecutiveGatewayFailure() != other.getEnforcingConsecutiveGatewayFailure())
+    if (hasConsecutiveErrors() != other.hasConsecutiveErrors()) return false;
+    if (hasConsecutiveErrors()) {
+      if (getConsecutiveErrors() != other.getConsecutiveErrors()) return false;
+    }
+    if (hasConsecutiveGatewayFailure() != other.hasConsecutiveGatewayFailure()) return false;
+    if (hasConsecutiveGatewayFailure()) {
+      if (getConsecutiveGatewayFailure() != other.getConsecutiveGatewayFailure()) return false;
+    }
+    if (hasEnforcingConsecutiveErrors() != other.hasEnforcingConsecutiveErrors()) return false;
+    if (hasEnforcingConsecutiveErrors()) {
+      if (getEnforcingConsecutiveErrors() != other.getEnforcingConsecutiveErrors()) return false;
+    }
+    if (hasEnforcingConsecutiveGatewayFailure() != other.hasEnforcingConsecutiveGatewayFailure())
       return false;
-    if (getEnforcingSuccessRate() != other.getEnforcingSuccessRate()) return false;
+    if (hasEnforcingConsecutiveGatewayFailure()) {
+      if (getEnforcingConsecutiveGatewayFailure() != other.getEnforcingConsecutiveGatewayFailure())
+        return false;
+    }
+    if (hasEnforcingSuccessRate() != other.hasEnforcingSuccessRate()) return false;
+    if (hasEnforcingSuccessRate()) {
+      if (getEnforcingSuccessRate() != other.getEnforcingSuccessRate()) return false;
+    }
     if (hasInterval() != other.hasInterval()) return false;
     if (hasInterval()) {
       if (!getInterval().equals(other.getInterval())) return false;
     }
-    if (getMaxEjectionPercent() != other.getMaxEjectionPercent()) return false;
-    if (getSuccessRateMinimumHosts() != other.getSuccessRateMinimumHosts()) return false;
-    if (getSuccessRateRequestVolume() != other.getSuccessRateRequestVolume()) return false;
-    if (getSuccessRateStdevFactor() != other.getSuccessRateStdevFactor()) return false;
+    if (hasMaxEjectionPercent() != other.hasMaxEjectionPercent()) return false;
+    if (hasMaxEjectionPercent()) {
+      if (getMaxEjectionPercent() != other.getMaxEjectionPercent()) return false;
+    }
+    if (hasSuccessRateMinimumHosts() != other.hasSuccessRateMinimumHosts()) return false;
+    if (hasSuccessRateMinimumHosts()) {
+      if (getSuccessRateMinimumHosts() != other.getSuccessRateMinimumHosts()) return false;
+    }
+    if (hasSuccessRateRequestVolume() != other.hasSuccessRateRequestVolume()) return false;
+    if (hasSuccessRateRequestVolume()) {
+      if (getSuccessRateRequestVolume() != other.getSuccessRateRequestVolume()) return false;
+    }
+    if (hasSuccessRateStdevFactor() != other.hasSuccessRateStdevFactor()) return false;
+    if (hasSuccessRateStdevFactor()) {
+      if (getSuccessRateStdevFactor() != other.getSuccessRateStdevFactor()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -589,28 +767,46 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + BASE_EJECTION_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBaseEjectionTime().hashCode();
     }
-    hash = (37 * hash) + CONSECUTIVE_ERRORS_FIELD_NUMBER;
-    hash = (53 * hash) + getConsecutiveErrors();
-    hash = (37 * hash) + CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER;
-    hash = (53 * hash) + getConsecutiveGatewayFailure();
-    hash = (37 * hash) + ENFORCING_CONSECUTIVE_ERRORS_FIELD_NUMBER;
-    hash = (53 * hash) + getEnforcingConsecutiveErrors();
-    hash = (37 * hash) + ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER;
-    hash = (53 * hash) + getEnforcingConsecutiveGatewayFailure();
-    hash = (37 * hash) + ENFORCING_SUCCESS_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + getEnforcingSuccessRate();
+    if (hasConsecutiveErrors()) {
+      hash = (37 * hash) + CONSECUTIVE_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getConsecutiveErrors();
+    }
+    if (hasConsecutiveGatewayFailure()) {
+      hash = (37 * hash) + CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER;
+      hash = (53 * hash) + getConsecutiveGatewayFailure();
+    }
+    if (hasEnforcingConsecutiveErrors()) {
+      hash = (37 * hash) + ENFORCING_CONSECUTIVE_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforcingConsecutiveErrors();
+    }
+    if (hasEnforcingConsecutiveGatewayFailure()) {
+      hash = (37 * hash) + ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforcingConsecutiveGatewayFailure();
+    }
+    if (hasEnforcingSuccessRate()) {
+      hash = (37 * hash) + ENFORCING_SUCCESS_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforcingSuccessRate();
+    }
     if (hasInterval()) {
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
     }
-    hash = (37 * hash) + MAX_EJECTION_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxEjectionPercent();
-    hash = (37 * hash) + SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER;
-    hash = (53 * hash) + getSuccessRateMinimumHosts();
-    hash = (37 * hash) + SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER;
-    hash = (53 * hash) + getSuccessRateRequestVolume();
-    hash = (37 * hash) + SUCCESS_RATE_STDEV_FACTOR_FIELD_NUMBER;
-    hash = (53 * hash) + getSuccessRateStdevFactor();
+    if (hasMaxEjectionPercent()) {
+      hash = (37 * hash) + MAX_EJECTION_PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxEjectionPercent();
+    }
+    if (hasSuccessRateMinimumHosts()) {
+      hash = (37 * hash) + SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER;
+      hash = (53 * hash) + getSuccessRateMinimumHosts();
+    }
+    if (hasSuccessRateRequestVolume()) {
+      hash = (37 * hash) + SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + getSuccessRateRequestVolume();
+    }
+    if (hasSuccessRateStdevFactor()) {
+      hash = (37 * hash) + SUCCESS_RATE_STDEV_FACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getSuccessRateStdevFactor();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -750,7 +946,10 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBaseEjectionTimeFieldBuilder();
+        getIntervalFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -759,33 +958,33 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       if (baseEjectionTimeBuilder_ == null) {
         baseEjectionTime_ = null;
       } else {
-        baseEjectionTime_ = null;
-        baseEjectionTimeBuilder_ = null;
+        baseEjectionTimeBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       consecutiveErrors_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       consecutiveGatewayFailure_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enforcingConsecutiveErrors_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enforcingConsecutiveGatewayFailure_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       enforcingSuccessRate_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (intervalBuilder_ == null) {
         interval_ = null;
       } else {
-        interval_ = null;
-        intervalBuilder_ = null;
+        intervalBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxEjectionPercent_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       successRateMinimumHosts_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       successRateRequestVolume_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       successRateStdevFactor_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -813,25 +1012,61 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.OutlierDetection buildPartial() {
       com.google.cloud.compute.v1.OutlierDetection result =
           new com.google.cloud.compute.v1.OutlierDetection(this);
-      if (baseEjectionTimeBuilder_ == null) {
-        result.baseEjectionTime_ = baseEjectionTime_;
-      } else {
-        result.baseEjectionTime_ = baseEjectionTimeBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (baseEjectionTimeBuilder_ == null) {
+          result.baseEjectionTime_ = baseEjectionTime_;
+        } else {
+          result.baseEjectionTime_ = baseEjectionTimeBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      result.consecutiveErrors_ = consecutiveErrors_;
-      result.consecutiveGatewayFailure_ = consecutiveGatewayFailure_;
-      result.enforcingConsecutiveErrors_ = enforcingConsecutiveErrors_;
-      result.enforcingConsecutiveGatewayFailure_ = enforcingConsecutiveGatewayFailure_;
-      result.enforcingSuccessRate_ = enforcingSuccessRate_;
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.consecutiveErrors_ = consecutiveErrors_;
+        to_bitField0_ |= 0x00000002;
       }
-      result.maxEjectionPercent_ = maxEjectionPercent_;
-      result.successRateMinimumHosts_ = successRateMinimumHosts_;
-      result.successRateRequestVolume_ = successRateRequestVolume_;
-      result.successRateStdevFactor_ = successRateStdevFactor_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consecutiveGatewayFailure_ = consecutiveGatewayFailure_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enforcingConsecutiveErrors_ = enforcingConsecutiveErrors_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enforcingConsecutiveGatewayFailure_ = enforcingConsecutiveGatewayFailure_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.enforcingSuccessRate_ = enforcingSuccessRate_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (intervalBuilder_ == null) {
+          result.interval_ = interval_;
+        } else {
+          result.interval_ = intervalBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.maxEjectionPercent_ = maxEjectionPercent_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.successRateMinimumHosts_ = successRateMinimumHosts_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.successRateRequestVolume_ = successRateRequestVolume_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.successRateStdevFactor_ = successRateStdevFactor_;
+        to_bitField0_ |= 0x00000400;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -884,34 +1119,34 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       if (other.hasBaseEjectionTime()) {
         mergeBaseEjectionTime(other.getBaseEjectionTime());
       }
-      if (other.getConsecutiveErrors() != 0) {
+      if (other.hasConsecutiveErrors()) {
         setConsecutiveErrors(other.getConsecutiveErrors());
       }
-      if (other.getConsecutiveGatewayFailure() != 0) {
+      if (other.hasConsecutiveGatewayFailure()) {
         setConsecutiveGatewayFailure(other.getConsecutiveGatewayFailure());
       }
-      if (other.getEnforcingConsecutiveErrors() != 0) {
+      if (other.hasEnforcingConsecutiveErrors()) {
         setEnforcingConsecutiveErrors(other.getEnforcingConsecutiveErrors());
       }
-      if (other.getEnforcingConsecutiveGatewayFailure() != 0) {
+      if (other.hasEnforcingConsecutiveGatewayFailure()) {
         setEnforcingConsecutiveGatewayFailure(other.getEnforcingConsecutiveGatewayFailure());
       }
-      if (other.getEnforcingSuccessRate() != 0) {
+      if (other.hasEnforcingSuccessRate()) {
         setEnforcingSuccessRate(other.getEnforcingSuccessRate());
       }
       if (other.hasInterval()) {
         mergeInterval(other.getInterval());
       }
-      if (other.getMaxEjectionPercent() != 0) {
+      if (other.hasMaxEjectionPercent()) {
         setMaxEjectionPercent(other.getMaxEjectionPercent());
       }
-      if (other.getSuccessRateMinimumHosts() != 0) {
+      if (other.hasSuccessRateMinimumHosts()) {
         setSuccessRateMinimumHosts(other.getSuccessRateMinimumHosts());
       }
-      if (other.getSuccessRateRequestVolume() != 0) {
+      if (other.hasSuccessRateRequestVolume()) {
         setSuccessRateRequestVolume(other.getSuccessRateRequestVolume());
       }
-      if (other.getSuccessRateStdevFactor() != 0) {
+      if (other.hasSuccessRateStdevFactor()) {
         setSuccessRateStdevFactor(other.getSuccessRateStdevFactor());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -943,6 +1178,8 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.Duration baseEjectionTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -961,7 +1198,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return Whether the baseEjectionTime field is set.
      */
     public boolean hasBaseEjectionTime() {
-      return baseEjectionTimeBuilder_ != null || baseEjectionTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1002,7 +1239,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         baseEjectionTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1022,7 +1259,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         baseEjectionTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1036,7 +1273,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBaseEjectionTime(com.google.cloud.compute.v1.Duration value) {
       if (baseEjectionTimeBuilder_ == null) {
-        if (baseEjectionTime_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && baseEjectionTime_ != null
+            && baseEjectionTime_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           baseEjectionTime_ =
               com.google.cloud.compute.v1.Duration.newBuilder(baseEjectionTime_)
                   .mergeFrom(value)
@@ -1048,7 +1287,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         baseEjectionTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1065,10 +1304,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         baseEjectionTime_ = null;
         onChanged();
       } else {
-        baseEjectionTime_ = null;
-        baseEjectionTimeBuilder_ = null;
+        baseEjectionTimeBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -1081,7 +1319,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.compute.v1.Duration base_ejection_time = 80997255;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getBaseEjectionTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBaseEjectionTimeFieldBuilder().getBuilder();
     }
@@ -1137,7 +1375,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 118757792;</code>
+     * <code>int32 consecutive_errors = 387193248;</code>
+     *
+     * @return Whether the consecutiveErrors field is set.
+     */
+    @java.lang.Override
+    public boolean hasConsecutiveErrors() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
+     * </pre>
+     *
+     * <code>int32 consecutive_errors = 387193248;</code>
      *
      * @return The consecutiveErrors.
      */
@@ -1152,13 +1405,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 118757792;</code>
+     * <code>int32 consecutive_errors = 387193248;</code>
      *
      * @param value The consecutiveErrors to set.
      * @return This builder for chaining.
      */
     public Builder setConsecutiveErrors(int value) {
-
+      bitField0_ |= 0x00000002;
       consecutiveErrors_ = value;
       onChanged();
       return this;
@@ -1170,12 +1423,12 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 118757792;</code>
+     * <code>int32 consecutive_errors = 387193248;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearConsecutiveErrors() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       consecutiveErrors_ = 0;
       onChanged();
       return this;
@@ -1189,7 +1442,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 149068794;</code>
+     * <code>int32 consecutive_gateway_failure = 417504250;</code>
+     *
+     * @return Whether the consecutiveGatewayFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasConsecutiveGatewayFailure() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
+     * </pre>
+     *
+     * <code>int32 consecutive_gateway_failure = 417504250;</code>
      *
      * @return The consecutiveGatewayFailure.
      */
@@ -1204,13 +1472,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 149068794;</code>
+     * <code>int32 consecutive_gateway_failure = 417504250;</code>
      *
      * @param value The consecutiveGatewayFailure to set.
      * @return This builder for chaining.
      */
     public Builder setConsecutiveGatewayFailure(int value) {
-
+      bitField0_ |= 0x00000004;
       consecutiveGatewayFailure_ = value;
       onChanged();
       return this;
@@ -1222,18 +1490,33 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 149068794;</code>
+     * <code>int32 consecutive_gateway_failure = 417504250;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearConsecutiveGatewayFailure() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       consecutiveGatewayFailure_ = 0;
       onChanged();
       return this;
     }
 
     private int enforcingConsecutiveErrors_;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive 5xx. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 0.
+     * </pre>
+     *
+     * <code>int32 enforcing_consecutive_errors = 213133760;</code>
+     *
+     * @return Whether the enforcingConsecutiveErrors field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnforcingConsecutiveErrors() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1262,7 +1545,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEnforcingConsecutiveErrors(int value) {
-
+      bitField0_ |= 0x00000008;
       enforcingConsecutiveErrors_ = value;
       onChanged();
       return this;
@@ -1279,7 +1562,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnforcingConsecutiveErrors() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enforcingConsecutiveErrors_ = 0;
       onChanged();
       return this;
@@ -1293,7 +1576,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     *
+     * @return Whether the enforcingConsecutiveGatewayFailure field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnforcingConsecutiveGatewayFailure() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
+     * </pre>
+     *
+     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
      *
      * @return The enforcingConsecutiveGatewayFailure.
      */
@@ -1308,13 +1606,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
      *
      * @param value The enforcingConsecutiveGatewayFailure to set.
      * @return This builder for chaining.
      */
     public Builder setEnforcingConsecutiveGatewayFailure(int value) {
-
+      bitField0_ |= 0x00000010;
       enforcingConsecutiveGatewayFailure_ = value;
       onChanged();
       return this;
@@ -1326,18 +1624,33 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnforcingConsecutiveGatewayFailure() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       enforcingConsecutiveGatewayFailure_ = 0;
       onChanged();
       return this;
     }
 
     private int enforcingSuccessRate_;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage chance that a host will be actually ejected when an outlier status is detected through success rate statistics. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
+     * </pre>
+     *
+     * <code>int32 enforcing_success_rate = 194508732;</code>
+     *
+     * @return Whether the enforcingSuccessRate field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnforcingSuccessRate() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1366,7 +1679,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEnforcingSuccessRate(int value) {
-
+      bitField0_ |= 0x00000020;
       enforcingSuccessRate_ = value;
       onChanged();
       return this;
@@ -1383,7 +1696,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnforcingSuccessRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       enforcingSuccessRate_ = 0;
       onChanged();
       return this;
@@ -1407,7 +1720,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1448,7 +1761,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1467,7 +1780,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1481,7 +1794,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInterval(com.google.cloud.compute.v1.Duration value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && interval_ != null
+            && interval_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           interval_ =
               com.google.cloud.compute.v1.Duration.newBuilder(interval_)
                   .mergeFrom(value)
@@ -1493,7 +1808,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1510,10 +1825,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
         interval_ = null;
         onChanged();
       } else {
-        interval_ = null;
-        intervalBuilder_ = null;
+        intervalBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -1526,7 +1840,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.compute.v1.Duration interval = 33547461;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
@@ -1584,6 +1898,21 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      *
      * <code>int32 max_ejection_percent = 18436888;</code>
      *
+     * @return Whether the maxEjectionPercent field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxEjectionPercent() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum percentage of hosts in the load balancing pool for the backend service that can be ejected. Defaults to 50%.
+     * </pre>
+     *
+     * <code>int32 max_ejection_percent = 18436888;</code>
+     *
      * @return The maxEjectionPercent.
      */
     @java.lang.Override
@@ -1603,7 +1932,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMaxEjectionPercent(int value) {
-
+      bitField0_ |= 0x00000080;
       maxEjectionPercent_ = value;
       onChanged();
       return this;
@@ -1620,7 +1949,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxEjectionPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxEjectionPercent_ = 0;
       onChanged();
       return this;
@@ -1634,7 +1963,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
+     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     *
+     * @return Whether the successRateMinimumHosts field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuccessRateMinimumHosts() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
+     * </pre>
+     *
+     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
      *
      * @return The successRateMinimumHosts.
      */
@@ -1649,13 +1993,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
+     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
      *
      * @param value The successRateMinimumHosts to set.
      * @return This builder for chaining.
      */
     public Builder setSuccessRateMinimumHosts(int value) {
-
+      bitField0_ |= 0x00000100;
       successRateMinimumHosts_ = value;
       onChanged();
       return this;
@@ -1667,12 +2011,12 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
+     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSuccessRateMinimumHosts() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       successRateMinimumHosts_ = 0;
       onChanged();
       return this;
@@ -1686,7 +2030,22 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 12989901;</code>
+     * <code>int32 success_rate_request_volume = 281425357;</code>
+     *
+     * @return Whether the successRateRequestVolume field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuccessRateRequestVolume() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
+     * </pre>
+     *
+     * <code>int32 success_rate_request_volume = 281425357;</code>
      *
      * @return The successRateRequestVolume.
      */
@@ -1701,13 +2060,13 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 12989901;</code>
+     * <code>int32 success_rate_request_volume = 281425357;</code>
      *
      * @param value The successRateRequestVolume to set.
      * @return This builder for chaining.
      */
     public Builder setSuccessRateRequestVolume(int value) {
-
+      bitField0_ |= 0x00000200;
       successRateRequestVolume_ = value;
       onChanged();
       return this;
@@ -1719,18 +2078,33 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 12989901;</code>
+     * <code>int32 success_rate_request_volume = 281425357;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSuccessRateRequestVolume() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       successRateRequestVolume_ = 0;
       onChanged();
       return this;
     }
 
     private int successRateStdevFactor_;
+    /**
+     *
+     *
+     * <pre>
+     * This factor is used to determine the ejection threshold for success rate outlier ejection. The ejection threshold is the difference between the mean success rate, and the product of this factor and the standard deviation of the mean success rate: mean - (stdev * success_rate_stdev_factor). This factor is divided by a thousand to get a double. That is, if the desired factor is 1.9, the runtime value should be 1900. Defaults to 1900.
+     * </pre>
+     *
+     * <code>int32 success_rate_stdev_factor = 174735773;</code>
+     *
+     * @return Whether the successRateStdevFactor field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuccessRateStdevFactor() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -1759,7 +2133,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSuccessRateStdevFactor(int value) {
-
+      bitField0_ |= 0x00000400;
       successRateStdevFactor_ = value;
       onChanged();
       return this;
@@ -1776,7 +2150,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSuccessRateStdevFactor() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       successRateStdevFactor_ = 0;
       onChanged();
       return this;

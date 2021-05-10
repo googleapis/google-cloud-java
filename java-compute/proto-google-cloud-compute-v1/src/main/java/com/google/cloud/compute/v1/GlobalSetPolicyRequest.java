@@ -74,14 +74,14 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
           case 24987818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               etag_ = s;
               break;
             }
           case 728574354:
             {
               com.google.cloud.compute.v1.Policy.Builder subBuilder = null;
-              if (policy_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = policy_.toBuilder();
               }
               policy_ =
@@ -90,10 +90,10 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
                 subBuilder.mergeFrom(policy_);
                 policy_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
-          case 1078531186:
+          case -1068952462:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bindings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Binding>();
@@ -141,7 +141,8 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder.class);
   }
 
-  public static final int BINDINGS_FIELD_NUMBER = 134816398;
+  private int bitField0_;
+  public static final int BINDINGS_FIELD_NUMBER = 403251854;
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
   /**
    *
@@ -150,7 +151,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
@@ -163,7 +164,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
@@ -177,7 +178,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public int getBindingsCount() {
@@ -190,7 +191,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Binding getBindings(int index) {
@@ -203,7 +204,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
@@ -212,6 +213,21 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
 
   public static final int ETAG_FIELD_NUMBER = 3123477;
   private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+   * </pre>
+   *
+   * <code>string etag = 3123477;</code>
+   *
+   * @return Whether the etag field is set.
+   */
+  @java.lang.Override
+  public boolean hasEtag() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -274,7 +290,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPolicy() {
-    return policy_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -302,7 +318,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.cloud.compute.v1.Policy.getDefaultInstance() : policy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,14 +335,14 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEtagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3123477, etag_);
     }
-    if (policy_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(91071794, getPolicy());
     }
     for (int i = 0; i < bindings_.size(); i++) {
-      output.writeMessage(134816398, bindings_.get(i));
+      output.writeMessage(403251854, bindings_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -337,14 +353,14 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getEtagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3123477, etag_);
     }
-    if (policy_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(91071794, getPolicy());
     }
     for (int i = 0; i < bindings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(134816398, bindings_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(403251854, bindings_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -363,7 +379,10 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
         (com.google.cloud.compute.v1.GlobalSetPolicyRequest) obj;
 
     if (!getBindingsList().equals(other.getBindingsList())) return false;
-    if (!getEtag().equals(other.getEtag())) return false;
+    if (hasEtag() != other.hasEtag()) return false;
+    if (hasEtag()) {
+      if (!getEtag().equals(other.getEtag())) return false;
+    }
     if (hasPolicy() != other.hasPolicy()) return false;
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
@@ -383,8 +402,10 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getBindingsList().hashCode();
     }
-    hash = (37 * hash) + ETAG_FIELD_NUMBER;
-    hash = (53 * hash) + getEtag().hashCode();
+    if (hasEtag()) {
+      hash = (37 * hash) + ETAG_FIELD_NUMBER;
+      hash = (53 * hash) + getEtag().hashCode();
+    }
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
@@ -529,6 +550,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBindingsFieldBuilder();
+        getPolicyFieldBuilder();
       }
     }
 
@@ -542,13 +564,13 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
         bindingsBuilder_.clear();
       }
       etag_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (policyBuilder_ == null) {
         policy_ = null;
       } else {
-        policy_ = null;
-        policyBuilder_ = null;
+        policyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -577,6 +599,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.GlobalSetPolicyRequest result =
           new com.google.cloud.compute.v1.GlobalSetPolicyRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (bindingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bindings_ = java.util.Collections.unmodifiableList(bindings_);
@@ -586,12 +609,19 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       } else {
         result.bindings_ = bindingsBuilder_.build();
       }
-      result.etag_ = etag_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
+      result.etag_ = etag_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (policyBuilder_ == null) {
+          result.policy_ = policy_;
+        } else {
+          result.policy_ = policyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -669,7 +699,8 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
           }
         }
       }
-      if (!other.getEtag().isEmpty()) {
+      if (other.hasEtag()) {
+        bitField0_ |= 0x00000002;
         etag_ = other.etag_;
         onChanged();
       }
@@ -731,7 +762,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
       if (bindingsBuilder_ == null) {
@@ -747,7 +778,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public int getBindingsCount() {
       if (bindingsBuilder_ == null) {
@@ -763,7 +794,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding getBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -779,7 +810,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder setBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -801,7 +832,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder setBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -821,7 +852,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -843,7 +874,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -865,7 +896,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding.Builder builderForValue) {
       if (bindingsBuilder_ == null) {
@@ -884,7 +915,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -904,7 +935,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder addAllBindings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Binding> values) {
@@ -924,7 +955,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder clearBindings() {
       if (bindingsBuilder_ == null) {
@@ -943,7 +974,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public Builder removeBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -962,7 +993,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder getBindingsBuilder(int index) {
       return getBindingsFieldBuilder().getBuilder(index);
@@ -974,7 +1005,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
       if (bindingsBuilder_ == null) {
@@ -990,7 +1021,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
         getBindingsOrBuilderList() {
@@ -1007,7 +1038,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder() {
       return getBindingsFieldBuilder()
@@ -1020,7 +1051,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder(int index) {
       return getBindingsFieldBuilder()
@@ -1033,7 +1064,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding.Builder> getBindingsBuilderList() {
       return getBindingsFieldBuilder().getBuilderList();
@@ -1057,6 +1088,20 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * </pre>
+     *
+     * <code>string etag = 3123477;</code>
+     *
+     * @return Whether the etag field is set.
+     */
+    public boolean hasEtag() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1117,7 +1162,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       etag_ = value;
       onChanged();
       return this;
@@ -1134,7 +1179,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = getDefaultInstance().getEtag();
       onChanged();
       return this;
@@ -1156,7 +1201,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       etag_ = value;
       onChanged();
       return this;
@@ -1180,7 +1225,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1219,7 +1264,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1238,7 +1283,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1252,7 +1297,9 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergePolicy(com.google.cloud.compute.v1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && policy_ != null
+            && policy_ != com.google.cloud.compute.v1.Policy.getDefaultInstance()) {
           policy_ =
               com.google.cloud.compute.v1.Policy.newBuilder(policy_)
                   .mergeFrom(value)
@@ -1264,7 +1311,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1281,10 +1328,9 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
         policy_ = null;
         onChanged();
       } else {
-        policy_ = null;
-        policyBuilder_ = null;
+        policyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1297,7 +1343,7 @@ public final class GlobalSetPolicyRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.compute.v1.Policy policy = 91071794;</code>
      */
     public com.google.cloud.compute.v1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }

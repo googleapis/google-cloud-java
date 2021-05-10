@@ -73,7 +73,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,7 +83,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1307952642:
@@ -134,6 +134,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.VpnTunnelsScopedList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int VPN_TUNNELS_FIELD_NUMBER = 163494080;
   private java.util.List<com.google.cloud.compute.v1.VpnTunnel> vpnTunnels_;
   /**
@@ -218,7 +219,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,7 +264,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < vpnTunnels_.size(); i++) {
@@ -278,7 +279,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < vpnTunnels_.size(); i++) {
@@ -465,6 +466,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVpnTunnelsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       com.google.cloud.compute.v1.VpnTunnelsScopedList result =
           new com.google.cloud.compute.v1.VpnTunnelsScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (vpnTunnelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           vpnTunnels_ = java.util.Collections.unmodifiableList(vpnTunnels_);
@@ -520,11 +523,15 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       } else {
         result.vpnTunnels_ = vpnTunnelsBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1003,7 +1010,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1044,7 +1051,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1063,7 +1070,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1077,7 +1084,9 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1089,7 +1098,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1106,10 +1115,9 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1122,7 +1130,7 @@ public final class VpnTunnelsScopedList extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

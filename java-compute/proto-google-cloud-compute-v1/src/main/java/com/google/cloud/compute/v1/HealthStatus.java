@@ -76,28 +76,15 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
             break;
           case 27575304:
             {
+              bitField0_ |= 0x00000008;
               port_ = input.readInt32();
-              break;
-            }
-          case 109712322:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              weight_ = s;
               break;
             }
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               instance_ = s;
-              break;
-            }
-          case 444573552:
-            {
-              int rawValue = input.readEnum();
-
-              healthState_ = rawValue;
               break;
             }
           case 896260386:
@@ -115,17 +102,31 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
               annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
               break;
             }
-          case 1102694114:
+          case -2037771326:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
+              weight_ = s;
+              break;
+            }
+          case -1702910096:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              healthState_ = rawValue;
+              break;
+            }
+          case -1044789534:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
               ipAddress_ = s;
               break;
             }
-          case 2032528392:
+          case -114955256:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000020;
               weightError_ = rawValue;
               break;
             }
@@ -194,10 +195,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_HEALTH_STATE(0),
-    /** <code>HEALTHY = 171365757;</code> */
-    HEALTHY(171365757),
-    /** <code>UNHEALTHY = 193682628;</code> */
-    UNHEALTHY(193682628),
+    /** <code>HEALTHY = 439801213;</code> */
+    HEALTHY(439801213),
+    /** <code>UNHEALTHY = 462118084;</code> */
+    UNHEALTHY(462118084),
     UNRECOGNIZED(-1),
     ;
 
@@ -211,10 +212,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
-    /** <code>HEALTHY = 171365757;</code> */
-    public static final int HEALTHY_VALUE = 171365757;
-    /** <code>UNHEALTHY = 193682628;</code> */
-    public static final int UNHEALTHY_VALUE = 193682628;
+    /** <code>HEALTHY = 439801213;</code> */
+    public static final int HEALTHY_VALUE = 439801213;
+    /** <code>UNHEALTHY = 462118084;</code> */
+    public static final int UNHEALTHY_VALUE = 462118084;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -242,9 +243,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_HEALTH_STATE;
-        case 171365757:
+        case 439801213:
           return HEALTHY;
-        case 193682628:
+        case 462118084:
           return UNHEALTHY;
         default:
           return null;
@@ -318,14 +319,14 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     UNDEFINED_WEIGHT_ERROR(0),
-    /** <code>INVALID_WEIGHT = 115262944;</code> */
-    INVALID_WEIGHT(115262944),
-    /** <code>MISSING_WEIGHT = 115592081;</code> */
-    MISSING_WEIGHT(115592081),
-    /** <code>UNAVAILABLE_WEIGHT = 171028839;</code> */
-    UNAVAILABLE_WEIGHT(171028839),
-    /** <code>WEIGHT_NONE = 233993375;</code> */
-    WEIGHT_NONE(233993375),
+    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    INVALID_WEIGHT(383698400),
+    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    MISSING_WEIGHT(384027537),
+    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    UNAVAILABLE_WEIGHT(439464295),
+    /** <code>WEIGHT_NONE = 502428831;</code> */
+    WEIGHT_NONE(502428831),
     UNRECOGNIZED(-1),
     ;
 
@@ -339,14 +340,14 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     public static final int UNDEFINED_WEIGHT_ERROR_VALUE = 0;
-    /** <code>INVALID_WEIGHT = 115262944;</code> */
-    public static final int INVALID_WEIGHT_VALUE = 115262944;
-    /** <code>MISSING_WEIGHT = 115592081;</code> */
-    public static final int MISSING_WEIGHT_VALUE = 115592081;
-    /** <code>UNAVAILABLE_WEIGHT = 171028839;</code> */
-    public static final int UNAVAILABLE_WEIGHT_VALUE = 171028839;
-    /** <code>WEIGHT_NONE = 233993375;</code> */
-    public static final int WEIGHT_NONE_VALUE = 233993375;
+    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    public static final int INVALID_WEIGHT_VALUE = 383698400;
+    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    public static final int MISSING_WEIGHT_VALUE = 384027537;
+    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    public static final int UNAVAILABLE_WEIGHT_VALUE = 439464295;
+    /** <code>WEIGHT_NONE = 502428831;</code> */
+    public static final int WEIGHT_NONE_VALUE = 502428831;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -374,13 +375,13 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_WEIGHT_ERROR;
-        case 115262944:
+        case 383698400:
           return INVALID_WEIGHT;
-        case 115592081:
+        case 384027537:
           return MISSING_WEIGHT;
-        case 171028839:
+        case 439464295:
           return UNAVAILABLE_WEIGHT;
-        case 233993375:
+        case 502428831:
           return WEIGHT_NONE;
         default:
           return null;
@@ -435,6 +436,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatus.WeightError)
   }
 
+  private int bitField0_;
   public static final int ANNOTATIONS_FIELD_NUMBER = 112032548;
 
   private static final class AnnotationsDefaultEntryHolder {
@@ -535,7 +537,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
-  public static final int HEALTH_STATE_FIELD_NUMBER = 55571694;
+  public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
   private int healthState_;
   /**
    *
@@ -544,7 +546,22 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   *
+   * @return Whether the healthState field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthState() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
    *
    * @return The enum numeric value on the wire for healthState.
    */
@@ -559,7 +576,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
    *
    * @return The healthState.
    */
@@ -575,6 +592,21 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
+  /**
+   *
+   *
+   * <pre>
+   * URL of the instance resource.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -622,7 +654,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -631,7 +663,22 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAddress() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule IP address assigned to this instance.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -654,7 +701,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -682,6 +729,21 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 port = 3446913;</code>
    *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The named port of the instance group, not necessarily the port that is health-checked.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
    * @return The port.
    */
   @java.lang.Override
@@ -689,10 +751,19 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return port_;
   }
 
-  public static final int WEIGHT_FIELD_NUMBER = 13714040;
+  public static final int WEIGHT_FIELD_NUMBER = 282149496;
   private volatile java.lang.Object weight_;
   /**
-   * <code>string weight = 13714040;</code>
+   * <code>string weight = 282149496;</code>
+   *
+   * @return Whether the weight field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeight() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>string weight = 282149496;</code>
    *
    * @return The weight.
    */
@@ -709,7 +780,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string weight = 13714040;</code>
+   * <code>string weight = 282149496;</code>
    *
    * @return The bytes for weight.
    */
@@ -726,10 +797,19 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int WEIGHT_ERROR_FIELD_NUMBER = 254066049;
+  public static final int WEIGHT_ERROR_FIELD_NUMBER = 522501505;
   private int weightError_;
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   *
+   * @return Whether the weightError field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeightError() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
    * @return The enum numeric value on the wire for weightError.
    */
@@ -738,7 +818,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return weightError_;
   }
   /**
-   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
    *
    * @return The weightError.
    */
@@ -766,29 +846,25 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(3446913, port_);
     }
-    if (!getWeightBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13714040, weight_);
-    }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
-    }
-    if (healthState_
-        != com.google.cloud.compute.v1.HealthStatus.HealthState.UNDEFINED_HEALTH_STATE
-            .getNumber()) {
-      output.writeEnum(55571694, healthState_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
-    if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 282149496, weight_);
     }
-    if (weightError_
-        != com.google.cloud.compute.v1.HealthStatus.WeightError.UNDEFINED_WEIGHT_ERROR
-            .getNumber()) {
-      output.writeEnum(254066049, weightError_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(324007150, healthState_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeEnum(522501505, weightError_);
     }
     unknownFields.writeTo(output);
   }
@@ -799,19 +875,11 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
-    if (!getWeightBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13714040, weight_);
-    }
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
-    }
-    if (healthState_
-        != com.google.cloud.compute.v1.HealthStatus.HealthState.UNDEFINED_HEALTH_STATE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(55571694, healthState_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetAnnotations().getMap().entrySet()) {
@@ -823,13 +891,17 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(112032548, annotations__);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282149496, weight_);
     }
-    if (weightError_
-        != com.google.cloud.compute.v1.HealthStatus.WeightError.UNDEFINED_WEIGHT_ERROR
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(254066049, weightError_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(324007150, healthState_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(522501505, weightError_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -847,12 +919,30 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.HealthStatus other = (com.google.cloud.compute.v1.HealthStatus) obj;
 
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
-    if (healthState_ != other.healthState_) return false;
-    if (!getInstance().equals(other.getInstance())) return false;
-    if (!getIpAddress().equals(other.getIpAddress())) return false;
-    if (getPort() != other.getPort()) return false;
-    if (!getWeight().equals(other.getWeight())) return false;
-    if (weightError_ != other.weightError_) return false;
+    if (hasHealthState() != other.hasHealthState()) return false;
+    if (hasHealthState()) {
+      if (healthState_ != other.healthState_) return false;
+    }
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
+    if (hasIpAddress() != other.hasIpAddress()) return false;
+    if (hasIpAddress()) {
+      if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
+    if (hasWeight() != other.hasWeight()) return false;
+    if (hasWeight()) {
+      if (!getWeight().equals(other.getWeight())) return false;
+    }
+    if (hasWeightError() != other.hasWeightError()) return false;
+    if (hasWeightError()) {
+      if (weightError_ != other.weightError_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -868,18 +958,30 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
-    hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + healthState_;
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
-    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddress().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
-    hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
-    hash = (53 * hash) + getWeight().hashCode();
-    hash = (37 * hash) + WEIGHT_ERROR_FIELD_NUMBER;
-    hash = (53 * hash) + weightError_;
+    if (hasHealthState()) {
+      hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + healthState_;
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
+    if (hasIpAddress()) {
+      hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
+    if (hasWeight()) {
+      hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getWeight().hashCode();
+    }
+    if (hasWeightError()) {
+      hash = (37 * hash) + WEIGHT_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + weightError_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1046,17 +1148,17 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       internalGetMutableAnnotations().clear();
       healthState_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       weight_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       weightError_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1085,14 +1187,34 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.HealthStatus result =
           new com.google.cloud.compute.v1.HealthStatus(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.annotations_ = internalGetAnnotations();
       result.annotations_.makeImmutable();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.healthState_ = healthState_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.instance_ = instance_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.ipAddress_ = ipAddress_;
-      result.port_ = port_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.weight_ = weight_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.weightError_ = weightError_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1143,26 +1265,29 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.HealthStatus other) {
       if (other == com.google.cloud.compute.v1.HealthStatus.getDefaultInstance()) return this;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      if (other.healthState_ != 0) {
-        setHealthStateValue(other.getHealthStateValue());
+      if (other.hasHealthState()) {
+        setHealthState(other.getHealthState());
       }
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000004;
         instance_ = other.instance_;
         onChanged();
       }
-      if (!other.getIpAddress().isEmpty()) {
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000008;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
-      if (!other.getWeight().isEmpty()) {
+      if (other.hasWeight()) {
+        bitField0_ |= 0x00000020;
         weight_ = other.weight_;
         onChanged();
       }
-      if (other.weightError_ != 0) {
-        setWeightErrorValue(other.getWeightErrorValue());
+      if (other.hasWeightError()) {
+        setWeightError(other.getWeightError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1363,7 +1488,22 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * Health state of the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     *
+     * @return Whether the healthState field is set.
+     */
+    @java.lang.Override
+    public boolean hasHealthState() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
      *
      * @return The enum numeric value on the wire for healthState.
      */
@@ -1378,13 +1518,13 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * Health state of the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
      *
      * @param value The enum numeric value on the wire for healthState to set.
      * @return This builder for chaining.
      */
     public Builder setHealthStateValue(int value) {
-
+      bitField0_ |= 0x00000002;
       healthState_ = value;
       onChanged();
       return this;
@@ -1396,7 +1536,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * Health state of the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
      *
      * @return The healthState.
      */
@@ -1416,7 +1556,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * Health state of the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
      *
      * @param value The healthState to set.
      * @return This builder for chaining.
@@ -1425,7 +1565,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       healthState_ = value.getNumber();
       onChanged();
       return this;
@@ -1437,18 +1577,32 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * Health state of the instance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       healthState_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the instance resource.
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1509,7 +1663,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1526,7 +1680,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -1548,7 +1702,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       instance_ = value;
       onChanged();
       return this;
@@ -1562,7 +1716,21 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
+     *
+     * @return Whether the ipAddress field is set.
+     */
+    public boolean hasIpAddress() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A forwarding rule IP address assigned to this instance.
+     * </pre>
+     *
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -1584,7 +1752,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -1606,7 +1774,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -1615,7 +1783,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -1627,12 +1795,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -1644,7 +1812,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule IP address assigned to this instance.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -1654,13 +1822,28 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       ipAddress_ = value;
       onChanged();
       return this;
     }
 
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * The named port of the instance group, not necessarily the port that is health-checked.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1689,7 +1872,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000010;
       port_ = value;
       onChanged();
       return this;
@@ -1706,7 +1889,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       port_ = 0;
       onChanged();
       return this;
@@ -1714,7 +1897,15 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object weight_ = "";
     /**
-     * <code>string weight = 13714040;</code>
+     * <code>string weight = 282149496;</code>
+     *
+     * @return Whether the weight field is set.
+     */
+    public boolean hasWeight() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>string weight = 282149496;</code>
      *
      * @return The weight.
      */
@@ -1730,7 +1921,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string weight = 13714040;</code>
+     * <code>string weight = 282149496;</code>
      *
      * @return The bytes for weight.
      */
@@ -1746,7 +1937,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string weight = 13714040;</code>
+     * <code>string weight = 282149496;</code>
      *
      * @param value The weight to set.
      * @return This builder for chaining.
@@ -1755,24 +1946,24 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       weight_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string weight = 13714040;</code>
+     * <code>string weight = 282149496;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearWeight() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       weight_ = getDefaultInstance().getWeight();
       onChanged();
       return this;
     }
     /**
-     * <code>string weight = 13714040;</code>
+     * <code>string weight = 282149496;</code>
      *
      * @param value The bytes for weight to set.
      * @return This builder for chaining.
@@ -1782,7 +1973,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       weight_ = value;
       onChanged();
       return this;
@@ -1790,7 +1981,16 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
 
     private int weightError_ = 0;
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     *
+     * @return Whether the weightError field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeightError() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
      * @return The enum numeric value on the wire for weightError.
      */
@@ -1799,19 +1999,19 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       return weightError_;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
      * @param value The enum numeric value on the wire for weightError to set.
      * @return This builder for chaining.
      */
     public Builder setWeightErrorValue(int value) {
-
+      bitField0_ |= 0x00000040;
       weightError_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
      * @return The weightError.
      */
@@ -1825,7 +2025,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
      * @param value The weightError to set.
      * @return This builder for chaining.
@@ -1834,18 +2034,18 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       weightError_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+     * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearWeightError() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       weightError_ = 0;
       onChanged();
       return this;

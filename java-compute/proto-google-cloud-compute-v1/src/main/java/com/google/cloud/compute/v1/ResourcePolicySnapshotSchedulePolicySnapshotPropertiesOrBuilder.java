@@ -32,6 +32,18 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    *
    * <code>string chain_name = 68644169;</code>
    *
+   * @return Whether the chainName field is set.
+   */
+  boolean hasChainName();
+  /**
+   *
+   *
+   * <pre>
+   * Chain name that the snapshot is created in.
+   * </pre>
+   *
+   * <code>string chain_name = 68644169;</code>
+   *
    * @return The chainName.
    */
   java.lang.String getChainName();
@@ -55,7 +67,19 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 117115357;</code>
+   * <code>bool guest_flush = 385550813;</code>
+   *
+   * @return Whether the guestFlush field is set.
+   */
+  boolean hasGuestFlush();
+  /**
+   *
+   *
+   * <pre>
+   * Indication to perform a 'guest aware' snapshot.
+   * </pre>
+   *
+   * <code>bool guest_flush = 385550813;</code>
    *
    * @return The guestFlush.
    */
@@ -68,7 +92,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
   /**
@@ -78,7 +102,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -91,7 +115,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -101,7 +125,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -111,7 +135,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -122,7 +146,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return A list containing the storageLocations.
    */
@@ -134,7 +158,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return The count of storageLocations.
    */
@@ -146,7 +170,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the element to return.
    * @return The storageLocations at the given index.
@@ -159,7 +183,7 @@ public interface ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the storageLocations at the given index.

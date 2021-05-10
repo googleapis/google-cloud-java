@@ -59,6 +59,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               target_ = s;
               break;
             }
@@ -110,8 +111,18 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.TargetReference.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
+  /**
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  @java.lang.Override
+  public boolean hasTarget() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    * <code>string target = 192835985;</code>
    *
@@ -161,7 +172,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
     unknownFields.writeTo(output);
@@ -173,7 +184,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
     size += unknownFields.getSerializedSize();
@@ -192,7 +203,10 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.TargetReference other =
         (com.google.cloud.compute.v1.TargetReference) obj;
 
-    if (!getTarget().equals(other.getTarget())) return false;
+    if (hasTarget() != other.hasTarget()) return false;
+    if (hasTarget()) {
+      if (!getTarget().equals(other.getTarget())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -204,8 +218,10 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TARGET_FIELD_NUMBER;
-    hash = (53 * hash) + getTarget().hashCode();
+    if (hasTarget()) {
+      hash = (37 * hash) + TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getTarget().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +367,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       target_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -379,7 +395,13 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.TargetReference buildPartial() {
       com.google.cloud.compute.v1.TargetReference result =
           new com.google.cloud.compute.v1.TargetReference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.target_ = target_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -429,7 +451,8 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetReference other) {
       if (other == com.google.cloud.compute.v1.TargetReference.getDefaultInstance()) return this;
-      if (!other.getTarget().isEmpty()) {
+      if (other.hasTarget()) {
+        bitField0_ |= 0x00000001;
         target_ = other.target_;
         onChanged();
       }
@@ -462,7 +485,17 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object target_ = "";
+    /**
+     * <code>string target = 192835985;</code>
+     *
+     * @return Whether the target field is set.
+     */
+    public boolean hasTarget() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      * <code>string target = 192835985;</code>
      *
@@ -505,7 +538,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       target_ = value;
       onChanged();
       return this;
@@ -516,7 +549,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -532,7 +565,7 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       target_ = value;
       onChanged();
       return this;

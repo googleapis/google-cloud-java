@@ -80,7 +80,19 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
+   *
+   * @return Whether the queryPath field is set.
+   */
+  boolean hasQueryPath();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the guest attributes path to be queried.
+   * </pre>
+   *
+   * <code>string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -92,12 +104,24 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
   com.google.protobuf.ByteString getQueryPathBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the key for the guest attributes entry.
+   * </pre>
+   *
+   * <code>string variable_key = 164364828;</code>
+   *
+   * @return Whether the variableKey field is set.
+   */
+  boolean hasVariableKey();
   /**
    *
    *

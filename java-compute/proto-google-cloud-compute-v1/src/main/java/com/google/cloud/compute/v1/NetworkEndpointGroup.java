@@ -85,71 +85,48 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               name_ = s;
               break;
             }
           case 28246024:
             {
+              bitField0_ |= 0x00002000;
               size_ = input.readInt32();
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00008000;
               zone_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               creationTimestamp_ = s;
-              break;
-            }
-          case 315137906:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case 578826498:
-            {
-              com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder subBuilder = null;
-              if (appEngine_ != null) {
-                subBuilder = appEngine_.toBuilder();
-              }
-              appEngine_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(appEngine_);
-                appEngine_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 888482826:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder subBuilder = null;
-              if (cloudRun_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = cloudRun_.toBuilder();
               }
               cloudRun_ =
@@ -160,7 +137,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
                 subBuilder.mergeFrom(cloudRun_);
                 cloudRun_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
           case 896260386:
@@ -181,48 +158,73 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           case 946412184:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000400;
               networkEndpointType_ = rawValue;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1239539192:
-            {
-              defaultPort_ = input.readInt32();
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000200;
               network_ = s;
               break;
             }
-          case 2011665682:
+          case -1832345742:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              subnetwork_ = s;
+              break;
+            }
+          case -1568657150:
+            {
+              com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = appEngine_.toBuilder();
+              }
+              appEngine_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(appEngine_);
+                appEngine_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              description_ = s;
+              break;
+            }
+          case -907944456:
+            {
+              bitField0_ |= 0x00000010;
+              defaultPort_ = input.readInt32();
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              selfLink_ = s;
+              break;
+            }
+          case -135817966:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder subBuilder =
                   null;
-              if (cloudFunction_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = cloudFunction_.toBuilder();
               }
               cloudFunction_ =
@@ -233,7 +235,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
                 subBuilder.mergeFrom(cloudFunction_);
                 cloudFunction_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -301,16 +303,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     UNDEFINED_NETWORK_ENDPOINT_TYPE(0),
-    /** <code>GCE_VM_IP_PORT = 233402919;</code> */
-    GCE_VM_IP_PORT(233402919),
-    /** <code>INTERNET_FQDN_PORT = 135719021;</code> */
-    INTERNET_FQDN_PORT(135719021),
-    /** <code>INTERNET_IP_PORT = 209284507;</code> */
-    INTERNET_IP_PORT(209284507),
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 68012512;</code> */
-    NON_GCP_PRIVATE_IP_PORT(68012512),
-    /** <code>SERVERLESS = 2057052;</code> */
-    SERVERLESS(2057052),
+    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
+    GCE_VM_IP_PORT(501838375),
+    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
+    INTERNET_FQDN_PORT(404154477),
+    /** <code>INTERNET_IP_PORT = 477719963;</code> */
+    INTERNET_IP_PORT(477719963),
+    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
+    NON_GCP_PRIVATE_IP_PORT(336447968),
+    /** <code>SERVERLESS = 270492508;</code> */
+    SERVERLESS(270492508),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,16 +326,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_ENDPOINT_TYPE_VALUE = 0;
-    /** <code>GCE_VM_IP_PORT = 233402919;</code> */
-    public static final int GCE_VM_IP_PORT_VALUE = 233402919;
-    /** <code>INTERNET_FQDN_PORT = 135719021;</code> */
-    public static final int INTERNET_FQDN_PORT_VALUE = 135719021;
-    /** <code>INTERNET_IP_PORT = 209284507;</code> */
-    public static final int INTERNET_IP_PORT_VALUE = 209284507;
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 68012512;</code> */
-    public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 68012512;
-    /** <code>SERVERLESS = 2057052;</code> */
-    public static final int SERVERLESS_VALUE = 2057052;
+    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
+    public static final int GCE_VM_IP_PORT_VALUE = 501838375;
+    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
+    public static final int INTERNET_FQDN_PORT_VALUE = 404154477;
+    /** <code>INTERNET_IP_PORT = 477719963;</code> */
+    public static final int INTERNET_IP_PORT_VALUE = 477719963;
+    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
+    public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 336447968;
+    /** <code>SERVERLESS = 270492508;</code> */
+    public static final int SERVERLESS_VALUE = 270492508;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -361,15 +363,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_ENDPOINT_TYPE;
-        case 233402919:
+        case 501838375:
           return GCE_VM_IP_PORT;
-        case 135719021:
+        case 404154477:
           return INTERNET_FQDN_PORT;
-        case 209284507:
+        case 477719963:
           return INTERNET_IP_PORT;
-        case 68012512:
+        case 336447968:
           return NON_GCP_PRIVATE_IP_PORT;
-        case 2057052:
+        case 270492508:
           return SERVERLESS;
         default:
           return null;
@@ -427,6 +429,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType)
   }
 
+  private int bitField0_;
   public static final int ANNOTATIONS_FIELD_NUMBER = 112032548;
 
   private static final class AnnotationsDefaultEntryHolder {
@@ -527,7 +530,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
-  public static final int APP_ENGINE_FIELD_NUMBER = 72353312;
+  public static final int APP_ENGINE_FIELD_NUMBER = 340788768;
   private com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine appEngine_;
   /**
    *
@@ -536,13 +539,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
    *
    * @return Whether the appEngine field is set.
    */
   @java.lang.Override
   public boolean hasAppEngine() {
-    return appEngine_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -551,7 +554,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
    *
    * @return The appEngine.
    */
@@ -568,15 +571,17 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder
       getAppEngineOrBuilder() {
-    return getAppEngine();
+    return appEngine_ == null
+        ? com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance()
+        : appEngine_;
   }
 
-  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 251458210;
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 519893666;
   private com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloudFunction_;
   /**
    *
@@ -585,14 +590,14 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    *
    * @return Whether the cloudFunction field is set.
    */
   @java.lang.Override
   public boolean hasCloudFunction() {
-    return cloudFunction_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -601,7 +606,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    *
    * @return The cloudFunction.
@@ -619,13 +624,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder
       getCloudFunctionOrBuilder() {
-    return getCloudFunction();
+    return cloudFunction_ == null
+        ? com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance()
+        : cloudFunction_;
   }
 
   public static final int CLOUD_RUN_FIELD_NUMBER = 111060353;
@@ -643,7 +650,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasCloudRun() {
-    return cloudRun_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -673,11 +680,28 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointGroupCloudRunOrBuilder getCloudRunOrBuilder() {
-    return getCloudRun();
+    return cloudRun_ == null
+        ? com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance()
+        : cloudRun_;
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -725,7 +749,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DEFAULT_PORT_FIELD_NUMBER = 154942399;
+  public static final int DEFAULT_PORT_FIELD_NUMBER = 423377855;
   private int defaultPort_;
   /**
    *
@@ -734,7 +758,22 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * The default port used if the port number is not specified in the network endpoint.
    * </pre>
    *
-   * <code>int32 default_port = 154942399;</code>
+   * <code>int32 default_port = 423377855;</code>
+   *
+   * @return Whether the defaultPort field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultPort() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The default port used if the port number is not specified in the network endpoint.
+   * </pre>
+   *
+   * <code>int32 default_port = 423377855;</code>
    *
    * @return The defaultPort.
    */
@@ -743,7 +782,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return defaultPort_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -752,7 +791,22 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -775,7 +829,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -794,6 +848,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -852,6 +921,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -901,6 +985,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -941,6 +1040,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
   private volatile java.lang.Object network_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -1001,6 +1115,23 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
    * </code>
    *
+   * @return Whether the networkEndpointType field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkEndpointType() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
+   * </code>
+   *
    * @return The enum numeric value on the wire for networkEndpointType.
    */
   @java.lang.Override
@@ -1034,6 +1165,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the region where the network endpoint group is located.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -1081,7 +1227,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1090,7 +1236,22 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1113,7 +1274,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1141,6 +1302,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <code>int32 size = 3530753;</code>
    *
+   * @return Whether the size field is set.
+   */
+  @java.lang.Override
+  public boolean hasSize() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Number of network endpoints in the network endpoint group.
+   * </pre>
+   *
+   * <code>int32 size = 3530753;</code>
+   *
    * @return The size.
    */
   @java.lang.Override
@@ -1148,7 +1324,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return size_;
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
+  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -1157,7 +1333,22 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetwork() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -1180,7 +1371,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -1199,6 +1390,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the zone where the network endpoint group is located.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
   /**
    *
    *
@@ -1260,58 +1466,55 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (size_ != 0) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt32(3530753, size_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
-    }
-    if (appEngine_ != null) {
-      output.writeMessage(72353312, getAppEngine());
-    }
-    if (cloudRun_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(111060353, getCloudRun());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
-    if (networkEndpointType_
-        != com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType
-            .UNDEFINED_NETWORK_ENDPOINT_TYPE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeEnum(118301523, networkEndpointType_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (defaultPort_ != 0) {
-      output.writeInt32(154942399, defaultPort_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (cloudFunction_ != null) {
-      output.writeMessage(251458210, getCloudFunction());
+    if (((bitField0_ & 0x00004000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(340788768, getAppEngine());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeInt32(423377855, defaultPort_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(519893666, getCloudFunction());
     }
     unknownFields.writeTo(output);
   }
@@ -1322,32 +1525,26 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (size_ != 0) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3530753, size_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
-    }
-    if (appEngine_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(72353312, getAppEngine());
-    }
-    if (cloudRun_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(111060353, getCloudRun());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1360,31 +1557,34 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(112032548, annotations__);
     }
-    if (networkEndpointType_
-        != com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType
-            .UNDEFINED_NETWORK_ENDPOINT_TYPE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(118301523, networkEndpointType_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (defaultPort_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(154942399, defaultPort_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (cloudFunction_ != null) {
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(340788768, getAppEngine());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(423377855, defaultPort_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(251458210, getCloudFunction());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(519893666, getCloudFunction());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1415,19 +1615,58 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (hasCloudRun()) {
       if (!getCloudRun().equals(other.getCloudRun())) return false;
     }
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (getDefaultPort() != other.getDefaultPort()) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (networkEndpointType_ != other.networkEndpointType_) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (getSize() != other.getSize()) return false;
-    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDefaultPort() != other.hasDefaultPort()) return false;
+    if (hasDefaultPort()) {
+      if (getDefaultPort() != other.getDefaultPort()) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasNetworkEndpointType() != other.hasNetworkEndpointType()) return false;
+    if (hasNetworkEndpointType()) {
+      if (networkEndpointType_ != other.networkEndpointType_) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSize() != other.hasSize()) return false;
+    if (hasSize()) {
+      if (getSize() != other.getSize()) return false;
+    }
+    if (hasSubnetwork() != other.hasSubnetwork()) return false;
+    if (hasSubnetwork()) {
+      if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    }
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1455,32 +1694,58 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + CLOUD_RUN_FIELD_NUMBER;
       hash = (53 * hash) + getCloudRun().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DEFAULT_PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getDefaultPort();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + NETWORK_ENDPOINT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + networkEndpointType_;
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getSize();
-    hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnetwork().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDefaultPort()) {
+      hash = (37 * hash) + DEFAULT_PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultPort();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasNetworkEndpointType()) {
+      hash = (37 * hash) + NETWORK_ENDPOINT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + networkEndpointType_;
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSize()) {
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getSize();
+    }
+    if (hasSubnetwork()) {
+      hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetwork().hashCode();
+    }
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1641,7 +1906,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAppEngineFieldBuilder();
+        getCloudFunctionFieldBuilder();
+        getCloudRunFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1651,47 +1920,47 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (appEngineBuilder_ == null) {
         appEngine_ = null;
       } else {
-        appEngine_ = null;
-        appEngineBuilder_ = null;
+        appEngineBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (cloudFunctionBuilder_ == null) {
         cloudFunction_ = null;
       } else {
-        cloudFunction_ = null;
-        cloudFunctionBuilder_ = null;
+        cloudFunctionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (cloudRunBuilder_ == null) {
         cloudRun_ = null;
       } else {
-        cloudRun_ = null;
-        cloudRunBuilder_ = null;
+        cloudRunBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       defaultPort_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       networkEndpointType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       size_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       subnetwork_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -1720,36 +1989,86 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       com.google.cloud.compute.v1.NetworkEndpointGroup result =
           new com.google.cloud.compute.v1.NetworkEndpointGroup(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.annotations_ = internalGetAnnotations();
       result.annotations_.makeImmutable();
-      if (appEngineBuilder_ == null) {
-        result.appEngine_ = appEngine_;
-      } else {
-        result.appEngine_ = appEngineBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (appEngineBuilder_ == null) {
+          result.appEngine_ = appEngine_;
+        } else {
+          result.appEngine_ = appEngineBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (cloudFunctionBuilder_ == null) {
-        result.cloudFunction_ = cloudFunction_;
-      } else {
-        result.cloudFunction_ = cloudFunctionBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (cloudFunctionBuilder_ == null) {
+          result.cloudFunction_ = cloudFunction_;
+        } else {
+          result.cloudFunction_ = cloudFunctionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
-      if (cloudRunBuilder_ == null) {
-        result.cloudRun_ = cloudRun_;
-      } else {
-        result.cloudRun_ = cloudRunBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (cloudRunBuilder_ == null) {
+          result.cloudRun_ = cloudRun_;
+        } else {
+          result.cloudRun_ = cloudRunBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
       }
       result.creationTimestamp_ = creationTimestamp_;
-      result.defaultPort_ = defaultPort_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.defaultPort_ = defaultPort_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.network_ = network_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.networkEndpointType_ = networkEndpointType_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00001000;
+      }
       result.selfLink_ = selfLink_;
-      result.size_ = size_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.size_ = size_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
       result.subnetwork_ = subnetwork_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00008000;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1810,52 +2129,62 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (other.hasCloudRun()) {
         mergeCloudRun(other.getCloudRun());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000010;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (other.getDefaultPort() != 0) {
+      if (other.hasDefaultPort()) {
         setDefaultPort(other.getDefaultPort());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000040;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000080;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000100;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000200;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000400;
         network_ = other.network_;
         onChanged();
       }
-      if (other.networkEndpointType_ != 0) {
-        setNetworkEndpointTypeValue(other.getNetworkEndpointTypeValue());
+      if (other.hasNetworkEndpointType()) {
+        setNetworkEndpointType(other.getNetworkEndpointType());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00001000;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.getSize() != 0) {
+      if (other.hasSize()) {
         setSize(other.getSize());
       }
-      if (!other.getSubnetwork().isEmpty()) {
+      if (other.hasSubnetwork()) {
+        bitField0_ |= 0x00008000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00010000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -2063,12 +2392,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      *
      * @return Whether the appEngine field is set.
      */
     public boolean hasAppEngine() {
-      return appEngineBuilder_ != null || appEngine_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2077,7 +2406,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      *
      * @return The appEngine.
      */
@@ -2097,7 +2426,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public Builder setAppEngine(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine value) {
       if (appEngineBuilder_ == null) {
@@ -2109,7 +2438,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         appEngineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2119,7 +2448,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public Builder setAppEngine(
         com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder builderForValue) {
@@ -2129,7 +2458,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         appEngineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2139,11 +2468,14 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public Builder mergeAppEngine(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine value) {
       if (appEngineBuilder_ == null) {
-        if (appEngine_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && appEngine_ != null
+            && appEngine_
+                != com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance()) {
           appEngine_ =
               com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.newBuilder(appEngine_)
                   .mergeFrom(value)
@@ -2155,7 +2487,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         appEngineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2165,17 +2497,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public Builder clearAppEngine() {
       if (appEngineBuilder_ == null) {
         appEngine_ = null;
         onChanged();
       } else {
-        appEngine_ = null;
-        appEngineBuilder_ = null;
+        appEngineBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -2185,10 +2516,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder getAppEngineBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAppEngineFieldBuilder().getBuilder();
     }
@@ -2199,7 +2530,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder
         getAppEngineOrBuilder() {
@@ -2218,7 +2549,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine,
@@ -2250,13 +2581,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      *
      * @return Whether the cloudFunction field is set.
      */
     public boolean hasCloudFunction() {
-      return cloudFunctionBuilder_ != null || cloudFunction_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2265,7 +2596,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      *
      * @return The cloudFunction.
@@ -2286,7 +2617,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public Builder setCloudFunction(
@@ -2300,7 +2631,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -2310,7 +2641,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public Builder setCloudFunction(
@@ -2321,7 +2652,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -2331,13 +2662,17 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public Builder mergeCloudFunction(
         com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction value) {
       if (cloudFunctionBuilder_ == null) {
-        if (cloudFunction_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && cloudFunction_ != null
+            && cloudFunction_
+                != com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction
+                    .getDefaultInstance()) {
           cloudFunction_ =
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.newBuilder(
                       cloudFunction_)
@@ -2350,7 +2685,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudFunctionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -2360,7 +2695,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public Builder clearCloudFunction() {
@@ -2368,10 +2703,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         cloudFunction_ = null;
         onChanged();
       } else {
-        cloudFunction_ = null;
-        cloudFunctionBuilder_ = null;
+        cloudFunctionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -2381,12 +2715,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder
         getCloudFunctionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
@@ -2397,7 +2731,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder
@@ -2417,7 +2751,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2455,7 +2789,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return Whether the cloudRun field is set.
      */
     public boolean hasCloudRun() {
-      return cloudRunBuilder_ != null || cloudRun_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2496,7 +2830,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudRunBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2516,7 +2850,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudRunBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2530,7 +2864,10 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCloudRun(com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun value) {
       if (cloudRunBuilder_ == null) {
-        if (cloudRun_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && cloudRun_ != null
+            && cloudRun_
+                != com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance()) {
           cloudRun_ =
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.newBuilder(cloudRun_)
                   .mergeFrom(value)
@@ -2542,7 +2879,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       } else {
         cloudRunBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2559,10 +2896,9 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         cloudRun_ = null;
         onChanged();
       } else {
-        cloudRun_ = null;
-        cloudRunBuilder_ = null;
+        cloudRunBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -2575,7 +2911,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder getCloudRunBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCloudRunFieldBuilder().getBuilder();
     }
@@ -2625,6 +2961,20 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2685,7 +3035,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2702,7 +3052,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -2724,7 +3074,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2738,7 +3088,22 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 154942399;</code>
+     * <code>int32 default_port = 423377855;</code>
+     *
+     * @return Whether the defaultPort field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultPort() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default port used if the port number is not specified in the network endpoint.
+     * </pre>
+     *
+     * <code>int32 default_port = 423377855;</code>
      *
      * @return The defaultPort.
      */
@@ -2753,13 +3118,13 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 154942399;</code>
+     * <code>int32 default_port = 423377855;</code>
      *
      * @param value The defaultPort to set.
      * @return This builder for chaining.
      */
     public Builder setDefaultPort(int value) {
-
+      bitField0_ |= 0x00000020;
       defaultPort_ = value;
       onChanged();
       return this;
@@ -2771,12 +3136,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 154942399;</code>
+     * <code>int32 default_port = 423377855;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDefaultPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       defaultPort_ = 0;
       onChanged();
       return this;
@@ -2790,7 +3155,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2812,7 +3191,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2834,7 +3213,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2843,7 +3222,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       description_ = value;
       onChanged();
       return this;
@@ -2855,12 +3234,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -2872,7 +3251,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2882,13 +3261,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2949,7 +3342,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       id_ = value;
       onChanged();
       return this;
@@ -2966,7 +3359,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -2988,13 +3381,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3055,7 +3462,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
@@ -3072,7 +3479,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3094,13 +3501,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -3161,7 +3582,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
@@ -3178,7 +3599,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3200,13 +3621,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -3267,7 +3702,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       network_ = value;
       onChanged();
       return this;
@@ -3284,7 +3719,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -3306,13 +3741,30 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       network_ = value;
       onChanged();
       return this;
     }
 
     private int networkEndpointType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;
+     * </code>
+     *
+     * @return Whether the networkEndpointType field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetworkEndpointType() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -3345,7 +3797,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setNetworkEndpointTypeValue(int value) {
-
+      bitField0_ |= 0x00000800;
       networkEndpointType_ = value;
       onChanged();
       return this;
@@ -3393,7 +3845,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       networkEndpointType_ = value.getNumber();
       onChanged();
       return this;
@@ -3412,13 +3864,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointType() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       networkEndpointType_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the region where the network endpoint group is located.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -3479,7 +3945,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -3496,7 +3962,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3518,7 +3984,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -3532,7 +3998,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3554,7 +4034,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3576,7 +4056,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3585,7 +4065,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3597,12 +4077,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3614,7 +4094,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3624,13 +4104,28 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int size_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Number of network endpoints in the network endpoint group.
+     * </pre>
+     *
+     * <code>int32 size = 3530753;</code>
+     *
+     * @return Whether the size field is set.
+     */
+    @java.lang.Override
+    public boolean hasSize() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
     /**
      *
      *
@@ -3659,7 +4154,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-
+      bitField0_ |= 0x00004000;
       size_ = value;
       onChanged();
       return this;
@@ -3676,7 +4171,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       size_ = 0;
       onChanged();
       return this;
@@ -3690,7 +4185,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return Whether the subnetwork field is set.
+     */
+    public boolean hasSubnetwork() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The subnetwork.
      */
@@ -3712,7 +4221,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -3734,7 +4243,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -3743,7 +4252,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -3755,12 +4264,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -3772,7 +4281,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -3782,13 +4291,27 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00008000;
       subnetwork_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the zone where the network endpoint group is located.
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
     /**
      *
      *
@@ -3849,7 +4372,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       zone_ = value;
       onChanged();
       return this;
@@ -3866,7 +4389,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -3888,7 +4411,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00010000;
       zone_ = value;
       onChanged();
       return this;

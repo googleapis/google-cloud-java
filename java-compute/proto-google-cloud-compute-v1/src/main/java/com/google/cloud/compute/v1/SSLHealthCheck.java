@@ -63,6 +63,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,41 +76,42 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
             break;
           case 27575304:
             {
+              bitField0_ |= 0x00000001;
               port_ = input.readInt32();
               break;
             }
           case 175608954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               request_ = s;
               break;
             }
           case 332274762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               portName_ = s;
               break;
             }
           case 412724776:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000004;
               portSpecification_ = rawValue;
               break;
             }
           case 1282993136:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000008;
               proxyHeader_ = rawValue;
               break;
             }
           case 1572381194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               response_ = s;
               break;
             }
@@ -173,10 +175,10 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PORT_SPECIFICATION(0),
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 80865215;</code> */
-    USE_NAMED_PORT(80865215),
-    /** <code>USE_SERVING_PORT = 94202060;</code> */
-    USE_SERVING_PORT(94202060),
+    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    USE_NAMED_PORT(349300671),
+    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    USE_SERVING_PORT(362637516),
     UNRECOGNIZED(-1),
     ;
 
@@ -192,10 +194,10 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 80865215;</code> */
-    public static final int USE_NAMED_PORT_VALUE = 80865215;
-    /** <code>USE_SERVING_PORT = 94202060;</code> */
-    public static final int USE_SERVING_PORT_VALUE = 94202060;
+    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    public static final int USE_NAMED_PORT_VALUE = 349300671;
+    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    public static final int USE_SERVING_PORT_VALUE = 362637516;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -225,9 +227,9 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PORT_SPECIFICATION;
         case 190235748:
           return USE_FIXED_PORT;
-        case 80865215:
+        case 349300671:
           return USE_NAMED_PORT;
-        case 94202060:
+        case 362637516:
           return USE_SERVING_PORT;
         default:
           return null;
@@ -307,8 +309,8 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PROXY_HEADER(0),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>PROXY_V1 = 65917484;</code> */
-    PROXY_V1(65917484),
+    /** <code>PROXY_V1 = 334352940;</code> */
+    PROXY_V1(334352940),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,8 +326,8 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>PROXY_V1 = 65917484;</code> */
-    public static final int PROXY_V1_VALUE = 65917484;
+    /** <code>PROXY_V1 = 334352940;</code> */
+    public static final int PROXY_V1_VALUE = 334352940;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -355,7 +357,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PROXY_HEADER;
         case 2402104:
           return NONE;
-        case 65917484:
+        case 334352940:
           return PROXY_V1;
         default:
           return null;
@@ -410,8 +412,24 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SSLHealthCheck.ProxyHeader)
   }
 
+  private int bitField0_;
   public static final int PORT_FIELD_NUMBER = 3446913;
   private int port_;
+  /**
+   *
+   *
+   * <pre>
+   * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -430,6 +448,21 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
   private volatile java.lang.Object portName_;
+  /**
+   *
+   *
+   * <pre>
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -493,6 +526,26 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
    * </code>
    *
+   * @return Whether the portSpecification field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortSpecification() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how port is selected for health checking, can be one of following values:
+   * USE_FIXED_PORT: The port number in port is used for health checking.
+   * USE_NAMED_PORT: The portName is used for health checking.
+   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+   * If not specified, SSL health check follows behavior specified in port and portName fields.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
+   * </code>
+   *
    * @return The enum numeric value on the wire for portSpecification.
    */
   @java.lang.Override
@@ -536,6 +589,21 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
    *
+   * @return Whether the proxyHeader field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyHeader() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   *
    * @return The enum numeric value on the wire for proxyHeader.
    */
   @java.lang.Override
@@ -565,6 +633,21 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUEST_FIELD_NUMBER = 21951119;
   private volatile java.lang.Object request_;
+  /**
+   *
+   *
+   * <pre>
+   * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+   * </pre>
+   *
+   * <code>string request = 21951119;</code>
+   *
+   * @return Whether the request field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequest() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -614,6 +697,21 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESPONSE_FIELD_NUMBER = 196547649;
   private volatile java.lang.Object response_;
+  /**
+   *
+   *
+   * <pre>
+   * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+   * </pre>
+   *
+   * <code>string response = 196547649;</code>
+   *
+   * @return Whether the response field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponse() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -675,26 +773,22 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(3446913, port_);
     }
-    if (!getRequestBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21951119, request_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (portSpecification_
-        != com.google.cloud.compute.v1.SSLHealthCheck.PortSpecification.UNDEFINED_PORT_SPECIFICATION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(51590597, portSpecification_);
     }
-    if (proxyHeader_
-        != com.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader.UNDEFINED_PROXY_HEADER
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(160374142, proxyHeader_);
     }
-    if (!getResponseBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 196547649, response_);
     }
     unknownFields.writeTo(output);
@@ -706,26 +800,22 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
-    if (!getRequestBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21951119, request_);
     }
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (portSpecification_
-        != com.google.cloud.compute.v1.SSLHealthCheck.PortSpecification.UNDEFINED_PORT_SPECIFICATION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(51590597, portSpecification_);
     }
-    if (proxyHeader_
-        != com.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader.UNDEFINED_PROXY_HEADER
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(160374142, proxyHeader_);
     }
-    if (!getResponseBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(196547649, response_);
     }
     size += unknownFields.getSerializedSize();
@@ -744,12 +834,30 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.SSLHealthCheck other =
         (com.google.cloud.compute.v1.SSLHealthCheck) obj;
 
-    if (getPort() != other.getPort()) return false;
-    if (!getPortName().equals(other.getPortName())) return false;
-    if (portSpecification_ != other.portSpecification_) return false;
-    if (proxyHeader_ != other.proxyHeader_) return false;
-    if (!getRequest().equals(other.getRequest())) return false;
-    if (!getResponse().equals(other.getResponse())) return false;
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
+    if (hasPortName() != other.hasPortName()) return false;
+    if (hasPortName()) {
+      if (!getPortName().equals(other.getPortName())) return false;
+    }
+    if (hasPortSpecification() != other.hasPortSpecification()) return false;
+    if (hasPortSpecification()) {
+      if (portSpecification_ != other.portSpecification_) return false;
+    }
+    if (hasProxyHeader() != other.hasProxyHeader()) return false;
+    if (hasProxyHeader()) {
+      if (proxyHeader_ != other.proxyHeader_) return false;
+    }
+    if (hasRequest() != other.hasRequest()) return false;
+    if (hasRequest()) {
+      if (!getRequest().equals(other.getRequest())) return false;
+    }
+    if (hasResponse() != other.hasResponse()) return false;
+    if (hasResponse()) {
+      if (!getResponse().equals(other.getResponse())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -761,18 +869,30 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
-    hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPortName().hashCode();
-    hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
-    hash = (53 * hash) + portSpecification_;
-    hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
-    hash = (53 * hash) + proxyHeader_;
-    hash = (37 * hash) + REQUEST_FIELD_NUMBER;
-    hash = (53 * hash) + getRequest().hashCode();
-    hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-    hash = (53 * hash) + getResponse().hashCode();
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
+    if (hasPortName()) {
+      hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPortName().hashCode();
+    }
+    if (hasPortSpecification()) {
+      hash = (37 * hash) + PORT_SPECIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + portSpecification_;
+    }
+    if (hasProxyHeader()) {
+      hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
+      hash = (53 * hash) + proxyHeader_;
+    }
+    if (hasRequest()) {
+      hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+      hash = (53 * hash) + getRequest().hashCode();
+    }
+    if (hasResponse()) {
+      hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponse().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -918,17 +1038,17 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       portName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       portSpecification_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       proxyHeader_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       request_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       response_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -956,12 +1076,33 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.SSLHealthCheck buildPartial() {
       com.google.cloud.compute.v1.SSLHealthCheck result =
           new com.google.cloud.compute.v1.SSLHealthCheck(this);
-      result.port_ = port_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.portName_ = portName_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.portSpecification_ = portSpecification_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.proxyHeader_ = proxyHeader_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.request_ = request_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.response_ = response_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1011,24 +1152,27 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SSLHealthCheck other) {
       if (other == com.google.cloud.compute.v1.SSLHealthCheck.getDefaultInstance()) return this;
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
-      if (!other.getPortName().isEmpty()) {
+      if (other.hasPortName()) {
+        bitField0_ |= 0x00000002;
         portName_ = other.portName_;
         onChanged();
       }
-      if (other.portSpecification_ != 0) {
-        setPortSpecificationValue(other.getPortSpecificationValue());
+      if (other.hasPortSpecification()) {
+        setPortSpecification(other.getPortSpecification());
       }
-      if (other.proxyHeader_ != 0) {
-        setProxyHeaderValue(other.getProxyHeaderValue());
+      if (other.hasProxyHeader()) {
+        setProxyHeader(other.getProxyHeader());
       }
-      if (!other.getRequest().isEmpty()) {
+      if (other.hasRequest()) {
+        bitField0_ |= 0x00000010;
         request_ = other.request_;
         onChanged();
       }
-      if (!other.getResponse().isEmpty()) {
+      if (other.hasResponse()) {
+        bitField0_ |= 0x00000020;
         response_ = other.response_;
         onChanged();
       }
@@ -1061,7 +1205,24 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1090,7 +1251,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000001;
       port_ = value;
       onChanged();
       return this;
@@ -1107,13 +1268,27 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object portName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+     * </pre>
+     *
+     * <code>string port_name = 41534345;</code>
+     *
+     * @return Whether the portName field is set.
+     */
+    public boolean hasPortName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1174,7 +1349,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       portName_ = value;
       onChanged();
       return this;
@@ -1191,7 +1366,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -1213,13 +1388,34 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       portName_ = value;
       onChanged();
       return this;
     }
 
     private int portSpecification_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking.
+     * USE_NAMED_PORT: The portName is used for health checking.
+     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * If not specified, SSL health check follows behavior specified in port and portName fields.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SSLHealthCheck.PortSpecification port_specification = 51590597;
+     * </code>
+     *
+     * @return Whether the portSpecification field is set.
+     */
+    @java.lang.Override
+    public boolean hasPortSpecification() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1260,7 +1456,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPortSpecificationValue(int value) {
-
+      bitField0_ |= 0x00000004;
       portSpecification_ = value;
       onChanged();
       return this;
@@ -1314,7 +1510,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       portSpecification_ = value.getNumber();
       onChanged();
       return this;
@@ -1337,13 +1533,28 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortSpecification() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       portSpecification_ = 0;
       onChanged();
       return this;
     }
 
     private int proxyHeader_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.SSLHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     *
+     * @return Whether the proxyHeader field is set.
+     */
+    @java.lang.Override
+    public boolean hasProxyHeader() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1372,7 +1583,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProxyHeaderValue(int value) {
-
+      bitField0_ |= 0x00000008;
       proxyHeader_ = value;
       onChanged();
       return this;
@@ -1413,7 +1624,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       proxyHeader_ = value.getNumber();
       onChanged();
       return this;
@@ -1430,13 +1641,27 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProxyHeader() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       proxyHeader_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object request_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+     * </pre>
+     *
+     * <code>string request = 21951119;</code>
+     *
+     * @return Whether the request field is set.
+     */
+    public boolean hasRequest() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1497,7 +1722,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       request_ = value;
       onChanged();
       return this;
@@ -1514,7 +1739,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequest() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       request_ = getDefaultInstance().getRequest();
       onChanged();
       return this;
@@ -1536,13 +1761,27 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       request_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object response_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+     * </pre>
+     *
+     * <code>string response = 196547649;</code>
+     *
+     * @return Whether the response field is set.
+     */
+    public boolean hasResponse() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1603,7 +1842,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       response_ = value;
       onChanged();
       return this;
@@ -1620,7 +1859,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResponse() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       response_ = getDefaultInstance().getResponse();
       onChanged();
       return this;
@@ -1642,7 +1881,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       response_ = value;
       onChanged();
       return this;

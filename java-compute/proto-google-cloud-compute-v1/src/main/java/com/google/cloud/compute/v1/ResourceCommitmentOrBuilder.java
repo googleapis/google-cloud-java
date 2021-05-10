@@ -32,6 +32,18 @@ public interface ResourceCommitmentOrBuilder
    *
    * <code>string accelerator_type = 138031246;</code>
    *
+   * @return Whether the acceleratorType field is set.
+   */
+  boolean hasAcceleratorType();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
+   * </pre>
+   *
+   * <code>string accelerator_type = 138031246;</code>
+   *
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
@@ -57,6 +69,18 @@ public interface ResourceCommitmentOrBuilder
    *
    * <code>string amount = 196759640;</code>
    *
+   * @return Whether the amount field is set.
+   */
+  boolean hasAmount();
+  /**
+   *
+   *
+   * <pre>
+   * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
+   * </pre>
+   *
+   * <code>string amount = 196759640;</code>
+   *
    * @return The amount.
    */
   java.lang.String getAmount();
@@ -73,6 +97,18 @@ public interface ResourceCommitmentOrBuilder
    */
   com.google.protobuf.ByteString getAmountBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
   /**
    *
    *

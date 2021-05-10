@@ -30,7 +30,19 @@ public interface BackendBucketOrBuilder
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 15174592;</code>
+   * <code>string bucket_name = 283610048;</code>
+   *
+   * @return Whether the bucketName field is set.
+   */
+  boolean hasBucketName();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage bucket name.
+   * </pre>
+   *
+   * <code>string bucket_name = 283610048;</code>
    *
    * @return The bucketName.
    */
@@ -42,7 +54,7 @@ public interface BackendBucketOrBuilder
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 15174592;</code>
+   * <code>string bucket_name = 283610048;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -92,6 +104,18 @@ public interface BackendBucketOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -115,7 +139,7 @@ public interface BackendBucketOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return A list containing the customResponseHeaders.
    */
@@ -127,7 +151,7 @@ public interface BackendBucketOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @return The count of customResponseHeaders.
    */
@@ -139,7 +163,7 @@ public interface BackendBucketOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the element to return.
    * @return The customResponseHeaders at the given index.
@@ -152,7 +176,7 @@ public interface BackendBucketOrBuilder
    * Headers that the HTTP/S load balancer should add to proxied responses.
    * </pre>
    *
-   * <code>repeated string custom_response_headers = 119103638;</code>
+   * <code>repeated string custom_response_headers = 387539094;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the customResponseHeaders at the given index.
@@ -166,7 +190,19 @@ public interface BackendBucketOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional textual description of the resource; provided by the client when the resource is created.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -178,7 +214,7 @@ public interface BackendBucketOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -191,12 +227,36 @@ public interface BackendBucketOrBuilder
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 14506865;</code>
+   * <code>bool enable_cdn = 282942321;</code>
+   *
+   * @return Whether the enableCdn field is set.
+   */
+  boolean hasEnableCdn();
+  /**
+   *
+   *
+   * <pre>
+   * If true, enable Cloud CDN for this BackendBucket.
+   * </pre>
+   *
+   * <code>bool enable_cdn = 282942321;</code>
    *
    * @return The enableCdn.
    */
   boolean getEnableCdn();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the resource; defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -231,6 +291,18 @@ public interface BackendBucketOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * Type of the resource.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -247,6 +319,18 @@ public interface BackendBucketOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -279,7 +363,19 @@ public interface BackendBucketOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -291,7 +387,7 @@ public interface BackendBucketOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

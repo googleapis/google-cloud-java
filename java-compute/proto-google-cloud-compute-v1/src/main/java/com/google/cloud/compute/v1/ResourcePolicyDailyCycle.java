@@ -61,6 +61,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,20 +75,21 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
           case 299738194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               startTime_ = s;
-              break;
-            }
-          case 810836384:
-            {
-              daysInCycle_ = input.readInt32();
               break;
             }
           case 1243770018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               duration_ = s;
+              break;
+            }
+          case -1336647264:
+            {
+              bitField0_ |= 0x00000001;
+              daysInCycle_ = input.readInt32();
               break;
             }
           default:
@@ -124,7 +126,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder.class);
   }
 
-  public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 101354548;
+  private int bitField0_;
+  public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 369790004;
   private int daysInCycle_;
   /**
    *
@@ -133,7 +136,22 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
    * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 days_in_cycle = 101354548;</code>
+   * <code>int32 days_in_cycle = 369790004;</code>
+   *
+   * @return Whether the daysInCycle field is set.
+   */
+  @java.lang.Override
+  public boolean hasDaysInCycle() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
+   * </pre>
+   *
+   * <code>int32 days_in_cycle = 369790004;</code>
    *
    * @return The daysInCycle.
    */
@@ -144,6 +162,21 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
   private volatile java.lang.Object duration_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
+   * </pre>
+   *
+   * <code>string duration = 155471252;</code>
+   *
+   * @return Whether the duration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDuration() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -193,6 +226,21 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
   private volatile java.lang.Object startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -254,14 +302,14 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
-    if (daysInCycle_ != 0) {
-      output.writeInt32(101354548, daysInCycle_);
-    }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 155471252, duration_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(369790004, daysInCycle_);
     }
     unknownFields.writeTo(output);
   }
@@ -272,14 +320,14 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
-    if (daysInCycle_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(101354548, daysInCycle_);
-    }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(155471252, duration_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(369790004, daysInCycle_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,9 +345,18 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     com.google.cloud.compute.v1.ResourcePolicyDailyCycle other =
         (com.google.cloud.compute.v1.ResourcePolicyDailyCycle) obj;
 
-    if (getDaysInCycle() != other.getDaysInCycle()) return false;
-    if (!getDuration().equals(other.getDuration())) return false;
-    if (!getStartTime().equals(other.getStartTime())) return false;
+    if (hasDaysInCycle() != other.hasDaysInCycle()) return false;
+    if (hasDaysInCycle()) {
+      if (getDaysInCycle() != other.getDaysInCycle()) return false;
+    }
+    if (hasDuration() != other.hasDuration()) return false;
+    if (hasDuration()) {
+      if (!getDuration().equals(other.getDuration())) return false;
+    }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -311,12 +368,18 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DAYS_IN_CYCLE_FIELD_NUMBER;
-    hash = (53 * hash) + getDaysInCycle();
-    hash = (37 * hash) + DURATION_FIELD_NUMBER;
-    hash = (53 * hash) + getDuration().hashCode();
-    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getStartTime().hashCode();
+    if (hasDaysInCycle()) {
+      hash = (37 * hash) + DAYS_IN_CYCLE_FIELD_NUMBER;
+      hash = (53 * hash) + getDaysInCycle();
+    }
+    if (hasDuration()) {
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,11 +526,11 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       daysInCycle_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -495,9 +558,21 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.ResourcePolicyDailyCycle buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyDailyCycle result =
           new com.google.cloud.compute.v1.ResourcePolicyDailyCycle(this);
-      result.daysInCycle_ = daysInCycle_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.daysInCycle_ = daysInCycle_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.duration_ = duration_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.startTime_ = startTime_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -548,14 +623,16 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourcePolicyDailyCycle other) {
       if (other == com.google.cloud.compute.v1.ResourcePolicyDailyCycle.getDefaultInstance())
         return this;
-      if (other.getDaysInCycle() != 0) {
+      if (other.hasDaysInCycle()) {
         setDaysInCycle(other.getDaysInCycle());
       }
-      if (!other.getDuration().isEmpty()) {
+      if (other.hasDuration()) {
+        bitField0_ |= 0x00000002;
         duration_ = other.duration_;
         onChanged();
       }
-      if (!other.getStartTime().isEmpty()) {
+      if (other.hasStartTime()) {
+        bitField0_ |= 0x00000004;
         startTime_ = other.startTime_;
         onChanged();
       }
@@ -589,6 +666,8 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       return this;
     }
 
+    private int bitField0_;
+
     private int daysInCycle_;
     /**
      *
@@ -597,7 +676,22 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 101354548;</code>
+     * <code>int32 days_in_cycle = 369790004;</code>
+     *
+     * @return Whether the daysInCycle field is set.
+     */
+    @java.lang.Override
+    public boolean hasDaysInCycle() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
+     * </pre>
+     *
+     * <code>int32 days_in_cycle = 369790004;</code>
      *
      * @return The daysInCycle.
      */
@@ -612,13 +706,13 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 101354548;</code>
+     * <code>int32 days_in_cycle = 369790004;</code>
      *
      * @param value The daysInCycle to set.
      * @return This builder for chaining.
      */
     public Builder setDaysInCycle(int value) {
-
+      bitField0_ |= 0x00000001;
       daysInCycle_ = value;
       onChanged();
       return this;
@@ -630,18 +724,32 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 101354548;</code>
+     * <code>int32 days_in_cycle = 369790004;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDaysInCycle() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       daysInCycle_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object duration_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] A predetermined duration for the window, automatically chosen to be the smallest possible in the given scenario.
+     * </pre>
+     *
+     * <code>string duration = 155471252;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -702,7 +810,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       duration_ = value;
       onChanged();
       return this;
@@ -719,7 +827,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       duration_ = getDefaultInstance().getDuration();
       onChanged();
       return this;
@@ -741,13 +849,27 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       duration_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object startTime_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Start time of the window. This must be in UTC format that resolves to one of 00:00, 04:00, 08:00, 12:00, 16:00, or 20:00. For example, both 13:00-5 and 08:00 are valid.
+     * </pre>
+     *
+     * <code>string start_time = 37467274;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -808,7 +930,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;
@@ -825,7 +947,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       startTime_ = getDefaultInstance().getStartTime();
       onChanged();
       return this;
@@ -847,7 +969,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;

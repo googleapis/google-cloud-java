@@ -60,6 +60,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,16 +71,17 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
-          case 346631192:
-            {
-              enable_ = input.readBool();
-              break;
-            }
           case 694933880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               metadata_ = rawValue;
+              break;
+            }
+          case -1800852456:
+            {
+              bitField0_ |= 0x00000001;
+              enable_ = input.readBool();
               break;
             }
           default:
@@ -136,8 +138,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     UNDEFINED_METADATA(0),
-    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
-    EXCLUDE_ALL_METADATA(66084498),
+    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
+    EXCLUDE_ALL_METADATA(334519954),
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     INCLUDE_ALL_METADATA(164619908),
     UNRECOGNIZED(-1),
@@ -153,8 +155,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     public static final int UNDEFINED_METADATA_VALUE = 0;
-    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
-    public static final int EXCLUDE_ALL_METADATA_VALUE = 66084498;
+    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
+    public static final int EXCLUDE_ALL_METADATA_VALUE = 334519954;
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     public static final int INCLUDE_ALL_METADATA_VALUE = 164619908;
 
@@ -184,7 +186,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_METADATA;
-        case 66084498:
+        case 334519954:
           return EXCLUDE_ALL_METADATA;
         case 164619908:
           return INCLUDE_ALL_METADATA;
@@ -241,7 +243,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallLogConfig.Metadata)
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 43328899;
+  private int bitField0_;
+  public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_;
   /**
    *
@@ -250,7 +253,22 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    * This field denotes whether to enable logging for a particular firewall rule.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnable() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field denotes whether to enable logging for a particular firewall rule.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -261,6 +279,21 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
   private int metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -311,12 +344,11 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enable_ != false) {
-      output.writeBool(43328899, enable_);
-    }
-    if (metadata_
-        != com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNDEFINED_METADATA.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(86866735, metadata_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(311764355, enable_);
     }
     unknownFields.writeTo(output);
   }
@@ -327,12 +359,11 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
-    }
-    if (metadata_
-        != com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNDEFINED_METADATA.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(86866735, metadata_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -350,8 +381,14 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.compute.v1.FirewallLogConfig other =
         (com.google.cloud.compute.v1.FirewallLogConfig) obj;
 
-    if (getEnable() != other.getEnable()) return false;
-    if (metadata_ != other.metadata_) return false;
+    if (hasEnable() != other.hasEnable()) return false;
+    if (hasEnable()) {
+      if (getEnable() != other.getEnable()) return false;
+    }
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (metadata_ != other.metadata_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -363,10 +400,14 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
-    hash = (37 * hash) + METADATA_FIELD_NUMBER;
-    hash = (53 * hash) + metadata_;
+    if (hasEnable()) {
+      hash = (37 * hash) + ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + metadata_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,9 +554,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       enable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       metadata_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -543,8 +584,17 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.FirewallLogConfig buildPartial() {
       com.google.cloud.compute.v1.FirewallLogConfig result =
           new com.google.cloud.compute.v1.FirewallLogConfig(this);
-      result.enable_ = enable_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enable_ = enable_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.metadata_ = metadata_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -594,11 +644,11 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.compute.v1.FirewallLogConfig other) {
       if (other == com.google.cloud.compute.v1.FirewallLogConfig.getDefaultInstance()) return this;
-      if (other.getEnable() != false) {
+      if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
-      if (other.metadata_ != 0) {
-        setMetadataValue(other.getMetadataValue());
+      if (other.hasMetadata()) {
+        setMetadata(other.getMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -629,6 +679,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enable_;
     /**
      *
@@ -637,7 +689,22 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
+     *
+     * @return Whether the enable field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnable() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field denotes whether to enable logging for a particular firewall rule.
+     * </pre>
+     *
+     * <code>bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -652,13 +719,13 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enable_ = value;
       onChanged();
       return this;
@@ -670,18 +737,33 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       onChanged();
       return this;
     }
 
     private int metadata_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -710,7 +792,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setMetadataValue(int value) {
-
+      bitField0_ |= 0x00000002;
       metadata_ = value;
       onChanged();
       return this;
@@ -751,7 +833,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       metadata_ = value.getNumber();
       onChanged();
       return this;
@@ -768,7 +850,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMetadata() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       metadata_ = 0;
       onChanged();
       return this;

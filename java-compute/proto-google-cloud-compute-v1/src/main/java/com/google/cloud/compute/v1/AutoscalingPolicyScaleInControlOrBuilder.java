@@ -67,6 +67,18 @@ public interface AutoscalingPolicyScaleInControlOrBuilder
    *
    * <code>int32 time_window_sec = 36405300;</code>
    *
+   * @return Whether the timeWindowSec field is set.
+   */
+  boolean hasTimeWindowSec();
+  /**
+   *
+   *
+   * <pre>
+   * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
+   * </pre>
+   *
+   * <code>int32 time_window_sec = 36405300;</code>
+   *
    * @return The timeWindowSec.
    */
   int getTimeWindowSec();

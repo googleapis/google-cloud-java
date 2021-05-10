@@ -73,7 +73,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 1050259770:
+          case -1097223878:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 reservations_ = new java.util.ArrayList<com.google.cloud.compute.v1.Reservation>();
@@ -134,7 +134,8 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.ReservationsScopedList.Builder.class);
   }
 
-  public static final int RESERVATIONS_FIELD_NUMBER = 131282471;
+  private int bitField0_;
+  public static final int RESERVATIONS_FIELD_NUMBER = 399717927;
   private java.util.List<com.google.cloud.compute.v1.Reservation> reservations_;
   /**
    *
@@ -143,7 +144,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList() {
@@ -156,7 +157,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
@@ -170,7 +171,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   @java.lang.Override
   public int getReservationsCount() {
@@ -183,7 +184,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Reservation getReservations(int index) {
@@ -196,7 +197,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index) {
@@ -218,7 +219,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,11 +264,11 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < reservations_.size(); i++) {
-      output.writeMessage(131282471, reservations_.get(i));
+      output.writeMessage(399717927, reservations_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,12 +279,12 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < reservations_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(131282471, reservations_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(399717927, reservations_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +466,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReservationsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       com.google.cloud.compute.v1.ReservationsScopedList result =
           new com.google.cloud.compute.v1.ReservationsScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (reservationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
@@ -520,11 +523,15 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       } else {
         result.reservations_ = reservationsBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -661,7 +668,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList() {
       if (reservationsBuilder_ == null) {
@@ -677,7 +684,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public int getReservationsCount() {
       if (reservationsBuilder_ == null) {
@@ -693,7 +700,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public com.google.cloud.compute.v1.Reservation getReservations(int index) {
       if (reservationsBuilder_ == null) {
@@ -709,7 +716,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder setReservations(int index, com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -731,7 +738,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder setReservations(
         int index, com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -751,7 +758,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder addReservations(com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -773,7 +780,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder addReservations(int index, com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -795,7 +802,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder addReservations(
         com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -815,7 +822,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder addReservations(
         int index, com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -835,7 +842,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder addAllReservations(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Reservation> values) {
@@ -855,7 +862,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder clearReservations() {
       if (reservationsBuilder_ == null) {
@@ -874,7 +881,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public Builder removeReservations(int index) {
       if (reservationsBuilder_ == null) {
@@ -893,7 +900,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder getReservationsBuilder(int index) {
       return getReservationsFieldBuilder().getBuilder(index);
@@ -905,7 +912,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index) {
       if (reservationsBuilder_ == null) {
@@ -921,7 +928,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
         getReservationsOrBuilderList() {
@@ -938,7 +945,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder addReservationsBuilder() {
       return getReservationsFieldBuilder()
@@ -951,7 +958,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder addReservationsBuilder(int index) {
       return getReservationsFieldBuilder()
@@ -964,7 +971,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * A list of reservations contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Reservation.Builder>
         getReservationsBuilderList() {
@@ -1006,7 +1013,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1047,7 +1054,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1066,7 +1073,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1080,7 +1087,9 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1092,7 +1101,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1109,10 +1118,9 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1125,7 +1133,7 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

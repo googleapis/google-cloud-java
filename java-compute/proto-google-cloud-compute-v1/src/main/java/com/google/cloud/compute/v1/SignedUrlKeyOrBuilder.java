@@ -30,7 +30,19 @@ public interface SignedUrlKeyOrBuilder
    * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string key_name = 232503403;</code>
+   * <code>string key_name = 500938859;</code>
+   *
+   * @return Whether the keyName field is set.
+   */
+  boolean hasKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string key_name = 500938859;</code>
    *
    * @return The keyName.
    */
@@ -42,7 +54,7 @@ public interface SignedUrlKeyOrBuilder
    * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
-   * <code>string key_name = 232503403;</code>
+   * <code>string key_name = 500938859;</code>
    *
    * @return The bytes for keyName.
    */
@@ -55,7 +67,19 @@ public interface SignedUrlKeyOrBuilder
    * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
    * </pre>
    *
-   * <code>string key_value = 235671441;</code>
+   * <code>string key_value = 504106897;</code>
+   *
+   * @return Whether the keyValue field is set.
+   */
+  boolean hasKeyValue();
+  /**
+   *
+   *
+   * <pre>
+   * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
+   * </pre>
+   *
+   * <code>string key_value = 504106897;</code>
    *
    * @return The keyValue.
    */
@@ -67,7 +91,7 @@ public interface SignedUrlKeyOrBuilder
    * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string.
    * </pre>
    *
-   * <code>string key_value = 235671441;</code>
+   * <code>string key_value = 504106897;</code>
    *
    * @return The bytes for keyValue.
    */

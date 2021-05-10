@@ -73,41 +73,44 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 390369752:
-            {
-              minNodeCpus_ = input.readInt32();
-              break;
-            }
-          case 446141704:
-            {
-              preemptible_ = input.readBool();
-              break;
-            }
           case 516934368:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000008;
               onHostMaintenance_ = rawValue;
               break;
             }
-          case 656672394:
+          case -1757113896:
+            {
+              bitField0_ |= 0x00000004;
+              minNodeCpus_ = input.readInt32();
+              break;
+            }
+          case -1701341944:
+            {
+              bitField0_ |= 0x00000010;
+              preemptible_ = input.readBool();
+              break;
+            }
+          case -1490811254:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               locationHint_ = s;
               break;
             }
-          case 659087320:
+          case -1488396328:
             {
+              bitField0_ |= 0x00000001;
               automaticRestart_ = input.readBool();
               break;
             }
-          case 1546916122:
+          case -600567526:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 nodeAffinities_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               nodeAffinities_.add(
                   input.readMessage(
@@ -129,7 +132,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
       }
       this.unknownFields = unknownFields.build();
@@ -174,8 +177,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_ON_HOST_MAINTENANCE(0),
     /** <code>MIGRATE = 165699979;</code> */
     MIGRATE(165699979),
-    /** <code>TERMINATE = 259182145;</code> */
-    TERMINATE(259182145),
+    /** <code>TERMINATE = 527617601;</code> */
+    TERMINATE(527617601),
     UNRECOGNIZED(-1),
     ;
 
@@ -191,8 +194,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_ON_HOST_MAINTENANCE_VALUE = 0;
     /** <code>MIGRATE = 165699979;</code> */
     public static final int MIGRATE_VALUE = 165699979;
-    /** <code>TERMINATE = 259182145;</code> */
-    public static final int TERMINATE_VALUE = 259182145;
+    /** <code>TERMINATE = 527617601;</code> */
+    public static final int TERMINATE_VALUE = 527617601;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -222,7 +225,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_ON_HOST_MAINTENANCE;
         case 165699979:
           return MIGRATE;
-        case 259182145:
+        case 527617601:
           return TERMINATE;
         default:
           return null;
@@ -280,7 +283,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Scheduling.OnHostMaintenance)
   }
 
-  public static final int AUTOMATIC_RESTART_FIELD_NUMBER = 82385915;
+  private int bitField0_;
+  public static final int AUTOMATIC_RESTART_FIELD_NUMBER = 350821371;
   private boolean automaticRestart_;
   /**
    *
@@ -290,7 +294,23 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 82385915;</code>
+   * <code>bool automatic_restart = 350821371;</code>
+   *
+   * @return Whether the automaticRestart field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomaticRestart() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
+   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * </pre>
+   *
+   * <code>bool automatic_restart = 350821371;</code>
    *
    * @return The automaticRestart.
    */
@@ -299,7 +319,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return automaticRestart_;
   }
 
-  public static final int LOCATION_HINT_FIELD_NUMBER = 82084049;
+  public static final int LOCATION_HINT_FIELD_NUMBER = 350519505;
   private volatile java.lang.Object locationHint_;
   /**
    *
@@ -308,7 +328,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 82084049;</code>
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocationHint() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
    *
    * @return The locationHint.
    */
@@ -331,7 +366,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
    * </pre>
    *
-   * <code>string location_hint = 82084049;</code>
+   * <code>string location_hint = 350519505;</code>
    *
    * @return The bytes for locationHint.
    */
@@ -348,7 +383,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int MIN_NODE_CPUS_FIELD_NUMBER = 48796219;
+  public static final int MIN_NODE_CPUS_FIELD_NUMBER = 317231675;
   private int minNodeCpus_;
   /**
    *
@@ -357,7 +392,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 48796219;</code>
+   * <code>int32 min_node_cpus = 317231675;</code>
+   *
+   * @return Whether the minNodeCpus field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinNodeCpus() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+   * </pre>
+   *
+   * <code>int32 min_node_cpus = 317231675;</code>
    *
    * @return The minNodeCpus.
    */
@@ -366,7 +416,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return minNodeCpus_;
   }
 
-  public static final int NODE_AFFINITIES_FIELD_NUMBER = 193364515;
+  public static final int NODE_AFFINITIES_FIELD_NUMBER = 461799971;
   private java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity> nodeAffinities_;
   /**
    *
@@ -375,7 +425,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   @java.lang.Override
@@ -390,7 +440,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   @java.lang.Override
@@ -405,7 +455,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   @java.lang.Override
@@ -419,7 +469,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   @java.lang.Override
@@ -433,7 +483,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
    * </code>
    */
   @java.lang.Override
@@ -444,6 +494,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 64616796;
   private int onHostMaintenance_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
+   * </code>
+   *
+   * @return Whether the onHostMaintenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnHostMaintenance() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -482,7 +548,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int PREEMPTIBLE_FIELD_NUMBER = 55767713;
+  public static final int PREEMPTIBLE_FIELD_NUMBER = 324203169;
   private boolean preemptible_;
   /**
    *
@@ -491,7 +557,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 55767713;</code>
+   * <code>bool preemptible = 324203169;</code>
+   *
+   * @return Whether the preemptible field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreemptible() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+   * </pre>
+   *
+   * <code>bool preemptible = 324203169;</code>
    *
    * @return The preemptible.
    */
@@ -514,25 +595,23 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (minNodeCpus_ != 0) {
-      output.writeInt32(48796219, minNodeCpus_);
-    }
-    if (preemptible_ != false) {
-      output.writeBool(55767713, preemptible_);
-    }
-    if (onHostMaintenance_
-        != com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNDEFINED_ON_HOST_MAINTENANCE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(64616796, onHostMaintenance_);
     }
-    if (!getLocationHintBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 82084049, locationHint_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(317231675, minNodeCpus_);
     }
-    if (automaticRestart_ != false) {
-      output.writeBool(82385915, automaticRestart_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(324203169, preemptible_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(350821371, automaticRestart_);
     }
     for (int i = 0; i < nodeAffinities_.size(); i++) {
-      output.writeMessage(193364515, nodeAffinities_.get(i));
+      output.writeMessage(461799971, nodeAffinities_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -543,27 +622,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (minNodeCpus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(48796219, minNodeCpus_);
-    }
-    if (preemptible_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(55767713, preemptible_);
-    }
-    if (onHostMaintenance_
-        != com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNDEFINED_ON_HOST_MAINTENANCE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(64616796, onHostMaintenance_);
     }
-    if (!getLocationHintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(82084049, locationHint_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(317231675, minNodeCpus_);
     }
-    if (automaticRestart_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(82385915, automaticRestart_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(324203169, preemptible_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(350821371, automaticRestart_);
     }
     for (int i = 0; i < nodeAffinities_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              193364515, nodeAffinities_.get(i));
+              461799971, nodeAffinities_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -580,12 +657,27 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Scheduling other = (com.google.cloud.compute.v1.Scheduling) obj;
 
-    if (getAutomaticRestart() != other.getAutomaticRestart()) return false;
-    if (!getLocationHint().equals(other.getLocationHint())) return false;
-    if (getMinNodeCpus() != other.getMinNodeCpus()) return false;
+    if (hasAutomaticRestart() != other.hasAutomaticRestart()) return false;
+    if (hasAutomaticRestart()) {
+      if (getAutomaticRestart() != other.getAutomaticRestart()) return false;
+    }
+    if (hasLocationHint() != other.hasLocationHint()) return false;
+    if (hasLocationHint()) {
+      if (!getLocationHint().equals(other.getLocationHint())) return false;
+    }
+    if (hasMinNodeCpus() != other.hasMinNodeCpus()) return false;
+    if (hasMinNodeCpus()) {
+      if (getMinNodeCpus() != other.getMinNodeCpus()) return false;
+    }
     if (!getNodeAffinitiesList().equals(other.getNodeAffinitiesList())) return false;
-    if (onHostMaintenance_ != other.onHostMaintenance_) return false;
-    if (getPreemptible() != other.getPreemptible()) return false;
+    if (hasOnHostMaintenance() != other.hasOnHostMaintenance()) return false;
+    if (hasOnHostMaintenance()) {
+      if (onHostMaintenance_ != other.onHostMaintenance_) return false;
+    }
+    if (hasPreemptible() != other.hasPreemptible()) return false;
+    if (hasPreemptible()) {
+      if (getPreemptible() != other.getPreemptible()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -597,20 +689,30 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTOMATIC_RESTART_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomaticRestart());
-    hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
-    hash = (53 * hash) + getLocationHint().hashCode();
-    hash = (37 * hash) + MIN_NODE_CPUS_FIELD_NUMBER;
-    hash = (53 * hash) + getMinNodeCpus();
+    if (hasAutomaticRestart()) {
+      hash = (37 * hash) + AUTOMATIC_RESTART_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomaticRestart());
+    }
+    if (hasLocationHint()) {
+      hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationHint().hashCode();
+    }
+    if (hasMinNodeCpus()) {
+      hash = (37 * hash) + MIN_NODE_CPUS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinNodeCpus();
+    }
     if (getNodeAffinitiesCount() > 0) {
       hash = (37 * hash) + NODE_AFFINITIES_FIELD_NUMBER;
       hash = (53 * hash) + getNodeAffinitiesList().hashCode();
     }
-    hash = (37 * hash) + ON_HOST_MAINTENANCE_FIELD_NUMBER;
-    hash = (53 * hash) + onHostMaintenance_;
-    hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
+    if (hasOnHostMaintenance()) {
+      hash = (37 * hash) + ON_HOST_MAINTENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + onHostMaintenance_;
+    }
+    if (hasPreemptible()) {
+      hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -759,21 +861,21 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       automaticRestart_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       locationHint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minNodeCpus_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         nodeAffinitiesBuilder_.clear();
       }
       onHostMaintenance_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       preemptible_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -802,20 +904,37 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.Scheduling result =
           new com.google.cloud.compute.v1.Scheduling(this);
       int from_bitField0_ = bitField0_;
-      result.automaticRestart_ = automaticRestart_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.automaticRestart_ = automaticRestart_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.locationHint_ = locationHint_;
-      result.minNodeCpus_ = minNodeCpus_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
+        to_bitField0_ |= 0x00000004;
+      }
       if (nodeAffinitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.nodeAffinities_ = nodeAffinities_;
       } else {
         result.nodeAffinities_ = nodeAffinitiesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.onHostMaintenance_ = onHostMaintenance_;
-      result.preemptible_ = preemptible_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.preemptible_ = preemptible_;
+        to_bitField0_ |= 0x00000010;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -865,21 +984,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Scheduling other) {
       if (other == com.google.cloud.compute.v1.Scheduling.getDefaultInstance()) return this;
-      if (other.getAutomaticRestart() != false) {
+      if (other.hasAutomaticRestart()) {
         setAutomaticRestart(other.getAutomaticRestart());
       }
-      if (!other.getLocationHint().isEmpty()) {
+      if (other.hasLocationHint()) {
+        bitField0_ |= 0x00000002;
         locationHint_ = other.locationHint_;
         onChanged();
       }
-      if (other.getMinNodeCpus() != 0) {
+      if (other.hasMinNodeCpus()) {
         setMinNodeCpus(other.getMinNodeCpus());
       }
       if (nodeAffinitiesBuilder_ == null) {
         if (!other.nodeAffinities_.isEmpty()) {
           if (nodeAffinities_.isEmpty()) {
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureNodeAffinitiesIsMutable();
             nodeAffinities_.addAll(other.nodeAffinities_);
@@ -892,7 +1012,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             nodeAffinitiesBuilder_.dispose();
             nodeAffinitiesBuilder_ = null;
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             nodeAffinitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodeAffinitiesFieldBuilder()
@@ -902,10 +1022,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.onHostMaintenance_ != 0) {
-        setOnHostMaintenanceValue(other.getOnHostMaintenanceValue());
+      if (other.hasOnHostMaintenance()) {
+        setOnHostMaintenance(other.getOnHostMaintenance());
       }
-      if (other.getPreemptible() != false) {
+      if (other.hasPreemptible()) {
         setPreemptible(other.getPreemptible());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -948,7 +1068,23 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 82385915;</code>
+     * <code>bool automatic_restart = 350821371;</code>
+     *
+     * @return Whether the automaticRestart field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutomaticRestart() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
+     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * </pre>
+     *
+     * <code>bool automatic_restart = 350821371;</code>
      *
      * @return The automaticRestart.
      */
@@ -964,13 +1100,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 82385915;</code>
+     * <code>bool automatic_restart = 350821371;</code>
      *
      * @param value The automaticRestart to set.
      * @return This builder for chaining.
      */
     public Builder setAutomaticRestart(boolean value) {
-
+      bitField0_ |= 0x00000001;
       automaticRestart_ = value;
       onChanged();
       return this;
@@ -983,12 +1119,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
-     * <code>bool automatic_restart = 82385915;</code>
+     * <code>bool automatic_restart = 350821371;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAutomaticRestart() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       automaticRestart_ = false;
       onChanged();
       return this;
@@ -1002,7 +1138,21 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 82084049;</code>
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @return Whether the locationHint field is set.
+     */
+    public boolean hasLocationHint() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
      *
      * @return The locationHint.
      */
@@ -1024,7 +1174,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 82084049;</code>
+     * <code>string location_hint = 350519505;</code>
      *
      * @return The bytes for locationHint.
      */
@@ -1046,7 +1196,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 82084049;</code>
+     * <code>string location_hint = 350519505;</code>
      *
      * @param value The locationHint to set.
      * @return This builder for chaining.
@@ -1055,7 +1205,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       locationHint_ = value;
       onChanged();
       return this;
@@ -1067,12 +1217,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 82084049;</code>
+     * <code>string location_hint = 350519505;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLocationHint() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       locationHint_ = getDefaultInstance().getLocationHint();
       onChanged();
       return this;
@@ -1084,7 +1234,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
      * </pre>
      *
-     * <code>string location_hint = 82084049;</code>
+     * <code>string location_hint = 350519505;</code>
      *
      * @param value The bytes for locationHint to set.
      * @return This builder for chaining.
@@ -1094,7 +1244,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       locationHint_ = value;
       onChanged();
       return this;
@@ -1108,7 +1258,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 48796219;</code>
+     * <code>int32 min_node_cpus = 317231675;</code>
+     *
+     * @return Whether the minNodeCpus field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinNodeCpus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+     * </pre>
+     *
+     * <code>int32 min_node_cpus = 317231675;</code>
      *
      * @return The minNodeCpus.
      */
@@ -1123,13 +1288,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 48796219;</code>
+     * <code>int32 min_node_cpus = 317231675;</code>
      *
      * @param value The minNodeCpus to set.
      * @return This builder for chaining.
      */
     public Builder setMinNodeCpus(int value) {
-
+      bitField0_ |= 0x00000004;
       minNodeCpus_ = value;
       onChanged();
       return this;
@@ -1141,12 +1306,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      * </pre>
      *
-     * <code>int32 min_node_cpus = 48796219;</code>
+     * <code>int32 min_node_cpus = 317231675;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCpus() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minNodeCpus_ = 0;
       onChanged();
       return this;
@@ -1156,11 +1321,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodeAffinitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         nodeAffinities_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>(
                 nodeAffinities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1177,7 +1342,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity>
@@ -1195,7 +1360,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public int getNodeAffinitiesCount() {
@@ -1212,7 +1377,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public com.google.cloud.compute.v1.SchedulingNodeAffinity getNodeAffinities(int index) {
@@ -1229,7 +1394,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder setNodeAffinities(
@@ -1253,7 +1418,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder setNodeAffinities(
@@ -1274,7 +1439,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder addNodeAffinities(com.google.cloud.compute.v1.SchedulingNodeAffinity value) {
@@ -1297,7 +1462,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder addNodeAffinities(
@@ -1321,7 +1486,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder addNodeAffinities(
@@ -1342,7 +1507,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder addNodeAffinities(
@@ -1363,7 +1528,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder addAllNodeAffinities(
@@ -1384,13 +1549,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder clearNodeAffinities() {
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         nodeAffinitiesBuilder_.clear();
@@ -1404,7 +1569,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public Builder removeNodeAffinities(int index) {
@@ -1424,7 +1589,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder getNodeAffinitiesBuilder(
@@ -1438,7 +1603,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder getNodeAffinitiesOrBuilder(
@@ -1456,7 +1621,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>
@@ -1474,7 +1639,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder addNodeAffinitiesBuilder() {
@@ -1488,7 +1653,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder addNodeAffinitiesBuilder(
@@ -1504,7 +1669,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
+     * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder>
@@ -1524,7 +1689,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder,
                 com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>(
                 nodeAffinities_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         nodeAffinities_ = null;
@@ -1533,6 +1698,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int onHostMaintenance_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;
+     * </code>
+     *
+     * @return Whether the onHostMaintenance field is set.
+     */
+    @java.lang.Override
+    public boolean hasOnHostMaintenance() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1563,7 +1744,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOnHostMaintenanceValue(int value) {
-
+      bitField0_ |= 0x00000010;
       onHostMaintenance_ = value;
       onChanged();
       return this;
@@ -1607,7 +1788,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       onHostMaintenance_ = value.getNumber();
       onChanged();
       return this;
@@ -1625,7 +1806,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOnHostMaintenance() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       onHostMaintenance_ = 0;
       onChanged();
       return this;
@@ -1639,7 +1820,22 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 55767713;</code>
+     * <code>bool preemptible = 324203169;</code>
+     *
+     * @return Whether the preemptible field is set.
+     */
+    @java.lang.Override
+    public boolean hasPreemptible() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+     * </pre>
+     *
+     * <code>bool preemptible = 324203169;</code>
      *
      * @return The preemptible.
      */
@@ -1654,13 +1850,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 55767713;</code>
+     * <code>bool preemptible = 324203169;</code>
      *
      * @param value The preemptible to set.
      * @return This builder for chaining.
      */
     public Builder setPreemptible(boolean value) {
-
+      bitField0_ |= 0x00000020;
       preemptible_ = value;
       onChanged();
       return this;
@@ -1672,12 +1868,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * </pre>
      *
-     * <code>bool preemptible = 55767713;</code>
+     * <code>bool preemptible = 324203169;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       preemptible_ = false;
       onChanged();
       return this;

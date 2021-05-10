@@ -76,17 +76,26 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
           case 0:
             done = true;
             break;
-          case 251751424:
+          case 1198689274:
             {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              sourceVirtualIp_ = s;
+              break;
+            }
+          case -1895732224:
+            {
+              bitField0_ |= 0x00000002;
               numTotalNatPorts_ = input.readInt32();
               break;
             }
-          case 536778696:
+          case -1610704952:
             {
+              bitField0_ |= 0x00000001;
               numTotalDrainNatPorts_ = input.readInt32();
               break;
             }
-          case 1016040970:
+          case -1131442678:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -96,21 +105,14 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
               drainNatIpPortRanges_.add(s);
               break;
             }
-          case 1198689274:
+          case -772239678:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              sourceVirtualIp_ = s;
-              break;
-            }
-          case 1375243970:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               sourceAliasIpRange_ = s;
               break;
             }
-          case 2107162834:
+          case -40320814:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -160,7 +162,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
             com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings.Builder.class);
   }
 
-  public static final int DRAIN_NAT_IP_PORT_RANGES_FIELD_NUMBER = 127005121;
+  private int bitField0_;
+  public static final int DRAIN_NAT_IP_PORT_RANGES_FIELD_NUMBER = 395440577;
   private com.google.protobuf.LazyStringList drainNatIpPortRanges_;
   /**
    *
@@ -169,7 +172,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
    *
    * @return A list containing the drainNatIpPortRanges.
    */
@@ -183,7 +186,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
    *
    * @return The count of drainNatIpPortRanges.
    */
@@ -197,7 +200,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
    *
    * @param index The index of the element to return.
    * @return The drainNatIpPortRanges at the given index.
@@ -212,7 +215,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainNatIpPortRanges at the given index.
@@ -221,7 +224,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     return drainNatIpPortRanges_.getByteString(index);
   }
 
-  public static final int NAT_IP_PORT_RANGES_FIELD_NUMBER = 263395354;
+  public static final int NAT_IP_PORT_RANGES_FIELD_NUMBER = 531830810;
   private com.google.protobuf.LazyStringList natIpPortRanges_;
   /**
    *
@@ -230,7 +233,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
    *
    * @return A list containing the natIpPortRanges.
    */
@@ -244,7 +247,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
    *
    * @return The count of natIpPortRanges.
    */
@@ -258,7 +261,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
    *
    * @param index The index of the element to return.
    * @return The natIpPortRanges at the given index.
@@ -273,7 +276,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the natIpPortRanges at the given index.
@@ -282,7 +285,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     return natIpPortRanges_.getByteString(index);
   }
 
-  public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 67097337;
+  public static final int NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER = 335532793;
   private int numTotalDrainNatPorts_;
   /**
    *
@@ -291,7 +294,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_drain_nat_ports = 67097337;</code>
+   * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+   *
+   * @return Whether the numTotalDrainNatPorts field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumTotalDrainNatPorts() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
+   * </pre>
+   *
+   * <code>int32 num_total_drain_nat_ports = 335532793;</code>
    *
    * @return The numTotalDrainNatPorts.
    */
@@ -300,7 +318,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     return numTotalDrainNatPorts_;
   }
 
-  public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 31468928;
+  public static final int NUM_TOTAL_NAT_PORTS_FIELD_NUMBER = 299904384;
   private int numTotalNatPorts_;
   /**
    *
@@ -309,7 +327,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_nat_ports = 31468928;</code>
+   * <code>int32 num_total_nat_ports = 299904384;</code>
+   *
+   * @return Whether the numTotalNatPorts field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumTotalNatPorts() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
+   * </pre>
+   *
+   * <code>int32 num_total_nat_ports = 299904384;</code>
    *
    * @return The numTotalNatPorts.
    */
@@ -318,7 +351,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     return numTotalNatPorts_;
   }
 
-  public static final int SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER = 171905496;
+  public static final int SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER = 440340952;
   private volatile java.lang.Object sourceAliasIpRange_;
   /**
    *
@@ -327,7 +360,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 171905496;</code>
+   * <code>string source_alias_ip_range = 440340952;</code>
+   *
+   * @return Whether the sourceAliasIpRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceAliasIpRange() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
+   * </pre>
+   *
+   * <code>string source_alias_ip_range = 440340952;</code>
    *
    * @return The sourceAliasIpRange.
    */
@@ -350,7 +398,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 171905496;</code>
+   * <code>string source_alias_ip_range = 440340952;</code>
    *
    * @return The bytes for sourceAliasIpRange.
    */
@@ -369,6 +417,21 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   public static final int SOURCE_VIRTUAL_IP_FIELD_NUMBER = 149836159;
   private volatile java.lang.Object sourceVirtualIp_;
+  /**
+   *
+   *
+   * <pre>
+   * Primary IP of the VM for this NIC.
+   * </pre>
+   *
+   * <code>string source_virtual_ip = 149836159;</code>
+   *
+   * @return Whether the sourceVirtualIp field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceVirtualIp() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -430,25 +493,25 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (numTotalNatPorts_ != 0) {
-      output.writeInt32(31468928, numTotalNatPorts_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 149836159, sourceVirtualIp_);
     }
-    if (numTotalDrainNatPorts_ != 0) {
-      output.writeInt32(67097337, numTotalDrainNatPorts_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(299904384, numTotalNatPorts_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(335532793, numTotalDrainNatPorts_);
     }
     for (int i = 0; i < drainNatIpPortRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 127005121, drainNatIpPortRanges_.getRaw(i));
+          output, 395440577, drainNatIpPortRanges_.getRaw(i));
     }
-    if (!getSourceVirtualIpBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 149836159, sourceVirtualIp_);
-    }
-    if (!getSourceAliasIpRangeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 171905496, sourceAliasIpRange_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 440340952, sourceAliasIpRange_);
     }
     for (int i = 0; i < natIpPortRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 263395354, natIpPortRanges_.getRaw(i));
+          output, 531830810, natIpPortRanges_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -459,12 +522,15 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     if (size != -1) return size;
 
     size = 0;
-    if (numTotalNatPorts_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(31468928, numTotalNatPorts_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149836159, sourceVirtualIp_);
     }
-    if (numTotalDrainNatPorts_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(299904384, numTotalNatPorts_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(67097337, numTotalDrainNatPorts_);
+          com.google.protobuf.CodedOutputStream.computeInt32Size(335532793, numTotalDrainNatPorts_);
     }
     {
       int dataSize = 0;
@@ -474,12 +540,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       size += dataSize;
       size += 5 * getDrainNatIpPortRangesList().size();
     }
-    if (!getSourceVirtualIpBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149836159, sourceVirtualIp_);
-    }
-    if (!getSourceAliasIpRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(171905496, sourceAliasIpRange_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(440340952, sourceAliasIpRange_);
     }
     {
       int dataSize = 0;
@@ -507,10 +570,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
     if (!getDrainNatIpPortRangesList().equals(other.getDrainNatIpPortRangesList())) return false;
     if (!getNatIpPortRangesList().equals(other.getNatIpPortRangesList())) return false;
-    if (getNumTotalDrainNatPorts() != other.getNumTotalDrainNatPorts()) return false;
-    if (getNumTotalNatPorts() != other.getNumTotalNatPorts()) return false;
-    if (!getSourceAliasIpRange().equals(other.getSourceAliasIpRange())) return false;
-    if (!getSourceVirtualIp().equals(other.getSourceVirtualIp())) return false;
+    if (hasNumTotalDrainNatPorts() != other.hasNumTotalDrainNatPorts()) return false;
+    if (hasNumTotalDrainNatPorts()) {
+      if (getNumTotalDrainNatPorts() != other.getNumTotalDrainNatPorts()) return false;
+    }
+    if (hasNumTotalNatPorts() != other.hasNumTotalNatPorts()) return false;
+    if (hasNumTotalNatPorts()) {
+      if (getNumTotalNatPorts() != other.getNumTotalNatPorts()) return false;
+    }
+    if (hasSourceAliasIpRange() != other.hasSourceAliasIpRange()) return false;
+    if (hasSourceAliasIpRange()) {
+      if (!getSourceAliasIpRange().equals(other.getSourceAliasIpRange())) return false;
+    }
+    if (hasSourceVirtualIp() != other.hasSourceVirtualIp()) return false;
+    if (hasSourceVirtualIp()) {
+      if (!getSourceVirtualIp().equals(other.getSourceVirtualIp())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -530,14 +605,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       hash = (37 * hash) + NAT_IP_PORT_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getNatIpPortRangesList().hashCode();
     }
-    hash = (37 * hash) + NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER;
-    hash = (53 * hash) + getNumTotalDrainNatPorts();
-    hash = (37 * hash) + NUM_TOTAL_NAT_PORTS_FIELD_NUMBER;
-    hash = (53 * hash) + getNumTotalNatPorts();
-    hash = (37 * hash) + SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceAliasIpRange().hashCode();
-    hash = (37 * hash) + SOURCE_VIRTUAL_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceVirtualIp().hashCode();
+    if (hasNumTotalDrainNatPorts()) {
+      hash = (37 * hash) + NUM_TOTAL_DRAIN_NAT_PORTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumTotalDrainNatPorts();
+    }
+    if (hasNumTotalNatPorts()) {
+      hash = (37 * hash) + NUM_TOTAL_NAT_PORTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumTotalNatPorts();
+    }
+    if (hasSourceAliasIpRange()) {
+      hash = (37 * hash) + SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceAliasIpRange().hashCode();
+    }
+    if (hasSourceVirtualIp()) {
+      hash = (37 * hash) + SOURCE_VIRTUAL_IP_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceVirtualIp().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -691,13 +774,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       numTotalDrainNatPorts_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       numTotalNatPorts_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sourceAliasIpRange_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sourceVirtualIp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -728,6 +811,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result =
           new com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         drainNatIpPortRanges_ = drainNatIpPortRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -738,10 +822,23 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.natIpPortRanges_ = natIpPortRanges_;
-      result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
-      result.numTotalNatPorts_ = numTotalNatPorts_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.numTotalNatPorts_ = numTotalNatPorts_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.sourceAliasIpRange_ = sourceAliasIpRange_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.sourceVirtualIp_ = sourceVirtualIp_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -815,17 +912,19 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         }
         onChanged();
       }
-      if (other.getNumTotalDrainNatPorts() != 0) {
+      if (other.hasNumTotalDrainNatPorts()) {
         setNumTotalDrainNatPorts(other.getNumTotalDrainNatPorts());
       }
-      if (other.getNumTotalNatPorts() != 0) {
+      if (other.hasNumTotalNatPorts()) {
         setNumTotalNatPorts(other.getNumTotalNatPorts());
       }
-      if (!other.getSourceAliasIpRange().isEmpty()) {
+      if (other.hasSourceAliasIpRange()) {
+        bitField0_ |= 0x00000010;
         sourceAliasIpRange_ = other.sourceAliasIpRange_;
         onChanged();
       }
-      if (!other.getSourceVirtualIp().isEmpty()) {
+      if (other.hasSourceVirtualIp()) {
+        bitField0_ |= 0x00000020;
         sourceVirtualIp_ = other.sourceVirtualIp_;
         onChanged();
       }
@@ -878,7 +977,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @return A list containing the drainNatIpPortRanges.
      */
@@ -892,7 +991,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @return The count of drainNatIpPortRanges.
      */
@@ -906,7 +1005,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param index The index of the element to return.
      * @return The drainNatIpPortRanges at the given index.
@@ -921,7 +1020,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the drainNatIpPortRanges at the given index.
@@ -936,7 +1035,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param index The index to set the value at.
      * @param value The drainNatIpPortRanges to set.
@@ -958,7 +1057,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param value The drainNatIpPortRanges to add.
      * @return This builder for chaining.
@@ -979,7 +1078,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param values The drainNatIpPortRanges to add.
      * @return This builder for chaining.
@@ -997,7 +1096,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @return This builder for chaining.
      */
@@ -1014,7 +1113,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
+     * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
      *
      * @param value The bytes of the drainNatIpPortRanges to add.
      * @return This builder for chaining.
@@ -1046,7 +1145,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @return A list containing the natIpPortRanges.
      */
@@ -1060,7 +1159,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @return The count of natIpPortRanges.
      */
@@ -1074,7 +1173,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param index The index of the element to return.
      * @return The natIpPortRanges at the given index.
@@ -1089,7 +1188,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the natIpPortRanges at the given index.
@@ -1104,7 +1203,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param index The index to set the value at.
      * @param value The natIpPortRanges to set.
@@ -1126,7 +1225,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param value The natIpPortRanges to add.
      * @return This builder for chaining.
@@ -1147,7 +1246,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param values The natIpPortRanges to add.
      * @return This builder for chaining.
@@ -1165,7 +1264,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @return This builder for chaining.
      */
@@ -1182,7 +1281,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
      * </pre>
      *
-     * <code>repeated string nat_ip_port_ranges = 263395354;</code>
+     * <code>repeated string nat_ip_port_ranges = 531830810;</code>
      *
      * @param value The bytes of the natIpPortRanges to add.
      * @return This builder for chaining.
@@ -1206,7 +1305,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 67097337;</code>
+     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+     *
+     * @return Whether the numTotalDrainNatPorts field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumTotalDrainNatPorts() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
+     * </pre>
+     *
+     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @return The numTotalDrainNatPorts.
      */
@@ -1221,13 +1335,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 67097337;</code>
+     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @param value The numTotalDrainNatPorts to set.
      * @return This builder for chaining.
      */
     public Builder setNumTotalDrainNatPorts(int value) {
-
+      bitField0_ |= 0x00000004;
       numTotalDrainNatPorts_ = value;
       onChanged();
       return this;
@@ -1239,12 +1353,12 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_drain_nat_ports = 67097337;</code>
+     * <code>int32 num_total_drain_nat_ports = 335532793;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNumTotalDrainNatPorts() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       numTotalDrainNatPorts_ = 0;
       onChanged();
       return this;
@@ -1258,7 +1372,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 31468928;</code>
+     * <code>int32 num_total_nat_ports = 299904384;</code>
+     *
+     * @return Whether the numTotalNatPorts field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumTotalNatPorts() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
+     * </pre>
+     *
+     * <code>int32 num_total_nat_ports = 299904384;</code>
      *
      * @return The numTotalNatPorts.
      */
@@ -1273,13 +1402,13 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 31468928;</code>
+     * <code>int32 num_total_nat_ports = 299904384;</code>
      *
      * @param value The numTotalNatPorts to set.
      * @return This builder for chaining.
      */
     public Builder setNumTotalNatPorts(int value) {
-
+      bitField0_ |= 0x00000008;
       numTotalNatPorts_ = value;
       onChanged();
       return this;
@@ -1291,12 +1420,12 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
-     * <code>int32 num_total_nat_ports = 31468928;</code>
+     * <code>int32 num_total_nat_ports = 299904384;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNumTotalNatPorts() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       numTotalNatPorts_ = 0;
       onChanged();
       return this;
@@ -1310,7 +1439,21 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 171905496;</code>
+     * <code>string source_alias_ip_range = 440340952;</code>
+     *
+     * @return Whether the sourceAliasIpRange field is set.
+     */
+    public boolean hasSourceAliasIpRange() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
+     * </pre>
+     *
+     * <code>string source_alias_ip_range = 440340952;</code>
      *
      * @return The sourceAliasIpRange.
      */
@@ -1332,7 +1475,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 171905496;</code>
+     * <code>string source_alias_ip_range = 440340952;</code>
      *
      * @return The bytes for sourceAliasIpRange.
      */
@@ -1354,7 +1497,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 171905496;</code>
+     * <code>string source_alias_ip_range = 440340952;</code>
      *
      * @param value The sourceAliasIpRange to set.
      * @return This builder for chaining.
@@ -1363,7 +1506,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       sourceAliasIpRange_ = value;
       onChanged();
       return this;
@@ -1375,12 +1518,12 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 171905496;</code>
+     * <code>string source_alias_ip_range = 440340952;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSourceAliasIpRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sourceAliasIpRange_ = getDefaultInstance().getSourceAliasIpRange();
       onChanged();
       return this;
@@ -1392,7 +1535,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
      *
-     * <code>string source_alias_ip_range = 171905496;</code>
+     * <code>string source_alias_ip_range = 440340952;</code>
      *
      * @param value The bytes for sourceAliasIpRange to set.
      * @return This builder for chaining.
@@ -1402,13 +1545,27 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       sourceAliasIpRange_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object sourceVirtualIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Primary IP of the VM for this NIC.
+     * </pre>
+     *
+     * <code>string source_virtual_ip = 149836159;</code>
+     *
+     * @return Whether the sourceVirtualIp field is set.
+     */
+    public boolean hasSourceVirtualIp() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1469,7 +1626,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       sourceVirtualIp_ = value;
       onChanged();
       return this;
@@ -1486,7 +1643,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearSourceVirtualIp() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       sourceVirtualIp_ = getDefaultInstance().getSourceVirtualIp();
       onChanged();
       return this;
@@ -1508,7 +1665,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       sourceVirtualIp_ = value;
       onChanged();
       return this;

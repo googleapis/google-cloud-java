@@ -68,6 +68,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -81,50 +82,50 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               region_ = s;
               break;
             }
-          case 1236017122:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               description_ = s;
               break;
             }
-          case 1501632802:
+          case -645850846:
             {
               com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder subBuilder =
                   null;
-              if (grpcSettings_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = grpcSettings_.toBuilder();
               }
               grpcSettings_ =
@@ -135,13 +136,13 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
                 subBuilder.mergeFrom(grpcSettings_);
                 grpcSettings_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
               break;
             }
@@ -179,8 +180,24 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NotificationEndpoint.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -228,7 +245,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -237,7 +254,22 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -260,7 +292,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -277,7 +309,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int GRPC_SETTINGS_FIELD_NUMBER = 187704100;
+  public static final int GRPC_SETTINGS_FIELD_NUMBER = 456139556;
   private com.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpcSettings_;
   /**
    *
@@ -286,14 +318,14 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
    * </code>
    *
    * @return Whether the grpcSettings field is set.
    */
   @java.lang.Override
   public boolean hasGrpcSettings() {
-    return grpcSettings_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -302,7 +334,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
    * </code>
    *
    * @return The grpcSettings.
@@ -320,17 +352,34 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NotificationEndpointGrpcSettingsOrBuilder
       getGrpcSettingsOrBuilder() {
-    return getGrpcSettings();
+    return grpcSettings_ == null
+        ? com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.getDefaultInstance()
+        : grpcSettings_;
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -389,6 +438,21 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#notificationEndpoint for notification endpoints.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -429,6 +493,21 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -487,6 +566,21 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the notification endpoint resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -525,7 +619,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -534,7 +628,22 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -557,7 +666,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -588,29 +697,29 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (grpcSettings_ != null) {
-      output.writeMessage(187704100, getGrpcSettings());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(456139556, getGrpcSettings());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -621,31 +730,31 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (grpcSettings_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(187704100, getGrpcSettings());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(456139556, getGrpcSettings());
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -663,17 +772,38 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     com.google.cloud.compute.v1.NotificationEndpoint other =
         (com.google.cloud.compute.v1.NotificationEndpoint) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (hasGrpcSettings() != other.hasGrpcSettings()) return false;
     if (hasGrpcSettings()) {
       if (!getGrpcSettings().equals(other.getGrpcSettings())) return false;
     }
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -685,24 +815,38 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (hasGrpcSettings()) {
       hash = (37 * hash) + GRPC_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getGrpcSettings().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -844,32 +988,34 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getGrpcSettingsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (grpcSettingsBuilder_ == null) {
         grpcSettings_ = null;
       } else {
-        grpcSettings_ = null;
-        grpcSettingsBuilder_ = null;
+        grpcSettingsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -897,18 +1043,45 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.NotificationEndpoint buildPartial() {
       com.google.cloud.compute.v1.NotificationEndpoint result =
           new com.google.cloud.compute.v1.NotificationEndpoint(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
-      if (grpcSettingsBuilder_ == null) {
-        result.grpcSettings_ = grpcSettings_;
-      } else {
-        result.grpcSettings_ = grpcSettingsBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (grpcSettingsBuilder_ == null) {
+          result.grpcSettings_ = grpcSettings_;
+        } else {
+          result.grpcSettings_ = grpcSettingsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
       }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.selfLink_ = selfLink_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -959,34 +1132,41 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.compute.v1.NotificationEndpoint other) {
       if (other == com.google.cloud.compute.v1.NotificationEndpoint.getDefaultInstance())
         return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasGrpcSettings()) {
         mergeGrpcSettings(other.getGrpcSettings());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000040;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000080;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1019,7 +1199,23 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1080,7 +1276,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1097,7 +1293,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1119,7 +1315,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1133,7 +1329,21 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1155,7 +1365,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1177,7 +1387,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1186,7 +1396,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1198,12 +1408,12 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1215,7 +1425,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1225,7 +1435,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1244,13 +1454,13 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      *
      * @return Whether the grpcSettings field is set.
      */
     public boolean hasGrpcSettings() {
-      return grpcSettingsBuilder_ != null || grpcSettings_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1259,7 +1469,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      *
      * @return The grpcSettings.
@@ -1280,7 +1490,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public Builder setGrpcSettings(
@@ -1294,7 +1504,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       } else {
         grpcSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1304,7 +1514,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public Builder setGrpcSettings(
@@ -1315,7 +1525,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       } else {
         grpcSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1325,13 +1535,17 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public Builder mergeGrpcSettings(
         com.google.cloud.compute.v1.NotificationEndpointGrpcSettings value) {
       if (grpcSettingsBuilder_ == null) {
-        if (grpcSettings_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && grpcSettings_ != null
+            && grpcSettings_
+                != com.google.cloud.compute.v1.NotificationEndpointGrpcSettings
+                    .getDefaultInstance()) {
           grpcSettings_ =
               com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.newBuilder(grpcSettings_)
                   .mergeFrom(value)
@@ -1343,7 +1557,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       } else {
         grpcSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1353,7 +1567,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public Builder clearGrpcSettings() {
@@ -1361,10 +1575,9 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         grpcSettings_ = null;
         onChanged();
       } else {
-        grpcSettings_ = null;
-        grpcSettingsBuilder_ = null;
+        grpcSettingsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1374,12 +1587,12 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder
         getGrpcSettingsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getGrpcSettingsFieldBuilder().getBuilder();
     }
@@ -1390,7 +1603,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettingsOrBuilder
@@ -1410,7 +1623,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1431,6 +1644,20 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1491,7 +1718,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -1508,7 +1735,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1530,13 +1757,27 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#notificationEndpoint for notification endpoints.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1597,7 +1838,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -1614,7 +1855,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1636,13 +1877,27 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1703,7 +1958,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -1720,7 +1975,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1742,13 +1997,27 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the notification endpoint resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1809,7 +2078,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       region_ = value;
       onChanged();
       return this;
@@ -1826,7 +2095,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -1848,7 +2117,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       region_ = value;
       onChanged();
       return this;
@@ -1862,7 +2131,21 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1884,7 +2167,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1906,7 +2189,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1915,7 +2198,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1927,12 +2210,12 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1944,7 +2227,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1954,7 +2237,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;

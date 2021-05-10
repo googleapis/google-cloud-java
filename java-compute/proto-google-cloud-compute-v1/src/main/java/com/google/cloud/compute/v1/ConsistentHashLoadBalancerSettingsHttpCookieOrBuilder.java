@@ -32,6 +32,18 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the cookie.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -48,6 +60,18 @@ public interface ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Path to set for the cookie.
+   * </pre>
+   *
+   * <code>string path = 3433509;</code>
+   *
+   * @return Whether the path field is set.
+   */
+  boolean hasPath();
   /**
    *
    *

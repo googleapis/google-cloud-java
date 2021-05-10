@@ -83,6 +83,18 @@ public interface FirewallOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -106,7 +118,7 @@ public interface FirewallOrBuilder
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Denied> getDeniedList();
   /**
@@ -116,7 +128,7 @@ public interface FirewallOrBuilder
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   com.google.cloud.compute.v1.Denied getDenied(int index);
   /**
@@ -126,7 +138,7 @@ public interface FirewallOrBuilder
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   int getDeniedCount();
   /**
@@ -136,7 +148,7 @@ public interface FirewallOrBuilder
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.DeniedOrBuilder> getDeniedOrBuilderList();
   /**
@@ -146,7 +158,7 @@ public interface FirewallOrBuilder
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   com.google.cloud.compute.v1.DeniedOrBuilder getDeniedOrBuilder(int index);
 
@@ -157,7 +169,19 @@ public interface FirewallOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -169,7 +193,7 @@ public interface FirewallOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -182,7 +206,7 @@ public interface FirewallOrBuilder
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @return A list containing the destinationRanges.
    */
@@ -194,7 +218,7 @@ public interface FirewallOrBuilder
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @return The count of destinationRanges.
    */
@@ -206,7 +230,7 @@ public interface FirewallOrBuilder
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @param index The index of the element to return.
    * @return The destinationRanges at the given index.
@@ -219,13 +243,25 @@ public interface FirewallOrBuilder
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the destinationRanges at the given index.
    */
   com.google.protobuf.ByteString getDestinationRangesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   *
+   * @return Whether the direction field is set.
+   */
+  boolean hasDirection();
   /**
    *
    *
@@ -258,12 +294,36 @@ public interface FirewallOrBuilder
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 2505340;</code>
+   * <code>bool disabled = 270940796;</code>
+   *
+   * @return Whether the disabled field is set.
+   */
+  boolean hasDisabled();
+  /**
+   *
+   *
+   * <pre>
+   * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
+   * </pre>
+   *
+   * <code>bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
   boolean getDisabled();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -298,6 +358,18 @@ public interface FirewallOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -321,7 +393,7 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -333,7 +405,7 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -345,10 +417,22 @@ public interface FirewallOrBuilder
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    */
   com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -374,6 +458,23 @@ public interface FirewallOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
+   * global/networks/default
+   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
+   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
+   * - projects/myproject/global/networks/my-network
+   * - global/networks/default
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *
@@ -416,7 +517,19 @@ public interface FirewallOrBuilder
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -429,7 +542,19 @@ public interface FirewallOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -441,7 +566,7 @@ public interface FirewallOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -556,7 +681,7 @@ public interface FirewallOrBuilder
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @return A list containing the sourceTags.
    */
@@ -568,7 +693,7 @@ public interface FirewallOrBuilder
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @return The count of sourceTags.
    */
@@ -580,7 +705,7 @@ public interface FirewallOrBuilder
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @param index The index of the element to return.
    * @return The sourceTags at the given index.
@@ -593,7 +718,7 @@ public interface FirewallOrBuilder
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sourceTags at the given index.
@@ -607,7 +732,7 @@ public interface FirewallOrBuilder
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @return A list containing the targetServiceAccounts.
    */
@@ -619,7 +744,7 @@ public interface FirewallOrBuilder
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @return The count of targetServiceAccounts.
    */
@@ -631,7 +756,7 @@ public interface FirewallOrBuilder
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @param index The index of the element to return.
    * @return The targetServiceAccounts at the given index.
@@ -644,7 +769,7 @@ public interface FirewallOrBuilder
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetServiceAccounts at the given index.

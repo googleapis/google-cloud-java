@@ -73,27 +73,27 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 555022530:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pathMatcher_ = s;
-              break;
-            }
           case 795737690:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 hosts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               hosts_.add(s);
               break;
             }
-          case 1236017122:
+          case -1592461118:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
+              pathMatcher_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               description_ = s;
               break;
             }
@@ -111,7 +111,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         hosts_ = hosts_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -134,7 +134,8 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HostRule.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  private int bitField0_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -143,7 +144,22 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -166,7 +182,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -248,7 +264,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     return hosts_.getByteString(index);
   }
 
-  public static final int PATH_MATCHER_FIELD_NUMBER = 69377816;
+  public static final int PATH_MATCHER_FIELD_NUMBER = 337813272;
   private volatile java.lang.Object pathMatcher_;
   /**
    *
@@ -257,7 +273,22 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
-   * <code>string path_matcher = 69377816;</code>
+   * <code>string path_matcher = 337813272;</code>
+   *
+   * @return Whether the pathMatcher field is set.
+   */
+  @java.lang.Override
+  public boolean hasPathMatcher() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+   * </pre>
+   *
+   * <code>string path_matcher = 337813272;</code>
    *
    * @return The pathMatcher.
    */
@@ -280,7 +311,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
-   * <code>string path_matcher = 69377816;</code>
+   * <code>string path_matcher = 337813272;</code>
    *
    * @return The bytes for pathMatcher.
    */
@@ -311,14 +342,14 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPathMatcherBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 69377816, pathMatcher_);
-    }
     for (int i = 0; i < hosts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99467211, hosts_.getRaw(i));
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 337813272, pathMatcher_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -329,9 +360,6 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathMatcherBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(69377816, pathMatcher_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < hosts_.size(); i++) {
@@ -340,8 +368,11 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHostsList().size();
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(337813272, pathMatcher_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -358,9 +389,15 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.HostRule other = (com.google.cloud.compute.v1.HostRule) obj;
 
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (!getHostsList().equals(other.getHostsList())) return false;
-    if (!getPathMatcher().equals(other.getPathMatcher())) return false;
+    if (hasPathMatcher() != other.hasPathMatcher()) return false;
+    if (hasPathMatcher()) {
+      if (!getPathMatcher().equals(other.getPathMatcher())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,14 +409,18 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (getHostsCount() > 0) {
       hash = (37 * hash) + HOSTS_FIELD_NUMBER;
       hash = (53 * hash) + getHostsList().hashCode();
     }
-    hash = (37 * hash) + PATH_MATCHER_FIELD_NUMBER;
-    hash = (53 * hash) + getPathMatcher().hashCode();
+    if (hasPathMatcher()) {
+      hash = (37 * hash) + PATH_MATCHER_FIELD_NUMBER;
+      hash = (53 * hash) + getPathMatcher().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -525,11 +566,11 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       description_ = "";
-
-      hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       pathMatcher_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -557,13 +598,21 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HostRule buildPartial() {
       com.google.cloud.compute.v1.HostRule result = new com.google.cloud.compute.v1.HostRule(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         hosts_ = hosts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.hosts_ = hosts_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.pathMatcher_ = pathMatcher_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -613,21 +662,23 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.HostRule other) {
       if (other == com.google.cloud.compute.v1.HostRule.getDefaultInstance()) return this;
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000001;
         description_ = other.description_;
         onChanged();
       }
       if (!other.hosts_.isEmpty()) {
         if (hosts_.isEmpty()) {
           hosts_ = other.hosts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureHostsIsMutable();
           hosts_.addAll(other.hosts_);
         }
         onChanged();
       }
-      if (!other.getPathMatcher().isEmpty()) {
+      if (other.hasPathMatcher()) {
+        bitField0_ |= 0x00000004;
         pathMatcher_ = other.pathMatcher_;
         onChanged();
       }
@@ -670,7 +721,21 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -692,7 +757,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -714,7 +779,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -723,7 +788,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -735,12 +800,12 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -752,7 +817,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -762,7 +827,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -772,9 +837,9 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureHostsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         hosts_ = new com.google.protobuf.LazyStringArrayList(hosts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -917,7 +982,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearHosts() {
       hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -953,7 +1018,21 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
      * </pre>
      *
-     * <code>string path_matcher = 69377816;</code>
+     * <code>string path_matcher = 337813272;</code>
+     *
+     * @return Whether the pathMatcher field is set.
+     */
+    public boolean hasPathMatcher() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+     * </pre>
+     *
+     * <code>string path_matcher = 337813272;</code>
      *
      * @return The pathMatcher.
      */
@@ -975,7 +1054,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
      * </pre>
      *
-     * <code>string path_matcher = 69377816;</code>
+     * <code>string path_matcher = 337813272;</code>
      *
      * @return The bytes for pathMatcher.
      */
@@ -997,7 +1076,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
      * </pre>
      *
-     * <code>string path_matcher = 69377816;</code>
+     * <code>string path_matcher = 337813272;</code>
      *
      * @param value The pathMatcher to set.
      * @return This builder for chaining.
@@ -1006,7 +1085,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       pathMatcher_ = value;
       onChanged();
       return this;
@@ -1018,12 +1097,12 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
      * </pre>
      *
-     * <code>string path_matcher = 69377816;</code>
+     * <code>string path_matcher = 337813272;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPathMatcher() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pathMatcher_ = getDefaultInstance().getPathMatcher();
       onChanged();
       return this;
@@ -1035,7 +1114,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
      * </pre>
      *
-     * <code>string path_matcher = 69377816;</code>
+     * <code>string path_matcher = 337813272;</code>
      *
      * @param value The bytes for pathMatcher to set.
      * @return This builder for chaining.
@@ -1045,7 +1124,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       pathMatcher_ = value;
       onChanged();
       return this;

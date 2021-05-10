@@ -30,7 +30,19 @@ public interface CustomerEncryptionKeyOrBuilder
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 215938457;</code>
+   * <code>string kms_key_name = 484373913;</code>
+   *
+   * @return Whether the kmsKeyName field is set.
+   */
+  boolean hasKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the encryption key that is stored in Google Cloud KMS.
+   * </pre>
+   *
+   * <code>string kms_key_name = 484373913;</code>
    *
    * @return The kmsKeyName.
    */
@@ -42,12 +54,24 @@ public interface CustomerEncryptionKeyOrBuilder
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 215938457;</code>
+   * <code>string kms_key_name = 484373913;</code>
    *
    * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used.
+   * </pre>
+   *
+   * <code>string kms_key_service_account = 209986261;</code>
+   *
+   * @return Whether the kmsKeyServiceAccount field is set.
+   */
+  boolean hasKmsKeyServiceAccount();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface CustomerEncryptionKeyOrBuilder
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 180761032;</code>
+   * <code>string raw_key = 449196488;</code>
+   *
+   * @return Whether the rawKey field is set.
+   */
+  boolean hasRawKey();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
+   * </pre>
+   *
+   * <code>string raw_key = 449196488;</code>
    *
    * @return The rawKey.
    */
@@ -92,12 +128,24 @@ public interface CustomerEncryptionKeyOrBuilder
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 180761032;</code>
+   * <code>string raw_key = 449196488;</code>
    *
    * @return The bytes for rawKey.
    */
   com.google.protobuf.ByteString getRawKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
+   * </pre>
+   *
+   * <code>string sha256 = 170112551;</code>
+   *
+   * @return Whether the sha256 field is set.
+   */
+  boolean hasSha256();
   /**
    *
    *

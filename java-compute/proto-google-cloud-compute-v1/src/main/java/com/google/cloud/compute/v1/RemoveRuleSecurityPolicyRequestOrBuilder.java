@@ -30,7 +30,19 @@ public interface RemoveRuleSecurityPolicyRequestOrBuilder
    * The priority of the rule to remove from the security policy.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the rule to remove from the security policy.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */

@@ -31,7 +31,20 @@ public interface CorsPolicyOrBuilder
    * Default is false.
    * </pre>
    *
-   * <code>bool allow_credentials = 212827910;</code>
+   * <code>bool allow_credentials = 481263366;</code>
+   *
+   * @return Whether the allowCredentials field is set.
+   */
+  boolean hasAllowCredentials();
+  /**
+   *
+   *
+   * <pre>
+   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This translates to the Access-Control-Allow-Credentials header.
+   * Default is false.
+   * </pre>
+   *
+   * <code>bool allow_credentials = 481263366;</code>
    *
    * @return The allowCredentials.
    */
@@ -256,7 +269,19 @@ public interface CorsPolicyOrBuilder
    * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
-   * <code>bool disabled = 2505340;</code>
+   * <code>bool disabled = 270940796;</code>
+   *
+   * @return Whether the disabled field is set.
+   */
+  boolean hasDisabled();
+  /**
+   *
+   *
+   * <pre>
+   * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
+   * </pre>
+   *
+   * <code>bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -320,7 +345,19 @@ public interface CorsPolicyOrBuilder
    * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
    * </pre>
    *
-   * <code>int32 max_age = 39123876;</code>
+   * <code>int32 max_age = 307559332;</code>
+   *
+   * @return Whether the maxAge field is set.
+   */
+  boolean hasMaxAge();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
+   * </pre>
+   *
+   * <code>int32 max_age = 307559332;</code>
    *
    * @return The maxAge.
    */

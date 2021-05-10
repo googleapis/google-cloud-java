@@ -72,6 +72,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,31 +83,31 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 175963562:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              location_ = s;
-              break;
-            }
-          case 668767426:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              expression_ = s;
-              break;
-            }
           case 882971330:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               title_ = s;
               break;
             }
-          case 1236017122:
+          case -1971520086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              location_ = s;
+              break;
+            }
+          case -1478716222:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              expression_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               description_ = s;
               break;
             }
@@ -143,7 +144,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Expr.class, com.google.cloud.compute.v1.Expr.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  private int bitField0_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -152,7 +154,22 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -175,7 +192,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -192,7 +209,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int EXPRESSION_FIELD_NUMBER = 83595928;
+  public static final int EXPRESSION_FIELD_NUMBER = 352031384;
   private volatile java.lang.Object expression_;
   /**
    *
@@ -201,7 +218,22 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 83595928;</code>
+   * <code>string expression = 352031384;</code>
+   *
+   * @return Whether the expression field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpression() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Textual representation of an expression in Common Expression Language syntax.
+   * </pre>
+   *
+   * <code>string expression = 352031384;</code>
    *
    * @return The expression.
    */
@@ -224,7 +256,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 83595928;</code>
+   * <code>string expression = 352031384;</code>
    *
    * @return The bytes for expression.
    */
@@ -241,7 +273,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOCATION_FIELD_NUMBER = 21995445;
+  public static final int LOCATION_FIELD_NUMBER = 290430901;
   private volatile java.lang.Object location_;
   /**
    *
@@ -250,7 +282,22 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
+   *
+   * @return Whether the location field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocation() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+   * </pre>
+   *
+   * <code>string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -273,7 +320,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
@@ -292,6 +339,21 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TITLE_FIELD_NUMBER = 110371416;
   private volatile java.lang.Object title_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+   * </pre>
+   *
+   * <code>string title = 110371416;</code>
+   *
+   * @return Whether the title field is set.
+   */
+  @java.lang.Override
+  public boolean hasTitle() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -353,17 +415,17 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLocationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21995445, location_);
-    }
-    if (!getExpressionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 83595928, expression_);
-    }
-    if (!getTitleBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110371416, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 352031384, expression_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -374,17 +436,17 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getLocationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21995445, location_);
-    }
-    if (!getExpressionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83595928, expression_);
-    }
-    if (!getTitleBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110371416, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(352031384, expression_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,10 +463,22 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Expr other = (com.google.cloud.compute.v1.Expr) obj;
 
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getExpression().equals(other.getExpression())) return false;
-    if (!getLocation().equals(other.getLocation())) return false;
-    if (!getTitle().equals(other.getTitle())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasExpression() != other.hasExpression()) return false;
+    if (hasExpression()) {
+      if (!getExpression().equals(other.getExpression())) return false;
+    }
+    if (hasLocation() != other.hasLocation()) return false;
+    if (hasLocation()) {
+      if (!getLocation().equals(other.getLocation())) return false;
+    }
+    if (hasTitle() != other.hasTitle()) return false;
+    if (hasTitle()) {
+      if (!getTitle().equals(other.getTitle())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -416,14 +490,22 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + EXPRESSION_FIELD_NUMBER;
-    hash = (53 * hash) + getExpression().hashCode();
-    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
-    hash = (53 * hash) + getLocation().hashCode();
-    hash = (37 * hash) + TITLE_FIELD_NUMBER;
-    hash = (53 * hash) + getTitle().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasExpression()) {
+      hash = (37 * hash) + EXPRESSION_FIELD_NUMBER;
+      hash = (53 * hash) + getExpression().hashCode();
+    }
+    if (hasLocation()) {
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+    }
+    if (hasTitle()) {
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -578,13 +660,13 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       expression_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       location_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       title_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -611,10 +693,25 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Expr buildPartial() {
       com.google.cloud.compute.v1.Expr result = new com.google.cloud.compute.v1.Expr(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.expression_ = expression_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.location_ = location_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.title_ = title_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -664,19 +761,23 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Expr other) {
       if (other == com.google.cloud.compute.v1.Expr.getDefaultInstance()) return this;
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000001;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getExpression().isEmpty()) {
+      if (other.hasExpression()) {
+        bitField0_ |= 0x00000002;
         expression_ = other.expression_;
         onChanged();
       }
-      if (!other.getLocation().isEmpty()) {
+      if (other.hasLocation()) {
+        bitField0_ |= 0x00000004;
         location_ = other.location_;
         onChanged();
       }
-      if (!other.getTitle().isEmpty()) {
+      if (other.hasTitle()) {
+        bitField0_ |= 0x00000008;
         title_ = other.title_;
         onChanged();
       }
@@ -709,6 +810,8 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -717,7 +820,21 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -739,7 +856,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -761,7 +878,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -770,7 +887,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -782,12 +899,12 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -799,7 +916,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -809,7 +926,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -823,7 +940,21 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Textual representation of an expression in Common Expression Language syntax.
      * </pre>
      *
-     * <code>string expression = 83595928;</code>
+     * <code>string expression = 352031384;</code>
+     *
+     * @return Whether the expression field is set.
+     */
+    public boolean hasExpression() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Textual representation of an expression in Common Expression Language syntax.
+     * </pre>
+     *
+     * <code>string expression = 352031384;</code>
      *
      * @return The expression.
      */
@@ -845,7 +976,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Textual representation of an expression in Common Expression Language syntax.
      * </pre>
      *
-     * <code>string expression = 83595928;</code>
+     * <code>string expression = 352031384;</code>
      *
      * @return The bytes for expression.
      */
@@ -867,7 +998,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Textual representation of an expression in Common Expression Language syntax.
      * </pre>
      *
-     * <code>string expression = 83595928;</code>
+     * <code>string expression = 352031384;</code>
      *
      * @param value The expression to set.
      * @return This builder for chaining.
@@ -876,7 +1007,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       expression_ = value;
       onChanged();
       return this;
@@ -888,12 +1019,12 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Textual representation of an expression in Common Expression Language syntax.
      * </pre>
      *
-     * <code>string expression = 83595928;</code>
+     * <code>string expression = 352031384;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearExpression() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       expression_ = getDefaultInstance().getExpression();
       onChanged();
       return this;
@@ -905,7 +1036,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Textual representation of an expression in Common Expression Language syntax.
      * </pre>
      *
-     * <code>string expression = 83595928;</code>
+     * <code>string expression = 352031384;</code>
      *
      * @param value The bytes for expression to set.
      * @return This builder for chaining.
@@ -915,7 +1046,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       expression_ = value;
       onChanged();
       return this;
@@ -929,7 +1060,21 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
+     *
+     * @return Whether the location field is set.
+     */
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+     * </pre>
+     *
+     * <code>string location = 290430901;</code>
      *
      * @return The location.
      */
@@ -951,7 +1096,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @return The bytes for location.
      */
@@ -973,7 +1118,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -982,7 +1127,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       location_ = value;
       onChanged();
       return this;
@@ -994,12 +1139,12 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       location_ = getDefaultInstance().getLocation();
       onChanged();
       return this;
@@ -1011,7 +1156,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -1021,13 +1166,27 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       location_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object title_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+     * </pre>
+     *
+     * <code>string title = 110371416;</code>
+     *
+     * @return Whether the title field is set.
+     */
+    public boolean hasTitle() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1088,7 +1247,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       title_ = value;
       onChanged();
       return this;
@@ -1105,7 +1264,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       title_ = getDefaultInstance().getTitle();
       onChanged();
       return this;
@@ -1127,7 +1286,7 @@ public final class Expr extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       title_ = value;
       onChanged();
       return this;

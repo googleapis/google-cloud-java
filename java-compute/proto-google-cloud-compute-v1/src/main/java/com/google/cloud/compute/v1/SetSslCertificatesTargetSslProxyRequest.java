@@ -64,6 +64,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,15 +78,8 @@ public final class SetSslCertificatesTargetSslProxyRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
-              break;
-            }
-          case 562883178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetSslProxy_ = s;
               break;
             }
           case 1183526378:
@@ -112,6 +106,13 @@ public final class SetSslCertificatesTargetSslProxyRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1584600470:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetSslProxy_ = s;
               break;
             }
           default:
@@ -148,6 +149,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
             com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -199,6 +201,23 @@ public final class SetSslCertificatesTargetSslProxyRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -308,7 +327,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
     return getTargetSslProxiesSetSslCertificatesRequestResource();
   }
 
-  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 70360397;
+  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
   private volatile java.lang.Object targetSslProxy_;
   /**
    *
@@ -317,7 +336,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -340,7 +359,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */
@@ -371,17 +390,17 @@ public final class SetSslCertificatesTargetSslProxyRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 70360397, targetSslProxy_);
     }
     if (targetSslProxiesSetSslCertificatesRequestResource_ != null) {
       output.writeMessage(147940797, getTargetSslProxiesSetSslCertificatesRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 338795853, targetSslProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -392,11 +411,8 @@ public final class SetSslCertificatesTargetSslProxyRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70360397, targetSslProxy_);
     }
     if (targetSslProxiesSetSslCertificatesRequestResource_ != null) {
       size +=
@@ -405,6 +421,9 @@ public final class SetSslCertificatesTargetSslProxyRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338795853, targetSslProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -423,7 +442,10 @@ public final class SetSslCertificatesTargetSslProxyRequest
         (com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasTargetSslProxiesSetSslCertificatesRequestResource()
         != other.hasTargetSslProxiesSetSslCertificatesRequestResource()) return false;
     if (hasTargetSslProxiesSetSslCertificatesRequestResource()) {
@@ -444,8 +466,10 @@ public final class SetSslCertificatesTargetSslProxyRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasTargetSslProxiesSetSslCertificatesRequestResource()) {
       hash = (37 * hash) + TARGET_SSL_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetSslProxiesSetSslCertificatesRequestResource().hashCode();
@@ -603,7 +627,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (targetSslProxiesSetSslCertificatesRequestResourceBuilder_ == null) {
         targetSslProxiesSetSslCertificatesRequestResource_ = null;
       } else {
@@ -641,7 +665,12 @@ public final class SetSslCertificatesTargetSslProxyRequest
     public com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest result =
           new com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (targetSslProxiesSetSslCertificatesRequestResourceBuilder_ == null) {
         result.targetSslProxiesSetSslCertificatesRequestResource_ =
@@ -651,6 +680,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
             targetSslProxiesSetSslCertificatesRequestResourceBuilder_.build();
       }
       result.targetSslProxy_ = targetSslProxy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -708,7 +738,8 @@ public final class SetSslCertificatesTargetSslProxyRequest
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -750,6 +781,8 @@ public final class SetSslCertificatesTargetSslProxyRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -869,6 +902,22 @@ public final class SetSslCertificatesTargetSslProxyRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -924,7 +973,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -943,7 +992,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -967,7 +1016,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1199,7 +1248,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetSslProxy.
      */
@@ -1221,7 +1270,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1243,7 +1292,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetSslProxy to set.
      * @return This builder for chaining.
@@ -1264,7 +1313,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1281,7 +1330,7 @@ public final class SetSslCertificatesTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetSslProxy to set.
      * @return This builder for chaining.

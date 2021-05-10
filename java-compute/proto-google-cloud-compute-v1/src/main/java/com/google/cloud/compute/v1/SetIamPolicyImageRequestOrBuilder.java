@@ -31,7 +31,7 @@ public interface SetIamPolicyImageRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetPolicyRequestResource field is set.
@@ -45,7 +45,7 @@ public interface SetIamPolicyImageRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetPolicyRequestResource.
@@ -59,7 +59,7 @@ public interface SetIamPolicyImageRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder

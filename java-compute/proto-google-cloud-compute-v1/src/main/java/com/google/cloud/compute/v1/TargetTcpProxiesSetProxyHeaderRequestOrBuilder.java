@@ -34,6 +34,20 @@ public interface TargetTcpProxiesSetProxyHeaderRequestOrBuilder
    * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;
    * </code>
    *
+   * @return Whether the proxyHeader field is set.
+   */
+  boolean hasProxyHeader();
+  /**
+   *
+   *
+   * <pre>
+   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;
+   * </code>
+   *
    * @return The enum numeric value on the wire for proxyHeader.
    */
   int getProxyHeaderValue();

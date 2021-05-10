@@ -62,6 +62,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,28 +76,28 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
           case 25668930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               host_ = s;
               break;
             }
           case 27468074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               path_ = s;
               break;
             }
           case 1071898994:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               expectedService_ = s;
               break;
             }
-          case 1375553570:
+          case -771930078:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               actualService_ = s;
               break;
             }
@@ -134,7 +135,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.TestFailure.Builder.class);
   }
 
-  public static final int ACTUAL_SERVICE_FIELD_NUMBER = 171944196;
+  private int bitField0_;
+  public static final int ACTUAL_SERVICE_FIELD_NUMBER = 440379652;
   private volatile java.lang.Object actualService_;
   /**
    *
@@ -143,7 +145,22 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 171944196;</code>
+   * <code>string actual_service = 440379652;</code>
+   *
+   * @return Whether the actualService field is set.
+   */
+  @java.lang.Override
+  public boolean hasActualService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BackendService or BackendBucket returned by load balancer.
+   * </pre>
+   *
+   * <code>string actual_service = 440379652;</code>
    *
    * @return The actualService.
    */
@@ -166,7 +183,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 171944196;</code>
+   * <code>string actual_service = 440379652;</code>
    *
    * @return The bytes for actualService.
    */
@@ -185,6 +202,21 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPECTED_SERVICE_FIELD_NUMBER = 133987374;
   private volatile java.lang.Object expectedService_;
+  /**
+   *
+   *
+   * <pre>
+   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * </pre>
+   *
+   * <code>string expected_service = 133987374;</code>
+   *
+   * @return Whether the expectedService field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpectedService() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -243,6 +275,21 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string host = 3208616;</code>
    *
+   * @return Whether the host field is set.
+   */
+  @java.lang.Override
+  public boolean hasHost() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Host portion of the URL.
+   * </pre>
+   *
+   * <code>string host = 3208616;</code>
+   *
    * @return The host.
    */
   @java.lang.Override
@@ -283,6 +330,21 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PATH_FIELD_NUMBER = 3433509;
   private volatile java.lang.Object path_;
+  /**
+   *
+   *
+   * <pre>
+   * Path portion including query parameters in the URL.
+   * </pre>
+   *
+   * <code>string path = 3433509;</code>
+   *
+   * @return Whether the path field is set.
+   */
+  @java.lang.Override
+  public boolean hasPath() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -344,17 +406,17 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHostBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3208616, host_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
-    if (!getExpectedServiceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 133987374, expectedService_);
     }
-    if (!getActualServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 171944196, actualService_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 440379652, actualService_);
     }
     unknownFields.writeTo(output);
   }
@@ -365,17 +427,17 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getHostBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3208616, host_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
     }
-    if (!getExpectedServiceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(133987374, expectedService_);
     }
-    if (!getActualServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171944196, actualService_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(440379652, actualService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -392,10 +454,22 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.TestFailure other = (com.google.cloud.compute.v1.TestFailure) obj;
 
-    if (!getActualService().equals(other.getActualService())) return false;
-    if (!getExpectedService().equals(other.getExpectedService())) return false;
-    if (!getHost().equals(other.getHost())) return false;
-    if (!getPath().equals(other.getPath())) return false;
+    if (hasActualService() != other.hasActualService()) return false;
+    if (hasActualService()) {
+      if (!getActualService().equals(other.getActualService())) return false;
+    }
+    if (hasExpectedService() != other.hasExpectedService()) return false;
+    if (hasExpectedService()) {
+      if (!getExpectedService().equals(other.getExpectedService())) return false;
+    }
+    if (hasHost() != other.hasHost()) return false;
+    if (hasHost()) {
+      if (!getHost().equals(other.getHost())) return false;
+    }
+    if (hasPath() != other.hasPath()) return false;
+    if (hasPath()) {
+      if (!getPath().equals(other.getPath())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -407,14 +481,22 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACTUAL_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getActualService().hashCode();
-    hash = (37 * hash) + EXPECTED_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getExpectedService().hashCode();
-    hash = (37 * hash) + HOST_FIELD_NUMBER;
-    hash = (53 * hash) + getHost().hashCode();
-    hash = (37 * hash) + PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getPath().hashCode();
+    if (hasActualService()) {
+      hash = (37 * hash) + ACTUAL_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getActualService().hashCode();
+    }
+    if (hasExpectedService()) {
+      hash = (37 * hash) + EXPECTED_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedService().hashCode();
+    }
+    if (hasHost()) {
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+    }
+    if (hasPath()) {
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -560,13 +642,13 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       actualService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       expectedService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       host_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       path_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -594,10 +676,25 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.TestFailure buildPartial() {
       com.google.cloud.compute.v1.TestFailure result =
           new com.google.cloud.compute.v1.TestFailure(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.actualService_ = actualService_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.expectedService_ = expectedService_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.host_ = host_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.path_ = path_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -647,19 +744,23 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TestFailure other) {
       if (other == com.google.cloud.compute.v1.TestFailure.getDefaultInstance()) return this;
-      if (!other.getActualService().isEmpty()) {
+      if (other.hasActualService()) {
+        bitField0_ |= 0x00000001;
         actualService_ = other.actualService_;
         onChanged();
       }
-      if (!other.getExpectedService().isEmpty()) {
+      if (other.hasExpectedService()) {
+        bitField0_ |= 0x00000002;
         expectedService_ = other.expectedService_;
         onChanged();
       }
-      if (!other.getHost().isEmpty()) {
+      if (other.hasHost()) {
+        bitField0_ |= 0x00000004;
         host_ = other.host_;
         onChanged();
       }
-      if (!other.getPath().isEmpty()) {
+      if (other.hasPath()) {
+        bitField0_ |= 0x00000008;
         path_ = other.path_;
         onChanged();
       }
@@ -692,6 +793,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object actualService_ = "";
     /**
      *
@@ -700,7 +803,21 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 171944196;</code>
+     * <code>string actual_service = 440379652;</code>
+     *
+     * @return Whether the actualService field is set.
+     */
+    public boolean hasActualService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackendService or BackendBucket returned by load balancer.
+     * </pre>
+     *
+     * <code>string actual_service = 440379652;</code>
      *
      * @return The actualService.
      */
@@ -722,7 +839,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 171944196;</code>
+     * <code>string actual_service = 440379652;</code>
      *
      * @return The bytes for actualService.
      */
@@ -744,7 +861,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 171944196;</code>
+     * <code>string actual_service = 440379652;</code>
      *
      * @param value The actualService to set.
      * @return This builder for chaining.
@@ -753,7 +870,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       actualService_ = value;
       onChanged();
       return this;
@@ -765,12 +882,12 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 171944196;</code>
+     * <code>string actual_service = 440379652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearActualService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       actualService_ = getDefaultInstance().getActualService();
       onChanged();
       return this;
@@ -782,7 +899,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 171944196;</code>
+     * <code>string actual_service = 440379652;</code>
      *
      * @param value The bytes for actualService to set.
      * @return This builder for chaining.
@@ -792,13 +909,27 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       actualService_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object expectedService_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * </pre>
+     *
+     * <code>string expected_service = 133987374;</code>
+     *
+     * @return Whether the expectedService field is set.
+     */
+    public boolean hasExpectedService() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -859,7 +990,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       expectedService_ = value;
       onChanged();
       return this;
@@ -876,7 +1007,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpectedService() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       expectedService_ = getDefaultInstance().getExpectedService();
       onChanged();
       return this;
@@ -898,13 +1029,27 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       expectedService_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object host_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Host portion of the URL.
+     * </pre>
+     *
+     * <code>string host = 3208616;</code>
+     *
+     * @return Whether the host field is set.
+     */
+    public boolean hasHost() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -965,7 +1110,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       host_ = value;
       onChanged();
       return this;
@@ -982,7 +1127,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       host_ = getDefaultInstance().getHost();
       onChanged();
       return this;
@@ -1004,13 +1149,27 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       host_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Path portion including query parameters in the URL.
+     * </pre>
+     *
+     * <code>string path = 3433509;</code>
+     *
+     * @return Whether the path field is set.
+     */
+    public boolean hasPath() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1071,7 +1230,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       path_ = value;
       onChanged();
       return this;
@@ -1088,7 +1247,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       path_ = getDefaultInstance().getPath();
       onChanged();
       return this;
@@ -1110,7 +1269,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       path_ = value;
       onChanged();
       return this;

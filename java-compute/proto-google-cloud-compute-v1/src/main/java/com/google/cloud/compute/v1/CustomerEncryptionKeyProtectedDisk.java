@@ -60,6 +60,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,17 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
           case 0:
             done = true;
             break;
-          case 25801770:
+          case 1417887962:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              source_ = s;
+              break;
+            }
+          case -2121681878:
             {
               com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (diskEncryptionKey_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = diskEncryptionKey_.toBuilder();
               }
               diskEncryptionKey_ =
@@ -84,14 +92,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
                 subBuilder.mergeFrom(diskEncryptionKey_);
                 diskEncryptionKey_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 1417887962:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              source_ = s;
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -128,7 +129,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
             com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk.Builder.class);
   }
 
-  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 3225221;
+  private int bitField0_;
+  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 271660677;
   private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
   /**
    *
@@ -137,13 +139,13 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
   @java.lang.Override
   public boolean hasDiskEncryptionKey() {
-    return diskEncryptionKey_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -152,7 +154,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -169,16 +171,33 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
    * Decrypts data associated with the disk with a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
       getDiskEncryptionKeyOrBuilder() {
-    return getDiskEncryptionKey();
+    return diskEncryptionKey_ == null
+        ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+        : diskEncryptionKey_;
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
   private volatile java.lang.Object source_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
+   * @return Whether the source field is set.
+   */
+  @java.lang.Override
+  public boolean hasSource() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -240,11 +259,11 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (diskEncryptionKey_ != null) {
-      output.writeMessage(3225221, getDiskEncryptionKey());
-    }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(271660677, getDiskEncryptionKey());
     }
     unknownFields.writeTo(output);
   }
@@ -255,12 +274,13 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (diskEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(3225221, getDiskEncryptionKey());
-    }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              271660677, getDiskEncryptionKey());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -282,7 +302,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     if (hasDiskEncryptionKey()) {
       if (!getDiskEncryptionKey().equals(other.getDiskEncryptionKey())) return false;
     }
-    if (!getSource().equals(other.getSource())) return false;
+    if (hasSource() != other.hasSource()) return false;
+    if (hasSource()) {
+      if (!getSource().equals(other.getSource())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -298,8 +321,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       hash = (37 * hash) + DISK_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getDiskEncryptionKey().hashCode();
     }
-    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSource().hashCode();
+    if (hasSource()) {
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,7 +464,9 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDiskEncryptionKeyFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -448,11 +475,11 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       if (diskEncryptionKeyBuilder_ == null) {
         diskEncryptionKey_ = null;
       } else {
-        diskEncryptionKey_ = null;
-        diskEncryptionKeyBuilder_ = null;
+        diskEncryptionKeyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       source_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -481,12 +508,21 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     public com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk buildPartial() {
       com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk result =
           new com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk(this);
-      if (diskEncryptionKeyBuilder_ == null) {
-        result.diskEncryptionKey_ = diskEncryptionKey_;
-      } else {
-        result.diskEncryptionKey_ = diskEncryptionKeyBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (diskEncryptionKeyBuilder_ == null) {
+          result.diskEncryptionKey_ = diskEncryptionKey_;
+        } else {
+          result.diskEncryptionKey_ = diskEncryptionKeyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.source_ = source_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -541,7 +577,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       if (other.hasDiskEncryptionKey()) {
         mergeDiskEncryptionKey(other.getDiskEncryptionKey());
       }
-      if (!other.getSource().isEmpty()) {
+      if (other.hasSource()) {
+        bitField0_ |= 0x00000002;
         source_ = other.source_;
         onChanged();
       }
@@ -576,6 +613,8 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -589,12 +628,12 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
     public boolean hasDiskEncryptionKey() {
-      return diskEncryptionKeyBuilder_ != null || diskEncryptionKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -603,7 +642,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      *
      * @return The diskEncryptionKey.
      */
@@ -623,7 +662,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -635,7 +674,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       } else {
         diskEncryptionKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -645,7 +684,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -655,7 +694,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       } else {
         diskEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -665,11 +704,14 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
-        if (diskEncryptionKey_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && diskEncryptionKey_ != null
+            && diskEncryptionKey_
+                != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
           diskEncryptionKey_ =
               com.google.cloud.compute.v1.CustomerEncryptionKey.newBuilder(diskEncryptionKey_)
                   .mergeFrom(value)
@@ -681,7 +723,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       } else {
         diskEncryptionKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -691,17 +733,16 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
         diskEncryptionKey_ = null;
         onChanged();
       } else {
-        diskEncryptionKey_ = null;
-        diskEncryptionKeyBuilder_ = null;
+        diskEncryptionKeyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -711,10 +752,10 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDiskEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -725,7 +766,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -744,7 +785,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * Decrypts data associated with the disk with a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -764,6 +805,20 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
     }
 
     private java.lang.Object source_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is only applicable for persistent disks.
+     * </pre>
+     *
+     * <code>string source = 177235995;</code>
+     *
+     * @return Whether the source field is set.
+     */
+    public boolean hasSource() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -824,7 +879,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       source_ = value;
       onChanged();
       return this;
@@ -841,7 +896,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
@@ -863,7 +918,7 @@ public final class CustomerEncryptionKeyProtectedDisk extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       source_ = value;
       onChanged();
       return this;

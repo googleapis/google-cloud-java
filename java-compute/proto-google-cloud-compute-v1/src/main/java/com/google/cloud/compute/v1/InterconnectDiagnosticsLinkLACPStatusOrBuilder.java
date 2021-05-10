@@ -32,6 +32,18 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    * <code>string google_system_id = 91210405;</code>
    *
+   * @return Whether the googleSystemId field is set.
+   */
+  boolean hasGoogleSystemId();
+  /**
+   *
+   *
+   * <pre>
+   * System ID of the port on Google's side of the LACP exchange.
+   * </pre>
+   *
+   * <code>string google_system_id = 91210405;</code>
+   *
    * @return The googleSystemId.
    */
   java.lang.String getGoogleSystemId();
@@ -55,7 +67,19 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 75385886;</code>
+   * <code>string neighbor_system_id = 343821342;</code>
+   *
+   * @return Whether the neighborSystemId field is set.
+   */
+  boolean hasNeighborSystemId();
+  /**
+   *
+   *
+   * <pre>
+   * System ID of the port on the neighbor's side of the LACP exchange.
+   * </pre>
+   *
+   * <code>string neighbor_system_id = 343821342;</code>
    *
    * @return The neighborSystemId.
    */
@@ -67,12 +91,27 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 75385886;</code>
+   * <code>string neighbor_system_id = 343821342;</code>
    *
    * @return The bytes for neighborSystemId.
    */
   com.google.protobuf.ByteString getNeighborSystemIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The state of a LACP link, which can take one of the following values:
+   * - ACTIVE: The link is configured and active within the bundle.
+   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
+   * </code>
+   *
+   * @return Whether the state field is set.
+   */
+  boolean hasState();
   /**
    *
    *

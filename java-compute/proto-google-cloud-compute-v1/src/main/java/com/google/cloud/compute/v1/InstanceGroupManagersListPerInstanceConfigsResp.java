@@ -76,7 +76,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -86,13 +86,13 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
           case 638380202:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               nextPageToken_ = s;
               break;
             }
@@ -145,6 +145,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
                 .class);
   }
 
+  private int bitField0_;
   public static final int ITEMS_FIELD_NUMBER = 100526016;
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> items_;
   /**
@@ -225,6 +226,21 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    *
    * <code>string next_page_token = 79797525;</code>
    *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -278,7 +294,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -306,7 +322,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -323,10 +339,10 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
@@ -341,10 +357,10 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
@@ -368,7 +384,10 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         (com.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp) obj;
 
     if (!getItemsList().equals(other.getItemsList())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
     if (hasWarning() != other.hasWarning()) return false;
     if (hasWarning()) {
       if (!getWarning().equals(other.getWarning())) return false;
@@ -388,8 +407,10 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
     }
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
     if (hasWarning()) {
       hash = (37 * hash) + WARNING_FIELD_NUMBER;
       hash = (53 * hash) + getWarning().hashCode();
@@ -543,6 +564,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getItemsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -556,13 +578,13 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         itemsBuilder_.clear();
       }
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -595,6 +617,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       com.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp result =
           new com.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
@@ -604,12 +627,19 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       } else {
         result.items_ = itemsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
+      result.nextPageToken_ = nextPageToken_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -691,7 +721,8 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
           }
         }
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000002;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
@@ -1091,6 +1122,20 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      *
      * <code>string next_page_token = 79797525;</code>
      *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -1142,7 +1187,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1159,7 +1204,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -1181,7 +1226,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1205,7 +1250,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1246,7 +1291,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1265,7 +1310,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1279,7 +1324,9 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1291,7 +1338,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1308,10 +1355,9 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1324,7 +1370,7 @@ public final class InstanceGroupManagersListPerInstanceConfigsResp
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

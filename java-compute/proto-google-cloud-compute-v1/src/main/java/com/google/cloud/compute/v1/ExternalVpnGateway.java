@@ -85,38 +85,31 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               id_ = s;
-              break;
-            }
-          case 24066272:
-            {
-              int rawValue = input.readEnum();
-
-              redundancyType_ = rawValue;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 96588498:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 interfaces_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.ExternalVpnGatewayInterface>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               interfaces_.add(
                   input.readMessage(
@@ -127,37 +120,44 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1424998602:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               labelFingerprint_ = s;
               break;
             }
-          case 1502234730:
+          case -2123417376:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000040;
+              redundancyType_ = rawValue;
+              break;
+            }
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
               break;
             }
-          case 1854078970:
+          case -293404678:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000040;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -179,7 +179,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         interfaces_ = java.util.Collections.unmodifiableList(interfaces_);
       }
       this.unknownFields = unknownFields.build();
@@ -196,7 +196,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 231759871:
+      case 500195327:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -233,12 +233,12 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDUNDANCY_TYPE = 0;</code>
      */
     UNDEFINED_REDUNDANCY_TYPE(0),
-    /** <code>FOUR_IPS_REDUNDANCY = 251652457;</code> */
-    FOUR_IPS_REDUNDANCY(251652457),
+    /** <code>FOUR_IPS_REDUNDANCY = 520087913;</code> */
+    FOUR_IPS_REDUNDANCY(520087913),
     /** <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code> */
     SINGLE_IP_INTERNALLY_REDUNDANT(133914873),
-    /** <code>TWO_IPS_REDUNDANCY = 98614179;</code> */
-    TWO_IPS_REDUNDANCY(98614179),
+    /** <code>TWO_IPS_REDUNDANCY = 367049635;</code> */
+    TWO_IPS_REDUNDANCY(367049635),
     UNRECOGNIZED(-1),
     ;
 
@@ -252,12 +252,12 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDUNDANCY_TYPE = 0;</code>
      */
     public static final int UNDEFINED_REDUNDANCY_TYPE_VALUE = 0;
-    /** <code>FOUR_IPS_REDUNDANCY = 251652457;</code> */
-    public static final int FOUR_IPS_REDUNDANCY_VALUE = 251652457;
+    /** <code>FOUR_IPS_REDUNDANCY = 520087913;</code> */
+    public static final int FOUR_IPS_REDUNDANCY_VALUE = 520087913;
     /** <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code> */
     public static final int SINGLE_IP_INTERNALLY_REDUNDANT_VALUE = 133914873;
-    /** <code>TWO_IPS_REDUNDANCY = 98614179;</code> */
-    public static final int TWO_IPS_REDUNDANCY_VALUE = 98614179;
+    /** <code>TWO_IPS_REDUNDANCY = 367049635;</code> */
+    public static final int TWO_IPS_REDUNDANCY_VALUE = 367049635;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -285,11 +285,11 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return UNDEFINED_REDUNDANCY_TYPE;
-        case 251652457:
+        case 520087913:
           return FOUR_IPS_REDUNDANCY;
         case 133914873:
           return SINGLE_IP_INTERNALLY_REDUNDANT;
-        case 98614179:
+        case 367049635:
           return TWO_IPS_REDUNDANCY;
         default:
           return null;
@@ -344,8 +344,24 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ExternalVpnGateway.RedundancyType)
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -393,7 +409,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -402,7 +418,22 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -425,7 +456,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -444,6 +475,21 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -578,6 +624,21 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#externalVpnGateway for externalVpnGateways.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -628,6 +689,22 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    * <code>string label_fingerprint = 178124825;</code>
    *
+   * @return Whether the labelFingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabelFingerprint() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * </pre>
+   *
+   * <code>string label_fingerprint = 178124825;</code>
+   *
    * @return The labelFingerprint.
    */
   @java.lang.Override
@@ -667,7 +744,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 231759871;
+  public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -699,7 +776,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -721,7 +798,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -734,7 +811,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -751,7 +828,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -767,6 +844,21 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -814,7 +906,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int REDUNDANCY_TYPE_FIELD_NUMBER = 3008284;
+  public static final int REDUNDANCY_TYPE_FIELD_NUMBER = 271443740;
   private int redundancyType_;
   /**
    *
@@ -823,7 +915,23 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Indicates the user-supplied redundancy type of this external VPN gateway.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
+   * </code>
+   *
+   * @return Whether the redundancyType field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedundancyType() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
    * </code>
    *
    * @return The enum numeric value on the wire for redundancyType.
@@ -839,7 +947,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * Indicates the user-supplied redundancy type of this external VPN gateway.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
    * </code>
    *
    * @return The redundancyType.
@@ -854,7 +962,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -863,7 +971,22 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -886,7 +1009,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -917,37 +1040,35 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (redundancyType_
-        != com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.UNDEFINED_REDUNDANCY_TYPE
-            .getNumber()) {
-      output.writeEnum(3008284, redundancyType_);
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     for (int i = 0; i < interfaces_.size(); i++) {
       output.writeMessage(12073562, interfaces_.get(i));
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(271443740, redundancyType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -957,37 +1078,35 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (redundancyType_
-        != com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.UNDEFINED_REDUNDANCY_TYPE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3008284, redundancyType_);
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     for (int i = 0; i < interfaces_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(12073562, interfaces_.get(i));
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(271443740, redundancyType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -997,7 +1116,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1015,16 +1134,40 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.ExternalVpnGateway other =
         (com.google.cloud.compute.v1.ExternalVpnGateway) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!getInterfacesList().equals(other.getInterfacesList())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLabelFingerprint() != other.hasLabelFingerprint()) return false;
+    if (hasLabelFingerprint()) {
+      if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (redundancyType_ != other.redundancyType_) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRedundancyType() != other.hasRedundancyType()) return false;
+    if (hasRedundancyType()) {
+      if (redundancyType_ != other.redundancyType_) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1036,30 +1179,46 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     if (getInterfacesCount() > 0) {
       hash = (37 * hash) + INTERFACES_FIELD_NUMBER;
       hash = (53 * hash) + getInterfacesList().hashCode();
     }
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getLabelFingerprint().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLabelFingerprint()) {
+      hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelFingerprint().hashCode();
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + REDUNDANCY_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + redundancyType_;
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRedundancyType()) {
+      hash = (37 * hash) + REDUNDANCY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + redundancyType_;
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1184,7 +1343,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1194,7 +1353,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1231,28 +1390,28 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (interfacesBuilder_ == null) {
         interfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         interfacesBuilder_.clear();
       }
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       labelFingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().clear();
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       redundancyType_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1281,25 +1440,51 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       com.google.cloud.compute.v1.ExternalVpnGateway result =
           new com.google.cloud.compute.v1.ExternalVpnGateway(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.id_ = id_;
       if (interfacesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           interfaces_ = java.util.Collections.unmodifiableList(interfaces_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.interfaces_ = interfaces_;
       } else {
         result.interfaces_ = interfacesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.labelFingerprint_ = labelFingerprint_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.redundancyType_ = redundancyType_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.selfLink_ = selfLink_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1349,15 +1534,18 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ExternalVpnGateway other) {
       if (other == com.google.cloud.compute.v1.ExternalVpnGateway.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000004;
         id_ = other.id_;
         onChanged();
       }
@@ -1365,7 +1553,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         if (!other.interfaces_.isEmpty()) {
           if (interfaces_.isEmpty()) {
             interfaces_ = other.interfaces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInterfacesIsMutable();
             interfaces_.addAll(other.interfaces_);
@@ -1378,7 +1566,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
             interfacesBuilder_.dispose();
             interfacesBuilder_ = null;
             interfaces_ = other.interfaces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             interfacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInterfacesFieldBuilder()
@@ -1388,23 +1576,27 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getLabelFingerprint().isEmpty()) {
+      if (other.hasLabelFingerprint()) {
+        bitField0_ |= 0x00000020;
         labelFingerprint_ = other.labelFingerprint_;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000080;
         name_ = other.name_;
         onChanged();
       }
-      if (other.redundancyType_ != 0) {
-        setRedundancyTypeValue(other.getRedundancyTypeValue());
+      if (other.hasRedundancyType()) {
+        setRedundancyType(other.getRedundancyType());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000200;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1440,6 +1632,20 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1500,7 +1706,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1517,7 +1723,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1539,7 +1745,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1553,7 +1759,21 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1575,7 +1795,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1597,7 +1817,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1606,7 +1826,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1618,12 +1838,12 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1635,7 +1855,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1645,13 +1865,27 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1712,7 +1946,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
@@ -1729,7 +1963,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1751,7 +1985,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
@@ -1761,11 +1995,11 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureInterfacesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         interfaces_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ExternalVpnGatewayInterface>(
                 interfaces_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1998,7 +2232,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     public Builder clearInterfaces() {
       if (interfacesBuilder_ == null) {
         interfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         interfacesBuilder_.clear();
@@ -2132,13 +2366,27 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.ExternalVpnGatewayInterface,
                 com.google.cloud.compute.v1.ExternalVpnGatewayInterface.Builder,
                 com.google.cloud.compute.v1.ExternalVpnGatewayInterfaceOrBuilder>(
-                interfaces_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                interfaces_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         interfaces_ = null;
       }
       return interfacesBuilder_;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#externalVpnGateway for externalVpnGateways.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2199,7 +2447,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -2216,7 +2464,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2238,13 +2486,28 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object labelFingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
+     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * </pre>
+     *
+     * <code>string label_fingerprint = 178124825;</code>
+     *
+     * @return Whether the labelFingerprint field is set.
+     */
+    public boolean hasLabelFingerprint() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2308,7 +2571,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       labelFingerprint_ = value;
       onChanged();
       return this;
@@ -2326,7 +2589,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLabelFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
       onChanged();
       return this;
@@ -2349,7 +2612,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       labelFingerprint_ = value;
       onChanged();
       return this;
@@ -2387,7 +2650,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2409,7 +2672,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2422,7 +2685,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -2440,7 +2703,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2465,7 +2728,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2486,7 +2749,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2505,7 +2768,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2513,6 +2776,20 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2573,7 +2850,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -2590,7 +2867,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2612,7 +2889,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -2626,7 +2903,23 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
+     * </code>
+     *
+     * @return Whether the redundancyType field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedundancyType() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
      * </code>
      *
      * @return The enum numeric value on the wire for redundancyType.
@@ -2642,14 +2935,14 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
      * </code>
      *
      * @param value The enum numeric value on the wire for redundancyType to set.
      * @return This builder for chaining.
      */
     public Builder setRedundancyTypeValue(int value) {
-
+      bitField0_ |= 0x00000100;
       redundancyType_ = value;
       onChanged();
       return this;
@@ -2661,7 +2954,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
      * </code>
      *
      * @return The redundancyType.
@@ -2682,7 +2975,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
      * </code>
      *
      * @param value The redundancyType to set.
@@ -2693,7 +2986,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       redundancyType_ = value.getNumber();
       onChanged();
       return this;
@@ -2705,13 +2998,13 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * Indicates the user-supplied redundancy type of this external VPN gateway.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
+     * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRedundancyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       redundancyType_ = 0;
       onChanged();
       return this;
@@ -2725,7 +3018,21 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2747,7 +3054,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2769,7 +3076,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2778,7 +3085,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2790,12 +3097,12 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2807,7 +3114,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2817,7 +3124,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;

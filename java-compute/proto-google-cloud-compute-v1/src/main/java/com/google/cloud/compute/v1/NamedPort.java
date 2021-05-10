@@ -60,6 +60,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,12 +74,13 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               name_ = s;
               break;
             }
           case 27575304:
             {
+              bitField0_ |= 0x00000002;
               port_ = input.readInt32();
               break;
             }
@@ -116,8 +118,24 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NamedPort.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -176,6 +194,21 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 port = 3446913;</code>
    *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The port number, which can be a value between 1 and 65535.
+   * </pre>
+   *
+   * <code>int32 port = 3446913;</code>
+   *
    * @return The port.
    */
   @java.lang.Override
@@ -197,10 +230,10 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(3446913, port_);
     }
     unknownFields.writeTo(output);
@@ -212,10 +245,10 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (port_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     size += unknownFields.getSerializedSize();
@@ -233,8 +266,14 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.NamedPort other = (com.google.cloud.compute.v1.NamedPort) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (getPort() != other.getPort()) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPort() != other.hasPort()) return false;
+    if (hasPort()) {
+      if (getPort() != other.getPort()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -246,10 +285,14 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PORT_FIELD_NUMBER;
-    hash = (53 * hash) + getPort();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPort()) {
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -395,9 +438,9 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       port_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -425,8 +468,17 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.NamedPort buildPartial() {
       com.google.cloud.compute.v1.NamedPort result =
           new com.google.cloud.compute.v1.NamedPort(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.name_ = name_;
-      result.port_ = port_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -476,11 +528,12 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.NamedPort other) {
       if (other == com.google.cloud.compute.v1.NamedPort.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getPort() != 0) {
+      if (other.hasPort()) {
         setPort(other.getPort());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -512,7 +565,23 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -573,7 +642,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -590,7 +659,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -612,13 +681,28 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
     }
 
     private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * The port number, which can be a value between 1 and 65535.
+     * </pre>
+     *
+     * <code>int32 port = 3446913;</code>
+     *
+     * @return Whether the port field is set.
+     */
+    @java.lang.Override
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -647,7 +731,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-
+      bitField0_ |= 0x00000002;
       port_ = value;
       onChanged();
       return this;
@@ -664,7 +748,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;

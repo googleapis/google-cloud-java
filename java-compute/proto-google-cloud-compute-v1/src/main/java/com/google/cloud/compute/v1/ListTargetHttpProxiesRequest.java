@@ -63,6 +63,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,26 +77,20 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
           case 159957578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               pageToken_ = s;
               break;
             }
           case 437723352:
             {
+              bitField0_ |= 0x00000002;
               maxResults_ = input.readUInt32();
-              break;
-            }
-          case 541481922:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
               break;
             }
           case 1284503362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               orderBy_ = s;
               break;
             }
@@ -106,8 +101,16 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
               project_ = s;
               break;
             }
-          case 1990103472:
+          case -1606001726:
             {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              filter_ = s;
+              break;
+            }
+          case -157380176:
+            {
+              bitField0_ |= 0x00000010;
               returnPartialSuccess_ = input.readBool();
               break;
             }
@@ -145,7 +148,8 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.ListTargetHttpProxiesRequest.Builder.class);
   }
 
-  public static final int FILTER_FIELD_NUMBER = 67685240;
+  private int bitField0_;
+  public static final int FILTER_FIELD_NUMBER = 336120696;
   private volatile java.lang.Object filter_;
   /**
    *
@@ -157,7 +161,25 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 67685240;</code>
+   * <code>string filter = 336120696;</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
+   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
+   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
+   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * </pre>
+   *
+   * <code>string filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -183,7 +205,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 67685240;</code>
+   * <code>string filter = 336120696;</code>
    *
    * @return The bytes for filter.
    */
@@ -211,6 +233,21 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
    *
    * <code>uint32 max_results = 54715419;</code>
    *
+   * @return Whether the maxResults field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxResults() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+   * </pre>
+   *
+   * <code>uint32 max_results = 54715419;</code>
+   *
    * @return The maxResults.
    */
   @java.lang.Override
@@ -220,6 +257,23 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
   private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
+   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
+   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * </pre>
+   *
+   * <code>string order_by = 160562920;</code>
+   *
+   * @return Whether the orderBy field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrderBy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -273,6 +327,21 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
   private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+   * </pre>
+   *
+   * <code>string page_token = 19994697;</code>
+   *
+   * @return Whether the pageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasPageToken() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -369,7 +438,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 248762934;
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_;
   /**
    *
@@ -378,7 +447,22 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 248762934;</code>
+   * <code>bool return_partial_success = 517198390;</code>
+   *
+   * @return Whether the returnPartialSuccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnPartialSuccess() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 517198390;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -401,23 +485,23 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19994697, pageToken_);
     }
-    if (maxResults_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(54715419, maxResults_);
     }
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 67685240, filter_);
-    }
-    if (!getOrderByBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (returnPartialSuccess_ != false) {
-      output.writeBool(248762934, returnPartialSuccess_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(517198390, returnPartialSuccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -428,24 +512,24 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19994697, pageToken_);
     }
-    if (maxResults_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
     }
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67685240, filter_);
-    }
-    if (!getOrderByBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (returnPartialSuccess_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(248762934, returnPartialSuccess_);
+          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -463,12 +547,27 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.ListTargetHttpProxiesRequest other =
         (com.google.cloud.compute.v1.ListTargetHttpProxiesRequest) obj;
 
-    if (!getFilter().equals(other.getFilter())) return false;
-    if (getMaxResults() != other.getMaxResults()) return false;
-    if (!getOrderBy().equals(other.getOrderBy())) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter().equals(other.getFilter())) return false;
+    }
+    if (hasMaxResults() != other.hasMaxResults()) return false;
+    if (hasMaxResults()) {
+      if (getMaxResults() != other.getMaxResults()) return false;
+    }
+    if (hasOrderBy() != other.hasOrderBy()) return false;
+    if (hasOrderBy()) {
+      if (!getOrderBy().equals(other.getOrderBy())) return false;
+    }
+    if (hasPageToken() != other.hasPageToken()) return false;
+    if (hasPageToken()) {
+      if (!getPageToken().equals(other.getPageToken())) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
-    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
+    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
+    if (hasReturnPartialSuccess()) {
+      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -480,18 +579,28 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
-    hash = (37 * hash) + MAX_RESULTS_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxResults();
-    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getOrderBy().hashCode();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+    }
+    if (hasMaxResults()) {
+      hash = (37 * hash) + MAX_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxResults();
+    }
+    if (hasOrderBy()) {
+      hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderBy().hashCode();
+    }
+    if (hasPageToken()) {
+      hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getPageToken().hashCode();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    if (hasReturnPartialSuccess()) {
+      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -639,17 +748,17 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       filter_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxResults_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       orderBy_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       project_ = "";
 
       returnPartialSuccess_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -677,12 +786,30 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.ListTargetHttpProxiesRequest buildPartial() {
       com.google.cloud.compute.v1.ListTargetHttpProxiesRequest result =
           new com.google.cloud.compute.v1.ListTargetHttpProxiesRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.filter_ = filter_;
-      result.maxResults_ = maxResults_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxResults_ = maxResults_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.orderBy_ = orderBy_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.pageToken_ = pageToken_;
       result.project_ = project_;
-      result.returnPartialSuccess_ = returnPartialSuccess_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+        to_bitField0_ |= 0x00000010;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -733,18 +860,21 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.ListTargetHttpProxiesRequest other) {
       if (other == com.google.cloud.compute.v1.ListTargetHttpProxiesRequest.getDefaultInstance())
         return this;
-      if (!other.getFilter().isEmpty()) {
+      if (other.hasFilter()) {
+        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
         onChanged();
       }
-      if (other.getMaxResults() != 0) {
+      if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
-      if (!other.getOrderBy().isEmpty()) {
+      if (other.hasOrderBy()) {
+        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
         onChanged();
       }
-      if (!other.getPageToken().isEmpty()) {
+      if (other.hasPageToken()) {
+        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
         onChanged();
       }
@@ -752,7 +882,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
         project_ = other.project_;
         onChanged();
       }
-      if (other.getReturnPartialSuccess() != false) {
+      if (other.hasReturnPartialSuccess()) {
         setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -785,6 +915,8 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object filter_ = "";
     /**
      *
@@ -796,7 +928,24 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
+     *
+     * @return Whether the filter field is set.
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
+     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
+     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
+     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * </pre>
+     *
+     * <code>string filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -821,7 +970,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @return The bytes for filter.
      */
@@ -846,7 +995,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -855,7 +1004,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       filter_ = value;
       onChanged();
       return this;
@@ -870,12 +1019,12 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
@@ -890,7 +1039,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -900,13 +1049,28 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       filter_ = value;
       onChanged();
       return this;
     }
 
     private int maxResults_;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * </pre>
+     *
+     * <code>uint32 max_results = 54715419;</code>
+     *
+     * @return Whether the maxResults field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxResults() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -935,7 +1099,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-
+      bitField0_ |= 0x00000002;
       maxResults_ = value;
       onChanged();
       return this;
@@ -952,13 +1116,29 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearMaxResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxResults_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
+     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
+     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * </pre>
+     *
+     * <code>string order_by = 160562920;</code>
+     *
+     * @return Whether the orderBy field is set.
+     */
+    public boolean hasOrderBy() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1025,7 +1205,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       orderBy_ = value;
       onChanged();
       return this;
@@ -1044,7 +1224,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
       onChanged();
       return this;
@@ -1068,13 +1248,27 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       orderBy_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * </pre>
+     *
+     * <code>string page_token = 19994697;</code>
+     *
+     * @return Whether the pageToken field is set.
+     */
+    public boolean hasPageToken() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1135,7 +1329,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       pageToken_ = value;
       onChanged();
       return this;
@@ -1152,7 +1346,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
@@ -1174,7 +1368,7 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       pageToken_ = value;
       onChanged();
       return this;
@@ -1294,7 +1488,22 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
+     *
+     * @return Whether the returnPartialSuccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnPartialSuccess() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -1309,13 +1518,13 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-
+      bitField0_ |= 0x00000010;
       returnPartialSuccess_ = value;
       onChanged();
       return this;
@@ -1327,12 +1536,12 @@ public final class ListTargetHttpProxiesRequest extends com.google.protobuf.Gene
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       returnPartialSuccess_ = false;
       onChanged();
       return this;

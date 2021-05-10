@@ -30,7 +30,19 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 181743133;</code>
+   * <code>string ek_cert = 450178589;</code>
+   *
+   * @return Whether the ekCert field is set.
+   */
+  boolean hasEkCert();
+  /**
+   *
+   *
+   * <pre>
+   * A PEM-encoded X.509 certificate. This field can be empty.
+   * </pre>
+   *
+   * <code>string ek_cert = 450178589;</code>
    *
    * @return The ekCert.
    */
@@ -42,7 +54,7 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 181743133;</code>
+   * <code>string ek_cert = 450178589;</code>
    *
    * @return The bytes for ekCert.
    */
@@ -55,7 +67,19 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 40512484;</code>
+   * <code>string ek_pub = 308947940;</code>
+   *
+   * @return Whether the ekPub field is set.
+   */
+  boolean hasEkPub();
+  /**
+   *
+   *
+   * <pre>
+   * A PEM-encoded public key.
+   * </pre>
+   *
+   * <code>string ek_pub = 308947940;</code>
    *
    * @return The ekPub.
    */
@@ -67,7 +91,7 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 40512484;</code>
+   * <code>string ek_pub = 308947940;</code>
    *
    * @return The bytes for ekPub.
    */

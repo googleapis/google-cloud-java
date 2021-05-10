@@ -24,26 +24,26 @@ public interface UrlMapValidationResultOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @return A list containing the loadErrors.
    */
   java.util.List<java.lang.String> getLoadErrorsList();
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @return The count of loadErrors.
    */
   int getLoadErrorsCount();
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @param index The index of the element to return.
    * @return The loadErrors at the given index.
    */
   java.lang.String getLoadErrors(int index);
   /**
-   * <code>repeated string load_errors = 41711844;</code>
+   * <code>repeated string load_errors = 310147300;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the loadErrors at the given index.
@@ -59,22 +59,46 @@ public interface UrlMapValidationResultOrBuilder
    *
    * <code>bool load_succeeded = 128326216;</code>
    *
+   * @return Whether the loadSucceeded field is set.
+   */
+  boolean hasLoadSucceeded();
+  /**
+   *
+   *
+   * <pre>
+   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
+   * </pre>
+   *
+   * <code>bool load_succeeded = 128326216;</code>
+   *
    * @return The loadSucceeded.
    */
   boolean getLoadSucceeded();
 
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   com.google.cloud.compute.v1.TestFailure getTestFailures(int index);
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   int getTestFailuresCount();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
       getTestFailuresOrBuilderList();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
+   * </pre>
+   *
+   * <code>bool test_passed = 192708797;</code>
+   *
+   * @return Whether the testPassed field is set.
+   */
+  boolean hasTestPassed();
   /**
    *
    *

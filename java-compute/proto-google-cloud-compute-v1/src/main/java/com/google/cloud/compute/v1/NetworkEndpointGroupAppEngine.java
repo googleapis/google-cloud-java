@@ -63,6 +63,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,24 +74,24 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
           case 0:
             done = true;
             break;
-          case 665380546:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
           case 826818018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               urlMask_ = s;
               break;
             }
-          case 840840618:
+          case -1482103102:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
+              version_ = s;
+              break;
+            }
+          case -1306643030:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               service_ = s;
               break;
             }
@@ -128,7 +129,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder.class);
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 105105077;
+  private int bitField0_;
+  public static final int SERVICE_FIELD_NUMBER = 373540533;
   private volatile java.lang.Object service_;
   /**
    *
@@ -139,7 +141,24 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
    * Example value: "default", "my-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional serving service.
+   * The service name is case-sensitive and must be 1-63 characters long.
+   * Example value: "default", "my-service".
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -164,7 +183,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
    * Example value: "default", "my-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -183,6 +202,22 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   public static final int URL_MASK_FIELD_NUMBER = 103352252;
   private volatile java.lang.Object urlMask_;
+  /**
+   *
+   *
+   * <pre>
+   * A template to parse service and version fields from a request URL. URL mask allows for routing to multiple App Engine services without having to create multiple Network Endpoint Groups and backend services.
+   * For example, the request URLs "foo1-dot-appname.appspot.com/v1" and "foo1-dot-appname.appspot.com/v2" can be backed by the same Serverless NEG with URL mask "-dot-appname.appspot.com/". The URL mask will parse them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
+   * </pre>
+   *
+   * <code>string url_mask = 103352252;</code>
+   *
+   * @return Whether the urlMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrlMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -232,7 +267,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     }
   }
 
-  public static final int VERSION_FIELD_NUMBER = 83172568;
+  public static final int VERSION_FIELD_NUMBER = 351608024;
   private volatile java.lang.Object version_;
   /**
    *
@@ -243,7 +278,24 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
    * Example value: "v1", "v2".
    * </pre>
    *
-   * <code>string version = 83172568;</code>
+   * <code>string version = 351608024;</code>
+   *
+   * @return Whether the version field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersion() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional serving version.
+   * The version name is case-sensitive and must be 1-100 characters long.
+   * Example value: "v1", "v2".
+   * </pre>
+   *
+   * <code>string version = 351608024;</code>
    *
    * @return The version.
    */
@@ -268,7 +320,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
    * Example value: "v1", "v2".
    * </pre>
    *
-   * <code>string version = 83172568;</code>
+   * <code>string version = 351608024;</code>
    *
    * @return The bytes for version.
    */
@@ -299,14 +351,14 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getVersionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 83172568, version_);
-    }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
     }
-    if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 351608024, version_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     unknownFields.writeTo(output);
   }
@@ -317,14 +369,14 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83172568, version_);
-    }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
     }
-    if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(351608024, version_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -342,9 +394,18 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine other =
         (com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine) obj;
 
-    if (!getService().equals(other.getService())) return false;
-    if (!getUrlMask().equals(other.getUrlMask())) return false;
-    if (!getVersion().equals(other.getVersion())) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
+    if (hasUrlMask() != other.hasUrlMask()) return false;
+    if (hasUrlMask()) {
+      if (!getUrlMask().equals(other.getUrlMask())) return false;
+    }
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (!getVersion().equals(other.getVersion())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -356,12 +417,18 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getService().hashCode();
-    hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
-    hash = (53 * hash) + getUrlMask().hashCode();
-    hash = (37 * hash) + VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getVersion().hashCode();
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+    }
+    if (hasUrlMask()) {
+      hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUrlMask().hashCode();
+    }
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -510,11 +577,11 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public Builder clear() {
       super.clear();
       service_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       urlMask_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -542,9 +609,21 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.service_ = service_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.urlMask_ = urlMask_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.version_ = version_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -595,15 +674,18 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine other) {
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.getDefaultInstance())
         return this;
-      if (!other.getService().isEmpty()) {
+      if (other.hasService()) {
+        bitField0_ |= 0x00000001;
         service_ = other.service_;
         onChanged();
       }
-      if (!other.getUrlMask().isEmpty()) {
+      if (other.hasUrlMask()) {
+        bitField0_ |= 0x00000002;
         urlMask_ = other.urlMask_;
         onChanged();
       }
-      if (!other.getVersion().isEmpty()) {
+      if (other.hasVersion()) {
+        bitField0_ |= 0x00000004;
         version_ = other.version_;
         onChanged();
       }
@@ -637,6 +719,8 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object service_ = "";
     /**
      *
@@ -647,7 +731,23 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "default", "my-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional serving service.
+     * The service name is case-sensitive and must be 1-63 characters long.
+     * Example value: "default", "my-service".
+     * </pre>
+     *
+     * <code>string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -671,7 +771,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "default", "my-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -695,7 +795,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "default", "my-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -704,7 +804,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;
@@ -718,12 +818,12 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "default", "my-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -737,7 +837,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "default", "my-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -747,13 +847,28 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object urlMask_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A template to parse service and version fields from a request URL. URL mask allows for routing to multiple App Engine services without having to create multiple Network Endpoint Groups and backend services.
+     * For example, the request URLs "foo1-dot-appname.appspot.com/v1" and "foo1-dot-appname.appspot.com/v2" can be backed by the same Serverless NEG with URL mask "-dot-appname.appspot.com/". The URL mask will parse them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
+     * </pre>
+     *
+     * <code>string url_mask = 103352252;</code>
+     *
+     * @return Whether the urlMask field is set.
+     */
+    public boolean hasUrlMask() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -817,7 +932,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       urlMask_ = value;
       onChanged();
       return this;
@@ -835,7 +950,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = getDefaultInstance().getUrlMask();
       onChanged();
       return this;
@@ -858,7 +973,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       urlMask_ = value;
       onChanged();
       return this;
@@ -874,7 +989,23 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "v1", "v2".
      * </pre>
      *
-     * <code>string version = 83172568;</code>
+     * <code>string version = 351608024;</code>
+     *
+     * @return Whether the version field is set.
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional serving version.
+     * The version name is case-sensitive and must be 1-100 characters long.
+     * Example value: "v1", "v2".
+     * </pre>
+     *
+     * <code>string version = 351608024;</code>
      *
      * @return The version.
      */
@@ -898,7 +1029,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "v1", "v2".
      * </pre>
      *
-     * <code>string version = 83172568;</code>
+     * <code>string version = 351608024;</code>
      *
      * @return The bytes for version.
      */
@@ -922,7 +1053,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "v1", "v2".
      * </pre>
      *
-     * <code>string version = 83172568;</code>
+     * <code>string version = 351608024;</code>
      *
      * @param value The version to set.
      * @return This builder for chaining.
@@ -931,7 +1062,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       version_ = value;
       onChanged();
       return this;
@@ -945,12 +1076,12 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "v1", "v2".
      * </pre>
      *
-     * <code>string version = 83172568;</code>
+     * <code>string version = 351608024;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
@@ -964,7 +1095,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
      * Example value: "v1", "v2".
      * </pre>
      *
-     * <code>string version = 83172568;</code>
+     * <code>string version = 351608024;</code>
      *
      * @param value The bytes for version to set.
      * @return This builder for chaining.
@@ -974,7 +1105,7 @@ public final class NetworkEndpointGroupAppEngine extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       version_ = value;
       onChanged();
       return this;

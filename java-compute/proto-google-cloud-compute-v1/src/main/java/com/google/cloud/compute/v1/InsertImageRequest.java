@@ -61,6 +61,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,11 +75,24 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               requestId_ = s;
               break;
             }
-          case 821891986:
+          case 1581786752:
+            {
+              bitField0_ |= 0x00000001;
+              forceCreate_ = input.readBool();
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1325591662:
             {
               com.google.cloud.compute.v1.Image.Builder subBuilder = null;
               if (imageResource_ != null) {
@@ -91,18 +105,6 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
                 imageResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1581786752:
-            {
-              forceCreate_ = input.readBool();
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -139,8 +141,24 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.InsertImageRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FORCE_CREATE_FIELD_NUMBER = 197723344;
   private boolean forceCreate_;
+  /**
+   *
+   *
+   * <pre>
+   * Force image creation if true.
+   * </pre>
+   *
+   * <code>bool force_create = 197723344;</code>
+   *
+   * @return Whether the forceCreate field is set.
+   */
+  @java.lang.Override
+  public boolean hasForceCreate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -157,7 +175,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     return forceCreate_;
   }
 
-  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 102736498;
+  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 371171954;
   private com.google.cloud.compute.v1.Image imageResource_;
   /**
    *
@@ -167,7 +185,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the imageResource field is set.
@@ -184,7 +202,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The imageResource.
@@ -203,7 +221,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -273,6 +291,23 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -327,17 +362,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (imageResource_ != null) {
-      output.writeMessage(102736498, getImageResource());
-    }
-    if (forceCreate_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(197723344, forceCreate_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (imageResource_ != null) {
+      output.writeMessage(371171954, getImageResource());
     }
     unknownFields.writeTo(output);
   }
@@ -348,18 +383,18 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (imageResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(102736498, getImageResource());
-    }
-    if (forceCreate_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(197723344, forceCreate_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (imageResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(371171954, getImageResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -377,13 +412,19 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.InsertImageRequest other =
         (com.google.cloud.compute.v1.InsertImageRequest) obj;
 
-    if (getForceCreate() != other.getForceCreate()) return false;
+    if (hasForceCreate() != other.hasForceCreate()) return false;
+    if (hasForceCreate()) {
+      if (getForceCreate() != other.getForceCreate()) return false;
+    }
     if (hasImageResource() != other.hasImageResource()) return false;
     if (hasImageResource()) {
       if (!getImageResource().equals(other.getImageResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -395,16 +436,20 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FORCE_CREATE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceCreate());
+    if (hasForceCreate()) {
+      hash = (37 * hash) + FORCE_CREATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceCreate());
+    }
     if (hasImageResource()) {
       hash = (37 * hash) + IMAGE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getImageResource().hashCode();
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -551,7 +596,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       forceCreate_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (imageResourceBuilder_ == null) {
         imageResource_ = null;
       } else {
@@ -561,7 +606,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -589,14 +634,23 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.InsertImageRequest buildPartial() {
       com.google.cloud.compute.v1.InsertImageRequest result =
           new com.google.cloud.compute.v1.InsertImageRequest(this);
-      result.forceCreate_ = forceCreate_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.forceCreate_ = forceCreate_;
+        to_bitField0_ |= 0x00000001;
+      }
       if (imageResourceBuilder_ == null) {
         result.imageResource_ = imageResource_;
       } else {
         result.imageResource_ = imageResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -646,7 +700,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.InsertImageRequest other) {
       if (other == com.google.cloud.compute.v1.InsertImageRequest.getDefaultInstance()) return this;
-      if (other.getForceCreate() != false) {
+      if (other.hasForceCreate()) {
         setForceCreate(other.getForceCreate());
       }
       if (other.hasImageResource()) {
@@ -656,7 +710,8 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -689,7 +744,24 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private boolean forceCreate_;
+    /**
+     *
+     *
+     * <pre>
+     * Force image creation if true.
+     * </pre>
+     *
+     * <code>bool force_create = 197723344;</code>
+     *
+     * @return Whether the forceCreate field is set.
+     */
+    @java.lang.Override
+    public boolean hasForceCreate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -718,7 +790,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setForceCreate(boolean value) {
-
+      bitField0_ |= 0x00000001;
       forceCreate_ = value;
       onChanged();
       return this;
@@ -735,7 +807,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearForceCreate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       forceCreate_ = false;
       onChanged();
       return this;
@@ -755,7 +827,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the imageResource field is set.
@@ -771,7 +843,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The imageResource.
@@ -793,7 +865,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setImageResource(com.google.cloud.compute.v1.Image value) {
@@ -817,7 +889,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setImageResource(com.google.cloud.compute.v1.Image.Builder builderForValue) {
@@ -838,7 +910,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeImageResource(com.google.cloud.compute.v1.Image value) {
@@ -866,7 +938,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearImageResource() {
@@ -888,7 +960,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.Image.Builder getImageResourceBuilder() {
@@ -904,7 +976,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ImageOrBuilder getImageResourceOrBuilder() {
@@ -924,7 +996,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Image image_resource = 371171954 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1062,6 +1134,22 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1117,7 +1205,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1136,7 +1224,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1160,7 +1248,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;

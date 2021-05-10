@@ -30,7 +30,19 @@ public interface RouterBgpPeerOrBuilder
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   *
+   * @return Whether the advertiseMode field is set.
+   */
+  boolean hasAdvertiseMode();
+  /**
+   *
+   *
+   * <pre>
+   * User-specified flag to indicate which mode to use for advertisement.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -42,7 +54,7 @@ public interface RouterBgpPeerOrBuilder
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The advertiseMode.
    */
@@ -209,6 +221,18 @@ public interface RouterBgpPeerOrBuilder
    *
    * <code>uint32 advertised_route_priority = 186486332;</code>
    *
+   * @return Whether the advertisedRoutePriority field is set.
+   */
+  boolean hasAdvertisedRoutePriority();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+   * </pre>
+   *
+   * <code>uint32 advertised_route_priority = 186486332;</code>
+   *
    * @return The advertisedRoutePriority.
    */
   int getAdvertisedRoutePriority();
@@ -220,7 +244,19 @@ public interface RouterBgpPeerOrBuilder
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 169419217;</code>
+   * <code>string interface_name = 437854673;</code>
+   *
+   * @return Whether the interfaceName field is set.
+   */
+  boolean hasInterfaceName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the interface the BGP peer is associated with.
+   * </pre>
+   *
+   * <code>string interface_name = 437854673;</code>
    *
    * @return The interfaceName.
    */
@@ -232,7 +268,7 @@ public interface RouterBgpPeerOrBuilder
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 169419217;</code>
+   * <code>string interface_name = 437854673;</code>
    *
    * @return The bytes for interfaceName.
    */
@@ -245,7 +281,19 @@ public interface RouterBgpPeerOrBuilder
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  boolean hasIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -257,12 +305,26 @@ public interface RouterBgpPeerOrBuilder
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource that configures and manages this BGP peer.
+   * - MANAGED_BY_USER is the default value and can be managed by you or other users
+   * - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+   *
+   * @return Whether the managementType field is set.
+   */
+  boolean hasManagementType();
   /**
    *
    *
@@ -301,6 +363,18 @@ public interface RouterBgpPeerOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -326,10 +400,34 @@ public interface RouterBgpPeerOrBuilder
    *
    * <code>uint32 peer_asn = 69573151;</code>
    *
+   * @return Whether the peerAsn field is set.
+   */
+  boolean hasPeerAsn();
+  /**
+   *
+   *
+   * <pre>
+   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+   * </pre>
+   *
+   * <code>uint32 peer_asn = 69573151;</code>
+   *
    * @return The peerAsn.
    */
   int getPeerAsn();
 
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string peer_ip_address = 207735769;</code>
+   *
+   * @return Whether the peerIpAddress field is set.
+   */
+  boolean hasPeerIpAddress();
   /**
    *
    *

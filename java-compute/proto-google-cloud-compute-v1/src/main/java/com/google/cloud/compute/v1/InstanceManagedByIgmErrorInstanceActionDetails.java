@@ -62,6 +62,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,14 +76,21 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
           case 146056362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               instance_ = s;
               break;
             }
-          case 665380546:
+          case 1501295024:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              action_ = rawValue;
+              break;
+            }
+          case -1482103102:
             {
               com.google.cloud.compute.v1.ManagedInstanceVersion.Builder subBuilder = null;
-              if (version_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = version_.toBuilder();
               }
               version_ =
@@ -93,14 +101,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
                 subBuilder.mergeFrom(version_);
                 version_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 1501295024:
-            {
-              int rawValue = input.readEnum();
-
-              action_ = rawValue;
+              bitField0_ |= 0x00000004;
               break;
             }
           default:
@@ -159,22 +160,22 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>UNDEFINED_ACTION = 0;</code>
      */
     UNDEFINED_ACTION(0),
-    /** <code>ABANDONING = 119809357;</code> */
-    ABANDONING(119809357),
-    /** <code>CREATING = 187129529;</code> */
-    CREATING(187129529),
-    /** <code>CREATING_WITHOUT_RETRIES = 160408329;</code> */
-    CREATING_WITHOUT_RETRIES(160408329),
-    /** <code>DELETING = 260166568;</code> */
-    DELETING(260166568),
+    /** <code>ABANDONING = 388244813;</code> */
+    ABANDONING(388244813),
+    /** <code>CREATING = 455564985;</code> */
+    CREATING(455564985),
+    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    CREATING_WITHOUT_RETRIES(428843785),
+    /** <code>DELETING = 528602024;</code> */
+    DELETING(528602024),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>RECREATING = 18843116;</code> */
-    RECREATING(18843116),
+    /** <code>RECREATING = 287278572;</code> */
+    RECREATING(287278572),
     /** <code>REFRESHING = 163266343;</code> */
     REFRESHING(163266343),
-    /** <code>RESTARTING = 52098931;</code> */
-    RESTARTING(52098931),
+    /** <code>RESTARTING = 320534387;</code> */
+    RESTARTING(320534387),
     /** <code>VERIFYING = 16982185;</code> */
     VERIFYING(16982185),
     UNRECOGNIZED(-1),
@@ -190,22 +191,22 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * <code>UNDEFINED_ACTION = 0;</code>
      */
     public static final int UNDEFINED_ACTION_VALUE = 0;
-    /** <code>ABANDONING = 119809357;</code> */
-    public static final int ABANDONING_VALUE = 119809357;
-    /** <code>CREATING = 187129529;</code> */
-    public static final int CREATING_VALUE = 187129529;
-    /** <code>CREATING_WITHOUT_RETRIES = 160408329;</code> */
-    public static final int CREATING_WITHOUT_RETRIES_VALUE = 160408329;
-    /** <code>DELETING = 260166568;</code> */
-    public static final int DELETING_VALUE = 260166568;
+    /** <code>ABANDONING = 388244813;</code> */
+    public static final int ABANDONING_VALUE = 388244813;
+    /** <code>CREATING = 455564985;</code> */
+    public static final int CREATING_VALUE = 455564985;
+    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    public static final int CREATING_WITHOUT_RETRIES_VALUE = 428843785;
+    /** <code>DELETING = 528602024;</code> */
+    public static final int DELETING_VALUE = 528602024;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>RECREATING = 18843116;</code> */
-    public static final int RECREATING_VALUE = 18843116;
+    /** <code>RECREATING = 287278572;</code> */
+    public static final int RECREATING_VALUE = 287278572;
     /** <code>REFRESHING = 163266343;</code> */
     public static final int REFRESHING_VALUE = 163266343;
-    /** <code>RESTARTING = 52098931;</code> */
-    public static final int RESTARTING_VALUE = 52098931;
+    /** <code>RESTARTING = 320534387;</code> */
+    public static final int RESTARTING_VALUE = 320534387;
     /** <code>VERIFYING = 16982185;</code> */
     public static final int VERIFYING_VALUE = 16982185;
 
@@ -235,21 +236,21 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       switch (value) {
         case 0:
           return UNDEFINED_ACTION;
-        case 119809357:
+        case 388244813:
           return ABANDONING;
-        case 187129529:
+        case 455564985:
           return CREATING;
-        case 160408329:
+        case 428843785:
           return CREATING_WITHOUT_RETRIES;
-        case 260166568:
+        case 528602024:
           return DELETING;
         case 2402104:
           return NONE;
-        case 18843116:
+        case 287278572:
           return RECREATING;
         case 163266343:
           return REFRESHING;
-        case 52098931:
+        case 320534387:
           return RESTARTING;
         case 16982185:
           return VERIFYING;
@@ -309,8 +310,26 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action)
   }
 
+  private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
   private int action_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;
+   * </code>
+   *
+   * @return Whether the action field is set.
+   */
+  @java.lang.Override
+  public boolean hasAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -365,6 +384,21 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    * <code>string instance = 18257045;</code>
    *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
    * @return The instance.
    */
   @java.lang.Override
@@ -403,7 +437,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     }
   }
 
-  public static final int VERSION_FIELD_NUMBER = 83172568;
+  public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
   /**
    *
@@ -412,13 +446,13 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return Whether the version field is set.
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return version_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -427,7 +461,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    *
    * @return The version.
    */
@@ -444,11 +478,13 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()
+        : version_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -465,17 +501,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (version_ != null) {
-      output.writeMessage(83172568, getVersion());
-    }
-    if (action_
-        != com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action
-            .UNDEFINED_ACTION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(187661878, action_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(351608024, getVersion());
     }
     unknownFields.writeTo(output);
   }
@@ -486,17 +519,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (version_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(83172568, getVersion());
-    }
-    if (action_
-        != com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action
-            .UNDEFINED_ACTION
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(187661878, action_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -515,8 +545,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails other =
         (com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails) obj;
 
-    if (action_ != other.action_) return false;
-    if (!getInstance().equals(other.getInstance())) return false;
+    if (hasAction() != other.hasAction()) return false;
+    if (hasAction()) {
+      if (action_ != other.action_) return false;
+    }
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
       if (!getVersion().equals(other.getVersion())) return false;
@@ -532,10 +568,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + action_;
-    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstance().hashCode();
+    if (hasAction()) {
+      hash = (37 * hash) + ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + action_;
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
@@ -687,22 +727,24 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getVersionFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       action_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (versionBuilder_ == null) {
         version_ = null;
       } else {
-        version_ = null;
-        versionBuilder_ = null;
+        versionBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -734,13 +776,25 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         buildPartial() {
       com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails result =
           new com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails(this);
-      result.action_ = action_;
-      result.instance_ = instance_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
+      result.action_ = action_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.instance_ = instance_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (versionBuilder_ == null) {
+          result.version_ = version_;
+        } else {
+          result.version_ = versionBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -795,10 +849,11 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       if (other
           == com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
               .getDefaultInstance()) return this;
-      if (other.action_ != 0) {
-        setActionValue(other.getActionValue());
+      if (other.hasAction()) {
+        setAction(other.getAction());
       }
-      if (!other.getInstance().isEmpty()) {
+      if (other.hasInstance()) {
+        bitField0_ |= 0x00000002;
         instance_ = other.instance_;
         onChanged();
       }
@@ -837,7 +892,26 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       return this;
     }
 
+    private int bitField0_;
+
     private int action_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;
+     * </code>
+     *
+     * @return Whether the action field is set.
+     */
+    @java.lang.Override
+    public boolean hasAction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -870,7 +944,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
+      bitField0_ |= 0x00000001;
       action_ = value;
       onChanged();
       return this;
@@ -919,7 +993,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -938,13 +1012,27 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object instance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>string instance = 18257045;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1005,7 +1093,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       instance_ = value;
       onChanged();
       return this;
@@ -1022,7 +1110,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
@@ -1044,7 +1132,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       instance_ = value;
       onChanged();
       return this;
@@ -1063,12 +1151,12 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      *
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1077,7 +1165,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      *
      * @return The version.
      */
@@ -1097,7 +1185,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder setVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
@@ -1109,7 +1197,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1119,7 +1207,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder setVersion(
         com.google.cloud.compute.v1.ManagedInstanceVersion.Builder builderForValue) {
@@ -1129,7 +1217,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1139,11 +1227,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
           version_ =
               com.google.cloud.compute.v1.ManagedInstanceVersion.newBuilder(version_)
                   .mergeFrom(value)
@@ -1155,7 +1246,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1165,17 +1256,16 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
       if (versionBuilder_ == null) {
         version_ = null;
         onChanged();
       } else {
-        version_ = null;
-        versionBuilder_ = null;
+        versionBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1185,10 +1275,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -1199,7 +1289,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder() {
       if (versionBuilder_ != null) {
@@ -1217,7 +1307,7 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
+     * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ManagedInstanceVersion,

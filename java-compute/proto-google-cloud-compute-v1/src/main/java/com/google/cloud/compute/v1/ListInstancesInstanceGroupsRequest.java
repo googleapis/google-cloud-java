@@ -66,6 +66,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -86,20 +87,14 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
           case 159957578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               pageToken_ = s;
               break;
             }
           case 437723352:
             {
+              bitField0_ |= 0x00000002;
               maxResults_ = input.readUInt32();
-              break;
-            }
-          case 541481922:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
               break;
             }
           case 648762026:
@@ -112,11 +107,25 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
           case 1284503362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               orderBy_ = s;
               break;
             }
-          case 1662558458:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1606001726:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              filter_ = s;
+              break;
+            }
+          case -484925190:
             {
               com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.Builder subBuilder =
                   null;
@@ -134,15 +143,9 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
               break;
             }
-          case 1820481738:
+          case -157380176:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1990103472:
-            {
+              bitField0_ |= 0x00000010;
               returnPartialSuccess_ = input.readBool();
               break;
             }
@@ -180,7 +183,8 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
             com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest.Builder.class);
   }
 
-  public static final int FILTER_FIELD_NUMBER = 67685240;
+  private int bitField0_;
+  public static final int FILTER_FIELD_NUMBER = 336120696;
   private volatile java.lang.Object filter_;
   /**
    *
@@ -192,7 +196,25 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 67685240;</code>
+   * <code>string filter = 336120696;</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
+   * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
+   * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
+   * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+   * </pre>
+   *
+   * <code>string filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -218,7 +240,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 67685240;</code>
+   * <code>string filter = 336120696;</code>
    *
    * @return The bytes for filter.
    */
@@ -284,7 +306,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
   }
 
-  public static final int INSTANCE_GROUPS_LIST_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 207819807;
+  public static final int INSTANCE_GROUPS_LIST_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 476255263;
   private com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest
       instanceGroupsListInstancesRequestResource_;
   /**
@@ -295,7 +317,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsListInstancesRequestResource field is set.
@@ -312,7 +334,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsListInstancesRequestResource.
@@ -332,7 +354,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -352,6 +374,21 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    *
    * <code>uint32 max_results = 54715419;</code>
    *
+   * @return Whether the maxResults field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxResults() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+   * </pre>
+   *
+   * <code>uint32 max_results = 54715419;</code>
+   *
    * @return The maxResults.
    */
   @java.lang.Override
@@ -361,6 +398,23 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
   private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
+   * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
+   * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * </pre>
+   *
+   * <code>string order_by = 160562920;</code>
+   *
+   * @return Whether the orderBy field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrderBy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -414,6 +468,21 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 19994697;
   private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+   * </pre>
+   *
+   * <code>string page_token = 19994697;</code>
+   *
+   * @return Whether the pageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasPageToken() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -510,7 +579,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 248762934;
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_;
   /**
    *
@@ -519,7 +588,22 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 248762934;</code>
+   * <code>bool return_partial_success = 517198390;</code>
+   *
+   * @return Whether the returnPartialSuccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnPartialSuccess() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 517198390;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -594,29 +678,29 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19994697, pageToken_);
     }
-    if (maxResults_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(54715419, maxResults_);
-    }
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 67685240, filter_);
     }
     if (!getInstanceGroupBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81095253, instanceGroup_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
-    }
-    if (instanceGroupsListInstancesRequestResource_ != null) {
-      output.writeMessage(207819807, getInstanceGroupsListInstancesRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (returnPartialSuccess_ != false) {
-      output.writeBool(248762934, returnPartialSuccess_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
+    }
+    if (instanceGroupsListInstancesRequestResource_ != null) {
+      output.writeMessage(476255263, getInstanceGroupsListInstancesRequestResource());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(517198390, returnPartialSuccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -630,32 +714,32 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19994697, pageToken_);
     }
-    if (maxResults_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
-    }
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67685240, filter_);
     }
     if (!getInstanceGroupBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(81095253, instanceGroup_);
     }
-    if (!getOrderByBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
-    }
-    if (instanceGroupsListInstancesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              207819807, getInstanceGroupsListInstancesRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (returnPartialSuccess_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
+    }
+    if (instanceGroupsListInstancesRequestResource_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(248762934, returnPartialSuccess_);
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              476255263, getInstanceGroupsListInstancesRequestResource());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -673,7 +757,10 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest other =
         (com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest) obj;
 
-    if (!getFilter().equals(other.getFilter())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter().equals(other.getFilter())) return false;
+    }
     if (!getInstanceGroup().equals(other.getInstanceGroup())) return false;
     if (hasInstanceGroupsListInstancesRequestResource()
         != other.hasInstanceGroupsListInstancesRequestResource()) return false;
@@ -681,11 +768,23 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       if (!getInstanceGroupsListInstancesRequestResource()
           .equals(other.getInstanceGroupsListInstancesRequestResource())) return false;
     }
-    if (getMaxResults() != other.getMaxResults()) return false;
-    if (!getOrderBy().equals(other.getOrderBy())) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (hasMaxResults() != other.hasMaxResults()) return false;
+    if (hasMaxResults()) {
+      if (getMaxResults() != other.getMaxResults()) return false;
+    }
+    if (hasOrderBy() != other.hasOrderBy()) return false;
+    if (hasOrderBy()) {
+      if (!getOrderBy().equals(other.getOrderBy())) return false;
+    }
+    if (hasPageToken() != other.hasPageToken()) return false;
+    if (hasPageToken()) {
+      if (!getPageToken().equals(other.getPageToken())) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
-    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
+    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
+    if (hasReturnPartialSuccess()) {
+      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -698,24 +797,34 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+    }
     hash = (37 * hash) + INSTANCE_GROUP_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceGroup().hashCode();
     if (hasInstanceGroupsListInstancesRequestResource()) {
       hash = (37 * hash) + INSTANCE_GROUPS_LIST_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceGroupsListInstancesRequestResource().hashCode();
     }
-    hash = (37 * hash) + MAX_RESULTS_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxResults();
-    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getOrderBy().hashCode();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
+    if (hasMaxResults()) {
+      hash = (37 * hash) + MAX_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxResults();
+    }
+    if (hasOrderBy()) {
+      hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderBy().hashCode();
+    }
+    if (hasPageToken()) {
+      hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getPageToken().hashCode();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    if (hasReturnPartialSuccess()) {
+      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -865,7 +974,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public Builder clear() {
       super.clear();
       filter_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceGroup_ = "";
 
       if (instanceGroupsListInstancesRequestResourceBuilder_ == null) {
@@ -875,15 +984,15 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         instanceGroupsListInstancesRequestResourceBuilder_ = null;
       }
       maxResults_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       orderBy_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       project_ = "";
 
       returnPartialSuccess_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       zone_ = "";
 
       return this;
@@ -914,6 +1023,11 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
     public com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest buildPartial() {
       com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest result =
           new com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.filter_ = filter_;
       result.instanceGroup_ = instanceGroup_;
       if (instanceGroupsListInstancesRequestResourceBuilder_ == null) {
@@ -923,12 +1037,25 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         result.instanceGroupsListInstancesRequestResource_ =
             instanceGroupsListInstancesRequestResourceBuilder_.build();
       }
-      result.maxResults_ = maxResults_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxResults_ = maxResults_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.orderBy_ = orderBy_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.pageToken_ = pageToken_;
       result.project_ = project_;
-      result.returnPartialSuccess_ = returnPartialSuccess_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+        to_bitField0_ |= 0x00000010;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -980,7 +1107,8 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest.getDefaultInstance())
         return this;
-      if (!other.getFilter().isEmpty()) {
+      if (other.hasFilter()) {
+        bitField0_ |= 0x00000001;
         filter_ = other.filter_;
         onChanged();
       }
@@ -992,14 +1120,16 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         mergeInstanceGroupsListInstancesRequestResource(
             other.getInstanceGroupsListInstancesRequestResource());
       }
-      if (other.getMaxResults() != 0) {
+      if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
-      if (!other.getOrderBy().isEmpty()) {
+      if (other.hasOrderBy()) {
+        bitField0_ |= 0x00000004;
         orderBy_ = other.orderBy_;
         onChanged();
       }
-      if (!other.getPageToken().isEmpty()) {
+      if (other.hasPageToken()) {
+        bitField0_ |= 0x00000008;
         pageToken_ = other.pageToken_;
         onChanged();
       }
@@ -1007,7 +1137,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         project_ = other.project_;
         onChanged();
       }
-      if (other.getReturnPartialSuccess() != false) {
+      if (other.hasReturnPartialSuccess()) {
         setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       if (!other.getZone().isEmpty()) {
@@ -1045,6 +1175,8 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object filter_ = "";
     /**
      *
@@ -1056,7 +1188,24 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
+     *
+     * @return Whether the filter field is set.
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `&gt;`, or `&lt;`.
+     * For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`.
+     * You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels.
+     * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+     * </pre>
+     *
+     * <code>string filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -1081,7 +1230,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @return The bytes for filter.
      */
@@ -1106,7 +1255,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1115,7 +1264,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       filter_ = value;
       onChanged();
       return this;
@@ -1130,12 +1279,12 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
@@ -1150,7 +1299,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 67685240;</code>
+     * <code>string filter = 336120696;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1160,7 +1309,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       filter_ = value;
       onChanged();
       return this;
@@ -1287,7 +1436,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupsListInstancesRequestResource field is set.
@@ -1304,7 +1453,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupsListInstancesRequestResource.
@@ -1327,7 +1476,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsListInstancesRequestResource(
@@ -1352,7 +1501,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsListInstancesRequestResource(
@@ -1374,7 +1523,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupsListInstancesRequestResource(
@@ -1404,7 +1553,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupsListInstancesRequestResource() {
@@ -1426,7 +1575,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.Builder
@@ -1443,7 +1592,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsListInstancesRequestOrBuilder
@@ -1464,7 +1613,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1494,6 +1643,21 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      *
      * <code>uint32 max_results = 54715419;</code>
      *
+     * @return Whether the maxResults field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxResults() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * </pre>
+     *
+     * <code>uint32 max_results = 54715419;</code>
+     *
      * @return The maxResults.
      */
     @java.lang.Override
@@ -1513,7 +1677,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setMaxResults(int value) {
-
+      bitField0_ |= 0x00000002;
       maxResults_ = value;
       onChanged();
       return this;
@@ -1530,13 +1694,29 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearMaxResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxResults_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.
+     * You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first.
+     * Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * </pre>
+     *
+     * <code>string order_by = 160562920;</code>
+     *
+     * @return Whether the orderBy field is set.
+     */
+    public boolean hasOrderBy() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1603,7 +1783,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       orderBy_ = value;
       onChanged();
       return this;
@@ -1622,7 +1802,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       orderBy_ = getDefaultInstance().getOrderBy();
       onChanged();
       return this;
@@ -1646,13 +1826,27 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       orderBy_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * </pre>
+     *
+     * <code>string page_token = 19994697;</code>
+     *
+     * @return Whether the pageToken field is set.
+     */
+    public boolean hasPageToken() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1713,7 +1907,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       pageToken_ = value;
       onChanged();
       return this;
@@ -1730,7 +1924,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
@@ -1752,7 +1946,7 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       pageToken_ = value;
       onChanged();
       return this;
@@ -1872,7 +2066,22 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
+     *
+     * @return Whether the returnPartialSuccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnPartialSuccess() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -1887,13 +2096,13 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
      */
     public Builder setReturnPartialSuccess(boolean value) {
-
+      bitField0_ |= 0x00000010;
       returnPartialSuccess_ = value;
       onChanged();
       return this;
@@ -1905,12 +2114,12 @@ public final class ListInstancesInstanceGroupsRequest extends com.google.protobu
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 248762934;</code>
+     * <code>bool return_partial_success = 517198390;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       returnPartialSuccess_ = false;
       onChanged();
       return this;

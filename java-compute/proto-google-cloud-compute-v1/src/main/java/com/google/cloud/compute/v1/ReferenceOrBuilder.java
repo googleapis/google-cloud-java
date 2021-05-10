@@ -32,6 +32,18 @@ public interface ReferenceOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#reference for references.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -48,6 +60,19 @@ public interface ReferenceOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A description of the reference type with no implied semantics. Possible values include:
+   * - MEMBER_OF
+   * </pre>
+   *
+   * <code>string reference_type = 247521198;</code>
+   *
+   * @return Whether the referenceType field is set.
+   */
+  boolean hasReferenceType();
   /**
    *
    *
@@ -82,7 +107,19 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 82738207;</code>
+   * <code>string referrer = 351173663;</code>
+   *
+   * @return Whether the referrer field is set.
+   */
+  boolean hasReferrer();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the resource which refers to the target.
+   * </pre>
+   *
+   * <code>string referrer = 351173663;</code>
    *
    * @return The referrer.
    */
@@ -94,12 +131,24 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 82738207;</code>
+   * <code>string referrer = 351173663;</code>
    *
    * @return The bytes for referrer.
    */
   com.google.protobuf.ByteString getReferrerBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the resource to which this reference points.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  boolean hasTarget();
   /**
    *
    *

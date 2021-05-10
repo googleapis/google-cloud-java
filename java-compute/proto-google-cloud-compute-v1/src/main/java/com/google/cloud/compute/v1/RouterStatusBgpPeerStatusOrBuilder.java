@@ -30,7 +30,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getAdvertisedRoutesList();
   /**
@@ -40,7 +40,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   com.google.cloud.compute.v1.Route getAdvertisedRoutes(int index);
   /**
@@ -50,7 +50,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   int getAdvertisedRoutesCount();
   /**
@@ -60,7 +60,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
       getAdvertisedRoutesOrBuilderList();
@@ -71,7 +71,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   com.google.cloud.compute.v1.RouteOrBuilder getAdvertisedRoutesOrBuilder(int index);
 
@@ -82,7 +82,19 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  boolean hasIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the local BGP interface.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -94,7 +106,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -107,7 +119,19 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 83861497;</code>
+   * <code>string linked_vpn_tunnel = 352296953;</code>
+   *
+   * @return Whether the linkedVpnTunnel field is set.
+   */
+  boolean hasLinkedVpnTunnel();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the VPN tunnel that this BGP peer controls.
+   * </pre>
+   *
+   * <code>string linked_vpn_tunnel = 352296953;</code>
    *
    * @return The linkedVpnTunnel.
    */
@@ -119,12 +143,24 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 83861497;</code>
+   * <code>string linked_vpn_tunnel = 352296953;</code>
    *
    * @return The bytes for linkedVpnTunnel.
    */
   com.google.protobuf.ByteString getLinkedVpnTunnelBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of this BGP peer. Unique within the Routers resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -159,10 +195,34 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    * <code>uint32 num_learned_routes = 135457535;</code>
    *
+   * @return Whether the numLearnedRoutes field is set.
+   */
+  boolean hasNumLearnedRoutes();
+  /**
+   *
+   *
+   * <pre>
+   * Number of routes learned from the remote BGP Peer.
+   * </pre>
+   *
+   * <code>uint32 num_learned_routes = 135457535;</code>
+   *
    * @return The numLearnedRoutes.
    */
   int getNumLearnedRoutes();
 
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>string peer_ip_address = 207735769;</code>
+   *
+   * @return Whether the peerIpAddress field is set.
+   */
+  boolean hasPeerIpAddress();
   /**
    *
    *
@@ -197,6 +257,18 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    * <code>string state = 109757585;</code>
    *
+   * @return Whether the state field is set.
+   */
+  boolean hasState();
+  /**
+   *
+   *
+   * <pre>
+   * BGP state as specified in RFC1771.
+   * </pre>
+   *
+   * <code>string state = 109757585;</code>
+   *
    * @return The state.
    */
   java.lang.String getState();
@@ -213,6 +285,18 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    */
   com.google.protobuf.ByteString getStateBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Status of the BGP peer: {UP, DOWN}
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -247,6 +331,18 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    * <code>string uptime = 235379688;</code>
    *
+   * @return Whether the uptime field is set.
+   */
+  boolean hasUptime();
+  /**
+   *
+   *
+   * <pre>
+   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * </pre>
+   *
+   * <code>string uptime = 235379688;</code>
+   *
    * @return The uptime.
    */
   java.lang.String getUptime();
@@ -263,6 +359,18 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    */
   com.google.protobuf.ByteString getUptimeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Time this session has been up, in seconds. Format: 145
+   * </pre>
+   *
+   * <code>string uptime_seconds = 104736040;</code>
+   *
+   * @return Whether the uptimeSeconds field is set.
+   */
+  boolean hasUptimeSeconds();
   /**
    *
    *

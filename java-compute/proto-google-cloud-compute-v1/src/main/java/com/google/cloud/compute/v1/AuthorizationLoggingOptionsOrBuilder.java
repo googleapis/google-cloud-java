@@ -31,7 +31,21 @@ public interface AuthorizationLoggingOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
+   * </code>
+   *
+   * @return Whether the permissionType field is set.
+   */
+  boolean hasPermissionType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of the permission that was checked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
    * </code>
    *
    * @return The enum numeric value on the wire for permissionType.
@@ -45,7 +59,7 @@ public interface AuthorizationLoggingOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 257543082;
+   * .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;
    * </code>
    *
    * @return The permissionType.

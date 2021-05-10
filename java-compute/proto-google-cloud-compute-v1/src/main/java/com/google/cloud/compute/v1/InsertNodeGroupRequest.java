@@ -62,6 +62,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,7 +83,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -98,7 +99,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
               project_ = s;
               break;
             }
-          case 1895091546:
+          case -252392102:
             {
               com.google.cloud.compute.v1.NodeGroup.Builder subBuilder = null;
               if (nodeGroupResource_ != null) {
@@ -148,6 +149,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.InsertNodeGroupRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INITIAL_NODE_COUNT_FIELD_NUMBER = 71951469;
   private int initialNodeCount_;
   /**
@@ -166,7 +168,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     return initialNodeCount_;
   }
 
-  public static final int NODE_GROUP_RESOURCE_FIELD_NUMBER = 236886443;
+  public static final int NODE_GROUP_RESOURCE_FIELD_NUMBER = 505321899;
   private com.google.cloud.compute.v1.NodeGroup nodeGroupResource_;
   /**
    *
@@ -176,7 +178,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupResource field is set.
@@ -193,7 +195,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupResource.
@@ -212,7 +214,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -271,6 +273,23 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -388,7 +407,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (initialNodeCount_ != 0) {
@@ -398,7 +417,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (nodeGroupResource_ != null) {
-      output.writeMessage(236886443, getNodeGroupResource());
+      output.writeMessage(505321899, getNodeGroupResource());
     }
     unknownFields.writeTo(output);
   }
@@ -412,7 +431,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (initialNodeCount_ != 0) {
@@ -424,7 +443,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (nodeGroupResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              236886443, getNodeGroupResource());
+              505321899, getNodeGroupResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -448,7 +467,10 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       if (!getNodeGroupResource().equals(other.getNodeGroupResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -469,8 +491,10 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -629,7 +653,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
 
       return this;
@@ -659,6 +683,8 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InsertNodeGroupRequest buildPartial() {
       com.google.cloud.compute.v1.InsertNodeGroupRequest result =
           new com.google.cloud.compute.v1.InsertNodeGroupRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.initialNodeCount_ = initialNodeCount_;
       if (nodeGroupResourceBuilder_ == null) {
         result.nodeGroupResource_ = nodeGroupResource_;
@@ -666,8 +692,12 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         result.nodeGroupResource_ = nodeGroupResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -728,7 +758,8 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -765,6 +796,8 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
+    private int bitField0_;
 
     private int initialNodeCount_;
     /**
@@ -832,7 +865,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the nodeGroupResource field is set.
@@ -848,7 +881,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The nodeGroupResource.
@@ -870,7 +903,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupResource(com.google.cloud.compute.v1.NodeGroup value) {
@@ -894,7 +927,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupResource(
@@ -916,7 +949,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNodeGroupResource(com.google.cloud.compute.v1.NodeGroup value) {
@@ -944,7 +977,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNodeGroupResource() {
@@ -966,7 +999,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroup.Builder getNodeGroupResourceBuilder() {
@@ -982,7 +1015,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupOrBuilder getNodeGroupResourceOrBuilder() {
@@ -1002,7 +1035,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 505321899 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1140,6 +1173,22 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1195,7 +1244,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1214,7 +1263,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1238,7 +1287,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

@@ -65,6 +65,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -89,17 +90,10 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
               instance_ = s;
               break;
             }
-          case 801245666:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              queryPath_ = s;
-              break;
-            }
           case 1314918626:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               variableKey_ = s;
               break;
             }
@@ -108,6 +102,13 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1346237982:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              queryPath_ = s;
               break;
             }
           default:
@@ -144,6 +145,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -242,7 +244,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
   }
 
-  public static final int QUERY_PATH_FIELD_NUMBER = 100155708;
+  public static final int QUERY_PATH_FIELD_NUMBER = 368591164;
   private volatile java.lang.Object queryPath_;
   /**
    *
@@ -251,7 +253,22 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
+   *
+   * @return Whether the queryPath field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryPath() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the guest attributes path to be queried.
+   * </pre>
+   *
+   * <code>string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -274,7 +291,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -293,6 +310,21 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
   public static final int VARIABLE_KEY_FIELD_NUMBER = 164364828;
   private volatile java.lang.Object variableKey_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the key for the guest attributes entry.
+   * </pre>
+   *
+   * <code>string variable_key = 164364828;</code>
+   *
+   * @return Whether the variableKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasVariableKey() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -409,14 +441,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getQueryPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 100155708, queryPath_);
-    }
-    if (!getVariableKeyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 164364828, variableKey_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 368591164, queryPath_);
     }
     unknownFields.writeTo(output);
   }
@@ -433,14 +465,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getQueryPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100155708, queryPath_);
-    }
-    if (!getVariableKeyBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(164364828, variableKey_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(368591164, queryPath_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,8 +492,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
 
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getProject().equals(other.getProject())) return false;
-    if (!getQueryPath().equals(other.getQueryPath())) return false;
-    if (!getVariableKey().equals(other.getVariableKey())) return false;
+    if (hasQueryPath() != other.hasQueryPath()) return false;
+    if (hasQueryPath()) {
+      if (!getQueryPath().equals(other.getQueryPath())) return false;
+    }
+    if (hasVariableKey() != other.hasVariableKey()) return false;
+    if (hasVariableKey()) {
+      if (!getVariableKey().equals(other.getVariableKey())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -478,10 +516,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + QUERY_PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getQueryPath().hashCode();
-    hash = (37 * hash) + VARIABLE_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getVariableKey().hashCode();
+    if (hasQueryPath()) {
+      hash = (37 * hash) + QUERY_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryPath().hashCode();
+    }
+    if (hasVariableKey()) {
+      hash = (37 * hash) + VARIABLE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getVariableKey().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -635,9 +677,9 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       project_ = "";
 
       queryPath_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       variableKey_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
 
       return this;
@@ -668,11 +710,20 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest result =
           new com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instance_ = instance_;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.queryPath_ = queryPath_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.variableKey_ = variableKey_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -732,11 +783,13 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getQueryPath().isEmpty()) {
+      if (other.hasQueryPath()) {
+        bitField0_ |= 0x00000001;
         queryPath_ = other.queryPath_;
         onChanged();
       }
-      if (!other.getVariableKey().isEmpty()) {
+      if (other.hasVariableKey()) {
+        bitField0_ |= 0x00000002;
         variableKey_ = other.variableKey_;
         onChanged();
       }
@@ -774,6 +827,8 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -995,7 +1050,21 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 100155708;</code>
+     * <code>string query_path = 368591164;</code>
+     *
+     * @return Whether the queryPath field is set.
+     */
+    public boolean hasQueryPath() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the guest attributes path to be queried.
+     * </pre>
+     *
+     * <code>string query_path = 368591164;</code>
      *
      * @return The queryPath.
      */
@@ -1017,7 +1086,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 100155708;</code>
+     * <code>string query_path = 368591164;</code>
      *
      * @return The bytes for queryPath.
      */
@@ -1039,7 +1108,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 100155708;</code>
+     * <code>string query_path = 368591164;</code>
      *
      * @param value The queryPath to set.
      * @return This builder for chaining.
@@ -1048,7 +1117,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       queryPath_ = value;
       onChanged();
       return this;
@@ -1060,12 +1129,12 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 100155708;</code>
+     * <code>string query_path = 368591164;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearQueryPath() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       queryPath_ = getDefaultInstance().getQueryPath();
       onChanged();
       return this;
@@ -1077,7 +1146,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 100155708;</code>
+     * <code>string query_path = 368591164;</code>
      *
      * @param value The bytes for queryPath to set.
      * @return This builder for chaining.
@@ -1087,13 +1156,27 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       queryPath_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object variableKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the key for the guest attributes entry.
+     * </pre>
+     *
+     * <code>string variable_key = 164364828;</code>
+     *
+     * @return Whether the variableKey field is set.
+     */
+    public boolean hasVariableKey() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1154,7 +1237,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       variableKey_ = value;
       onChanged();
       return this;
@@ -1171,7 +1254,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearVariableKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       variableKey_ = getDefaultInstance().getVariableKey();
       onChanged();
       return this;
@@ -1193,7 +1276,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       variableKey_ = value;
       onChanged();
       return this;

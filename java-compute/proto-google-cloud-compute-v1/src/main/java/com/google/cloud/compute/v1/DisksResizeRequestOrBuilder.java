@@ -30,7 +30,19 @@ public interface DisksResizeRequestOrBuilder
    * The new size of the persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 226493913;</code>
+   * <code>string size_gb = 494929369;</code>
+   *
+   * @return Whether the sizeGb field is set.
+   */
+  boolean hasSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * The new size of the persistent disk, which is specified in GB.
+   * </pre>
+   *
+   * <code>string size_gb = 494929369;</code>
    *
    * @return The sizeGb.
    */
@@ -42,7 +54,7 @@ public interface DisksResizeRequestOrBuilder
    * The new size of the persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 226493913;</code>
+   * <code>string size_gb = 494929369;</code>
    *
    * @return The bytes for sizeGb.
    */

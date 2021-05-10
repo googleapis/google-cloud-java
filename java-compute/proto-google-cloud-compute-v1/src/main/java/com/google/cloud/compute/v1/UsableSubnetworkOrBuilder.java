@@ -32,6 +32,18 @@ public interface UsableSubnetworkOrBuilder
    *
    * <code>string ip_cidr_range = 98117322;</code>
    *
+   * @return Whether the ipCidrRange field is set.
+   */
+  boolean hasIpCidrRange();
+  /**
+   *
+   *
+   * <pre>
+   * The range of internal addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string ip_cidr_range = 98117322;</code>
+   *
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
@@ -48,6 +60,18 @@ public interface UsableSubnetworkOrBuilder
    */
   com.google.protobuf.ByteString getIpCidrRangeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Network URL.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *
@@ -144,7 +168,19 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  boolean hasSubnetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Subnetwork URL.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -156,7 +192,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */

@@ -30,7 +30,19 @@ public interface GetIamPolicyRegionDiskRequestOrBuilder
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 230784573;</code>
+   * <code>int32 options_requested_policy_version = 499220029;</code>
+   *
+   * @return Whether the optionsRequestedPolicyVersion field is set.
+   */
+  boolean hasOptionsRequestedPolicyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Requested IAM Policy version.
+   * </pre>
+   *
+   * <code>int32 options_requested_policy_version = 499220029;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */

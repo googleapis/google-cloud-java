@@ -32,6 +32,18 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    *
    * <code>string ip_cidr_range = 98117322;</code>
    *
+   * @return Whether the ipCidrRange field is set.
+   */
+  boolean hasIpCidrRange();
+  /**
+   *
+   *
+   * <pre>
+   * The range of IP addresses belonging to this subnetwork secondary range.
+   * </pre>
+   *
+   * <code>string ip_cidr_range = 98117322;</code>
+   *
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
@@ -55,7 +67,19 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 63780941;</code>
+   * <code>string range_name = 332216397;</code>
+   *
+   * @return Whether the rangeName field is set.
+   */
+  boolean hasRangeName();
+  /**
+   *
+   *
+   * <pre>
+   * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+   * </pre>
+   *
+   * <code>string range_name = 332216397;</code>
    *
    * @return The rangeName.
    */
@@ -67,7 +91,7 @@ public interface UsableSubnetworkSecondaryRangeOrBuilder
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 63780941;</code>
+   * <code>string range_name = 332216397;</code>
    *
    * @return The bytes for rangeName.
    */

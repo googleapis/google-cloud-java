@@ -63,6 +63,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -83,7 +84,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -94,7 +95,14 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
               region_ = s;
               break;
             }
-          case 1800532234:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -346951414:
             {
               com.google.cloud.compute.v1.PacketMirroring.Builder subBuilder = null;
               if (packetMirroringResource_ != null) {
@@ -108,13 +116,6 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
                 packetMirroringResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -151,6 +152,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.PatchPacketMirroringRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PACKET_MIRRORING_FIELD_NUMBER = 22305996;
   private volatile java.lang.Object packetMirroring_;
   /**
@@ -200,7 +202,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 225066529;
+  public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 493501985;
   private com.google.cloud.compute.v1.PacketMirroring packetMirroringResource_;
   /**
    *
@@ -210,7 +212,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the packetMirroringResource field is set.
@@ -227,7 +229,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The packetMirroringResource.
@@ -246,7 +248,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -366,6 +368,23 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -423,17 +442,17 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     if (!getPacketMirroringBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22305996, packetMirroring_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (packetMirroringResource_ != null) {
-      output.writeMessage(225066529, getPacketMirroringResource());
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (packetMirroringResource_ != null) {
+      output.writeMessage(493501985, getPacketMirroringResource());
     }
     unknownFields.writeTo(output);
   }
@@ -447,19 +466,19 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     if (!getPacketMirroringBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22305996, packetMirroring_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
     if (packetMirroringResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              225066529, getPacketMirroringResource());
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+              493501985, getPacketMirroringResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -484,7 +503,10 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -506,8 +528,10 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -667,7 +691,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -695,6 +719,8 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.PatchPacketMirroringRequest buildPartial() {
       com.google.cloud.compute.v1.PatchPacketMirroringRequest result =
           new com.google.cloud.compute.v1.PatchPacketMirroringRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.packetMirroring_ = packetMirroring_;
       if (packetMirroringResourceBuilder_ == null) {
         result.packetMirroringResource_ = packetMirroringResource_;
@@ -703,7 +729,11 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       }
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -769,7 +799,8 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -802,6 +833,8 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object packetMirroring_ = "";
     /**
@@ -923,7 +956,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the packetMirroringResource field is set.
@@ -939,7 +972,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The packetMirroringResource.
@@ -961,7 +994,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setPacketMirroringResource(com.google.cloud.compute.v1.PacketMirroring value) {
@@ -985,7 +1018,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setPacketMirroringResource(
@@ -1007,7 +1040,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergePacketMirroringResource(com.google.cloud.compute.v1.PacketMirroring value) {
@@ -1035,7 +1068,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearPacketMirroringResource() {
@@ -1057,7 +1090,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroring.Builder getPacketMirroringResourceBuilder() {
@@ -1073,7 +1106,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringOrBuilder
@@ -1094,7 +1127,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1338,6 +1371,22 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1393,7 +1442,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1412,7 +1461,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1436,7 +1485,7 @@ public final class PatchPacketMirroringRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

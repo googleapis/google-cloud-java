@@ -30,7 +30,19 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    * [Output Only] Unique identifier for the subnetwork; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
+   *
+   * @return Whether the canonicalUrl field is set.
+   */
+  boolean hasCanonicalUrl();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the subnetwork; defined by the server.
+   * </pre>
+   *
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The canonicalUrl.
    */
@@ -42,12 +54,24 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    * [Output Only] Unique identifier for the subnetwork; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The bytes for canonicalUrl.
    */
   com.google.protobuf.ByteString getCanonicalUrlBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Resource URL to the subnetwork for which traffic from/to all VM instances will be mirrored.
+   * </pre>
+   *
+   * <code>string url = 116079;</code>
+   *
+   * @return Whether the url field is set.
+   */
+  boolean hasUrl();
   /**
    *
    *

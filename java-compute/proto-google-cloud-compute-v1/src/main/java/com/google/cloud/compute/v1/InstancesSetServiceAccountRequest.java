@@ -75,16 +75,16 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
           case 772955362:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               email_ = s;
               break;
             }
           case 1327785210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 scopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               scopes_.add(s);
               break;
@@ -103,7 +103,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -126,8 +126,24 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InstancesSetServiceAccountRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int EMAIL_FIELD_NUMBER = 96619420;
   private volatile java.lang.Object email_;
+  /**
+   *
+   *
+   * <pre>
+   * Email address of the service account.
+   * </pre>
+   *
+   * <code>string email = 96619420;</code>
+   *
+   * @return Whether the email field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmail() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -250,7 +266,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEmailBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 96619420, email_);
     }
     for (int i = 0; i < scopes_.size(); i++) {
@@ -265,7 +281,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getEmailBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(96619420, email_);
     }
     {
@@ -292,7 +308,10 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     com.google.cloud.compute.v1.InstancesSetServiceAccountRequest other =
         (com.google.cloud.compute.v1.InstancesSetServiceAccountRequest) obj;
 
-    if (!getEmail().equals(other.getEmail())) return false;
+    if (hasEmail() != other.hasEmail()) return false;
+    if (hasEmail()) {
+      if (!getEmail().equals(other.getEmail())) return false;
+    }
     if (!getScopesList().equals(other.getScopesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -305,8 +324,10 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
+    if (hasEmail()) {
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+    }
     if (getScopesCount() > 0) {
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
@@ -457,9 +478,9 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     public Builder clear() {
       super.clear();
       email_ = "";
-
-      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -489,12 +510,17 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       com.google.cloud.compute.v1.InstancesSetServiceAccountRequest result =
           new com.google.cloud.compute.v1.InstancesSetServiceAccountRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.email_ = email_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.scopes_ = scopes_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -546,14 +572,15 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       if (other
           == com.google.cloud.compute.v1.InstancesSetServiceAccountRequest.getDefaultInstance())
         return this;
-      if (!other.getEmail().isEmpty()) {
+      if (other.hasEmail()) {
+        bitField0_ |= 0x00000001;
         email_ = other.email_;
         onChanged();
       }
       if (!other.scopes_.isEmpty()) {
         if (scopes_.isEmpty()) {
           scopes_ = other.scopes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureScopesIsMutable();
           scopes_.addAll(other.scopes_);
@@ -594,6 +621,20 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object email_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Email address of the service account.
+     * </pre>
+     *
+     * <code>string email = 96619420;</code>
+     *
+     * @return Whether the email field is set.
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -654,7 +695,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       email_ = value;
       onChanged();
       return this;
@@ -671,7 +712,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       email_ = getDefaultInstance().getEmail();
       onChanged();
       return this;
@@ -693,7 +734,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       email_ = value;
       onChanged();
       return this;
@@ -703,9 +744,9 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -840,7 +881,7 @@ public final class InstancesSetServiceAccountRequest extends com.google.protobuf
      */
     public Builder clearScopes() {
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

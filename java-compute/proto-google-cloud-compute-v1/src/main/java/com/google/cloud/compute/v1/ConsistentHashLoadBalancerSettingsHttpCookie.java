@@ -63,6 +63,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
           case 921442:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (ttl_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = ttl_.toBuilder();
               }
               ttl_ =
@@ -86,20 +87,20 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
                 subBuilder.mergeFrom(ttl_);
                 ttl_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               name_ = s;
               break;
             }
           case 27468074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               path_ = s;
               break;
             }
@@ -137,8 +138,24 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
             com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the cookie.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -188,6 +205,21 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
 
   public static final int PATH_FIELD_NUMBER = 3433509;
   private volatile java.lang.Object path_;
+  /**
+   *
+   *
+   * <pre>
+   * Path to set for the cookie.
+   * </pre>
+   *
+   * <code>string path = 3433509;</code>
+   *
+   * @return Whether the path field is set.
+   */
+  @java.lang.Override
+  public boolean hasPath() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -250,7 +282,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    */
   @java.lang.Override
   public boolean hasTtl() {
-    return ttl_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -278,7 +310,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getTtlOrBuilder() {
-    return getTtl();
+    return ttl_ == null ? com.google.cloud.compute.v1.Duration.getDefaultInstance() : ttl_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -295,13 +327,13 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (ttl_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(115180, getTtl());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
     unknownFields.writeTo(output);
@@ -313,13 +345,13 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     if (size != -1) return size;
 
     size = 0;
-    if (ttl_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(115180, getTtl());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
     }
     size += unknownFields.getSerializedSize();
@@ -339,8 +371,14 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie other =
         (com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!getPath().equals(other.getPath())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPath() != other.hasPath()) return false;
+    if (hasPath()) {
+      if (!getPath().equals(other.getPath())) return false;
+    }
     if (hasTtl() != other.hasTtl()) return false;
     if (hasTtl()) {
       if (!getTtl().equals(other.getTtl())) return false;
@@ -356,10 +394,14 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getPath().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPath()) {
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+    }
     if (hasTtl()) {
       hash = (37 * hash) + TTL_FIELD_NUMBER;
       hash = (53 * hash) + getTtl().hashCode();
@@ -507,22 +549,24 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTtlFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       path_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (ttlBuilder_ == null) {
         ttl_ = null;
       } else {
-        ttl_ = null;
-        ttlBuilder_ = null;
+        ttlBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -553,13 +597,25 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie buildPartial() {
       com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie result =
           new com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie(this);
-      result.name_ = name_;
-      result.path_ = path_;
-      if (ttlBuilder_ == null) {
-        result.ttl_ = ttl_;
-      } else {
-        result.ttl_ = ttlBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
+      result.name_ = name_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.path_ = path_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (ttlBuilder_ == null) {
+          result.ttl_ = ttl_;
+        } else {
+          result.ttl_ = ttlBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -614,11 +670,13 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       if (other
           == com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie
               .getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getPath().isEmpty()) {
+      if (other.hasPath()) {
+        bitField0_ |= 0x00000002;
         path_ = other.path_;
         onChanged();
       }
@@ -656,7 +714,23 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the cookie.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -717,7 +791,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -734,7 +808,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -756,13 +830,27 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Path to set for the cookie.
+     * </pre>
+     *
+     * <code>string path = 3433509;</code>
+     *
+     * @return Whether the path field is set.
+     */
+    public boolean hasPath() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -823,7 +911,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       path_ = value;
       onChanged();
       return this;
@@ -840,7 +928,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       path_ = getDefaultInstance().getPath();
       onChanged();
       return this;
@@ -862,7 +950,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       path_ = value;
       onChanged();
       return this;
@@ -886,7 +974,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * @return Whether the ttl field is set.
      */
     public boolean hasTtl() {
-      return ttlBuilder_ != null || ttl_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -925,7 +1013,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       } else {
         ttlBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -944,7 +1032,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       } else {
         ttlBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -958,7 +1046,9 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      */
     public Builder mergeTtl(com.google.cloud.compute.v1.Duration value) {
       if (ttlBuilder_ == null) {
-        if (ttl_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && ttl_ != null
+            && ttl_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           ttl_ =
               com.google.cloud.compute.v1.Duration.newBuilder(ttl_).mergeFrom(value).buildPartial();
         } else {
@@ -968,7 +1058,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
       } else {
         ttlBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -985,10 +1075,9 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
         ttl_ = null;
         onChanged();
       } else {
-        ttl_ = null;
-        ttlBuilder_ = null;
+        ttlBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1001,7 +1090,7 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
      * <code>.google.cloud.compute.v1.Duration ttl = 115180;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTtlBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }

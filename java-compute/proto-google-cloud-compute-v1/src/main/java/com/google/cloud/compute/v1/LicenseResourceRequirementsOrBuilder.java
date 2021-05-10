@@ -30,7 +30,19 @@ public interface LicenseResourceRequirementsOrBuilder
    * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_guest_cpu_count = 209529380;</code>
+   * <code>int32 min_guest_cpu_count = 477964836;</code>
+   *
+   * @return Whether the minGuestCpuCount field is set.
+   */
+  boolean hasMinGuestCpuCount();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and Instance start.
+   * </pre>
+   *
+   * <code>int32 min_guest_cpu_count = 477964836;</code>
    *
    * @return The minGuestCpuCount.
    */
@@ -43,7 +55,19 @@ public interface LicenseResourceRequirementsOrBuilder
    * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
    * </pre>
    *
-   * <code>int32 min_memory_mb = 236350438;</code>
+   * <code>int32 min_memory_mb = 504785894;</code>
+   *
+   * @return Whether the minMemoryMb field is set.
+   */
+  boolean hasMinMemoryMb();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
+   * </pre>
+   *
+   * <code>int32 min_memory_mb = 504785894;</code>
    *
    * @return The minMemoryMb.
    */

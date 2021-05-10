@@ -26,6 +26,12 @@ public interface NodeTemplateNodeTypeFlexibilityOrBuilder
   /**
    * <code>string cpus = 3060683;</code>
    *
+   * @return Whether the cpus field is set.
+   */
+  boolean hasCpus();
+  /**
+   * <code>string cpus = 3060683;</code>
+   *
    * @return The cpus.
    */
   java.lang.String getCpus();
@@ -37,26 +43,38 @@ public interface NodeTemplateNodeTypeFlexibilityOrBuilder
   com.google.protobuf.ByteString getCpusBytes();
 
   /**
-   * <code>string local_ssd = 137305904;</code>
+   * <code>string local_ssd = 405741360;</code>
+   *
+   * @return Whether the localSsd field is set.
+   */
+  boolean hasLocalSsd();
+  /**
+   * <code>string local_ssd = 405741360;</code>
    *
    * @return The localSsd.
    */
   java.lang.String getLocalSsd();
   /**
-   * <code>string local_ssd = 137305904;</code>
+   * <code>string local_ssd = 405741360;</code>
    *
    * @return The bytes for localSsd.
    */
   com.google.protobuf.ByteString getLocalSsdBytes();
 
   /**
-   * <code>string memory = 264420609;</code>
+   * <code>string memory = 532856065;</code>
+   *
+   * @return Whether the memory field is set.
+   */
+  boolean hasMemory();
+  /**
+   * <code>string memory = 532856065;</code>
    *
    * @return The memory.
    */
   java.lang.String getMemory();
   /**
-   * <code>string memory = 264420609;</code>
+   * <code>string memory = 532856065;</code>
    *
    * @return The bytes for memory.
    */

@@ -99,7 +99,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AddHealthCheckTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -153,7 +156,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AddInstanceTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -207,17 +213,30 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AggregatedListTargetPoolsRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "includeAllScopes", request.getIncludeAllScopes());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasIncludeAllScopes()) {
+                                serializer.putQueryParam(
+                                    fields, "includeAllScopes", request.getIncludeAllScopes());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -267,7 +286,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<DeleteTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -414,7 +436,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<InsertTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -462,15 +487,26 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListTargetPoolsRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -522,7 +558,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveHealthCheckTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -577,7 +616,10 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveInstanceTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -630,9 +672,14 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetBackupTargetPoolRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "failoverRatio", request.getFailoverRatio());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasFailoverRatio()) {
+                                serializer.putQueryParam(
+                                    fields, "failoverRatio", request.getFailoverRatio());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })

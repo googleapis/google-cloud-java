@@ -60,6 +60,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
           case 0:
             done = true;
             break;
-          case 437751994:
+          case -1709731654:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               nodeTemplate_ = s;
               break;
             }
@@ -111,7 +112,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder.class);
   }
 
-  public static final int NODE_TEMPLATE_FIELD_NUMBER = 54718999;
+  private int bitField0_;
+  public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
   private volatile java.lang.Object nodeTemplate_;
   /**
    *
@@ -120,7 +122,22 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 54718999;</code>
+   * <code>string node_template = 323154455;</code>
+   *
+   * @return Whether the nodeTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeTemplate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of the node template resource to be updated for this node group.
+   * </pre>
+   *
+   * <code>string node_template = 323154455;</code>
    *
    * @return The nodeTemplate.
    */
@@ -143,7 +160,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 54718999;</code>
+   * <code>string node_template = 323154455;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -174,8 +191,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNodeTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 54718999, nodeTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -186,8 +203,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (!getNodeTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54718999, nodeTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,7 +222,10 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest other =
         (com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest) obj;
 
-    if (!getNodeTemplate().equals(other.getNodeTemplate())) return false;
+    if (hasNodeTemplate() != other.hasNodeTemplate()) return false;
+    if (hasNodeTemplate()) {
+      if (!getNodeTemplate().equals(other.getNodeTemplate())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -217,8 +237,10 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NODE_TEMPLATE_FIELD_NUMBER;
-    hash = (53 * hash) + getNodeTemplate().hashCode();
+    if (hasNodeTemplate()) {
+      hash = (37 * hash) + NODE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeTemplate().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,7 +387,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     public Builder clear() {
       super.clear();
       nodeTemplate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -394,7 +416,13 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
     public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest buildPartial() {
       com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest result =
           new com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.nodeTemplate_ = nodeTemplate_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -446,7 +474,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       if (other
           == com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.getDefaultInstance())
         return this;
-      if (!other.getNodeTemplate().isEmpty()) {
+      if (other.hasNodeTemplate()) {
+        bitField0_ |= 0x00000001;
         nodeTemplate_ = other.nodeTemplate_;
         onChanged();
       }
@@ -480,6 +509,8 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object nodeTemplate_ = "";
     /**
      *
@@ -488,7 +519,21 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 54718999;</code>
+     * <code>string node_template = 323154455;</code>
+     *
+     * @return Whether the nodeTemplate field is set.
+     */
+    public boolean hasNodeTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full or partial URL of the node template resource to be updated for this node group.
+     * </pre>
+     *
+     * <code>string node_template = 323154455;</code>
      *
      * @return The nodeTemplate.
      */
@@ -510,7 +555,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 54718999;</code>
+     * <code>string node_template = 323154455;</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -532,7 +577,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 54718999;</code>
+     * <code>string node_template = 323154455;</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -541,7 +586,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       nodeTemplate_ = value;
       onChanged();
       return this;
@@ -553,12 +598,12 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 54718999;</code>
+     * <code>string node_template = 323154455;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNodeTemplate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       nodeTemplate_ = getDefaultInstance().getNodeTemplate();
       onChanged();
       return this;
@@ -570,7 +615,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 54718999;</code>
+     * <code>string node_template = 323154455;</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.
@@ -580,7 +625,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       nodeTemplate_ = value;
       onChanged();
       return this;

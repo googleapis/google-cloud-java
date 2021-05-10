@@ -73,7 +73,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 1457831922:
+          case -689651726:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 commitments_ = new java.util.ArrayList<com.google.cloud.compute.v1.Commitment>();
@@ -134,7 +134,8 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.CommitmentsScopedList.Builder.class);
   }
 
-  public static final int COMMITMENTS_FIELD_NUMBER = 182228990;
+  private int bitField0_;
+  public static final int COMMITMENTS_FIELD_NUMBER = 450664446;
   private java.util.List<com.google.cloud.compute.v1.Commitment> commitments_;
   /**
    *
@@ -143,7 +144,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Commitment> getCommitmentsList() {
@@ -156,7 +157,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.CommitmentOrBuilder>
@@ -170,7 +171,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   @java.lang.Override
   public int getCommitmentsCount() {
@@ -183,7 +184,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Commitment getCommitments(int index) {
@@ -196,7 +197,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentsOrBuilder(int index) {
@@ -218,7 +219,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,11 +264,11 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < commitments_.size(); i++) {
-      output.writeMessage(182228990, commitments_.get(i));
+      output.writeMessage(450664446, commitments_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,12 +279,12 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < commitments_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(182228990, commitments_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(450664446, commitments_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +466,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCommitmentsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       com.google.cloud.compute.v1.CommitmentsScopedList result =
           new com.google.cloud.compute.v1.CommitmentsScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (commitmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           commitments_ = java.util.Collections.unmodifiableList(commitments_);
@@ -520,11 +523,15 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         result.commitments_ = commitmentsBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -661,7 +668,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Commitment> getCommitmentsList() {
       if (commitmentsBuilder_ == null) {
@@ -677,7 +684,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public int getCommitmentsCount() {
       if (commitmentsBuilder_ == null) {
@@ -693,7 +700,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public com.google.cloud.compute.v1.Commitment getCommitments(int index) {
       if (commitmentsBuilder_ == null) {
@@ -709,7 +716,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder setCommitments(int index, com.google.cloud.compute.v1.Commitment value) {
       if (commitmentsBuilder_ == null) {
@@ -731,7 +738,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder setCommitments(
         int index, com.google.cloud.compute.v1.Commitment.Builder builderForValue) {
@@ -751,7 +758,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder addCommitments(com.google.cloud.compute.v1.Commitment value) {
       if (commitmentsBuilder_ == null) {
@@ -773,7 +780,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder addCommitments(int index, com.google.cloud.compute.v1.Commitment value) {
       if (commitmentsBuilder_ == null) {
@@ -795,7 +802,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder addCommitments(com.google.cloud.compute.v1.Commitment.Builder builderForValue) {
       if (commitmentsBuilder_ == null) {
@@ -814,7 +821,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder addCommitments(
         int index, com.google.cloud.compute.v1.Commitment.Builder builderForValue) {
@@ -834,7 +841,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder addAllCommitments(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Commitment> values) {
@@ -854,7 +861,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder clearCommitments() {
       if (commitmentsBuilder_ == null) {
@@ -873,7 +880,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public Builder removeCommitments(int index) {
       if (commitmentsBuilder_ == null) {
@@ -892,7 +899,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public com.google.cloud.compute.v1.Commitment.Builder getCommitmentsBuilder(int index) {
       return getCommitmentsFieldBuilder().getBuilder(index);
@@ -904,7 +911,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentsOrBuilder(int index) {
       if (commitmentsBuilder_ == null) {
@@ -920,7 +927,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.CommitmentOrBuilder>
         getCommitmentsOrBuilderList() {
@@ -937,7 +944,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public com.google.cloud.compute.v1.Commitment.Builder addCommitmentsBuilder() {
       return getCommitmentsFieldBuilder()
@@ -950,7 +957,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public com.google.cloud.compute.v1.Commitment.Builder addCommitmentsBuilder(int index) {
       return getCommitmentsFieldBuilder()
@@ -963,7 +970,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of commitments contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
+     * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Commitment.Builder>
         getCommitmentsBuilderList() {
@@ -1005,7 +1012,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1046,7 +1053,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1065,7 +1072,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1079,7 +1086,9 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1091,7 +1100,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1108,10 +1117,9 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1124,7 +1132,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

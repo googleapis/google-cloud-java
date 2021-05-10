@@ -31,7 +31,7 @@ public interface InstanceGroupManagerOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>
@@ -44,7 +44,7 @@ public interface InstanceGroupManagerOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy getAutoHealingPolicies(
@@ -57,7 +57,7 @@ public interface InstanceGroupManagerOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
    * </code>
    */
   int getAutoHealingPoliciesCount();
@@ -69,7 +69,7 @@ public interface InstanceGroupManagerOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
    * </code>
    */
   java.util.List<
@@ -83,7 +83,7 @@ public interface InstanceGroupManagerOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicyOrBuilder
@@ -96,7 +96,19 @@ public interface InstanceGroupManagerOrBuilder
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 120670983;</code>
+   * <code>string base_instance_name = 389106439;</code>
+   *
+   * @return Whether the baseInstanceName field is set.
+   */
+  boolean hasBaseInstanceName();
+  /**
+   *
+   *
+   * <pre>
+   * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
+   * </pre>
+   *
+   * <code>string base_instance_name = 389106439;</code>
    *
    * @return The baseInstanceName.
    */
@@ -108,12 +120,24 @@ public interface InstanceGroupManagerOrBuilder
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 120670983;</code>
+   * <code>string base_instance_name = 389106439;</code>
    *
    * @return The bytes for baseInstanceName.
    */
   com.google.protobuf.ByteString getBaseInstanceNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -185,7 +209,19 @@ public interface InstanceGroupManagerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -197,7 +233,7 @@ public interface InstanceGroupManagerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -210,7 +246,7 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
    *
    * @return Whether the distributionPolicy field is set.
    */
@@ -222,7 +258,7 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
    *
    * @return The distributionPolicy.
    */
@@ -234,10 +270,23 @@ public interface InstanceGroupManagerOrBuilder
    * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
    */
   com.google.cloud.compute.v1.DistributionPolicyOrBuilder getDistributionPolicyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
+   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
   /**
    *
    *
@@ -274,6 +323,18 @@ public interface InstanceGroupManagerOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -290,6 +351,18 @@ public interface InstanceGroupManagerOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the Instance Group resource.
+   * </pre>
+   *
+   * <code>string instance_group = 81095253;</code>
+   *
+   * @return Whether the instanceGroup field is set.
+   */
+  boolean hasInstanceGroup();
   /**
    *
    *
@@ -322,7 +395,19 @@ public interface InstanceGroupManagerOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  boolean hasInstanceTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -334,12 +419,24 @@ public interface InstanceGroupManagerOrBuilder
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
   com.google.protobuf.ByteString getInstanceTemplateBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -374,6 +471,18 @@ public interface InstanceGroupManagerOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -397,7 +506,7 @@ public interface InstanceGroupManagerOrBuilder
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
   /**
@@ -407,7 +516,7 @@ public interface InstanceGroupManagerOrBuilder
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
   /**
@@ -417,7 +526,7 @@ public interface InstanceGroupManagerOrBuilder
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
   /**
@@ -427,7 +536,7 @@ public interface InstanceGroupManagerOrBuilder
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
@@ -438,10 +547,22 @@ public interface InstanceGroupManagerOrBuilder
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -474,7 +595,19 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL for this managed instance group. The server defines this URL.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -486,7 +619,7 @@ public interface InstanceGroupManagerOrBuilder
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -569,7 +702,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -581,7 +714,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @return The count of targetPools.
    */
@@ -593,7 +726,7 @@ public interface InstanceGroupManagerOrBuilder
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -606,13 +739,25 @@ public interface InstanceGroupManagerOrBuilder
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 67637161;</code>
+   * <code>repeated string target_pools = 336072617;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.
    */
   com.google.protobuf.ByteString getTargetPoolsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+   * </pre>
+   *
+   * <code>int32 target_size = 62880239;</code>
+   *
+   * @return Whether the targetSize field is set.
+   */
+  boolean hasTargetSize();
   /**
    *
    *
@@ -726,6 +871,18 @@ public interface InstanceGroupManagerOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerVersionOrBuilder getVersionsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

@@ -63,6 +63,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -87,18 +88,18 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
               region_ = s;
               break;
             }
-          case 1555881890:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -591601758:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
               break;
             }
           default:
@@ -135,7 +136,8 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.DeleteAddressRequest.Builder.class);
   }
 
-  public static final int ADDRESS_FIELD_NUMBER = 194485236;
+  private int bitField0_;
+  public static final int ADDRESS_FIELD_NUMBER = 462920692;
   private volatile java.lang.Object address_;
   /**
    *
@@ -144,7 +146,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
    * Name of the address resource to delete.
    * </pre>
    *
-   * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The address.
    */
@@ -167,7 +169,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
    * Name of the address resource to delete.
    * </pre>
    *
-   * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for address.
    */
@@ -295,6 +297,23 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -349,17 +368,17 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 194485236, address_);
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
     }
     unknownFields.writeTo(output);
   }
@@ -370,17 +389,17 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(194485236, address_);
-    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (!getAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,7 +420,10 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
     if (!getAddress().equals(other.getAddress())) return false;
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -419,8 +441,10 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,7 +597,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -601,10 +625,16 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.DeleteAddressRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteAddressRequest result =
           new com.google.cloud.compute.v1.DeleteAddressRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.address_ = address_;
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -667,7 +697,8 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -700,6 +731,8 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object address_ = "";
     /**
      *
@@ -708,7 +741,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * Name of the address resource to delete.
      * </pre>
      *
-     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The address.
      */
@@ -730,7 +763,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * Name of the address resource to delete.
      * </pre>
      *
-     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for address.
      */
@@ -752,7 +785,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * Name of the address resource to delete.
      * </pre>
      *
-     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -773,7 +806,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * Name of the address resource to delete.
      * </pre>
      *
-     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -790,7 +823,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * Name of the address resource to delete.
      * </pre>
      *
-     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -1030,6 +1063,22 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1085,7 +1134,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1104,7 +1153,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1128,7 +1177,7 @@ public final class DeleteAddressRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

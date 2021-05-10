@@ -30,12 +30,36 @@ public interface LicenseOrBuilder
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 103977166;</code>
+   * <code>bool charges_use_fee = 372412622;</code>
+   *
+   * @return Whether the chargesUseFee field is set.
+   */
+  boolean hasChargesUseFee();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+   * </pre>
+   *
+   * <code>bool charges_use_fee = 372412622;</code>
    *
    * @return The chargesUseFee.
    */
   boolean getChargesUseFee();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -68,7 +92,19 @@ public interface LicenseOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional textual description of the resource; provided by the client when the resource is created.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -80,12 +116,24 @@ public interface LicenseOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -120,6 +168,18 @@ public interface LicenseOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#license for licenses.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -145,6 +205,18 @@ public interface LicenseOrBuilder
    *
    * <code>string license_code = 1467179;</code>
    *
+   * @return Whether the licenseCode field is set.
+   */
+  boolean hasLicenseCode();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+   * </pre>
+   *
+   * <code>string license_code = 1467179;</code>
+   *
    * @return The licenseCode.
    */
   java.lang.String getLicenseCode();
@@ -161,6 +233,18 @@ public interface LicenseOrBuilder
    */
   com.google.protobuf.ByteString getLicenseCodeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -214,7 +298,19 @@ public interface LicenseOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -226,12 +322,24 @@ public interface LicenseOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+   * </pre>
+   *
+   * <code>bool transferable = 4349893;</code>
+   *
+   * @return Whether the transferable field is set.
+   */
+  boolean hasTransferable();
   /**
    *
    *

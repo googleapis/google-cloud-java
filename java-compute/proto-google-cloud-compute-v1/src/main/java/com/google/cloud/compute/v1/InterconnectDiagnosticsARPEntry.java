@@ -62,6 +62,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,17 +73,17 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
           case 0:
             done = true;
             break;
-          case 512837666:
+          case -1634645982:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               macAddress_ = s;
               break;
             }
-          case 1102694114:
+          case -1044789534:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               ipAddress_ = s;
               break;
             }
@@ -120,7 +121,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
             com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder.class);
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
+  private int bitField0_;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -129,7 +131,22 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAddress() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP address of this ARP neighbor.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -152,7 +169,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -169,7 +186,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     }
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 64104708;
+  public static final int MAC_ADDRESS_FIELD_NUMBER = 332540164;
   private volatile java.lang.Object macAddress_;
   /**
    *
@@ -178,7 +195,22 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
+   *
+   * @return Whether the macAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasMacAddress() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The MAC address of this ARP neighbor.
+   * </pre>
+   *
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -201,7 +233,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */
@@ -232,11 +264,11 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMacAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 64104708, macAddress_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 332540164, macAddress_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,11 +279,11 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getMacAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(64104708, macAddress_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332540164, macAddress_);
     }
-    if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,8 +301,14 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry other =
         (com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry) obj;
 
-    if (!getIpAddress().equals(other.getIpAddress())) return false;
-    if (!getMacAddress().equals(other.getMacAddress())) return false;
+    if (hasIpAddress() != other.hasIpAddress()) return false;
+    if (hasIpAddress()) {
+      if (!getIpAddress().equals(other.getIpAddress())) return false;
+    }
+    if (hasMacAddress() != other.hasMacAddress()) return false;
+    if (hasMacAddress()) {
+      if (!getMacAddress().equals(other.getMacAddress())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -282,10 +320,14 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getIpAddress().hashCode();
-    hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getMacAddress().hashCode();
+    if (hasIpAddress()) {
+      hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasMacAddress()) {
+      hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getMacAddress().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,9 +475,9 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       ipAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       macAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -463,8 +505,17 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry buildPartial() {
       com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry result =
           new com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.ipAddress_ = ipAddress_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.macAddress_ = macAddress_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -515,11 +566,13 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     public Builder mergeFrom(com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry other) {
       if (other == com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.getDefaultInstance())
         return this;
-      if (!other.getIpAddress().isEmpty()) {
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000001;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
-      if (!other.getMacAddress().isEmpty()) {
+      if (other.hasMacAddress()) {
+        bitField0_ |= 0x00000002;
         macAddress_ = other.macAddress_;
         onChanged();
       }
@@ -553,6 +606,8 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object ipAddress_ = "";
     /**
      *
@@ -561,7 +616,21 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
+     *
+     * @return Whether the ipAddress field is set.
+     */
+    public boolean hasIpAddress() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP address of this ARP neighbor.
+     * </pre>
+     *
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The ipAddress.
      */
@@ -583,7 +652,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -605,7 +674,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -614,7 +683,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -626,12 +695,12 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -643,7 +712,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 137836764;</code>
+     * <code>string ip_address = 406272220;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -653,7 +722,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -667,7 +736,21 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
+     *
+     * @return Whether the macAddress field is set.
+     */
+    public boolean hasMacAddress() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MAC address of this ARP neighbor.
+     * </pre>
+     *
+     * <code>string mac_address = 332540164;</code>
      *
      * @return The macAddress.
      */
@@ -689,7 +772,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @return The bytes for macAddress.
      */
@@ -711,7 +794,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @param value The macAddress to set.
      * @return This builder for chaining.
@@ -720,7 +803,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       macAddress_ = value;
       onChanged();
       return this;
@@ -732,12 +815,12 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       macAddress_ = getDefaultInstance().getMacAddress();
       onChanged();
       return this;
@@ -749,7 +832,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @param value The bytes for macAddress to set.
      * @return This builder for chaining.
@@ -759,7 +842,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       macAddress_ = value;
       onChanged();
       return this;

@@ -75,22 +75,22 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               kind_ = s;
               break;
             }
           case 638380202:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               nextPageToken_ = s;
               break;
             }
           case 1315303722:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 resources_ = new java.util.ArrayList<com.google.cloud.compute.v1.XpnResourceId>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               resources_.add(
                   input.readMessage(
@@ -111,7 +111,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         resources_ = java.util.Collections.unmodifiableList(resources_);
       }
       this.unknownFields = unknownFields.build();
@@ -134,8 +134,24 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.ProjectsGetXpnResources.Builder.class);
   }
 
+  private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -185,6 +201,21 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 79797525;
   private volatile java.lang.Object nextPageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -315,10 +346,10 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
     }
     for (int i = 0; i < resources_.size(); i++) {
@@ -333,10 +364,10 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
     }
     for (int i = 0; i < resources_.size(); i++) {
@@ -359,8 +390,14 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.ProjectsGetXpnResources other =
         (com.google.cloud.compute.v1.ProjectsGetXpnResources) obj;
 
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
     if (!getResourcesList().equals(other.getResourcesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -373,10 +410,14 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
     if (getResourcesCount() > 0) {
       hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getResourcesList().hashCode();
@@ -528,12 +569,12 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         resourcesBuilder_.clear();
       }
@@ -565,17 +606,25 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       com.google.cloud.compute.v1.ProjectsGetXpnResources result =
           new com.google.cloud.compute.v1.ProjectsGetXpnResources(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.nextPageToken_ = nextPageToken_;
       if (resourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           resources_ = java.util.Collections.unmodifiableList(resources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.resources_ = resources_;
       } else {
         result.resources_ = resourcesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -626,11 +675,13 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.ProjectsGetXpnResources other) {
       if (other == com.google.cloud.compute.v1.ProjectsGetXpnResources.getDefaultInstance())
         return this;
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000002;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
@@ -638,7 +689,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -651,7 +702,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
             resourcesBuilder_.dispose();
             resourcesBuilder_ = null;
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             resourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourcesFieldBuilder()
@@ -694,6 +745,20 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service resources (a.k.a service projects)
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -754,7 +819,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
@@ -771,7 +836,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -793,13 +858,27 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -860,7 +939,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -877,7 +956,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -899,7 +978,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -909,9 +988,9 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         resources_ = new java.util.ArrayList<com.google.cloud.compute.v1.XpnResourceId>(resources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1126,7 +1205,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
     public Builder clearResources() {
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         resourcesBuilder_.clear();
@@ -1248,7 +1327,7 @@ public final class ProjectsGetXpnResources extends com.google.protobuf.Generated
                 com.google.cloud.compute.v1.XpnResourceId,
                 com.google.cloud.compute.v1.XpnResourceId.Builder,
                 com.google.cloud.compute.v1.XpnResourceIdOrBuilder>(
-                resources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                resources_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         resources_ = null;
       }
       return resourcesBuilder_;

@@ -89,90 +89,63 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               zone_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
-              break;
-            }
-          case 759347114:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                statusDetails_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              statusDetails_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AutoscalerStatusDetails.parser(),
-                      extensionRegistry));
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1450082192:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000200;
               status_ = rawValue;
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               target_ = s;
               break;
             }
           case 1775600330:
             {
               com.google.cloud.compute.v1.AutoscalingPolicy.Builder subBuilder = null;
-              if (autoscalingPolicy_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = autoscalingPolicy_.toBuilder();
               }
               autoscalingPolicy_ =
@@ -182,12 +155,40 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(autoscalingPolicy_);
                 autoscalingPolicy_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 2063325992:
             {
+              bitField0_ |= 0x00000040;
               recommendedSize_ = input.readInt32();
+              break;
+            }
+          case -1388136534:
+            {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+                statusDetails_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              statusDetails_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.AutoscalerStatusDetails.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              selfLink_ = s;
               break;
             }
           default:
@@ -204,7 +205,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         statusDetails_ = java.util.Collections.unmodifiableList(statusDetails_);
       }
       this.unknownFields = unknownFields.build();
@@ -251,10 +252,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 46297862;</code> */
-    ACTIVE(46297862),
-    /** <code>DELETING = 260166568;</code> */
-    DELETING(260166568),
+    /** <code>ACTIVE = 314733318;</code> */
+    ACTIVE(314733318),
+    /** <code>DELETING = 528602024;</code> */
+    DELETING(528602024),
     /** <code>ERROR = 66247144;</code> */
     ERROR(66247144),
     /** <code>PENDING = 35394935;</code> */
@@ -272,10 +273,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 46297862;</code> */
-    public static final int ACTIVE_VALUE = 46297862;
-    /** <code>DELETING = 260166568;</code> */
-    public static final int DELETING_VALUE = 260166568;
+    /** <code>ACTIVE = 314733318;</code> */
+    public static final int ACTIVE_VALUE = 314733318;
+    /** <code>DELETING = 528602024;</code> */
+    public static final int DELETING_VALUE = 528602024;
     /** <code>ERROR = 66247144;</code> */
     public static final int ERROR_VALUE = 66247144;
     /** <code>PENDING = 35394935;</code> */
@@ -307,9 +308,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 46297862:
+        case 314733318:
           return ACTIVE;
-        case 260166568:
+        case 528602024:
           return DELETING;
         case 66247144:
           return ERROR;
@@ -368,6 +369,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Autoscaler.Status)
   }
 
+  private int bitField0_;
   public static final int AUTOSCALING_POLICY_FIELD_NUMBER = 221950041;
   private com.google.cloud.compute.v1.AutoscalingPolicy autoscalingPolicy_;
   /**
@@ -384,7 +386,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAutoscalingPolicy() {
-    return autoscalingPolicy_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -416,11 +418,28 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalingPolicyOrBuilder getAutoscalingPolicyOrBuilder() {
-    return getAutoscalingPolicy();
+    return autoscalingPolicy_ == null
+        ? com.google.cloud.compute.v1.AutoscalingPolicy.getDefaultInstance()
+        : autoscalingPolicy_;
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -468,7 +487,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -477,7 +496,22 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -500,7 +534,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -519,6 +553,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -577,6 +626,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -617,6 +681,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -675,6 +754,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 recommended_size = 257915749;</code>
    *
+   * @return Whether the recommendedSize field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecommendedSize() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
+   * </pre>
+   *
+   * <code>int32 recommended_size = 257915749;</code>
+   *
    * @return The recommendedSize.
    */
   @java.lang.Override
@@ -684,6 +778,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -731,7 +840,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -740,7 +849,22 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -763,7 +887,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -782,6 +906,25 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private int status_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
+   * - DELETING: Configuration is being deleted.
+   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
+   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -824,7 +967,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Autoscaler.Status.UNRECOGNIZED : result;
   }
 
-  public static final int STATUS_DETAILS_FIELD_NUMBER = 94918389;
+  public static final int STATUS_DETAILS_FIELD_NUMBER = 363353845;
   private java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> statusDetails_;
   /**
    *
@@ -833,7 +976,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   @java.lang.Override
@@ -848,7 +991,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   @java.lang.Override
@@ -863,7 +1006,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   @java.lang.Override
@@ -877,7 +1020,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   @java.lang.Override
@@ -891,7 +1034,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   @java.lang.Override
@@ -902,6 +1045,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
+  /**
+   *
+   *
+   * <pre>
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  @java.lang.Override
+  public boolean hasTarget() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
   /**
    *
    *
@@ -951,6 +1109,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -1012,44 +1185,44 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    for (int i = 0; i < statusDetails_.size(); i++) {
-      output.writeMessage(94918389, statusDetails_.get(i));
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (status_ != com.google.cloud.compute.v1.Autoscaler.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
-    if (autoscalingPolicy_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(221950041, getAutoscalingPolicy());
     }
-    if (recommendedSize_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(257915749, recommendedSize_);
+    }
+    for (int i = 0; i < statusDetails_.size(); i++) {
+      output.writeMessage(363353845, statusDetails_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -1060,48 +1233,49 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    for (int i = 0; i < statusDetails_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(94918389, statusDetails_.get(i));
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (status_ != com.google.cloud.compute.v1.Autoscaler.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
-    if (autoscalingPolicy_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               221950041, getAutoscalingPolicy());
     }
-    if (recommendedSize_ != 0) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(257915749, recommendedSize_);
+    }
+    for (int i = 0; i < statusDetails_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              363353845, statusDetails_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1122,18 +1296,51 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoscalingPolicy()) {
       if (!getAutoscalingPolicy().equals(other.getAutoscalingPolicy())) return false;
     }
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (getRecommendedSize() != other.getRecommendedSize()) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (status_ != other.status_) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRecommendedSize() != other.hasRecommendedSize()) return false;
+    if (hasRecommendedSize()) {
+      if (getRecommendedSize() != other.getRecommendedSize()) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!getStatusDetailsList().equals(other.getStatusDetailsList())) return false;
-    if (!getTarget().equals(other.getTarget())) return false;
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasTarget() != other.hasTarget()) return false;
+    if (hasTarget()) {
+      if (!getTarget().equals(other.getTarget())) return false;
+    }
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1149,32 +1356,54 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AUTOSCALING_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingPolicy().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + RECOMMENDED_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getRecommendedSize();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRecommendedSize()) {
+      hash = (37 * hash) + RECOMMENDED_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getRecommendedSize();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     if (getStatusDetailsCount() > 0) {
       hash = (37 * hash) + STATUS_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getStatusDetailsList().hashCode();
     }
-    hash = (37 * hash) + TARGET_FIELD_NUMBER;
-    hash = (53 * hash) + getTarget().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasTarget()) {
+      hash = (37 * hash) + TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getTarget().hashCode();
+    }
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1320,6 +1549,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAutoscalingPolicyFieldBuilder();
         getStatusDetailsFieldBuilder();
       }
     }
@@ -1330,37 +1560,37 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (autoscalingPolicyBuilder_ == null) {
         autoscalingPolicy_ = null;
       } else {
-        autoscalingPolicy_ = null;
-        autoscalingPolicyBuilder_ = null;
+        autoscalingPolicyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       recommendedSize_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       status_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         statusDetailsBuilder_.clear();
       }
       target_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1389,31 +1619,69 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.Autoscaler result =
           new com.google.cloud.compute.v1.Autoscaler(this);
       int from_bitField0_ = bitField0_;
-      if (autoscalingPolicyBuilder_ == null) {
-        result.autoscalingPolicy_ = autoscalingPolicy_;
-      } else {
-        result.autoscalingPolicy_ = autoscalingPolicyBuilder_.build();
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (autoscalingPolicyBuilder_ == null) {
+          result.autoscalingPolicy_ = autoscalingPolicy_;
+        } else {
+          result.autoscalingPolicy_ = autoscalingPolicyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
-      result.recommendedSize_ = recommendedSize_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.recommendedSize_ = recommendedSize_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.status_ = status_;
       if (statusDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           statusDetails_ = java.util.Collections.unmodifiableList(statusDetails_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.statusDetails_ = statusDetails_;
       } else {
         result.statusDetails_ = statusDetailsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.target_ = target_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1466,45 +1734,52 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutoscalingPolicy()) {
         mergeAutoscalingPolicy(other.getAutoscalingPolicy());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getRecommendedSize() != 0) {
+      if (other.hasRecommendedSize()) {
         setRecommendedSize(other.getRecommendedSize());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000080;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000100;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       if (statusDetailsBuilder_ == null) {
         if (!other.statusDetails_.isEmpty()) {
           if (statusDetails_.isEmpty()) {
             statusDetails_ = other.statusDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureStatusDetailsIsMutable();
             statusDetails_.addAll(other.statusDetails_);
@@ -1517,7 +1792,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             statusDetailsBuilder_.dispose();
             statusDetailsBuilder_ = null;
             statusDetails_ = other.statusDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
             statusDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusDetailsFieldBuilder()
@@ -1527,11 +1802,13 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getTarget().isEmpty()) {
+      if (other.hasTarget()) {
+        bitField0_ |= 0x00000800;
         target_ = other.target_;
         onChanged();
       }
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00001000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -1585,7 +1862,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscalingPolicy field is set.
      */
     public boolean hasAutoscalingPolicy() {
-      return autoscalingPolicyBuilder_ != null || autoscalingPolicy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1628,7 +1905,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       } else {
         autoscalingPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1649,7 +1926,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       } else {
         autoscalingPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1664,7 +1941,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAutoscalingPolicy(com.google.cloud.compute.v1.AutoscalingPolicy value) {
       if (autoscalingPolicyBuilder_ == null) {
-        if (autoscalingPolicy_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && autoscalingPolicy_ != null
+            && autoscalingPolicy_
+                != com.google.cloud.compute.v1.AutoscalingPolicy.getDefaultInstance()) {
           autoscalingPolicy_ =
               com.google.cloud.compute.v1.AutoscalingPolicy.newBuilder(autoscalingPolicy_)
                   .mergeFrom(value)
@@ -1676,7 +1956,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       } else {
         autoscalingPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1694,10 +1974,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         autoscalingPolicy_ = null;
         onChanged();
       } else {
-        autoscalingPolicy_ = null;
-        autoscalingPolicyBuilder_ = null;
+        autoscalingPolicyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -1711,7 +1990,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
      */
     public com.google.cloud.compute.v1.AutoscalingPolicy.Builder getAutoscalingPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAutoscalingPolicyFieldBuilder().getBuilder();
     }
@@ -1762,6 +2041,20 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1822,7 +2115,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1839,7 +2132,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1861,7 +2154,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1875,7 +2168,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1897,7 +2204,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1919,7 +2226,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1928,7 +2235,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1940,12 +2247,12 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1957,7 +2264,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1967,13 +2274,27 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -2034,7 +2355,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -2051,7 +2372,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -2073,13 +2394,27 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2140,7 +2475,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -2157,7 +2492,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2179,13 +2514,27 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2246,7 +2595,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -2263,7 +2612,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2285,13 +2634,28 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
     }
 
     private int recommendedSize_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
+     * </pre>
+     *
+     * <code>int32 recommended_size = 257915749;</code>
+     *
+     * @return Whether the recommendedSize field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendedSize() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2320,7 +2684,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRecommendedSize(int value) {
-
+      bitField0_ |= 0x00000040;
       recommendedSize_ = value;
       onChanged();
       return this;
@@ -2337,13 +2701,27 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRecommendedSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       recommendedSize_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2404,7 +2782,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2421,7 +2799,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -2443,7 +2821,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       region_ = value;
       onChanged();
       return this;
@@ -2457,7 +2835,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2479,7 +2871,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2501,7 +2893,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2510,7 +2902,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2522,12 +2914,12 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2539,7 +2931,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2549,13 +2941,32 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int status_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
+     * - DELETING: Configuration is being deleted.
+     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
+     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2592,7 +3003,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -2639,7 +3050,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -2660,7 +3071,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
       onChanged();
       return this;
@@ -2670,11 +3081,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         statusDetails_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>(
                 statusDetails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -2691,7 +3102,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails>
@@ -2709,7 +3120,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public int getStatusDetailsCount() {
@@ -2726,7 +3137,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index) {
@@ -2743,7 +3154,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder setStatusDetails(
@@ -2767,7 +3178,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder setStatusDetails(
@@ -2788,7 +3199,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder addStatusDetails(com.google.cloud.compute.v1.AutoscalerStatusDetails value) {
@@ -2811,7 +3222,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2835,7 +3246,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2856,7 +3267,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2877,7 +3288,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder addAllStatusDetails(
@@ -2898,13 +3309,13 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder clearStatusDetails() {
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         statusDetailsBuilder_.clear();
@@ -2918,7 +3329,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public Builder removeStatusDetails(int index) {
@@ -2938,7 +3349,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder getStatusDetailsBuilder(
@@ -2952,7 +3363,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder getStatusDetailsOrBuilder(
@@ -2970,7 +3381,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>
@@ -2988,7 +3399,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder addStatusDetailsBuilder() {
@@ -3002,7 +3413,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder addStatusDetailsBuilder(
@@ -3018,7 +3429,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder>
@@ -3038,7 +3449,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder,
                 com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>(
                 statusDetails_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         statusDetails_ = null;
@@ -3047,6 +3458,20 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object target_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+     * </pre>
+     *
+     * <code>string target = 192835985;</code>
+     *
+     * @return Whether the target field is set.
+     */
+    public boolean hasTarget() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -3107,7 +3532,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       target_ = value;
       onChanged();
       return this;
@@ -3124,7 +3549,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -3146,13 +3571,27 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       target_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -3213,7 +3652,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       zone_ = value;
       onChanged();
       return this;
@@ -3230,7 +3669,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -3252,7 +3691,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       zone_ = value;
       onChanged();
       return this;

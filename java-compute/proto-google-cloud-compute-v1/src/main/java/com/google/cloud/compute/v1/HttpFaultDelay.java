@@ -58,6 +58,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,10 +69,16 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 388818882:
+          case 1215272145:
+            {
+              bitField0_ |= 0x00000002;
+              percentage_ = input.readDouble();
+              break;
+            }
+          case -1758664766:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (fixedDelay_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = fixedDelay_.toBuilder();
               }
               fixedDelay_ =
@@ -81,12 +88,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(fixedDelay_);
                 fixedDelay_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 1215272145:
-            {
-              percentage_ = input.readDouble();
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -123,7 +125,8 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpFaultDelay.Builder.class);
   }
 
-  public static final int FIXED_DELAY_FIELD_NUMBER = 48602360;
+  private int bitField0_;
+  public static final int FIXED_DELAY_FIELD_NUMBER = 317037816;
   private com.google.cloud.compute.v1.Duration fixedDelay_;
   /**
    *
@@ -132,13 +135,13 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    *
    * @return Whether the fixedDelay field is set.
    */
   @java.lang.Override
   public boolean hasFixedDelay() {
-    return fixedDelay_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -147,7 +150,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    *
    * @return The fixedDelay.
    */
@@ -164,15 +167,33 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
-    return getFixedDelay();
+    return fixedDelay_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : fixedDelay_;
   }
 
   public static final int PERCENTAGE_FIELD_NUMBER = 151909018;
   private double percentage_;
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
+   * The value must be between 0.0 and 100.0 inclusive.
+   * </pre>
+   *
+   * <code>double percentage = 151909018;</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -204,11 +225,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (fixedDelay_ != null) {
-      output.writeMessage(48602360, getFixedDelay());
-    }
-    if (percentage_ != 0D) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(151909018, percentage_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(317037816, getFixedDelay());
     }
     unknownFields.writeTo(output);
   }
@@ -219,11 +240,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (fixedDelay_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(48602360, getFixedDelay());
-    }
-    if (percentage_ != 0D) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(151909018, percentage_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(317037816, getFixedDelay());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,8 +266,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     if (hasFixedDelay()) {
       if (!getFixedDelay().equals(other.getFixedDelay())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getPercentage())
-        != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    if (hasPercentage() != other.hasPercentage()) return false;
+    if (hasPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getPercentage())
+          != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -262,11 +286,13 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FIXED_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getFixedDelay().hashCode();
     }
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getPercentage()));
+    if (hasPercentage()) {
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPercentage()));
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,7 +432,9 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFixedDelayFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -415,11 +443,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       if (fixedDelayBuilder_ == null) {
         fixedDelay_ = null;
       } else {
-        fixedDelay_ = null;
-        fixedDelayBuilder_ = null;
+        fixedDelayBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       percentage_ = 0D;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -447,12 +475,21 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.HttpFaultDelay buildPartial() {
       com.google.cloud.compute.v1.HttpFaultDelay result =
           new com.google.cloud.compute.v1.HttpFaultDelay(this);
-      if (fixedDelayBuilder_ == null) {
-        result.fixedDelay_ = fixedDelay_;
-      } else {
-        result.fixedDelay_ = fixedDelayBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (fixedDelayBuilder_ == null) {
+          result.fixedDelay_ = fixedDelay_;
+        } else {
+          result.fixedDelay_ = fixedDelayBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      result.percentage_ = percentage_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.percentage_ = percentage_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -505,7 +542,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFixedDelay()) {
         mergeFixedDelay(other.getFixedDelay());
       }
-      if (other.getPercentage() != 0D) {
+      if (other.hasPercentage()) {
         setPercentage(other.getPercentage());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -537,6 +574,8 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.Duration fixedDelay_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -550,12 +589,12 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      *
      * @return Whether the fixedDelay field is set.
      */
     public boolean hasFixedDelay() {
-      return fixedDelayBuilder_ != null || fixedDelay_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -564,7 +603,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      *
      * @return The fixedDelay.
      */
@@ -584,7 +623,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
@@ -596,7 +635,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       } else {
         fixedDelayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -606,7 +645,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (fixedDelayBuilder_ == null) {
@@ -615,7 +654,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       } else {
         fixedDelayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -625,11 +664,13 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder mergeFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
-        if (fixedDelay_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && fixedDelay_ != null
+            && fixedDelay_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           fixedDelay_ =
               com.google.cloud.compute.v1.Duration.newBuilder(fixedDelay_)
                   .mergeFrom(value)
@@ -641,7 +682,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
       } else {
         fixedDelayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -651,17 +692,16 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public Builder clearFixedDelay() {
       if (fixedDelayBuilder_ == null) {
         fixedDelay_ = null;
         onChanged();
       } else {
-        fixedDelay_ = null;
-        fixedDelayBuilder_ = null;
+        fixedDelayBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -671,10 +711,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getFixedDelayBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFixedDelayFieldBuilder().getBuilder();
     }
@@ -685,7 +725,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
       if (fixedDelayBuilder_ != null) {
@@ -703,7 +743,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -723,6 +763,22 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double percentage_;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
+     * The value must be between 0.0 and 100.0 inclusive.
+     * </pre>
+     *
+     * <code>double percentage = 151909018;</code>
+     *
+     * @return Whether the percentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -753,7 +809,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPercentage(double value) {
-
+      bitField0_ |= 0x00000002;
       percentage_ = value;
       onChanged();
       return this;
@@ -771,7 +827,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPercentage() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       percentage_ = 0D;
       onChanged();
       return this;

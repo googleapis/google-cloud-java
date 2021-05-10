@@ -65,6 +65,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,7 +93,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -103,16 +104,16 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
               deviceName_ = s;
               break;
             }
-          case 1570607576:
-            {
-              autoDelete_ = input.readBool();
-              break;
-            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -576876072:
+            {
+              autoDelete_ = input.readBool();
               break;
             }
           default:
@@ -149,7 +150,8 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest.Builder.class);
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
+  private int bitField0_;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private boolean autoDelete_;
   /**
    *
@@ -158,7 +160,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
    * Whether to auto-delete the disk when the instance is deleted.
    * </pre>
    *
-   * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoDelete.
    */
@@ -327,6 +329,23 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -436,17 +455,17 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getDeviceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 67541716, deviceName_);
     }
-    if (autoDelete_ != false) {
-      output.writeBool(196325947, autoDelete_);
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (autoDelete_ != false) {
+      output.writeBool(464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -463,17 +482,17 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getDeviceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67541716, deviceName_);
     }
-    if (autoDelete_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(196325947, autoDelete_);
-    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (autoDelete_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,7 +514,10 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (!getDeviceName().equals(other.getDeviceName())) return false;
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -516,8 +538,10 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -675,7 +699,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       zone_ = "";
 
       return this;
@@ -706,12 +730,18 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     public com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest result =
           new com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.autoDelete_ = autoDelete_;
       result.deviceName_ = deviceName_;
       result.instance_ = instance_;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -778,7 +808,8 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -816,6 +847,8 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private boolean autoDelete_;
     /**
      *
@@ -824,7 +857,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The autoDelete.
      */
@@ -839,7 +872,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
@@ -857,7 +890,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1198,6 +1231,22 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1253,7 +1302,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1272,7 +1321,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1296,7 +1345,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

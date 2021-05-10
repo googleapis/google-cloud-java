@@ -73,13 +73,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case 512837666:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              macAddress_ = s;
-              break;
-            }
           case 823819722:
             {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -94,7 +87,14 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                       extensionRegistry));
               break;
             }
-          case 1169250442:
+          case -1634645982:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              macAddress_ = s;
+              break;
+            }
+          case -978233206:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 arpCaches_ =
@@ -148,7 +148,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.InterconnectDiagnostics.Builder.class);
   }
 
-  public static final int ARP_CACHES_FIELD_NUMBER = 146156305;
+  private int bitField0_;
+  public static final int ARP_CACHES_FIELD_NUMBER = 414591761;
   private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> arpCaches_;
   /**
    *
@@ -157,7 +158,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -172,7 +173,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -188,7 +189,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -202,7 +203,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -216,7 +217,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
    * </code>
    */
   @java.lang.Override
@@ -302,7 +303,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     return links_.get(index);
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 64104708;
+  public static final int MAC_ADDRESS_FIELD_NUMBER = 332540164;
   private volatile java.lang.Object macAddress_;
   /**
    *
@@ -311,7 +312,22 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
+   *
+   * @return Whether the macAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasMacAddress() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The MAC address of the Interconnect's bundle interface.
+   * </pre>
+   *
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The macAddress.
    */
@@ -334,7 +350,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    * The MAC address of the Interconnect's bundle interface.
    * </pre>
    *
-   * <code>string mac_address = 64104708;</code>
+   * <code>string mac_address = 332540164;</code>
    *
    * @return The bytes for macAddress.
    */
@@ -365,14 +381,14 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMacAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 64104708, macAddress_);
-    }
     for (int i = 0; i < links_.size(); i++) {
       output.writeMessage(102977465, links_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 332540164, macAddress_);
+    }
     for (int i = 0; i < arpCaches_.size(); i++) {
-      output.writeMessage(146156305, arpCaches_.get(i));
+      output.writeMessage(414591761, arpCaches_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -383,15 +399,15 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getMacAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(64104708, macAddress_);
-    }
     for (int i = 0; i < links_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(102977465, links_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332540164, macAddress_);
+    }
     for (int i = 0; i < arpCaches_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(146156305, arpCaches_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(414591761, arpCaches_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -411,7 +427,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
     if (!getArpCachesList().equals(other.getArpCachesList())) return false;
     if (!getLinksList().equals(other.getLinksList())) return false;
-    if (!getMacAddress().equals(other.getMacAddress())) return false;
+    if (hasMacAddress() != other.hasMacAddress()) return false;
+    if (hasMacAddress()) {
+      if (!getMacAddress().equals(other.getMacAddress())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -431,8 +450,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       hash = (37 * hash) + LINKS_FIELD_NUMBER;
       hash = (53 * hash) + getLinksList().hashCode();
     }
-    hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getMacAddress().hashCode();
+    if (hasMacAddress()) {
+      hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getMacAddress().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -594,7 +615,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         linksBuilder_.clear();
       }
       macAddress_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -623,6 +644,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       com.google.cloud.compute.v1.InterconnectDiagnostics result =
           new com.google.cloud.compute.v1.InterconnectDiagnostics(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (arpCachesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           arpCaches_ = java.util.Collections.unmodifiableList(arpCaches_);
@@ -641,7 +663,11 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       } else {
         result.links_ = linksBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.macAddress_ = macAddress_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -746,7 +772,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           }
         }
       }
-      if (!other.getMacAddress().isEmpty()) {
+      if (other.hasMacAddress()) {
+        bitField0_ |= 0x00000004;
         macAddress_ = other.macAddress_;
         onChanged();
       }
@@ -808,7 +835,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry>
@@ -827,7 +854,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public int getArpCachesCount() {
@@ -845,7 +872,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index) {
@@ -863,7 +890,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder setArpCaches(
@@ -888,7 +915,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder setArpCaches(
@@ -911,7 +938,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry value) {
@@ -935,7 +962,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -960,7 +987,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -982,7 +1009,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addArpCaches(
@@ -1005,7 +1032,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder addAllArpCaches(
@@ -1028,7 +1055,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder clearArpCaches() {
@@ -1049,7 +1076,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public Builder removeArpCaches(int index) {
@@ -1070,7 +1097,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder getArpCachesBuilder(
@@ -1085,7 +1112,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder
@@ -1104,7 +1131,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<
@@ -1124,7 +1151,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder
@@ -1141,7 +1168,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder addArpCachesBuilder(
@@ -1159,7 +1186,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
+     * repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder>
@@ -1575,7 +1602,21 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
+     *
+     * @return Whether the macAddress field is set.
+     */
+    public boolean hasMacAddress() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MAC address of the Interconnect's bundle interface.
+     * </pre>
+     *
+     * <code>string mac_address = 332540164;</code>
      *
      * @return The macAddress.
      */
@@ -1597,7 +1638,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @return The bytes for macAddress.
      */
@@ -1619,7 +1660,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @param value The macAddress to set.
      * @return This builder for chaining.
@@ -1628,7 +1669,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       macAddress_ = value;
       onChanged();
       return this;
@@ -1640,12 +1681,12 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       macAddress_ = getDefaultInstance().getMacAddress();
       onChanged();
       return this;
@@ -1657,7 +1698,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * The MAC address of the Interconnect's bundle interface.
      * </pre>
      *
-     * <code>string mac_address = 64104708;</code>
+     * <code>string mac_address = 332540164;</code>
      *
      * @param value The bytes for macAddress to set.
      * @return This builder for chaining.
@@ -1667,7 +1708,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       macAddress_ = value;
       onChanged();
       return this;

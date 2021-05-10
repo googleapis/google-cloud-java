@@ -63,6 +63,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,10 +74,10 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
           case 0:
             done = true;
             break;
-          case 1119514330:
+          case -1027969318:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               healthCheckService_ = s;
               break;
             }
@@ -114,10 +115,20 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.HealthCheckServiceReference.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 139939291;
+  private int bitField0_;
+  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
   private volatile java.lang.Object healthCheckService_;
   /**
-   * <code>string health_check_service = 139939291;</code>
+   * <code>string health_check_service = 408374747;</code>
+   *
+   * @return Whether the healthCheckService field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthCheckService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>string health_check_service = 408374747;</code>
    *
    * @return The healthCheckService.
    */
@@ -134,7 +145,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     }
   }
   /**
-   * <code>string health_check_service = 139939291;</code>
+   * <code>string health_check_service = 408374747;</code>
    *
    * @return The bytes for healthCheckService.
    */
@@ -165,8 +176,8 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getHealthCheckServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 139939291, healthCheckService_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 408374747, healthCheckService_);
     }
     unknownFields.writeTo(output);
   }
@@ -177,9 +188,9 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getHealthCheckServiceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(139939291, healthCheckService_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(408374747, healthCheckService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -197,7 +208,10 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.HealthCheckServiceReference other =
         (com.google.cloud.compute.v1.HealthCheckServiceReference) obj;
 
-    if (!getHealthCheckService().equals(other.getHealthCheckService())) return false;
+    if (hasHealthCheckService() != other.hasHealthCheckService()) return false;
+    if (hasHealthCheckService()) {
+      if (!getHealthCheckService().equals(other.getHealthCheckService())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,8 +223,10 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HEALTH_CHECK_SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getHealthCheckService().hashCode();
+    if (hasHealthCheckService()) {
+      hash = (37 * hash) + HEALTH_CHECK_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getHealthCheckService().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -361,7 +377,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       healthCheckService_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -389,7 +405,13 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.HealthCheckServiceReference buildPartial() {
       com.google.cloud.compute.v1.HealthCheckServiceReference result =
           new com.google.cloud.compute.v1.HealthCheckServiceReference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.healthCheckService_ = healthCheckService_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -440,7 +462,8 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.HealthCheckServiceReference other) {
       if (other == com.google.cloud.compute.v1.HealthCheckServiceReference.getDefaultInstance())
         return this;
-      if (!other.getHealthCheckService().isEmpty()) {
+      if (other.hasHealthCheckService()) {
+        bitField0_ |= 0x00000001;
         healthCheckService_ = other.healthCheckService_;
         onChanged();
       }
@@ -474,9 +497,19 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object healthCheckService_ = "";
     /**
-     * <code>string health_check_service = 139939291;</code>
+     * <code>string health_check_service = 408374747;</code>
+     *
+     * @return Whether the healthCheckService field is set.
+     */
+    public boolean hasHealthCheckService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>string health_check_service = 408374747;</code>
      *
      * @return The healthCheckService.
      */
@@ -492,7 +525,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 139939291;</code>
+     * <code>string health_check_service = 408374747;</code>
      *
      * @return The bytes for healthCheckService.
      */
@@ -508,7 +541,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 139939291;</code>
+     * <code>string health_check_service = 408374747;</code>
      *
      * @param value The healthCheckService to set.
      * @return This builder for chaining.
@@ -517,24 +550,24 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       healthCheckService_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string health_check_service = 139939291;</code>
+     * <code>string health_check_service = 408374747;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthCheckService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       healthCheckService_ = getDefaultInstance().getHealthCheckService();
       onChanged();
       return this;
     }
     /**
-     * <code>string health_check_service = 139939291;</code>
+     * <code>string health_check_service = 408374747;</code>
      *
      * @param value The bytes for healthCheckService to set.
      * @return This builder for chaining.
@@ -544,7 +577,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       healthCheckService_ = value;
       onChanged();
       return this;

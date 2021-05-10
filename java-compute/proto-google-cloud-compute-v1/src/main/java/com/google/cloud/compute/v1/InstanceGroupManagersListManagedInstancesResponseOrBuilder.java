@@ -30,7 +30,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList();
   /**
@@ -40,7 +40,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index);
   /**
@@ -50,7 +50,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   int getManagedInstancesCount();
   /**
@@ -60,7 +60,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceOrBuilder>
       getManagedInstancesOrBuilderList();
@@ -71,10 +71,22 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceOrBuilder getManagedInstancesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
+   * @return Whether the nextPageToken field is set.
+   */
+  boolean hasNextPageToken();
   /**
    *
    *

@@ -60,6 +60,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,17 +71,10 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case 1075828016:
-            {
-              int rawValue = input.readEnum();
-
-              logName_ = rawValue;
-              break;
-            }
           case 1742892994:
             {
               com.google.cloud.compute.v1.AuthorizationLoggingOptions.Builder subBuilder = null;
-              if (authorizationLoggingOptions_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = authorizationLoggingOptions_.toBuilder();
               }
               authorizationLoggingOptions_ =
@@ -91,7 +85,14 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
                 subBuilder.mergeFrom(authorizationLoggingOptions_);
                 authorizationLoggingOptions_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case -1071655632:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000002;
+              logName_ = rawValue;
               break;
             }
           default:
@@ -148,12 +149,12 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     UNDEFINED_LOG_NAME(0),
-    /** <code>ADMIN_ACTIVITY = 159067679;</code> */
-    ADMIN_ACTIVITY(159067679),
+    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    ADMIN_ACTIVITY(427503135),
     /** <code>DATA_ACCESS = 238070681;</code> */
     DATA_ACCESS(238070681),
-    /** <code>UNSPECIFIED_LOG_NAME = 142079726;</code> */
-    UNSPECIFIED_LOG_NAME(142079726),
+    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    UNSPECIFIED_LOG_NAME(410515182),
     UNRECOGNIZED(-1),
     ;
 
@@ -167,12 +168,12 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     public static final int UNDEFINED_LOG_NAME_VALUE = 0;
-    /** <code>ADMIN_ACTIVITY = 159067679;</code> */
-    public static final int ADMIN_ACTIVITY_VALUE = 159067679;
+    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    public static final int ADMIN_ACTIVITY_VALUE = 427503135;
     /** <code>DATA_ACCESS = 238070681;</code> */
     public static final int DATA_ACCESS_VALUE = 238070681;
-    /** <code>UNSPECIFIED_LOG_NAME = 142079726;</code> */
-    public static final int UNSPECIFIED_LOG_NAME_VALUE = 142079726;
+    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    public static final int UNSPECIFIED_LOG_NAME_VALUE = 410515182;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -200,11 +201,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_LOG_NAME;
-        case 159067679:
+        case 427503135:
           return ADMIN_ACTIVITY;
         case 238070681:
           return DATA_ACCESS;
-        case 142079726:
+        case 410515182:
           return UNSPECIFIED_LOG_NAME;
         default:
           return null;
@@ -261,6 +262,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName)
   }
 
+  private int bitField0_;
   public static final int AUTHORIZATION_LOGGING_OPTIONS_FIELD_NUMBER = 217861624;
   private com.google.cloud.compute.v1.AuthorizationLoggingOptions authorizationLoggingOptions_;
   /**
@@ -278,7 +280,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasAuthorizationLoggingOptions() {
-    return authorizationLoggingOptions_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -313,10 +315,12 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.AuthorizationLoggingOptionsOrBuilder
       getAuthorizationLoggingOptionsOrBuilder() {
-    return getAuthorizationLoggingOptions();
+    return authorizationLoggingOptions_ == null
+        ? com.google.cloud.compute.v1.AuthorizationLoggingOptions.getDefaultInstance()
+        : authorizationLoggingOptions_;
   }
 
-  public static final int LOG_NAME_FIELD_NUMBER = 134478502;
+  public static final int LOG_NAME_FIELD_NUMBER = 402913958;
   private int logName_;
   /**
    *
@@ -325,7 +329,22 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   *
+   * @return Whether the logName field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The log_name to populate in the Cloud Audit Record.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
    *
    * @return The enum numeric value on the wire for logName.
    */
@@ -340,7 +359,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
    *
    * @return The logName.
    */
@@ -368,13 +387,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (logName_
-        != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNDEFINED_LOG_NAME
-            .getNumber()) {
-      output.writeEnum(134478502, logName_);
-    }
-    if (authorizationLoggingOptions_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(217861624, getAuthorizationLoggingOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(402913958, logName_);
     }
     unknownFields.writeTo(output);
   }
@@ -385,15 +402,13 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (logName_
-        != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNDEFINED_LOG_NAME
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(134478502, logName_);
-    }
-    if (authorizationLoggingOptions_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               217861624, getAuthorizationLoggingOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402913958, logName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -416,7 +431,10 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       if (!getAuthorizationLoggingOptions().equals(other.getAuthorizationLoggingOptions()))
         return false;
     }
-    if (logName_ != other.logName_) return false;
+    if (hasLogName() != other.hasLogName()) return false;
+    if (hasLogName()) {
+      if (logName_ != other.logName_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -432,8 +450,10 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       hash = (37 * hash) + AUTHORIZATION_LOGGING_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorizationLoggingOptions().hashCode();
     }
-    hash = (37 * hash) + LOG_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + logName_;
+    if (hasLogName()) {
+      hash = (37 * hash) + LOG_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + logName_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -574,7 +594,9 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAuthorizationLoggingOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -583,11 +605,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       if (authorizationLoggingOptionsBuilder_ == null) {
         authorizationLoggingOptions_ = null;
       } else {
-        authorizationLoggingOptions_ = null;
-        authorizationLoggingOptionsBuilder_ = null;
+        authorizationLoggingOptionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       logName_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -615,12 +637,21 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.LogConfigCloudAuditOptions buildPartial() {
       com.google.cloud.compute.v1.LogConfigCloudAuditOptions result =
           new com.google.cloud.compute.v1.LogConfigCloudAuditOptions(this);
-      if (authorizationLoggingOptionsBuilder_ == null) {
-        result.authorizationLoggingOptions_ = authorizationLoggingOptions_;
-      } else {
-        result.authorizationLoggingOptions_ = authorizationLoggingOptionsBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (authorizationLoggingOptionsBuilder_ == null) {
+          result.authorizationLoggingOptions_ = authorizationLoggingOptions_;
+        } else {
+          result.authorizationLoggingOptions_ = authorizationLoggingOptionsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.logName_ = logName_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -674,8 +705,8 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       if (other.hasAuthorizationLoggingOptions()) {
         mergeAuthorizationLoggingOptions(other.getAuthorizationLoggingOptions());
       }
-      if (other.logName_ != 0) {
-        setLogNameValue(other.getLogNameValue());
+      if (other.hasLogName()) {
+        setLogName(other.getLogName());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -707,6 +738,8 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.AuthorizationLoggingOptions authorizationLoggingOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.AuthorizationLoggingOptions,
@@ -727,7 +760,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * @return Whether the authorizationLoggingOptions field is set.
      */
     public boolean hasAuthorizationLoggingOptions() {
-      return authorizationLoggingOptionsBuilder_ != null || authorizationLoggingOptions_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -774,7 +807,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       } else {
         authorizationLoggingOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -796,7 +829,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       } else {
         authorizationLoggingOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -813,7 +846,10 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     public Builder mergeAuthorizationLoggingOptions(
         com.google.cloud.compute.v1.AuthorizationLoggingOptions value) {
       if (authorizationLoggingOptionsBuilder_ == null) {
-        if (authorizationLoggingOptions_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && authorizationLoggingOptions_ != null
+            && authorizationLoggingOptions_
+                != com.google.cloud.compute.v1.AuthorizationLoggingOptions.getDefaultInstance()) {
           authorizationLoggingOptions_ =
               com.google.cloud.compute.v1.AuthorizationLoggingOptions.newBuilder(
                       authorizationLoggingOptions_)
@@ -826,7 +862,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       } else {
         authorizationLoggingOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -845,10 +881,9 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
         authorizationLoggingOptions_ = null;
         onChanged();
       } else {
-        authorizationLoggingOptions_ = null;
-        authorizationLoggingOptionsBuilder_ = null;
+        authorizationLoggingOptionsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -864,7 +899,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.AuthorizationLoggingOptions.Builder
         getAuthorizationLoggingOptionsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAuthorizationLoggingOptionsFieldBuilder().getBuilder();
     }
@@ -925,7 +960,23 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * </code>
+     *
+     * @return Whether the logName field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The log_name to populate in the Cloud Audit Record.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
      * </code>
      *
      * @return The enum numeric value on the wire for logName.
@@ -941,14 +992,14 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
      * </code>
      *
      * @param value The enum numeric value on the wire for logName to set.
      * @return This builder for chaining.
      */
     public Builder setLogNameValue(int value) {
-
+      bitField0_ |= 0x00000002;
       logName_ = value;
       onChanged();
       return this;
@@ -960,7 +1011,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
      * </code>
      *
      * @return The logName.
@@ -981,7 +1032,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
      * </code>
      *
      * @param value The logName to set.
@@ -992,7 +1043,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       logName_ = value.getNumber();
       onChanged();
       return this;
@@ -1004,13 +1055,13 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLogName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       logName_ = 0;
       onChanged();
       return this;

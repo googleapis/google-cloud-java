@@ -32,6 +32,18 @@ public interface ResourceGroupReferenceOrBuilder
    *
    * <code>string group = 98629247;</code>
    *
+   * @return Whether the group field is set.
+   */
+  boolean hasGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+   * </pre>
+   *
+   * <code>string group = 98629247;</code>
+   *
    * @return The group.
    */
   java.lang.String getGroup();

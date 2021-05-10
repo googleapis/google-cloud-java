@@ -68,6 +68,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -81,60 +82,36 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
-              break;
-            }
-          case 346631192:
-            {
-              int rawValue = input.readEnum();
-
-              enable_ = rawValue;
-              break;
-            }
-          case 541481922:
-            {
-              com.google.cloud.compute.v1.PacketMirroringFilter.Builder subBuilder = null;
-              if (filter_ != null) {
-                subBuilder = filter_.toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.PacketMirroringFilter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 998538786:
             {
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo.Builder subBuilder =
                   null;
-              if (mirroredResources_ != null) {
+              if (((bitField0_ & 0x00000080) != 0)) {
                 subBuilder = mirroredResources_.toBuilder();
               }
               mirroredResources_ =
@@ -145,57 +122,20 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(mirroredResources_);
                 mirroredResources_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000080;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1265379178:
-            {
-              com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.Builder subBuilder =
-                  null;
-              if (collectorIlb_ != null) {
-                subBuilder = collectorIlb_.toBuilder();
-              }
-              collectorIlb_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(collectorIlb_);
-                collectorIlb_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1413729568:
-            {
-              priority_ = input.readUInt32();
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1862979954:
             {
               com.google.cloud.compute.v1.PacketMirroringNetworkInfo.Builder subBuilder = null;
-              if (network_ != null) {
+              if (((bitField0_ & 0x00000200) != 0)) {
                 subBuilder = network_.toBuilder();
               }
               network_ =
@@ -206,7 +146,69 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(network_);
                 network_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000200;
+              break;
+            }
+          case -1800852456:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000008;
+              enable_ = rawValue;
+              break;
+            }
+          case -1606001726:
+            {
+              com.google.cloud.compute.v1.PacketMirroringFilter.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) != 0)) {
+                subBuilder = filter_.toBuilder();
+              }
+              filter_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.PacketMirroringFilter.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(filter_);
+                filter_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -882104470:
+            {
+              com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = collectorIlb_.toBuilder();
+              }
+              collectorIlb_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(collectorIlb_);
+                collectorIlb_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case -733754080:
+            {
+              bitField0_ |= 0x00000400;
+              priority_ = input.readUInt32();
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              selfLink_ = s;
               break;
             }
           default:
@@ -369,7 +371,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PacketMirroring.Enable)
   }
 
-  public static final int COLLECTOR_ILB_FIELD_NUMBER = 158172397;
+  private int bitField0_;
+  public static final int COLLECTOR_ILB_FIELD_NUMBER = 426607853;
   private com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collectorIlb_;
   /**
    *
@@ -378,14 +381,14 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return Whether the collectorIlb field is set.
    */
   @java.lang.Override
   public boolean hasCollectorIlb() {
-    return collectorIlb_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -394,7 +397,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    *
    * @return The collectorIlb.
@@ -412,17 +415,34 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfoOrBuilder
       getCollectorIlbOrBuilder() {
-    return getCollectorIlb();
+    return collectorIlb_ == null
+        ? com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.getDefaultInstance()
+        : collectorIlb_;
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -470,7 +490,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -479,7 +499,22 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -502,7 +537,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -519,7 +554,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 43328899;
+  public static final int ENABLE_FIELD_NUMBER = 311764355;
   private int enable_;
   /**
    *
@@ -529,7 +564,23 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The default is TRUE.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnable() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
+   * The default is TRUE.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
    *
    * @return The enum numeric value on the wire for enable.
    */
@@ -545,7 +596,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * The default is TRUE.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -559,7 +610,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
-  public static final int FILTER_FIELD_NUMBER = 67685240;
+  public static final int FILTER_FIELD_NUMBER = 336120696;
   private com.google.cloud.compute.v1.PacketMirroringFilter filter_;
   /**
    *
@@ -568,13 +619,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return Whether the filter field is set.
    */
   @java.lang.Override
   public boolean hasFilter() {
-    return filter_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -583,7 +634,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -600,15 +651,32 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder() {
-    return getFilter();
+    return filter_ == null
+        ? com.google.cloud.compute.v1.PacketMirroringFilter.getDefaultInstance()
+        : filter_;
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -658,6 +726,21 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -722,7 +805,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasMirroredResources() {
-    return mirroredResources_ != null;
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -757,11 +840,28 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoOrBuilder
       getMirroredResourcesOrBuilder() {
-    return getMirroredResources();
+    return mirroredResources_ == null
+        ? com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo.getDefaultInstance()
+        : mirroredResources_;
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -824,7 +924,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return network_ != null;
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -854,10 +954,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringNetworkInfoOrBuilder getNetworkOrBuilder() {
-    return getNetwork();
+    return network_ == null
+        ? com.google.cloud.compute.v1.PacketMirroringNetworkInfo.getDefaultInstance()
+        : network_;
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -867,7 +969,23 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 176716196;</code>
+   * <code>uint32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
+   * Default value is 1000. Valid range is 0 through 65535.
+   * </pre>
+   *
+   * <code>uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -878,6 +996,21 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URI of the region where the packetMirroring resides.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -925,7 +1058,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -934,7 +1067,22 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -957,7 +1105,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -988,45 +1136,44 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (enable_
-        != com.google.cloud.compute.v1.PacketMirroring.Enable.UNDEFINED_ENABLE.getNumber()) {
-      output.writeEnum(43328899, enable_);
-    }
-    if (filter_ != null) {
-      output.writeMessage(67685240, getFilter());
-    }
-    if (mirroredResources_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(124817348, getMirroredResources());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (collectorIlb_ != null) {
-      output.writeMessage(158172397, getCollectorIlb());
-    }
-    if (priority_ != 0) {
-      output.writeUInt32(176716196, priority_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (network_ != null) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(232872494, getNetwork());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(311764355, enable_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(336120696, getFilter());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(426607853, getCollectorIlb());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeUInt32(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -1037,49 +1184,48 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (enable_
-        != com.google.cloud.compute.v1.PacketMirroring.Enable.UNDEFINED_ENABLE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(43328899, enable_);
-    }
-    if (filter_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(67685240, getFilter());
-    }
-    if (mirroredResources_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               124817348, getMirroredResources());
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (collectorIlb_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(158172397, getCollectorIlb());
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(176716196, priority_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (network_ != null) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(232872494, getNetwork());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(311764355, enable_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(336120696, getFilter());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(426607853, getCollectorIlb());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1101,27 +1247,54 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     if (hasCollectorIlb()) {
       if (!getCollectorIlb().equals(other.getCollectorIlb())) return false;
     }
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (enable_ != other.enable_) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasEnable() != other.hasEnable()) return false;
+    if (hasEnable()) {
+      if (enable_ != other.enable_) return false;
+    }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
       if (!getFilter().equals(other.getFilter())) return false;
     }
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
     if (hasMirroredResources() != other.hasMirroredResources()) return false;
     if (hasMirroredResources()) {
       if (!getMirroredResources().equals(other.getMirroredResources())) return false;
     }
-    if (!getName().equals(other.getName())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
     }
-    if (getPriority() != other.getPriority()) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1137,36 +1310,54 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + COLLECTOR_ILB_FIELD_NUMBER;
       hash = (53 * hash) + getCollectorIlb().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-    hash = (53 * hash) + enable_;
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasEnable()) {
+      hash = (37 * hash) + ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + enable_;
+    }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
     if (hasMirroredResources()) {
       hash = (37 * hash) + MIRRORED_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getMirroredResources().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (hasNetwork()) {
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
     }
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1307,7 +1498,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCollectorIlbFieldBuilder();
+        getFilterFieldBuilder();
+        getMirroredResourcesFieldBuilder();
+        getNetworkFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1316,45 +1512,45 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (collectorIlbBuilder_ == null) {
         collectorIlb_ = null;
       } else {
-        collectorIlb_ = null;
-        collectorIlbBuilder_ = null;
+        collectorIlbBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enable_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (filterBuilder_ == null) {
         filter_ = null;
       } else {
-        filter_ = null;
-        filterBuilder_ = null;
+        filterBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (mirroredResourcesBuilder_ == null) {
         mirroredResources_ = null;
       } else {
-        mirroredResources_ = null;
-        mirroredResourcesBuilder_ = null;
+        mirroredResourcesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (networkBuilder_ == null) {
         network_ = null;
       } else {
-        network_ = null;
-        networkBuilder_ = null;
+        networkBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000200);
       priority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1382,35 +1578,77 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.PacketMirroring buildPartial() {
       com.google.cloud.compute.v1.PacketMirroring result =
           new com.google.cloud.compute.v1.PacketMirroring(this);
-      if (collectorIlbBuilder_ == null) {
-        result.collectorIlb_ = collectorIlb_;
-      } else {
-        result.collectorIlb_ = collectorIlbBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (collectorIlbBuilder_ == null) {
+          result.collectorIlb_ = collectorIlb_;
+        } else {
+          result.collectorIlb_ = collectorIlbBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.enable_ = enable_;
-      if (filterBuilder_ == null) {
-        result.filter_ = filter_;
-      } else {
-        result.filter_ = filterBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (filterBuilder_ == null) {
+          result.filter_ = filter_;
+        } else {
+          result.filter_ = filterBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
       }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.kind_ = kind_;
-      if (mirroredResourcesBuilder_ == null) {
-        result.mirroredResources_ = mirroredResources_;
-      } else {
-        result.mirroredResources_ = mirroredResourcesBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (mirroredResourcesBuilder_ == null) {
+          result.mirroredResources_ = mirroredResources_;
+        } else {
+          result.mirroredResources_ = mirroredResourcesBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
       }
       result.name_ = name_;
-      if (networkBuilder_ == null) {
-        result.network_ = network_;
-      } else {
-        result.network_ = networkBuilder_.build();
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (networkBuilder_ == null) {
+          result.network_ = network_;
+        } else {
+          result.network_ = networkBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000200;
       }
-      result.priority_ = priority_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00001000;
+      }
       result.selfLink_ = selfLink_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1463,46 +1701,53 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (other.hasCollectorIlb()) {
         mergeCollectorIlb(other.getCollectorIlb());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (other.enable_ != 0) {
-        setEnableValue(other.getEnableValue());
+      if (other.hasEnable()) {
+        setEnable(other.getEnable());
       }
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000020;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasMirroredResources()) {
         mergeMirroredResources(other.getMirroredResources());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
         mergeNetwork(other.getNetwork());
       }
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000800;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00001000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1535,6 +1780,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collectorIlb_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo,
@@ -1548,13 +1795,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      *
      * @return Whether the collectorIlb field is set.
      */
     public boolean hasCollectorIlb() {
-      return collectorIlbBuilder_ != null || collectorIlb_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1563,7 +1810,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      *
      * @return The collectorIlb.
@@ -1584,7 +1831,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder setCollectorIlb(
@@ -1598,7 +1845,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         collectorIlbBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1608,7 +1855,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder setCollectorIlb(
@@ -1619,7 +1866,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         collectorIlbBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1629,13 +1876,17 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder mergeCollectorIlb(
         com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo value) {
       if (collectorIlbBuilder_ == null) {
-        if (collectorIlb_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && collectorIlb_ != null
+            && collectorIlb_
+                != com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo
+                    .getDefaultInstance()) {
           collectorIlb_ =
               com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.newBuilder(
                       collectorIlb_)
@@ -1648,7 +1899,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         collectorIlbBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1658,7 +1909,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public Builder clearCollectorIlb() {
@@ -1666,10 +1917,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         collectorIlb_ = null;
         onChanged();
       } else {
-        collectorIlb_ = null;
-        collectorIlbBuilder_ = null;
+        collectorIlbBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -1679,12 +1929,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.Builder
         getCollectorIlbBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCollectorIlbFieldBuilder().getBuilder();
     }
@@ -1695,7 +1945,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfoOrBuilder
@@ -1715,7 +1965,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
+     * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1736,6 +1986,20 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1796,7 +2060,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1813,7 +2077,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1835,7 +2099,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1849,7 +2113,21 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1871,7 +2149,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1893,7 +2171,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1902,7 +2180,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1914,12 +2192,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1931,7 +2209,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1941,7 +2219,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1956,7 +2234,23 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The default is TRUE.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     *
+     * @return Whether the enable field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnable() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
+     * The default is TRUE.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
      *
      * @return The enum numeric value on the wire for enable.
      */
@@ -1972,13 +2266,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The default is TRUE.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
      *
      * @param value The enum numeric value on the wire for enable to set.
      * @return This builder for chaining.
      */
     public Builder setEnableValue(int value) {
-
+      bitField0_ |= 0x00000008;
       enable_ = value;
       onChanged();
       return this;
@@ -1991,7 +2285,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The default is TRUE.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -2012,7 +2306,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The default is TRUE.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -2021,7 +2315,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       enable_ = value.getNumber();
       onChanged();
       return this;
@@ -2034,12 +2328,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * The default is TRUE.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnable() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enable_ = 0;
       onChanged();
       return this;
@@ -2058,12 +2352,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      *
      * @return Whether the filter field is set.
      */
     public boolean hasFilter() {
-      return filterBuilder_ != null || filter_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2072,7 +2366,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -2092,7 +2386,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder setFilter(com.google.cloud.compute.v1.PacketMirroringFilter value) {
       if (filterBuilder_ == null) {
@@ -2104,7 +2398,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         filterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2114,7 +2408,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder setFilter(
         com.google.cloud.compute.v1.PacketMirroringFilter.Builder builderForValue) {
@@ -2124,7 +2418,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         filterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2134,11 +2428,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder mergeFilter(com.google.cloud.compute.v1.PacketMirroringFilter value) {
       if (filterBuilder_ == null) {
-        if (filter_ != null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && filter_ != null
+            && filter_ != com.google.cloud.compute.v1.PacketMirroringFilter.getDefaultInstance()) {
           filter_ =
               com.google.cloud.compute.v1.PacketMirroringFilter.newBuilder(filter_)
                   .mergeFrom(value)
@@ -2150,7 +2446,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         filterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2160,17 +2456,16 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public Builder clearFilter() {
       if (filterBuilder_ == null) {
         filter_ = null;
         onChanged();
       } else {
-        filter_ = null;
-        filterBuilder_ = null;
+        filterBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
     /**
@@ -2180,10 +2475,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public com.google.cloud.compute.v1.PacketMirroringFilter.Builder getFilterBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
@@ -2194,7 +2489,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     public com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder() {
       if (filterBuilder_ != null) {
@@ -2212,7 +2507,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PacketMirroringFilter,
@@ -2232,6 +2527,20 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2292,7 +2601,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -2309,7 +2618,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -2331,13 +2640,27 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2398,7 +2721,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -2415,7 +2738,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2437,7 +2760,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -2463,7 +2786,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return Whether the mirroredResources field is set.
      */
     public boolean hasMirroredResources() {
-      return mirroredResourcesBuilder_ != null || mirroredResources_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2509,7 +2832,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         mirroredResourcesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2531,7 +2854,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         mirroredResourcesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2548,7 +2871,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
     public Builder mergeMirroredResources(
         com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo value) {
       if (mirroredResourcesBuilder_ == null) {
-        if (mirroredResources_ != null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && mirroredResources_ != null
+            && mirroredResources_
+                != com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo
+                    .getDefaultInstance()) {
           mirroredResources_ =
               com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo.newBuilder(
                       mirroredResources_)
@@ -2561,7 +2888,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         mirroredResourcesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2580,10 +2907,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         mirroredResources_ = null;
         onChanged();
       } else {
-        mirroredResources_ = null;
-        mirroredResourcesBuilder_ = null;
+        mirroredResourcesBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -2599,7 +2925,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo.Builder
         getMirroredResourcesBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getMirroredResourcesFieldBuilder().getBuilder();
     }
@@ -2662,6 +2988,20 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string name = 3373707;</code>
      *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
      * @return The name.
      */
     public java.lang.String getName() {
@@ -2713,7 +3053,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2730,7 +3070,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2752,7 +3092,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2776,7 +3116,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return networkBuilder_ != null || network_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2817,7 +3157,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         networkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2837,7 +3177,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         networkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2851,7 +3191,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeNetwork(com.google.cloud.compute.v1.PacketMirroringNetworkInfo value) {
       if (networkBuilder_ == null) {
-        if (network_ != null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && network_ != null
+            && network_
+                != com.google.cloud.compute.v1.PacketMirroringNetworkInfo.getDefaultInstance()) {
           network_ =
               com.google.cloud.compute.v1.PacketMirroringNetworkInfo.newBuilder(network_)
                   .mergeFrom(value)
@@ -2863,7 +3206,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       } else {
         networkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2880,10 +3223,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         network_ = null;
         onChanged();
       } else {
-        network_ = null;
-        networkBuilder_ = null;
+        networkBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
     /**
@@ -2896,7 +3238,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
      */
     public com.google.cloud.compute.v1.PacketMirroringNetworkInfo.Builder getNetworkBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
@@ -2953,7 +3295,23 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
+     * Default value is 1000. Valid range is 0 through 65535.
+     * </pre>
+     *
+     * <code>uint32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -2969,13 +3327,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00000400;
       priority_ = value;
       onChanged();
       return this;
@@ -2988,18 +3346,32 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       priority_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URI of the region where the packetMirroring resides.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -3060,7 +3432,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       region_ = value;
       onChanged();
       return this;
@@ -3077,7 +3449,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3099,7 +3471,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       region_ = value;
       onChanged();
       return this;
@@ -3113,7 +3485,21 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3135,7 +3521,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3157,7 +3543,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3166,7 +3552,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3178,12 +3564,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3195,7 +3581,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3205,7 +3591,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;

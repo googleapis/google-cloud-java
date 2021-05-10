@@ -73,7 +73,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 1066683458:
+          case -1080800190:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetVpnGateways_ =
@@ -135,7 +135,8 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetVpnGatewaysScopedList.Builder.class);
   }
 
-  public static final int TARGET_VPN_GATEWAYS_FIELD_NUMBER = 133335432;
+  private int bitField0_;
+  public static final int TARGET_VPN_GATEWAYS_FIELD_NUMBER = 401770888;
   private java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> targetVpnGateways_;
   /**
    *
@@ -144,7 +145,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
    * </code>
    */
   @java.lang.Override
@@ -158,7 +159,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
    * </code>
    */
   @java.lang.Override
@@ -173,7 +174,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
    * </code>
    */
   @java.lang.Override
@@ -187,7 +188,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
    * </code>
    */
   @java.lang.Override
@@ -201,7 +202,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
    * </code>
    */
   @java.lang.Override
@@ -225,7 +226,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -253,7 +254,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,11 +271,11 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < targetVpnGateways_.size(); i++) {
-      output.writeMessage(133335432, targetVpnGateways_.get(i));
+      output.writeMessage(401770888, targetVpnGateways_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -285,13 +286,13 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < targetVpnGateways_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              133335432, targetVpnGateways_.get(i));
+              401770888, targetVpnGateways_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,6 +475,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTargetVpnGatewaysFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -489,9 +491,9 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -520,6 +522,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       com.google.cloud.compute.v1.TargetVpnGatewaysScopedList result =
           new com.google.cloud.compute.v1.TargetVpnGatewaysScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (targetVpnGatewaysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           targetVpnGateways_ = java.util.Collections.unmodifiableList(targetVpnGateways_);
@@ -529,11 +532,15 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       } else {
         result.targetVpnGateways_ = targetVpnGatewaysBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -671,7 +678,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> getTargetVpnGatewaysList() {
@@ -688,7 +695,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public int getTargetVpnGatewaysCount() {
@@ -705,7 +712,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetVpnGateway getTargetVpnGateways(int index) {
@@ -722,7 +729,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder setTargetVpnGateways(
@@ -746,7 +753,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder setTargetVpnGateways(
@@ -767,7 +774,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder addTargetVpnGateways(com.google.cloud.compute.v1.TargetVpnGateway value) {
@@ -790,7 +797,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder addTargetVpnGateways(
@@ -814,7 +821,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder addTargetVpnGateways(
@@ -835,7 +842,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder addTargetVpnGateways(
@@ -856,7 +863,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder addAllTargetVpnGateways(
@@ -877,7 +884,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder clearTargetVpnGateways() {
@@ -897,7 +904,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public Builder removeTargetVpnGateways(int index) {
@@ -917,7 +924,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetVpnGateway.Builder getTargetVpnGatewaysBuilder(
@@ -931,7 +938,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder getTargetVpnGatewaysOrBuilder(
@@ -949,7 +956,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder>
@@ -967,7 +974,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetVpnGateway.Builder addTargetVpnGatewaysBuilder() {
@@ -981,7 +988,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetVpnGateway.Builder addTargetVpnGatewaysBuilder(
@@ -996,7 +1003,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * [Output Only] A list of target VPN gateways contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
+     * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetVpnGateway.Builder>
@@ -1042,7 +1049,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1083,7 +1090,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1102,7 +1109,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1116,7 +1123,9 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1128,7 +1137,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1145,10 +1154,9 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1161,7 +1169,7 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

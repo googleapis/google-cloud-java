@@ -32,6 +32,18 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    *
    * <code>string fingerprint = 234678500;</code>
    *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request. A request with an incorrect fingerprint will fail with error 412 conditionNotMet.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
@@ -55,7 +67,7 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
   /**
@@ -65,7 +77,7 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
   /**
@@ -75,7 +87,7 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
   /**
@@ -85,7 +97,7 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
@@ -96,7 +108,7 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index);
 }

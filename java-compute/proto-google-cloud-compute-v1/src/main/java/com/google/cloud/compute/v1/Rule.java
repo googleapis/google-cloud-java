@@ -80,9 +80,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           case 835442:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 ins_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               ins_.add(s);
               break;
@@ -90,18 +90,18 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           case 479700002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 permissions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000040;
               }
               permissions_.add(s);
               break;
             }
           case 1143059906:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 conditions_ = new java.util.ArrayList<com.google.cloud.compute.v1.Condition>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               conditions_.add(
                   input.readMessage(
@@ -110,35 +110,35 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             }
           case 1222990770:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 logConfigs_ = new java.util.ArrayList<com.google.cloud.compute.v1.LogConfig>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000010;
               }
               logConfigs_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.LogConfig.parser(), extensionRegistry));
               break;
             }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
           case 1501295024:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               action_ = rawValue;
               break;
             }
-          case 2000061458:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -147422190:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 notIns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000020;
               }
               notIns_.add(s);
               break;
@@ -157,19 +157,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         ins_ = ins_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         logConfigs_ = java.util.Collections.unmodifiableList(logConfigs_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         notIns_ = notIns_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -217,8 +217,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     ALLOW_WITH_LOG(76034177),
     /** <code>DENY = 2094604;</code> */
     DENY(2094604),
-    /** <code>DENY_WITH_LOG = 82998526;</code> */
-    DENY_WITH_LOG(82998526),
+    /** <code>DENY_WITH_LOG = 351433982;</code> */
+    DENY_WITH_LOG(351433982),
     /** <code>LOG = 75556;</code> */
     LOG(75556),
     /** <code>NO_ACTION = 260643444;</code> */
@@ -242,8 +242,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int ALLOW_WITH_LOG_VALUE = 76034177;
     /** <code>DENY = 2094604;</code> */
     public static final int DENY_VALUE = 2094604;
-    /** <code>DENY_WITH_LOG = 82998526;</code> */
-    public static final int DENY_WITH_LOG_VALUE = 82998526;
+    /** <code>DENY_WITH_LOG = 351433982;</code> */
+    public static final int DENY_WITH_LOG_VALUE = 351433982;
     /** <code>LOG = 75556;</code> */
     public static final int LOG_VALUE = 75556;
     /** <code>NO_ACTION = 260643444;</code> */
@@ -281,7 +281,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return ALLOW_WITH_LOG;
         case 2094604:
           return DENY;
-        case 82998526:
+        case 351433982:
           return DENY_WITH_LOG;
         case 75556:
           return LOG;
@@ -340,8 +340,24 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Rule.Action)
   }
 
+  private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
   private int action_;
+  /**
+   *
+   *
+   * <pre>
+   * Required
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
+   *
+   * @return Whether the action field is set.
+   */
+  @java.lang.Override
+  public boolean hasAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -445,7 +461,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return conditions_.get(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -454,7 +470,22 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Human-readable description of the rule.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -477,7 +508,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -624,7 +655,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return logConfigs_.get(index);
   }
 
-  public static final int NOT_INS_FIELD_NUMBER = 250007682;
+  public static final int NOT_INS_FIELD_NUMBER = 518443138;
   private com.google.protobuf.LazyStringList notIns_;
   /**
    *
@@ -633,7 +664,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @return A list containing the notIns.
    */
@@ -647,7 +678,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @return The count of notIns.
    */
@@ -661,7 +692,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @param index The index of the element to return.
    * @return The notIns at the given index.
@@ -676,7 +707,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 250007682;</code>
+   * <code>repeated string not_ins = 518443138;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notIns at the given index.
@@ -772,14 +803,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < logConfigs_.size(); i++) {
       output.writeMessage(152873846, logConfigs_.get(i));
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (action_ != com.google.cloud.compute.v1.Rule.Action.UNDEFINED_ACTION.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(187661878, action_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
     for (int i = 0; i < notIns_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 250007682, notIns_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 518443138, notIns_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -814,11 +845,11 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(152873846, logConfigs_.get(i));
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (action_ != com.google.cloud.compute.v1.Rule.Action.UNDEFINED_ACTION.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(187661878, action_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     {
       int dataSize = 0;
@@ -843,9 +874,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Rule other = (com.google.cloud.compute.v1.Rule) obj;
 
-    if (action_ != other.action_) return false;
+    if (hasAction() != other.hasAction()) return false;
+    if (hasAction()) {
+      if (action_ != other.action_) return false;
+    }
     if (!getConditionsList().equals(other.getConditionsList())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (!getInsList().equals(other.getInsList())) return false;
     if (!getLogConfigsList().equals(other.getLogConfigsList())) return false;
     if (!getNotInsList().equals(other.getNotInsList())) return false;
@@ -861,14 +898,18 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + action_;
+    if (hasAction()) {
+      hash = (37 * hash) + ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + action_;
+    }
     if (getConditionsCount() > 0) {
       hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getConditionsList().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (getInsCount() > 0) {
       hash = (37 * hash) + INS_FIELD_NUMBER;
       hash = (53 * hash) + getInsList().hashCode();
@@ -1033,27 +1074,27 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       action_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         conditionsBuilder_.clear();
       }
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (logConfigsBuilder_ == null) {
         logConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         logConfigsBuilder_.clear();
       }
       notIns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1081,41 +1122,49 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Rule buildPartial() {
       com.google.cloud.compute.v1.Rule result = new com.google.cloud.compute.v1.Rule(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.action_ = action_;
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         ins_ = ins_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.ins_ = ins_;
       if (logConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           logConfigs_ = java.util.Collections.unmodifiableList(logConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.logConfigs_ = logConfigs_;
       } else {
         result.logConfigs_ = logConfigsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         notIns_ = notIns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.notIns_ = notIns_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.permissions_ = permissions_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1165,14 +1214,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Rule other) {
       if (other == com.google.cloud.compute.v1.Rule.getDefaultInstance()) return this;
-      if (other.action_ != 0) {
-        setActionValue(other.getActionValue());
+      if (other.hasAction()) {
+        setAction(other.getAction());
       }
       if (conditionsBuilder_ == null) {
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -1185,7 +1234,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -1195,14 +1244,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
       if (!other.ins_.isEmpty()) {
         if (ins_.isEmpty()) {
           ins_ = other.ins_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureInsIsMutable();
           ins_.addAll(other.ins_);
@@ -1213,7 +1263,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.logConfigs_.isEmpty()) {
           if (logConfigs_.isEmpty()) {
             logConfigs_ = other.logConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureLogConfigsIsMutable();
             logConfigs_.addAll(other.logConfigs_);
@@ -1226,7 +1276,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             logConfigsBuilder_.dispose();
             logConfigsBuilder_ = null;
             logConfigs_ = other.logConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             logConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLogConfigsFieldBuilder()
@@ -1239,7 +1289,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (!other.notIns_.isEmpty()) {
         if (notIns_.isEmpty()) {
           notIns_ = other.notIns_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureNotInsIsMutable();
           notIns_.addAll(other.notIns_);
@@ -1249,7 +1299,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (!other.permissions_.isEmpty()) {
         if (permissions_.isEmpty()) {
           permissions_ = other.permissions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensurePermissionsIsMutable();
           permissions_.addAll(other.permissions_);
@@ -1297,6 +1347,21 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
      *
+     * @return Whether the action field is set.
+     */
+    @java.lang.Override
+    public boolean hasAction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
+     *
      * @return The enum numeric value on the wire for action.
      */
     @java.lang.Override
@@ -1316,7 +1381,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
+      bitField0_ |= 0x00000001;
       action_ = value;
       onChanged();
       return this;
@@ -1355,7 +1420,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -1372,7 +1437,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = 0;
       onChanged();
       return this;
@@ -1382,9 +1447,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.compute.v1.Condition>(conditions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1599,7 +1664,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -1721,7 +1786,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Condition,
                 com.google.cloud.compute.v1.Condition.Builder,
                 com.google.cloud.compute.v1.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -1735,7 +1800,21 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable description of the rule.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1757,7 +1836,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1779,7 +1858,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1788,7 +1867,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1800,12 +1879,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1817,7 +1896,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1827,7 +1906,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1836,9 +1915,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         ins_ = new com.google.protobuf.LazyStringArrayList(ins_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1973,7 +2052,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIns() {
       ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2004,9 +2083,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLogConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         logConfigs_ = new java.util.ArrayList<com.google.cloud.compute.v1.LogConfig>(logConfigs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2221,7 +2300,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLogConfigs() {
       if (logConfigsBuilder_ == null) {
         logConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         logConfigsBuilder_.clear();
@@ -2343,7 +2422,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.LogConfig,
                 com.google.cloud.compute.v1.LogConfig.Builder,
                 com.google.cloud.compute.v1.LogConfigOrBuilder>(
-                logConfigs_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                logConfigs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         logConfigs_ = null;
       }
       return logConfigsBuilder_;
@@ -2353,9 +2432,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotInsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         notIns_ = new com.google.protobuf.LazyStringArrayList(notIns_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2365,7 +2444,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @return A list containing the notIns.
      */
@@ -2379,7 +2458,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @return The count of notIns.
      */
@@ -2393,7 +2472,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param index The index of the element to return.
      * @return The notIns at the given index.
@@ -2408,7 +2487,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the notIns at the given index.
@@ -2423,7 +2502,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param index The index to set the value at.
      * @param value The notIns to set.
@@ -2445,7 +2524,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param value The notIns to add.
      * @return This builder for chaining.
@@ -2466,7 +2545,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param values The notIns to add.
      * @return This builder for chaining.
@@ -2484,13 +2563,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNotIns() {
       notIns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2501,7 +2580,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 250007682;</code>
+     * <code>repeated string not_ins = 518443138;</code>
      *
      * @param value The bytes of the notIns to add.
      * @return This builder for chaining.
@@ -2521,9 +2600,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2658,7 +2737,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPermissions() {
       permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

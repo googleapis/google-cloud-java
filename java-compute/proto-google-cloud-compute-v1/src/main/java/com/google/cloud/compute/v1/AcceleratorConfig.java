@@ -61,6 +61,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,12 +75,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
           case 1104249970:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               acceleratorType_ = s;
               break;
             }
-          case 1891553752:
+          case -255929896:
             {
+              bitField0_ |= 0x00000001;
               acceleratorCount_ = input.readInt32();
               break;
             }
@@ -117,7 +119,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.AcceleratorConfig.Builder.class);
   }
 
-  public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 236444219;
+  private int bitField0_;
+  public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 504879675;
   private int acceleratorCount_;
   /**
    *
@@ -126,7 +129,22 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * The number of the guest accelerator cards exposed to this instance.
    * </pre>
    *
-   * <code>int32 accelerator_count = 236444219;</code>
+   * <code>int32 accelerator_count = 504879675;</code>
+   *
+   * @return Whether the acceleratorCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceleratorCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of the guest accelerator cards exposed to this instance.
+   * </pre>
+   *
+   * <code>int32 accelerator_count = 504879675;</code>
    *
    * @return The acceleratorCount.
    */
@@ -137,6 +155,21 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 138031246;
   private volatile java.lang.Object acceleratorType_;
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
+   * </pre>
+   *
+   * <code>string accelerator_type = 138031246;</code>
+   *
+   * @return Whether the acceleratorType field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceleratorType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -198,11 +231,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138031246, acceleratorType_);
     }
-    if (acceleratorCount_ != 0) {
-      output.writeInt32(236444219, acceleratorCount_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(504879675, acceleratorCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -213,11 +246,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!getAcceleratorTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138031246, acceleratorType_);
     }
-    if (acceleratorCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(236444219, acceleratorCount_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(504879675, acceleratorCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,8 +268,14 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.compute.v1.AcceleratorConfig other =
         (com.google.cloud.compute.v1.AcceleratorConfig) obj;
 
-    if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
-    if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+    if (hasAcceleratorCount() != other.hasAcceleratorCount()) return false;
+    if (hasAcceleratorCount()) {
+      if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
+    }
+    if (hasAcceleratorType() != other.hasAcceleratorType()) return false;
+    if (hasAcceleratorType()) {
+      if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -248,10 +287,14 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACCELERATOR_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAcceleratorCount();
-    hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getAcceleratorType().hashCode();
+    if (hasAcceleratorCount()) {
+      hash = (37 * hash) + ACCELERATOR_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorCount();
+    }
+    if (hasAcceleratorType()) {
+      hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorType().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -399,9 +442,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       acceleratorCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       acceleratorType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -429,8 +472,17 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.AcceleratorConfig buildPartial() {
       com.google.cloud.compute.v1.AcceleratorConfig result =
           new com.google.cloud.compute.v1.AcceleratorConfig(this);
-      result.acceleratorCount_ = acceleratorCount_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.acceleratorCount_ = acceleratorCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.acceleratorType_ = acceleratorType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -480,10 +532,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.compute.v1.AcceleratorConfig other) {
       if (other == com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance()) return this;
-      if (other.getAcceleratorCount() != 0) {
+      if (other.hasAcceleratorCount()) {
         setAcceleratorCount(other.getAcceleratorCount());
       }
-      if (!other.getAcceleratorType().isEmpty()) {
+      if (other.hasAcceleratorType()) {
+        bitField0_ |= 0x00000002;
         acceleratorType_ = other.acceleratorType_;
         onChanged();
       }
@@ -516,6 +569,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private int acceleratorCount_;
     /**
      *
@@ -524,7 +579,22 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 236444219;</code>
+     * <code>int32 accelerator_count = 504879675;</code>
+     *
+     * @return Whether the acceleratorCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAcceleratorCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of the guest accelerator cards exposed to this instance.
+     * </pre>
+     *
+     * <code>int32 accelerator_count = 504879675;</code>
      *
      * @return The acceleratorCount.
      */
@@ -539,13 +609,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 236444219;</code>
+     * <code>int32 accelerator_count = 504879675;</code>
      *
      * @param value The acceleratorCount to set.
      * @return This builder for chaining.
      */
     public Builder setAcceleratorCount(int value) {
-
+      bitField0_ |= 0x00000001;
       acceleratorCount_ = value;
       onChanged();
       return this;
@@ -557,18 +627,32 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 236444219;</code>
+     * <code>int32 accelerator_count = 504879675;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       acceleratorCount_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object acceleratorType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Full or partial URL of the accelerator type resource to attach to this instance. For example: projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full list of accelerator types.
+     * </pre>
+     *
+     * <code>string accelerator_type = 138031246;</code>
+     *
+     * @return Whether the acceleratorType field is set.
+     */
+    public boolean hasAcceleratorType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -629,7 +713,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       acceleratorType_ = value;
       onChanged();
       return this;
@@ -646,7 +730,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       acceleratorType_ = getDefaultInstance().getAcceleratorType();
       onChanged();
       return this;
@@ -668,7 +752,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       acceleratorType_ = value;
       onChanged();
       return this;

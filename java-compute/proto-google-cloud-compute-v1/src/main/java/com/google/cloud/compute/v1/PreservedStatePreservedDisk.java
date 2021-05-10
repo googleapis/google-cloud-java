@@ -61,6 +61,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,21 +75,21 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
           case 26856728:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               mode_ = rawValue;
               break;
             }
           case 1417887962:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               source_ = s;
               break;
             }
-          case 1570607576:
+          case -576876072:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               autoDelete_ = rawValue;
               break;
             }
@@ -380,7 +381,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PreservedStatePreservedDisk.Mode)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
+  private int bitField0_;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private int autoDelete_;
   /**
    *
@@ -389,7 +391,23 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+   * </code>
+   *
+   * @return Whether the autoDelete field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoDelete() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -405,7 +423,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
    * </code>
    *
    * @return The autoDelete.
@@ -422,6 +440,21 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   public static final int MODE_FIELD_NUMBER = 3357091;
   private int mode_;
+  /**
+   *
+   *
+   * <pre>
+   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+   *
+   * @return Whether the mode field is set.
+   */
+  @java.lang.Override
+  public boolean hasMode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -460,6 +493,21 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
   private volatile java.lang.Object source_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the disk resource that is stateful and should be attached to the VM instance.
+   * </pre>
+   *
+   * <code>string source = 177235995;</code>
+   *
+   * @return Whether the source field is set.
+   */
+  @java.lang.Override
+  public boolean hasSource() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -521,18 +569,14 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (mode_
-        != com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.UNDEFINED_MODE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(3357091, mode_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
-    if (autoDelete_
-        != com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNDEFINED_AUTO_DELETE
-            .getNumber()) {
-      output.writeEnum(196325947, autoDelete_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -543,18 +587,14 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (mode_
-        != com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.UNDEFINED_MODE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3357091, mode_);
     }
-    if (!getSourceBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
-    if (autoDelete_
-        != com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNDEFINED_AUTO_DELETE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(196325947, autoDelete_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -572,9 +612,18 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.PreservedStatePreservedDisk other =
         (com.google.cloud.compute.v1.PreservedStatePreservedDisk) obj;
 
-    if (autoDelete_ != other.autoDelete_) return false;
-    if (mode_ != other.mode_) return false;
-    if (!getSource().equals(other.getSource())) return false;
+    if (hasAutoDelete() != other.hasAutoDelete()) return false;
+    if (hasAutoDelete()) {
+      if (autoDelete_ != other.autoDelete_) return false;
+    }
+    if (hasMode() != other.hasMode()) return false;
+    if (hasMode()) {
+      if (mode_ != other.mode_) return false;
+    }
+    if (hasSource() != other.hasSource()) return false;
+    if (hasSource()) {
+      if (!getSource().equals(other.getSource())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -586,12 +635,18 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
-    hash = (53 * hash) + autoDelete_;
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + mode_;
-    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSource().hashCode();
+    if (hasAutoDelete()) {
+      hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
+      hash = (53 * hash) + autoDelete_;
+    }
+    if (hasMode()) {
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+    }
+    if (hasSource()) {
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -738,11 +793,11 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       autoDelete_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       mode_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       source_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -770,9 +825,21 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.PreservedStatePreservedDisk buildPartial() {
       com.google.cloud.compute.v1.PreservedStatePreservedDisk result =
           new com.google.cloud.compute.v1.PreservedStatePreservedDisk(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.autoDelete_ = autoDelete_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.mode_ = mode_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.source_ = source_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -823,13 +890,14 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.PreservedStatePreservedDisk other) {
       if (other == com.google.cloud.compute.v1.PreservedStatePreservedDisk.getDefaultInstance())
         return this;
-      if (other.autoDelete_ != 0) {
-        setAutoDeleteValue(other.getAutoDeleteValue());
+      if (other.hasAutoDelete()) {
+        setAutoDelete(other.getAutoDelete());
       }
-      if (other.mode_ != 0) {
-        setModeValue(other.getModeValue());
+      if (other.hasMode()) {
+        setMode(other.getMode());
       }
-      if (!other.getSource().isEmpty()) {
+      if (other.hasSource()) {
+        bitField0_ |= 0x00000004;
         source_ = other.source_;
         onChanged();
       }
@@ -863,6 +931,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private int autoDelete_ = 0;
     /**
      *
@@ -872,7 +942,24 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * </code>
+     *
+     * @return Whether the autoDelete field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoDelete() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
      * </code>
      *
      * @return The enum numeric value on the wire for autoDelete.
@@ -889,14 +976,14 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
      * </code>
      *
      * @param value The enum numeric value on the wire for autoDelete to set.
      * @return This builder for chaining.
      */
     public Builder setAutoDeleteValue(int value) {
-
+      bitField0_ |= 0x00000001;
       autoDelete_ = value;
       onChanged();
       return this;
@@ -909,7 +996,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
      * </code>
      *
      * @return The autoDelete.
@@ -931,7 +1018,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
      * </code>
      *
      * @param value The autoDelete to set.
@@ -942,7 +1029,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       autoDelete_ = value.getNumber();
       onChanged();
       return this;
@@ -955,19 +1042,34 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAutoDelete() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoDelete_ = 0;
       onChanged();
       return this;
     }
 
     private int mode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+     *
+     * @return Whether the mode field is set.
+     */
+    @java.lang.Override
+    public boolean hasMode() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -996,7 +1098,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
+      bitField0_ |= 0x00000002;
       mode_ = value;
       onChanged();
       return this;
@@ -1037,7 +1139,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -1054,13 +1156,27 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mode_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object source_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * </pre>
+     *
+     * <code>string source = 177235995;</code>
+     *
+     * @return Whether the source field is set.
+     */
+    public boolean hasSource() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1121,7 +1237,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       source_ = value;
       onChanged();
       return this;
@@ -1138,7 +1254,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
@@ -1160,7 +1276,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       source_ = value;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface LocalDiskOrBuilder
    *
    * <code>int32 disk_count = 182933485;</code>
    *
+   * @return Whether the diskCount field is set.
+   */
+  boolean hasDiskCount();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the number of such disks.
+   * </pre>
+   *
+   * <code>int32 disk_count = 182933485;</code>
+   *
    * @return The diskCount.
    */
   int getDiskCount();
@@ -43,12 +55,36 @@ public interface LocalDiskOrBuilder
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int32 disk_size_gb = 47828279;</code>
+   * <code>int32 disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  boolean hasDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
   int getDiskSizeGb();
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
+   * </pre>
+   *
+   * <code>string disk_type = 93009052;</code>
+   *
+   * @return Whether the diskType field is set.
+   */
+  boolean hasDiskType();
   /**
    *
    *

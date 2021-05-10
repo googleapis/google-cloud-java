@@ -74,6 +74,18 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    *
    * <code>string http_header_name = 234798022;</code>
    *
+   * @return Whether the httpHeaderName field is set.
+   */
+  boolean hasHttpHeaderName();
+  /**
+   *
+   *
+   * <pre>
+   * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
+   * </pre>
+   *
+   * <code>string http_header_name = 234798022;</code>
+   *
    * @return The httpHeaderName.
    */
   java.lang.String getHttpHeaderName();
@@ -90,6 +102,18 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    */
   com.google.protobuf.ByteString getHttpHeaderNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
+   * </pre>
+   *
+   * <code>string minimum_ring_size = 234380735;</code>
+   *
+   * @return Whether the minimumRingSize field is set.
+   */
+  boolean hasMinimumRingSize();
   /**
    *
    *

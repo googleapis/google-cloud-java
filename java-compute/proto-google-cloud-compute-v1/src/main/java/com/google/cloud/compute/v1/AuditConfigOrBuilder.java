@@ -30,7 +30,7 @@ public interface AuditConfigOrBuilder
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AuditLogConfig> getAuditLogConfigsList();
   /**
@@ -40,7 +40,7 @@ public interface AuditConfigOrBuilder
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   com.google.cloud.compute.v1.AuditLogConfig getAuditLogConfigs(int index);
   /**
@@ -50,7 +50,7 @@ public interface AuditConfigOrBuilder
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   int getAuditLogConfigsCount();
   /**
@@ -60,7 +60,7 @@ public interface AuditConfigOrBuilder
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AuditLogConfigOrBuilder>
       getAuditLogConfigsOrBuilderList();
@@ -71,7 +71,7 @@ public interface AuditConfigOrBuilder
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   com.google.cloud.compute.v1.AuditLogConfigOrBuilder getAuditLogConfigsOrBuilder(int index);
 
@@ -109,7 +109,19 @@ public interface AuditConfigOrBuilder
    * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  boolean hasService();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -121,7 +133,7 @@ public interface AuditConfigOrBuilder
    * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */

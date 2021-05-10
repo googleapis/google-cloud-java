@@ -76,43 +76,43 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               name_ = s;
-              break;
-            }
-          case 958999440:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                sourceIpRangesToNat_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              sourceIpRangesToNat_.add(rawValue);
-              break;
-            }
-          case 958999442:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  sourceIpRangesToNat_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                sourceIpRangesToNat_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
               break;
             }
           case 2114520778:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 secondaryIpRangeNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               secondaryIpRangeNames_.add(s);
+              break;
+            }
+          case -1188484208:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                sourceIpRangesToNat_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              sourceIpRangesToNat_.add(rawValue);
+              break;
+            }
+          case -1188484206:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  sourceIpRangesToNat_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                sourceIpRangesToNat_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
               break;
             }
           default:
@@ -130,10 +130,10 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        sourceIpRangesToNat_ = java.util.Collections.unmodifiableList(sourceIpRangesToNat_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         secondaryIpRangeNames_ = secondaryIpRangeNames_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        sourceIpRangesToNat_ = java.util.Collections.unmodifiableList(sourceIpRangesToNat_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -178,8 +178,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     ALL_IP_RANGES(35608496),
     /** <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code> */
     LIST_OF_SECONDARY_IP_RANGES(192289308),
-    /** <code>PRIMARY_IP_RANGE = 28674498;</code> */
-    PRIMARY_IP_RANGE(28674498),
+    /** <code>PRIMARY_IP_RANGE = 297109954;</code> */
+    PRIMARY_IP_RANGE(297109954),
     UNRECOGNIZED(-1),
     ;
 
@@ -197,8 +197,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public static final int ALL_IP_RANGES_VALUE = 35608496;
     /** <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code> */
     public static final int LIST_OF_SECONDARY_IP_RANGES_VALUE = 192289308;
-    /** <code>PRIMARY_IP_RANGE = 28674498;</code> */
-    public static final int PRIMARY_IP_RANGE_VALUE = 28674498;
+    /** <code>PRIMARY_IP_RANGE = 297109954;</code> */
+    public static final int PRIMARY_IP_RANGE_VALUE = 297109954;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -230,7 +230,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
           return ALL_IP_RANGES;
         case 192289308:
           return LIST_OF_SECONDARY_IP_RANGES;
-        case 28674498:
+        case 297109954:
           return PRIMARY_IP_RANGE;
         default:
           return null;
@@ -290,8 +290,24 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * URL for the subnetwork resource that will use NAT.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -400,7 +416,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     return secondaryIpRangeNames_.getByteString(index);
   }
 
-  public static final int SOURCE_IP_RANGES_TO_NAT_FIELD_NUMBER = 119874930;
+  public static final int SOURCE_IP_RANGES_TO_NAT_FIELD_NUMBER = 388310386;
   private java.util.List<java.lang.Integer> sourceIpRangesToNat_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer,
@@ -429,7 +445,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return A list containing the sourceIpRangesToNat.
@@ -450,7 +466,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return The count of sourceIpRangesToNat.
@@ -467,7 +483,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @param index The index of the element to return.
@@ -486,7 +502,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for sourceIpRangesToNat.
@@ -503,7 +519,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @param index The index of the value to return.
@@ -531,19 +547,19 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
-    }
-    if (getSourceIpRangesToNatList().size() > 0) {
-      output.writeUInt32NoTag(958999442);
-      output.writeUInt32NoTag(sourceIpRangesToNatMemoizedSerializedSize);
-    }
-    for (int i = 0; i < sourceIpRangesToNat_.size(); i++) {
-      output.writeEnumNoTag(sourceIpRangesToNat_.get(i));
     }
     for (int i = 0; i < secondaryIpRangeNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 264315097, secondaryIpRangeNames_.getRaw(i));
+    }
+    if (getSourceIpRangesToNatList().size() > 0) {
+      output.writeUInt32NoTag(-1188484206);
+      output.writeUInt32NoTag(sourceIpRangesToNatMemoizedSerializedSize);
+    }
+    for (int i = 0; i < sourceIpRangesToNat_.size(); i++) {
+      output.writeEnumNoTag(sourceIpRangesToNat_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -554,8 +570,16 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < secondaryIpRangeNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(secondaryIpRangeNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSecondaryIpRangeNamesList().size();
     }
     {
       int dataSize = 0;
@@ -569,14 +593,6 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
       }
       sourceIpRangesToNatMemoizedSerializedSize = dataSize;
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < secondaryIpRangeNames_.size(); i++) {
-        dataSize += computeStringSizeNoTag(secondaryIpRangeNames_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getSecondaryIpRangeNamesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -594,7 +610,10 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     com.google.cloud.compute.v1.RouterNatSubnetworkToNat other =
         (com.google.cloud.compute.v1.RouterNatSubnetworkToNat) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!getSecondaryIpRangeNamesList().equals(other.getSecondaryIpRangeNamesList())) return false;
     if (!sourceIpRangesToNat_.equals(other.sourceIpRangesToNat_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -608,8 +627,10 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (getSecondaryIpRangeNamesCount() > 0) {
       hash = (37 * hash) + SECONDARY_IP_RANGE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryIpRangeNamesList().hashCode();
@@ -764,11 +785,11 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       name_ = "";
-
-      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      sourceIpRangesToNat_ = java.util.Collections.emptyList();
+      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      sourceIpRangesToNat_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -797,17 +818,22 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       com.google.cloud.compute.v1.RouterNatSubnetworkToNat result =
           new com.google.cloud.compute.v1.RouterNatSubnetworkToNat(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        secondaryIpRangeNames_ = secondaryIpRangeNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
-      result.secondaryIpRangeNames_ = secondaryIpRangeNames_;
+      result.name_ = name_;
       if (((bitField0_ & 0x00000002) != 0)) {
-        sourceIpRangesToNat_ = java.util.Collections.unmodifiableList(sourceIpRangesToNat_);
+        secondaryIpRangeNames_ = secondaryIpRangeNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
+      result.secondaryIpRangeNames_ = secondaryIpRangeNames_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        sourceIpRangesToNat_ = java.util.Collections.unmodifiableList(sourceIpRangesToNat_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
       result.sourceIpRangesToNat_ = sourceIpRangesToNat_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -858,14 +884,15 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterNatSubnetworkToNat other) {
       if (other == com.google.cloud.compute.v1.RouterNatSubnetworkToNat.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
       }
       if (!other.secondaryIpRangeNames_.isEmpty()) {
         if (secondaryIpRangeNames_.isEmpty()) {
           secondaryIpRangeNames_ = other.secondaryIpRangeNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureSecondaryIpRangeNamesIsMutable();
           secondaryIpRangeNames_.addAll(other.secondaryIpRangeNames_);
@@ -875,7 +902,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (!other.sourceIpRangesToNat_.isEmpty()) {
         if (sourceIpRangesToNat_.isEmpty()) {
           sourceIpRangesToNat_ = other.sourceIpRangesToNat_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSourceIpRangesToNatIsMutable();
           sourceIpRangesToNat_.addAll(other.sourceIpRangesToNat_);
@@ -915,6 +942,20 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL for the subnetwork resource that will use NAT.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -975,7 +1016,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -992,7 +1033,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1014,7 +1055,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       name_ = value;
       onChanged();
       return this;
@@ -1024,10 +1065,10 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSecondaryIpRangeNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         secondaryIpRangeNames_ =
             new com.google.protobuf.LazyStringArrayList(secondaryIpRangeNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1162,7 +1203,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      */
     public Builder clearSecondaryIpRangeNames() {
       secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1193,9 +1234,9 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureSourceIpRangesToNatIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         sourceIpRangesToNat_ = new java.util.ArrayList<java.lang.Integer>(sourceIpRangesToNat_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1206,7 +1247,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @return A list containing the sourceIpRangesToNat.
@@ -1226,7 +1267,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @return The count of sourceIpRangesToNat.
@@ -1242,7 +1283,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param index The index of the element to return.
@@ -1260,7 +1301,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param index The index to set the value at.
@@ -1285,7 +1326,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param value The sourceIpRangesToNat to add.
@@ -1309,7 +1350,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param values The sourceIpRangesToNat to add.
@@ -1335,14 +1376,14 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSourceIpRangesToNat() {
       sourceIpRangesToNat_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1354,7 +1395,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for sourceIpRangesToNat.
@@ -1370,7 +1411,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param index The index of the value to return.
@@ -1387,7 +1428,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param index The index of the value to return.
@@ -1408,7 +1449,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param value The enum numeric value on the wire for sourceIpRangesToNat to add.
@@ -1428,7 +1469,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+     * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
      * </code>
      *
      * @param values The enum numeric values on the wire for sourceIpRangesToNat to add.

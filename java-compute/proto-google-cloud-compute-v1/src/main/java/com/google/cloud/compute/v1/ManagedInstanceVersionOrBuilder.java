@@ -30,7 +30,19 @@ public interface ManagedInstanceVersionOrBuilder
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  boolean hasInstanceTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -42,12 +54,24 @@ public interface ManagedInstanceVersionOrBuilder
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
   com.google.protobuf.ByteString getInstanceTemplateBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the version.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *

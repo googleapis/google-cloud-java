@@ -60,6 +60,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,17 +74,19 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
           case 631802050:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               tunnelUrl_ = s;
               break;
             }
           case 1270114640:
             {
+              bitField0_ |= 0x00000001;
               localGatewayInterface_ = input.readUInt32();
               break;
             }
           case 1715043080:
             {
+              bitField0_ |= 0x00000002;
               peerGatewayInterface_ = input.readUInt32();
               break;
             }
@@ -121,8 +124,24 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.VpnGatewayStatusTunnel.Builder.class);
   }
 
+  private int bitField0_;
   public static final int LOCAL_GATEWAY_INTERFACE_FIELD_NUMBER = 158764330;
   private int localGatewayInterface_;
+  /**
+   *
+   *
+   * <pre>
+   * The VPN gateway interface this VPN tunnel is associated with.
+   * </pre>
+   *
+   * <code>uint32 local_gateway_interface = 158764330;</code>
+   *
+   * @return Whether the localGatewayInterface field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalGatewayInterface() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -150,6 +169,21 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    * <code>uint32 peer_gateway_interface = 214380385;</code>
    *
+   * @return Whether the peerGatewayInterface field is set.
+   */
+  @java.lang.Override
+  public boolean hasPeerGatewayInterface() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+   * </pre>
+   *
+   * <code>uint32 peer_gateway_interface = 214380385;</code>
+   *
    * @return The peerGatewayInterface.
    */
   @java.lang.Override
@@ -159,6 +193,21 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
 
   public static final int TUNNEL_URL_FIELD_NUMBER = 78975256;
   private volatile java.lang.Object tunnelUrl_;
+  /**
+   *
+   *
+   * <pre>
+   * URL reference to the VPN tunnel.
+   * </pre>
+   *
+   * <code>string tunnel_url = 78975256;</code>
+   *
+   * @return Whether the tunnelUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTunnelUrl() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -220,13 +269,13 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTunnelUrlBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 78975256, tunnelUrl_);
     }
-    if (localGatewayInterface_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(158764330, localGatewayInterface_);
     }
-    if (peerGatewayInterface_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(214380385, peerGatewayInterface_);
     }
     unknownFields.writeTo(output);
@@ -238,15 +287,15 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getTunnelUrlBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(78975256, tunnelUrl_);
     }
-    if (localGatewayInterface_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               158764330, localGatewayInterface_);
     }
-    if (peerGatewayInterface_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(214380385, peerGatewayInterface_);
     }
@@ -266,9 +315,18 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.VpnGatewayStatusTunnel other =
         (com.google.cloud.compute.v1.VpnGatewayStatusTunnel) obj;
 
-    if (getLocalGatewayInterface() != other.getLocalGatewayInterface()) return false;
-    if (getPeerGatewayInterface() != other.getPeerGatewayInterface()) return false;
-    if (!getTunnelUrl().equals(other.getTunnelUrl())) return false;
+    if (hasLocalGatewayInterface() != other.hasLocalGatewayInterface()) return false;
+    if (hasLocalGatewayInterface()) {
+      if (getLocalGatewayInterface() != other.getLocalGatewayInterface()) return false;
+    }
+    if (hasPeerGatewayInterface() != other.hasPeerGatewayInterface()) return false;
+    if (hasPeerGatewayInterface()) {
+      if (getPeerGatewayInterface() != other.getPeerGatewayInterface()) return false;
+    }
+    if (hasTunnelUrl() != other.hasTunnelUrl()) return false;
+    if (hasTunnelUrl()) {
+      if (!getTunnelUrl().equals(other.getTunnelUrl())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,12 +338,18 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LOCAL_GATEWAY_INTERFACE_FIELD_NUMBER;
-    hash = (53 * hash) + getLocalGatewayInterface();
-    hash = (37 * hash) + PEER_GATEWAY_INTERFACE_FIELD_NUMBER;
-    hash = (53 * hash) + getPeerGatewayInterface();
-    hash = (37 * hash) + TUNNEL_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getTunnelUrl().hashCode();
+    if (hasLocalGatewayInterface()) {
+      hash = (37 * hash) + LOCAL_GATEWAY_INTERFACE_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalGatewayInterface();
+    }
+    if (hasPeerGatewayInterface()) {
+      hash = (37 * hash) + PEER_GATEWAY_INTERFACE_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerGatewayInterface();
+    }
+    if (hasTunnelUrl()) {
+      hash = (37 * hash) + TUNNEL_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getTunnelUrl().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -432,11 +496,11 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       localGatewayInterface_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       peerGatewayInterface_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       tunnelUrl_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -464,9 +528,21 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.VpnGatewayStatusTunnel buildPartial() {
       com.google.cloud.compute.v1.VpnGatewayStatusTunnel result =
           new com.google.cloud.compute.v1.VpnGatewayStatusTunnel(this);
-      result.localGatewayInterface_ = localGatewayInterface_;
-      result.peerGatewayInterface_ = peerGatewayInterface_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.localGatewayInterface_ = localGatewayInterface_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.peerGatewayInterface_ = peerGatewayInterface_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.tunnelUrl_ = tunnelUrl_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -517,13 +593,14 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.VpnGatewayStatusTunnel other) {
       if (other == com.google.cloud.compute.v1.VpnGatewayStatusTunnel.getDefaultInstance())
         return this;
-      if (other.getLocalGatewayInterface() != 0) {
+      if (other.hasLocalGatewayInterface()) {
         setLocalGatewayInterface(other.getLocalGatewayInterface());
       }
-      if (other.getPeerGatewayInterface() != 0) {
+      if (other.hasPeerGatewayInterface()) {
         setPeerGatewayInterface(other.getPeerGatewayInterface());
       }
-      if (!other.getTunnelUrl().isEmpty()) {
+      if (other.hasTunnelUrl()) {
+        bitField0_ |= 0x00000004;
         tunnelUrl_ = other.tunnelUrl_;
         onChanged();
       }
@@ -557,7 +634,24 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private int localGatewayInterface_;
+    /**
+     *
+     *
+     * <pre>
+     * The VPN gateway interface this VPN tunnel is associated with.
+     * </pre>
+     *
+     * <code>uint32 local_gateway_interface = 158764330;</code>
+     *
+     * @return Whether the localGatewayInterface field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalGatewayInterface() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -586,7 +680,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setLocalGatewayInterface(int value) {
-
+      bitField0_ |= 0x00000001;
       localGatewayInterface_ = value;
       onChanged();
       return this;
@@ -603,13 +697,28 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLocalGatewayInterface() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       localGatewayInterface_ = 0;
       onChanged();
       return this;
     }
 
     private int peerGatewayInterface_;
+    /**
+     *
+     *
+     * <pre>
+     * The peer gateway interface this VPN tunnel is connected to, the peer gateway could either be an external VPN gateway or GCP VPN gateway.
+     * </pre>
+     *
+     * <code>uint32 peer_gateway_interface = 214380385;</code>
+     *
+     * @return Whether the peerGatewayInterface field is set.
+     */
+    @java.lang.Override
+    public boolean hasPeerGatewayInterface() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -638,7 +747,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setPeerGatewayInterface(int value) {
-
+      bitField0_ |= 0x00000002;
       peerGatewayInterface_ = value;
       onChanged();
       return this;
@@ -655,13 +764,27 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPeerGatewayInterface() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       peerGatewayInterface_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object tunnelUrl_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL reference to the VPN tunnel.
+     * </pre>
+     *
+     * <code>string tunnel_url = 78975256;</code>
+     *
+     * @return Whether the tunnelUrl field is set.
+     */
+    public boolean hasTunnelUrl() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -722,7 +845,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       tunnelUrl_ = value;
       onChanged();
       return this;
@@ -739,7 +862,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTunnelUrl() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       tunnelUrl_ = getDefaultInstance().getTunnelUrl();
       onChanged();
       return this;
@@ -761,7 +884,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       tunnelUrl_ = value;
       onChanged();
       return this;

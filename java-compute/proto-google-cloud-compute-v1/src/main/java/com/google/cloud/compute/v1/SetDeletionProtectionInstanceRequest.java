@@ -65,6 +65,7 @@ public final class SetDeletionProtectionInstanceRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -85,13 +86,8 @@ public final class SetDeletionProtectionInstanceRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               requestId_ = s;
-              break;
-            }
-          case 1516633936:
-            {
-              deletionProtection_ = input.readBool();
               break;
             }
           case 1566449778:
@@ -106,6 +102,12 @@ public final class SetDeletionProtectionInstanceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -630849712:
+            {
+              bitField0_ |= 0x00000001;
+              deletionProtection_ = input.readBool();
               break;
             }
           default:
@@ -142,7 +144,8 @@ public final class SetDeletionProtectionInstanceRequest
             com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest.Builder.class);
   }
 
-  public static final int DELETION_PROTECTION_FIELD_NUMBER = 189579242;
+  private int bitField0_;
+  public static final int DELETION_PROTECTION_FIELD_NUMBER = 458014698;
   private boolean deletionProtection_;
   /**
    *
@@ -151,7 +154,22 @@ public final class SetDeletionProtectionInstanceRequest
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 189579242;</code>
+   * <code>bool deletion_protection = 458014698;</code>
+   *
+   * @return Whether the deletionProtection field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeletionProtection() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether the resource should be protected against deletion.
+   * </pre>
+   *
+   * <code>bool deletion_protection = 458014698;</code>
    *
    * @return The deletionProtection.
    */
@@ -211,6 +229,23 @@ public final class SetDeletionProtectionInstanceRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -377,17 +412,17 @@ public final class SetDeletionProtectionInstanceRequest
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (deletionProtection_ != false) {
-      output.writeBool(189579242, deletionProtection_);
     }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(458014698, deletionProtection_);
     }
     unknownFields.writeTo(output);
   }
@@ -401,17 +436,17 @@ public final class SetDeletionProtectionInstanceRequest
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (deletionProtection_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(189579242, deletionProtection_);
     }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(458014698, deletionProtection_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -429,9 +464,15 @@ public final class SetDeletionProtectionInstanceRequest
     com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest other =
         (com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest) obj;
 
-    if (getDeletionProtection() != other.getDeletionProtection()) return false;
+    if (hasDeletionProtection() != other.hasDeletionProtection()) return false;
+    if (hasDeletionProtection()) {
+      if (getDeletionProtection() != other.getDeletionProtection()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getResource().equals(other.getResource())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -445,12 +486,16 @@ public final class SetDeletionProtectionInstanceRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
+    if (hasDeletionProtection()) {
+      hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -602,11 +647,11 @@ public final class SetDeletionProtectionInstanceRequest
     public Builder clear() {
       super.clear();
       deletionProtection_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       resource_ = "";
 
       zone_ = "";
@@ -639,11 +684,20 @@ public final class SetDeletionProtectionInstanceRequest
     public com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest result =
           new com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest(this);
-      result.deletionProtection_ = deletionProtection_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deletionProtection_ = deletionProtection_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.requestId_ = requestId_;
       result.resource_ = resource_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -696,14 +750,15 @@ public final class SetDeletionProtectionInstanceRequest
       if (other
           == com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest.getDefaultInstance())
         return this;
-      if (other.getDeletionProtection() != false) {
+      if (other.hasDeletionProtection()) {
         setDeletionProtection(other.getDeletionProtection());
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -746,6 +801,8 @@ public final class SetDeletionProtectionInstanceRequest
       return this;
     }
 
+    private int bitField0_;
+
     private boolean deletionProtection_;
     /**
      *
@@ -754,7 +811,22 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 189579242;</code>
+     * <code>bool deletion_protection = 458014698;</code>
+     *
+     * @return Whether the deletionProtection field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeletionProtection() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the resource should be protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 458014698;</code>
      *
      * @return The deletionProtection.
      */
@@ -769,13 +841,13 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 189579242;</code>
+     * <code>bool deletion_protection = 458014698;</code>
      *
      * @param value The deletionProtection to set.
      * @return This builder for chaining.
      */
     public Builder setDeletionProtection(boolean value) {
-
+      bitField0_ |= 0x00000001;
       deletionProtection_ = value;
       onChanged();
       return this;
@@ -787,12 +859,12 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 189579242;</code>
+     * <code>bool deletion_protection = 458014698;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDeletionProtection() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       deletionProtection_ = false;
       onChanged();
       return this;
@@ -916,6 +988,22 @@ public final class SetDeletionProtectionInstanceRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -971,7 +1059,7 @@ public final class SetDeletionProtectionInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -990,7 +1078,7 @@ public final class SetDeletionProtectionInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1014,7 +1102,7 @@ public final class SetDeletionProtectionInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * URL for the subnetwork resource that will use NAT.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -107,7 +119,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return A list containing the sourceIpRangesToNat.
@@ -122,7 +134,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return The count of sourceIpRangesToNat.
@@ -136,7 +148,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @param index The index of the element to return.
@@ -152,7 +164,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for sourceIpRangesToNat.
@@ -166,7 +178,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
    * </code>
    *
    * @param index The index of the value to return.

@@ -60,6 +60,7 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
           case 0:
             done = true;
             break;
-          case 2142122962:
+          case -5360686:
             {
               com.google.cloud.compute.v1.SecurityPoliciesWafConfig.Builder subBuilder = null;
-              if (preconfiguredExpressionSets_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = preconfiguredExpressionSets_.toBuilder();
               }
               preconfiguredExpressionSets_ =
@@ -84,7 +85,7 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
                 subBuilder.mergeFrom(preconfiguredExpressionSets_);
                 preconfiguredExpressionSets_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -123,22 +124,23 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
                 .Builder.class);
   }
 
-  public static final int PRECONFIGURED_EXPRESSION_SETS_FIELD_NUMBER = 267765370;
+  private int bitField0_;
+  public static final int PRECONFIGURED_EXPRESSION_SETS_FIELD_NUMBER = 536200826;
   private com.google.cloud.compute.v1.SecurityPoliciesWafConfig preconfiguredExpressionSets_;
   /**
    * <code>
-   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
    * </code>
    *
    * @return Whether the preconfiguredExpressionSets field is set.
    */
   @java.lang.Override
   public boolean hasPreconfiguredExpressionSets() {
-    return preconfiguredExpressionSets_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>
-   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
    * </code>
    *
    * @return The preconfiguredExpressionSets.
@@ -151,13 +153,15 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
   }
   /**
    * <code>
-   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+   * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPoliciesWafConfigOrBuilder
       getPreconfiguredExpressionSetsOrBuilder() {
-    return getPreconfiguredExpressionSets();
+    return preconfiguredExpressionSets_ == null
+        ? com.google.cloud.compute.v1.SecurityPoliciesWafConfig.getDefaultInstance()
+        : preconfiguredExpressionSets_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -174,8 +178,8 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (preconfiguredExpressionSets_ != null) {
-      output.writeMessage(267765370, getPreconfiguredExpressionSets());
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(536200826, getPreconfiguredExpressionSets());
     }
     unknownFields.writeTo(output);
   }
@@ -186,10 +190,10 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     if (size != -1) return size;
 
     size = 0;
-    if (preconfiguredExpressionSets_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              267765370, getPreconfiguredExpressionSets());
+              536200826, getPreconfiguredExpressionSets());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -379,7 +383,9 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPreconfiguredExpressionSetsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -388,9 +394,9 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       if (preconfiguredExpressionSetsBuilder_ == null) {
         preconfiguredExpressionSets_ = null;
       } else {
-        preconfiguredExpressionSets_ = null;
-        preconfiguredExpressionSetsBuilder_ = null;
+        preconfiguredExpressionSetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -424,11 +430,17 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse result =
           new com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse(
               this);
-      if (preconfiguredExpressionSetsBuilder_ == null) {
-        result.preconfiguredExpressionSets_ = preconfiguredExpressionSets_;
-      } else {
-        result.preconfiguredExpressionSets_ = preconfiguredExpressionSetsBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (preconfiguredExpressionSetsBuilder_ == null) {
+          result.preconfiguredExpressionSets_ = preconfiguredExpressionSets_;
+        } else {
+          result.preconfiguredExpressionSets_ = preconfiguredExpressionSetsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -520,6 +532,8 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.SecurityPoliciesWafConfig preconfiguredExpressionSets_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecurityPoliciesWafConfig,
@@ -528,17 +542,17 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
         preconfiguredExpressionSetsBuilder_;
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      *
      * @return Whether the preconfiguredExpressionSets field is set.
      */
     public boolean hasPreconfiguredExpressionSets() {
-      return preconfiguredExpressionSetsBuilder_ != null || preconfiguredExpressionSets_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      *
      * @return The preconfiguredExpressionSets.
@@ -554,7 +568,7 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public Builder setPreconfiguredExpressionSets(
@@ -568,12 +582,12 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       } else {
         preconfiguredExpressionSetsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public Builder setPreconfiguredExpressionSets(
@@ -584,18 +598,21 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       } else {
         preconfiguredExpressionSetsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public Builder mergePreconfiguredExpressionSets(
         com.google.cloud.compute.v1.SecurityPoliciesWafConfig value) {
       if (preconfiguredExpressionSetsBuilder_ == null) {
-        if (preconfiguredExpressionSets_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && preconfiguredExpressionSets_ != null
+            && preconfiguredExpressionSets_
+                != com.google.cloud.compute.v1.SecurityPoliciesWafConfig.getDefaultInstance()) {
           preconfiguredExpressionSets_ =
               com.google.cloud.compute.v1.SecurityPoliciesWafConfig.newBuilder(
                       preconfiguredExpressionSets_)
@@ -608,12 +625,12 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       } else {
         preconfiguredExpressionSetsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public Builder clearPreconfiguredExpressionSets() {
@@ -621,26 +638,25 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
         preconfiguredExpressionSets_ = null;
         onChanged();
       } else {
-        preconfiguredExpressionSets_ = null;
-        preconfiguredExpressionSetsBuilder_ = null;
+        preconfiguredExpressionSetsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPoliciesWafConfig.Builder
         getPreconfiguredExpressionSetsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPreconfiguredExpressionSetsFieldBuilder().getBuilder();
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPoliciesWafConfigOrBuilder
@@ -655,7 +671,7 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     }
     /**
      * <code>
-     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 267765370;
+     * .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

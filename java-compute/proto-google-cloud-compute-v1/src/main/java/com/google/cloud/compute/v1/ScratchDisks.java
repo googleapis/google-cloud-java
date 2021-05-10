@@ -57,6 +57,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,6 +70,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
             break;
           case 487921128:
             {
+              bitField0_ |= 0x00000001;
               diskGb_ = input.readInt32();
               break;
             }
@@ -106,8 +108,24 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.ScratchDisks.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISK_GB_FIELD_NUMBER = 60990141;
   private int diskGb_;
+  /**
+   *
+   *
+   * <pre>
+   * Size of the scratch disk, defined in GB.
+   * </pre>
+   *
+   * <code>int32 disk_gb = 60990141;</code>
+   *
+   * @return Whether the diskGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskGb() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -138,7 +156,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (diskGb_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(60990141, diskGb_);
     }
     unknownFields.writeTo(output);
@@ -150,7 +168,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (diskGb_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(60990141, diskGb_);
     }
     size += unknownFields.getSerializedSize();
@@ -168,7 +186,10 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.ScratchDisks other = (com.google.cloud.compute.v1.ScratchDisks) obj;
 
-    if (getDiskGb() != other.getDiskGb()) return false;
+    if (hasDiskGb() != other.hasDiskGb()) return false;
+    if (hasDiskGb()) {
+      if (getDiskGb() != other.getDiskGb()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,8 +201,10 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISK_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskGb();
+    if (hasDiskGb()) {
+      hash = (37 * hash) + DISK_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskGb();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -327,7 +350,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       diskGb_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -355,7 +378,13 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ScratchDisks buildPartial() {
       com.google.cloud.compute.v1.ScratchDisks result =
           new com.google.cloud.compute.v1.ScratchDisks(this);
-      result.diskGb_ = diskGb_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.diskGb_ = diskGb_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -405,7 +434,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ScratchDisks other) {
       if (other == com.google.cloud.compute.v1.ScratchDisks.getDefaultInstance()) return this;
-      if (other.getDiskGb() != 0) {
+      if (other.hasDiskGb()) {
         setDiskGb(other.getDiskGb());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -437,7 +466,24 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int diskGb_;
+    /**
+     *
+     *
+     * <pre>
+     * Size of the scratch disk, defined in GB.
+     * </pre>
+     *
+     * <code>int32 disk_gb = 60990141;</code>
+     *
+     * @return Whether the diskGb field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskGb() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -466,7 +512,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDiskGb(int value) {
-
+      bitField0_ |= 0x00000001;
       diskGb_ = value;
       onChanged();
       return this;
@@ -483,7 +529,7 @@ public final class ScratchDisks extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       diskGb_ = 0;
       onChanged();
       return this;

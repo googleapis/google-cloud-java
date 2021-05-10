@@ -32,6 +32,18 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
    *
+   * @return Whether the day field is set.
+   */
+  boolean hasDay();
+  /**
+   *
+   *
+   * <pre>
+   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   *
    * @return The enum numeric value on the wire for day.
    */
   int getDayValue();
@@ -57,6 +69,18 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    * <code>string duration = 155471252;</code>
    *
+   * @return Whether the duration field is set.
+   */
+  boolean hasDuration();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * </pre>
+   *
+   * <code>string duration = 155471252;</code>
+   *
    * @return The duration.
    */
   java.lang.String getDuration();
@@ -73,6 +97,18 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    */
   com.google.protobuf.ByteString getDurationBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
   /**
    *
    *

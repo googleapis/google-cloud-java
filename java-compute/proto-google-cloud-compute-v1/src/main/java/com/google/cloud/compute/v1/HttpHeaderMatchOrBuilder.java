@@ -31,7 +31,20 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
+   *
+   * @return Whether the exactMatch field is set.
+   */
+  boolean hasExactMatch();
+  /**
+   *
+   *
+   * <pre>
+   * The value should exactly match contents of exactMatch.
+   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * </pre>
+   *
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The exactMatch.
    */
@@ -44,12 +57,27 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 189205637;</code>
+   * <code>string exact_match = 457641093;</code>
    *
    * @return The bytes for exactMatch.
    */
   com.google.protobuf.ByteString getExactMatchBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of the HTTP header to match.
+   * For matching against the HTTP request's authority, use a headerMatch with the header name ":authority".
+   * For matching a request's method, use the headerName ":method".
+   * When the URL map is bound to target gRPC proxy that has validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin.
+   * </pre>
+   *
+   * <code>string header_name = 110223613;</code>
+   *
+   * @return Whether the headerName field is set.
+   */
+  boolean hasHeaderName();
   /**
    *
    *
@@ -89,12 +117,38 @@ public interface HttpHeaderMatchOrBuilder
    * The default setting is false.
    * </pre>
    *
-   * <code>bool invert_match = 232694812;</code>
+   * <code>bool invert_match = 501130268;</code>
+   *
+   * @return Whether the invertMatch field is set.
+   */
+  boolean hasInvertMatch();
+  /**
+   *
+   *
+   * <pre>
+   * If set to false, the headerMatch is considered a match if the match criteria above are met. If set to true, the headerMatch is considered a match if the match criteria above are NOT met.
+   * The default setting is false.
+   * </pre>
+   *
+   * <code>bool invert_match = 501130268;</code>
    *
    * @return The invertMatch.
    */
   boolean getInvertMatch();
 
+  /**
+   *
+   *
+   * <pre>
+   * The value of the header must start with the contents of prefixMatch.
+   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * </pre>
+   *
+   * <code>string prefix_match = 257898968;</code>
+   *
+   * @return Whether the prefixMatch field is set.
+   */
+  boolean hasPrefixMatch();
   /**
    *
    *
@@ -122,6 +176,19 @@ public interface HttpHeaderMatchOrBuilder
    */
   com.google.protobuf.ByteString getPrefixMatchBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value.
+   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * </pre>
+   *
+   * <code>bool present_match = 67435841;</code>
+   *
+   * @return Whether the presentMatch field is set.
+   */
+  boolean hasPresentMatch();
   /**
    *
    *
@@ -204,6 +271,21 @@ public interface HttpHeaderMatchOrBuilder
    *
    * <code>string regex_match = 107387853;</code>
    *
+   * @return Whether the regexMatch field is set.
+   */
+  boolean hasRegexMatch();
+  /**
+   *
+   *
+   * <pre>
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  en.cppreference.com/w/cpp/regex/ecmascript
+   * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
+   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>string regex_match = 107387853;</code>
+   *
    * @return The regexMatch.
    */
   java.lang.String getRegexMatch();
@@ -231,7 +313,20 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 158053207;</code>
+   * <code>string suffix_match = 426488663;</code>
+   *
+   * @return Whether the suffixMatch field is set.
+   */
+  boolean hasSuffixMatch();
+  /**
+   *
+   *
+   * <pre>
+   * The value of the header must end with the contents of suffixMatch.
+   * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
+   * </pre>
+   *
+   * <code>string suffix_match = 426488663;</code>
    *
    * @return The suffixMatch.
    */
@@ -244,7 +339,7 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 158053207;</code>
+   * <code>string suffix_match = 426488663;</code>
    *
    * @return The bytes for suffixMatch.
    */

@@ -59,6 +59,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,21 +70,23 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 382626232:
-            {
-              diskSizeGb_ = input.readInt32();
-              break;
-            }
           case 744072418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               diskType_ = s;
               break;
             }
           case 1463467880:
             {
+              bitField0_ |= 0x00000001;
               diskCount_ = input.readInt32();
+              break;
+            }
+          case -1764857416:
+            {
+              bitField0_ |= 0x00000002;
+              diskSizeGb_ = input.readInt32();
               break;
             }
           default:
@@ -120,8 +123,24 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LocalDisk.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISK_COUNT_FIELD_NUMBER = 182933485;
   private int diskCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the number of such disks.
+   * </pre>
+   *
+   * <code>int32 disk_count = 182933485;</code>
+   *
+   * @return Whether the diskCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -138,7 +157,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     return diskCount_;
   }
 
-  public static final int DISK_SIZE_GB_FIELD_NUMBER = 47828279;
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private int diskSizeGb_;
   /**
    *
@@ -147,7 +166,22 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>int32 disk_size_gb = 47828279;</code>
+   * <code>int32 disk_size_gb = 316263735;</code>
+   *
+   * @return Whether the diskSizeGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskSizeGb() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the size of the disk in base-2 GB.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 316263735;</code>
    *
    * @return The diskSizeGb.
    */
@@ -158,6 +192,21 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISK_TYPE_FIELD_NUMBER = 93009052;
   private volatile java.lang.Object diskType_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
+   * </pre>
+   *
+   * <code>string disk_type = 93009052;</code>
+   *
+   * @return Whether the diskType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskType() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -219,14 +268,14 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (diskSizeGb_ != 0) {
-      output.writeInt32(47828279, diskSizeGb_);
-    }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 93009052, diskType_);
     }
-    if (diskCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(182933485, diskCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(316263735, diskSizeGb_);
     }
     unknownFields.writeTo(output);
   }
@@ -237,14 +286,14 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (diskSizeGb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(47828279, diskSizeGb_);
-    }
-    if (!getDiskTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93009052, diskType_);
     }
-    if (diskCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(182933485, diskCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(316263735, diskSizeGb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -261,9 +310,18 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.LocalDisk other = (com.google.cloud.compute.v1.LocalDisk) obj;
 
-    if (getDiskCount() != other.getDiskCount()) return false;
-    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
-    if (!getDiskType().equals(other.getDiskType())) return false;
+    if (hasDiskCount() != other.hasDiskCount()) return false;
+    if (hasDiskCount()) {
+      if (getDiskCount() != other.getDiskCount()) return false;
+    }
+    if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
+    if (hasDiskSizeGb()) {
+      if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    }
+    if (hasDiskType() != other.hasDiskType()) return false;
+    if (hasDiskType()) {
+      if (!getDiskType().equals(other.getDiskType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -275,12 +333,18 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISK_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskCount();
-    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskSizeGb();
-    hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getDiskType().hashCode();
+    if (hasDiskCount()) {
+      hash = (37 * hash) + DISK_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskCount();
+    }
+    if (hasDiskSizeGb()) {
+      hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskSizeGb();
+    }
+    if (hasDiskType()) {
+      hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskType().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,11 +489,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       diskCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       diskSizeGb_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       diskType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -457,9 +521,21 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.LocalDisk buildPartial() {
       com.google.cloud.compute.v1.LocalDisk result =
           new com.google.cloud.compute.v1.LocalDisk(this);
-      result.diskCount_ = diskCount_;
-      result.diskSizeGb_ = diskSizeGb_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.diskCount_ = diskCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.diskType_ = diskType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -509,13 +585,14 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.LocalDisk other) {
       if (other == com.google.cloud.compute.v1.LocalDisk.getDefaultInstance()) return this;
-      if (other.getDiskCount() != 0) {
+      if (other.hasDiskCount()) {
         setDiskCount(other.getDiskCount());
       }
-      if (other.getDiskSizeGb() != 0) {
+      if (other.hasDiskSizeGb()) {
         setDiskSizeGb(other.getDiskSizeGb());
       }
-      if (!other.getDiskType().isEmpty()) {
+      if (other.hasDiskType()) {
+        bitField0_ |= 0x00000004;
         diskType_ = other.diskType_;
         onChanged();
       }
@@ -548,7 +625,24 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int diskCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the number of such disks.
+     * </pre>
+     *
+     * <code>int32 disk_count = 182933485;</code>
+     *
+     * @return Whether the diskCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -577,7 +671,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDiskCount(int value) {
-
+      bitField0_ |= 0x00000001;
       diskCount_ = value;
       onChanged();
       return this;
@@ -594,7 +688,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       diskCount_ = 0;
       onChanged();
       return this;
@@ -608,7 +702,22 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>int32 disk_size_gb = 47828279;</code>
+     * <code>int32 disk_size_gb = 316263735;</code>
+     *
+     * @return Whether the diskSizeGb field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskSizeGb() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the size of the disk in base-2 GB.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 316263735;</code>
      *
      * @return The diskSizeGb.
      */
@@ -623,13 +732,13 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>int32 disk_size_gb = 47828279;</code>
+     * <code>int32 disk_size_gb = 316263735;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
      */
     public Builder setDiskSizeGb(int value) {
-
+      bitField0_ |= 0x00000002;
       diskSizeGb_ = value;
       onChanged();
       return this;
@@ -641,18 +750,32 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the size of the disk in base-2 GB.
      * </pre>
      *
-     * <code>int32 disk_size_gb = 47828279;</code>
+     * <code>int32 disk_size_gb = 316263735;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       diskSizeGb_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object diskType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the desired disk type on the node. This disk type must be a local storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be the name of the disk type and not its URL.
+     * </pre>
+     *
+     * <code>string disk_type = 93009052;</code>
+     *
+     * @return Whether the diskType field is set.
+     */
+    public boolean hasDiskType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -713,7 +836,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       diskType_ = value;
       onChanged();
       return this;
@@ -730,7 +853,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       diskType_ = getDefaultInstance().getDiskType();
       onChanged();
       return this;
@@ -752,7 +875,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       diskType_ = value;
       onChanged();
       return this;

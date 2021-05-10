@@ -32,6 +32,18 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    * <code>uint32 id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * The numeric ID of this VPN gateway interface.
+   * </pre>
+   *
+   * <code>uint32 id = 3355;</code>
+   *
    * @return The id.
    */
   int getId();
@@ -43,7 +55,19 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
+   *
+   * @return Whether the ipAddress field is set.
+   */
+  boolean hasIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The external IP address for this VPN gateway interface.
+   * </pre>
+   *
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The ipAddress.
    */
@@ -55,7 +79,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 137836764;</code>
+   * <code>string ip_address = 406272220;</code>
    *
    * @return The bytes for ipAddress.
    */

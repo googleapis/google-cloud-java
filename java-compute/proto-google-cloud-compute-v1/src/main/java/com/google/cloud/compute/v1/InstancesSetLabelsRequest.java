@@ -73,16 +73,16 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
           case 1424998602:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               labelFingerprint_ = s;
               break;
             }
-          case 1854078970:
+          case -293404678:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -118,7 +118,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 231759871:
+      case 500195327:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -135,8 +135,24 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.InstancesSetLabelsRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 178124825;
   private volatile java.lang.Object labelFingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * </pre>
+   *
+   * <code>string label_fingerprint = 178124825;</code>
+   *
+   * @return Whether the labelFingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabelFingerprint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -184,7 +200,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 231759871;
+  public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -209,7 +225,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
@@ -223,12 +239,12 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -237,7 +253,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -264,11 +280,11 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -278,7 +294,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getLabelFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
@@ -290,7 +306,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -308,7 +324,10 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     com.google.cloud.compute.v1.InstancesSetLabelsRequest other =
         (com.google.cloud.compute.v1.InstancesSetLabelsRequest) obj;
 
-    if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    if (hasLabelFingerprint() != other.hasLabelFingerprint()) return false;
+    if (hasLabelFingerprint()) {
+      if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -321,8 +340,10 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getLabelFingerprint().hashCode();
+    if (hasLabelFingerprint()) {
+      hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelFingerprint().hashCode();
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -448,7 +469,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -458,7 +479,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -493,7 +514,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       labelFingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -523,9 +544,14 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
       com.google.cloud.compute.v1.InstancesSetLabelsRequest result =
           new com.google.cloud.compute.v1.InstancesSetLabelsRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.labelFingerprint_ = labelFingerprint_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -576,7 +602,8 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.compute.v1.InstancesSetLabelsRequest other) {
       if (other == com.google.cloud.compute.v1.InstancesSetLabelsRequest.getDefaultInstance())
         return this;
-      if (!other.getLabelFingerprint().isEmpty()) {
+      if (other.hasLabelFingerprint()) {
+        bitField0_ |= 0x00000001;
         labelFingerprint_ = other.labelFingerprint_;
         onChanged();
       }
@@ -614,6 +641,20 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object labelFingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * </pre>
+     *
+     * <code>string label_fingerprint = 178124825;</code>
+     *
+     * @return Whether the labelFingerprint field is set.
+     */
+    public boolean hasLabelFingerprint() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -674,7 +715,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       labelFingerprint_ = value;
       onChanged();
       return this;
@@ -691,7 +732,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLabelFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
       onChanged();
       return this;
@@ -713,7 +754,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       labelFingerprint_ = value;
       onChanged();
       return this;
@@ -744,7 +785,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
@@ -758,12 +799,12 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -773,7 +814,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -790,7 +831,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -803,7 +844,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -814,7 +855,7 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
-    /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+    /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;

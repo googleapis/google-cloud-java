@@ -58,6 +58,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,8 +69,9 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
           case 0:
             done = true;
             break;
-          case 346631192:
+          case -1800852456:
             {
+              bitField0_ |= 0x00000001;
               enable_ = input.readBool();
               break;
             }
@@ -107,7 +109,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.HealthCheckLogConfig.Builder.class);
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 43328899;
+  private int bitField0_;
+  public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_;
   /**
    *
@@ -116,7 +119,22 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
    * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnable() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -139,8 +157,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enable_ != false) {
-      output.writeBool(43328899, enable_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(311764355, enable_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +169,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,7 +188,10 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     com.google.cloud.compute.v1.HealthCheckLogConfig other =
         (com.google.cloud.compute.v1.HealthCheckLogConfig) obj;
 
-    if (getEnable() != other.getEnable()) return false;
+    if (hasEnable() != other.hasEnable()) return false;
+    if (hasEnable()) {
+      if (getEnable() != other.getEnable()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +203,10 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    if (hasEnable()) {
+      hash = (37 * hash) + ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,7 +353,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       enable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -358,7 +381,13 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.HealthCheckLogConfig buildPartial() {
       com.google.cloud.compute.v1.HealthCheckLogConfig result =
           new com.google.cloud.compute.v1.HealthCheckLogConfig(this);
-      result.enable_ = enable_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enable_ = enable_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -409,7 +438,7 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.compute.v1.HealthCheckLogConfig other) {
       if (other == com.google.cloud.compute.v1.HealthCheckLogConfig.getDefaultInstance())
         return this;
-      if (other.getEnable() != false) {
+      if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -441,6 +470,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enable_;
     /**
      *
@@ -449,7 +480,22 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
+     *
+     * @return Whether the enable field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnable() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+     * </pre>
+     *
+     * <code>bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -464,13 +510,13 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enable_ = value;
       onChanged();
       return this;
@@ -482,12 +528,12 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       onChanged();
       return this;

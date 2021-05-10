@@ -63,6 +63,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -128,6 +129,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int EXTERNAL_VPN_GATEWAY_FIELD_NUMBER = 109898629;
   private volatile java.lang.Object externalVpnGateway_;
   /**
@@ -239,6 +241,23 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -293,7 +312,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getExternalVpnGatewayBytes().isEmpty()) {
@@ -311,7 +330,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getExternalVpnGatewayBytes().isEmpty()) {
@@ -339,7 +358,10 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
 
     if (!getExternalVpnGateway().equals(other.getExternalVpnGateway())) return false;
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -355,8 +377,10 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
     hash = (53 * hash) + getExternalVpnGateway().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -508,7 +532,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -536,9 +560,15 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest buildPartial() {
       com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest result =
           new com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.externalVpnGateway_ = externalVpnGateway_;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -597,7 +627,8 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -630,6 +661,8 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object externalVpnGateway_ = "";
     /**
@@ -860,6 +893,22 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -915,7 +964,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -934,7 +983,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -958,7 +1007,7 @@ public final class DeleteExternalVpnGatewayRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

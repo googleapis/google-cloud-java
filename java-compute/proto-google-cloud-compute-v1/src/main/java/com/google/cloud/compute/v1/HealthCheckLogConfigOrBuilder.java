@@ -30,7 +30,19 @@ public interface HealthCheckLogConfigOrBuilder
    * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  boolean hasEnable();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */

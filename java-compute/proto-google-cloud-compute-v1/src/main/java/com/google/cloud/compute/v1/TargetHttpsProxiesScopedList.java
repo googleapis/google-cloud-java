@@ -73,7 +73,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 785379410:
+          case -1362104238:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetHttpsProxies_ =
@@ -135,7 +135,8 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetHttpsProxiesScopedList.Builder.class);
   }
 
-  public static final int TARGET_HTTPS_PROXIES_FIELD_NUMBER = 98172426;
+  private int bitField0_;
+  public static final int TARGET_HTTPS_PROXIES_FIELD_NUMBER = 366607882;
   private java.util.List<com.google.cloud.compute.v1.TargetHttpsProxy> targetHttpsProxies_;
   /**
    *
@@ -144,7 +145,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
    * </code>
    */
   @java.lang.Override
@@ -158,7 +159,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
    * </code>
    */
   @java.lang.Override
@@ -173,7 +174,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
    * </code>
    */
   @java.lang.Override
@@ -187,7 +188,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
    * </code>
    */
   @java.lang.Override
@@ -201,7 +202,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
    * </code>
    */
   @java.lang.Override
@@ -225,7 +226,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -253,7 +254,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,11 +271,11 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < targetHttpsProxies_.size(); i++) {
-      output.writeMessage(98172426, targetHttpsProxies_.get(i));
+      output.writeMessage(366607882, targetHttpsProxies_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -285,13 +286,13 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < targetHttpsProxies_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              98172426, targetHttpsProxies_.get(i));
+              366607882, targetHttpsProxies_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,6 +475,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTargetHttpsProxiesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -489,9 +491,9 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -520,6 +522,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       com.google.cloud.compute.v1.TargetHttpsProxiesScopedList result =
           new com.google.cloud.compute.v1.TargetHttpsProxiesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (targetHttpsProxiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           targetHttpsProxies_ = java.util.Collections.unmodifiableList(targetHttpsProxies_);
@@ -529,11 +532,15 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       } else {
         result.targetHttpsProxies_ = targetHttpsProxiesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -671,7 +678,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetHttpsProxy>
@@ -689,7 +696,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public int getTargetHttpsProxiesCount() {
@@ -706,7 +713,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxies(int index) {
@@ -723,7 +730,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder setTargetHttpsProxies(
@@ -747,7 +754,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder setTargetHttpsProxies(
@@ -768,7 +775,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder addTargetHttpsProxies(com.google.cloud.compute.v1.TargetHttpsProxy value) {
@@ -791,7 +798,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder addTargetHttpsProxies(
@@ -815,7 +822,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder addTargetHttpsProxies(
@@ -836,7 +843,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder addTargetHttpsProxies(
@@ -857,7 +864,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder addAllTargetHttpsProxies(
@@ -878,7 +885,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder clearTargetHttpsProxies() {
@@ -898,7 +905,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public Builder removeTargetHttpsProxies(int index) {
@@ -918,7 +925,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy.Builder getTargetHttpsProxiesBuilder(
@@ -932,7 +939,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder getTargetHttpsProxiesOrBuilder(
@@ -950,7 +957,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
@@ -968,7 +975,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy.Builder addTargetHttpsProxiesBuilder() {
@@ -982,7 +989,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy.Builder addTargetHttpsProxiesBuilder(
@@ -997,7 +1004,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * A list of TargetHttpsProxies contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
+     * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.TargetHttpsProxy.Builder>
@@ -1043,7 +1050,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1084,7 +1091,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1103,7 +1110,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1117,7 +1124,9 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1129,7 +1138,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1146,10 +1155,9 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1162,7 +1170,7 @@ public final class TargetHttpsProxiesScopedList extends com.google.protobuf.Gene
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

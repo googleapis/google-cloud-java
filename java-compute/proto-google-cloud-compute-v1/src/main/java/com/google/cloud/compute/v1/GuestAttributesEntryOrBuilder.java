@@ -32,6 +32,18 @@ public interface GuestAttributesEntryOrBuilder
    *
    * <code>string key = 106079;</code>
    *
+   * @return Whether the key field is set.
+   */
+  boolean hasKey();
+  /**
+   *
+   *
+   * <pre>
+   * Key for the guest attribute entry.
+   * </pre>
+   *
+   * <code>string key = 106079;</code>
+   *
    * @return The key.
    */
   java.lang.String getKey();
@@ -57,6 +69,18 @@ public interface GuestAttributesEntryOrBuilder
    *
    * <code>string namespace = 178476379;</code>
    *
+   * @return Whether the namespace field is set.
+   */
+  boolean hasNamespace();
+  /**
+   *
+   *
+   * <pre>
+   * Namespace for the guest attribute entry.
+   * </pre>
+   *
+   * <code>string namespace = 178476379;</code>
+   *
    * @return The namespace.
    */
   java.lang.String getNamespace();
@@ -73,6 +97,18 @@ public interface GuestAttributesEntryOrBuilder
    */
   com.google.protobuf.ByteString getNamespaceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Value for the guest attribute entry.
+   * </pre>
+   *
+   * <code>string value = 111972721;</code>
+   *
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
   /**
    *
    *

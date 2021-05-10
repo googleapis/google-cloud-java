@@ -60,6 +60,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,15 +71,16 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case 346631192:
+          case -1800852456:
             {
+              bitField0_ |= 0x00000001;
               enable_ = input.readBool();
               break;
             }
-          case 541481920:
+          case -1606001728:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               filter_ = rawValue;
               break;
             }
@@ -141,10 +143,10 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     UNDEFINED_FILTER(0),
     /** <code>ALL = 64897;</code> */
     ALL(64897),
-    /** <code>ERRORS_ONLY = 39049216;</code> */
-    ERRORS_ONLY(39049216),
-    /** <code>TRANSLATIONS_ONLY = 88777193;</code> */
-    TRANSLATIONS_ONLY(88777193),
+    /** <code>ERRORS_ONLY = 307484672;</code> */
+    ERRORS_ONLY(307484672),
+    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    TRANSLATIONS_ONLY(357212649),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,10 +162,10 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public static final int UNDEFINED_FILTER_VALUE = 0;
     /** <code>ALL = 64897;</code> */
     public static final int ALL_VALUE = 64897;
-    /** <code>ERRORS_ONLY = 39049216;</code> */
-    public static final int ERRORS_ONLY_VALUE = 39049216;
-    /** <code>TRANSLATIONS_ONLY = 88777193;</code> */
-    public static final int TRANSLATIONS_ONLY_VALUE = 88777193;
+    /** <code>ERRORS_ONLY = 307484672;</code> */
+    public static final int ERRORS_ONLY_VALUE = 307484672;
+    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    public static final int TRANSLATIONS_ONLY_VALUE = 357212649;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -193,9 +195,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
           return UNDEFINED_FILTER;
         case 64897:
           return ALL;
-        case 39049216:
+        case 307484672:
           return ERRORS_ONLY;
-        case 88777193:
+        case 357212649:
           return TRANSLATIONS_ONLY;
         default:
           return null;
@@ -250,7 +252,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNatLogConfig.Filter)
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 43328899;
+  private int bitField0_;
+  public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_;
   /**
    *
@@ -259,7 +262,22 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * Indicates whether or not to export logs. This is false by default.
    * </pre>
    *
-   * <code>bool enable = 43328899;</code>
+   * <code>bool enable = 311764355;</code>
+   *
+   * @return Whether the enable field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnable() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not to export logs. This is false by default.
+   * </pre>
+   *
+   * <code>bool enable = 311764355;</code>
    *
    * @return The enable.
    */
@@ -268,7 +286,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     return enable_;
   }
 
-  public static final int FILTER_FIELD_NUMBER = 67685240;
+  public static final int FILTER_FIELD_NUMBER = 336120696;
   private int filter_;
   /**
    *
@@ -280,7 +298,25 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
+   * - ERRORS_ONLY: Export logs only for connection failures.
+   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
+   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
    *
    * @return The enum numeric value on the wire for filter.
    */
@@ -298,7 +334,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
    *
    * @return The filter.
    */
@@ -326,12 +362,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enable_ != false) {
-      output.writeBool(43328899, enable_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(311764355, enable_);
     }
-    if (filter_
-        != com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNDEFINED_FILTER.getNumber()) {
-      output.writeEnum(67685240, filter_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(336120696, filter_);
     }
     unknownFields.writeTo(output);
   }
@@ -342,12 +377,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
-    if (filter_
-        != com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNDEFINED_FILTER.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(67685240, filter_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(336120696, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -365,8 +399,14 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.RouterNatLogConfig other =
         (com.google.cloud.compute.v1.RouterNatLogConfig) obj;
 
-    if (getEnable() != other.getEnable()) return false;
-    if (filter_ != other.filter_) return false;
+    if (hasEnable() != other.hasEnable()) return false;
+    if (hasEnable()) {
+      if (getEnable() != other.getEnable()) return false;
+    }
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (filter_ != other.filter_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -378,10 +418,14 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + filter_;
+    if (hasEnable()) {
+      hash = (37 * hash) + ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + filter_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -528,9 +572,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       enable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -558,8 +602,17 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.RouterNatLogConfig buildPartial() {
       com.google.cloud.compute.v1.RouterNatLogConfig result =
           new com.google.cloud.compute.v1.RouterNatLogConfig(this);
-      result.enable_ = enable_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enable_ = enable_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.filter_ = filter_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -609,11 +662,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterNatLogConfig other) {
       if (other == com.google.cloud.compute.v1.RouterNatLogConfig.getDefaultInstance()) return this;
-      if (other.getEnable() != false) {
+      if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
-      if (other.filter_ != 0) {
-        setFilterValue(other.getFilterValue());
+      if (other.hasFilter()) {
+        setFilter(other.getFilter());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -644,6 +697,8 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enable_;
     /**
      *
@@ -652,7 +707,22 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
+     *
+     * @return Whether the enable field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnable() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not to export logs. This is false by default.
+     * </pre>
+     *
+     * <code>bool enable = 311764355;</code>
      *
      * @return The enable.
      */
@@ -667,13 +737,13 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
      */
     public Builder setEnable(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enable_ = value;
       onChanged();
       return this;
@@ -685,12 +755,12 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 43328899;</code>
+     * <code>bool enable = 311764355;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEnable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       onChanged();
       return this;
@@ -707,7 +777,25 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     *
+     * @return Whether the filter field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
+     * - ERRORS_ONLY: Export logs only for connection failures.
+     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
+     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
      *
      * @return The enum numeric value on the wire for filter.
      */
@@ -725,13 +813,13 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
      *
      * @param value The enum numeric value on the wire for filter to set.
      * @return This builder for chaining.
      */
     public Builder setFilterValue(int value) {
-
+      bitField0_ |= 0x00000002;
       filter_ = value;
       onChanged();
       return this;
@@ -746,7 +834,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
      *
      * @return The filter.
      */
@@ -769,7 +857,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -778,7 +866,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       filter_ = value.getNumber();
       onChanged();
       return this;
@@ -793,12 +881,12 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       filter_ = 0;
       onChanged();
       return this;

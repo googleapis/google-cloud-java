@@ -60,6 +60,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,21 +74,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
-              break;
-            }
-          case 326502178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceTemplate_ = s;
               break;
             }
           case 503041914:
             {
               com.google.cloud.compute.v1.FixedOrPercent.Builder subBuilder = null;
-              if (targetSize_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = targetSize_.toBuilder();
               }
               targetSize_ =
@@ -97,7 +91,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
                 subBuilder.mergeFrom(targetSize_);
                 targetSize_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
+              break;
+            }
+          case -1820981470:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              instanceTemplate_ = s;
               break;
             }
           default:
@@ -134,7 +135,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.InstanceGroupManagerVersion.Builder.class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
+  private int bitField0_;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
@@ -143,7 +145,22 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceTemplate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -166,7 +183,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -185,6 +202,21 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the version. Unique among all versions in the scope of this managed instance group.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -249,7 +281,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasTargetSize() {
-    return targetSize_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -283,7 +315,9 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getTargetSizeOrBuilder() {
-    return getTargetSize();
+    return targetSize_ == null
+        ? com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()
+        : targetSize_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -300,14 +334,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
-    }
-    if (targetSize_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(62880239, getTargetSize());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -318,14 +352,15 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
-    }
-    if (targetSize_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(62880239, getTargetSize());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -343,8 +378,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     com.google.cloud.compute.v1.InstanceGroupManagerVersion other =
         (com.google.cloud.compute.v1.InstanceGroupManagerVersion) obj;
 
-    if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasInstanceTemplate() != other.hasInstanceTemplate()) return false;
+    if (hasInstanceTemplate()) {
+      if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (hasTargetSize() != other.hasTargetSize()) return false;
     if (hasTargetSize()) {
       if (!getTargetSize().equals(other.getTargetSize())) return false;
@@ -360,10 +401,14 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceTemplate().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasInstanceTemplate()) {
+      hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceTemplate().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (hasTargetSize()) {
       hash = (37 * hash) + TARGET_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetSize().hashCode();
@@ -507,22 +552,24 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTargetSizeFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       instanceTemplate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (targetSizeBuilder_ == null) {
         targetSize_ = null;
       } else {
-        targetSize_ = null;
-        targetSizeBuilder_ = null;
+        targetSizeBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -550,13 +597,25 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InstanceGroupManagerVersion buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerVersion result =
           new com.google.cloud.compute.v1.InstanceGroupManagerVersion(this);
-      result.instanceTemplate_ = instanceTemplate_;
-      result.name_ = name_;
-      if (targetSizeBuilder_ == null) {
-        result.targetSize_ = targetSize_;
-      } else {
-        result.targetSize_ = targetSizeBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
+      result.instanceTemplate_ = instanceTemplate_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.name_ = name_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (targetSizeBuilder_ == null) {
+          result.targetSize_ = targetSize_;
+        } else {
+          result.targetSize_ = targetSizeBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -607,11 +666,13 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceGroupManagerVersion other) {
       if (other == com.google.cloud.compute.v1.InstanceGroupManagerVersion.getDefaultInstance())
         return this;
-      if (!other.getInstanceTemplate().isEmpty()) {
+      if (other.hasInstanceTemplate()) {
+        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000002;
         name_ = other.name_;
         onChanged();
       }
@@ -648,6 +709,8 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object instanceTemplate_ = "";
     /**
      *
@@ -656,7 +719,21 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
+     *
+     * @return Whether the instanceTemplate field is set.
+     */
+    public boolean hasInstanceTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
+     * </pre>
+     *
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -678,7 +755,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -700,7 +777,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -709,7 +786,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;
@@ -721,12 +798,12 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
       onChanged();
       return this;
@@ -738,7 +815,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -748,13 +825,27 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the version. Unique among all versions in the scope of this managed instance group.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -815,7 +906,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -832,7 +923,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -854,7 +945,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -880,7 +971,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * @return Whether the targetSize field is set.
      */
     public boolean hasTargetSize() {
-      return targetSizeBuilder_ != null || targetSize_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -925,7 +1016,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       } else {
         targetSizeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -947,7 +1038,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       } else {
         targetSizeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -963,7 +1054,9 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      */
     public Builder mergeTargetSize(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (targetSizeBuilder_ == null) {
-        if (targetSize_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetSize_ != null
+            && targetSize_ != com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) {
           targetSize_ =
               com.google.cloud.compute.v1.FixedOrPercent.newBuilder(targetSize_)
                   .mergeFrom(value)
@@ -975,7 +1068,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
       } else {
         targetSizeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -994,10 +1087,9 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
         targetSize_ = null;
         onChanged();
       } else {
-        targetSize_ = null;
-        targetSizeBuilder_ = null;
+        targetSizeBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1012,7 +1104,7 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      * <code>.google.cloud.compute.v1.FixedOrPercent target_size = 62880239;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getTargetSizeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetSizeFieldBuilder().getBuilder();
     }

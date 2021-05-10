@@ -24,13 +24,19 @@ public interface HealthCheckServiceReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string health_check_service = 139939291;</code>
+   * <code>string health_check_service = 408374747;</code>
+   *
+   * @return Whether the healthCheckService field is set.
+   */
+  boolean hasHealthCheckService();
+  /**
+   * <code>string health_check_service = 408374747;</code>
    *
    * @return The healthCheckService.
    */
   java.lang.String getHealthCheckService();
   /**
-   * <code>string health_check_service = 139939291;</code>
+   * <code>string health_check_service = 408374747;</code>
    *
    * @return The bytes for healthCheckService.
    */

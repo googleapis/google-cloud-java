@@ -31,7 +31,21 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
+   * </code>
+   *
+   * @return Whether the quicOverride field is set.
+   */
+  boolean hasQuicOverride();
+  /**
+   *
+   *
+   * <pre>
+   * QUIC policy for the TargetHttpsProxy resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
    * </code>
    *
    * @return The enum numeric value on the wire for quicOverride.
@@ -45,7 +59,7 @@ public interface TargetHttpsProxiesSetQuicOverrideRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 188141741;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride quic_override = 456577197;
    * </code>
    *
    * @return The quicOverride.

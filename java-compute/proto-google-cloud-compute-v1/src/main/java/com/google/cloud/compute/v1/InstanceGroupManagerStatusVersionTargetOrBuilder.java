@@ -30,7 +30,19 @@ public interface InstanceGroupManagerStatusVersionTargetOrBuilder
    * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
    * </pre>
    *
-   * <code>bool is_reached = 164773693;</code>
+   * <code>bool is_reached = 433209149;</code>
+   *
+   * @return Whether the isReached field is set.
+   */
+  boolean hasIsReached();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified by version field on Instance Group Manager.
+   * </pre>
+   *
+   * <code>bool is_reached = 433209149;</code>
    *
    * @return The isReached.
    */

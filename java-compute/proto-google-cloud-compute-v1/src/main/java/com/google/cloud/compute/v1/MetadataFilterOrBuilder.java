@@ -31,7 +31,7 @@ public interface MetadataFilterOrBuilder
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch> getFilterLabelsList();
@@ -43,7 +43,7 @@ public interface MetadataFilterOrBuilder
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   com.google.cloud.compute.v1.MetadataFilterLabelMatch getFilterLabels(int index);
@@ -55,7 +55,7 @@ public interface MetadataFilterOrBuilder
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   int getFilterLabelsCount();
@@ -67,7 +67,7 @@ public interface MetadataFilterOrBuilder
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterLabelMatchOrBuilder>
@@ -80,11 +80,28 @@ public interface MetadataFilterOrBuilder
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   com.google.cloud.compute.v1.MetadataFilterLabelMatchOrBuilder getFilterLabelsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
+   * Supported values are:
+   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
+   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
+   * </code>
+   *
+   * @return Whether the filterMatchCriteria field is set.
+   */
+  boolean hasFilterMatchCriteria();
   /**
    *
    *

@@ -26,6 +26,12 @@ public interface ExternalVpnGatewayListOrBuilder
   /**
    * <code>string etag = 3123477;</code>
    *
+   * @return Whether the etag field is set.
+   */
+  boolean hasEtag();
+  /**
+   * <code>string etag = 3123477;</code>
+   *
    * @return The etag.
    */
   java.lang.String getEtag();
@@ -36,6 +42,18 @@ public interface ExternalVpnGatewayListOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the resource; defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -122,6 +140,18 @@ public interface ExternalVpnGatewayListOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#externalVpnGatewayList  for lists of externalVpnGateways.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -138,6 +168,18 @@ public interface ExternalVpnGatewayListOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
+   * @return Whether the nextPageToken field is set.
+   */
+  boolean hasNextPageToken();
   /**
    *
    *
@@ -170,7 +212,19 @@ public interface ExternalVpnGatewayListOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -182,7 +236,7 @@ public interface ExternalVpnGatewayListOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */

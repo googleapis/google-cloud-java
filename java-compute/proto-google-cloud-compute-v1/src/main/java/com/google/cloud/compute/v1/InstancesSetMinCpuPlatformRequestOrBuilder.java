@@ -32,6 +32,18 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    *
    * <code>string min_cpu_platform = 242912759;</code>
    *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  boolean hasMinCpuPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu/platform this instance should be started at.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();

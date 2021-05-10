@@ -76,24 +76,24 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
           case 24473448:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               code_ = rawValue;
               break;
             }
           case 24608082:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 data_ = new java.util.ArrayList<com.google.cloud.compute.v1.Data>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               data_.add(
                   input.readMessage(com.google.cloud.compute.v1.Data.parser(), extensionRegistry));
               break;
             }
-          case 1196949562:
+          case -950534086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               message_ = s;
               break;
             }
@@ -111,7 +111,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         data_ = java.util.Collections.unmodifiableList(data_);
       }
       this.unknownFields = unknownFields.build();
@@ -156,34 +156,34 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_CODE(0),
     /** <code>CLEANUP_FAILED = 150308440;</code> */
     CLEANUP_FAILED(150308440),
-    /** <code>DEPRECATED_RESOURCE_USED = 123400130;</code> */
-    DEPRECATED_RESOURCE_USED(123400130),
-    /** <code>DEPRECATED_TYPE_USED = 78090774;</code> */
-    DEPRECATED_TYPE_USED(78090774),
-    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 101007511;</code> */
-    DISK_SIZE_LARGER_THAN_IMAGE_SIZE(101007511),
-    /** <code>EXPERIMENTAL_TYPE_USED = 183518987;</code> */
-    EXPERIMENTAL_TYPE_USED(183518987),
+    /** <code>DEPRECATED_RESOURCE_USED = 391835586;</code> */
+    DEPRECATED_RESOURCE_USED(391835586),
+    /** <code>DEPRECATED_TYPE_USED = 346526230;</code> */
+    DEPRECATED_TYPE_USED(346526230),
+    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code> */
+    DISK_SIZE_LARGER_THAN_IMAGE_SIZE(369442967),
+    /** <code>EXPERIMENTAL_TYPE_USED = 451954443;</code> */
+    EXPERIMENTAL_TYPE_USED(451954443),
     /** <code>EXTERNAL_API_WARNING = 175546307;</code> */
     EXTERNAL_API_WARNING(175546307),
-    /** <code>FIELD_VALUE_OVERRIDEN = 61233967;</code> */
-    FIELD_VALUE_OVERRIDEN(61233967),
-    /** <code>INJECTED_KERNELS_DEPRECATED = 148941963;</code> */
-    INJECTED_KERNELS_DEPRECATED(148941963),
-    /** <code>LARGE_DEPLOYMENT_WARNING = 213005222;</code> */
-    LARGE_DEPLOYMENT_WARNING(213005222),
-    /** <code>MISSING_TYPE_DEPENDENCY = 76070007;</code> */
-    MISSING_TYPE_DEPENDENCY(76070007),
-    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 56529543;</code> */
-    NEXT_HOP_ADDRESS_NOT_ASSIGNED(56529543),
-    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 114947431;</code> */
-    NEXT_HOP_CANNOT_IP_FORWARD(114947431),
-    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 195814990;</code> */
-    NEXT_HOP_INSTANCE_NOT_FOUND(195814990),
+    /** <code>FIELD_VALUE_OVERRIDEN = 329669423;</code> */
+    FIELD_VALUE_OVERRIDEN(329669423),
+    /** <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code> */
+    INJECTED_KERNELS_DEPRECATED(417377419),
+    /** <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code> */
+    LARGE_DEPLOYMENT_WARNING(481440678),
+    /** <code>MISSING_TYPE_DEPENDENCY = 344505463;</code> */
+    MISSING_TYPE_DEPENDENCY(344505463),
+    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code> */
+    NEXT_HOP_ADDRESS_NOT_ASSIGNED(324964999),
+    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code> */
+    NEXT_HOP_CANNOT_IP_FORWARD(383382887),
+    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code> */
+    NEXT_HOP_INSTANCE_NOT_FOUND(464250446),
     /** <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code> */
     NEXT_HOP_INSTANCE_NOT_ON_NETWORK(243758146),
-    /** <code>NEXT_HOP_NOT_RUNNING = 148645809;</code> */
-    NEXT_HOP_NOT_RUNNING(148645809),
+    /** <code>NEXT_HOP_NOT_RUNNING = 417081265;</code> */
+    NEXT_HOP_NOT_RUNNING(417081265),
     /** <code>NOT_CRITICAL_ERROR = 105763924;</code> */
     NOT_CRITICAL_ERROR(105763924),
     /** <code>NO_RESULTS_ON_PAGE = 30036744;</code> */
@@ -192,16 +192,16 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     PARTIAL_SUCCESS(39966469),
     /** <code>REQUIRED_TOS_AGREEMENT = 3745539;</code> */
     REQUIRED_TOS_AGREEMENT(3745539),
-    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 228293185;</code> */
-    RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING(228293185),
+    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code> */
+    RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING(496728641),
     /** <code>RESOURCE_NOT_DELETED = 168598460;</code> */
     RESOURCE_NOT_DELETED(168598460),
-    /** <code>SCHEMA_VALIDATION_IGNORED = 6810186;</code> */
-    SCHEMA_VALIDATION_IGNORED(6810186),
+    /** <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code> */
+    SCHEMA_VALIDATION_IGNORED(275245642),
     /** <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code> */
     SINGLE_INSTANCE_PROPERTY_TEMPLATE(268305617),
-    /** <code>UNDECLARED_PROPERTIES = 122077983;</code> */
-    UNDECLARED_PROPERTIES(122077983),
+    /** <code>UNDECLARED_PROPERTIES = 390513439;</code> */
+    UNDECLARED_PROPERTIES(390513439),
     /** <code>UNREACHABLE = 13328052;</code> */
     UNREACHABLE(13328052),
     UNRECOGNIZED(-1),
@@ -219,34 +219,34 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_CODE_VALUE = 0;
     /** <code>CLEANUP_FAILED = 150308440;</code> */
     public static final int CLEANUP_FAILED_VALUE = 150308440;
-    /** <code>DEPRECATED_RESOURCE_USED = 123400130;</code> */
-    public static final int DEPRECATED_RESOURCE_USED_VALUE = 123400130;
-    /** <code>DEPRECATED_TYPE_USED = 78090774;</code> */
-    public static final int DEPRECATED_TYPE_USED_VALUE = 78090774;
-    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 101007511;</code> */
-    public static final int DISK_SIZE_LARGER_THAN_IMAGE_SIZE_VALUE = 101007511;
-    /** <code>EXPERIMENTAL_TYPE_USED = 183518987;</code> */
-    public static final int EXPERIMENTAL_TYPE_USED_VALUE = 183518987;
+    /** <code>DEPRECATED_RESOURCE_USED = 391835586;</code> */
+    public static final int DEPRECATED_RESOURCE_USED_VALUE = 391835586;
+    /** <code>DEPRECATED_TYPE_USED = 346526230;</code> */
+    public static final int DEPRECATED_TYPE_USED_VALUE = 346526230;
+    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code> */
+    public static final int DISK_SIZE_LARGER_THAN_IMAGE_SIZE_VALUE = 369442967;
+    /** <code>EXPERIMENTAL_TYPE_USED = 451954443;</code> */
+    public static final int EXPERIMENTAL_TYPE_USED_VALUE = 451954443;
     /** <code>EXTERNAL_API_WARNING = 175546307;</code> */
     public static final int EXTERNAL_API_WARNING_VALUE = 175546307;
-    /** <code>FIELD_VALUE_OVERRIDEN = 61233967;</code> */
-    public static final int FIELD_VALUE_OVERRIDEN_VALUE = 61233967;
-    /** <code>INJECTED_KERNELS_DEPRECATED = 148941963;</code> */
-    public static final int INJECTED_KERNELS_DEPRECATED_VALUE = 148941963;
-    /** <code>LARGE_DEPLOYMENT_WARNING = 213005222;</code> */
-    public static final int LARGE_DEPLOYMENT_WARNING_VALUE = 213005222;
-    /** <code>MISSING_TYPE_DEPENDENCY = 76070007;</code> */
-    public static final int MISSING_TYPE_DEPENDENCY_VALUE = 76070007;
-    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 56529543;</code> */
-    public static final int NEXT_HOP_ADDRESS_NOT_ASSIGNED_VALUE = 56529543;
-    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 114947431;</code> */
-    public static final int NEXT_HOP_CANNOT_IP_FORWARD_VALUE = 114947431;
-    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 195814990;</code> */
-    public static final int NEXT_HOP_INSTANCE_NOT_FOUND_VALUE = 195814990;
+    /** <code>FIELD_VALUE_OVERRIDEN = 329669423;</code> */
+    public static final int FIELD_VALUE_OVERRIDEN_VALUE = 329669423;
+    /** <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code> */
+    public static final int INJECTED_KERNELS_DEPRECATED_VALUE = 417377419;
+    /** <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code> */
+    public static final int LARGE_DEPLOYMENT_WARNING_VALUE = 481440678;
+    /** <code>MISSING_TYPE_DEPENDENCY = 344505463;</code> */
+    public static final int MISSING_TYPE_DEPENDENCY_VALUE = 344505463;
+    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code> */
+    public static final int NEXT_HOP_ADDRESS_NOT_ASSIGNED_VALUE = 324964999;
+    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code> */
+    public static final int NEXT_HOP_CANNOT_IP_FORWARD_VALUE = 383382887;
+    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code> */
+    public static final int NEXT_HOP_INSTANCE_NOT_FOUND_VALUE = 464250446;
     /** <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code> */
     public static final int NEXT_HOP_INSTANCE_NOT_ON_NETWORK_VALUE = 243758146;
-    /** <code>NEXT_HOP_NOT_RUNNING = 148645809;</code> */
-    public static final int NEXT_HOP_NOT_RUNNING_VALUE = 148645809;
+    /** <code>NEXT_HOP_NOT_RUNNING = 417081265;</code> */
+    public static final int NEXT_HOP_NOT_RUNNING_VALUE = 417081265;
     /** <code>NOT_CRITICAL_ERROR = 105763924;</code> */
     public static final int NOT_CRITICAL_ERROR_VALUE = 105763924;
     /** <code>NO_RESULTS_ON_PAGE = 30036744;</code> */
@@ -255,16 +255,16 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     public static final int PARTIAL_SUCCESS_VALUE = 39966469;
     /** <code>REQUIRED_TOS_AGREEMENT = 3745539;</code> */
     public static final int REQUIRED_TOS_AGREEMENT_VALUE = 3745539;
-    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 228293185;</code> */
-    public static final int RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING_VALUE = 228293185;
+    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code> */
+    public static final int RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING_VALUE = 496728641;
     /** <code>RESOURCE_NOT_DELETED = 168598460;</code> */
     public static final int RESOURCE_NOT_DELETED_VALUE = 168598460;
-    /** <code>SCHEMA_VALIDATION_IGNORED = 6810186;</code> */
-    public static final int SCHEMA_VALIDATION_IGNORED_VALUE = 6810186;
+    /** <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code> */
+    public static final int SCHEMA_VALIDATION_IGNORED_VALUE = 275245642;
     /** <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code> */
     public static final int SINGLE_INSTANCE_PROPERTY_TEMPLATE_VALUE = 268305617;
-    /** <code>UNDECLARED_PROPERTIES = 122077983;</code> */
-    public static final int UNDECLARED_PROPERTIES_VALUE = 122077983;
+    /** <code>UNDECLARED_PROPERTIES = 390513439;</code> */
+    public static final int UNDECLARED_PROPERTIES_VALUE = 390513439;
     /** <code>UNREACHABLE = 13328052;</code> */
     public static final int UNREACHABLE_VALUE = 13328052;
 
@@ -296,33 +296,33 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_CODE;
         case 150308440:
           return CLEANUP_FAILED;
-        case 123400130:
+        case 391835586:
           return DEPRECATED_RESOURCE_USED;
-        case 78090774:
+        case 346526230:
           return DEPRECATED_TYPE_USED;
-        case 101007511:
+        case 369442967:
           return DISK_SIZE_LARGER_THAN_IMAGE_SIZE;
-        case 183518987:
+        case 451954443:
           return EXPERIMENTAL_TYPE_USED;
         case 175546307:
           return EXTERNAL_API_WARNING;
-        case 61233967:
+        case 329669423:
           return FIELD_VALUE_OVERRIDEN;
-        case 148941963:
+        case 417377419:
           return INJECTED_KERNELS_DEPRECATED;
-        case 213005222:
+        case 481440678:
           return LARGE_DEPLOYMENT_WARNING;
-        case 76070007:
+        case 344505463:
           return MISSING_TYPE_DEPENDENCY;
-        case 56529543:
+        case 324964999:
           return NEXT_HOP_ADDRESS_NOT_ASSIGNED;
-        case 114947431:
+        case 383382887:
           return NEXT_HOP_CANNOT_IP_FORWARD;
-        case 195814990:
+        case 464250446:
           return NEXT_HOP_INSTANCE_NOT_FOUND;
         case 243758146:
           return NEXT_HOP_INSTANCE_NOT_ON_NETWORK;
-        case 148645809:
+        case 417081265:
           return NEXT_HOP_NOT_RUNNING;
         case 105763924:
           return NOT_CRITICAL_ERROR;
@@ -332,15 +332,15 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
           return PARTIAL_SUCCESS;
         case 3745539:
           return REQUIRED_TOS_AGREEMENT;
-        case 228293185:
+        case 496728641:
           return RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING;
         case 168598460:
           return RESOURCE_NOT_DELETED;
-        case 6810186:
+        case 275245642:
           return SCHEMA_VALIDATION_IGNORED;
         case 268305617:
           return SINGLE_INSTANCE_PROPERTY_TEMPLATE;
-        case 122077983:
+        case 390513439:
           return UNDECLARED_PROPERTIES;
         case 13328052:
           return UNREACHABLE;
@@ -397,8 +397,24 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Warning.Code)
   }
 
+  private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
   private int code_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Warning.Code code = 3059181;</code>
+   *
+   * @return Whether the code field is set.
+   */
+  @java.lang.Override
+  public boolean hasCode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -507,7 +523,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     return data_.get(index);
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 149618695;
+  public static final int MESSAGE_FIELD_NUMBER = 418054151;
   private volatile java.lang.Object message_;
   /**
    *
@@ -516,7 +532,22 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  @java.lang.Override
+  public boolean hasMessage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A human-readable description of the warning code.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -539,7 +570,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A human-readable description of the warning code.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */
@@ -570,14 +601,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (code_ != com.google.cloud.compute.v1.Warning.Code.UNDEFINED_CODE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(3059181, code_);
     }
     for (int i = 0; i < data_.size(); i++) {
       output.writeMessage(3076010, data_.get(i));
     }
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 149618695, message_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418054151, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -588,14 +619,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (code_ != com.google.cloud.compute.v1.Warning.Code.UNDEFINED_CODE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3059181, code_);
     }
     for (int i = 0; i < data_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3076010, data_.get(i));
     }
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149618695, message_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418054151, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -612,9 +643,15 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Warning other = (com.google.cloud.compute.v1.Warning) obj;
 
-    if (code_ != other.code_) return false;
+    if (hasCode() != other.hasCode()) return false;
+    if (hasCode()) {
+      if (code_ != other.code_) return false;
+    }
     if (!getDataList().equals(other.getDataList())) return false;
-    if (!getMessage().equals(other.getMessage())) return false;
+    if (hasMessage() != other.hasMessage()) return false;
+    if (hasMessage()) {
+      if (!getMessage().equals(other.getMessage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -626,14 +663,18 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + code_;
+    if (hasCode()) {
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + code_;
+    }
     if (getDataCount() > 0) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDataList().hashCode();
     }
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
+    if (hasMessage()) {
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -781,15 +822,15 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       code_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (dataBuilder_ == null) {
         data_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         dataBuilder_.clear();
       }
       message_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -817,17 +858,25 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Warning buildPartial() {
       com.google.cloud.compute.v1.Warning result = new com.google.cloud.compute.v1.Warning(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.code_ = code_;
       if (dataBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           data_ = java.util.Collections.unmodifiableList(data_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.data_ = data_;
       } else {
         result.data_ = dataBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.message_ = message_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -877,14 +926,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Warning other) {
       if (other == com.google.cloud.compute.v1.Warning.getDefaultInstance()) return this;
-      if (other.code_ != 0) {
-        setCodeValue(other.getCodeValue());
+      if (other.hasCode()) {
+        setCode(other.getCode());
       }
       if (dataBuilder_ == null) {
         if (!other.data_.isEmpty()) {
           if (data_.isEmpty()) {
             data_ = other.data_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDataIsMutable();
             data_.addAll(other.data_);
@@ -897,7 +946,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
             dataBuilder_.dispose();
             dataBuilder_ = null;
             data_ = other.data_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             dataBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDataFieldBuilder()
@@ -907,7 +956,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getMessage().isEmpty()) {
+      if (other.hasMessage()) {
+        bitField0_ |= 0x00000004;
         message_ = other.message_;
         onChanged();
       }
@@ -952,6 +1002,21 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.compute.v1.Warning.Code code = 3059181;</code>
      *
+     * @return Whether the code field is set.
+     */
+    @java.lang.Override
+    public boolean hasCode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Warning.Code code = 3059181;</code>
+     *
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override
@@ -971,7 +1036,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       code_ = value;
       onChanged();
       return this;
@@ -1010,7 +1075,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -1027,7 +1092,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -1037,9 +1102,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDataIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         data_ = new java.util.ArrayList<com.google.cloud.compute.v1.Data>(data_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1263,7 +1328,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
     public Builder clearData() {
       if (dataBuilder_ == null) {
         data_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         dataBuilder_.clear();
@@ -1391,7 +1456,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Data,
                 com.google.cloud.compute.v1.Data.Builder,
                 com.google.cloud.compute.v1.DataOrBuilder>(
-                data_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                data_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         data_ = null;
       }
       return dataBuilder_;
@@ -1405,7 +1470,21 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A human-readable description of the warning code.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
+     *
+     * @return Whether the message field is set.
+     */
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A human-readable description of the warning code.
+     * </pre>
+     *
+     * <code>string message = 418054151;</code>
      *
      * @return The message.
      */
@@ -1427,7 +1506,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A human-readable description of the warning code.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return The bytes for message.
      */
@@ -1449,7 +1528,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A human-readable description of the warning code.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -1458,7 +1537,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       message_ = value;
       onChanged();
       return this;
@@ -1470,12 +1549,12 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A human-readable description of the warning code.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
@@ -1487,7 +1566,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A human-readable description of the warning code.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.
@@ -1497,7 +1576,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       message_ = value;
       onChanged();
       return this;

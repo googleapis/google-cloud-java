@@ -62,6 +62,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,26 +76,27 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
           case 540333730:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               deviceName_ = s;
-              break;
-            }
-          case 999587576:
-            {
-              int rawValue = input.readEnum();
-
-              instantiateFrom_ = rawValue;
               break;
             }
           case 1472985194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               customImage_ = s;
               break;
             }
-          case 1570607576:
+          case -1147896072:
             {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000008;
+              instantiateFrom_ = rawValue;
+              break;
+            }
+          case -576876072:
+            {
+              bitField0_ |= 0x00000001;
               autoDelete_ = input.readBool();
               break;
             }
@@ -157,8 +159,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_INSTANTIATE_FROM = 0;</code>
      */
     UNDEFINED_INSTANTIATE_FROM(0),
-    /** <code>ATTACH_READ_ONLY = 245339963;</code> */
-    ATTACH_READ_ONLY(245339963),
+    /** <code>ATTACH_READ_ONLY = 513775419;</code> */
+    ATTACH_READ_ONLY(513775419),
     /** <code>BLANK = 63281460;</code> */
     BLANK(63281460),
     /** <code>CUSTOM_IMAGE = 196311789;</code> */
@@ -184,8 +186,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_INSTANTIATE_FROM = 0;</code>
      */
     public static final int UNDEFINED_INSTANTIATE_FROM_VALUE = 0;
-    /** <code>ATTACH_READ_ONLY = 245339963;</code> */
-    public static final int ATTACH_READ_ONLY_VALUE = 245339963;
+    /** <code>ATTACH_READ_ONLY = 513775419;</code> */
+    public static final int ATTACH_READ_ONLY_VALUE = 513775419;
     /** <code>BLANK = 63281460;</code> */
     public static final int BLANK_VALUE = 63281460;
     /** <code>CUSTOM_IMAGE = 196311789;</code> */
@@ -225,7 +227,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       switch (value) {
         case 0:
           return UNDEFINED_INSTANTIATE_FROM;
-        case 245339963:
+        case 513775419:
           return ATTACH_READ_ONLY;
         case 63281460:
           return BLANK;
@@ -296,7 +298,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
+  private int bitField0_;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private boolean autoDelete_;
   /**
    *
@@ -305,7 +308,22 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 196325947;</code>
+   * <code>bool auto_delete = 464761403;</code>
+   *
+   * @return Whether the autoDelete field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoDelete() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * </pre>
+   *
+   * <code>bool auto_delete = 464761403;</code>
    *
    * @return The autoDelete.
    */
@@ -316,6 +334,21 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   public static final int CUSTOM_IMAGE_FIELD_NUMBER = 184123149;
   private volatile java.lang.Object customImage_;
+  /**
+   *
+   *
+   * <pre>
+   * The custom source image to be used to restore this disk when instantiating this instance template.
+   * </pre>
+   *
+   * <code>string custom_image = 184123149;</code>
+   *
+   * @return Whether the customImage field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomImage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -374,6 +407,21 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    * <code>string device_name = 67541716;</code>
    *
+   * @return Whether the deviceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the device name of the disk to which the configurations apply to.
+   * </pre>
+   *
+   * <code>string device_name = 67541716;</code>
+   *
    * @return The deviceName.
    */
   @java.lang.Override
@@ -412,7 +460,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
   }
 
-  public static final int INSTANTIATE_FROM_FIELD_NUMBER = 124948447;
+  public static final int INSTANTIATE_FROM_FIELD_NUMBER = 393383903;
   private int instantiateFrom_;
   /**
    *
@@ -427,7 +475,29 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+   * </code>
+   *
+   * @return Whether the instantiateFrom field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstantiateFrom() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether to include the disk and what image to use. Possible values are:
+   * - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
+   * - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
+   * - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks.
+   * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
+   * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
    * </code>
    *
    * @return The enum numeric value on the wire for instantiateFrom.
@@ -449,7 +519,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
    * </code>
    *
    * @return The instantiateFrom.
@@ -479,20 +549,17 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getDeviceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 67541716, deviceName_);
     }
-    if (instantiateFrom_
-        != com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom
-            .UNDEFINED_INSTANTIATE_FROM
-            .getNumber()) {
-      output.writeEnum(124948447, instantiateFrom_);
-    }
-    if (!getCustomImageBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 184123149, customImage_);
     }
-    if (autoDelete_ != false) {
-      output.writeBool(196325947, autoDelete_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(393383903, instantiateFrom_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -503,20 +570,17 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getDeviceNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67541716, deviceName_);
     }
-    if (instantiateFrom_
-        != com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom
-            .UNDEFINED_INSTANTIATE_FROM
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(124948447, instantiateFrom_);
-    }
-    if (!getCustomImageBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(184123149, customImage_);
     }
-    if (autoDelete_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(196325947, autoDelete_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(393383903, instantiateFrom_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -534,10 +598,22 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.DiskInstantiationConfig other =
         (com.google.cloud.compute.v1.DiskInstantiationConfig) obj;
 
-    if (getAutoDelete() != other.getAutoDelete()) return false;
-    if (!getCustomImage().equals(other.getCustomImage())) return false;
-    if (!getDeviceName().equals(other.getDeviceName())) return false;
-    if (instantiateFrom_ != other.instantiateFrom_) return false;
+    if (hasAutoDelete() != other.hasAutoDelete()) return false;
+    if (hasAutoDelete()) {
+      if (getAutoDelete() != other.getAutoDelete()) return false;
+    }
+    if (hasCustomImage() != other.hasCustomImage()) return false;
+    if (hasCustomImage()) {
+      if (!getCustomImage().equals(other.getCustomImage())) return false;
+    }
+    if (hasDeviceName() != other.hasDeviceName()) return false;
+    if (hasDeviceName()) {
+      if (!getDeviceName().equals(other.getDeviceName())) return false;
+    }
+    if (hasInstantiateFrom() != other.hasInstantiateFrom()) return false;
+    if (hasInstantiateFrom()) {
+      if (instantiateFrom_ != other.instantiateFrom_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -549,14 +625,22 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoDelete());
-    hash = (37 * hash) + CUSTOM_IMAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getCustomImage().hashCode();
-    hash = (37 * hash) + DEVICE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDeviceName().hashCode();
-    hash = (37 * hash) + INSTANTIATE_FROM_FIELD_NUMBER;
-    hash = (53 * hash) + instantiateFrom_;
+    if (hasAutoDelete()) {
+      hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoDelete());
+    }
+    if (hasCustomImage()) {
+      hash = (37 * hash) + CUSTOM_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomImage().hashCode();
+    }
+    if (hasDeviceName()) {
+      hash = (37 * hash) + DEVICE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceName().hashCode();
+    }
+    if (hasInstantiateFrom()) {
+      hash = (37 * hash) + INSTANTIATE_FROM_FIELD_NUMBER;
+      hash = (53 * hash) + instantiateFrom_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -703,13 +787,13 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       autoDelete_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       customImage_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       deviceName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       instantiateFrom_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -737,10 +821,25 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.DiskInstantiationConfig buildPartial() {
       com.google.cloud.compute.v1.DiskInstantiationConfig result =
           new com.google.cloud.compute.v1.DiskInstantiationConfig(this);
-      result.autoDelete_ = autoDelete_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.autoDelete_ = autoDelete_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.customImage_ = customImage_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.deviceName_ = deviceName_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.instantiateFrom_ = instantiateFrom_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -791,19 +890,21 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.DiskInstantiationConfig other) {
       if (other == com.google.cloud.compute.v1.DiskInstantiationConfig.getDefaultInstance())
         return this;
-      if (other.getAutoDelete() != false) {
+      if (other.hasAutoDelete()) {
         setAutoDelete(other.getAutoDelete());
       }
-      if (!other.getCustomImage().isEmpty()) {
+      if (other.hasCustomImage()) {
+        bitField0_ |= 0x00000002;
         customImage_ = other.customImage_;
         onChanged();
       }
-      if (!other.getDeviceName().isEmpty()) {
+      if (other.hasDeviceName()) {
+        bitField0_ |= 0x00000004;
         deviceName_ = other.deviceName_;
         onChanged();
       }
-      if (other.instantiateFrom_ != 0) {
-        setInstantiateFromValue(other.getInstantiateFromValue());
+      if (other.hasInstantiateFrom()) {
+        setInstantiateFrom(other.getInstantiateFrom());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -835,6 +936,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private boolean autoDelete_;
     /**
      *
@@ -843,7 +946,22 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 196325947;</code>
+     * <code>bool auto_delete = 464761403;</code>
+     *
+     * @return Whether the autoDelete field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoDelete() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * </pre>
+     *
+     * <code>bool auto_delete = 464761403;</code>
      *
      * @return The autoDelete.
      */
@@ -858,13 +976,13 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 196325947;</code>
+     * <code>bool auto_delete = 464761403;</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
      */
     public Builder setAutoDelete(boolean value) {
-
+      bitField0_ |= 0x00000001;
       autoDelete_ = value;
       onChanged();
       return this;
@@ -876,18 +994,32 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 196325947;</code>
+     * <code>bool auto_delete = 464761403;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAutoDelete() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoDelete_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object customImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * </pre>
+     *
+     * <code>string custom_image = 184123149;</code>
+     *
+     * @return Whether the customImage field is set.
+     */
+    public boolean hasCustomImage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -948,7 +1080,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       customImage_ = value;
       onChanged();
       return this;
@@ -965,7 +1097,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCustomImage() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       customImage_ = getDefaultInstance().getCustomImage();
       onChanged();
       return this;
@@ -987,13 +1119,27 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       customImage_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object deviceName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the device name of the disk to which the configurations apply to.
+     * </pre>
+     *
+     * <code>string device_name = 67541716;</code>
+     *
+     * @return Whether the deviceName field is set.
+     */
+    public boolean hasDeviceName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1054,7 +1200,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       deviceName_ = value;
       onChanged();
       return this;
@@ -1071,7 +1217,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDeviceName() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       deviceName_ = getDefaultInstance().getDeviceName();
       onChanged();
       return this;
@@ -1093,7 +1239,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       deviceName_ = value;
       onChanged();
       return this;
@@ -1113,7 +1259,29 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * </code>
+     *
+     * @return Whether the instantiateFrom field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstantiateFrom() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether to include the disk and what image to use. Possible values are:
+     * - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
+     * - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks.
+     * - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks.
+     * - attach-read-only: to attach a read-only disk. Applicable to read-only disks.
+     * - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
      * </code>
      *
      * @return The enum numeric value on the wire for instantiateFrom.
@@ -1135,14 +1303,14 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
      * </code>
      *
      * @param value The enum numeric value on the wire for instantiateFrom to set.
      * @return This builder for chaining.
      */
     public Builder setInstantiateFromValue(int value) {
-
+      bitField0_ |= 0x00000008;
       instantiateFrom_ = value;
       onChanged();
       return this;
@@ -1160,7 +1328,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
      * </code>
      *
      * @return The instantiateFrom.
@@ -1189,7 +1357,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
      * </code>
      *
      * @param value The instantiateFrom to set.
@@ -1200,7 +1368,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       instantiateFrom_ = value.getNumber();
       onChanged();
       return this;
@@ -1218,13 +1386,13 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInstantiateFrom() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       instantiateFrom_ = 0;
       onChanged();
       return this;

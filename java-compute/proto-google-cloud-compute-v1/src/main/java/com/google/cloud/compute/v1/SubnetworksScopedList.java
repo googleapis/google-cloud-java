@@ -73,7 +73,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 1179341354:
+          case -968142294:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 subnetworks_ = new java.util.ArrayList<com.google.cloud.compute.v1.Subnetwork>();
@@ -134,7 +134,8 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.SubnetworksScopedList.Builder.class);
   }
 
-  public static final int SUBNETWORKS_FIELD_NUMBER = 147417669;
+  private int bitField0_;
+  public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
   private java.util.List<com.google.cloud.compute.v1.Subnetwork> subnetworks_;
   /**
    *
@@ -143,7 +144,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Subnetwork> getSubnetworksList() {
@@ -156,7 +157,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.SubnetworkOrBuilder>
@@ -170,7 +171,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   @java.lang.Override
   public int getSubnetworksCount() {
@@ -183,7 +184,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Subnetwork getSubnetworks(int index) {
@@ -196,7 +197,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworksOrBuilder(int index) {
@@ -218,7 +219,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,11 +264,11 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
-      output.writeMessage(147417669, subnetworks_.get(i));
+      output.writeMessage(415853125, subnetworks_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,12 +279,12 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(147417669, subnetworks_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(415853125, subnetworks_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +466,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSubnetworksFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       com.google.cloud.compute.v1.SubnetworksScopedList result =
           new com.google.cloud.compute.v1.SubnetworksScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (subnetworksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           subnetworks_ = java.util.Collections.unmodifiableList(subnetworks_);
@@ -520,11 +523,15 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       } else {
         result.subnetworks_ = subnetworksBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -661,7 +668,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Subnetwork> getSubnetworksList() {
       if (subnetworksBuilder_ == null) {
@@ -677,7 +684,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public int getSubnetworksCount() {
       if (subnetworksBuilder_ == null) {
@@ -693,7 +700,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public com.google.cloud.compute.v1.Subnetwork getSubnetworks(int index) {
       if (subnetworksBuilder_ == null) {
@@ -709,7 +716,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder setSubnetworks(int index, com.google.cloud.compute.v1.Subnetwork value) {
       if (subnetworksBuilder_ == null) {
@@ -731,7 +738,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder setSubnetworks(
         int index, com.google.cloud.compute.v1.Subnetwork.Builder builderForValue) {
@@ -751,7 +758,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder addSubnetworks(com.google.cloud.compute.v1.Subnetwork value) {
       if (subnetworksBuilder_ == null) {
@@ -773,7 +780,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder addSubnetworks(int index, com.google.cloud.compute.v1.Subnetwork value) {
       if (subnetworksBuilder_ == null) {
@@ -795,7 +802,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder addSubnetworks(com.google.cloud.compute.v1.Subnetwork.Builder builderForValue) {
       if (subnetworksBuilder_ == null) {
@@ -814,7 +821,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder addSubnetworks(
         int index, com.google.cloud.compute.v1.Subnetwork.Builder builderForValue) {
@@ -834,7 +841,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder addAllSubnetworks(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Subnetwork> values) {
@@ -854,7 +861,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder clearSubnetworks() {
       if (subnetworksBuilder_ == null) {
@@ -873,7 +880,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public Builder removeSubnetworks(int index) {
       if (subnetworksBuilder_ == null) {
@@ -892,7 +899,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public com.google.cloud.compute.v1.Subnetwork.Builder getSubnetworksBuilder(int index) {
       return getSubnetworksFieldBuilder().getBuilder(index);
@@ -904,7 +911,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworksOrBuilder(int index) {
       if (subnetworksBuilder_ == null) {
@@ -920,7 +927,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.SubnetworkOrBuilder>
         getSubnetworksOrBuilderList() {
@@ -937,7 +944,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public com.google.cloud.compute.v1.Subnetwork.Builder addSubnetworksBuilder() {
       return getSubnetworksFieldBuilder()
@@ -950,7 +957,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public com.google.cloud.compute.v1.Subnetwork.Builder addSubnetworksBuilder(int index) {
       return getSubnetworksFieldBuilder()
@@ -963,7 +970,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * A list of subnetworks contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
+     * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Subnetwork.Builder>
         getSubnetworksBuilderList() {
@@ -1005,7 +1012,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1046,7 +1053,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1065,7 +1072,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1079,7 +1086,9 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1091,7 +1100,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1108,10 +1117,9 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1124,7 +1132,7 @@ public final class SubnetworksScopedList extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

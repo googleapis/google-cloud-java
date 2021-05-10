@@ -63,6 +63,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,15 +77,8 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               requestId_ = s;
-              break;
-            }
-          case 315137906:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
               break;
             }
           case 337865210:
@@ -103,11 +97,6 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
               break;
             }
-          case 714173136:
-            {
-              drainTimeoutSeconds_ = input.readInt32();
-              break;
-            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -120,6 +109,19 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1832345742:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
+          case -1433310512:
+            {
+              bitField0_ |= 0x00000001;
+              drainTimeoutSeconds_ = input.readInt32();
               break;
             }
           default:
@@ -156,7 +158,8 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.PatchSubnetworkRequest.Builder.class);
   }
 
-  public static final int DRAIN_TIMEOUT_SECONDS_FIELD_NUMBER = 89271642;
+  private int bitField0_;
+  public static final int DRAIN_TIMEOUT_SECONDS_FIELD_NUMBER = 357707098;
   private int drainTimeoutSeconds_;
   /**
    *
@@ -165,7 +168,22 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
    * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
    * </pre>
    *
-   * <code>int32 drain_timeout_seconds = 89271642;</code>
+   * <code>int32 drain_timeout_seconds = 357707098;</code>
+   *
+   * @return Whether the drainTimeoutSeconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasDrainTimeoutSeconds() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
+   * </pre>
+   *
+   * <code>int32 drain_timeout_seconds = 357707098;</code>
    *
    * @return The drainTimeoutSeconds.
    */
@@ -285,6 +303,23 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -325,7 +360,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
+  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -334,7 +369,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
    * Name of the Subnetwork resource to patch.
    * </pre>
    *
-   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -357,7 +392,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
    * Name of the Subnetwork resource to patch.
    * </pre>
    *
-   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -442,23 +477,23 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
     }
     if (subnetworkResource_ != null) {
       output.writeMessage(42233151, getSubnetworkResource());
-    }
-    if (drainTimeoutSeconds_ != 0) {
-      output.writeInt32(89271642, drainTimeoutSeconds_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(357707098, drainTimeoutSeconds_);
     }
     unknownFields.writeTo(output);
   }
@@ -469,26 +504,26 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
     }
     if (subnetworkResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42233151, getSubnetworkResource());
     }
-    if (drainTimeoutSeconds_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(89271642, drainTimeoutSeconds_);
-    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(357707098, drainTimeoutSeconds_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -506,10 +541,16 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.PatchSubnetworkRequest other =
         (com.google.cloud.compute.v1.PatchSubnetworkRequest) obj;
 
-    if (getDrainTimeoutSeconds() != other.getDrainTimeoutSeconds()) return false;
+    if (hasDrainTimeoutSeconds() != other.hasDrainTimeoutSeconds()) return false;
+    if (hasDrainTimeoutSeconds()) {
+      if (getDrainTimeoutSeconds() != other.getDrainTimeoutSeconds()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (hasSubnetworkResource() != other.hasSubnetworkResource()) return false;
     if (hasSubnetworkResource()) {
@@ -526,14 +567,18 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DRAIN_TIMEOUT_SECONDS_FIELD_NUMBER;
-    hash = (53 * hash) + getDrainTimeoutSeconds();
+    if (hasDrainTimeoutSeconds()) {
+      hash = (37 * hash) + DRAIN_TIMEOUT_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getDrainTimeoutSeconds();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetwork().hashCode();
     if (hasSubnetworkResource()) {
@@ -686,13 +731,13 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       drainTimeoutSeconds_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       subnetwork_ = "";
 
       if (subnetworkResourceBuilder_ == null) {
@@ -728,9 +773,17 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.PatchSubnetworkRequest buildPartial() {
       com.google.cloud.compute.v1.PatchSubnetworkRequest result =
           new com.google.cloud.compute.v1.PatchSubnetworkRequest(this);
-      result.drainTimeoutSeconds_ = drainTimeoutSeconds_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.drainTimeoutSeconds_ = drainTimeoutSeconds_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.requestId_ = requestId_;
       result.subnetwork_ = subnetwork_;
       if (subnetworkResourceBuilder_ == null) {
@@ -738,6 +791,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       } else {
         result.subnetworkResource_ = subnetworkResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -788,7 +842,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.PatchSubnetworkRequest other) {
       if (other == com.google.cloud.compute.v1.PatchSubnetworkRequest.getDefaultInstance())
         return this;
-      if (other.getDrainTimeoutSeconds() != 0) {
+      if (other.hasDrainTimeoutSeconds()) {
         setDrainTimeoutSeconds(other.getDrainTimeoutSeconds());
       }
       if (!other.getProject().isEmpty()) {
@@ -799,7 +853,8 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -840,6 +895,8 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private int drainTimeoutSeconds_;
     /**
      *
@@ -848,7 +905,22 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      * </pre>
      *
-     * <code>int32 drain_timeout_seconds = 89271642;</code>
+     * <code>int32 drain_timeout_seconds = 357707098;</code>
+     *
+     * @return Whether the drainTimeoutSeconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasDrainTimeoutSeconds() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
+     * </pre>
+     *
+     * <code>int32 drain_timeout_seconds = 357707098;</code>
      *
      * @return The drainTimeoutSeconds.
      */
@@ -863,13 +935,13 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      * </pre>
      *
-     * <code>int32 drain_timeout_seconds = 89271642;</code>
+     * <code>int32 drain_timeout_seconds = 357707098;</code>
      *
      * @param value The drainTimeoutSeconds to set.
      * @return This builder for chaining.
      */
     public Builder setDrainTimeoutSeconds(int value) {
-
+      bitField0_ |= 0x00000001;
       drainTimeoutSeconds_ = value;
       onChanged();
       return this;
@@ -881,12 +953,12 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
      * </pre>
      *
-     * <code>int32 drain_timeout_seconds = 89271642;</code>
+     * <code>int32 drain_timeout_seconds = 357707098;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDrainTimeoutSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       drainTimeoutSeconds_ = 0;
       onChanged();
       return this;
@@ -1116,6 +1188,22 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1171,7 +1259,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1190,7 +1278,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1214,7 +1302,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1228,7 +1316,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * Name of the Subnetwork resource to patch.
      * </pre>
      *
-     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The subnetwork.
      */
@@ -1250,7 +1338,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * Name of the Subnetwork resource to patch.
      * </pre>
      *
-     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -1272,7 +1360,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * Name of the Subnetwork resource to patch.
      * </pre>
      *
-     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -1293,7 +1381,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * Name of the Subnetwork resource to patch.
      * </pre>
      *
-     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1310,7 +1398,7 @@ public final class PatchSubnetworkRequest extends com.google.protobuf.GeneratedM
      * Name of the Subnetwork resource to patch.
      * </pre>
      *
-     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

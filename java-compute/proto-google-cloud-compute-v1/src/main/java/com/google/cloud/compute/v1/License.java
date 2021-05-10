@@ -67,6 +67,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -80,66 +81,48 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 11737434:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               licenseCode_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               name_ = s;
               break;
             }
           case 34799144:
             {
+              bitField0_ |= 0x00000200;
               transferable_ = input.readBool();
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
-              break;
-            }
-          case 831817328:
-            {
-              chargesUseFee_ = input.readBool();
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1714342154:
             {
               com.google.cloud.compute.v1.LicenseResourceRequirements.Builder subBuilder = null;
-              if (resourceRequirements_ != null) {
+              if (((bitField0_ & 0x00000080) != 0)) {
                 subBuilder = resourceRequirements_.toBuilder();
               }
               resourceRequirements_ =
@@ -150,7 +133,27 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(resourceRequirements_);
                 resourceRequirements_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000080;
+              break;
+            }
+          case -1315666320:
+            {
+              bitField0_ |= 0x00000001;
+              chargesUseFee_ = input.readBool();
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              selfLink_ = s;
               break;
             }
           default:
@@ -187,7 +190,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.License.Builder.class);
   }
 
-  public static final int CHARGES_USE_FEE_FIELD_NUMBER = 103977166;
+  private int bitField0_;
+  public static final int CHARGES_USE_FEE_FIELD_NUMBER = 372412622;
   private boolean chargesUseFee_;
   /**
    *
@@ -196,7 +200,22 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 103977166;</code>
+   * <code>bool charges_use_fee = 372412622;</code>
+   *
+   * @return Whether the chargesUseFee field is set.
+   */
+  @java.lang.Override
+  public boolean hasChargesUseFee() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+   * </pre>
+   *
+   * <code>bool charges_use_fee = 372412622;</code>
    *
    * @return The chargesUseFee.
    */
@@ -207,6 +226,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -254,7 +288,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -263,7 +297,22 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional textual description of the resource; provided by the client when the resource is created.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -286,7 +335,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -305,6 +354,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -363,6 +427,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#license for licenses.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -403,6 +482,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LICENSE_CODE_FIELD_NUMBER = 1467179;
   private volatile java.lang.Object licenseCode_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+   * </pre>
+   *
+   * <code>string license_code = 1467179;</code>
+   *
+   * @return Whether the licenseCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasLicenseCode() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -461,6 +555,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -509,7 +618,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceRequirements() {
-    return resourceRequirements_ != null;
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
@@ -530,10 +639,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.compute.v1.LicenseResourceRequirementsOrBuilder
       getResourceRequirementsOrBuilder() {
-    return getResourceRequirements();
+    return resourceRequirements_ == null
+        ? com.google.cloud.compute.v1.LicenseResourceRequirements.getDefaultInstance()
+        : resourceRequirements_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -542,7 +653,22 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -565,7 +691,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -584,6 +710,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFERABLE_FIELD_NUMBER = 4349893;
   private boolean transferable_;
+  /**
+   *
+   *
+   * <pre>
+   * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+   * </pre>
+   *
+   * <code>bool transferable = 4349893;</code>
+   *
+   * @return Whether the transferable field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransferable() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -614,35 +755,35 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getLicenseCodeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1467179, licenseCode_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (transferable_ != false) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(4349893, transferable_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (chargesUseFee_ != false) {
-      output.writeBool(103977166, chargesUseFee_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (resourceRequirements_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(214292769, getResourceRequirements());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(372412622, chargesUseFee_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -653,38 +794,38 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getLicenseCodeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1467179, licenseCode_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (transferable_ != false) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4349893, transferable_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (chargesUseFee_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(103977166, chargesUseFee_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (resourceRequirements_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               214292769, getResourceRequirements());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(372412622, chargesUseFee_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -701,19 +842,46 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.License other = (com.google.cloud.compute.v1.License) obj;
 
-    if (getChargesUseFee() != other.getChargesUseFee()) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getLicenseCode().equals(other.getLicenseCode())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasChargesUseFee() != other.hasChargesUseFee()) return false;
+    if (hasChargesUseFee()) {
+      if (getChargesUseFee() != other.getChargesUseFee()) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLicenseCode() != other.hasLicenseCode()) return false;
+    if (hasLicenseCode()) {
+      if (!getLicenseCode().equals(other.getLicenseCode())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (hasResourceRequirements() != other.hasResourceRequirements()) return false;
     if (hasResourceRequirements()) {
       if (!getResourceRequirements().equals(other.getResourceRequirements())) return false;
     }
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (getTransferable() != other.getTransferable()) return false;
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasTransferable() != other.hasTransferable()) return false;
+    if (hasTransferable()) {
+      if (getTransferable() != other.getTransferable()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -725,28 +893,46 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CHARGES_USE_FEE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getChargesUseFee());
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + LICENSE_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getLicenseCode().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasChargesUseFee()) {
+      hash = (37 * hash) + CHARGES_USE_FEE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getChargesUseFee());
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLicenseCode()) {
+      hash = (37 * hash) + LICENSE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLicenseCode().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (hasResourceRequirements()) {
       hash = (37 * hash) + RESOURCE_REQUIREMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceRequirements().hashCode();
     }
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + TRANSFERABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransferable());
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasTransferable()) {
+      hash = (37 * hash) + TRANSFERABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransferable());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -886,36 +1072,38 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getResourceRequirementsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       chargesUseFee_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       licenseCode_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (resourceRequirementsBuilder_ == null) {
         resourceRequirements_ = null;
       } else {
-        resourceRequirements_ = null;
-        resourceRequirementsBuilder_ = null;
+        resourceRequirementsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       transferable_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -942,20 +1130,53 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.License buildPartial() {
       com.google.cloud.compute.v1.License result = new com.google.cloud.compute.v1.License(this);
-      result.chargesUseFee_ = chargesUseFee_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.chargesUseFee_ = chargesUseFee_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.licenseCode_ = licenseCode_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.name_ = name_;
-      if (resourceRequirementsBuilder_ == null) {
-        result.resourceRequirements_ = resourceRequirements_;
-      } else {
-        result.resourceRequirements_ = resourceRequirementsBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (resourceRequirementsBuilder_ == null) {
+          result.resourceRequirements_ = resourceRequirements_;
+        } else {
+          result.resourceRequirements_ = resourceRequirementsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
       }
       result.selfLink_ = selfLink_;
-      result.transferable_ = transferable_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.transferable_ = transferable_;
+        to_bitField0_ |= 0x00000200;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1005,41 +1226,48 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.License other) {
       if (other == com.google.cloud.compute.v1.License.getDefaultInstance()) return this;
-      if (other.getChargesUseFee() != false) {
+      if (other.hasChargesUseFee()) {
         setChargesUseFee(other.getChargesUseFee());
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getLicenseCode().isEmpty()) {
+      if (other.hasLicenseCode()) {
+        bitField0_ |= 0x00000020;
         licenseCode_ = other.licenseCode_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000040;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasResourceRequirements()) {
         mergeResourceRequirements(other.getResourceRequirements());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000100;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.getTransferable() != false) {
+      if (other.hasTransferable()) {
         setTransferable(other.getTransferable());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1071,6 +1299,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private boolean chargesUseFee_;
     /**
      *
@@ -1079,7 +1309,22 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 103977166;</code>
+     * <code>bool charges_use_fee = 372412622;</code>
+     *
+     * @return Whether the chargesUseFee field is set.
+     */
+    @java.lang.Override
+    public boolean hasChargesUseFee() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+     * </pre>
+     *
+     * <code>bool charges_use_fee = 372412622;</code>
      *
      * @return The chargesUseFee.
      */
@@ -1094,13 +1339,13 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 103977166;</code>
+     * <code>bool charges_use_fee = 372412622;</code>
      *
      * @param value The chargesUseFee to set.
      * @return This builder for chaining.
      */
     public Builder setChargesUseFee(boolean value) {
-
+      bitField0_ |= 0x00000001;
       chargesUseFee_ = value;
       onChanged();
       return this;
@@ -1112,18 +1357,32 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 103977166;</code>
+     * <code>bool charges_use_fee = 372412622;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearChargesUseFee() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       chargesUseFee_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1184,7 +1443,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1201,7 +1460,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1223,7 +1482,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1237,7 +1496,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional textual description of the resource; provided by the client when the resource is created.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1259,7 +1532,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1281,7 +1554,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1290,7 +1563,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1302,12 +1575,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1319,7 +1592,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1329,13 +1602,27 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1396,7 +1683,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -1413,7 +1700,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1435,13 +1722,27 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#license for licenses.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1502,7 +1803,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -1519,7 +1820,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1541,13 +1842,27 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object licenseCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     * </pre>
+     *
+     * <code>string license_code = 1467179;</code>
+     *
+     * @return Whether the licenseCode field is set.
+     */
+    public boolean hasLicenseCode() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1608,7 +1923,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       licenseCode_ = value;
       onChanged();
       return this;
@@ -1625,7 +1940,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLicenseCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       licenseCode_ = getDefaultInstance().getLicenseCode();
       onChanged();
       return this;
@@ -1647,13 +1962,27 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       licenseCode_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1714,7 +2043,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
@@ -1731,7 +2060,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1753,7 +2082,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       name_ = value;
       onChanged();
       return this;
@@ -1772,7 +2101,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceRequirements field is set.
      */
     public boolean hasResourceRequirements() {
-      return resourceRequirementsBuilder_ != null || resourceRequirements_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <code>.google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
@@ -1804,7 +2133,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceRequirementsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -1819,7 +2148,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceRequirementsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -1829,7 +2158,10 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResourceRequirements(
         com.google.cloud.compute.v1.LicenseResourceRequirements value) {
       if (resourceRequirementsBuilder_ == null) {
-        if (resourceRequirements_ != null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && resourceRequirements_ != null
+            && resourceRequirements_
+                != com.google.cloud.compute.v1.LicenseResourceRequirements.getDefaultInstance()) {
           resourceRequirements_ =
               com.google.cloud.compute.v1.LicenseResourceRequirements.newBuilder(
                       resourceRequirements_)
@@ -1842,7 +2174,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceRequirementsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -1854,10 +2186,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         resourceRequirements_ = null;
         onChanged();
       } else {
-        resourceRequirements_ = null;
-        resourceRequirementsBuilder_ = null;
+        resourceRequirementsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -1866,7 +2197,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.LicenseResourceRequirements.Builder
         getResourceRequirementsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getResourceRequirementsFieldBuilder().getBuilder();
     }
@@ -1913,7 +2244,21 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1935,7 +2280,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1957,7 +2302,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1966,7 +2311,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1978,12 +2323,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1995,7 +2340,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2005,13 +2350,28 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private boolean transferable_;
+    /**
+     *
+     *
+     * <pre>
+     * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+     * </pre>
+     *
+     * <code>bool transferable = 4349893;</code>
+     *
+     * @return Whether the transferable field is set.
+     */
+    @java.lang.Override
+    public boolean hasTransferable() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2040,7 +2400,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTransferable(boolean value) {
-
+      bitField0_ |= 0x00000200;
       transferable_ = value;
       onChanged();
       return this;
@@ -2057,7 +2417,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransferable() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       transferable_ = false;
       onChanged();
       return this;

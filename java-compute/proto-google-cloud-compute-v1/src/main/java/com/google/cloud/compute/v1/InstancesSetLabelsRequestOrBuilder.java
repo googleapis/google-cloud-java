@@ -32,6 +32,18 @@ public interface InstancesSetLabelsRequestOrBuilder
    *
    * <code>string label_fingerprint = 178124825;</code>
    *
+   * @return Whether the labelFingerprint field is set.
+   */
+  boolean hasLabelFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * </pre>
+   *
+   * <code>string label_fingerprint = 178124825;</code>
+   *
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
@@ -48,17 +60,17 @@ public interface InstancesSetLabelsRequestOrBuilder
    */
   com.google.protobuf.ByteString getLabelFingerprintBytes();
 
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   int getLabelsCount();
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
+  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 }

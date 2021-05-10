@@ -32,6 +32,18 @@ public interface XpnResourceIdOrBuilder
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
@@ -48,6 +60,18 @@ public interface XpnResourceIdOrBuilder
    */
   com.google.protobuf.ByteString getIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of the service resource.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
   /**
    *
    *

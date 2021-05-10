@@ -81,7 +81,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 28418250:
             {
               com.google.cloud.compute.v1.Tags.Builder subBuilder = null;
-              if (tags_ != null) {
+              if (((bitField0_ & 0x00000400) != 0)) {
                 subBuilder = tags_.toBuilder();
               }
               tags_ =
@@ -90,25 +90,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(tags_);
                 tags_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 72814978:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                serviceAccounts_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              serviceAccounts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
+              bitField0_ |= 0x00000400;
               break;
             }
           case 102903210:
             {
               com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (shieldedInstanceConfig_ != null) {
+              if (((bitField0_ & 0x00000200) != 0)) {
                 subBuilder = shieldedInstanceConfig_.toBuilder();
               }
               shieldedInstanceConfig_ =
@@ -119,15 +107,15 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(shieldedInstanceConfig_);
                 shieldedInstanceConfig_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000200;
               break;
             }
           case 177763082:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00001000;
               }
               resourcePolicies_.add(s);
               break;
@@ -135,16 +123,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 386216048:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000040;
               privateIpv6GoogleAccess_ = rawValue;
               break;
             }
           case 421881946:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 networkInterfaces_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.NetworkInterface>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000200;
               }
               networkInterfaces_.add(
                   input.readMessage(
@@ -154,7 +142,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           case 694933882:
             {
               com.google.cloud.compute.v1.Metadata.Builder subBuilder = null;
-              if (metadata_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = metadata_.toBuilder();
               }
               metadata_ =
@@ -164,47 +152,24 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(metadata_);
                 metadata_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000010;
               break;
             }
           case 764752818:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.AttachedDisk>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               disks_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.AttachedDisk.parser(), extensionRegistry));
               break;
             }
-          case 946023586:
-            {
-              com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
-              if (scheduling_ != null) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Scheduling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
           case 1262805466:
             {
               com.google.cloud.compute.v1.ReservationAffinity.Builder subBuilder = null;
-              if (reservationAffinity_ != null) {
+              if (((bitField0_ & 0x00000080) != 0)) {
                 subBuilder = reservationAffinity_.toBuilder();
               }
               reservationAffinity_ =
@@ -214,30 +179,80 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(reservationAffinity_);
                 reservationAffinity_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000080;
               break;
             }
-          case 1561277306:
+          case 1821688210:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              machineType_ = s;
+              break;
+            }
+          case 1943302074:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              minCpuPlatform_ = s;
+              break;
+            }
+          case -2074668670:
+            {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                serviceAccounts_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              serviceAccounts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
+              break;
+            }
+          case -1201460062:
+            {
+              com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) != 0)) {
+                subBuilder = scheduling_.toBuilder();
+              }
+              scheduling_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Scheduling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduling_);
+                scheduling_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -586206342:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 guestAccelerators_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000010;
               }
               guestAccelerators_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
               break;
             }
-          case 1594366944:
+          case -553116704:
             {
+              bitField0_ |= 0x00000001;
               canIpForward_ = input.readBool();
               break;
             }
-          case 1777617834:
+          case -369865814:
             {
               com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder subBuilder = null;
-              if (confidentialInstanceConfig_ != null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
                 subBuilder = confidentialInstanceConfig_.toBuilder();
               }
               confidentialInstanceConfig_ =
@@ -248,34 +263,20 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(confidentialInstanceConfig_);
                 confidentialInstanceConfig_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000002;
               break;
             }
-          case 1821688210:
+          case -293404678:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              machineType_ = s;
-              break;
-            }
-          case 1854078970:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000020;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
                       LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 1943302074:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minCpuPlatform_ = s;
               break;
             }
           default:
@@ -292,19 +293,19 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+        networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        disks_ = java.util.Collections.unmodifiableList(disks_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
         serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
       }
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        disks_ = java.util.Collections.unmodifiableList(disks_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
       }
       this.unknownFields = unknownFields.build();
@@ -321,7 +322,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 231759871:
+      case 500195327:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -358,12 +359,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
-    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(159540538),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
-    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(19774807),
-    /** <code>INHERIT_FROM_SUBNETWORK = 261821503;</code> */
-    INHERIT_FROM_SUBNETWORK(261821503),
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
+    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    INHERIT_FROM_SUBNETWORK(530256959),
     UNRECOGNIZED(-1),
     ;
 
@@ -377,12 +378,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
-    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 159540538;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
-    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 19774807;
-    /** <code>INHERIT_FROM_SUBNETWORK = 261821503;</code> */
-    public static final int INHERIT_FROM_SUBNETWORK_VALUE = 261821503;
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
+    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    public static final int INHERIT_FROM_SUBNETWORK_VALUE = 530256959;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -410,11 +411,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS;
-        case 159540538:
+        case 427975994:
           return ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE;
-        case 19774807:
+        case 288210263:
           return ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE;
-        case 261821503:
+        case 530256959:
           return INHERIT_FROM_SUBNETWORK;
         default:
           return null;
@@ -472,7 +473,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess)
   }
 
-  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 199295868;
+  private int bitField0_;
+  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 467731324;
   private boolean canIpForward_;
   /**
    *
@@ -481,7 +483,22 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 199295868;</code>
+   * <code>bool can_ip_forward = 467731324;</code>
+   *
+   * @return Whether the canIpForward field is set.
+   */
+  @java.lang.Override
+  public boolean hasCanIpForward() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 467731324;</code>
    *
    * @return The canIpForward.
    */
@@ -490,7 +507,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return canIpForward_;
   }
 
-  public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 222202229;
+  public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 490637685;
   private com.google.cloud.compute.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
   /**
    *
@@ -500,14 +517,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
    */
   @java.lang.Override
   public boolean hasConfidentialInstanceConfig() {
-    return confidentialInstanceConfig_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -517,7 +534,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -536,16 +553,18 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
       getConfidentialInstanceConfigOrBuilder() {
-    return getConfidentialInstanceConfig();
+    return confidentialInstanceConfig_ == null
+        ? com.google.cloud.compute.v1.ConfidentialInstanceConfig.getDefaultInstance()
+        : confidentialInstanceConfig_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -554,7 +573,22 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional text description for the instances that are created from these properties.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -577,7 +611,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -663,7 +697,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return disks_.get(index);
   }
 
-  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 195159663;
+  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -672,7 +706,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -686,7 +720,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -701,7 +735,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -715,7 +749,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -729,7 +763,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   @java.lang.Override
@@ -738,7 +772,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return guestAccelerators_.get(index);
   }
 
-  public static final int LABELS_FIELD_NUMBER = 231759871;
+  public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -770,7 +804,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -792,7 +826,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -805,7 +839,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -822,7 +856,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -838,6 +872,21 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int MACHINE_TYPE_FIELD_NUMBER = 227711026;
   private volatile java.lang.Object machineType_;
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for instances that are created from these properties.
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
+   * @return Whether the machineType field is set.
+   */
+  @java.lang.Override
+  public boolean hasMachineType() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -900,7 +949,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasMetadata() {
-    return metadata_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -930,11 +979,28 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 242912759;
   private volatile java.lang.Object minCpuPlatform_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinCpuPlatform() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -1065,6 +1131,23 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
    * </code>
    *
+   * @return Whether the privateIpv6GoogleAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateIpv6GoogleAccess() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
+   * </code>
+   *
    * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
    */
   @java.lang.Override
@@ -1111,7 +1194,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasReservationAffinity() {
-    return reservationAffinity_ != null;
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1142,7 +1225,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationAffinityOrBuilder
       getReservationAffinityOrBuilder() {
-    return getReservationAffinity();
+    return reservationAffinity_ == null
+        ? com.google.cloud.compute.v1.ReservationAffinity.getDefaultInstance()
+        : reservationAffinity_;
   }
 
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
@@ -1206,7 +1291,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return resourcePolicies_.getByteString(index);
   }
 
-  public static final int SCHEDULING_FIELD_NUMBER = 118252948;
+  public static final int SCHEDULING_FIELD_NUMBER = 386688404;
   private com.google.cloud.compute.v1.Scheduling scheduling_;
   /**
    *
@@ -1215,13 +1300,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return scheduling_ != null;
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1230,7 +1315,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
@@ -1247,14 +1332,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
-    return getScheduling();
+    return scheduling_ == null
+        ? com.google.cloud.compute.v1.Scheduling.getDefaultInstance()
+        : scheduling_;
   }
 
-  public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 9101872;
+  public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 277537328;
   private java.util.List<com.google.cloud.compute.v1.ServiceAccount> serviceAccounts_;
   /**
    *
@@ -1263,7 +1350,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList() {
@@ -1276,7 +1363,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
@@ -1290,7 +1377,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   @java.lang.Override
   public int getServiceAccountsCount() {
@@ -1303,7 +1390,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index) {
@@ -1316,7 +1403,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(
@@ -1334,7 +1421,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasShieldedInstanceConfig() {
-    return shieldedInstanceConfig_ != null;
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
@@ -1355,7 +1442,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
-    return getShieldedInstanceConfig();
+    return shieldedInstanceConfig_ == null
+        ? com.google.cloud.compute.v1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
   }
 
   public static final int TAGS_FIELD_NUMBER = 3552281;
@@ -1373,7 +1462,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasTags() {
-    return tags_ != null;
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1401,7 +1490,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TagsOrBuilder getTagsOrBuilder() {
-    return getTags();
+    return tags_ == null ? com.google.cloud.compute.v1.Tags.getDefaultInstance() : tags_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1418,60 +1507,57 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (tags_ != null) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(3552281, getTags());
     }
-    for (int i = 0; i < serviceAccounts_.size(); i++) {
-      output.writeMessage(9101872, serviceAccounts_.get(i));
-    }
-    if (shieldedInstanceConfig_ != null) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(12862901, getShieldedInstanceConfig());
     }
     for (int i = 0; i < resourcePolicies_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 22220385, resourcePolicies_.getRaw(i));
     }
-    if (privateIpv6GoogleAccess_
-        != com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess
-            .UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS
-            .getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(48277006, privateIpv6GoogleAccess_);
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
       output.writeMessage(52735243, networkInterfaces_.get(i));
     }
-    if (metadata_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(86866735, getMetadata());
     }
     for (int i = 0; i < disks_.size(); i++) {
       output.writeMessage(95594102, disks_.get(i));
     }
-    if (scheduling_ != null) {
-      output.writeMessage(118252948, getScheduling());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (reservationAffinity_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(157850683, getReservationAffinity());
     }
-    for (int i = 0; i < guestAccelerators_.size(); i++) {
-      output.writeMessage(195159663, guestAccelerators_.get(i));
-    }
-    if (canIpForward_ != false) {
-      output.writeBool(199295868, canIpForward_);
-    }
-    if (confidentialInstanceConfig_ != null) {
-      output.writeMessage(222202229, getConfidentialInstanceConfig());
-    }
-    if (!getMachineTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227711026, machineType_);
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
-    if (!getMinCpuPlatformBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 242912759, minCpuPlatform_);
     }
+    for (int i = 0; i < serviceAccounts_.size(); i++) {
+      output.writeMessage(277537328, serviceAccounts_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(386688404, getScheduling());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      output.writeMessage(463595119, guestAccelerators_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(467731324, canIpForward_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(490637685, getConfidentialInstanceConfig());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -1481,15 +1567,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (tags_ != null) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
     }
-    for (int i = 0; i < serviceAccounts_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              9101872, serviceAccounts_.get(i));
-    }
-    if (shieldedInstanceConfig_ != null) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12862901, getShieldedInstanceConfig());
@@ -1502,10 +1583,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 4 * getResourcePoliciesList().size();
     }
-    if (privateIpv6GoogleAccess_
-        != com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess
-            .UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS
-            .getNumber()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(48277006, privateIpv6GoogleAccess_);
     }
@@ -1514,38 +1592,46 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               52735243, networkInterfaces_.get(i));
     }
-    if (metadata_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(86866735, getMetadata());
     }
     for (int i = 0; i < disks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
     }
-    if (scheduling_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(118252948, getScheduling());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (reservationAffinity_ != null) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               157850683, getReservationAffinity());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
+    }
+    for (int i = 0; i < serviceAccounts_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              277537328, serviceAccounts_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
     for (int i = 0; i < guestAccelerators_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              195159663, guestAccelerators_.get(i));
+              463595119, guestAccelerators_.get(i));
     }
-    if (canIpForward_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(199295868, canIpForward_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(467731324, canIpForward_);
     }
-    if (confidentialInstanceConfig_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              222202229, getConfidentialInstanceConfig());
-    }
-    if (!getMachineTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
+              490637685, getConfidentialInstanceConfig());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -1555,10 +1641,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
-    }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1576,24 +1659,39 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.InstanceProperties other =
         (com.google.cloud.compute.v1.InstanceProperties) obj;
 
-    if (getCanIpForward() != other.getCanIpForward()) return false;
+    if (hasCanIpForward() != other.hasCanIpForward()) return false;
+    if (hasCanIpForward()) {
+      if (getCanIpForward() != other.getCanIpForward()) return false;
+    }
     if (hasConfidentialInstanceConfig() != other.hasConfidentialInstanceConfig()) return false;
     if (hasConfidentialInstanceConfig()) {
       if (!getConfidentialInstanceConfig().equals(other.getConfidentialInstanceConfig()))
         return false;
     }
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (!getDisksList().equals(other.getDisksList())) return false;
     if (!getGuestAcceleratorsList().equals(other.getGuestAcceleratorsList())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (hasMachineType() != other.hasMachineType()) return false;
+    if (hasMachineType()) {
+      if (!getMachineType().equals(other.getMachineType())) return false;
+    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (hasMinCpuPlatform() != other.hasMinCpuPlatform()) return false;
+    if (hasMinCpuPlatform()) {
+      if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    }
     if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
-    if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+    if (hasPrivateIpv6GoogleAccess() != other.hasPrivateIpv6GoogleAccess()) return false;
+    if (hasPrivateIpv6GoogleAccess()) {
+      if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+    }
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
@@ -1623,14 +1721,18 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
+    if (hasCanIpForward()) {
+      hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
+    }
     if (hasConfidentialInstanceConfig()) {
       hash = (37 * hash) + CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialInstanceConfig().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (getDisksCount() > 0) {
       hash = (37 * hash) + DISKS_FIELD_NUMBER;
       hash = (53 * hash) + getDisksList().hashCode();
@@ -1643,20 +1745,26 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getMachineType().hashCode();
+    if (hasMachineType()) {
+      hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMachineType().hashCode();
+    }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
-    hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    if (hasMinCpuPlatform()) {
+      hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    }
     if (getNetworkInterfacesCount() > 0) {
       hash = (37 * hash) + NETWORK_INTERFACES_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkInterfacesList().hashCode();
     }
-    hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
-    hash = (53 * hash) + privateIpv6GoogleAccess_;
+    if (hasPrivateIpv6GoogleAccess()) {
+      hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + privateIpv6GoogleAccess_;
+    }
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
@@ -1801,7 +1909,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1811,7 +1919,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1840,10 +1948,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConfidentialInstanceConfigFieldBuilder();
         getDisksFieldBuilder();
         getGuestAcceleratorsFieldBuilder();
+        getMetadataFieldBuilder();
         getNetworkInterfacesFieldBuilder();
+        getReservationAffinityFieldBuilder();
+        getSchedulingFieldBuilder();
         getServiceAccountsFieldBuilder();
+        getShieldedInstanceConfigFieldBuilder();
+        getTagsFieldBuilder();
       }
     }
 
@@ -1851,78 +1965,78 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       canIpForward_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (confidentialInstanceConfigBuilder_ == null) {
         confidentialInstanceConfig_ = null;
       } else {
-        confidentialInstanceConfig_ = null;
-        confidentialInstanceConfigBuilder_ = null;
+        confidentialInstanceConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         disksBuilder_.clear();
       }
       if (guestAcceleratorsBuilder_ == null) {
         guestAccelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         guestAcceleratorsBuilder_.clear();
       }
       internalGetMutableLabels().clear();
       machineType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
-        metadata_ = null;
-        metadataBuilder_ = null;
+        metadataBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       minCpuPlatform_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         networkInterfacesBuilder_.clear();
       }
       privateIpv6GoogleAccess_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (reservationAffinityBuilder_ == null) {
         reservationAffinity_ = null;
       } else {
-        reservationAffinity_ = null;
-        reservationAffinityBuilder_ = null;
+        reservationAffinityBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000800);
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (schedulingBuilder_ == null) {
         scheduling_ = null;
       } else {
-        scheduling_ = null;
-        schedulingBuilder_ = null;
+        schedulingBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00004000);
       } else {
         serviceAccountsBuilder_.clear();
       }
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = null;
       } else {
-        shieldedInstanceConfig_ = null;
-        shieldedInstanceConfigBuilder_ = null;
+        shieldedInstanceConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00008000);
       if (tagsBuilder_ == null) {
         tags_ = null;
       } else {
-        tags_ = null;
-        tagsBuilder_ = null;
+        tagsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -1951,26 +2065,36 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       com.google.cloud.compute.v1.InstanceProperties result =
           new com.google.cloud.compute.v1.InstanceProperties(this);
       int from_bitField0_ = bitField0_;
-      result.canIpForward_ = canIpForward_;
-      if (confidentialInstanceConfigBuilder_ == null) {
-        result.confidentialInstanceConfig_ = confidentialInstanceConfig_;
-      } else {
-        result.confidentialInstanceConfig_ = confidentialInstanceConfigBuilder_.build();
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.canIpForward_ = canIpForward_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (confidentialInstanceConfigBuilder_ == null) {
+          result.confidentialInstanceConfig_ = confidentialInstanceConfig_;
+        } else {
+          result.confidentialInstanceConfig_ = confidentialInstanceConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.description_ = description_;
       if (disksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           disks_ = java.util.Collections.unmodifiableList(disks_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.disks_ = disks_;
       } else {
         result.disks_ = disksBuilder_.build();
       }
       if (guestAcceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.guestAccelerators_ = guestAccelerators_;
       } else {
@@ -1978,57 +2102,82 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.machineType_ = machineType_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000020;
       }
       result.minCpuPlatform_ = minCpuPlatform_;
       if (networkInterfacesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.networkInterfaces_ = networkInterfaces_;
       } else {
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
-      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
-      if (reservationAffinityBuilder_ == null) {
-        result.reservationAffinity_ = reservationAffinity_;
-      } else {
-        result.reservationAffinity_ = reservationAffinityBuilder_.build();
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000040;
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (reservationAffinityBuilder_ == null) {
+          result.reservationAffinity_ = reservationAffinity_;
+        } else {
+          result.reservationAffinity_ = reservationAffinityBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.resourcePolicies_ = resourcePolicies_;
-      if (schedulingBuilder_ == null) {
-        result.scheduling_ = scheduling_;
-      } else {
-        result.scheduling_ = schedulingBuilder_.build();
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (schedulingBuilder_ == null) {
+          result.scheduling_ = scheduling_;
+        } else {
+          result.scheduling_ = schedulingBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
       }
       if (serviceAccountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.serviceAccounts_ = serviceAccounts_;
       } else {
         result.serviceAccounts_ = serviceAccountsBuilder_.build();
       }
-      if (shieldedInstanceConfigBuilder_ == null) {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
-      } else {
-        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (shieldedInstanceConfigBuilder_ == null) {
+          result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
+        } else {
+          result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000200;
       }
-      if (tagsBuilder_ == null) {
-        result.tags_ = tags_;
-      } else {
-        result.tags_ = tagsBuilder_.build();
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        if (tagsBuilder_ == null) {
+          result.tags_ = tags_;
+        } else {
+          result.tags_ = tagsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000400;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2078,13 +2227,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceProperties other) {
       if (other == com.google.cloud.compute.v1.InstanceProperties.getDefaultInstance()) return this;
-      if (other.getCanIpForward() != false) {
+      if (other.hasCanIpForward()) {
         setCanIpForward(other.getCanIpForward());
       }
       if (other.hasConfidentialInstanceConfig()) {
         mergeConfidentialInstanceConfig(other.getConfidentialInstanceConfig());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
@@ -2092,7 +2242,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         if (!other.disks_.isEmpty()) {
           if (disks_.isEmpty()) {
             disks_ = other.disks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDisksIsMutable();
             disks_.addAll(other.disks_);
@@ -2105,7 +2255,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             disksBuilder_.dispose();
             disksBuilder_ = null;
             disks_ = other.disks_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             disksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDisksFieldBuilder()
@@ -2119,7 +2269,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         if (!other.guestAccelerators_.isEmpty()) {
           if (guestAccelerators_.isEmpty()) {
             guestAccelerators_ = other.guestAccelerators_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureGuestAcceleratorsIsMutable();
             guestAccelerators_.addAll(other.guestAccelerators_);
@@ -2132,7 +2282,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             guestAcceleratorsBuilder_.dispose();
             guestAcceleratorsBuilder_ = null;
             guestAccelerators_ = other.guestAccelerators_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             guestAcceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGuestAcceleratorsFieldBuilder()
@@ -2143,14 +2293,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      if (!other.getMachineType().isEmpty()) {
+      if (other.hasMachineType()) {
+        bitField0_ |= 0x00000040;
         machineType_ = other.machineType_;
         onChanged();
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
-      if (!other.getMinCpuPlatform().isEmpty()) {
+      if (other.hasMinCpuPlatform()) {
+        bitField0_ |= 0x00000100;
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
@@ -2158,7 +2310,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         if (!other.networkInterfaces_.isEmpty()) {
           if (networkInterfaces_.isEmpty()) {
             networkInterfaces_ = other.networkInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureNetworkInterfacesIsMutable();
             networkInterfaces_.addAll(other.networkInterfaces_);
@@ -2171,7 +2323,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             networkInterfacesBuilder_.dispose();
             networkInterfacesBuilder_ = null;
             networkInterfaces_ = other.networkInterfaces_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
             networkInterfacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNetworkInterfacesFieldBuilder()
@@ -2181,8 +2333,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      if (other.privateIpv6GoogleAccess_ != 0) {
-        setPrivateIpv6GoogleAccessValue(other.getPrivateIpv6GoogleAccessValue());
+      if (other.hasPrivateIpv6GoogleAccess()) {
+        setPrivateIpv6GoogleAccess(other.getPrivateIpv6GoogleAccess());
       }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
@@ -2190,7 +2342,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -2204,7 +2356,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         if (!other.serviceAccounts_.isEmpty()) {
           if (serviceAccounts_.isEmpty()) {
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureServiceAccountsIsMutable();
             serviceAccounts_.addAll(other.serviceAccounts_);
@@ -2217,7 +2369,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
             serviceAccountsBuilder_.dispose();
             serviceAccountsBuilder_ = null;
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00004000);
             serviceAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountsFieldBuilder()
@@ -2272,7 +2424,22 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 199295868;</code>
+     * <code>bool can_ip_forward = 467731324;</code>
+     *
+     * @return Whether the canIpForward field is set.
+     */
+    @java.lang.Override
+    public boolean hasCanIpForward() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 467731324;</code>
      *
      * @return The canIpForward.
      */
@@ -2287,13 +2454,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 199295868;</code>
+     * <code>bool can_ip_forward = 467731324;</code>
      *
      * @param value The canIpForward to set.
      * @return This builder for chaining.
      */
     public Builder setCanIpForward(boolean value) {
-
+      bitField0_ |= 0x00000001;
       canIpForward_ = value;
       onChanged();
       return this;
@@ -2305,12 +2472,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 199295868;</code>
+     * <code>bool can_ip_forward = 467731324;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCanIpForward() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       canIpForward_ = false;
       onChanged();
       return this;
@@ -2330,13 +2497,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      *
      * @return Whether the confidentialInstanceConfig field is set.
      */
     public boolean hasConfidentialInstanceConfig() {
-      return confidentialInstanceConfigBuilder_ != null || confidentialInstanceConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2346,7 +2513,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      *
      * @return The confidentialInstanceConfig.
@@ -2368,7 +2535,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2382,7 +2549,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         confidentialInstanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2393,7 +2560,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2404,7 +2571,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         confidentialInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2415,13 +2582,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder mergeConfidentialInstanceConfig(
         com.google.cloud.compute.v1.ConfidentialInstanceConfig value) {
       if (confidentialInstanceConfigBuilder_ == null) {
-        if (confidentialInstanceConfig_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && confidentialInstanceConfig_ != null
+            && confidentialInstanceConfig_
+                != com.google.cloud.compute.v1.ConfidentialInstanceConfig.getDefaultInstance()) {
           confidentialInstanceConfig_ =
               com.google.cloud.compute.v1.ConfidentialInstanceConfig.newBuilder(
                       confidentialInstanceConfig_)
@@ -2434,7 +2604,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         confidentialInstanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2445,7 +2615,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public Builder clearConfidentialInstanceConfig() {
@@ -2453,10 +2623,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         confidentialInstanceConfig_ = null;
         onChanged();
       } else {
-        confidentialInstanceConfig_ = null;
-        confidentialInstanceConfigBuilder_ = null;
+        confidentialInstanceConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -2467,12 +2636,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder
         getConfidentialInstanceConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfidentialInstanceConfigFieldBuilder().getBuilder();
     }
@@ -2484,7 +2653,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -2505,7 +2674,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2533,7 +2702,21 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional text description for the instances that are created from these properties.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -2555,7 +2738,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -2577,7 +2760,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2586,7 +2769,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -2598,12 +2781,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -2615,7 +2798,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2625,7 +2808,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -2635,9 +2818,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureDisksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.AttachedDisk>(disks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2852,7 +3035,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder clearDisks() {
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         disksBuilder_.clear();
@@ -2973,7 +3156,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.AttachedDisk,
                 com.google.cloud.compute.v1.AttachedDisk.Builder,
                 com.google.cloud.compute.v1.AttachedDiskOrBuilder>(
-                disks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                disks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         disks_ = null;
       }
       return disksBuilder_;
@@ -2983,11 +3166,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureGuestAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         guestAccelerators_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>(
                 guestAccelerators_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3004,7 +3187,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig>
@@ -3022,7 +3205,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public int getGuestAcceleratorsCount() {
@@ -3039,7 +3222,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
@@ -3056,7 +3239,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -3080,7 +3263,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -3101,7 +3284,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
@@ -3124,7 +3307,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3148,7 +3331,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3169,7 +3352,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3190,7 +3373,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder addAllGuestAccelerators(
@@ -3211,13 +3394,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder clearGuestAccelerators() {
       if (guestAcceleratorsBuilder_ == null) {
         guestAccelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         guestAcceleratorsBuilder_.clear();
@@ -3231,7 +3414,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public Builder removeGuestAccelerators(int index) {
@@ -3251,7 +3434,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder getGuestAcceleratorsBuilder(
@@ -3265,7 +3448,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
@@ -3283,7 +3466,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -3301,7 +3484,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder() {
@@ -3315,7 +3498,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder(
@@ -3330,7 +3513,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>
@@ -3350,7 +3533,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.AcceleratorConfig.Builder,
                 com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>(
                 guestAccelerators_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         guestAccelerators_ = null;
@@ -3390,7 +3573,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3412,7 +3595,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3425,7 +3608,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -3443,7 +3626,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3468,7 +3651,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3489,7 +3672,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3508,7 +3691,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3516,6 +3699,20 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object machineType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The machine type to use for instances that are created from these properties.
+     * </pre>
+     *
+     * <code>string machine_type = 227711026;</code>
+     *
+     * @return Whether the machineType field is set.
+     */
+    public boolean hasMachineType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -3576,7 +3773,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       machineType_ = value;
       onChanged();
       return this;
@@ -3593,7 +3790,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       machineType_ = getDefaultInstance().getMachineType();
       onChanged();
       return this;
@@ -3615,7 +3812,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       machineType_ = value;
       onChanged();
       return this;
@@ -3639,7 +3836,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3680,7 +3877,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3699,7 +3896,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3713,7 +3910,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMetadata(com.google.cloud.compute.v1.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.compute.v1.Metadata.getDefaultInstance()) {
           metadata_ =
               com.google.cloud.compute.v1.Metadata.newBuilder(metadata_)
                   .mergeFrom(value)
@@ -3725,7 +3924,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3742,10 +3941,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         metadata_ = null;
         onChanged();
       } else {
-        metadata_ = null;
-        metadataBuilder_ = null;
+        metadataBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -3758,7 +3956,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.compute.v1.Metadata metadata = 86866735;</code>
      */
     public com.google.cloud.compute.v1.Metadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -3807,6 +4005,20 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object minCpuPlatform_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 242912759;</code>
+     *
+     * @return Whether the minCpuPlatform field is set.
+     */
+    public boolean hasMinCpuPlatform() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3867,7 +4079,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       minCpuPlatform_ = value;
       onChanged();
       return this;
@@ -3884,7 +4096,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
       return this;
@@ -3906,7 +4118,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       minCpuPlatform_ = value;
       onChanged();
       return this;
@@ -3916,11 +4128,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureNetworkInterfacesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         networkInterfaces_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.NetworkInterface>(
                 networkInterfaces_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -4149,7 +4361,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder clearNetworkInterfaces() {
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         networkInterfacesBuilder_.clear();
@@ -4282,7 +4494,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.NetworkInterface.Builder,
                 com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>(
                 networkInterfaces_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         networkInterfaces_ = null;
@@ -4291,6 +4503,23 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private int privateIpv6GoogleAccess_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
+     * </code>
+     *
+     * @return Whether the privateIpv6GoogleAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateIpv6GoogleAccess() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -4323,7 +4552,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPrivateIpv6GoogleAccessValue(int value) {
-
+      bitField0_ |= 0x00000400;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -4371,7 +4600,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       privateIpv6GoogleAccess_ = value.getNumber();
       onChanged();
       return this;
@@ -4390,7 +4619,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpv6GoogleAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       privateIpv6GoogleAccess_ = 0;
       onChanged();
       return this;
@@ -4414,7 +4643,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the reservationAffinity field is set.
      */
     public boolean hasReservationAffinity() {
-      return reservationAffinityBuilder_ != null || reservationAffinity_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4455,7 +4684,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -4475,7 +4704,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -4489,7 +4718,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeReservationAffinity(com.google.cloud.compute.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
-        if (reservationAffinity_ != null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && reservationAffinity_ != null
+            && reservationAffinity_
+                != com.google.cloud.compute.v1.ReservationAffinity.getDefaultInstance()) {
           reservationAffinity_ =
               com.google.cloud.compute.v1.ReservationAffinity.newBuilder(reservationAffinity_)
                   .mergeFrom(value)
@@ -4501,7 +4733,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         reservationAffinityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -4518,10 +4750,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         reservationAffinity_ = null;
         onChanged();
       } else {
-        reservationAffinity_ = null;
-        reservationAffinityBuilder_ = null;
+        reservationAffinityBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
     /**
@@ -4534,7 +4765,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;</code>
      */
     public com.google.cloud.compute.v1.ReservationAffinity.Builder getReservationAffinityBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }
@@ -4587,9 +4818,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -4724,7 +4955,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearResourcePolicies() {
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4764,12 +4995,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      *
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return schedulingBuilder_ != null || scheduling_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4778,7 +5009,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      *
      * @return The scheduling.
      */
@@ -4798,7 +5029,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
@@ -4810,7 +5041,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -4820,7 +5051,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling.Builder builderForValue) {
       if (schedulingBuilder_ == null) {
@@ -4829,7 +5060,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -4839,11 +5070,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (scheduling_ != null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && scheduling_ != null
+            && scheduling_ != com.google.cloud.compute.v1.Scheduling.getDefaultInstance()) {
           scheduling_ =
               com.google.cloud.compute.v1.Scheduling.newBuilder(scheduling_)
                   .mergeFrom(value)
@@ -4855,7 +5088,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         schedulingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -4865,17 +5098,16 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder clearScheduling() {
       if (schedulingBuilder_ == null) {
         scheduling_ = null;
         onChanged();
       } else {
-        scheduling_ = null;
-        schedulingBuilder_ = null;
+        schedulingBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
     /**
@@ -4885,10 +5117,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -4899,7 +5131,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
       if (schedulingBuilder_ != null) {
@@ -4917,7 +5149,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Scheduling,
@@ -4940,10 +5172,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         serviceAccounts_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>(serviceAccounts_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4960,7 +5192,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList() {
       if (serviceAccountsBuilder_ == null) {
@@ -4976,7 +5208,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public int getServiceAccountsCount() {
       if (serviceAccountsBuilder_ == null) {
@@ -4992,7 +5224,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index) {
       if (serviceAccountsBuilder_ == null) {
@@ -5008,7 +5240,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder setServiceAccounts(int index, com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5030,7 +5262,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder setServiceAccounts(
         int index, com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5050,7 +5282,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder addServiceAccounts(com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5072,7 +5304,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder addServiceAccounts(int index, com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5094,7 +5326,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder addServiceAccounts(
         com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5114,7 +5346,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder addServiceAccounts(
         int index, com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5134,7 +5366,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder addAllServiceAccounts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.ServiceAccount> values) {
@@ -5154,12 +5386,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder clearServiceAccounts() {
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         serviceAccountsBuilder_.clear();
@@ -5173,7 +5405,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public Builder removeServiceAccounts(int index) {
       if (serviceAccountsBuilder_ == null) {
@@ -5192,7 +5424,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder getServiceAccountsBuilder(int index) {
       return getServiceAccountsFieldBuilder().getBuilder(index);
@@ -5204,7 +5436,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(
         int index) {
@@ -5221,7 +5453,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
         getServiceAccountsOrBuilderList() {
@@ -5238,7 +5470,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder addServiceAccountsBuilder() {
       return getServiceAccountsFieldBuilder()
@@ -5251,7 +5483,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder addServiceAccountsBuilder(int index) {
       return getServiceAccountsFieldBuilder()
@@ -5264,7 +5496,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ServiceAccount.Builder>
         getServiceAccountsBuilderList() {
@@ -5283,7 +5515,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.ServiceAccount.Builder,
                 com.google.cloud.compute.v1.ServiceAccountOrBuilder>(
                 serviceAccounts_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccounts_ = null;
@@ -5304,7 +5536,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>.google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config = 12862901;
@@ -5336,7 +5568,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -5351,7 +5583,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -5361,7 +5593,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public Builder mergeShieldedInstanceConfig(
         com.google.cloud.compute.v1.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (shieldedInstanceConfig_ != null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && shieldedInstanceConfig_ != null
+            && shieldedInstanceConfig_
+                != com.google.cloud.compute.v1.ShieldedInstanceConfig.getDefaultInstance()) {
           shieldedInstanceConfig_ =
               com.google.cloud.compute.v1.ShieldedInstanceConfig.newBuilder(shieldedInstanceConfig_)
                   .mergeFrom(value)
@@ -5373,7 +5608,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -5385,10 +5620,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         shieldedInstanceConfig_ = null;
         onChanged();
       } else {
-        shieldedInstanceConfig_ = null;
-        shieldedInstanceConfigBuilder_ = null;
+        shieldedInstanceConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
     /**
@@ -5397,7 +5631,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -5454,7 +5688,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * @return Whether the tags field is set.
      */
     public boolean hasTags() {
-      return tagsBuilder_ != null || tags_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5493,7 +5727,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5512,7 +5746,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5526,7 +5760,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
-        if (tags_ != null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && tags_ != null
+            && tags_ != com.google.cloud.compute.v1.Tags.getDefaultInstance()) {
           tags_ =
               com.google.cloud.compute.v1.Tags.newBuilder(tags_).mergeFrom(value).buildPartial();
         } else {
@@ -5536,7 +5772,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       } else {
         tagsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5553,10 +5789,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
         tags_ = null;
         onChanged();
       } else {
-        tags_ = null;
-        tagsBuilder_ = null;
+        tagsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
     /**
@@ -5569,7 +5804,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }

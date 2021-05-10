@@ -33,6 +33,19 @@ public interface HttpRedirectActionOrBuilder
    *
    * <code>string host_redirect = 107417747;</code>
    *
+   * @return Whether the hostRedirect field is set.
+   */
+  boolean hasHostRedirect();
+  /**
+   *
+   *
+   * <pre>
+   * The host that will be used in the redirect response instead of the one that was supplied in the request.
+   * The value must be between 1 and 255 characters.
+   * </pre>
+   *
+   * <code>string host_redirect = 107417747;</code>
+   *
    * @return The hostRedirect.
    */
   java.lang.String getHostRedirect();
@@ -61,6 +74,20 @@ public interface HttpRedirectActionOrBuilder
    *
    * <code>bool https_redirect = 170260656;</code>
    *
+   * @return Whether the httpsRedirect field is set.
+   */
+  boolean hasHttpsRedirect();
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the URL scheme in the redirected request is set to https. If set to false, the URL scheme of the redirected request will remain the same as that of the request.
+   * This must only be set for UrlMaps used in TargetHttpProxys. Setting this true for TargetHttpsProxy is not permitted.
+   * The default is set to false.
+   * </pre>
+   *
+   * <code>bool https_redirect = 170260656;</code>
+   *
    * @return The httpsRedirect.
    */
   boolean getHttpsRedirect();
@@ -74,7 +101,21 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 3907254;</code>
+   * <code>string path_redirect = 272342710;</code>
+   *
+   * @return Whether the pathRedirect field is set.
+   */
+  boolean hasPathRedirect();
+  /**
+   *
+   *
+   * <pre>
+   * The path that will be used in the redirect response instead of the one that was supplied in the request.
+   * pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
+   * The value must be between 1 and 1024 characters.
+   * </pre>
+   *
+   * <code>string path_redirect = 272342710;</code>
    *
    * @return The pathRedirect.
    */
@@ -88,7 +129,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 3907254;</code>
+   * <code>string path_redirect = 272342710;</code>
    *
    * @return The bytes for pathRedirect.
    */
@@ -103,7 +144,21 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 177748713;</code>
+   * <code>string prefix_redirect = 446184169;</code>
+   *
+   * @return Whether the prefixRedirect field is set.
+   */
+  boolean hasPrefixRedirect();
+  /**
+   *
+   *
+   * <pre>
+   * The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request.
+   * prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect.
+   * The value must be between 1 and 1024 characters.
+   * </pre>
+   *
+   * <code>string prefix_redirect = 446184169;</code>
    *
    * @return The prefixRedirect.
    */
@@ -117,7 +172,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 177748713;</code>
+   * <code>string prefix_redirect = 446184169;</code>
    *
    * @return The bytes for prefixRedirect.
    */
@@ -137,7 +192,27 @@ public interface HttpRedirectActionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+   * </code>
+   *
+   * @return Whether the redirectResponseCode field is set.
+   */
+  boolean hasRedirectResponseCode();
+  /**
+   *
+   *
+   * <pre>
+   * The HTTP Status code to use for this RedirectAction.
+   * Supported values are:
+   * - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301.
+   * - FOUND, which corresponds to 302.
+   * - SEE_OTHER which corresponds to 303.
+   * - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained.
+   * - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
    * </code>
    *
    * @return The enum numeric value on the wire for redirectResponseCode.
@@ -157,13 +232,26 @@ public interface HttpRedirectActionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
    * </code>
    *
    * @return The redirectResponseCode.
    */
   com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode getRedirectResponseCode();
 
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained.
+   * The default is set to false.
+   * </pre>
+   *
+   * <code>bool strip_query = 52284641;</code>
+   *
+   * @return Whether the stripQuery field is set.
+   */
+  boolean hasStripQuery();
   /**
    *
    *

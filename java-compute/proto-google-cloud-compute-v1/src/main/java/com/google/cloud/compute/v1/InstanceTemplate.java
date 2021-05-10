@@ -67,6 +67,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -80,42 +81,35 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 1023041994:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceInstance_ = s;
               break;
             }
           case 1082737250:
             {
               com.google.cloud.compute.v1.SourceInstanceParams.Builder subBuilder = null;
-              if (sourceInstanceParams_ != null) {
+              if (((bitField0_ & 0x00000100) != 0)) {
                 subBuilder = sourceInstanceParams_.toBuilder();
               }
               sourceInstanceParams_ =
@@ -125,13 +119,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
                 subBuilder.mergeFrom(sourceInstanceParams_);
                 sourceInstanceParams_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000100;
               break;
             }
           case 1181510042:
             {
               com.google.cloud.compute.v1.InstanceProperties.Builder subBuilder = null;
-              if (properties_ != null) {
+              if (((bitField0_ & 0x00000020) != 0)) {
                 subBuilder = properties_.toBuilder();
               }
               properties_ =
@@ -141,20 +135,27 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
                 subBuilder.mergeFrom(properties_);
                 properties_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000020;
               break;
             }
-          case 1236017122:
+          case -1124441654:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
+              sourceInstance_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
               description_ = s;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               selfLink_ = s;
               break;
             }
@@ -192,8 +193,24 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.InstanceTemplate.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -241,7 +258,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -250,7 +267,22 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -273,7 +305,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -292,6 +324,21 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -350,6 +397,21 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -390,6 +452,21 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -452,7 +529,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProperties() {
-    return properties_ != null;
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -482,10 +559,12 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstancePropertiesOrBuilder getPropertiesOrBuilder() {
-    return getProperties();
+    return properties_ == null
+        ? com.google.cloud.compute.v1.InstanceProperties.getDefaultInstance()
+        : properties_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -494,7 +573,22 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL for this instance template. The server defines this URL.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -517,7 +611,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -534,7 +628,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SOURCE_INSTANCE_FIELD_NUMBER = 127880249;
+  public static final int SOURCE_INSTANCE_FIELD_NUMBER = 396315705;
   private volatile java.lang.Object sourceInstance_;
   /**
    *
@@ -545,7 +639,24 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 127880249;</code>
+   * <code>string source_instance = 396315705;</code>
+   *
+   * @return Whether the sourceInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstance() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   * - projects/project/zones/zone/instances/instance
+   * </pre>
+   *
+   * <code>string source_instance = 396315705;</code>
    *
    * @return The sourceInstance.
    */
@@ -570,7 +681,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 127880249;</code>
+   * <code>string source_instance = 396315705;</code>
    *
    * @return The bytes for sourceInstance.
    */
@@ -602,7 +713,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSourceInstanceParams() {
-    return sourceInstanceParams_ != null;
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -633,7 +744,9 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.compute.v1.SourceInstanceParamsOrBuilder
       getSourceInstanceParamsOrBuilder() {
-    return getSourceInstanceParams();
+    return sourceInstanceParams_ == null
+        ? com.google.cloud.compute.v1.SourceInstanceParams.getDefaultInstance()
+        : sourceInstanceParams_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -650,32 +763,32 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 127880249, sourceInstance_);
-    }
-    if (sourceInstanceParams_ != null) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(135342156, getSourceInstanceParams());
     }
-    if (properties_ != null) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(147688755, getProperties());
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 396315705, sourceInstance_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -686,35 +799,35 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(127880249, sourceInstance_);
-    }
-    if (sourceInstanceParams_ != null) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               135342156, getSourceInstanceParams());
     }
-    if (properties_ != null) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(147688755, getProperties());
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(396315705, sourceInstance_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -732,17 +845,38 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.InstanceTemplate other =
         (com.google.cloud.compute.v1.InstanceTemplate) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (hasProperties() != other.hasProperties()) return false;
     if (hasProperties()) {
       if (!getProperties().equals(other.getProperties())) return false;
     }
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (!getSourceInstance().equals(other.getSourceInstance())) return false;
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSourceInstance() != other.hasSourceInstance()) return false;
+    if (hasSourceInstance()) {
+      if (!getSourceInstance().equals(other.getSourceInstance())) return false;
+    }
     if (hasSourceInstanceParams() != other.hasSourceInstanceParams()) return false;
     if (hasSourceInstanceParams()) {
       if (!getSourceInstanceParams().equals(other.getSourceInstanceParams())) return false;
@@ -758,24 +892,38 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (hasProperties()) {
       hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getProperties().hashCode();
     }
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SOURCE_INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceInstance().hashCode();
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSourceInstance()) {
+      hash = (37 * hash) + SOURCE_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstance().hashCode();
+    }
     if (hasSourceInstanceParams()) {
       hash = (37 * hash) + SOURCE_INSTANCE_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceInstanceParams().hashCode();
@@ -920,38 +1068,41 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPropertiesFieldBuilder();
+        getSourceInstanceParamsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (propertiesBuilder_ == null) {
         properties_ = null;
       } else {
-        properties_ = null;
-        propertiesBuilder_ = null;
+        propertiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       sourceInstance_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (sourceInstanceParamsBuilder_ == null) {
         sourceInstanceParams_ = null;
       } else {
-        sourceInstanceParams_ = null;
-        sourceInstanceParamsBuilder_ = null;
+        sourceInstanceParamsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -979,23 +1130,53 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.InstanceTemplate buildPartial() {
       com.google.cloud.compute.v1.InstanceTemplate result =
           new com.google.cloud.compute.v1.InstanceTemplate(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.name_ = name_;
-      if (propertiesBuilder_ == null) {
-        result.properties_ = properties_;
-      } else {
-        result.properties_ = propertiesBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (propertiesBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = propertiesBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
       }
       result.selfLink_ = selfLink_;
-      result.sourceInstance_ = sourceInstance_;
-      if (sourceInstanceParamsBuilder_ == null) {
-        result.sourceInstanceParams_ = sourceInstanceParams_;
-      } else {
-        result.sourceInstanceParams_ = sourceInstanceParamsBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
       }
+      result.sourceInstance_ = sourceInstance_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (sourceInstanceParamsBuilder_ == null) {
+          result.sourceInstanceParams_ = sourceInstanceParams_;
+        } else {
+          result.sourceInstanceParams_ = sourceInstanceParamsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000100;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1045,34 +1226,41 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceTemplate other) {
       if (other == com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000004;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000008;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000010;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasProperties()) {
         mergeProperties(other.getProperties());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000040;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (!other.getSourceInstance().isEmpty()) {
+      if (other.hasSourceInstance()) {
+        bitField0_ |= 0x00000080;
         sourceInstance_ = other.sourceInstance_;
         onChanged();
       }
@@ -1108,7 +1296,23 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1169,7 +1373,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1186,7 +1390,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1208,7 +1412,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1222,7 +1426,21 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1244,7 +1462,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1266,7 +1484,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1275,7 +1493,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1287,12 +1505,12 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1304,7 +1522,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1314,13 +1532,27 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1381,7 +1613,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
@@ -1398,7 +1630,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1420,13 +1652,27 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1487,7 +1733,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       kind_ = value;
       onChanged();
       return this;
@@ -1504,7 +1750,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1526,13 +1772,27 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1593,7 +1853,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -1610,7 +1870,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1632,7 +1892,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       name_ = value;
       onChanged();
       return this;
@@ -1656,7 +1916,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the properties field is set.
      */
     public boolean hasProperties() {
-      return propertiesBuilder_ != null || properties_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1697,7 +1957,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         propertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1717,7 +1977,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         propertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1731,7 +1991,9 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeProperties(com.google.cloud.compute.v1.InstanceProperties value) {
       if (propertiesBuilder_ == null) {
-        if (properties_ != null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && properties_ != null
+            && properties_ != com.google.cloud.compute.v1.InstanceProperties.getDefaultInstance()) {
           properties_ =
               com.google.cloud.compute.v1.InstanceProperties.newBuilder(properties_)
                   .mergeFrom(value)
@@ -1743,7 +2005,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         propertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1760,10 +2022,9 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         properties_ = null;
         onChanged();
       } else {
-        properties_ = null;
-        propertiesBuilder_ = null;
+        propertiesBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -1776,7 +2037,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.compute.v1.InstanceProperties properties = 147688755;</code>
      */
     public com.google.cloud.compute.v1.InstanceProperties.Builder getPropertiesBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
@@ -1832,7 +2093,21 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL for this instance template. The server defines this URL.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1854,7 +2129,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1876,7 +2151,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1885,7 +2160,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1897,12 +2172,12 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1914,7 +2189,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1924,7 +2199,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1940,7 +2215,23 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 127880249;</code>
+     * <code>string source_instance = 396315705;</code>
+     *
+     * @return Whether the sourceInstance field is set.
+     */
+    public boolean hasSourceInstance() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     * - projects/project/zones/zone/instances/instance
+     * </pre>
+     *
+     * <code>string source_instance = 396315705;</code>
      *
      * @return The sourceInstance.
      */
@@ -1964,7 +2255,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 127880249;</code>
+     * <code>string source_instance = 396315705;</code>
      *
      * @return The bytes for sourceInstance.
      */
@@ -1988,7 +2279,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 127880249;</code>
+     * <code>string source_instance = 396315705;</code>
      *
      * @param value The sourceInstance to set.
      * @return This builder for chaining.
@@ -1997,7 +2288,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       sourceInstance_ = value;
       onChanged();
       return this;
@@ -2011,12 +2302,12 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 127880249;</code>
+     * <code>string source_instance = 396315705;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSourceInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       sourceInstance_ = getDefaultInstance().getSourceInstance();
       onChanged();
       return this;
@@ -2030,7 +2321,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 127880249;</code>
+     * <code>string source_instance = 396315705;</code>
      *
      * @param value The bytes for sourceInstance to set.
      * @return This builder for chaining.
@@ -2040,7 +2331,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       sourceInstance_ = value;
       onChanged();
       return this;
@@ -2065,7 +2356,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the sourceInstanceParams field is set.
      */
     public boolean hasSourceInstanceParams() {
-      return sourceInstanceParamsBuilder_ != null || sourceInstanceParams_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2108,7 +2399,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         sourceInstanceParamsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2129,7 +2420,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         sourceInstanceParamsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2145,7 +2436,10 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     public Builder mergeSourceInstanceParams(
         com.google.cloud.compute.v1.SourceInstanceParams value) {
       if (sourceInstanceParamsBuilder_ == null) {
-        if (sourceInstanceParams_ != null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && sourceInstanceParams_ != null
+            && sourceInstanceParams_
+                != com.google.cloud.compute.v1.SourceInstanceParams.getDefaultInstance()) {
           sourceInstanceParams_ =
               com.google.cloud.compute.v1.SourceInstanceParams.newBuilder(sourceInstanceParams_)
                   .mergeFrom(value)
@@ -2157,7 +2451,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         sourceInstanceParamsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2175,10 +2469,9 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
         sourceInstanceParams_ = null;
         onChanged();
       } else {
-        sourceInstanceParams_ = null;
-        sourceInstanceParamsBuilder_ = null;
+        sourceInstanceParamsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
     /**
@@ -2193,7 +2486,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.SourceInstanceParams.Builder
         getSourceInstanceParamsBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSourceInstanceParamsFieldBuilder().getBuilder();
     }

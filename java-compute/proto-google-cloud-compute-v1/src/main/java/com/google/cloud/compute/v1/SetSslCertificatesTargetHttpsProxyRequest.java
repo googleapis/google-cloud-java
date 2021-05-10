@@ -64,6 +64,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,7 +78,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -148,6 +149,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
             com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -199,6 +201,23 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -372,7 +391,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getTargetHttpsProxyBytes().isEmpty()) {
@@ -393,7 +412,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getTargetHttpsProxyBytes().isEmpty()) {
@@ -424,7 +443,10 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
         (com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasTargetHttpsProxiesSetSslCertificatesRequestResource()
         != other.hasTargetHttpsProxiesSetSslCertificatesRequestResource()) return false;
     if (hasTargetHttpsProxiesSetSslCertificatesRequestResource()) {
@@ -445,8 +467,10 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasTargetHttpsProxiesSetSslCertificatesRequestResource()) {
       hash = (37 * hash) + TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetHttpsProxiesSetSslCertificatesRequestResource().hashCode();
@@ -604,7 +628,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (targetHttpsProxiesSetSslCertificatesRequestResourceBuilder_ == null) {
         targetHttpsProxiesSetSslCertificatesRequestResource_ = null;
       } else {
@@ -642,7 +666,12 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
     public com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest result =
           new com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (targetHttpsProxiesSetSslCertificatesRequestResourceBuilder_ == null) {
         result.targetHttpsProxiesSetSslCertificatesRequestResource_ =
@@ -652,6 +681,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
             targetHttpsProxiesSetSslCertificatesRequestResourceBuilder_.build();
       }
       result.targetHttpsProxy_ = targetHttpsProxy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -709,7 +739,8 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -751,6 +782,8 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -870,6 +903,22 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -925,7 +974,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -944,7 +993,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -968,7 +1017,7 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

@@ -64,6 +64,7 @@ public final class InsertInterconnectAttachmentRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,7 +78,7 @@ public final class InsertInterconnectAttachmentRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -114,6 +115,7 @@ public final class InsertInterconnectAttachmentRequest
             }
           case 1941957032:
             {
+              bitField0_ |= 0x00000002;
               validateOnly_ = input.readBool();
               break;
             }
@@ -151,6 +153,7 @@ public final class InsertInterconnectAttachmentRequest
             com.google.cloud.compute.v1.InsertInterconnectAttachmentRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INTERCONNECT_ATTACHMENT_RESOURCE_FIELD_NUMBER = 212341369;
   private com.google.cloud.compute.v1.InterconnectAttachment interconnectAttachmentResource_;
   /**
@@ -317,6 +320,23 @@ public final class InsertInterconnectAttachmentRequest
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -368,6 +388,21 @@ public final class InsertInterconnectAttachmentRequest
    *
    * <code>bool validate_only = 242744629;</code>
    *
+   * @return Whether the validateOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasValidateOnly() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, the request will not be committed.
+   * </pre>
+   *
+   * <code>bool validate_only = 242744629;</code>
+   *
    * @return The validateOnly.
    */
   @java.lang.Override
@@ -389,7 +424,7 @@ public final class InsertInterconnectAttachmentRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -401,7 +436,7 @@ public final class InsertInterconnectAttachmentRequest
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (validateOnly_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(242744629, validateOnly_);
     }
     unknownFields.writeTo(output);
@@ -413,7 +448,7 @@ public final class InsertInterconnectAttachmentRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -427,7 +462,7 @@ public final class InsertInterconnectAttachmentRequest
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (validateOnly_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(242744629, validateOnly_);
     }
     size += unknownFields.getSerializedSize();
@@ -454,8 +489,14 @@ public final class InsertInterconnectAttachmentRequest
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
-    if (getValidateOnly() != other.getValidateOnly()) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
+    if (hasValidateOnly() != other.hasValidateOnly()) return false;
+    if (hasValidateOnly()) {
+      if (getValidateOnly() != other.getValidateOnly()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -475,10 +516,14 @@ public final class InsertInterconnectAttachmentRequest
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
-    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
+    if (hasValidateOnly()) {
+      hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -636,9 +681,9 @@ public final class InsertInterconnectAttachmentRequest
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       validateOnly_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -667,6 +712,8 @@ public final class InsertInterconnectAttachmentRequest
     public com.google.cloud.compute.v1.InsertInterconnectAttachmentRequest buildPartial() {
       com.google.cloud.compute.v1.InsertInterconnectAttachmentRequest result =
           new com.google.cloud.compute.v1.InsertInterconnectAttachmentRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (interconnectAttachmentResourceBuilder_ == null) {
         result.interconnectAttachmentResource_ = interconnectAttachmentResource_;
       } else {
@@ -674,8 +721,15 @@ public final class InsertInterconnectAttachmentRequest
       }
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -739,11 +793,12 @@ public final class InsertInterconnectAttachmentRequest
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
-      if (other.getValidateOnly() != false) {
+      if (other.hasValidateOnly()) {
         setValidateOnly(other.getValidateOnly());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -776,6 +831,8 @@ public final class InsertInterconnectAttachmentRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.compute.v1.InterconnectAttachment interconnectAttachmentResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1211,6 +1268,22 @@ public final class InsertInterconnectAttachmentRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1266,7 +1339,7 @@ public final class InsertInterconnectAttachmentRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1285,7 +1358,7 @@ public final class InsertInterconnectAttachmentRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1309,13 +1382,28 @@ public final class InsertInterconnectAttachmentRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
     }
 
     private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, the request will not be committed.
+     * </pre>
+     *
+     * <code>bool validate_only = 242744629;</code>
+     *
+     * @return Whether the validateOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasValidateOnly() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1344,7 +1432,7 @@ public final class InsertInterconnectAttachmentRequest
      * @return This builder for chaining.
      */
     public Builder setValidateOnly(boolean value) {
-
+      bitField0_ |= 0x00000002;
       validateOnly_ = value;
       onChanged();
       return this;
@@ -1361,7 +1449,7 @@ public final class InsertInterconnectAttachmentRequest
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;

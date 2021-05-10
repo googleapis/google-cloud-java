@@ -74,15 +74,16 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
             break;
           case 775136:
             {
+              bitField0_ |= 0x00000002;
               asn_ = input.readUInt32();
               break;
             }
           case 168524208:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               advertisedGroups_.add(rawValue);
               break;
@@ -93,9 +94,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 advertisedGroups_.add(rawValue);
               }
@@ -104,10 +105,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
             }
           case 283599458:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 advertisedIpRanges_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.RouterAdvertisedIpRange>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               advertisedIpRanges_.add(
                   input.readMessage(
@@ -115,10 +116,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
-          case 349591000:
+          case -1797892648:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               advertiseMode_ = rawValue;
               break;
             }
@@ -136,10 +137,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
       }
       this.unknownFields = unknownFields.build();
@@ -182,8 +183,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     UNDEFINED_ADVERTISE_MODE(0),
-    /** <code>CUSTOM = 120160113;</code> */
-    CUSTOM(120160113),
+    /** <code>CUSTOM = 388595569;</code> */
+    CUSTOM(388595569),
     /** <code>DEFAULT = 115302945;</code> */
     DEFAULT(115302945),
     UNRECOGNIZED(-1),
@@ -199,8 +200,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISE_MODE_VALUE = 0;
-    /** <code>CUSTOM = 120160113;</code> */
-    public static final int CUSTOM_VALUE = 120160113;
+    /** <code>CUSTOM = 388595569;</code> */
+    public static final int CUSTOM_VALUE = 388595569;
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
 
@@ -230,7 +231,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_ADVERTISE_MODE;
-        case 120160113:
+        case 388595569:
           return CUSTOM;
         case 115302945:
           return DEFAULT;
@@ -407,7 +408,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterBgp.AdvertisedGroups)
   }
 
-  public static final int ADVERTISE_MODE_FIELD_NUMBER = 43698875;
+  private int bitField0_;
+  public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
   private int advertiseMode_;
   /**
    *
@@ -416,7 +418,22 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   *
+   * @return Whether the advertiseMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertiseMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -431,7 +448,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
    *
    * @return The advertiseMode.
    */
@@ -647,6 +664,21 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>uint32 asn = 96892;</code>
    *
+   * @return Whether the asn field is set.
+   */
+  @java.lang.Override
+  public boolean hasAsn() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
+   * </pre>
+   *
+   * <code>uint32 asn = 96892;</code>
+   *
    * @return The asn.
    */
   @java.lang.Override
@@ -669,7 +701,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (asn_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(96892, asn_);
     }
     if (getAdvertisedGroupsList().size() > 0) {
@@ -682,10 +714,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (advertiseMode_
-        != com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
-            .getNumber()) {
-      output.writeEnum(43698875, advertiseMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(312134331, advertiseMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -696,7 +726,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (asn_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(96892, asn_);
     }
     {
@@ -717,10 +747,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (advertiseMode_
-        != com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(43698875, advertiseMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(312134331, advertiseMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -737,10 +765,16 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.RouterBgp other = (com.google.cloud.compute.v1.RouterBgp) obj;
 
-    if (advertiseMode_ != other.advertiseMode_) return false;
+    if (hasAdvertiseMode() != other.hasAdvertiseMode()) return false;
+    if (hasAdvertiseMode()) {
+      if (advertiseMode_ != other.advertiseMode_) return false;
+    }
     if (!advertisedGroups_.equals(other.advertisedGroups_)) return false;
     if (!getAdvertisedIpRangesList().equals(other.getAdvertisedIpRangesList())) return false;
-    if (getAsn() != other.getAsn()) return false;
+    if (hasAsn() != other.hasAsn()) return false;
+    if (hasAsn()) {
+      if (getAsn() != other.getAsn()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -752,8 +786,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + advertiseMode_;
+    if (hasAdvertiseMode()) {
+      hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + advertiseMode_;
+    }
     if (getAdvertisedGroupsCount() > 0) {
       hash = (37 * hash) + ADVERTISED_GROUPS_FIELD_NUMBER;
       hash = (53 * hash) + advertisedGroups_.hashCode();
@@ -762,8 +798,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADVERTISED_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertisedIpRangesList().hashCode();
     }
-    hash = (37 * hash) + ASN_FIELD_NUMBER;
-    hash = (53 * hash) + getAsn();
+    if (hasAsn()) {
+      hash = (37 * hash) + ASN_FIELD_NUMBER;
+      hash = (53 * hash) + getAsn();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -910,17 +948,17 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       advertiseMode_ = 0;
-
-      advertisedGroups_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      advertisedGroups_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         advertisedIpRangesBuilder_.clear();
       }
       asn_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -949,22 +987,30 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.RouterBgp result =
           new com.google.cloud.compute.v1.RouterBgp(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.advertiseMode_ = advertiseMode_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.advertisedGroups_ = advertisedGroups_;
       if (advertisedIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.advertisedIpRanges_ = advertisedIpRanges_;
       } else {
         result.advertisedIpRanges_ = advertisedIpRangesBuilder_.build();
       }
-      result.asn_ = asn_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.asn_ = asn_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1014,13 +1060,13 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterBgp other) {
       if (other == com.google.cloud.compute.v1.RouterBgp.getDefaultInstance()) return this;
-      if (other.advertiseMode_ != 0) {
-        setAdvertiseModeValue(other.getAdvertiseModeValue());
+      if (other.hasAdvertiseMode()) {
+        setAdvertiseMode(other.getAdvertiseMode());
       }
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
           advertisedGroups_ = other.advertisedGroups_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAdvertisedGroupsIsMutable();
           advertisedGroups_.addAll(other.advertisedGroups_);
@@ -1031,7 +1077,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         if (!other.advertisedIpRanges_.isEmpty()) {
           if (advertisedIpRanges_.isEmpty()) {
             advertisedIpRanges_ = other.advertisedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAdvertisedIpRangesIsMutable();
             advertisedIpRanges_.addAll(other.advertisedIpRanges_);
@@ -1044,7 +1090,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
             advertisedIpRangesBuilder_.dispose();
             advertisedIpRangesBuilder_ = null;
             advertisedIpRanges_ = other.advertisedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             advertisedIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdvertisedIpRangesFieldBuilder()
@@ -1054,7 +1100,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.getAsn() != 0) {
+      if (other.hasAsn()) {
         setAsn(other.getAsn());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1096,7 +1142,22 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     *
+     * @return Whether the advertiseMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvertiseMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return The enum numeric value on the wire for advertiseMode.
      */
@@ -1111,13 +1172,13 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @param value The enum numeric value on the wire for advertiseMode to set.
      * @return This builder for chaining.
      */
     public Builder setAdvertiseModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       advertiseMode_ = value;
       onChanged();
       return this;
@@ -1129,7 +1190,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return The advertiseMode.
      */
@@ -1149,7 +1210,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @param value The advertiseMode to set.
      * @return This builder for chaining.
@@ -1158,7 +1219,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       advertiseMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1170,12 +1231,12 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAdvertiseMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       advertiseMode_ = 0;
       onChanged();
       return this;
@@ -1184,9 +1245,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> advertisedGroups_ = java.util.Collections.emptyList();
 
     private void ensureAdvertisedGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>(advertisedGroups_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1329,7 +1390,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAdvertisedGroups() {
       advertisedGroups_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1434,11 +1495,11 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
         advertisedIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureAdvertisedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.RouterAdvertisedIpRange>(
                 advertisedIpRanges_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1680,7 +1741,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdvertisedIpRanges() {
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         advertisedIpRangesBuilder_.clear();
@@ -1822,7 +1883,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterAdvertisedIpRange.Builder,
                 com.google.cloud.compute.v1.RouterAdvertisedIpRangeOrBuilder>(
                 advertisedIpRanges_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         advertisedIpRanges_ = null;
@@ -1831,6 +1892,21 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int asn_;
+    /**
+     *
+     *
+     * <pre>
+     * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
+     * </pre>
+     *
+     * <code>uint32 asn = 96892;</code>
+     *
+     * @return Whether the asn field is set.
+     */
+    @java.lang.Override
+    public boolean hasAsn() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1859,7 +1935,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAsn(int value) {
-
+      bitField0_ |= 0x00000008;
       asn_ = value;
       onChanged();
       return this;
@@ -1876,7 +1952,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsn() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       asn_ = 0;
       onChanged();
       return this;

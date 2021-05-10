@@ -61,6 +61,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,10 +72,10 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
           case 0:
             done = true;
             break;
-          case 326502178:
+          case -1820981470:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               instanceTemplate_ = s;
               break;
             }
@@ -113,7 +114,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
                 .class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
+  private int bitField0_;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
@@ -122,7 +124,22 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
    * URL of the InstanceTemplate resource from which all new instances will be created.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
+   *
+   * @return Whether the instanceTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceTemplate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * </pre>
+   *
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The instanceTemplate.
    */
@@ -145,7 +162,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
    * URL of the InstanceTemplate resource from which all new instances will be created.
    * </pre>
    *
-   * <code>string instance_template = 40812772;</code>
+   * <code>string instance_template = 309248228;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -176,8 +193,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,8 +205,9 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -208,7 +226,10 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest other =
         (com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest) obj;
 
-    if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
+    if (hasInstanceTemplate() != other.hasInstanceTemplate()) return false;
+    if (hasInstanceTemplate()) {
+      if (!getInstanceTemplate().equals(other.getInstanceTemplate())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,8 +241,10 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
-    hash = (53 * hash) + getInstanceTemplate().hashCode();
+    if (hasInstanceTemplate()) {
+      hash = (37 * hash) + INSTANCE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceTemplate().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -371,7 +394,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     public Builder clear() {
       super.clear();
       instanceTemplate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -403,7 +426,13 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instanceTemplate_ = instanceTemplate_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -458,7 +487,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       if (other
           == com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest
               .getDefaultInstance()) return this;
-      if (!other.getInstanceTemplate().isEmpty()) {
+      if (other.hasInstanceTemplate()) {
+        bitField0_ |= 0x00000001;
         instanceTemplate_ = other.instanceTemplate_;
         onChanged();
       }
@@ -494,6 +524,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object instanceTemplate_ = "";
     /**
      *
@@ -502,7 +534,21 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * URL of the InstanceTemplate resource from which all new instances will be created.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
+     *
+     * @return Whether the instanceTemplate field is set.
+     */
+    public boolean hasInstanceTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * </pre>
+     *
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The instanceTemplate.
      */
@@ -524,7 +570,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * URL of the InstanceTemplate resource from which all new instances will be created.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -546,7 +592,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * URL of the InstanceTemplate resource from which all new instances will be created.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -555,7 +601,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;
@@ -567,12 +613,12 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * URL of the InstanceTemplate resource from which all new instances will be created.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInstanceTemplate() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceTemplate_ = getDefaultInstance().getInstanceTemplate();
       onChanged();
       return this;
@@ -584,7 +630,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      * URL of the InstanceTemplate resource from which all new instances will be created.
      * </pre>
      *
-     * <code>string instance_template = 40812772;</code>
+     * <code>string instance_template = 309248228;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -594,7 +640,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       instanceTemplate_ = value;
       onChanged();
       return this;

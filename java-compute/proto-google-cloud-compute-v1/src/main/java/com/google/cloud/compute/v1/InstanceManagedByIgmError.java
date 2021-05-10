@@ -59,6 +59,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,29 +70,10 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
           case 0:
             done = true;
             break;
-          case 190312730:
-            {
-              com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
-                  subBuilder = null;
-              if (instanceActionDetails_ != null) {
-                subBuilder = instanceActionDetails_.toBuilder();
-              }
-              instanceActionDetails_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instanceActionDetails_);
-                instanceActionDetails_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 441010354:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               timestamp_ = s;
               break;
             }
@@ -99,7 +81,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             {
               com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.Builder
                   subBuilder = null;
-              if (error_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = error_.toBuilder();
               }
               error_ =
@@ -111,7 +93,26 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
                 subBuilder.mergeFrom(error_);
                 error_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          case -1957170918:
+            {
+              com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000002) != 0)) {
+                subBuilder = instanceActionDetails_.toBuilder();
+              }
+              instanceActionDetails_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instanceActionDetails_);
+                instanceActionDetails_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -148,6 +149,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.InstanceManagedByIgmError.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 96784904;
   private com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error_;
   /**
@@ -164,7 +166,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasError() {
-    return error_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -198,10 +200,13 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
       getErrorOrBuilder() {
-    return getError();
+    return error_ == null
+        ? com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError
+            .getDefaultInstance()
+        : error_;
   }
 
-  public static final int INSTANCE_ACTION_DETAILS_FIELD_NUMBER = 23789091;
+  public static final int INSTANCE_ACTION_DETAILS_FIELD_NUMBER = 292224547;
   private com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
       instanceActionDetails_;
   /**
@@ -212,14 +217,14 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
    */
   @java.lang.Override
   public boolean hasInstanceActionDetails() {
-    return instanceActionDetails_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -229,7 +234,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -250,17 +255,35 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
       getInstanceActionDetailsOrBuilder() {
-    return getInstanceActionDetails();
+    return instanceActionDetails_ == null
+        ? com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
+            .getDefaultInstance()
+        : instanceActionDetails_;
   }
 
   public static final int TIMESTAMP_FIELD_NUMBER = 55126294;
   private volatile java.lang.Object timestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string timestamp = 55126294;</code>
+   *
+   * @return Whether the timestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimestamp() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -322,14 +345,14 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (instanceActionDetails_ != null) {
-      output.writeMessage(23789091, getInstanceActionDetails());
-    }
-    if (!getTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 55126294, timestamp_);
     }
-    if (error_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(96784904, getError());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(292224547, getInstanceActionDetails());
     }
     unknownFields.writeTo(output);
   }
@@ -340,16 +363,16 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (instanceActionDetails_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              23789091, getInstanceActionDetails());
-    }
-    if (!getTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55126294, timestamp_);
     }
-    if (error_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(96784904, getError());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              292224547, getInstanceActionDetails());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -375,7 +398,10 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     if (hasInstanceActionDetails()) {
       if (!getInstanceActionDetails().equals(other.getInstanceActionDetails())) return false;
     }
-    if (!getTimestamp().equals(other.getTimestamp())) return false;
+    if (hasTimestamp() != other.hasTimestamp()) return false;
+    if (hasTimestamp()) {
+      if (!getTimestamp().equals(other.getTimestamp())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -395,8 +421,10 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       hash = (37 * hash) + INSTANCE_ACTION_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceActionDetails().hashCode();
     }
-    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getTimestamp().hashCode();
+    if (hasTimestamp()) {
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -536,7 +564,10 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getErrorFieldBuilder();
+        getInstanceActionDetailsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -545,17 +576,17 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
-        error_ = null;
-        errorBuilder_ = null;
+        errorBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (instanceActionDetailsBuilder_ == null) {
         instanceActionDetails_ = null;
       } else {
-        instanceActionDetails_ = null;
-        instanceActionDetailsBuilder_ = null;
+        instanceActionDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       timestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -583,17 +614,29 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.InstanceManagedByIgmError buildPartial() {
       com.google.cloud.compute.v1.InstanceManagedByIgmError result =
           new com.google.cloud.compute.v1.InstanceManagedByIgmError(this);
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (errorBuilder_ == null) {
+          result.error_ = error_;
+        } else {
+          result.error_ = errorBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (instanceActionDetailsBuilder_ == null) {
-        result.instanceActionDetails_ = instanceActionDetails_;
-      } else {
-        result.instanceActionDetails_ = instanceActionDetailsBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (instanceActionDetailsBuilder_ == null) {
+          result.instanceActionDetails_ = instanceActionDetails_;
+        } else {
+          result.instanceActionDetails_ = instanceActionDetailsBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.timestamp_ = timestamp_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -650,7 +693,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       if (other.hasInstanceActionDetails()) {
         mergeInstanceActionDetails(other.getInstanceActionDetails());
       }
-      if (!other.getTimestamp().isEmpty()) {
+      if (other.hasTimestamp()) {
+        bitField0_ |= 0x00000004;
         timestamp_ = other.timestamp_;
         onChanged();
       }
@@ -684,6 +728,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError,
@@ -704,7 +750,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -751,7 +797,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -774,7 +820,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -791,7 +837,11 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     public Builder mergeError(
         com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && error_ != null
+            && error_
+                != com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError
+                    .getDefaultInstance()) {
           error_ =
               com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.newBuilder(
                       error_)
@@ -804,7 +854,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -823,10 +873,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         error_ = null;
         onChanged();
       } else {
-        error_ = null;
-        errorBuilder_ = null;
+        errorBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -842,7 +891,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorManagedInstanceError.Builder
         getErrorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -911,13 +960,13 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      *
      * @return Whether the instanceActionDetails field is set.
      */
     public boolean hasInstanceActionDetails() {
-      return instanceActionDetailsBuilder_ != null || instanceActionDetails_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -927,7 +976,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      *
      * @return The instanceActionDetails.
@@ -951,7 +1000,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -965,7 +1014,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         instanceActionDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -976,7 +1025,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -988,7 +1037,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         instanceActionDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -999,13 +1048,17 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder mergeInstanceActionDetails(
         com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails value) {
       if (instanceActionDetailsBuilder_ == null) {
-        if (instanceActionDetails_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && instanceActionDetails_ != null
+            && instanceActionDetails_
+                != com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
+                    .getDefaultInstance()) {
           instanceActionDetails_ =
               com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.newBuilder(
                       instanceActionDetails_)
@@ -1018,7 +1071,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       } else {
         instanceActionDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1029,7 +1082,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public Builder clearInstanceActionDetails() {
@@ -1037,10 +1090,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         instanceActionDetails_ = null;
         onChanged();
       } else {
-        instanceActionDetails_ = null;
-        instanceActionDetailsBuilder_ = null;
+        instanceActionDetailsBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1051,12 +1103,12 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
         getInstanceActionDetailsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInstanceActionDetailsFieldBuilder().getBuilder();
     }
@@ -1068,7 +1120,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
@@ -1090,7 +1142,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1112,6 +1164,20 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     }
 
     private java.lang.Object timestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string timestamp = 55126294;</code>
+     *
+     * @return Whether the timestamp field is set.
+     */
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1172,7 +1238,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       timestamp_ = value;
       onChanged();
       return this;
@@ -1189,7 +1255,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       timestamp_ = getDefaultInstance().getTimestamp();
       onChanged();
       return this;
@@ -1211,7 +1277,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       timestamp_ = value;
       onChanged();
       return this;

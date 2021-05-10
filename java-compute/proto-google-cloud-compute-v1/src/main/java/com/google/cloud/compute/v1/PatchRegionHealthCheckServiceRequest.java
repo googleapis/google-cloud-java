@@ -65,6 +65,7 @@ public final class PatchRegionHealthCheckServiceRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,7 +79,7 @@ public final class PatchRegionHealthCheckServiceRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -89,14 +90,21 @@ public final class PatchRegionHealthCheckServiceRequest
               region_ = s;
               break;
             }
-          case 1119514330:
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1027969318:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               healthCheckService_ = s;
               break;
             }
-          case 1671458706:
+          case -476024942:
             {
               com.google.cloud.compute.v1.HealthCheckService.Builder subBuilder = null;
               if (healthCheckServiceResource_ != null) {
@@ -110,13 +118,6 @@ public final class PatchRegionHealthCheckServiceRequest
                 healthCheckServiceResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -153,7 +154,8 @@ public final class PatchRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 139939291;
+  private int bitField0_;
+  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
   private volatile java.lang.Object healthCheckService_;
   /**
    *
@@ -162,7 +164,7 @@ public final class PatchRegionHealthCheckServiceRequest
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheckService.
    */
@@ -185,7 +187,7 @@ public final class PatchRegionHealthCheckServiceRequest
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheckService.
    */
@@ -202,7 +204,7 @@ public final class PatchRegionHealthCheckServiceRequest
     }
   }
 
-  public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 208932338;
+  public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 477367794;
   private com.google.cloud.compute.v1.HealthCheckService healthCheckServiceResource_;
   /**
    *
@@ -212,7 +214,7 @@ public final class PatchRegionHealthCheckServiceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the healthCheckServiceResource field is set.
@@ -229,7 +231,7 @@ public final class PatchRegionHealthCheckServiceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The healthCheckServiceResource.
@@ -248,7 +250,7 @@ public final class PatchRegionHealthCheckServiceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -368,6 +370,23 @@ public final class PatchRegionHealthCheckServiceRequest
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -422,20 +441,20 @@ public final class PatchRegionHealthCheckServiceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getHealthCheckServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 139939291, healthCheckService_);
-    }
-    if (healthCheckServiceResource_ != null) {
-      output.writeMessage(208932338, getHealthCheckServiceResource());
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (!getHealthCheckServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 408374747, healthCheckService_);
+    }
+    if (healthCheckServiceResource_ != null) {
+      output.writeMessage(477367794, getHealthCheckServiceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -446,23 +465,23 @@ public final class PatchRegionHealthCheckServiceRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
     if (!getHealthCheckServiceBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(139939291, healthCheckService_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(408374747, healthCheckService_);
     }
     if (healthCheckServiceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              208932338, getHealthCheckServiceResource());
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+              477367794, getHealthCheckServiceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -488,7 +507,10 @@ public final class PatchRegionHealthCheckServiceRequest
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -510,8 +532,10 @@ public final class PatchRegionHealthCheckServiceRequest
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -671,7 +695,7 @@ public final class PatchRegionHealthCheckServiceRequest
       region_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -700,6 +724,8 @@ public final class PatchRegionHealthCheckServiceRequest
     public com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest result =
           new com.google.cloud.compute.v1.PatchRegionHealthCheckServiceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.healthCheckService_ = healthCheckService_;
       if (healthCheckServiceResourceBuilder_ == null) {
         result.healthCheckServiceResource_ = healthCheckServiceResource_;
@@ -708,7 +734,11 @@ public final class PatchRegionHealthCheckServiceRequest
       }
       result.project_ = project_;
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -776,7 +806,8 @@ public final class PatchRegionHealthCheckServiceRequest
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -811,6 +842,8 @@ public final class PatchRegionHealthCheckServiceRequest
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object healthCheckService_ = "";
     /**
      *
@@ -819,7 +852,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The healthCheckService.
@@ -842,7 +875,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for healthCheckService.
@@ -865,7 +898,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The healthCheckService to set.
@@ -887,7 +920,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -905,7 +938,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for healthCheckService to set.
@@ -936,7 +969,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the healthCheckServiceResource field is set.
@@ -952,7 +985,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The healthCheckServiceResource.
@@ -974,7 +1007,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setHealthCheckServiceResource(
@@ -999,7 +1032,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setHealthCheckServiceResource(
@@ -1021,7 +1054,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeHealthCheckServiceResource(
@@ -1050,7 +1083,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearHealthCheckServiceResource() {
@@ -1072,7 +1105,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckService.Builder
@@ -1089,7 +1122,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckServiceOrBuilder
@@ -1110,7 +1143,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1354,6 +1387,22 @@ public final class PatchRegionHealthCheckServiceRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1409,7 +1458,7 @@ public final class PatchRegionHealthCheckServiceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1428,7 +1477,7 @@ public final class PatchRegionHealthCheckServiceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1452,7 +1501,7 @@ public final class PatchRegionHealthCheckServiceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

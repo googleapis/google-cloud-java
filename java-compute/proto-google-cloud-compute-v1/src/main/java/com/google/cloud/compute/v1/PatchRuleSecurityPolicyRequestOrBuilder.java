@@ -30,7 +30,19 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
    * The priority of the rule to patch.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the rule to patch.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -94,7 +106,7 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyRuleResource field is set.
@@ -108,7 +120,7 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyRuleResource.
@@ -122,7 +134,7 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder getSecurityPolicyRuleResourceOrBuilder();

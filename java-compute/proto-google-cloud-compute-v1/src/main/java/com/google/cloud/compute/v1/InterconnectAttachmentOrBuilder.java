@@ -30,12 +30,48 @@ public interface InterconnectAttachmentOrBuilder
    * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
    * </pre>
    *
-   * <code>bool admin_enabled = 177239633;</code>
+   * <code>bool admin_enabled = 445675089;</code>
+   *
+   * @return Whether the adminEnabled field is set.
+   */
+  boolean hasAdminEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
+   * </pre>
+   *
+   * <code>bool admin_enabled = 445675089;</code>
    *
    * @return The adminEnabled.
    */
   boolean getAdminEnabled();
 
+  /**
+   *
+   *
+   * <pre>
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
+   * - BPS_50M: 50 Mbit/s
+   * - BPS_100M: 100 Mbit/s
+   * - BPS_200M: 200 Mbit/s
+   * - BPS_300M: 300 Mbit/s
+   * - BPS_400M: 400 Mbit/s
+   * - BPS_500M: 500 Mbit/s
+   * - BPS_1G: 1 Gbit/s
+   * - BPS_2G: 2 Gbit/s
+   * - BPS_5G: 5 Gbit/s
+   * - BPS_10G: 10 Gbit/s
+   * - BPS_20G: 20 Gbit/s
+   * - BPS_50G: 50 Gbit/s
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
+   *
+   * @return Whether the bandwidth field is set.
+   */
+  boolean hasBandwidth();
   /**
    *
    *
@@ -143,7 +179,19 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 18957320;</code>
+   * <code>string cloud_router_ip_address = 287392776;</code>
+   *
+   * @return Whether the cloudRouterIpAddress field is set.
+   */
+  boolean hasCloudRouterIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>string cloud_router_ip_address = 287392776;</code>
    *
    * @return The cloudRouterIpAddress.
    */
@@ -155,12 +203,24 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 18957320;</code>
+   * <code>string cloud_router_ip_address = 287392776;</code>
    *
    * @return The bytes for cloudRouterIpAddress.
    */
   com.google.protobuf.ByteString getCloudRouterIpAddressBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -193,7 +253,19 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 64040305;</code>
+   * <code>string customer_router_ip_address = 332475761;</code>
+   *
+   * @return Whether the customerRouterIpAddress field is set.
+   */
+  boolean hasCustomerRouterIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>string customer_router_ip_address = 332475761;</code>
    *
    * @return The customerRouterIpAddress.
    */
@@ -205,12 +277,24 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 64040305;</code>
+   * <code>string customer_router_ip_address = 332475761;</code>
    *
    * @return The bytes for customerRouterIpAddress.
    */
   com.google.protobuf.ByteString getCustomerRouterIpAddressBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Dataplane version for this InterconnectAttachment.
+   * </pre>
+   *
+   * <code>int32 dataplane_version = 34920075;</code>
+   *
+   * @return Whether the dataplaneVersion field is set.
+   */
+  boolean hasDataplaneVersion();
   /**
    *
    *
@@ -231,7 +315,19 @@ public interface InterconnectAttachmentOrBuilder
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -243,12 +339,29 @@ public interface InterconnectAttachmentOrBuilder
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
+   * - AVAILABILITY_DOMAIN_ANY
+   * - AVAILABILITY_DOMAIN_1
+   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain edge_availability_domain = 71289510;
+   * </code>
+   *
+   * @return Whether the edgeAvailabilityDomain field is set.
+   */
+  boolean hasEdgeAvailabilityDomain();
   /**
    *
    *
@@ -292,7 +405,19 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
+   *
+   * @return Whether the googleReferenceId field is set.
+   */
+  boolean hasGoogleReferenceId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
+   * </pre>
+   *
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The googleReferenceId.
    */
@@ -304,12 +429,24 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The bytes for googleReferenceId.
    */
   com.google.protobuf.ByteString getGoogleReferenceIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -344,6 +481,18 @@ public interface InterconnectAttachmentOrBuilder
    *
    * <code>string interconnect = 224601230;</code>
    *
+   * @return Whether the interconnect field is set.
+   */
+  boolean hasInterconnect();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the underlying Interconnect object that this attachment's traffic will traverse through.
+   * </pre>
+   *
+   * <code>string interconnect = 224601230;</code>
+   *
    * @return The interconnect.
    */
   java.lang.String getInterconnect();
@@ -360,6 +509,18 @@ public interface InterconnectAttachmentOrBuilder
    */
   com.google.protobuf.ByteString getInterconnectBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -394,10 +555,34 @@ public interface InterconnectAttachmentOrBuilder
    *
    * <code>int32 mtu = 108462;</code>
    *
+   * @return Whether the mtu field is set.
+   */
+  boolean hasMtu();
+  /**
+   *
+   *
+   * <pre>
+   * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+   * </pre>
+   *
+   * <code>int32 mtu = 108462;</code>
+   *
    * @return The mtu.
    */
   int getMtu();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -423,6 +608,22 @@ public interface InterconnectAttachmentOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
+   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
+   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectAttachment.OperationalStatus operational_status = 201070847;
+   * </code>
+   *
+   * @return Whether the operationalStatus field is set.
+   */
+  boolean hasOperationalStatus();
   /**
    *
    *
@@ -463,7 +664,19 @@ public interface InterconnectAttachmentOrBuilder
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 171260008;</code>
+   * <code>string pairing_key = 439695464;</code>
+   *
+   * @return Whether the pairingKey field is set.
+   */
+  boolean hasPairingKey();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+   * </pre>
+   *
+   * <code>string pairing_key = 439695464;</code>
    *
    * @return The pairingKey.
    */
@@ -475,7 +688,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 171260008;</code>
+   * <code>string pairing_key = 439695464;</code>
    *
    * @return The bytes for pairingKey.
    */
@@ -488,7 +701,19 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 169730693;</code>
+   * <code>string partner_asn = 438166149;</code>
+   *
+   * @return Whether the partnerAsn field is set.
+   */
+  boolean hasPartnerAsn();
+  /**
+   *
+   *
+   * <pre>
+   * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
+   * </pre>
+   *
+   * <code>string partner_asn = 438166149;</code>
    *
    * @return The partnerAsn.
    */
@@ -500,7 +725,7 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 169730693;</code>
+   * <code>string partner_asn = 438166149;</code>
    *
    * @return The bytes for partnerAsn.
    */
@@ -599,6 +824,18 @@ public interface InterconnectAttachmentOrBuilder
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   java.lang.String getRegion();
@@ -615,6 +852,18 @@ public interface InterconnectAttachmentOrBuilder
    */
   com.google.protobuf.ByteString getRegionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured.
+   * </pre>
+   *
+   * <code>string router = 148608841;</code>
+   *
+   * @return Whether the router field is set.
+   */
+  boolean hasRouter();
   /**
    *
    *
@@ -647,7 +896,19 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -659,12 +920,30 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
+   * - ACTIVE: The attachment has been turned up and is ready to use.
+   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
+   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
+   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
+   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
+   *
+   * @return Whether the state field is set.
+   */
+  boolean hasState();
   /**
    *
    *
@@ -714,6 +993,21 @@ public interface InterconnectAttachmentOrBuilder
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
    *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of interconnect attachment this is, which can take one of the following values:
+   * - DEDICATED: an attachment to a Dedicated Interconnect.
+   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
+   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -733,6 +1027,18 @@ public interface InterconnectAttachmentOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectAttachment.Type getType();
 
+  /**
+   *
+   *
+   * <pre>
+   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+   * </pre>
+   *
+   * <code>int32 vlan_tag8021q = 119927836;</code>
+   *
+   * @return Whether the vlanTag8021q field is set.
+   */
+  boolean hasVlanTag8021Q();
   /**
    *
    *

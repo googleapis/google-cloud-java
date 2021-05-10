@@ -58,6 +58,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,6 +71,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
             break;
           case 1801016560:
             {
+              bitField0_ |= 0x00000001;
               drainingTimeoutSec_ = input.readInt32();
               break;
             }
@@ -107,8 +109,24 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.ConnectionDraining.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DRAINING_TIMEOUT_SEC_FIELD_NUMBER = 225127070;
   private int drainingTimeoutSec_;
+  /**
+   *
+   *
+   * <pre>
+   * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+   * </pre>
+   *
+   * <code>int32 draining_timeout_sec = 225127070;</code>
+   *
+   * @return Whether the drainingTimeoutSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDrainingTimeoutSec() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -139,7 +157,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (drainingTimeoutSec_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(225127070, drainingTimeoutSec_);
     }
     unknownFields.writeTo(output);
@@ -151,7 +169,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (drainingTimeoutSec_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(225127070, drainingTimeoutSec_);
     }
@@ -171,7 +189,10 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.ConnectionDraining other =
         (com.google.cloud.compute.v1.ConnectionDraining) obj;
 
-    if (getDrainingTimeoutSec() != other.getDrainingTimeoutSec()) return false;
+    if (hasDrainingTimeoutSec() != other.hasDrainingTimeoutSec()) return false;
+    if (hasDrainingTimeoutSec()) {
+      if (getDrainingTimeoutSec() != other.getDrainingTimeoutSec()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,8 +204,10 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DRAINING_TIMEOUT_SEC_FIELD_NUMBER;
-    hash = (53 * hash) + getDrainingTimeoutSec();
+    if (hasDrainingTimeoutSec()) {
+      hash = (37 * hash) + DRAINING_TIMEOUT_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getDrainingTimeoutSec();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -331,7 +354,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       drainingTimeoutSec_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -359,7 +382,13 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.ConnectionDraining buildPartial() {
       com.google.cloud.compute.v1.ConnectionDraining result =
           new com.google.cloud.compute.v1.ConnectionDraining(this);
-      result.drainingTimeoutSec_ = drainingTimeoutSec_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.drainingTimeoutSec_ = drainingTimeoutSec_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -409,7 +438,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ConnectionDraining other) {
       if (other == com.google.cloud.compute.v1.ConnectionDraining.getDefaultInstance()) return this;
-      if (other.getDrainingTimeoutSec() != 0) {
+      if (other.hasDrainingTimeoutSec()) {
         setDrainingTimeoutSec(other.getDrainingTimeoutSec());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -441,7 +470,24 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private int drainingTimeoutSec_;
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+     * </pre>
+     *
+     * <code>int32 draining_timeout_sec = 225127070;</code>
+     *
+     * @return Whether the drainingTimeoutSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDrainingTimeoutSec() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -470,7 +516,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setDrainingTimeoutSec(int value) {
-
+      bitField0_ |= 0x00000001;
       drainingTimeoutSec_ = value;
       onChanged();
       return this;
@@ -487,7 +533,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDrainingTimeoutSec() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       drainingTimeoutSec_ = 0;
       onChanged();
       return this;

@@ -61,6 +61,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,7 +75,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
           case 21072210:
             {
               com.google.cloud.compute.v1.PreservedState.Builder subBuilder = null;
-              if (preservedState_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = preservedState_.toBuilder();
               }
               preservedState_ =
@@ -84,27 +85,27 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
                 subBuilder.mergeFrom(preservedState_);
                 preservedState_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               name_ = s;
               break;
             }
           case 1450082192:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000008;
               status_ = rawValue;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               fingerprint_ = s;
               break;
             }
@@ -162,18 +163,18 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>APPLYING = 83568052;</code> */
-    APPLYING(83568052),
-    /** <code>DELETING = 260166568;</code> */
-    DELETING(260166568),
+    /** <code>APPLYING = 352003508;</code> */
+    APPLYING(352003508),
+    /** <code>DELETING = 528602024;</code> */
+    DELETING(528602024),
     /** <code>EFFECTIVE = 244201863;</code> */
     EFFECTIVE(244201863),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>UNAPPLIED = 215499684;</code> */
-    UNAPPLIED(215499684),
-    /** <code>UNAPPLIED_DELETION = 45521417;</code> */
-    UNAPPLIED_DELETION(45521417),
+    /** <code>UNAPPLIED = 483935140;</code> */
+    UNAPPLIED(483935140),
+    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    UNAPPLIED_DELETION(313956873),
     UNRECOGNIZED(-1),
     ;
 
@@ -187,18 +188,18 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>APPLYING = 83568052;</code> */
-    public static final int APPLYING_VALUE = 83568052;
-    /** <code>DELETING = 260166568;</code> */
-    public static final int DELETING_VALUE = 260166568;
+    /** <code>APPLYING = 352003508;</code> */
+    public static final int APPLYING_VALUE = 352003508;
+    /** <code>DELETING = 528602024;</code> */
+    public static final int DELETING_VALUE = 528602024;
     /** <code>EFFECTIVE = 244201863;</code> */
     public static final int EFFECTIVE_VALUE = 244201863;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>UNAPPLIED = 215499684;</code> */
-    public static final int UNAPPLIED_VALUE = 215499684;
-    /** <code>UNAPPLIED_DELETION = 45521417;</code> */
-    public static final int UNAPPLIED_DELETION_VALUE = 45521417;
+    /** <code>UNAPPLIED = 483935140;</code> */
+    public static final int UNAPPLIED_VALUE = 483935140;
+    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    public static final int UNAPPLIED_DELETION_VALUE = 313956873;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -226,17 +227,17 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 83568052:
+        case 352003508:
           return APPLYING;
-        case 260166568:
+        case 528602024:
           return DELETING;
         case 244201863:
           return EFFECTIVE;
         case 2402104:
           return NONE;
-        case 215499684:
+        case 483935140:
           return UNAPPLIED;
-        case 45521417:
+        case 313956873:
           return UNAPPLIED_DELETION;
         default:
           return null;
@@ -291,8 +292,24 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PerInstanceConfig.Status)
   }
 
+  private int bitField0_;
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -342,6 +359,21 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -404,7 +436,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPreservedState() {
-    return preservedState_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -434,11 +466,28 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateOrBuilder() {
-    return getPreservedState();
+    return preservedState_ == null
+        ? com.google.cloud.compute.v1.PreservedState.getDefaultInstance()
+        : preservedState_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
   private int status_;
+  /**
+   *
+   *
+   * <pre>
+   * The status of applying this per-instance config on the corresponding managed instance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -489,17 +538,16 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (preservedState_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(2634026, getPreservedState());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (status_
-        != com.google.cloud.compute.v1.PerInstanceConfig.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     unknownFields.writeTo(output);
@@ -511,18 +559,17 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (preservedState_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2634026, getPreservedState());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (status_
-        != com.google.cloud.compute.v1.PerInstanceConfig.Status.UNDEFINED_STATUS.getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
@@ -541,13 +588,22 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.compute.v1.PerInstanceConfig other =
         (com.google.cloud.compute.v1.PerInstanceConfig) obj;
 
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (hasPreservedState() != other.hasPreservedState()) return false;
     if (hasPreservedState()) {
       if (!getPreservedState().equals(other.getPreservedState())) return false;
     }
-    if (status_ != other.status_) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -559,16 +615,22 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (hasPreservedState()) {
       hash = (37 * hash) + PRESERVED_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getPreservedState().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -707,24 +769,26 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPreservedStateFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       fingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (preservedStateBuilder_ == null) {
         preservedState_ = null;
       } else {
-        preservedState_ = null;
-        preservedStateBuilder_ = null;
+        preservedStateBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       status_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -752,14 +816,29 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.PerInstanceConfig buildPartial() {
       com.google.cloud.compute.v1.PerInstanceConfig result =
           new com.google.cloud.compute.v1.PerInstanceConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.fingerprint_ = fingerprint_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.name_ = name_;
-      if (preservedStateBuilder_ == null) {
-        result.preservedState_ = preservedState_;
-      } else {
-        result.preservedState_ = preservedStateBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (preservedStateBuilder_ == null) {
+          result.preservedState_ = preservedState_;
+        } else {
+          result.preservedState_ = preservedStateBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
       }
       result.status_ = status_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -809,19 +888,21 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloud.compute.v1.PerInstanceConfig other) {
       if (other == com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance()) return this;
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000001;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000002;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasPreservedState()) {
         mergePreservedState(other.getPreservedState());
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -852,7 +933,23 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -913,7 +1010,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -930,7 +1027,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -952,13 +1049,27 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       fingerprint_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1019,7 +1130,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -1036,7 +1147,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -1058,7 +1169,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       name_ = value;
       onChanged();
       return this;
@@ -1082,7 +1193,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the preservedState field is set.
      */
     public boolean hasPreservedState() {
-      return preservedStateBuilder_ != null || preservedState_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1123,7 +1234,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       } else {
         preservedStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1143,7 +1254,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       } else {
         preservedStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1157,7 +1268,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePreservedState(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateBuilder_ == null) {
-        if (preservedState_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && preservedState_ != null
+            && preservedState_ != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
           preservedState_ =
               com.google.cloud.compute.v1.PreservedState.newBuilder(preservedState_)
                   .mergeFrom(value)
@@ -1169,7 +1282,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       } else {
         preservedStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1186,10 +1299,9 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
         preservedState_ = null;
         onChanged();
       } else {
-        preservedState_ = null;
-        preservedStateBuilder_ = null;
+        preservedStateBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1202,7 +1314,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.compute.v1.PreservedState preserved_state = 2634026;</code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPreservedStateFieldBuilder().getBuilder();
     }
@@ -1260,6 +1372,21 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
      *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of applying this per-instance config on the corresponding managed instance.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     *
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override
@@ -1279,7 +1406,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
+      bitField0_ |= 0x00000008;
       status_ = value;
       onChanged();
       return this;
@@ -1320,7 +1447,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1337,7 +1464,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = 0;
       onChanged();
       return this;

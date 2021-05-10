@@ -63,6 +63,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,21 +77,21 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
           case 812143144:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               locationPresence_ = rawValue;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               region_ = s;
               break;
             }
-          case 1232867282:
+          case -914616366:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               expectedRttMs_ = s;
               break;
             }
@@ -148,14 +149,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     UNDEFINED_LOCATION_PRESENCE(0),
-    /** <code>GLOBAL = 226228131;</code> */
-    GLOBAL(226228131),
-    /** <code>LOCAL_REGION = 135100008;</code> */
-    LOCAL_REGION(135100008),
-    /** <code>LP_GLOBAL = 161148606;</code> */
-    LP_GLOBAL(161148606),
-    /** <code>LP_LOCAL_REGION = 220163395;</code> */
-    LP_LOCAL_REGION(220163395),
+    /** <code>GLOBAL = 494663587;</code> */
+    GLOBAL(494663587),
+    /** <code>LOCAL_REGION = 403535464;</code> */
+    LOCAL_REGION(403535464),
+    /** <code>LP_GLOBAL = 429584062;</code> */
+    LP_GLOBAL(429584062),
+    /** <code>LP_LOCAL_REGION = 488598851;</code> */
+    LP_LOCAL_REGION(488598851),
     UNRECOGNIZED(-1),
     ;
 
@@ -169,14 +170,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     public static final int UNDEFINED_LOCATION_PRESENCE_VALUE = 0;
-    /** <code>GLOBAL = 226228131;</code> */
-    public static final int GLOBAL_VALUE = 226228131;
-    /** <code>LOCAL_REGION = 135100008;</code> */
-    public static final int LOCAL_REGION_VALUE = 135100008;
-    /** <code>LP_GLOBAL = 161148606;</code> */
-    public static final int LP_GLOBAL_VALUE = 161148606;
-    /** <code>LP_LOCAL_REGION = 220163395;</code> */
-    public static final int LP_LOCAL_REGION_VALUE = 220163395;
+    /** <code>GLOBAL = 494663587;</code> */
+    public static final int GLOBAL_VALUE = 494663587;
+    /** <code>LOCAL_REGION = 403535464;</code> */
+    public static final int LOCAL_REGION_VALUE = 403535464;
+    /** <code>LP_GLOBAL = 429584062;</code> */
+    public static final int LP_GLOBAL_VALUE = 429584062;
+    /** <code>LP_LOCAL_REGION = 488598851;</code> */
+    public static final int LP_LOCAL_REGION_VALUE = 488598851;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -204,13 +205,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       switch (value) {
         case 0:
           return UNDEFINED_LOCATION_PRESENCE;
-        case 226228131:
+        case 494663587:
           return GLOBAL;
-        case 135100008:
+        case 403535464:
           return LOCAL_REGION;
-        case 161148606:
+        case 429584062:
           return LP_GLOBAL;
-        case 220163395:
+        case 488598851:
           return LP_LOCAL_REGION;
         default:
           return null;
@@ -269,7 +270,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence)
   }
 
-  public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 154108410;
+  private int bitField0_;
+  public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 422543866;
   private volatile java.lang.Object expectedRttMs_;
   /**
    *
@@ -278,7 +280,22 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 154108410;</code>
+   * <code>string expected_rtt_ms = 422543866;</code>
+   *
+   * @return Whether the expectedRttMs field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpectedRttMs() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * </pre>
+   *
+   * <code>string expected_rtt_ms = 422543866;</code>
    *
    * @return The expectedRttMs.
    */
@@ -301,7 +318,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 154108410;</code>
+   * <code>string expected_rtt_ms = 422543866;</code>
    *
    * @return The bytes for expectedRttMs.
    */
@@ -320,6 +337,23 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   public static final int LOCATION_PRESENCE_FIELD_NUMBER = 101517893;
   private int locationPresence_;
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the network presence of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
+   * </code>
+   *
+   * @return Whether the locationPresence field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocationPresence() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -364,6 +398,21 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * URL for the region of this location.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -425,17 +474,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (locationPresence_
-        != com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence
-            .UNDEFINED_LOCATION_PRESENCE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(101517893, locationPresence_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getExpectedRttMsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154108410, expectedRttMs_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422543866, expectedRttMs_);
     }
     unknownFields.writeTo(output);
   }
@@ -446,17 +492,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (locationPresence_
-        != com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence
-            .UNDEFINED_LOCATION_PRESENCE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(101517893, locationPresence_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getExpectedRttMsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154108410, expectedRttMs_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422543866, expectedRttMs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,9 +517,18 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     com.google.cloud.compute.v1.InterconnectLocationRegionInfo other =
         (com.google.cloud.compute.v1.InterconnectLocationRegionInfo) obj;
 
-    if (!getExpectedRttMs().equals(other.getExpectedRttMs())) return false;
-    if (locationPresence_ != other.locationPresence_) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
+    if (hasExpectedRttMs() != other.hasExpectedRttMs()) return false;
+    if (hasExpectedRttMs()) {
+      if (!getExpectedRttMs().equals(other.getExpectedRttMs())) return false;
+    }
+    if (hasLocationPresence() != other.hasLocationPresence()) return false;
+    if (hasLocationPresence()) {
+      if (locationPresence_ != other.locationPresence_) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -488,12 +540,18 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EXPECTED_RTT_MS_FIELD_NUMBER;
-    hash = (53 * hash) + getExpectedRttMs().hashCode();
-    hash = (37 * hash) + LOCATION_PRESENCE_FIELD_NUMBER;
-    hash = (53 * hash) + locationPresence_;
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
+    if (hasExpectedRttMs()) {
+      hash = (37 * hash) + EXPECTED_RTT_MS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedRttMs().hashCode();
+    }
+    if (hasLocationPresence()) {
+      hash = (37 * hash) + LOCATION_PRESENCE_FIELD_NUMBER;
+      hash = (53 * hash) + locationPresence_;
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -641,11 +699,11 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       expectedRttMs_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       locationPresence_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -673,9 +731,21 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectLocationRegionInfo result =
           new com.google.cloud.compute.v1.InterconnectLocationRegionInfo(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.expectedRttMs_ = expectedRttMs_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.locationPresence_ = locationPresence_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.region_ = region_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -726,14 +796,16 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     public Builder mergeFrom(com.google.cloud.compute.v1.InterconnectLocationRegionInfo other) {
       if (other == com.google.cloud.compute.v1.InterconnectLocationRegionInfo.getDefaultInstance())
         return this;
-      if (!other.getExpectedRttMs().isEmpty()) {
+      if (other.hasExpectedRttMs()) {
+        bitField0_ |= 0x00000001;
         expectedRttMs_ = other.expectedRttMs_;
         onChanged();
       }
-      if (other.locationPresence_ != 0) {
-        setLocationPresenceValue(other.getLocationPresenceValue());
+      if (other.hasLocationPresence()) {
+        setLocationPresence(other.getLocationPresence());
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000004;
         region_ = other.region_;
         onChanged();
       }
@@ -767,6 +839,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object expectedRttMs_ = "";
     /**
      *
@@ -775,7 +849,21 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 154108410;</code>
+     * <code>string expected_rtt_ms = 422543866;</code>
+     *
+     * @return Whether the expectedRttMs field is set.
+     */
+    public boolean hasExpectedRttMs() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+     * </pre>
+     *
+     * <code>string expected_rtt_ms = 422543866;</code>
      *
      * @return The expectedRttMs.
      */
@@ -797,7 +885,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 154108410;</code>
+     * <code>string expected_rtt_ms = 422543866;</code>
      *
      * @return The bytes for expectedRttMs.
      */
@@ -819,7 +907,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 154108410;</code>
+     * <code>string expected_rtt_ms = 422543866;</code>
      *
      * @param value The expectedRttMs to set.
      * @return This builder for chaining.
@@ -828,7 +916,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       expectedRttMs_ = value;
       onChanged();
       return this;
@@ -840,12 +928,12 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 154108410;</code>
+     * <code>string expected_rtt_ms = 422543866;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearExpectedRttMs() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       expectedRttMs_ = getDefaultInstance().getExpectedRttMs();
       onChanged();
       return this;
@@ -857,7 +945,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 154108410;</code>
+     * <code>string expected_rtt_ms = 422543866;</code>
      *
      * @param value The bytes for expectedRttMs to set.
      * @return This builder for chaining.
@@ -867,13 +955,30 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       expectedRttMs_ = value;
       onChanged();
       return this;
     }
 
     private int locationPresence_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the network presence of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
+     * </code>
+     *
+     * @return Whether the locationPresence field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocationPresence() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -906,7 +1011,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setLocationPresenceValue(int value) {
-
+      bitField0_ |= 0x00000002;
       locationPresence_ = value;
       onChanged();
       return this;
@@ -954,7 +1059,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       locationPresence_ = value.getNumber();
       onChanged();
       return this;
@@ -973,13 +1078,27 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearLocationPresence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       locationPresence_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL for the region of this location.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1040,7 +1159,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       region_ = value;
       onChanged();
       return this;
@@ -1057,7 +1176,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -1079,7 +1198,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       region_ = value;
       onChanged();
       return this;

@@ -61,6 +61,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               ipCidrRange_ = s;
               break;
             }
-          case 956484082:
+          case -1190999566:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               subnetworkRangeName_ = s;
               break;
             }
@@ -119,8 +120,24 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.AliasIpRange.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 98117322;
   private volatile java.lang.Object ipCidrRange_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
+   * </pre>
+   *
+   * <code>string ip_cidr_range = 98117322;</code>
+   *
+   * @return Whether the ipCidrRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpCidrRange() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -168,7 +185,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SUBNETWORK_RANGE_NAME_FIELD_NUMBER = 119560510;
+  public static final int SUBNETWORK_RANGE_NAME_FIELD_NUMBER = 387995966;
   private volatile java.lang.Object subnetworkRangeName_;
   /**
    *
@@ -177,7 +194,22 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 119560510;</code>
+   * <code>string subnetwork_range_name = 387995966;</code>
+   *
+   * @return Whether the subnetworkRangeName field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetworkRangeName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
+   * </pre>
+   *
+   * <code>string subnetwork_range_name = 387995966;</code>
    *
    * @return The subnetworkRangeName.
    */
@@ -200,7 +232,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 119560510;</code>
+   * <code>string subnetwork_range_name = 387995966;</code>
    *
    * @return The bytes for subnetworkRangeName.
    */
@@ -231,11 +263,11 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (!getSubnetworkRangeNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 119560510, subnetworkRangeName_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 387995966, subnetworkRangeName_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,12 +278,12 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (!getSubnetworkRangeNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(119560510, subnetworkRangeName_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(387995966, subnetworkRangeName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,8 +300,14 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.AliasIpRange other = (com.google.cloud.compute.v1.AliasIpRange) obj;
 
-    if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
-    if (!getSubnetworkRangeName().equals(other.getSubnetworkRangeName())) return false;
+    if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
+    if (hasIpCidrRange()) {
+      if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasSubnetworkRangeName() != other.hasSubnetworkRangeName()) return false;
+    if (hasSubnetworkRangeName()) {
+      if (!getSubnetworkRangeName().equals(other.getSubnetworkRangeName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,10 +319,14 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getIpCidrRange().hashCode();
-    hash = (37 * hash) + SUBNETWORK_RANGE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnetworkRangeName().hashCode();
+    if (hasIpCidrRange()) {
+      hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasSubnetworkRangeName()) {
+      hash = (37 * hash) + SUBNETWORK_RANGE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetworkRangeName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,9 +473,9 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       ipCidrRange_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       subnetworkRangeName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -461,8 +503,17 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.AliasIpRange buildPartial() {
       com.google.cloud.compute.v1.AliasIpRange result =
           new com.google.cloud.compute.v1.AliasIpRange(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.ipCidrRange_ = ipCidrRange_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.subnetworkRangeName_ = subnetworkRangeName_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -512,11 +563,13 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.AliasIpRange other) {
       if (other == com.google.cloud.compute.v1.AliasIpRange.getDefaultInstance()) return this;
-      if (!other.getIpCidrRange().isEmpty()) {
+      if (other.hasIpCidrRange()) {
+        bitField0_ |= 0x00000001;
         ipCidrRange_ = other.ipCidrRange_;
         onChanged();
       }
-      if (!other.getSubnetworkRangeName().isEmpty()) {
+      if (other.hasSubnetworkRangeName()) {
+        bitField0_ |= 0x00000002;
         subnetworkRangeName_ = other.subnetworkRangeName_;
         onChanged();
       }
@@ -549,7 +602,23 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object ipCidrRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The IP alias ranges to allocate for this interface. This IP CIDR range must belong to the specified subnetwork and cannot contain IP addresses reserved by system or used by other network interfaces. This range may be a single IP address (such as 10.2.3.4), a netmask (such as /24) or a CIDR-formatted string (such as 10.1.2.0/24).
+     * </pre>
+     *
+     * <code>string ip_cidr_range = 98117322;</code>
+     *
+     * @return Whether the ipCidrRange field is set.
+     */
+    public boolean hasIpCidrRange() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -610,7 +679,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -627,7 +696,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
       onChanged();
       return this;
@@ -649,7 +718,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -663,7 +732,21 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 119560510;</code>
+     * <code>string subnetwork_range_name = 387995966;</code>
+     *
+     * @return Whether the subnetworkRangeName field is set.
+     */
+    public boolean hasSubnetworkRangeName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
+     * </pre>
+     *
+     * <code>string subnetwork_range_name = 387995966;</code>
      *
      * @return The subnetworkRangeName.
      */
@@ -685,7 +768,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 119560510;</code>
+     * <code>string subnetwork_range_name = 387995966;</code>
      *
      * @return The bytes for subnetworkRangeName.
      */
@@ -707,7 +790,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 119560510;</code>
+     * <code>string subnetwork_range_name = 387995966;</code>
      *
      * @param value The subnetworkRangeName to set.
      * @return This builder for chaining.
@@ -716,7 +799,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       subnetworkRangeName_ = value;
       onChanged();
       return this;
@@ -728,12 +811,12 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 119560510;</code>
+     * <code>string subnetwork_range_name = 387995966;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubnetworkRangeName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       subnetworkRangeName_ = getDefaultInstance().getSubnetworkRangeName();
       onChanged();
       return this;
@@ -745,7 +828,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
      * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
      * </pre>
      *
-     * <code>string subnetwork_range_name = 119560510;</code>
+     * <code>string subnetwork_range_name = 387995966;</code>
      *
      * @param value The bytes for subnetworkRangeName to set.
      * @return This builder for chaining.
@@ -755,7 +838,7 @@ public final class AliasIpRange extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       subnetworkRangeName_ = value;
       onChanged();
       return this;

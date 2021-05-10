@@ -59,6 +59,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               type_ = rawValue;
               break;
             }
@@ -129,8 +130,8 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>RESTART_NODE_ON_ANY_SERVER = 234515529;</code> */
-    RESTART_NODE_ON_ANY_SERVER(234515529),
+    /** <code>RESTART_NODE_ON_ANY_SERVER = 502950985;</code> */
+    RESTART_NODE_ON_ANY_SERVER(502950985),
     /** <code>RESTART_NODE_ON_MINIMAL_SERVERS = 204166495;</code> */
     RESTART_NODE_ON_MINIMAL_SERVERS(204166495),
     /** <code>SERVER_BINDING_TYPE_UNSPECIFIED = 180825512;</code> */
@@ -148,8 +149,8 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>RESTART_NODE_ON_ANY_SERVER = 234515529;</code> */
-    public static final int RESTART_NODE_ON_ANY_SERVER_VALUE = 234515529;
+    /** <code>RESTART_NODE_ON_ANY_SERVER = 502950985;</code> */
+    public static final int RESTART_NODE_ON_ANY_SERVER_VALUE = 502950985;
     /** <code>RESTART_NODE_ON_MINIMAL_SERVERS = 204166495;</code> */
     public static final int RESTART_NODE_ON_MINIMAL_SERVERS_VALUE = 204166495;
     /** <code>SERVER_BINDING_TYPE_UNSPECIFIED = 180825512;</code> */
@@ -181,7 +182,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 234515529:
+        case 502950985:
           return RESTART_NODE_ON_ANY_SERVER;
         case 204166495:
           return RESTART_NODE_ON_MINIMAL_SERVERS;
@@ -240,8 +241,18 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ServerBinding.Type)
   }
 
+  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 3575610;
   private int type_;
+  /**
+   * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
    *
@@ -278,7 +289,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (type_ != com.google.cloud.compute.v1.ServerBinding.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(3575610, type_);
     }
     unknownFields.writeTo(output);
@@ -290,7 +301,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != com.google.cloud.compute.v1.ServerBinding.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     size += unknownFields.getSerializedSize();
@@ -309,7 +320,10 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.ServerBinding other =
         (com.google.cloud.compute.v1.ServerBinding) obj;
 
-    if (type_ != other.type_) return false;
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -321,8 +335,10 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -468,7 +484,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -496,7 +512,13 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ServerBinding buildPartial() {
       com.google.cloud.compute.v1.ServerBinding result =
           new com.google.cloud.compute.v1.ServerBinding(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -546,8 +568,8 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ServerBinding other) {
       if (other == com.google.cloud.compute.v1.ServerBinding.getDefaultInstance()) return this;
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -578,7 +600,18 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int type_ = 0;
+    /**
+     * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      * <code>.google.cloud.compute.v1.ServerBinding.Type type = 3575610;</code>
      *
@@ -595,7 +628,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       type_ = value;
       onChanged();
       return this;
@@ -622,7 +655,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -633,7 +666,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;

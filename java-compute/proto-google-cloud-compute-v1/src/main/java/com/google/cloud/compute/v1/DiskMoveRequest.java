@@ -60,6 +60,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,14 +74,14 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
           case 499465306:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               targetDisk_ = s;
               break;
             }
           case 1054837226:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               destinationZone_ = s;
               break;
             }
@@ -118,8 +119,27 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.DiskMoveRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESTINATION_ZONE_FIELD_NUMBER = 131854653;
   private volatile java.lang.Object destinationZone_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+   * - projects/project/zones/zone
+   * - zones/zone
+   * </pre>
+   *
+   * <code>string destination_zone = 131854653;</code>
+   *
+   * @return Whether the destinationZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationZone() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -187,6 +207,24 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string target_disk = 62433163;</code>
    *
+   * @return Whether the targetDisk field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetDisk() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
+   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   * - projects/project/zones/zone/disks/disk
+   * - zones/zone/disks/disk
+   * </pre>
+   *
+   * <code>string target_disk = 62433163;</code>
+   *
    * @return The targetDisk.
    */
   @java.lang.Override
@@ -242,10 +280,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTargetDiskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 62433163, targetDisk_);
     }
-    if (!getDestinationZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 131854653, destinationZone_);
     }
     unknownFields.writeTo(output);
@@ -257,10 +295,10 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getTargetDiskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(62433163, targetDisk_);
     }
-    if (!getDestinationZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(131854653, destinationZone_);
     }
     size += unknownFields.getSerializedSize();
@@ -279,8 +317,14 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.DiskMoveRequest other =
         (com.google.cloud.compute.v1.DiskMoveRequest) obj;
 
-    if (!getDestinationZone().equals(other.getDestinationZone())) return false;
-    if (!getTargetDisk().equals(other.getTargetDisk())) return false;
+    if (hasDestinationZone() != other.hasDestinationZone()) return false;
+    if (hasDestinationZone()) {
+      if (!getDestinationZone().equals(other.getDestinationZone())) return false;
+    }
+    if (hasTargetDisk() != other.hasTargetDisk()) return false;
+    if (hasTargetDisk()) {
+      if (!getTargetDisk().equals(other.getTargetDisk())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -292,10 +336,14 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESTINATION_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getDestinationZone().hashCode();
-    hash = (37 * hash) + TARGET_DISK_FIELD_NUMBER;
-    hash = (53 * hash) + getTargetDisk().hashCode();
+    if (hasDestinationZone()) {
+      hash = (37 * hash) + DESTINATION_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationZone().hashCode();
+    }
+    if (hasTargetDisk()) {
+      hash = (37 * hash) + TARGET_DISK_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetDisk().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,9 +489,9 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       destinationZone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetDisk_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -471,8 +519,17 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.DiskMoveRequest buildPartial() {
       com.google.cloud.compute.v1.DiskMoveRequest result =
           new com.google.cloud.compute.v1.DiskMoveRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.destinationZone_ = destinationZone_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.targetDisk_ = targetDisk_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -522,11 +579,13 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.DiskMoveRequest other) {
       if (other == com.google.cloud.compute.v1.DiskMoveRequest.getDefaultInstance()) return this;
-      if (!other.getDestinationZone().isEmpty()) {
+      if (other.hasDestinationZone()) {
+        bitField0_ |= 0x00000001;
         destinationZone_ = other.destinationZone_;
         onChanged();
       }
-      if (!other.getTargetDisk().isEmpty()) {
+      if (other.hasTargetDisk()) {
+        bitField0_ |= 0x00000002;
         targetDisk_ = other.targetDisk_;
         onChanged();
       }
@@ -559,7 +618,26 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object destinationZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For example, the following are all valid URLs to a zone:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     * - projects/project/zones/zone
+     * - zones/zone
+     * </pre>
+     *
+     * <code>string destination_zone = 131854653;</code>
+     *
+     * @return Whether the destinationZone field is set.
+     */
+    public boolean hasDestinationZone() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -629,7 +707,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       destinationZone_ = value;
       onChanged();
       return this;
@@ -649,7 +727,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDestinationZone() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       destinationZone_ = getDefaultInstance().getDestinationZone();
       onChanged();
       return this;
@@ -674,13 +752,30 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       destinationZone_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object targetDisk_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the following are all valid URLs to a disk:
+     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     * - projects/project/zones/zone/disks/disk
+     * - zones/zone/disks/disk
+     * </pre>
+     *
+     * <code>string target_disk = 62433163;</code>
+     *
+     * @return Whether the targetDisk field is set.
+     */
+    public boolean hasTargetDisk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -750,7 +845,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       targetDisk_ = value;
       onChanged();
       return this;
@@ -770,7 +865,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetDisk() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetDisk_ = getDefaultInstance().getTargetDisk();
       onChanged();
       return this;
@@ -795,7 +890,7 @@ public final class DiskMoveRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       targetDisk_ = value;
       onChanged();
       return this;

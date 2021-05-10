@@ -62,6 +62,7 @@ public final class RegionInstanceGroupsListInstancesRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,14 +76,14 @@ public final class RegionInstanceGroupsListInstancesRequest
           case 332274762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               portName_ = s;
               break;
             }
           case 737788728:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               instanceState_ = rawValue;
               break;
             }
@@ -248,8 +249,26 @@ public final class RegionInstanceGroupsListInstancesRequest
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState)
   }
 
+  private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
   private int instanceState_;
+  /**
+   *
+   *
+   * <pre>
+   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
+   * </code>
+   *
+   * @return Whether the instanceState field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceState() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -295,6 +314,21 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
   private volatile java.lang.Object portName_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+   * </pre>
+   *
+   * <code>string port_name = 41534345;</code>
+   *
+   * @return Whether the portName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPortName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -356,13 +390,10 @@ public final class RegionInstanceGroupsListInstancesRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (instanceState_
-        != com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-            .UNDEFINED_INSTANCE_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(92223591, instanceState_);
     }
     unknownFields.writeTo(output);
@@ -374,13 +405,10 @@ public final class RegionInstanceGroupsListInstancesRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getPortNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (instanceState_
-        != com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState
-            .UNDEFINED_INSTANCE_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(92223591, instanceState_);
     }
     size += unknownFields.getSerializedSize();
@@ -399,8 +427,14 @@ public final class RegionInstanceGroupsListInstancesRequest
     com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest other =
         (com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest) obj;
 
-    if (instanceState_ != other.instanceState_) return false;
-    if (!getPortName().equals(other.getPortName())) return false;
+    if (hasInstanceState() != other.hasInstanceState()) return false;
+    if (hasInstanceState()) {
+      if (instanceState_ != other.instanceState_) return false;
+    }
+    if (hasPortName() != other.hasPortName()) return false;
+    if (hasPortName()) {
+      if (!getPortName().equals(other.getPortName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -412,10 +446,14 @@ public final class RegionInstanceGroupsListInstancesRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + instanceState_;
-    hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPortName().hashCode();
+    if (hasInstanceState()) {
+      hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + instanceState_;
+    }
+    if (hasPortName()) {
+      hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPortName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -564,9 +602,9 @@ public final class RegionInstanceGroupsListInstancesRequest
     public Builder clear() {
       super.clear();
       instanceState_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       portName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -596,8 +634,17 @@ public final class RegionInstanceGroupsListInstancesRequest
     public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instanceState_ = instanceState_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.portName_ = portName_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -651,10 +698,11 @@ public final class RegionInstanceGroupsListInstancesRequest
       if (other
           == com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest
               .getDefaultInstance()) return this;
-      if (other.instanceState_ != 0) {
-        setInstanceStateValue(other.getInstanceStateValue());
+      if (other.hasInstanceState()) {
+        setInstanceState(other.getInstanceState());
       }
-      if (!other.getPortName().isEmpty()) {
+      if (other.hasPortName()) {
+        bitField0_ |= 0x00000002;
         portName_ = other.portName_;
         onChanged();
       }
@@ -689,7 +737,26 @@ public final class RegionInstanceGroupsListInstancesRequest
       return this;
     }
 
+    private int bitField0_;
+
     private int instanceState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
+     * </code>
+     *
+     * @return Whether the instanceState field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstanceState() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -722,7 +789,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * @return This builder for chaining.
      */
     public Builder setInstanceStateValue(int value) {
-
+      bitField0_ |= 0x00000001;
       instanceState_ = value;
       onChanged();
       return this;
@@ -771,7 +838,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceState_ = value.getNumber();
       onChanged();
       return this;
@@ -790,13 +857,27 @@ public final class RegionInstanceGroupsListInstancesRequest
      * @return This builder for chaining.
      */
     public Builder clearInstanceState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceState_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object portName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * </pre>
+     *
+     * <code>string port_name = 41534345;</code>
+     *
+     * @return Whether the portName field is set.
+     */
+    public boolean hasPortName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -857,7 +938,7 @@ public final class RegionInstanceGroupsListInstancesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       portName_ = value;
       onChanged();
       return this;
@@ -874,7 +955,7 @@ public final class RegionInstanceGroupsListInstancesRequest
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -896,7 +977,7 @@ public final class RegionInstanceGroupsListInstancesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       portName_ = value;
       onChanged();
       return this;

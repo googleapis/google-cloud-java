@@ -62,6 +62,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,18 +73,18 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
-          case 510247530:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rangeName_ = s;
-              break;
-            }
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               ipCidrRange_ = s;
+              break;
+            }
+          case -1637236118:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              rangeName_ = s;
               break;
             }
           default:
@@ -120,8 +121,24 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 98117322;
   private volatile java.lang.Object ipCidrRange_;
+  /**
+   *
+   *
+   * <pre>
+   * The range of IP addresses belonging to this subnetwork secondary range.
+   * </pre>
+   *
+   * <code>string ip_cidr_range = 98117322;</code>
+   *
+   * @return Whether the ipCidrRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpCidrRange() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -169,7 +186,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     }
   }
 
-  public static final int RANGE_NAME_FIELD_NUMBER = 63780941;
+  public static final int RANGE_NAME_FIELD_NUMBER = 332216397;
   private volatile java.lang.Object rangeName_;
   /**
    *
@@ -178,7 +195,22 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 63780941;</code>
+   * <code>string range_name = 332216397;</code>
+   *
+   * @return Whether the rangeName field is set.
+   */
+  @java.lang.Override
+  public boolean hasRangeName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+   * </pre>
+   *
+   * <code>string range_name = 332216397;</code>
    *
    * @return The rangeName.
    */
@@ -201,7 +233,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 63780941;</code>
+   * <code>string range_name = 332216397;</code>
    *
    * @return The bytes for rangeName.
    */
@@ -232,11 +264,11 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRangeNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 63780941, rangeName_);
-    }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 332216397, rangeName_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,11 +279,11 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getRangeNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(63780941, rangeName_);
-    }
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332216397, rangeName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,8 +301,14 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange other =
         (com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange) obj;
 
-    if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
-    if (!getRangeName().equals(other.getRangeName())) return false;
+    if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
+    if (hasIpCidrRange()) {
+      if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasRangeName() != other.hasRangeName()) return false;
+    if (hasRangeName()) {
+      if (!getRangeName().equals(other.getRangeName())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -282,10 +320,14 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getIpCidrRange().hashCode();
-    hash = (37 * hash) + RANGE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getRangeName().hashCode();
+    if (hasIpCidrRange()) {
+      hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasRangeName()) {
+      hash = (37 * hash) + RANGE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRangeName().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,9 +475,9 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       ipCidrRange_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rangeName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -463,8 +505,17 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange buildPartial() {
       com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange result =
           new com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.ipCidrRange_ = ipCidrRange_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.rangeName_ = rangeName_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -515,11 +566,13 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     public Builder mergeFrom(com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange other) {
       if (other == com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.getDefaultInstance())
         return this;
-      if (!other.getIpCidrRange().isEmpty()) {
+      if (other.hasIpCidrRange()) {
+        bitField0_ |= 0x00000001;
         ipCidrRange_ = other.ipCidrRange_;
         onChanged();
       }
-      if (!other.getRangeName().isEmpty()) {
+      if (other.hasRangeName()) {
+        bitField0_ |= 0x00000002;
         rangeName_ = other.rangeName_;
         onChanged();
       }
@@ -553,7 +606,23 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object ipCidrRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * </pre>
+     *
+     * <code>string ip_cidr_range = 98117322;</code>
+     *
+     * @return Whether the ipCidrRange field is set.
+     */
+    public boolean hasIpCidrRange() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -614,7 +683,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -631,7 +700,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
       onChanged();
       return this;
@@ -653,7 +722,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -667,7 +736,21 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 63780941;</code>
+     * <code>string range_name = 332216397;</code>
+     *
+     * @return Whether the rangeName field is set.
+     */
+    public boolean hasRangeName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * </pre>
+     *
+     * <code>string range_name = 332216397;</code>
      *
      * @return The rangeName.
      */
@@ -689,7 +772,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 63780941;</code>
+     * <code>string range_name = 332216397;</code>
      *
      * @return The bytes for rangeName.
      */
@@ -711,7 +794,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 63780941;</code>
+     * <code>string range_name = 332216397;</code>
      *
      * @param value The rangeName to set.
      * @return This builder for chaining.
@@ -720,7 +803,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       rangeName_ = value;
       onChanged();
       return this;
@@ -732,12 +815,12 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 63780941;</code>
+     * <code>string range_name = 332216397;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRangeName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rangeName_ = getDefaultInstance().getRangeName();
       onChanged();
       return this;
@@ -749,7 +832,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 63780941;</code>
+     * <code>string range_name = 332216397;</code>
      *
      * @param value The bytes for rangeName to set.
      * @return This builder for chaining.
@@ -759,7 +842,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       rangeName_ = value;
       onChanged();
       return this;

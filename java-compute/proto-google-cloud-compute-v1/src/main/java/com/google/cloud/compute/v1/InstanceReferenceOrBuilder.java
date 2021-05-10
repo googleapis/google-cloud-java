@@ -32,6 +32,18 @@ public interface InstanceReferenceOrBuilder
    *
    * <code>string instance = 18257045;</code>
    *
+   * @return Whether the instance field is set.
+   */
+  boolean hasInstance();
+  /**
+   *
+   *
+   * <pre>
+   * The URL for a specific instance.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
    * @return The instance.
    */
   java.lang.String getInstance();

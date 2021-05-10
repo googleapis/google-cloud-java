@@ -61,6 +61,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,10 +72,10 @@ public final class ProjectsSetDefaultNetworkTierRequest
           case 0:
             done = true;
             break;
-          case 1991699096:
+          case -155784552:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               networkTier_ = rawValue;
               break;
             }
@@ -132,10 +133,10 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 131095095;</code> */
-    PREMIUM(131095095),
-    /** <code>STANDARD = 216207037;</code> */
-    STANDARD(216207037),
+    /** <code>PREMIUM = 399530551;</code> */
+    PREMIUM(399530551),
+    /** <code>STANDARD = 484642493;</code> */
+    STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
 
@@ -149,10 +150,10 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 131095095;</code> */
-    public static final int PREMIUM_VALUE = 131095095;
-    /** <code>STANDARD = 216207037;</code> */
-    public static final int STANDARD_VALUE = 216207037;
+    /** <code>PREMIUM = 399530551;</code> */
+    public static final int PREMIUM_VALUE = 399530551;
+    /** <code>STANDARD = 484642493;</code> */
+    public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -180,9 +181,9 @@ public final class ProjectsSetDefaultNetworkTierRequest
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
-        case 131095095:
+        case 399530551:
           return PREMIUM;
-        case 216207037:
+        case 484642493:
           return STANDARD;
         default:
           return null;
@@ -239,7 +240,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier)
   }
 
-  public static final int NETWORK_TIER_FIELD_NUMBER = 248962387;
+  private int bitField0_;
+  public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
   private int networkTier_;
   /**
    *
@@ -249,7 +251,24 @@ public final class ProjectsSetDefaultNetworkTierRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
+   * </code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkTier() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Default network tier to be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
    * </code>
    *
    * @return The enum numeric value on the wire for networkTier.
@@ -266,7 +285,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
    * </code>
    *
    * @return The networkTier.
@@ -297,11 +316,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (networkTier_
-        != com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier
-            .UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      output.writeEnum(248962387, networkTier_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -312,11 +328,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
     if (size != -1) return size;
 
     size = 0;
-    if (networkTier_
-        != com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier
-            .UNDEFINED_NETWORK_TIER
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(248962387, networkTier_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -334,7 +347,10 @@ public final class ProjectsSetDefaultNetworkTierRequest
     com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest other =
         (com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest) obj;
 
-    if (networkTier_ != other.networkTier_) return false;
+    if (hasNetworkTier() != other.hasNetworkTier()) return false;
+    if (hasNetworkTier()) {
+      if (networkTier_ != other.networkTier_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -346,8 +362,10 @@ public final class ProjectsSetDefaultNetworkTierRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-    hash = (53 * hash) + networkTier_;
+    if (hasNetworkTier()) {
+      hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + networkTier_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -494,7 +512,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
     public Builder clear() {
       super.clear();
       networkTier_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -523,7 +541,13 @@ public final class ProjectsSetDefaultNetworkTierRequest
     public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest buildPartial() {
       com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest result =
           new com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.networkTier_ = networkTier_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -576,8 +600,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
       if (other
           == com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.getDefaultInstance())
         return this;
-      if (other.networkTier_ != 0) {
-        setNetworkTierValue(other.getNetworkTierValue());
+      if (other.hasNetworkTier()) {
+        setNetworkTier(other.getNetworkTier());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -610,6 +634,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
       return this;
     }
 
+    private int bitField0_;
+
     private int networkTier_ = 0;
     /**
      *
@@ -619,7 +645,24 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
+     * </code>
+     *
+     * @return Whether the networkTier field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetworkTier() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default network tier to be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
      * </code>
      *
      * @return The enum numeric value on the wire for networkTier.
@@ -636,14 +679,14 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
      * </code>
      *
      * @param value The enum numeric value on the wire for networkTier to set.
      * @return This builder for chaining.
      */
     public Builder setNetworkTierValue(int value) {
-
+      bitField0_ |= 0x00000001;
       networkTier_ = value;
       onChanged();
       return this;
@@ -656,7 +699,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
      * </code>
      *
      * @return The networkTier.
@@ -681,7 +724,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
      * </code>
      *
      * @param value The networkTier to set.
@@ -692,7 +735,7 @@ public final class ProjectsSetDefaultNetworkTierRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       networkTier_ = value.getNumber();
       onChanged();
       return this;
@@ -705,13 +748,13 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       networkTier_ = 0;
       onChanged();
       return this;

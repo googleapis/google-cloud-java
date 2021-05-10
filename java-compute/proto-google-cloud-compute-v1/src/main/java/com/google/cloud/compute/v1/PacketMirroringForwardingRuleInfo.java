@@ -61,6 +61,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
           case 928634:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               url_ = s;
               break;
             }
-          case 1950874914:
+          case -196608734:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               canonicalUrl_ = s;
               break;
             }
@@ -119,7 +120,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
             com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.Builder.class);
   }
 
-  public static final int CANONICAL_URL_FIELD_NUMBER = 243859364;
+  private int bitField0_;
+  public static final int CANONICAL_URL_FIELD_NUMBER = 512294820;
   private volatile java.lang.Object canonicalUrl_;
   /**
    *
@@ -128,7 +130,22 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    * [Output Only] Unique identifier for the forwarding rule; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
+   *
+   * @return Whether the canonicalUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasCanonicalUrl() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+   * </pre>
+   *
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The canonicalUrl.
    */
@@ -151,7 +168,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    * [Output Only] Unique identifier for the forwarding rule; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The bytes for canonicalUrl.
    */
@@ -170,6 +187,21 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
 
   public static final int URL_FIELD_NUMBER = 116079;
   private volatile java.lang.Object url_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+   * </pre>
+   *
+   * <code>string url = 116079;</code>
+   *
+   * @return Whether the url field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -231,11 +263,11 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUrlBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 116079, url_);
     }
-    if (!getCanonicalUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 243859364, canonicalUrl_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 512294820, canonicalUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (!getUrlBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(116079, url_);
     }
-    if (!getCanonicalUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(243859364, canonicalUrl_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(512294820, canonicalUrl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,8 +300,14 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo other =
         (com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo) obj;
 
-    if (!getCanonicalUrl().equals(other.getCanonicalUrl())) return false;
-    if (!getUrl().equals(other.getUrl())) return false;
+    if (hasCanonicalUrl() != other.hasCanonicalUrl()) return false;
+    if (hasCanonicalUrl()) {
+      if (!getCanonicalUrl().equals(other.getCanonicalUrl())) return false;
+    }
+    if (hasUrl() != other.hasUrl()) return false;
+    if (hasUrl()) {
+      if (!getUrl().equals(other.getUrl())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,10 +319,14 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CANONICAL_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getCanonicalUrl().hashCode();
-    hash = (37 * hash) + URL_FIELD_NUMBER;
-    hash = (53 * hash) + getUrl().hashCode();
+    if (hasCanonicalUrl()) {
+      hash = (37 * hash) + CANONICAL_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getCanonicalUrl().hashCode();
+    }
+    if (hasUrl()) {
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,9 +473,9 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     public Builder clear() {
       super.clear();
       canonicalUrl_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       url_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -462,8 +504,17 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
     public com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo result =
           new com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.canonicalUrl_ = canonicalUrl_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.url_ = url_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -515,11 +566,13 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
       if (other
           == com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo.getDefaultInstance())
         return this;
-      if (!other.getCanonicalUrl().isEmpty()) {
+      if (other.hasCanonicalUrl()) {
+        bitField0_ |= 0x00000001;
         canonicalUrl_ = other.canonicalUrl_;
         onChanged();
       }
-      if (!other.getUrl().isEmpty()) {
+      if (other.hasUrl()) {
+        bitField0_ |= 0x00000002;
         url_ = other.url_;
         onChanged();
       }
@@ -554,6 +607,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object canonicalUrl_ = "";
     /**
      *
@@ -562,7 +617,21 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * [Output Only] Unique identifier for the forwarding rule; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 243859364;</code>
+     * <code>string canonical_url = 512294820;</code>
+     *
+     * @return Whether the canonicalUrl field is set.
+     */
+    public boolean hasCanonicalUrl() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * </pre>
+     *
+     * <code>string canonical_url = 512294820;</code>
      *
      * @return The canonicalUrl.
      */
@@ -584,7 +653,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * [Output Only] Unique identifier for the forwarding rule; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 243859364;</code>
+     * <code>string canonical_url = 512294820;</code>
      *
      * @return The bytes for canonicalUrl.
      */
@@ -606,7 +675,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * [Output Only] Unique identifier for the forwarding rule; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 243859364;</code>
+     * <code>string canonical_url = 512294820;</code>
      *
      * @param value The canonicalUrl to set.
      * @return This builder for chaining.
@@ -615,7 +684,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
       onChanged();
       return this;
@@ -627,12 +696,12 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * [Output Only] Unique identifier for the forwarding rule; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 243859364;</code>
+     * <code>string canonical_url = 512294820;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCanonicalUrl() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       canonicalUrl_ = getDefaultInstance().getCanonicalUrl();
       onChanged();
       return this;
@@ -644,7 +713,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * [Output Only] Unique identifier for the forwarding rule; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 243859364;</code>
+     * <code>string canonical_url = 512294820;</code>
      *
      * @param value The bytes for canonicalUrl to set.
      * @return This builder for chaining.
@@ -654,13 +723,27 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       canonicalUrl_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object url_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * </pre>
+     *
+     * <code>string url = 116079;</code>
+     *
+     * @return Whether the url field is set.
+     */
+    public boolean hasUrl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -721,7 +804,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       url_ = value;
       onChanged();
       return this;
@@ -738,7 +821,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
@@ -760,7 +843,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       url_ = value;
       onChanged();
       return this;

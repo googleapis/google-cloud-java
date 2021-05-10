@@ -70,6 +70,18 @@ public interface NodeGroupOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -93,7 +105,19 @@ public interface NodeGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -105,12 +129,18 @@ public interface NodeGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
   /**
    * <code>string fingerprint = 234678500;</code>
    *
@@ -124,6 +154,18 @@ public interface NodeGroupOrBuilder
    */
   com.google.protobuf.ByteString getFingerprintBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -158,6 +200,18 @@ public interface NodeGroupOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -181,7 +235,20 @@ public interface NodeGroupOrBuilder
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
    * </code>
    *
    * @return The enum numeric value on the wire for maintenancePolicy.
@@ -194,7 +261,7 @@ public interface NodeGroupOrBuilder
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
    * </code>
    *
    * @return The maintenancePolicy.
@@ -230,6 +297,18 @@ public interface NodeGroupOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -253,7 +332,19 @@ public interface NodeGroupOrBuilder
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 54718999;</code>
+   * <code>string node_template = 323154455;</code>
+   *
+   * @return Whether the nodeTemplate field is set.
+   */
+  boolean hasNodeTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the node template to create the node group from.
+   * </pre>
+   *
+   * <code>string node_template = 323154455;</code>
    *
    * @return The nodeTemplate.
    */
@@ -265,7 +356,7 @@ public interface NodeGroupOrBuilder
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 54718999;</code>
+   * <code>string node_template = 323154455;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -278,7 +369,19 @@ public interface NodeGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -290,12 +393,24 @@ public interface NodeGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The total number of nodes in the node group.
+   * </pre>
+   *
+   * <code>int32 size = 3530753;</code>
+   *
+   * @return Whether the size field is set.
+   */
+  boolean hasSize();
   /**
    *
    *
@@ -312,6 +427,12 @@ public interface NodeGroupOrBuilder
   /**
    * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
    *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   *
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
@@ -322,6 +443,18 @@ public interface NodeGroupOrBuilder
    */
   com.google.cloud.compute.v1.NodeGroup.Status getStatus();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

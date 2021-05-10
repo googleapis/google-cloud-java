@@ -30,7 +30,19 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 154108410;</code>
+   * <code>string expected_rtt_ms = 422543866;</code>
+   *
+   * @return Whether the expectedRttMs field is set.
+   */
+  boolean hasExpectedRttMs();
+  /**
+   *
+   *
+   * <pre>
+   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * </pre>
+   *
+   * <code>string expected_rtt_ms = 422543866;</code>
    *
    * @return The expectedRttMs.
    */
@@ -42,12 +54,26 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 154108410;</code>
+   * <code>string expected_rtt_ms = 422543866;</code>
    *
    * @return The bytes for expectedRttMs.
    */
   com.google.protobuf.ByteString getExpectedRttMsBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the network presence of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;
+   * </code>
+   *
+   * @return Whether the locationPresence field is set.
+   */
+  boolean hasLocationPresence();
   /**
    *
    *
@@ -77,6 +103,18 @@ public interface InterconnectLocationRegionInfoOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence getLocationPresence();
 
+  /**
+   *
+   *
+   * <pre>
+   * URL for the region of this location.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *

@@ -96,6 +96,18 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    * <code>string field = 97427706;</code>
    *
+   * @return Whether the field field is set.
+   */
+  boolean hasField();
+  /**
+   *
+   *
+   * <pre>
+   * The field value to attribute.
+   * </pre>
+   *
+   * <code>string field = 97427706;</code>
+   *
    * @return The field.
    */
   java.lang.String getField();
@@ -119,7 +131,19 @@ public interface LogConfigCounterOptionsOrBuilder
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 264631728;</code>
+   * <code>string metric = 533067184;</code>
+   *
+   * @return Whether the metric field is set.
+   */
+  boolean hasMetric();
+  /**
+   *
+   *
+   * <pre>
+   * The metric to update.
+   * </pre>
+   *
+   * <code>string metric = 533067184;</code>
    *
    * @return The metric.
    */
@@ -131,7 +155,7 @@ public interface LogConfigCounterOptionsOrBuilder
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 264631728;</code>
+   * <code>string metric = 533067184;</code>
    *
    * @return The bytes for metric.
    */

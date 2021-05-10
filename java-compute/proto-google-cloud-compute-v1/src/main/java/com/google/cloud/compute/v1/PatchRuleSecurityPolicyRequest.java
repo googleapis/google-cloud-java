@@ -62,6 +62,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,21 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
-          case 1074063898:
+          case 1368660106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityPolicy_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1073419750:
             {
               com.google.cloud.compute.v1.SecurityPolicyRule.Builder subBuilder = null;
               if (securityPolicyRuleResource_ != null) {
@@ -88,23 +103,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
               break;
             }
-          case 1368660106:
+          case -733754080:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              securityPolicy_ = s;
-              break;
-            }
-          case 1413729568:
-            {
+              bitField0_ |= 0x00000001;
               priority_ = input.readInt32();
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -141,7 +143,8 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest.Builder.class);
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  private int bitField0_;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -150,7 +153,22 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * The priority of the rule to patch.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the rule to patch.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -257,7 +275,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER = 134257987;
+  public static final int SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER = 402693443;
   private com.google.cloud.compute.v1.SecurityPolicyRule securityPolicyRuleResource_;
   /**
    *
@@ -267,7 +285,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyRuleResource field is set.
@@ -284,7 +302,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyRuleResource.
@@ -303,7 +321,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -326,17 +344,17 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (securityPolicyRuleResource_ != null) {
-      output.writeMessage(134257987, getSecurityPolicyRuleResource());
-    }
     if (!getSecurityPolicyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
-    if (priority_ != 0) {
-      output.writeInt32(176716196, priority_);
-    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (securityPolicyRuleResource_ != null) {
+      output.writeMessage(402693443, getSecurityPolicyRuleResource());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -347,19 +365,19 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (securityPolicyRuleResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              134257987, getSecurityPolicyRuleResource());
-    }
     if (!getSecurityPolicyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
-    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (securityPolicyRuleResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              402693443, getSecurityPolicyRuleResource());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -377,7 +395,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest other =
         (com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest) obj;
 
-    if (getPriority() != other.getPriority()) return false;
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getSecurityPolicy().equals(other.getSecurityPolicy())) return false;
     if (hasSecurityPolicyRuleResource() != other.hasSecurityPolicyRuleResource()) return false;
@@ -396,8 +417,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + SECURITY_POLICY_FIELD_NUMBER;
@@ -553,7 +576,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       priority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       project_ = "";
 
       securityPolicy_ = "";
@@ -591,7 +614,12 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest result =
           new com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest(this);
-      result.priority_ = priority_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.project_ = project_;
       result.securityPolicy_ = securityPolicy_;
       if (securityPolicyRuleResourceBuilder_ == null) {
@@ -599,6 +627,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       } else {
         result.securityPolicyRuleResource_ = securityPolicyRuleResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -649,7 +678,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public Builder mergeFrom(com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest other) {
       if (other == com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest.getDefaultInstance())
         return this;
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
       if (!other.getProject().isEmpty()) {
@@ -693,6 +722,8 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private int priority_;
     /**
      *
@@ -701,7 +732,22 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority of the rule to patch.
+     * </pre>
+     *
+     * <code>int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -716,13 +762,13 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00000001;
       priority_ = value;
       onChanged();
       return this;
@@ -734,12 +780,12 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * The priority of the rule to patch.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       priority_ = 0;
       onChanged();
       return this;
@@ -971,7 +1017,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the securityPolicyRuleResource field is set.
@@ -987,7 +1033,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The securityPolicyRuleResource.
@@ -1009,7 +1055,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyRuleResource(
@@ -1034,7 +1080,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyRuleResource(
@@ -1056,7 +1102,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSecurityPolicyRuleResource(
@@ -1085,7 +1131,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSecurityPolicyRuleResource() {
@@ -1107,7 +1153,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRule.Builder
@@ -1124,7 +1170,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder
@@ -1145,7 +1191,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

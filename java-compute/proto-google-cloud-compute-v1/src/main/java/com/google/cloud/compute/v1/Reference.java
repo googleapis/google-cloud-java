@@ -63,6 +63,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,29 +77,29 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               kind_ = s;
-              break;
-            }
-          case 661905658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              referrer_ = s;
               break;
             }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               target_ = s;
               break;
             }
           case 1980169586:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               referenceType_ = s;
+              break;
+            }
+          case -1485577990:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              referrer_ = s;
               break;
             }
           default:
@@ -135,8 +136,24 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Reference.Builder.class);
   }
 
+  private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#reference for references.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -196,6 +213,22 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string reference_type = 247521198;</code>
    *
+   * @return Whether the referenceType field is set.
+   */
+  @java.lang.Override
+  public boolean hasReferenceType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A description of the reference type with no implied semantics. Possible values include:
+   * - MEMBER_OF
+   * </pre>
+   *
+   * <code>string reference_type = 247521198;</code>
+   *
    * @return The referenceType.
    */
   @java.lang.Override
@@ -235,7 +268,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int REFERRER_FIELD_NUMBER = 82738207;
+  public static final int REFERRER_FIELD_NUMBER = 351173663;
   private volatile java.lang.Object referrer_;
   /**
    *
@@ -244,7 +277,22 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 82738207;</code>
+   * <code>string referrer = 351173663;</code>
+   *
+   * @return Whether the referrer field is set.
+   */
+  @java.lang.Override
+  public boolean hasReferrer() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the resource which refers to the target.
+   * </pre>
+   *
+   * <code>string referrer = 351173663;</code>
    *
    * @return The referrer.
    */
@@ -267,7 +315,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 82738207;</code>
+   * <code>string referrer = 351173663;</code>
    *
    * @return The bytes for referrer.
    */
@@ -286,6 +334,21 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
+  /**
+   *
+   *
+   * <pre>
+   * URL of the resource to which this reference points.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  @java.lang.Override
+  public boolean hasTarget() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -347,17 +410,17 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getReferrerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 82738207, referrer_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
-    if (!getReferenceTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247521198, referenceType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 351173663, referrer_);
     }
     unknownFields.writeTo(output);
   }
@@ -368,17 +431,17 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getReferrerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(82738207, referrer_);
-    }
-    if (!getTargetBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
-    if (!getReferenceTypeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(247521198, referenceType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(351173663, referrer_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -395,10 +458,22 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Reference other = (com.google.cloud.compute.v1.Reference) obj;
 
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getReferenceType().equals(other.getReferenceType())) return false;
-    if (!getReferrer().equals(other.getReferrer())) return false;
-    if (!getTarget().equals(other.getTarget())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasReferenceType() != other.hasReferenceType()) return false;
+    if (hasReferenceType()) {
+      if (!getReferenceType().equals(other.getReferenceType())) return false;
+    }
+    if (hasReferrer() != other.hasReferrer()) return false;
+    if (hasReferrer()) {
+      if (!getReferrer().equals(other.getReferrer())) return false;
+    }
+    if (hasTarget() != other.hasTarget()) return false;
+    if (hasTarget()) {
+      if (!getTarget().equals(other.getTarget())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -410,14 +485,22 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + REFERENCE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getReferenceType().hashCode();
-    hash = (37 * hash) + REFERRER_FIELD_NUMBER;
-    hash = (53 * hash) + getReferrer().hashCode();
-    hash = (37 * hash) + TARGET_FIELD_NUMBER;
-    hash = (53 * hash) + getTarget().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasReferenceType()) {
+      hash = (37 * hash) + REFERENCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getReferenceType().hashCode();
+    }
+    if (hasReferrer()) {
+      hash = (37 * hash) + REFERRER_FIELD_NUMBER;
+      hash = (53 * hash) + getReferrer().hashCode();
+    }
+    if (hasTarget()) {
+      hash = (37 * hash) + TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getTarget().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -563,13 +646,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       referenceType_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       referrer_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       target_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -597,10 +680,25 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Reference buildPartial() {
       com.google.cloud.compute.v1.Reference result =
           new com.google.cloud.compute.v1.Reference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.referenceType_ = referenceType_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.referrer_ = referrer_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.target_ = target_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -650,19 +748,23 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Reference other) {
       if (other == com.google.cloud.compute.v1.Reference.getDefaultInstance()) return this;
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000001;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getReferenceType().isEmpty()) {
+      if (other.hasReferenceType()) {
+        bitField0_ |= 0x00000002;
         referenceType_ = other.referenceType_;
         onChanged();
       }
-      if (!other.getReferrer().isEmpty()) {
+      if (other.hasReferrer()) {
+        bitField0_ |= 0x00000004;
         referrer_ = other.referrer_;
         onChanged();
       }
-      if (!other.getTarget().isEmpty()) {
+      if (other.hasTarget()) {
+        bitField0_ |= 0x00000008;
         target_ = other.target_;
         onChanged();
       }
@@ -695,7 +797,23 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#reference for references.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -756,7 +874,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
@@ -773,7 +891,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -795,13 +913,28 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object referenceType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A description of the reference type with no implied semantics. Possible values include:
+     * - MEMBER_OF
+     * </pre>
+     *
+     * <code>string reference_type = 247521198;</code>
+     *
+     * @return Whether the referenceType field is set.
+     */
+    public boolean hasReferenceType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -865,7 +998,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       referenceType_ = value;
       onChanged();
       return this;
@@ -883,7 +1016,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferenceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       referenceType_ = getDefaultInstance().getReferenceType();
       onChanged();
       return this;
@@ -906,7 +1039,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       referenceType_ = value;
       onChanged();
       return this;
@@ -920,7 +1053,21 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 82738207;</code>
+     * <code>string referrer = 351173663;</code>
+     *
+     * @return Whether the referrer field is set.
+     */
+    public boolean hasReferrer() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the resource which refers to the target.
+     * </pre>
+     *
+     * <code>string referrer = 351173663;</code>
      *
      * @return The referrer.
      */
@@ -942,7 +1089,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 82738207;</code>
+     * <code>string referrer = 351173663;</code>
      *
      * @return The bytes for referrer.
      */
@@ -964,7 +1111,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 82738207;</code>
+     * <code>string referrer = 351173663;</code>
      *
      * @param value The referrer to set.
      * @return This builder for chaining.
@@ -973,7 +1120,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       referrer_ = value;
       onChanged();
       return this;
@@ -985,12 +1132,12 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 82738207;</code>
+     * <code>string referrer = 351173663;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearReferrer() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       referrer_ = getDefaultInstance().getReferrer();
       onChanged();
       return this;
@@ -1002,7 +1149,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 82738207;</code>
+     * <code>string referrer = 351173663;</code>
      *
      * @param value The bytes for referrer to set.
      * @return This builder for chaining.
@@ -1012,13 +1159,27 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       referrer_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object target_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the resource to which this reference points.
+     * </pre>
+     *
+     * <code>string target = 192835985;</code>
+     *
+     * @return Whether the target field is set.
+     */
+    public boolean hasTarget() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1079,7 +1240,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       target_ = value;
       onChanged();
       return this;
@@ -1096,7 +1257,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -1118,7 +1279,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       target_ = value;
       onChanged();
       return this;

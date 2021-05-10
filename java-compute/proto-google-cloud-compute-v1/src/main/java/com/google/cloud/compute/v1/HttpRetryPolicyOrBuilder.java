@@ -32,6 +32,18 @@ public interface HttpRetryPolicyOrBuilder
    *
    * <code>uint32 num_retries = 251680141;</code>
    *
+   * @return Whether the numRetries field is set.
+   */
+  boolean hasNumRetries();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the allowed number retries. This number must be &gt; 0. If not specified, defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 num_retries = 251680141;</code>
+   *
    * @return The numRetries.
    */
   int getNumRetries();
@@ -44,7 +56,7 @@ public interface HttpRetryPolicyOrBuilder
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    *
    * @return Whether the perTryTimeout field is set.
    */
@@ -57,7 +69,7 @@ public interface HttpRetryPolicyOrBuilder
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    *
    * @return The perTryTimeout.
    */
@@ -70,7 +82,7 @@ public interface HttpRetryPolicyOrBuilder
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getPerTryTimeoutOrBuilder();
 

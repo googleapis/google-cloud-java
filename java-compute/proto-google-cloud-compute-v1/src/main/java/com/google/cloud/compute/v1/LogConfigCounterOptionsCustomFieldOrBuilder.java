@@ -32,6 +32,18 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name is the field name.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -48,6 +60,18 @@ public interface LogConfigCounterOptionsCustomFieldOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Value is the field value. It is important that in contrast to the CounterOptions.field, the value here is a constant that is not derived from the IAMContext.
+   * </pre>
+   *
+   * <code>string value = 111972721;</code>
+   *
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
   /**
    *
    *

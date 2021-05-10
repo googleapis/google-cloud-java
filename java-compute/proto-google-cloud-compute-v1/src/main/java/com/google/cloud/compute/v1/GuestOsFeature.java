@@ -60,6 +60,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               type_ = rawValue;
               break;
             }
@@ -131,22 +132,22 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>FEATURE_TYPE_UNSPECIFIED = 263331803;</code> */
-    FEATURE_TYPE_UNSPECIFIED(263331803),
+    /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
+    FEATURE_TYPE_UNSPECIFIED(531767259),
     /** <code>GVNIC = 68209305;</code> */
     GVNIC(68209305),
     /** <code>MULTI_IP_SUBNET = 151776719;</code> */
     MULTI_IP_SUBNET(151776719),
-    /** <code>SECURE_BOOT = 108375738;</code> */
-    SECURE_BOOT(108375738),
+    /** <code>SECURE_BOOT = 376811194;</code> */
+    SECURE_BOOT(376811194),
     /** <code>SEV_CAPABLE = 87083793;</code> */
     SEV_CAPABLE(87083793),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     UEFI_COMPATIBLE(195865408),
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
     VIRTIO_SCSI_MULTIQUEUE(201597069),
-    /** <code>WINDOWS = 188427875;</code> */
-    WINDOWS(188427875),
+    /** <code>WINDOWS = 456863331;</code> */
+    WINDOWS(456863331),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,22 +161,22 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>FEATURE_TYPE_UNSPECIFIED = 263331803;</code> */
-    public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 263331803;
+    /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
+    public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 531767259;
     /** <code>GVNIC = 68209305;</code> */
     public static final int GVNIC_VALUE = 68209305;
     /** <code>MULTI_IP_SUBNET = 151776719;</code> */
     public static final int MULTI_IP_SUBNET_VALUE = 151776719;
-    /** <code>SECURE_BOOT = 108375738;</code> */
-    public static final int SECURE_BOOT_VALUE = 108375738;
+    /** <code>SECURE_BOOT = 376811194;</code> */
+    public static final int SECURE_BOOT_VALUE = 376811194;
     /** <code>SEV_CAPABLE = 87083793;</code> */
     public static final int SEV_CAPABLE_VALUE = 87083793;
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     public static final int UEFI_COMPATIBLE_VALUE = 195865408;
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
     public static final int VIRTIO_SCSI_MULTIQUEUE_VALUE = 201597069;
-    /** <code>WINDOWS = 188427875;</code> */
-    public static final int WINDOWS_VALUE = 188427875;
+    /** <code>WINDOWS = 456863331;</code> */
+    public static final int WINDOWS_VALUE = 456863331;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -203,13 +204,13 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 263331803:
+        case 531767259:
           return FEATURE_TYPE_UNSPECIFIED;
         case 68209305:
           return GVNIC;
         case 151776719:
           return MULTI_IP_SUBNET;
-        case 108375738:
+        case 376811194:
           return SECURE_BOOT;
         case 87083793:
           return SEV_CAPABLE;
@@ -217,7 +218,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           return UEFI_COMPATIBLE;
         case 201597069:
           return VIRTIO_SCSI_MULTIQUEUE;
-        case 188427875:
+        case 456863331:
           return WINDOWS;
         default:
           return null;
@@ -272,8 +273,24 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.GuestOsFeature.Type)
   }
 
+  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 3575610;
   private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -322,7 +339,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (type_ != com.google.cloud.compute.v1.GuestOsFeature.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(3575610, type_);
     }
     unknownFields.writeTo(output);
@@ -334,7 +351,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != com.google.cloud.compute.v1.GuestOsFeature.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     size += unknownFields.getSerializedSize();
@@ -353,7 +370,10 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.GuestOsFeature other =
         (com.google.cloud.compute.v1.GuestOsFeature) obj;
 
-    if (type_ != other.type_) return false;
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -365,8 +385,10 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,7 +535,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -541,7 +563,13 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.GuestOsFeature buildPartial() {
       com.google.cloud.compute.v1.GuestOsFeature result =
           new com.google.cloud.compute.v1.GuestOsFeature(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -591,8 +619,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.GuestOsFeature other) {
       if (other == com.google.cloud.compute.v1.GuestOsFeature.getDefaultInstance()) return this;
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -623,7 +651,24 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The ID of a supported feature. Read  Enabling guest operating system features to see a list of available options.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.GuestOsFeature.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -652,7 +697,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       type_ = value;
       onChanged();
       return this;
@@ -691,7 +736,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -708,7 +753,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;

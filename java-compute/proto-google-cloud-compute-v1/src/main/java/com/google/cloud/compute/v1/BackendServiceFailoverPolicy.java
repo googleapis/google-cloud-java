@@ -58,6 +58,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,16 +71,19 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
             break;
           case 898315424:
             {
+              bitField0_ |= 0x00000002;
               dropTrafficIfUnhealthy_ = input.readBool();
               break;
             }
           case 1457206024:
             {
+              bitField0_ |= 0x00000001;
               disableConnectionDrainOnFailover_ = input.readBool();
               break;
             }
           case 1701336053:
             {
+              bitField0_ |= 0x00000004;
               failoverRatio_ = input.readFloat();
               break;
             }
@@ -117,8 +121,25 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.BackendServiceFailoverPolicy.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISABLE_CONNECTION_DRAIN_ON_FAILOVER_FIELD_NUMBER = 182150753;
   private boolean disableConnectionDrainOnFailover_;
+  /**
+   *
+   *
+   * <pre>
+   * This can be set to true only if the protocol is TCP.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+   *
+   * @return Whether the disableConnectionDrainOnFailover field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableConnectionDrainOnFailover() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -147,6 +168,21 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
    *
    * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
    *
+   * @return Whether the dropTrafficIfUnhealthy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDropTrafficIfUnhealthy() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+   * </pre>
+   *
+   * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+   *
    * @return The dropTrafficIfUnhealthy.
    */
   @java.lang.Override
@@ -156,6 +192,21 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
 
   public static final int FAILOVER_RATIO_FIELD_NUMBER = 212667006;
   private float failoverRatio_;
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+   * </pre>
+   *
+   * <code>float failover_ratio = 212667006;</code>
+   *
+   * @return Whether the failoverRatio field is set.
+   */
+  @java.lang.Override
+  public boolean hasFailoverRatio() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -186,13 +237,13 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (dropTrafficIfUnhealthy_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(112289428, dropTrafficIfUnhealthy_);
     }
-    if (disableConnectionDrainOnFailover_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(182150753, disableConnectionDrainOnFailover_);
     }
-    if (failoverRatio_ != 0F) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeFloat(212667006, failoverRatio_);
     }
     unknownFields.writeTo(output);
@@ -204,16 +255,16 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (dropTrafficIfUnhealthy_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(112289428, dropTrafficIfUnhealthy_);
     }
-    if (disableConnectionDrainOnFailover_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               182150753, disableConnectionDrainOnFailover_);
     }
-    if (failoverRatio_ != 0F) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
     }
     size += unknownFields.getSerializedSize();
@@ -232,11 +283,21 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.BackendServiceFailoverPolicy other =
         (com.google.cloud.compute.v1.BackendServiceFailoverPolicy) obj;
 
-    if (getDisableConnectionDrainOnFailover() != other.getDisableConnectionDrainOnFailover())
+    if (hasDisableConnectionDrainOnFailover() != other.hasDisableConnectionDrainOnFailover())
       return false;
-    if (getDropTrafficIfUnhealthy() != other.getDropTrafficIfUnhealthy()) return false;
-    if (java.lang.Float.floatToIntBits(getFailoverRatio())
-        != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    if (hasDisableConnectionDrainOnFailover()) {
+      if (getDisableConnectionDrainOnFailover() != other.getDisableConnectionDrainOnFailover())
+        return false;
+    }
+    if (hasDropTrafficIfUnhealthy() != other.hasDropTrafficIfUnhealthy()) return false;
+    if (hasDropTrafficIfUnhealthy()) {
+      if (getDropTrafficIfUnhealthy() != other.getDropTrafficIfUnhealthy()) return false;
+    }
+    if (hasFailoverRatio() != other.hasFailoverRatio()) return false;
+    if (hasFailoverRatio()) {
+      if (java.lang.Float.floatToIntBits(getFailoverRatio())
+          != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -248,14 +309,20 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISABLE_CONNECTION_DRAIN_ON_FAILOVER_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashBoolean(getDisableConnectionDrainOnFailover());
-    hash = (37 * hash) + DROP_TRAFFIC_IF_UNHEALTHY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDropTrafficIfUnhealthy());
-    hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    if (hasDisableConnectionDrainOnFailover()) {
+      hash = (37 * hash) + DISABLE_CONNECTION_DRAIN_ON_FAILOVER_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getDisableConnectionDrainOnFailover());
+    }
+    if (hasDropTrafficIfUnhealthy()) {
+      hash = (37 * hash) + DROP_TRAFFIC_IF_UNHEALTHY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDropTrafficIfUnhealthy());
+    }
+    if (hasFailoverRatio()) {
+      hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -403,11 +470,11 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       disableConnectionDrainOnFailover_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       dropTrafficIfUnhealthy_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       failoverRatio_ = 0F;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -435,9 +502,21 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendServiceFailoverPolicy result =
           new com.google.cloud.compute.v1.BackendServiceFailoverPolicy(this);
-      result.disableConnectionDrainOnFailover_ = disableConnectionDrainOnFailover_;
-      result.dropTrafficIfUnhealthy_ = dropTrafficIfUnhealthy_;
-      result.failoverRatio_ = failoverRatio_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disableConnectionDrainOnFailover_ = disableConnectionDrainOnFailover_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dropTrafficIfUnhealthy_ = dropTrafficIfUnhealthy_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.failoverRatio_ = failoverRatio_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -488,13 +567,13 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendServiceFailoverPolicy other) {
       if (other == com.google.cloud.compute.v1.BackendServiceFailoverPolicy.getDefaultInstance())
         return this;
-      if (other.getDisableConnectionDrainOnFailover() != false) {
+      if (other.hasDisableConnectionDrainOnFailover()) {
         setDisableConnectionDrainOnFailover(other.getDisableConnectionDrainOnFailover());
       }
-      if (other.getDropTrafficIfUnhealthy() != false) {
+      if (other.hasDropTrafficIfUnhealthy()) {
         setDropTrafficIfUnhealthy(other.getDropTrafficIfUnhealthy());
       }
-      if (other.getFailoverRatio() != 0F) {
+      if (other.hasFailoverRatio()) {
         setFailoverRatio(other.getFailoverRatio());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -527,7 +606,25 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private boolean disableConnectionDrainOnFailover_;
+    /**
+     *
+     *
+     * <pre>
+     * This can be set to true only if the protocol is TCP.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+     *
+     * @return Whether the disableConnectionDrainOnFailover field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableConnectionDrainOnFailover() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -558,7 +655,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setDisableConnectionDrainOnFailover(boolean value) {
-
+      bitField0_ |= 0x00000001;
       disableConnectionDrainOnFailover_ = value;
       onChanged();
       return this;
@@ -576,13 +673,28 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDisableConnectionDrainOnFailover() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       disableConnectionDrainOnFailover_ = false;
       onChanged();
       return this;
     }
 
     private boolean dropTrafficIfUnhealthy_;
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+     * </pre>
+     *
+     * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+     *
+     * @return Whether the dropTrafficIfUnhealthy field is set.
+     */
+    @java.lang.Override
+    public boolean hasDropTrafficIfUnhealthy() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -611,7 +723,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setDropTrafficIfUnhealthy(boolean value) {
-
+      bitField0_ |= 0x00000002;
       dropTrafficIfUnhealthy_ = value;
       onChanged();
       return this;
@@ -628,13 +740,28 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDropTrafficIfUnhealthy() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       dropTrafficIfUnhealthy_ = false;
       onChanged();
       return this;
     }
 
     private float failoverRatio_;
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+     * </pre>
+     *
+     * <code>float failover_ratio = 212667006;</code>
+     *
+     * @return Whether the failoverRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasFailoverRatio() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -663,7 +790,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setFailoverRatio(float value) {
-
+      bitField0_ |= 0x00000004;
       failoverRatio_ = value;
       onChanged();
       return this;
@@ -680,7 +807,7 @@ public final class BackendServiceFailoverPolicy extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearFailoverRatio() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       failoverRatio_ = 0F;
       onChanged();
       return this;

@@ -91,30 +91,30 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 28418250:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00010000;
               }
               tags_.add(s);
               break;
@@ -122,101 +122,102 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 869918738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextHopGateway_ = s;
               break;
             }
           case 882556234:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               nextHopIp_ = s;
-              break;
-            }
-          case 903138050:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destRange_ = s;
-              break;
-            }
-          case 1000582330:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextHopInstance_ = s;
-              break;
-            }
-          case 1153978354:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextHopPeering_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1413729568:
-            {
-              priority_ = input.readUInt32();
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1589439210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               nextHopIlb_ = s;
               break;
             }
-          case 1837245114:
+          case 1862979954:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              network_ = s;
+              break;
+            }
+          case 2098366306:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              nextHopNetwork_ = s;
+              break;
+            }
+          case -1277564910:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              nextHopGateway_ = s;
+              break;
+            }
+          case -1244345598:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              destRange_ = s;
+              break;
+            }
+          case -1146901318:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              nextHopInstance_ = s;
+              break;
+            }
+          case -993505294:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              nextHopPeering_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -733754080:
+            {
+              bitField0_ |= 0x00004000;
+              priority_ = input.readUInt32();
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              selfLink_ = s;
+              break;
+            }
+          case -310238534:
+            {
+              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
                 warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00020000;
               }
               warnings_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.Warnings.parser(), extensionRegistry));
               break;
             }
-          case 1862979954:
+          case -136211286:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case 2011272362:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00002000;
               nextHopVpnTunnel_ = s;
-              break;
-            }
-          case 2098366306:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextHopNetwork_ = s;
               break;
             }
           default:
@@ -233,10 +234,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         warnings_ = java.util.Collections.unmodifiableList(warnings_);
       }
       this.unknownFields = unknownFields.build();
@@ -259,8 +260,24 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Route.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -308,7 +325,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -317,7 +334,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -340,7 +372,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -357,7 +389,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEST_RANGE_FIELD_NUMBER = 112892256;
+  public static final int DEST_RANGE_FIELD_NUMBER = 381327712;
   private volatile java.lang.Object destRange_;
   /**
    *
@@ -366,7 +398,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 112892256;</code>
+   * <code>string dest_range = 381327712;</code>
+   *
+   * @return Whether the destRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestRange() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
+   * </pre>
+   *
+   * <code>string dest_range = 381327712;</code>
    *
    * @return The destRange.
    */
@@ -389,7 +436,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 112892256;</code>
+   * <code>string dest_range = 381327712;</code>
    *
    * @return The bytes for destRange.
    */
@@ -408,6 +455,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -466,6 +528,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of this resource. Always compute#routes for Route resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -506,6 +583,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -564,6 +656,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully-qualified URL of the network that this route applies to.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -602,7 +709,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NEXT_HOP_GATEWAY_FIELD_NUMBER = 108739842;
+  public static final int NEXT_HOP_GATEWAY_FIELD_NUMBER = 377175298;
   private volatile java.lang.Object nextHopGateway_;
   /**
    *
@@ -611,7 +718,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 108739842;</code>
+   * <code>string next_hop_gateway = 377175298;</code>
+   *
+   * @return Whether the nextHopGateway field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopGateway() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+   * </pre>
+   *
+   * <code>string next_hop_gateway = 377175298;</code>
    *
    * @return The nextHopGateway.
    */
@@ -634,7 +756,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 108739842;</code>
+   * <code>string next_hop_gateway = 377175298;</code>
    *
    * @return The bytes for nextHopGateway.
    */
@@ -653,6 +775,24 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEXT_HOP_ILB_FIELD_NUMBER = 198679901;
   private volatile java.lang.Object nextHopIlb_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+   * - 10.128.0.56
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - regions/region/forwardingRules/forwardingRule
+   * </pre>
+   *
+   * <code>string next_hop_ilb = 198679901;</code>
+   *
+   * @return Whether the nextHopIlb field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopIlb() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
   /**
    *
    *
@@ -706,7 +846,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NEXT_HOP_INSTANCE_FIELD_NUMBER = 125072791;
+  public static final int NEXT_HOP_INSTANCE_FIELD_NUMBER = 393508247;
   private volatile java.lang.Object nextHopInstance_;
   /**
    *
@@ -716,7 +856,23 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 125072791;</code>
+   * <code>string next_hop_instance = 393508247;</code>
+   *
+   * @return Whether the nextHopInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopInstance() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * </pre>
+   *
+   * <code>string next_hop_instance = 393508247;</code>
    *
    * @return The nextHopInstance.
    */
@@ -740,7 +896,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 125072791;</code>
+   * <code>string next_hop_instance = 393508247;</code>
    *
    * @return The bytes for nextHopInstance.
    */
@@ -759,6 +915,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEXT_HOP_IP_FIELD_NUMBER = 110319529;
   private volatile java.lang.Object nextHopIp_;
+  /**
+   *
+   *
+   * <pre>
+   * The network IP address of an instance that should handle matching packets. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string next_hop_ip = 110319529;</code>
+   *
+   * @return Whether the nextHopIp field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopIp() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
   /**
    *
    *
@@ -817,6 +988,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string next_hop_network = 262295788;</code>
    *
+   * @return Whether the nextHopNetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopNetwork() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the local network if it should handle matching packets.
+   * </pre>
+   *
+   * <code>string next_hop_network = 262295788;</code>
+   *
    * @return The nextHopNetwork.
    */
   @java.lang.Override
@@ -855,7 +1041,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NEXT_HOP_PEERING_FIELD_NUMBER = 144247294;
+  public static final int NEXT_HOP_PEERING_FIELD_NUMBER = 412682750;
   private volatile java.lang.Object nextHopPeering_;
   /**
    *
@@ -864,7 +1050,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 144247294;</code>
+   * <code>string next_hop_peering = 412682750;</code>
+   *
+   * @return Whether the nextHopPeering field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopPeering() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+   * </pre>
+   *
+   * <code>string next_hop_peering = 412682750;</code>
    *
    * @return The nextHopPeering.
    */
@@ -887,7 +1088,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 144247294;</code>
+   * <code>string next_hop_peering = 412682750;</code>
    *
    * @return The bytes for nextHopPeering.
    */
@@ -904,7 +1105,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER = 251409045;
+  public static final int NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER = 519844501;
   private volatile java.lang.Object nextHopVpnTunnel_;
   /**
    *
@@ -913,7 +1114,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 251409045;</code>
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
+   *
+   * @return Whether the nextHopVpnTunnel field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopVpnTunnel() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL to a VpnTunnel that should handle matching packets.
+   * </pre>
+   *
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
    *
    * @return The nextHopVpnTunnel.
    */
@@ -936,7 +1152,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 251409045;</code>
+   * <code>string next_hop_vpn_tunnel = 519844501;</code>
    *
    * @return The bytes for nextHopVpnTunnel.
    */
@@ -953,7 +1169,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -962,7 +1178,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
    * </pre>
    *
-   * <code>uint32 priority = 176716196;</code>
+   * <code>uint32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+   * </pre>
+   *
+   * <code>uint32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -971,7 +1202,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     return priority_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -980,7 +1211,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1003,7 +1249,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1081,7 +1327,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     return tags_.getByteString(index);
   }
 
-  public static final int WARNINGS_FIELD_NUMBER = 229655639;
+  public static final int WARNINGS_FIELD_NUMBER = 498091095;
   private java.util.List<com.google.cloud.compute.v1.Warnings> warnings_;
   /**
    *
@@ -1090,7 +1336,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
@@ -1103,7 +1349,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
@@ -1117,7 +1363,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   @java.lang.Override
   public int getWarningsCount() {
@@ -1130,7 +1376,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
@@ -1143,7 +1389,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
@@ -1164,59 +1410,59 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3552281, tags_.getRaw(i));
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getNextHopGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 108739842, nextHopGateway_);
-    }
-    if (!getNextHopIpBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110319529, nextHopIp_);
     }
-    if (!getDestRangeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 112892256, destRange_);
-    }
-    if (!getNextHopInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 125072791, nextHopInstance_);
-    }
-    if (!getNextHopPeeringBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 144247294, nextHopPeering_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (priority_ != 0) {
-      output.writeUInt32(176716196, priority_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getNextHopIlbBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 198679901, nextHopIlb_);
     }
-    for (int i = 0; i < warnings_.size(); i++) {
-      output.writeMessage(229655639, warnings_.get(i));
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (!getNextHopVpnTunnelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 251409045, nextHopVpnTunnel_);
-    }
-    if (!getNextHopNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 262295788, nextHopNetwork_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 377175298, nextHopGateway_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 381327712, destRange_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 393508247, nextHopInstance_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 412682750, nextHopPeering_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeUInt32(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(498091095, warnings_.get(i));
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 519844501, nextHopVpnTunnel_);
     }
     unknownFields.writeTo(output);
   }
@@ -1227,13 +1473,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     {
@@ -1244,49 +1490,49 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getTagsList().size();
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getNextHopGatewayBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(108739842, nextHopGateway_);
-    }
-    if (!getNextHopIpBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110319529, nextHopIp_);
     }
-    if (!getDestRangeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(112892256, destRange_);
-    }
-    if (!getNextHopInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(125072791, nextHopInstance_);
-    }
-    if (!getNextHopPeeringBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(144247294, nextHopPeering_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(176716196, priority_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getNextHopIlbBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(198679901, nextHopIlb_);
     }
-    for (int i = 0; i < warnings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(229655639, warnings_.get(i));
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (!getNextHopVpnTunnelBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(251409045, nextHopVpnTunnel_);
-    }
-    if (!getNextHopNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(262295788, nextHopNetwork_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(377175298, nextHopGateway_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(381327712, destRange_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(393508247, nextHopInstance_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(412682750, nextHopPeering_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(498091095, warnings_.get(i));
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(519844501, nextHopVpnTunnel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1303,22 +1549,70 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Route other = (com.google.cloud.compute.v1.Route) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getDestRange().equals(other.getDestRange())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (!getNextHopGateway().equals(other.getNextHopGateway())) return false;
-    if (!getNextHopIlb().equals(other.getNextHopIlb())) return false;
-    if (!getNextHopInstance().equals(other.getNextHopInstance())) return false;
-    if (!getNextHopIp().equals(other.getNextHopIp())) return false;
-    if (!getNextHopNetwork().equals(other.getNextHopNetwork())) return false;
-    if (!getNextHopPeering().equals(other.getNextHopPeering())) return false;
-    if (!getNextHopVpnTunnel().equals(other.getNextHopVpnTunnel())) return false;
-    if (getPriority() != other.getPriority()) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasDestRange() != other.hasDestRange()) return false;
+    if (hasDestRange()) {
+      if (!getDestRange().equals(other.getDestRange())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasNextHopGateway() != other.hasNextHopGateway()) return false;
+    if (hasNextHopGateway()) {
+      if (!getNextHopGateway().equals(other.getNextHopGateway())) return false;
+    }
+    if (hasNextHopIlb() != other.hasNextHopIlb()) return false;
+    if (hasNextHopIlb()) {
+      if (!getNextHopIlb().equals(other.getNextHopIlb())) return false;
+    }
+    if (hasNextHopInstance() != other.hasNextHopInstance()) return false;
+    if (hasNextHopInstance()) {
+      if (!getNextHopInstance().equals(other.getNextHopInstance())) return false;
+    }
+    if (hasNextHopIp() != other.hasNextHopIp()) return false;
+    if (hasNextHopIp()) {
+      if (!getNextHopIp().equals(other.getNextHopIp())) return false;
+    }
+    if (hasNextHopNetwork() != other.hasNextHopNetwork()) return false;
+    if (hasNextHopNetwork()) {
+      if (!getNextHopNetwork().equals(other.getNextHopNetwork())) return false;
+    }
+    if (hasNextHopPeering() != other.hasNextHopPeering()) return false;
+    if (hasNextHopPeering()) {
+      if (!getNextHopPeering().equals(other.getNextHopPeering())) return false;
+    }
+    if (hasNextHopVpnTunnel() != other.hasNextHopVpnTunnel()) return false;
+    if (hasNextHopVpnTunnel()) {
+      if (!getNextHopVpnTunnel().equals(other.getNextHopVpnTunnel())) return false;
+    }
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1332,38 +1626,70 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + DEST_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getDestRange().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + NEXT_HOP_GATEWAY_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopGateway().hashCode();
-    hash = (37 * hash) + NEXT_HOP_ILB_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopIlb().hashCode();
-    hash = (37 * hash) + NEXT_HOP_INSTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopInstance().hashCode();
-    hash = (37 * hash) + NEXT_HOP_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopIp().hashCode();
-    hash = (37 * hash) + NEXT_HOP_NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopNetwork().hashCode();
-    hash = (37 * hash) + NEXT_HOP_PEERING_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopPeering().hashCode();
-    hash = (37 * hash) + NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER;
-    hash = (53 * hash) + getNextHopVpnTunnel().hashCode();
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasDestRange()) {
+      hash = (37 * hash) + DEST_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getDestRange().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasNextHopGateway()) {
+      hash = (37 * hash) + NEXT_HOP_GATEWAY_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopGateway().hashCode();
+    }
+    if (hasNextHopIlb()) {
+      hash = (37 * hash) + NEXT_HOP_ILB_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopIlb().hashCode();
+    }
+    if (hasNextHopInstance()) {
+      hash = (37 * hash) + NEXT_HOP_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopInstance().hashCode();
+    }
+    if (hasNextHopIp()) {
+      hash = (37 * hash) + NEXT_HOP_IP_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopIp().hashCode();
+    }
+    if (hasNextHopNetwork()) {
+      hash = (37 * hash) + NEXT_HOP_NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopNetwork().hashCode();
+    }
+    if (hasNextHopPeering()) {
+      hash = (37 * hash) + NEXT_HOP_PEERING_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopPeering().hashCode();
+    }
+    if (hasNextHopVpnTunnel()) {
+      hash = (37 * hash) + NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopVpnTunnel().hashCode();
+    }
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (getTagsCount() > 0) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getTagsList().hashCode();
@@ -1520,42 +1846,42 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
-      description_ = "";
-
-      destRange_ = "";
-
-      id_ = "";
-
-      kind_ = "";
-
-      name_ = "";
-
-      network_ = "";
-
-      nextHopGateway_ = "";
-
-      nextHopIlb_ = "";
-
-      nextHopInstance_ = "";
-
-      nextHopIp_ = "";
-
-      nextHopNetwork_ = "";
-
-      nextHopPeering_ = "";
-
-      nextHopVpnTunnel_ = "";
-
-      priority_ = 0;
-
-      selfLink_ = "";
-
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      description_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
+      destRange_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
+      id_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
+      network_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
+      nextHopGateway_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
+      nextHopIlb_ = "";
+      bitField0_ = (bitField0_ & ~0x00000100);
+      nextHopInstance_ = "";
+      bitField0_ = (bitField0_ & ~0x00000200);
+      nextHopIp_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
+      nextHopNetwork_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
+      nextHopPeering_ = "";
+      bitField0_ = (bitField0_ & ~0x00001000);
+      nextHopVpnTunnel_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
+      priority_ = 0;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x00008000);
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00010000);
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00020000);
       } else {
         warningsBuilder_.clear();
       }
@@ -1586,36 +1912,86 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Route buildPartial() {
       com.google.cloud.compute.v1.Route result = new com.google.cloud.compute.v1.Route(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.destRange_ = destRange_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.network_ = network_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.nextHopGateway_ = nextHopGateway_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.nextHopIlb_ = nextHopIlb_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.nextHopInstance_ = nextHopInstance_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.nextHopIp_ = nextHopIp_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.nextHopNetwork_ = nextHopNetwork_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00001000;
+      }
       result.nextHopPeering_ = nextHopPeering_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00002000;
+      }
       result.nextHopVpnTunnel_ = nextHopVpnTunnel_;
-      result.priority_ = priority_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00008000;
+      }
       result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.tags_ = tags_;
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.warnings_ = warnings_;
       } else {
         result.warnings_ = warningsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1665,73 +2041,88 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Route other) {
       if (other == com.google.cloud.compute.v1.Route.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getDestRange().isEmpty()) {
+      if (other.hasDestRange()) {
+        bitField0_ |= 0x00000004;
         destRange_ = other.destRange_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000040;
         network_ = other.network_;
         onChanged();
       }
-      if (!other.getNextHopGateway().isEmpty()) {
+      if (other.hasNextHopGateway()) {
+        bitField0_ |= 0x00000080;
         nextHopGateway_ = other.nextHopGateway_;
         onChanged();
       }
-      if (!other.getNextHopIlb().isEmpty()) {
+      if (other.hasNextHopIlb()) {
+        bitField0_ |= 0x00000100;
         nextHopIlb_ = other.nextHopIlb_;
         onChanged();
       }
-      if (!other.getNextHopInstance().isEmpty()) {
+      if (other.hasNextHopInstance()) {
+        bitField0_ |= 0x00000200;
         nextHopInstance_ = other.nextHopInstance_;
         onChanged();
       }
-      if (!other.getNextHopIp().isEmpty()) {
+      if (other.hasNextHopIp()) {
+        bitField0_ |= 0x00000400;
         nextHopIp_ = other.nextHopIp_;
         onChanged();
       }
-      if (!other.getNextHopNetwork().isEmpty()) {
+      if (other.hasNextHopNetwork()) {
+        bitField0_ |= 0x00000800;
         nextHopNetwork_ = other.nextHopNetwork_;
         onChanged();
       }
-      if (!other.getNextHopPeering().isEmpty()) {
+      if (other.hasNextHopPeering()) {
+        bitField0_ |= 0x00001000;
         nextHopPeering_ = other.nextHopPeering_;
         onChanged();
       }
-      if (!other.getNextHopVpnTunnel().isEmpty()) {
+      if (other.hasNextHopVpnTunnel()) {
+        bitField0_ |= 0x00002000;
         nextHopVpnTunnel_ = other.nextHopVpnTunnel_;
         onChanged();
       }
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00008000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1742,7 +2133,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -1755,7 +2146,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00020000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -1797,6 +2188,20 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1857,7 +2262,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1874,7 +2279,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1896,7 +2301,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1910,7 +2315,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this field when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1932,7 +2351,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1954,7 +2373,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1963,7 +2382,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1975,12 +2394,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1992,7 +2411,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2002,7 +2421,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -2016,7 +2435,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      * </pre>
      *
-     * <code>string dest_range = 112892256;</code>
+     * <code>string dest_range = 381327712;</code>
+     *
+     * @return Whether the destRange field is set.
+     */
+    public boolean hasDestRange() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
+     * </pre>
+     *
+     * <code>string dest_range = 381327712;</code>
      *
      * @return The destRange.
      */
@@ -2038,7 +2471,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      * </pre>
      *
-     * <code>string dest_range = 112892256;</code>
+     * <code>string dest_range = 381327712;</code>
      *
      * @return The bytes for destRange.
      */
@@ -2060,7 +2493,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      * </pre>
      *
-     * <code>string dest_range = 112892256;</code>
+     * <code>string dest_range = 381327712;</code>
      *
      * @param value The destRange to set.
      * @return This builder for chaining.
@@ -2069,7 +2502,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       destRange_ = value;
       onChanged();
       return this;
@@ -2081,12 +2514,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      * </pre>
      *
-     * <code>string dest_range = 112892256;</code>
+     * <code>string dest_range = 381327712;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDestRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       destRange_ = getDefaultInstance().getDestRange();
       onChanged();
       return this;
@@ -2098,7 +2531,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
      * </pre>
      *
-     * <code>string dest_range = 112892256;</code>
+     * <code>string dest_range = 381327712;</code>
      *
      * @param value The bytes for destRange to set.
      * @return This builder for chaining.
@@ -2108,13 +2541,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       destRange_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -2175,7 +2622,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -2192,7 +2639,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -2214,13 +2661,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -2281,7 +2742,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -2298,7 +2759,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2320,13 +2781,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2387,7 +2862,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -2404,7 +2879,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2426,13 +2901,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified URL of the network that this route applies to.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -2493,7 +2982,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       network_ = value;
       onChanged();
       return this;
@@ -2510,7 +2999,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -2532,7 +3021,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       network_ = value;
       onChanged();
       return this;
@@ -2546,7 +3035,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
-     * <code>string next_hop_gateway = 108739842;</code>
+     * <code>string next_hop_gateway = 377175298;</code>
+     *
+     * @return Whether the nextHopGateway field is set.
+     */
+    public boolean hasNextHopGateway() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+     * </pre>
+     *
+     * <code>string next_hop_gateway = 377175298;</code>
      *
      * @return The nextHopGateway.
      */
@@ -2568,7 +3071,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
-     * <code>string next_hop_gateway = 108739842;</code>
+     * <code>string next_hop_gateway = 377175298;</code>
      *
      * @return The bytes for nextHopGateway.
      */
@@ -2590,7 +3093,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
-     * <code>string next_hop_gateway = 108739842;</code>
+     * <code>string next_hop_gateway = 377175298;</code>
      *
      * @param value The nextHopGateway to set.
      * @return This builder for chaining.
@@ -2599,7 +3102,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       nextHopGateway_ = value;
       onChanged();
       return this;
@@ -2611,12 +3114,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
-     * <code>string next_hop_gateway = 108739842;</code>
+     * <code>string next_hop_gateway = 377175298;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNextHopGateway() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       nextHopGateway_ = getDefaultInstance().getNextHopGateway();
       onChanged();
       return this;
@@ -2628,7 +3131,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
-     * <code>string next_hop_gateway = 108739842;</code>
+     * <code>string next_hop_gateway = 377175298;</code>
      *
      * @param value The bytes for nextHopGateway to set.
      * @return This builder for chaining.
@@ -2638,13 +3141,30 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       nextHopGateway_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextHopIlb_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+     * - 10.128.0.56
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - regions/region/forwardingRules/forwardingRule
+     * </pre>
+     *
+     * <code>string next_hop_ilb = 198679901;</code>
+     *
+     * @return Whether the nextHopIlb field is set.
+     */
+    public boolean hasNextHopIlb() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2714,7 +3234,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       nextHopIlb_ = value;
       onChanged();
       return this;
@@ -2734,7 +3254,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextHopIlb() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       nextHopIlb_ = getDefaultInstance().getNextHopIlb();
       onChanged();
       return this;
@@ -2759,7 +3279,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       nextHopIlb_ = value;
       onChanged();
       return this;
@@ -2774,7 +3294,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
-     * <code>string next_hop_instance = 125072791;</code>
+     * <code>string next_hop_instance = 393508247;</code>
+     *
+     * @return Whether the nextHopInstance field is set.
+     */
+    public boolean hasNextHopInstance() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * </pre>
+     *
+     * <code>string next_hop_instance = 393508247;</code>
      *
      * @return The nextHopInstance.
      */
@@ -2797,7 +3332,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
-     * <code>string next_hop_instance = 125072791;</code>
+     * <code>string next_hop_instance = 393508247;</code>
      *
      * @return The bytes for nextHopInstance.
      */
@@ -2820,7 +3355,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
-     * <code>string next_hop_instance = 125072791;</code>
+     * <code>string next_hop_instance = 393508247;</code>
      *
      * @param value The nextHopInstance to set.
      * @return This builder for chaining.
@@ -2829,7 +3364,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       nextHopInstance_ = value;
       onChanged();
       return this;
@@ -2842,12 +3377,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
-     * <code>string next_hop_instance = 125072791;</code>
+     * <code>string next_hop_instance = 393508247;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNextHopInstance() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       nextHopInstance_ = getDefaultInstance().getNextHopInstance();
       onChanged();
       return this;
@@ -2860,7 +3395,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
-     * <code>string next_hop_instance = 125072791;</code>
+     * <code>string next_hop_instance = 393508247;</code>
      *
      * @param value The bytes for nextHopInstance to set.
      * @return This builder for chaining.
@@ -2870,13 +3405,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       nextHopInstance_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextHopIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The network IP address of an instance that should handle matching packets. Only IPv4 is supported.
+     * </pre>
+     *
+     * <code>string next_hop_ip = 110319529;</code>
+     *
+     * @return Whether the nextHopIp field is set.
+     */
+    public boolean hasNextHopIp() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -2937,7 +3486,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       nextHopIp_ = value;
       onChanged();
       return this;
@@ -2954,7 +3503,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextHopIp() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       nextHopIp_ = getDefaultInstance().getNextHopIp();
       onChanged();
       return this;
@@ -2976,13 +3525,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       nextHopIp_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextHopNetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the local network if it should handle matching packets.
+     * </pre>
+     *
+     * <code>string next_hop_network = 262295788;</code>
+     *
+     * @return Whether the nextHopNetwork field is set.
+     */
+    public boolean hasNextHopNetwork() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -3043,7 +3606,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       nextHopNetwork_ = value;
       onChanged();
       return this;
@@ -3060,7 +3623,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextHopNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       nextHopNetwork_ = getDefaultInstance().getNextHopNetwork();
       onChanged();
       return this;
@@ -3082,7 +3645,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       nextHopNetwork_ = value;
       onChanged();
       return this;
@@ -3096,7 +3659,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string next_hop_peering = 144247294;</code>
+     * <code>string next_hop_peering = 412682750;</code>
+     *
+     * @return Whether the nextHopPeering field is set.
+     */
+    public boolean hasNextHopPeering() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * </pre>
+     *
+     * <code>string next_hop_peering = 412682750;</code>
      *
      * @return The nextHopPeering.
      */
@@ -3118,7 +3695,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string next_hop_peering = 144247294;</code>
+     * <code>string next_hop_peering = 412682750;</code>
      *
      * @return The bytes for nextHopPeering.
      */
@@ -3140,7 +3717,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string next_hop_peering = 144247294;</code>
+     * <code>string next_hop_peering = 412682750;</code>
      *
      * @param value The nextHopPeering to set.
      * @return This builder for chaining.
@@ -3149,7 +3726,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       nextHopPeering_ = value;
       onChanged();
       return this;
@@ -3161,12 +3738,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string next_hop_peering = 144247294;</code>
+     * <code>string next_hop_peering = 412682750;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNextHopPeering() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       nextHopPeering_ = getDefaultInstance().getNextHopPeering();
       onChanged();
       return this;
@@ -3178,7 +3755,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
      * </pre>
      *
-     * <code>string next_hop_peering = 144247294;</code>
+     * <code>string next_hop_peering = 412682750;</code>
      *
      * @param value The bytes for nextHopPeering to set.
      * @return This builder for chaining.
@@ -3188,7 +3765,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       nextHopPeering_ = value;
       onChanged();
       return this;
@@ -3202,7 +3779,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a VpnTunnel that should handle matching packets.
      * </pre>
      *
-     * <code>string next_hop_vpn_tunnel = 251409045;</code>
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
+     *
+     * @return Whether the nextHopVpnTunnel field is set.
+     */
+    public boolean hasNextHopVpnTunnel() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL to a VpnTunnel that should handle matching packets.
+     * </pre>
+     *
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
      *
      * @return The nextHopVpnTunnel.
      */
@@ -3224,7 +3815,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a VpnTunnel that should handle matching packets.
      * </pre>
      *
-     * <code>string next_hop_vpn_tunnel = 251409045;</code>
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
      *
      * @return The bytes for nextHopVpnTunnel.
      */
@@ -3246,7 +3837,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a VpnTunnel that should handle matching packets.
      * </pre>
      *
-     * <code>string next_hop_vpn_tunnel = 251409045;</code>
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
      *
      * @param value The nextHopVpnTunnel to set.
      * @return This builder for chaining.
@@ -3255,7 +3846,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       nextHopVpnTunnel_ = value;
       onChanged();
       return this;
@@ -3267,12 +3858,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a VpnTunnel that should handle matching packets.
      * </pre>
      *
-     * <code>string next_hop_vpn_tunnel = 251409045;</code>
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNextHopVpnTunnel() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       nextHopVpnTunnel_ = getDefaultInstance().getNextHopVpnTunnel();
       onChanged();
       return this;
@@ -3284,7 +3875,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The URL to a VpnTunnel that should handle matching packets.
      * </pre>
      *
-     * <code>string next_hop_vpn_tunnel = 251409045;</code>
+     * <code>string next_hop_vpn_tunnel = 519844501;</code>
      *
      * @param value The bytes for nextHopVpnTunnel to set.
      * @return This builder for chaining.
@@ -3294,7 +3885,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00002000;
       nextHopVpnTunnel_ = value;
       onChanged();
       return this;
@@ -3308,7 +3899,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+     * </pre>
+     *
+     * <code>uint32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -3323,13 +3929,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00004000;
       priority_ = value;
       onChanged();
       return this;
@@ -3341,12 +3947,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
-     * <code>uint32 priority = 176716196;</code>
+     * <code>uint32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       priority_ = 0;
       onChanged();
       return this;
@@ -3360,7 +3966,21 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -3382,7 +4002,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3404,7 +4024,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3413,7 +4033,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3425,12 +4045,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3442,7 +4062,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3452,7 +4072,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00008000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3462,9 +4082,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -3599,7 +4219,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -3630,9 +4250,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -3649,7 +4269,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
       if (warningsBuilder_ == null) {
@@ -3665,7 +4285,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public int getWarningsCount() {
       if (warningsBuilder_ == null) {
@@ -3681,7 +4301,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -3697,7 +4317,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder setWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3719,7 +4339,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder setWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -3739,7 +4359,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3761,7 +4381,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder addWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3783,7 +4403,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
       if (warningsBuilder_ == null) {
@@ -3802,7 +4422,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder addWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -3822,7 +4442,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder addAllWarnings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Warnings> values) {
@@ -3842,12 +4462,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -3861,7 +4481,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public Builder removeWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -3880,7 +4500,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
@@ -3892,7 +4512,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
       if (warningsBuilder_ == null) {
@@ -3908,7 +4528,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
         getWarningsOrBuilderList() {
@@ -3925,7 +4545,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder() {
       return getWarningsFieldBuilder()
@@ -3938,7 +4558,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder(int index) {
       return getWarningsFieldBuilder()
@@ -3951,7 +4571,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings.Builder> getWarningsBuilderList() {
       return getWarningsFieldBuilder().getBuilderList();
@@ -3968,7 +4588,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;

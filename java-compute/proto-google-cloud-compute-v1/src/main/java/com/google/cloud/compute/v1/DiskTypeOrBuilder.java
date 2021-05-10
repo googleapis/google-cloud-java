@@ -32,6 +32,18 @@ public interface DiskTypeOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 2183797;</code>
+   * <code>string default_disk_size_gb = 270619253;</code>
+   *
+   * @return Whether the defaultDiskSizeGb field is set.
+   */
+  boolean hasDefaultDiskSizeGb();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined default disk size in GB.
+   * </pre>
+   *
+   * <code>string default_disk_size_gb = 270619253;</code>
    *
    * @return The defaultDiskSizeGb.
    */
@@ -67,7 +91,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 2183797;</code>
+   * <code>string default_disk_size_gb = 270619253;</code>
    *
    * @return The bytes for defaultDiskSizeGb.
    */
@@ -80,7 +104,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -92,7 +116,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -104,7 +128,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -115,7 +139,19 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional description of this resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -127,12 +163,24 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -167,6 +215,18 @@ public interface DiskTypeOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#diskType for disk types.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -183,6 +243,18 @@ public interface DiskTypeOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -217,6 +289,18 @@ public interface DiskTypeOrBuilder
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   java.lang.String getRegion();
@@ -240,7 +324,19 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -252,7 +348,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -265,7 +361,19 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 225527008;</code>
+   * <code>string valid_disk_size = 493962464;</code>
+   *
+   * @return Whether the validDiskSize field is set.
+   */
+  boolean hasValidDiskSize();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+   * </pre>
+   *
+   * <code>string valid_disk_size = 493962464;</code>
    *
    * @return The validDiskSize.
    */
@@ -277,12 +385,24 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 225527008;</code>
+   * <code>string valid_disk_size = 493962464;</code>
    *
    * @return The bytes for validDiskSize.
    */
   com.google.protobuf.ByteString getValidDiskSizeBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the zone where the disk type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

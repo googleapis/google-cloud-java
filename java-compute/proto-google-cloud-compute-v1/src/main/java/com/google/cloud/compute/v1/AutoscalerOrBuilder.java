@@ -70,6 +70,18 @@ public interface AutoscalerOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -93,7 +105,19 @@ public interface AutoscalerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -105,12 +129,24 @@ public interface AutoscalerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -145,6 +181,18 @@ public interface AutoscalerOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -161,6 +209,18 @@ public interface AutoscalerOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -195,10 +255,34 @@ public interface AutoscalerOrBuilder
    *
    * <code>int32 recommended_size = 257915749;</code>
    *
+   * @return Whether the recommendedSize field is set.
+   */
+  boolean hasRecommendedSize();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
+   * </pre>
+   *
+   * <code>int32 recommended_size = 257915749;</code>
+   *
    * @return The recommendedSize.
    */
   int getRecommendedSize();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -231,7 +315,19 @@ public interface AutoscalerOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -243,12 +339,28 @@ public interface AutoscalerOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
+   * - DELETING: Configuration is being deleted.
+   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
+   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -289,7 +401,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> getStatusDetailsList();
@@ -300,7 +412,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index);
@@ -311,7 +423,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   int getStatusDetailsCount();
@@ -322,7 +434,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>
@@ -334,11 +446,23 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder getStatusDetailsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  boolean hasTarget();
   /**
    *
    *
@@ -364,6 +488,18 @@ public interface AutoscalerOrBuilder
    */
   com.google.protobuf.ByteString getTargetBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

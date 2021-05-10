@@ -73,7 +73,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,10 +83,10 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
-          case 780568698:
+          case -1366914950:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sslCertificates_ =
@@ -135,7 +135,8 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.SslCertificatesScopedList.Builder.class);
   }
 
-  public static final int SSL_CERTIFICATES_FIELD_NUMBER = 97571087;
+  private int bitField0_;
+  public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
   private java.util.List<com.google.cloud.compute.v1.SslCertificate> sslCertificates_;
   /**
    *
@@ -144,7 +145,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.SslCertificate> getSslCertificatesList() {
@@ -157,7 +158,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.SslCertificateOrBuilder>
@@ -171,7 +172,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   @java.lang.Override
   public int getSslCertificatesCount() {
@@ -184,7 +185,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslCertificate getSslCertificates(int index) {
@@ -197,7 +198,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslCertificateOrBuilder getSslCertificatesOrBuilder(
@@ -220,7 +221,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -248,7 +249,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -265,11 +266,11 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < sslCertificates_.size(); i++) {
-      output.writeMessage(97571087, sslCertificates_.get(i));
+      output.writeMessage(366006543, sslCertificates_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -280,13 +281,13 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < sslCertificates_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              97571087, sslCertificates_.get(i));
+              366006543, sslCertificates_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -469,6 +470,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSslCertificatesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -484,9 +486,9 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -515,6 +517,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       com.google.cloud.compute.v1.SslCertificatesScopedList result =
           new com.google.cloud.compute.v1.SslCertificatesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (sslCertificatesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sslCertificates_ = java.util.Collections.unmodifiableList(sslCertificates_);
@@ -524,11 +527,15 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       } else {
         result.sslCertificates_ = sslCertificatesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -665,7 +672,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.SslCertificate> getSslCertificatesList() {
       if (sslCertificatesBuilder_ == null) {
@@ -681,7 +688,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public int getSslCertificatesCount() {
       if (sslCertificatesBuilder_ == null) {
@@ -697,7 +704,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public com.google.cloud.compute.v1.SslCertificate getSslCertificates(int index) {
       if (sslCertificatesBuilder_ == null) {
@@ -713,7 +720,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder setSslCertificates(int index, com.google.cloud.compute.v1.SslCertificate value) {
       if (sslCertificatesBuilder_ == null) {
@@ -735,7 +742,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder setSslCertificates(
         int index, com.google.cloud.compute.v1.SslCertificate.Builder builderForValue) {
@@ -755,7 +762,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder addSslCertificates(com.google.cloud.compute.v1.SslCertificate value) {
       if (sslCertificatesBuilder_ == null) {
@@ -777,7 +784,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder addSslCertificates(int index, com.google.cloud.compute.v1.SslCertificate value) {
       if (sslCertificatesBuilder_ == null) {
@@ -799,7 +806,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder addSslCertificates(
         com.google.cloud.compute.v1.SslCertificate.Builder builderForValue) {
@@ -819,7 +826,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder addSslCertificates(
         int index, com.google.cloud.compute.v1.SslCertificate.Builder builderForValue) {
@@ -839,7 +846,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder addAllSslCertificates(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.SslCertificate> values) {
@@ -859,7 +866,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder clearSslCertificates() {
       if (sslCertificatesBuilder_ == null) {
@@ -878,7 +885,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public Builder removeSslCertificates(int index) {
       if (sslCertificatesBuilder_ == null) {
@@ -897,7 +904,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public com.google.cloud.compute.v1.SslCertificate.Builder getSslCertificatesBuilder(int index) {
       return getSslCertificatesFieldBuilder().getBuilder(index);
@@ -909,7 +916,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public com.google.cloud.compute.v1.SslCertificateOrBuilder getSslCertificatesOrBuilder(
         int index) {
@@ -926,7 +933,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.SslCertificateOrBuilder>
         getSslCertificatesOrBuilderList() {
@@ -943,7 +950,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public com.google.cloud.compute.v1.SslCertificate.Builder addSslCertificatesBuilder() {
       return getSslCertificatesFieldBuilder()
@@ -956,7 +963,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public com.google.cloud.compute.v1.SslCertificate.Builder addSslCertificatesBuilder(int index) {
       return getSslCertificatesFieldBuilder()
@@ -969,7 +976,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * List of SslCertificates contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
+     * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.SslCertificate.Builder>
         getSslCertificatesBuilderList() {
@@ -1014,7 +1021,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1055,7 +1062,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1074,7 +1081,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1088,7 +1095,9 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1100,7 +1109,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1117,10 +1126,9 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1133,7 +1141,7 @@ public final class SslCertificatesScopedList extends com.google.protobuf.Generat
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

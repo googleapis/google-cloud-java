@@ -61,6 +61,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,7 +75,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               ipCidrRange_ = s;
               break;
             }
@@ -112,8 +113,24 @@ public final class SubnetworksExpandIpCidrRangeRequest
             com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IP_CIDR_RANGE_FIELD_NUMBER = 98117322;
   private volatile java.lang.Object ipCidrRange_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
+   * </pre>
+   *
+   * <code>string ip_cidr_range = 98117322;</code>
+   *
+   * @return Whether the ipCidrRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpCidrRange() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -175,7 +192,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
     unknownFields.writeTo(output);
@@ -187,7 +204,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getIpCidrRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
     size += unknownFields.getSerializedSize();
@@ -206,7 +223,10 @@ public final class SubnetworksExpandIpCidrRangeRequest
     com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest other =
         (com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest) obj;
 
-    if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
+    if (hasIpCidrRange()) {
+      if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -218,8 +238,10 @@ public final class SubnetworksExpandIpCidrRangeRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getIpCidrRange().hashCode();
+    if (hasIpCidrRange()) {
+      hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,7 +388,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
     public Builder clear() {
       super.clear();
       ipCidrRange_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -395,7 +417,13 @@ public final class SubnetworksExpandIpCidrRangeRequest
     public com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest buildPartial() {
       com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest result =
           new com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.ipCidrRange_ = ipCidrRange_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -448,7 +476,8 @@ public final class SubnetworksExpandIpCidrRangeRequest
       if (other
           == com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest.getDefaultInstance())
         return this;
-      if (!other.getIpCidrRange().isEmpty()) {
+      if (other.hasIpCidrRange()) {
+        bitField0_ |= 0x00000001;
         ipCidrRange_ = other.ipCidrRange_;
         onChanged();
       }
@@ -483,7 +512,23 @@ public final class SubnetworksExpandIpCidrRangeRequest
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object ipCidrRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
+     * </pre>
+     *
+     * <code>string ip_cidr_range = 98117322;</code>
+     *
+     * @return Whether the ipCidrRange field is set.
+     */
+    public boolean hasIpCidrRange() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -544,7 +589,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -561,7 +606,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
       onChanged();
       return this;
@@ -583,7 +628,7 @@ public final class SubnetworksExpandIpCidrRangeRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       ipCidrRange_ = value;
       onChanged();
       return this;

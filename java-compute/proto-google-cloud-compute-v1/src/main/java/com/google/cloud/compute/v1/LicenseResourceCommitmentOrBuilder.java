@@ -32,6 +32,18 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    * <code>string amount = 196759640;</code>
    *
+   * @return Whether the amount field is set.
+   */
+  boolean hasAmount();
+  /**
+   *
+   *
+   * <pre>
+   * The number of licenses purchased.
+   * </pre>
+   *
+   * <code>string amount = 196759640;</code>
+   *
    * @return The amount.
    */
   java.lang.String getAmount();
@@ -57,6 +69,18 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    * <code>string cores_per_license = 32482324;</code>
    *
+   * @return Whether the coresPerLicense field is set.
+   */
+  boolean hasCoresPerLicense();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the core range of the instance for which this license applies.
+   * </pre>
+   *
+   * <code>string cores_per_license = 32482324;</code>
+   *
    * @return The coresPerLicense.
    */
   java.lang.String getCoresPerLicense();
@@ -73,6 +97,18 @@ public interface LicenseResourceCommitmentOrBuilder
    */
   com.google.protobuf.ByteString getCoresPerLicenseBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Any applicable license URI.
+   * </pre>
+   *
+   * <code>string license = 166757441;</code>
+   *
+   * @return Whether the license field is set.
+   */
+  boolean hasLicense();
   /**
    *
    *

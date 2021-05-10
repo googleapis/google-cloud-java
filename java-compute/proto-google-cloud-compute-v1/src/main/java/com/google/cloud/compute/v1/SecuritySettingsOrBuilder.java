@@ -33,7 +33,22 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string client_tls_policy = 193889770;</code>
+   * <code>string client_tls_policy = 462325226;</code>
+   *
+   * @return Whether the clientTlsPolicy field is set.
+   */
+  boolean hasClientTlsPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.ClientTlsPolicy resource that describes how clients should authenticate with this service's backends.
+   * clientTlsPolicy only applies to a global BackendService with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * If left blank, communications are not encrypted.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string client_tls_policy = 462325226;</code>
    *
    * @return The clientTlsPolicy.
    */
@@ -48,7 +63,7 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>string client_tls_policy = 193889770;</code>
+   * <code>string client_tls_policy = 462325226;</code>
    *
    * @return The bytes for clientTlsPolicy.
    */
@@ -64,7 +79,7 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @return A list containing the subjectAltNames.
    */
@@ -79,7 +94,7 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @return The count of subjectAltNames.
    */
@@ -94,7 +109,7 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @param index The index of the element to return.
    * @return The subjectAltNames at the given index.
@@ -110,7 +125,7 @@ public interface SecuritySettingsOrBuilder
    * Note: This field currently has no impact.
    * </pre>
    *
-   * <code>repeated string subject_alt_names = 61594079;</code>
+   * <code>repeated string subject_alt_names = 330029535;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectAltNames at the given index.

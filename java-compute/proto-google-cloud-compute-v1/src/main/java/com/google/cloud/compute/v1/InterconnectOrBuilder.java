@@ -30,7 +30,19 @@ public interface InterconnectOrBuilder
    * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
-   * <code>bool admin_enabled = 177239633;</code>
+   * <code>bool admin_enabled = 445675089;</code>
+   *
+   * @return Whether the adminEnabled field is set.
+   */
+  boolean hasAdminEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * </pre>
+   *
+   * <code>bool admin_enabled = 445675089;</code>
    *
    * @return The adminEnabled.
    */
@@ -102,6 +114,18 @@ public interface InterconnectOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -118,6 +142,18 @@ public interface InterconnectOrBuilder
    */
   com.google.protobuf.ByteString getCreationTimestampBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * </pre>
+   *
+   * <code>string customer_name = 3665484;</code>
+   *
+   * @return Whether the customerName field is set.
+   */
+  boolean hasCustomerName();
   /**
    *
    *
@@ -150,7 +186,19 @@ public interface InterconnectOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -162,7 +210,7 @@ public interface InterconnectOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -239,7 +287,19 @@ public interface InterconnectOrBuilder
    * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
    * </pre>
    *
-   * <code>string google_ip_address = 174670498;</code>
+   * <code>string google_ip_address = 443105954;</code>
+   *
+   * @return Whether the googleIpAddress field is set.
+   */
+  boolean hasGoogleIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * </pre>
+   *
+   * <code>string google_ip_address = 443105954;</code>
    *
    * @return The googleIpAddress.
    */
@@ -251,7 +311,7 @@ public interface InterconnectOrBuilder
    * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
    * </pre>
    *
-   * <code>string google_ip_address = 174670498;</code>
+   * <code>string google_ip_address = 443105954;</code>
    *
    * @return The bytes for googleIpAddress.
    */
@@ -264,7 +324,19 @@ public interface InterconnectOrBuilder
    * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
+   *
+   * @return Whether the googleReferenceId field is set.
+   */
+  boolean hasGoogleReferenceId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * </pre>
+   *
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The googleReferenceId.
    */
@@ -276,12 +348,24 @@ public interface InterconnectOrBuilder
    * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
-   * <code>string google_reference_id = 266509013;</code>
+   * <code>string google_reference_id = 534944469;</code>
    *
    * @return The bytes for googleReferenceId.
    */
   com.google.protobuf.ByteString getGoogleReferenceIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -314,7 +398,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 156952959;</code>
+   * <code>repeated string interconnect_attachments = 425388415;</code>
    *
    * @return A list containing the interconnectAttachments.
    */
@@ -326,7 +410,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 156952959;</code>
+   * <code>repeated string interconnect_attachments = 425388415;</code>
    *
    * @return The count of interconnectAttachments.
    */
@@ -338,7 +422,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 156952959;</code>
+   * <code>repeated string interconnect_attachments = 425388415;</code>
    *
    * @param index The index of the element to return.
    * @return The interconnectAttachments at the given index.
@@ -351,7 +435,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 156952959;</code>
+   * <code>repeated string interconnect_attachments = 425388415;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the interconnectAttachments at the given index.
@@ -367,7 +451,22 @@ public interface InterconnectOrBuilder
    * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;
+   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
+   * </code>
+   *
+   * @return Whether the interconnectType field is set.
+   */
+  boolean hasInterconnectType();
+  /**
+   *
+   *
+   * <pre>
+   * Type of interconnect, which can take one of the following values:
+   * - PARTNER: A partner-managed interconnection shared between customers though a partner.
+   * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
    * </code>
    *
    * @return The enum numeric value on the wire for interconnectType.
@@ -382,13 +481,25 @@ public interface InterconnectOrBuilder
    * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;
+   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
    * </code>
    *
    * @return The interconnectType.
    */
   com.google.cloud.compute.v1.Interconnect.InterconnectType getInterconnectType();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -423,7 +534,21 @@ public interface InterconnectOrBuilder
    * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
+   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+   *
+   * @return Whether the linkType field is set.
+   */
+  boolean hasLinkType();
+  /**
+   *
+   *
+   * <pre>
+   * Type of link requested, which can take one of the following values:
+   * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
    *
    * @return The enum numeric value on the wire for linkType.
    */
@@ -437,7 +562,7 @@ public interface InterconnectOrBuilder
    * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
+   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
    *
    * @return The linkType.
    */
@@ -450,7 +575,19 @@ public interface InterconnectOrBuilder
    * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
+   *
+   * @return Whether the location field is set.
+   */
+  boolean hasLocation();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * </pre>
+   *
+   * <code>string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -462,12 +599,24 @@ public interface InterconnectOrBuilder
    * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -502,6 +651,18 @@ public interface InterconnectOrBuilder
    *
    * <code>string noc_contact_email = 14072832;</code>
    *
+   * @return Whether the nocContactEmail field is set.
+   */
+  boolean hasNocContactEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Stackdriver logs alerting and Cloud Notifications.
+   * </pre>
+   *
+   * <code>string noc_contact_email = 14072832;</code>
+   *
    * @return The nocContactEmail.
    */
   java.lang.String getNocContactEmail();
@@ -518,6 +679,22 @@ public interface InterconnectOrBuilder
    */
   com.google.protobuf.ByteString getNocContactEmailBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values:
+   * - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect.
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;
+   * </code>
+   *
+   * @return Whether the operationalStatus field is set.
+   */
+  boolean hasOperationalStatus();
   /**
    *
    *
@@ -560,6 +737,18 @@ public interface InterconnectOrBuilder
    *
    * <code>string peer_ip_address = 207735769;</code>
    *
+   * @return Whether the peerIpAddress field is set.
+   */
+  boolean hasPeerIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * </pre>
+   *
+   * <code>string peer_ip_address = 207735769;</code>
+   *
    * @return The peerIpAddress.
    */
   java.lang.String getPeerIpAddress();
@@ -583,12 +772,36 @@ public interface InterconnectOrBuilder
    * [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
-   * <code>int32 provisioned_link_count = 142453109;</code>
+   * <code>int32 provisioned_link_count = 410888565;</code>
+   *
+   * @return Whether the provisionedLinkCount field is set.
+   */
+  boolean hasProvisionedLinkCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Number of links actually provisioned in this interconnect.
+   * </pre>
+   *
+   * <code>int32 provisioned_link_count = 410888565;</code>
    *
    * @return The provisionedLinkCount.
    */
   int getProvisionedLinkCount();
 
+  /**
+   *
+   *
+   * <pre>
+   * Target number of physical links in the link bundle, as requested by the customer.
+   * </pre>
+   *
+   * <code>int32 requested_link_count = 45051387;</code>
+   *
+   * @return Whether the requestedLinkCount field is set.
+   */
+  boolean hasRequestedLinkCount();
   /**
    *
    *
@@ -609,7 +822,19 @@ public interface InterconnectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -621,12 +846,27 @@ public interface InterconnectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values:
+   * - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect.
+   * - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect.
+   * - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+   *
+   * @return Whether the state field is set.
+   */
+  boolean hasState();
   /**
    *
    *

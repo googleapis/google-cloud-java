@@ -63,6 +63,7 @@ public final class SetCommonInstanceMetadataProjectRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,21 @@ public final class SetCommonInstanceMetadataProjectRequest
           case 0:
             done = true;
             break;
-          case 181205234:
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -1966278414:
             {
               com.google.cloud.compute.v1.Metadata.Builder subBuilder = null;
               if (metadataResource_ != null) {
@@ -87,20 +102,6 @@ public final class SetCommonInstanceMetadataProjectRequest
                 metadataResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -137,7 +138,8 @@ public final class SetCommonInstanceMetadataProjectRequest
             com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest.Builder.class);
   }
 
-  public static final int METADATA_RESOURCE_FIELD_NUMBER = 22650654;
+  private int bitField0_;
+  public static final int METADATA_RESOURCE_FIELD_NUMBER = 291086110;
   private com.google.cloud.compute.v1.Metadata metadataResource_;
   /**
    *
@@ -147,7 +149,7 @@ public final class SetCommonInstanceMetadataProjectRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the metadataResource field is set.
@@ -164,7 +166,7 @@ public final class SetCommonInstanceMetadataProjectRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The metadataResource.
@@ -183,7 +185,7 @@ public final class SetCommonInstanceMetadataProjectRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -253,6 +255,23 @@ public final class SetCommonInstanceMetadataProjectRequest
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -307,14 +326,14 @@ public final class SetCommonInstanceMetadataProjectRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (metadataResource_ != null) {
-      output.writeMessage(22650654, getMetadataResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (metadataResource_ != null) {
+      output.writeMessage(291086110, getMetadataResource());
     }
     unknownFields.writeTo(output);
   }
@@ -325,15 +344,16 @@ public final class SetCommonInstanceMetadataProjectRequest
     if (size != -1) return size;
 
     size = 0;
-    if (metadataResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(22650654, getMetadataResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (metadataResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              291086110, getMetadataResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -356,7 +376,10 @@ public final class SetCommonInstanceMetadataProjectRequest
       if (!getMetadataResource().equals(other.getMetadataResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -374,8 +397,10 @@ public final class SetCommonInstanceMetadataProjectRequest
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -533,7 +558,7 @@ public final class SetCommonInstanceMetadataProjectRequest
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -563,13 +588,19 @@ public final class SetCommonInstanceMetadataProjectRequest
     public com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest buildPartial() {
       com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest result =
           new com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (metadataResourceBuilder_ == null) {
         result.metadataResource_ = metadataResource_;
       } else {
         result.metadataResource_ = metadataResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -630,7 +661,8 @@ public final class SetCommonInstanceMetadataProjectRequest
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -665,6 +697,8 @@ public final class SetCommonInstanceMetadataProjectRequest
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.Metadata metadataResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Metadata,
@@ -679,7 +713,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the metadataResource field is set.
@@ -695,7 +729,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The metadataResource.
@@ -717,7 +751,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setMetadataResource(com.google.cloud.compute.v1.Metadata value) {
@@ -741,7 +775,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setMetadataResource(
@@ -763,7 +797,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeMetadataResource(com.google.cloud.compute.v1.Metadata value) {
@@ -791,7 +825,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearMetadataResource() {
@@ -813,7 +847,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.Metadata.Builder getMetadataResourceBuilder() {
@@ -829,7 +863,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataResourceOrBuilder() {
@@ -849,7 +883,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.Metadata metadata_resource = 291086110 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -987,6 +1021,22 @@ public final class SetCommonInstanceMetadataProjectRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1042,7 +1092,7 @@ public final class SetCommonInstanceMetadataProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1061,7 +1111,7 @@ public final class SetCommonInstanceMetadataProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1085,7 +1135,7 @@ public final class SetCommonInstanceMetadataProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

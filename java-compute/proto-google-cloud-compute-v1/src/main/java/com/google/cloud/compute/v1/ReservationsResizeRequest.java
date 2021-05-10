@@ -59,6 +59,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
           case 111125762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               specificSkuCount_ = s;
               break;
             }
@@ -110,8 +111,24 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.ReservationsResizeRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SPECIFIC_SKU_COUNT_FIELD_NUMBER = 13890720;
   private volatile java.lang.Object specificSkuCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
+   * </pre>
+   *
+   * <code>string specific_sku_count = 13890720;</code>
+   *
+   * @return Whether the specificSkuCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpecificSkuCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +190,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSpecificSkuCountBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13890720, specificSkuCount_);
     }
     unknownFields.writeTo(output);
@@ -185,7 +202,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!getSpecificSkuCountBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13890720, specificSkuCount_);
     }
     size += unknownFields.getSerializedSize();
@@ -204,7 +221,10 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     com.google.cloud.compute.v1.ReservationsResizeRequest other =
         (com.google.cloud.compute.v1.ReservationsResizeRequest) obj;
 
-    if (!getSpecificSkuCount().equals(other.getSpecificSkuCount())) return false;
+    if (hasSpecificSkuCount() != other.hasSpecificSkuCount()) return false;
+    if (hasSpecificSkuCount()) {
+      if (!getSpecificSkuCount().equals(other.getSpecificSkuCount())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SPECIFIC_SKU_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getSpecificSkuCount().hashCode();
+    if (hasSpecificSkuCount()) {
+      hash = (37 * hash) + SPECIFIC_SKU_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecificSkuCount().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,7 +386,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       specificSkuCount_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -392,7 +414,13 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.ReservationsResizeRequest buildPartial() {
       com.google.cloud.compute.v1.ReservationsResizeRequest result =
           new com.google.cloud.compute.v1.ReservationsResizeRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.specificSkuCount_ = specificSkuCount_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -443,7 +471,8 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.compute.v1.ReservationsResizeRequest other) {
       if (other == com.google.cloud.compute.v1.ReservationsResizeRequest.getDefaultInstance())
         return this;
-      if (!other.getSpecificSkuCount().isEmpty()) {
+      if (other.hasSpecificSkuCount()) {
+        bitField0_ |= 0x00000001;
         specificSkuCount_ = other.specificSkuCount_;
         onChanged();
       }
@@ -477,7 +506,23 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object specificSkuCount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
+     * </pre>
+     *
+     * <code>string specific_sku_count = 13890720;</code>
+     *
+     * @return Whether the specificSkuCount field is set.
+     */
+    public boolean hasSpecificSkuCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -538,7 +583,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       specificSkuCount_ = value;
       onChanged();
       return this;
@@ -555,7 +600,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSpecificSkuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       specificSkuCount_ = getDefaultInstance().getSpecificSkuCount();
       onChanged();
       return this;
@@ -577,7 +622,7 @@ public final class ReservationsResizeRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       specificSkuCount_ = value;
       onChanged();
       return this;

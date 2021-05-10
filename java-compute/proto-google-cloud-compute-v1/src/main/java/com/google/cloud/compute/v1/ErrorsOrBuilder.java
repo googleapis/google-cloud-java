@@ -32,6 +32,18 @@ public interface ErrorsOrBuilder
    *
    * <code>string code = 3059181;</code>
    *
+   * @return Whether the code field is set.
+   */
+  boolean hasCode();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The error type identifier for this error.
+   * </pre>
+   *
+   * <code>string code = 3059181;</code>
+   *
    * @return The code.
    */
   java.lang.String getCode();
@@ -55,7 +67,19 @@ public interface ErrorsOrBuilder
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
+   *
+   * @return Whether the location field is set.
+   */
+  boolean hasLocation();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+   * </pre>
+   *
+   * <code>string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -67,7 +91,7 @@ public interface ErrorsOrBuilder
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
@@ -80,7 +104,19 @@ public interface ErrorsOrBuilder
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  boolean hasMessage();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional, human-readable error message.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -92,7 +128,7 @@ public interface ErrorsOrBuilder
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */

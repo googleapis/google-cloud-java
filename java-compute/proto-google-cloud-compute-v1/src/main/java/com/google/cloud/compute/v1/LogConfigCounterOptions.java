@@ -80,7 +80,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
           case 779421650:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               field_ = s;
               break;
             }
@@ -98,10 +98,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
                       extensionRegistry));
               break;
             }
-          case 2117053826:
+          case -30429822:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               metric_ = s;
               break;
             }
@@ -142,6 +142,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.LogConfigCounterOptions.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CUSTOM_FIELDS_FIELD_NUMBER = 249651015;
   private java.util.List<com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField>
       customFields_;
@@ -236,6 +237,21 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    *
    * <code>string field = 97427706;</code>
    *
+   * @return Whether the field field is set.
+   */
+  @java.lang.Override
+  public boolean hasField() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The field value to attribute.
+   * </pre>
+   *
+   * <code>string field = 97427706;</code>
+   *
    * @return The field.
    */
   @java.lang.Override
@@ -274,7 +290,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     }
   }
 
-  public static final int METRIC_FIELD_NUMBER = 264631728;
+  public static final int METRIC_FIELD_NUMBER = 533067184;
   private volatile java.lang.Object metric_;
   /**
    *
@@ -283,7 +299,22 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 264631728;</code>
+   * <code>string metric = 533067184;</code>
+   *
+   * @return Whether the metric field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetric() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metric to update.
+   * </pre>
+   *
+   * <code>string metric = 533067184;</code>
    *
    * @return The metric.
    */
@@ -306,7 +337,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 264631728;</code>
+   * <code>string metric = 533067184;</code>
    *
    * @return The bytes for metric.
    */
@@ -337,14 +368,14 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getFieldBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 97427706, field_);
     }
     for (int i = 0; i < customFields_.size(); i++) {
       output.writeMessage(249651015, customFields_.get(i));
     }
-    if (!getMetricBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 264631728, metric_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 533067184, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -355,15 +386,15 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getFieldBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(97427706, field_);
     }
     for (int i = 0; i < customFields_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249651015, customFields_.get(i));
     }
-    if (!getMetricBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264631728, metric_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(533067184, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -382,8 +413,14 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         (com.google.cloud.compute.v1.LogConfigCounterOptions) obj;
 
     if (!getCustomFieldsList().equals(other.getCustomFieldsList())) return false;
-    if (!getField().equals(other.getField())) return false;
-    if (!getMetric().equals(other.getMetric())) return false;
+    if (hasField() != other.hasField()) return false;
+    if (hasField()) {
+      if (!getField().equals(other.getField())) return false;
+    }
+    if (hasMetric() != other.hasMetric()) return false;
+    if (hasMetric()) {
+      if (!getMetric().equals(other.getMetric())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -399,10 +436,14 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       hash = (37 * hash) + CUSTOM_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomFieldsList().hashCode();
     }
-    hash = (37 * hash) + FIELD_FIELD_NUMBER;
-    hash = (53 * hash) + getField().hashCode();
-    hash = (37 * hash) + METRIC_FIELD_NUMBER;
-    hash = (53 * hash) + getMetric().hashCode();
+    if (hasField()) {
+      hash = (37 * hash) + FIELD_FIELD_NUMBER;
+      hash = (53 * hash) + getField().hashCode();
+    }
+    if (hasMetric()) {
+      hash = (37 * hash) + METRIC_FIELD_NUMBER;
+      hash = (53 * hash) + getMetric().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,9 +602,9 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         customFieldsBuilder_.clear();
       }
       field_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       metric_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -592,6 +633,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       com.google.cloud.compute.v1.LogConfigCounterOptions result =
           new com.google.cloud.compute.v1.LogConfigCounterOptions(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (customFieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           customFields_ = java.util.Collections.unmodifiableList(customFields_);
@@ -601,8 +643,15 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       } else {
         result.customFields_ = customFieldsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.field_ = field_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.metric_ = metric_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -680,11 +729,13 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
           }
         }
       }
-      if (!other.getField().isEmpty()) {
+      if (other.hasField()) {
+        bitField0_ |= 0x00000002;
         field_ = other.field_;
         onChanged();
       }
-      if (!other.getMetric().isEmpty()) {
+      if (other.hasMetric()) {
+        bitField0_ |= 0x00000004;
         metric_ = other.metric_;
         onChanged();
       }
@@ -1134,6 +1185,20 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      *
      * <code>string field = 97427706;</code>
      *
+     * @return Whether the field field is set.
+     */
+    public boolean hasField() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The field value to attribute.
+     * </pre>
+     *
+     * <code>string field = 97427706;</code>
+     *
      * @return The field.
      */
     public java.lang.String getField() {
@@ -1185,7 +1250,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       field_ = value;
       onChanged();
       return this;
@@ -1202,7 +1267,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearField() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       field_ = getDefaultInstance().getField();
       onChanged();
       return this;
@@ -1224,7 +1289,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       field_ = value;
       onChanged();
       return this;
@@ -1238,7 +1303,21 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 264631728;</code>
+     * <code>string metric = 533067184;</code>
+     *
+     * @return Whether the metric field is set.
+     */
+    public boolean hasMetric() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metric to update.
+     * </pre>
+     *
+     * <code>string metric = 533067184;</code>
      *
      * @return The metric.
      */
@@ -1260,7 +1339,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 264631728;</code>
+     * <code>string metric = 533067184;</code>
      *
      * @return The bytes for metric.
      */
@@ -1282,7 +1361,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 264631728;</code>
+     * <code>string metric = 533067184;</code>
      *
      * @param value The metric to set.
      * @return This builder for chaining.
@@ -1291,7 +1370,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       metric_ = value;
       onChanged();
       return this;
@@ -1303,12 +1382,12 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 264631728;</code>
+     * <code>string metric = 533067184;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       metric_ = getDefaultInstance().getMetric();
       onChanged();
       return this;
@@ -1320,7 +1399,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 264631728;</code>
+     * <code>string metric = 533067184;</code>
      *
      * @param value The bytes for metric to set.
      * @return This builder for chaining.
@@ -1330,7 +1409,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       metric_ = value;
       onChanged();
       return this;

@@ -32,6 +32,18 @@ public interface CacheInvalidationRuleOrBuilder
    *
    * <code>string host = 3208616;</code>
    *
+   * @return Whether the host field is set.
+   */
+  boolean hasHost();
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests with a Host header matching host.
+   * </pre>
+   *
+   * <code>string host = 3208616;</code>
+   *
    * @return The host.
    */
   java.lang.String getHost();
@@ -48,6 +60,12 @@ public interface CacheInvalidationRuleOrBuilder
    */
   com.google.protobuf.ByteString getHostBytes();
 
+  /**
+   * <code>string path = 3433509;</code>
+   *
+   * @return Whether the path field is set.
+   */
+  boolean hasPath();
   /**
    * <code>string path = 3433509;</code>
    *

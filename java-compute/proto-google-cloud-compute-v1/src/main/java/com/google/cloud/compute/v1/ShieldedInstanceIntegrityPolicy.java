@@ -59,6 +59,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,6 +72,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
             break;
           case 1963921720:
             {
+              bitField0_ |= 0x00000001;
               updateAutoLearnPolicy_ = input.readBool();
               break;
             }
@@ -108,8 +110,24 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
             com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder.class);
   }
 
+  private int bitField0_;
   public static final int UPDATE_AUTO_LEARN_POLICY_FIELD_NUMBER = 245490215;
   private boolean updateAutoLearnPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+   * </pre>
+   *
+   * <code>bool update_auto_learn_policy = 245490215;</code>
+   *
+   * @return Whether the updateAutoLearnPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateAutoLearnPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -140,7 +158,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (updateAutoLearnPolicy_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(245490215, updateAutoLearnPolicy_);
     }
     unknownFields.writeTo(output);
@@ -152,7 +170,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (updateAutoLearnPolicy_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(245490215, updateAutoLearnPolicy_);
     }
@@ -172,7 +190,10 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy other =
         (com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy) obj;
 
-    if (getUpdateAutoLearnPolicy() != other.getUpdateAutoLearnPolicy()) return false;
+    if (hasUpdateAutoLearnPolicy() != other.hasUpdateAutoLearnPolicy()) return false;
+    if (hasUpdateAutoLearnPolicy()) {
+      if (getUpdateAutoLearnPolicy() != other.getUpdateAutoLearnPolicy()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,8 +205,10 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + UPDATE_AUTO_LEARN_POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpdateAutoLearnPolicy());
+    if (hasUpdateAutoLearnPolicy()) {
+      hash = (37 * hash) + UPDATE_AUTO_LEARN_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpdateAutoLearnPolicy());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,7 +356,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       updateAutoLearnPolicy_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -361,7 +384,13 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy result =
           new com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy(this);
-      result.updateAutoLearnPolicy_ = updateAutoLearnPolicy_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateAutoLearnPolicy_ = updateAutoLearnPolicy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -412,7 +441,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
     public Builder mergeFrom(com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy other) {
       if (other == com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.getDefaultInstance())
         return this;
-      if (other.getUpdateAutoLearnPolicy() != false) {
+      if (other.hasUpdateAutoLearnPolicy()) {
         setUpdateAutoLearnPolicy(other.getUpdateAutoLearnPolicy());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -445,7 +474,24 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private boolean updateAutoLearnPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+     * </pre>
+     *
+     * <code>bool update_auto_learn_policy = 245490215;</code>
+     *
+     * @return Whether the updateAutoLearnPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAutoLearnPolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -474,7 +520,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setUpdateAutoLearnPolicy(boolean value) {
-
+      bitField0_ |= 0x00000001;
       updateAutoLearnPolicy_ = value;
       onChanged();
       return this;
@@ -491,7 +537,7 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearUpdateAutoLearnPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       updateAutoLearnPolicy_ = false;
       onChanged();
       return this;

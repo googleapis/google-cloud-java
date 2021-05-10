@@ -75,34 +75,35 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
           case 0:
             done = true;
             break;
-          case 476558546:
+          case 549153354:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              bitField0_ |= 0x00000001;
+              chainName_ = s;
+              break;
+            }
+          case -1670925102:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 storageLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               storageLocations_.add(s);
               break;
             }
-          case 549153354:
+          case -1210560792:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              chainName_ = s;
-              break;
-            }
-          case 936922856:
-            {
+              bitField0_ |= 0x00000002;
               guestFlush_ = input.readBool();
               break;
             }
-          case 1854078970:
+          case -293404678:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -124,7 +125,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         storageLocations_ = storageLocations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +142,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 231759871:
+      case 500195327:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -160,8 +161,24 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
                 .Builder.class);
   }
 
+  private int bitField0_;
   public static final int CHAIN_NAME_FIELD_NUMBER = 68644169;
   private volatile java.lang.Object chainName_;
+  /**
+   *
+   *
+   * <pre>
+   * Chain name that the snapshot is created in.
+   * </pre>
+   *
+   * <code>string chain_name = 68644169;</code>
+   *
+   * @return Whether the chainName field is set.
+   */
+  @java.lang.Override
+  public boolean hasChainName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -209,7 +226,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     }
   }
 
-  public static final int GUEST_FLUSH_FIELD_NUMBER = 117115357;
+  public static final int GUEST_FLUSH_FIELD_NUMBER = 385550813;
   private boolean guestFlush_;
   /**
    *
@@ -218,7 +235,22 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Indication to perform a 'guest aware' snapshot.
    * </pre>
    *
-   * <code>bool guest_flush = 117115357;</code>
+   * <code>bool guest_flush = 385550813;</code>
+   *
+   * @return Whether the guestFlush field is set.
+   */
+  @java.lang.Override
+  public boolean hasGuestFlush() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indication to perform a 'guest aware' snapshot.
+   * </pre>
+   *
+   * <code>bool guest_flush = 385550813;</code>
    *
    * @return The guestFlush.
    */
@@ -227,7 +259,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     return guestFlush_;
   }
 
-  public static final int LABELS_FIELD_NUMBER = 231759871;
+  public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -259,7 +291,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -281,7 +313,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -294,7 +326,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -311,7 +343,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -325,7 +357,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     return map.get(key);
   }
 
-  public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 59569818;
+  public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
   private com.google.protobuf.LazyStringList storageLocations_;
   /**
    *
@@ -334,7 +366,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return A list containing the storageLocations.
    */
@@ -348,7 +380,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @return The count of storageLocations.
    */
@@ -362,7 +394,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the element to return.
    * @return The storageLocations at the given index.
@@ -377,7 +409,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
    * </pre>
    *
-   * <code>repeated string storage_locations = 59569818;</code>
+   * <code>repeated string storage_locations = 328005274;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the storageLocations at the given index.
@@ -400,18 +432,18 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < storageLocations_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 59569818, storageLocations_.getRaw(i));
-    }
-    if (!getChainNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 68644169, chainName_);
     }
-    if (guestFlush_ != false) {
-      output.writeBool(117115357, guestFlush_);
+    for (int i = 0; i < storageLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 328005274, storageLocations_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(385550813, guestFlush_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -421,6 +453,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(68644169, chainName_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < storageLocations_.size(); i++) {
@@ -429,11 +464,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       size += dataSize;
       size += 5 * getStorageLocationsList().size();
     }
-    if (!getChainNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(68644169, chainName_);
-    }
-    if (guestFlush_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(117115357, guestFlush_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(385550813, guestFlush_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -443,7 +475,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -463,8 +495,14 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties other =
         (com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties) obj;
 
-    if (!getChainName().equals(other.getChainName())) return false;
-    if (getGuestFlush() != other.getGuestFlush()) return false;
+    if (hasChainName() != other.hasChainName()) return false;
+    if (hasChainName()) {
+      if (!getChainName().equals(other.getChainName())) return false;
+    }
+    if (hasGuestFlush() != other.hasGuestFlush()) return false;
+    if (hasGuestFlush()) {
+      if (getGuestFlush() != other.getGuestFlush()) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getStorageLocationsList().equals(other.getStorageLocationsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -478,10 +516,14 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CHAIN_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getChainName().hashCode();
-    hash = (37 * hash) + GUEST_FLUSH_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGuestFlush());
+    if (hasChainName()) {
+      hash = (37 * hash) + CHAIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getChainName().hashCode();
+    }
+    if (hasGuestFlush()) {
+      hash = (37 * hash) + GUEST_FLUSH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGuestFlush());
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -620,7 +662,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -630,7 +672,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 231759871:
+        case 500195327:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -668,12 +710,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public Builder clear() {
       super.clear();
       chainName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       guestFlush_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().clear();
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -708,15 +750,23 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties(
               this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.chainName_ = chainName_;
-      result.guestFlush_ = guestFlush_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.guestFlush_ = guestFlush_;
+        to_bitField0_ |= 0x00000002;
+      }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         storageLocations_ = storageLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.storageLocations_ = storageLocations_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -773,18 +823,19 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (other
           == com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
               .getDefaultInstance()) return this;
-      if (!other.getChainName().isEmpty()) {
+      if (other.hasChainName()) {
+        bitField0_ |= 0x00000001;
         chainName_ = other.chainName_;
         onChanged();
       }
-      if (other.getGuestFlush() != false) {
+      if (other.hasGuestFlush()) {
         setGuestFlush(other.getGuestFlush());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -826,6 +877,20 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     private int bitField0_;
 
     private java.lang.Object chainName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Chain name that the snapshot is created in.
+     * </pre>
+     *
+     * <code>string chain_name = 68644169;</code>
+     *
+     * @return Whether the chainName field is set.
+     */
+    public boolean hasChainName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -886,7 +951,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       chainName_ = value;
       onChanged();
       return this;
@@ -903,7 +968,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * @return This builder for chaining.
      */
     public Builder clearChainName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       chainName_ = getDefaultInstance().getChainName();
       onChanged();
       return this;
@@ -925,7 +990,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       chainName_ = value;
       onChanged();
       return this;
@@ -939,7 +1004,22 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 117115357;</code>
+     * <code>bool guest_flush = 385550813;</code>
+     *
+     * @return Whether the guestFlush field is set.
+     */
+    @java.lang.Override
+    public boolean hasGuestFlush() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indication to perform a 'guest aware' snapshot.
+     * </pre>
+     *
+     * <code>bool guest_flush = 385550813;</code>
      *
      * @return The guestFlush.
      */
@@ -954,13 +1034,13 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 117115357;</code>
+     * <code>bool guest_flush = 385550813;</code>
      *
      * @param value The guestFlush to set.
      * @return This builder for chaining.
      */
     public Builder setGuestFlush(boolean value) {
-
+      bitField0_ |= 0x00000002;
       guestFlush_ = value;
       onChanged();
       return this;
@@ -972,12 +1052,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Indication to perform a 'guest aware' snapshot.
      * </pre>
      *
-     * <code>bool guest_flush = 117115357;</code>
+     * <code>bool guest_flush = 385550813;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGuestFlush() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       guestFlush_ = false;
       onChanged();
       return this;
@@ -1015,7 +1095,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1037,7 +1117,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1050,7 +1130,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -1068,7 +1148,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1093,7 +1173,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1114,7 +1194,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1133,7 +1213,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 231759871;</code>
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -1144,9 +1224,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStorageLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1156,7 +1236,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @return A list containing the storageLocations.
      */
@@ -1170,7 +1250,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @return The count of storageLocations.
      */
@@ -1184,7 +1264,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param index The index of the element to return.
      * @return The storageLocations at the given index.
@@ -1199,7 +1279,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the storageLocations at the given index.
@@ -1214,7 +1294,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param index The index to set the value at.
      * @param value The storageLocations to set.
@@ -1236,7 +1316,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param value The storageLocations to add.
      * @return This builder for chaining.
@@ -1257,7 +1337,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param values The storageLocations to add.
      * @return This builder for chaining.
@@ -1275,13 +1355,13 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStorageLocations() {
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1292,7 +1372,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
      * </pre>
      *
-     * <code>repeated string storage_locations = 59569818;</code>
+     * <code>repeated string storage_locations = 328005274;</code>
      *
      * @param value The bytes of the storageLocations to add.
      * @return This builder for chaining.

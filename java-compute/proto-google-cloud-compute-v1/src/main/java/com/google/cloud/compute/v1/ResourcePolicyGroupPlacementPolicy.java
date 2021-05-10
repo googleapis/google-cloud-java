@@ -61,6 +61,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,19 +74,21 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
             break;
           case 99627456:
             {
+              bitField0_ |= 0x00000001;
               availabilityDomainCount_ = input.readInt32();
-              break;
-            }
-          case 1941768616:
-            {
-              int rawValue = input.readEnum();
-
-              collocation_ = rawValue;
               break;
             }
           case 2091707448:
             {
+              bitField0_ |= 0x00000004;
               vmCount_ = input.readInt32();
+              break;
+            }
+          case -205715032:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000002;
+              collocation_ = rawValue;
               break;
             }
           default:
@@ -144,8 +147,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     UNDEFINED_COLLOCATION(0),
     /** <code>COLLOCATED = 103257554;</code> */
     COLLOCATED(103257554),
-    /** <code>UNSPECIFIED_COLLOCATION = 195872749;</code> */
-    UNSPECIFIED_COLLOCATION(195872749),
+    /** <code>UNSPECIFIED_COLLOCATION = 464308205;</code> */
+    UNSPECIFIED_COLLOCATION(464308205),
     UNRECOGNIZED(-1),
     ;
 
@@ -161,8 +164,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public static final int UNDEFINED_COLLOCATION_VALUE = 0;
     /** <code>COLLOCATED = 103257554;</code> */
     public static final int COLLOCATED_VALUE = 103257554;
-    /** <code>UNSPECIFIED_COLLOCATION = 195872749;</code> */
-    public static final int UNSPECIFIED_COLLOCATION_VALUE = 195872749;
+    /** <code>UNSPECIFIED_COLLOCATION = 464308205;</code> */
+    public static final int UNSPECIFIED_COLLOCATION_VALUE = 464308205;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -192,7 +195,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
           return UNDEFINED_COLLOCATION;
         case 103257554:
           return COLLOCATED;
-        case 195872749:
+        case 464308205:
           return UNSPECIFIED_COLLOCATION;
         default:
           return null;
@@ -249,8 +252,24 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation)
   }
 
+  private int bitField0_;
   public static final int AVAILABILITY_DOMAIN_COUNT_FIELD_NUMBER = 12453432;
   private int availabilityDomainCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+   * </pre>
+   *
+   * <code>int32 availability_domain_count = 12453432;</code>
+   *
+   * @return Whether the availabilityDomainCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailabilityDomainCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -267,7 +286,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     return availabilityDomainCount_;
   }
 
-  public static final int COLLOCATION_FIELD_NUMBER = 242721077;
+  public static final int COLLOCATION_FIELD_NUMBER = 511156533;
   private int collocation_;
   /**
    *
@@ -277,7 +296,24 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * </code>
+   *
+   * @return Whether the collocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasCollocation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies network collocation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
    * </code>
    *
    * @return The enum numeric value on the wire for collocation.
@@ -294,7 +330,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
    * </code>
    *
    * @return The collocation.
@@ -313,6 +349,21 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
 
   public static final int VM_COUNT_FIELD_NUMBER = 261463431;
   private int vmCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of vms in this placement group
+   * </pre>
+   *
+   * <code>int32 vm_count = 261463431;</code>
+   *
+   * @return Whether the vmCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasVmCount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -343,17 +394,14 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (availabilityDomainCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(12453432, availabilityDomainCount_);
     }
-    if (collocation_
-        != com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
-            .UNDEFINED_COLLOCATION
-            .getNumber()) {
-      output.writeEnum(242721077, collocation_);
-    }
-    if (vmCount_ != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(261463431, vmCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(511156533, collocation_);
     }
     unknownFields.writeTo(output);
   }
@@ -364,19 +412,16 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (availabilityDomainCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               12453432, availabilityDomainCount_);
     }
-    if (collocation_
-        != com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
-            .UNDEFINED_COLLOCATION
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(242721077, collocation_);
-    }
-    if (vmCount_ != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(261463431, vmCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(511156533, collocation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -394,9 +439,18 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy other =
         (com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy) obj;
 
-    if (getAvailabilityDomainCount() != other.getAvailabilityDomainCount()) return false;
-    if (collocation_ != other.collocation_) return false;
-    if (getVmCount() != other.getVmCount()) return false;
+    if (hasAvailabilityDomainCount() != other.hasAvailabilityDomainCount()) return false;
+    if (hasAvailabilityDomainCount()) {
+      if (getAvailabilityDomainCount() != other.getAvailabilityDomainCount()) return false;
+    }
+    if (hasCollocation() != other.hasCollocation()) return false;
+    if (hasCollocation()) {
+      if (collocation_ != other.collocation_) return false;
+    }
+    if (hasVmCount() != other.hasVmCount()) return false;
+    if (hasVmCount()) {
+      if (getVmCount() != other.getVmCount()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -408,12 +462,18 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + AVAILABILITY_DOMAIN_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAvailabilityDomainCount();
-    hash = (37 * hash) + COLLOCATION_FIELD_NUMBER;
-    hash = (53 * hash) + collocation_;
-    hash = (37 * hash) + VM_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getVmCount();
+    if (hasAvailabilityDomainCount()) {
+      hash = (37 * hash) + AVAILABILITY_DOMAIN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailabilityDomainCount();
+    }
+    if (hasCollocation()) {
+      hash = (37 * hash) + COLLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + collocation_;
+    }
+    if (hasVmCount()) {
+      hash = (37 * hash) + VM_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getVmCount();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,11 +621,11 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public Builder clear() {
       super.clear();
       availabilityDomainCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       collocation_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       vmCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -594,9 +654,21 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy result =
           new com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy(this);
-      result.availabilityDomainCount_ = availabilityDomainCount_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.availabilityDomainCount_ = availabilityDomainCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.collocation_ = collocation_;
-      result.vmCount_ = vmCount_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vmCount_ = vmCount_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -648,13 +720,13 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.getDefaultInstance())
         return this;
-      if (other.getAvailabilityDomainCount() != 0) {
+      if (other.hasAvailabilityDomainCount()) {
         setAvailabilityDomainCount(other.getAvailabilityDomainCount());
       }
-      if (other.collocation_ != 0) {
-        setCollocationValue(other.getCollocationValue());
+      if (other.hasCollocation()) {
+        setCollocation(other.getCollocation());
       }
-      if (other.getVmCount() != 0) {
+      if (other.hasVmCount()) {
         setVmCount(other.getVmCount());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -688,7 +760,24 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private int availabilityDomainCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+     * </pre>
+     *
+     * <code>int32 availability_domain_count = 12453432;</code>
+     *
+     * @return Whether the availabilityDomainCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvailabilityDomainCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -717,7 +806,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setAvailabilityDomainCount(int value) {
-
+      bitField0_ |= 0x00000001;
       availabilityDomainCount_ = value;
       onChanged();
       return this;
@@ -734,7 +823,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearAvailabilityDomainCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       availabilityDomainCount_ = 0;
       onChanged();
       return this;
@@ -749,7 +838,24 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * </code>
+     *
+     * @return Whether the collocation field is set.
+     */
+    @java.lang.Override
+    public boolean hasCollocation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies network collocation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
      * </code>
      *
      * @return The enum numeric value on the wire for collocation.
@@ -766,14 +872,14 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
      * </code>
      *
      * @param value The enum numeric value on the wire for collocation to set.
      * @return This builder for chaining.
      */
     public Builder setCollocationValue(int value) {
-
+      bitField0_ |= 0x00000002;
       collocation_ = value;
       onChanged();
       return this;
@@ -786,7 +892,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
      * </code>
      *
      * @return The collocation.
@@ -810,7 +916,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
      * </code>
      *
      * @param value The collocation to set.
@@ -821,7 +927,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       collocation_ = value.getNumber();
       onChanged();
       return this;
@@ -834,19 +940,34 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCollocation() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       collocation_ = 0;
       onChanged();
       return this;
     }
 
     private int vmCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of vms in this placement group
+     * </pre>
+     *
+     * <code>int32 vm_count = 261463431;</code>
+     *
+     * @return Whether the vmCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasVmCount() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -875,7 +996,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setVmCount(int value) {
-
+      bitField0_ |= 0x00000004;
       vmCount_ = value;
       onChanged();
       return this;
@@ -892,7 +1013,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearVmCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       vmCount_ = 0;
       onChanged();
       return this;

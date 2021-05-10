@@ -24,11 +24,6 @@ if [[ -z "${STAGING_BUCKET}" ]]; then
   exit 1
 fi
 
-if [[ -z "${STAGING_BUCKET_V2}" ]]; then
-  echo "Need to set STAGING_BUCKET_V2 environment variable"
-  exit 1
-fi
-
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
@@ -56,22 +51,3 @@ python3 -m docuploader create-metadata \
 python3 -m docuploader upload . \
   --credentials ${CREDENTIALS} \
   --staging-bucket ${STAGING_BUCKET}
-
-popd
-
-# V2 due to problems w/ the released javadoc plugin doclava, Java 8 is required.  Beware of accidental updates.
-
-mvn clean site -B -q -Ddevsite.template="${KOKORO_GFILE_DIR}/java/"
-
-pushd target/devsite/reference
-
-# create metadata
-python3 -m docuploader create-metadata \
-  --name ${NAME} \
-  --version ${VERSION} \
-  --language java
-
-# upload docs
-python3 -m docuploader upload . \
-  --credentials ${CREDENTIALS} \
-  --staging-bucket ${STAGING_BUCKET_V2}

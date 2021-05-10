@@ -59,6 +59,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,6 +72,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
             break;
           case 1727246961:
             {
+              bitField0_ |= 0x00000001;
               utilizationTarget_ = input.readDouble();
               break;
             }
@@ -108,8 +110,26 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
             com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder.class);
   }
 
+  private int bitField0_;
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_;
+  /**
+   *
+   *
+   * <pre>
+   * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6.
+   * If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization.
+   * If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+   * </pre>
+   *
+   * <code>double utilization_target = 215905870;</code>
+   *
+   * @return Whether the utilizationTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasUtilizationTarget() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -142,7 +162,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (utilizationTarget_ != 0D) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(215905870, utilizationTarget_);
     }
     unknownFields.writeTo(output);
@@ -154,7 +174,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (utilizationTarget_ != 0D) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(215905870, utilizationTarget_);
     }
@@ -174,8 +194,11 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization other =
         (com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization) obj;
 
-    if (java.lang.Double.doubleToLongBits(getUtilizationTarget())
-        != java.lang.Double.doubleToLongBits(other.getUtilizationTarget())) return false;
+    if (hasUtilizationTarget() != other.hasUtilizationTarget()) return false;
+    if (hasUtilizationTarget()) {
+      if (java.lang.Double.doubleToLongBits(getUtilizationTarget())
+          != java.lang.Double.doubleToLongBits(other.getUtilizationTarget())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,11 +210,13 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getUtilizationTarget()));
+    if (hasUtilizationTarget()) {
+      hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getUtilizationTarget()));
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -339,7 +364,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       utilizationTarget_ = 0D;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -367,7 +392,13 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization result =
           new com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization(this);
-      result.utilizationTarget_ = utilizationTarget_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.utilizationTarget_ = utilizationTarget_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -418,7 +449,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public Builder mergeFrom(com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization other) {
       if (other == com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDefaultInstance())
         return this;
-      if (other.getUtilizationTarget() != 0D) {
+      if (other.hasUtilizationTarget()) {
         setUtilizationTarget(other.getUtilizationTarget());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -451,7 +482,26 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private double utilizationTarget_;
+    /**
+     *
+     *
+     * <pre>
+     * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6.
+     * If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization.
+     * If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+     * </pre>
+     *
+     * <code>double utilization_target = 215905870;</code>
+     *
+     * @return Whether the utilizationTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasUtilizationTarget() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -484,7 +534,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-
+      bitField0_ |= 0x00000001;
       utilizationTarget_ = value;
       onChanged();
       return this;
@@ -503,7 +553,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearUtilizationTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       utilizationTarget_ = 0D;
       onChanged();
       return this;

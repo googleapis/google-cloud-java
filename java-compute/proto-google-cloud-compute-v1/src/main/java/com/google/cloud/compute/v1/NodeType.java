@@ -68,6 +68,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -81,78 +82,81 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000200;
               name_ = s;
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               zone_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
-              break;
-            }
-          case 486416976:
-            {
-              localSsdGb_ = input.readInt32();
               break;
             }
           case 928009368:
             {
+              bitField0_ |= 0x00000100;
               memoryMb_ = input.readInt32();
               break;
             }
-          case 999370384:
+          case -1661066672:
             {
+              bitField0_ |= 0x00000080;
+              localSsdGb_ = input.readInt32();
+              break;
+            }
+          case -1148113264:
+            {
+              bitField0_ |= 0x00000010;
               guestCpus_ = input.readInt32();
               break;
             }
-          case 1134799186:
+          case -1012684462:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               cpuPlatform_ = s;
               break;
             }
-          case 1236017122:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               description_ = s;
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000400;
               selfLink_ = s;
               break;
             }
-          case 1973628314:
+          case -173855334:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
-              if (deprecated_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = deprecated_.toBuilder();
               }
               deprecated_ =
@@ -162,7 +166,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(deprecated_);
                 deprecated_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
               break;
             }
           default:
@@ -199,7 +203,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NodeType.Builder.class);
   }
 
-  public static final int CPU_PLATFORM_FIELD_NUMBER = 141849898;
+  private int bitField0_;
+  public static final int CPU_PLATFORM_FIELD_NUMBER = 410285354;
   private volatile java.lang.Object cpuPlatform_;
   /**
    *
@@ -208,7 +213,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 141849898;</code>
+   * <code>string cpu_platform = 410285354;</code>
+   *
+   * @return Whether the cpuPlatform field is set.
+   */
+  @java.lang.Override
+  public boolean hasCpuPlatform() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The CPU platform used by this node type.
+   * </pre>
+   *
+   * <code>string cpu_platform = 410285354;</code>
    *
    * @return The cpuPlatform.
    */
@@ -231,7 +251,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 141849898;</code>
+   * <code>string cpu_platform = 410285354;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -250,6 +270,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -297,7 +332,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
+  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
   /**
    *
@@ -306,13 +341,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
   @java.lang.Override
   public boolean hasDeprecated() {
-    return deprecated_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -321,7 +356,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -338,14 +373,16 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
-    return getDeprecated();
+    return deprecated_ == null
+        ? com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()
+        : deprecated_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -354,7 +391,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional textual description of the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -377,7 +429,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -394,7 +446,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int GUEST_CPUS_FIELD_NUMBER = 124921298;
+  public static final int GUEST_CPUS_FIELD_NUMBER = 393356754;
   private int guestCpus_;
   /**
    *
@@ -403,7 +455,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 124921298;</code>
+   * <code>int32 guest_cpus = 393356754;</code>
+   *
+   * @return Whether the guestCpus field is set.
+   */
+  @java.lang.Override
+  public boolean hasGuestCpus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of virtual CPUs that are available to the node type.
+   * </pre>
+   *
+   * <code>int32 guest_cpus = 393356754;</code>
    *
    * @return The guestCpus.
    */
@@ -414,6 +481,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
   /**
    *
    *
@@ -472,6 +554,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#nodeType for node types.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -510,7 +607,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOCAL_SSD_GB_FIELD_NUMBER = 60802122;
+  public static final int LOCAL_SSD_GB_FIELD_NUMBER = 329237578;
   private int localSsdGb_;
   /**
    *
@@ -519,7 +616,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 60802122;</code>
+   * <code>int32 local_ssd_gb = 329237578;</code>
+   *
+   * @return Whether the localSsdGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalSsdGb() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Local SSD available to the node type, defined in GB.
+   * </pre>
+   *
+   * <code>int32 local_ssd_gb = 329237578;</code>
    *
    * @return The localSsdGb.
    */
@@ -539,6 +651,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 memory_mb = 116001171;</code>
    *
+   * @return Whether the memoryMb field is set.
+   */
+  @java.lang.Override
+  public boolean hasMemoryMb() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The amount of physical memory available to the node type, defined in MB.
+   * </pre>
+   *
+   * <code>int32 memory_mb = 116001171;</code>
+   *
    * @return The memoryMb.
    */
   @java.lang.Override
@@ -548,6 +675,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
   /**
    *
    *
@@ -595,7 +737,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -604,7 +746,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -627,7 +784,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -646,6 +803,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -707,41 +879,41 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (localSsdGb_ != 0) {
-      output.writeInt32(60802122, localSsdGb_);
-    }
-    if (memoryMb_ != 0) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeInt32(116001171, memoryMb_);
     }
-    if (guestCpus_ != 0) {
-      output.writeInt32(124921298, guestCpus_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt32(329237578, localSsdGb_);
     }
-    if (!getCpuPlatformBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 141849898, cpuPlatform_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeInt32(393356754, guestCpus_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 410285354, cpuPlatform_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (deprecated_ != null) {
-      output.writeMessage(246703539, getDeprecated());
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(515138995, getDeprecated());
     }
     unknownFields.writeTo(output);
   }
@@ -752,42 +924,42 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (localSsdGb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(60802122, localSsdGb_);
-    }
-    if (memoryMb_ != 0) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(116001171, memoryMb_);
     }
-    if (guestCpus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(124921298, guestCpus_);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(329237578, localSsdGb_);
     }
-    if (!getCpuPlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(141849898, cpuPlatform_);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(393356754, guestCpus_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(410285354, cpuPlatform_);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (deprecated_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(246703539, getDeprecated());
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -804,21 +976,54 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.NodeType other = (com.google.cloud.compute.v1.NodeType) obj;
 
-    if (!getCpuPlatform().equals(other.getCpuPlatform())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (hasCpuPlatform() != other.hasCpuPlatform()) return false;
+    if (hasCpuPlatform()) {
+      if (!getCpuPlatform().equals(other.getCpuPlatform())) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
     if (hasDeprecated() != other.hasDeprecated()) return false;
     if (hasDeprecated()) {
       if (!getDeprecated().equals(other.getDeprecated())) return false;
     }
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (getGuestCpus() != other.getGuestCpus()) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (getLocalSsdGb() != other.getLocalSsdGb()) return false;
-    if (getMemoryMb() != other.getMemoryMb()) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasGuestCpus() != other.hasGuestCpus()) return false;
+    if (hasGuestCpus()) {
+      if (getGuestCpus() != other.getGuestCpus()) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLocalSsdGb() != other.hasLocalSsdGb()) return false;
+    if (hasLocalSsdGb()) {
+      if (getLocalSsdGb() != other.getLocalSsdGb()) return false;
+    }
+    if (hasMemoryMb() != other.hasMemoryMb()) return false;
+    if (hasMemoryMb()) {
+      if (getMemoryMb() != other.getMemoryMb()) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -830,32 +1035,54 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CPU_PLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getCpuPlatform().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (hasCpuPlatform()) {
+      hash = (37 * hash) + CPU_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getCpuPlatform().hashCode();
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
     if (hasDeprecated()) {
       hash = (37 * hash) + DEPRECATED_FIELD_NUMBER;
       hash = (53 * hash) + getDeprecated().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + GUEST_CPUS_FIELD_NUMBER;
-    hash = (53 * hash) + getGuestCpus();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + LOCAL_SSD_GB_FIELD_NUMBER;
-    hash = (53 * hash) + getLocalSsdGb();
-    hash = (37 * hash) + MEMORY_MB_FIELD_NUMBER;
-    hash = (53 * hash) + getMemoryMb();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasGuestCpus()) {
+      hash = (37 * hash) + GUEST_CPUS_FIELD_NUMBER;
+      hash = (53 * hash) + getGuestCpus();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLocalSsdGb()) {
+      hash = (37 * hash) + LOCAL_SSD_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalSsdGb();
+    }
+    if (hasMemoryMb()) {
+      hash = (37 * hash) + MEMORY_MB_FIELD_NUMBER;
+      hash = (53 * hash) + getMemoryMb();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -995,40 +1222,42 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDeprecatedFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       cpuPlatform_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (deprecatedBuilder_ == null) {
         deprecated_ = null;
       } else {
-        deprecated_ = null;
-        deprecatedBuilder_ = null;
+        deprecatedBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       guestCpus_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       localSsdGb_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       memoryMb_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1055,22 +1284,61 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.NodeType buildPartial() {
       com.google.cloud.compute.v1.NodeType result = new com.google.cloud.compute.v1.NodeType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.cpuPlatform_ = cpuPlatform_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.creationTimestamp_ = creationTimestamp_;
-      if (deprecatedBuilder_ == null) {
-        result.deprecated_ = deprecated_;
-      } else {
-        result.deprecated_ = deprecatedBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (deprecatedBuilder_ == null) {
+          result.deprecated_ = deprecated_;
+        } else {
+          result.deprecated_ = deprecatedBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
       }
       result.description_ = description_;
-      result.guestCpus_ = guestCpus_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.guestCpus_ = guestCpus_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.kind_ = kind_;
-      result.localSsdGb_ = localSsdGb_;
-      result.memoryMb_ = memoryMb_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.localSsdGb_ = localSsdGb_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.memoryMb_ = memoryMb_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1120,47 +1388,55 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.NodeType other) {
       if (other == com.google.cloud.compute.v1.NodeType.getDefaultInstance()) return this;
-      if (!other.getCpuPlatform().isEmpty()) {
+      if (other.hasCpuPlatform()) {
+        bitField0_ |= 0x00000001;
         cpuPlatform_ = other.cpuPlatform_;
         onChanged();
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDeprecated()) {
         mergeDeprecated(other.getDeprecated());
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
-      if (other.getGuestCpus() != 0) {
+      if (other.hasGuestCpus()) {
         setGuestCpus(other.getGuestCpus());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000020;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
-      if (other.getLocalSsdGb() != 0) {
+      if (other.hasLocalSsdGb()) {
         setLocalSsdGb(other.getLocalSsdGb());
       }
-      if (other.getMemoryMb() != 0) {
+      if (other.hasMemoryMb()) {
         setMemoryMb(other.getMemoryMb());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000200;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000400;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00000800;
         zone_ = other.zone_;
         onChanged();
       }
@@ -1193,6 +1469,8 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object cpuPlatform_ = "";
     /**
      *
@@ -1201,7 +1479,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 141849898;</code>
+     * <code>string cpu_platform = 410285354;</code>
+     *
+     * @return Whether the cpuPlatform field is set.
+     */
+    public boolean hasCpuPlatform() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The CPU platform used by this node type.
+     * </pre>
+     *
+     * <code>string cpu_platform = 410285354;</code>
      *
      * @return The cpuPlatform.
      */
@@ -1223,7 +1515,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 141849898;</code>
+     * <code>string cpu_platform = 410285354;</code>
      *
      * @return The bytes for cpuPlatform.
      */
@@ -1245,7 +1537,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 141849898;</code>
+     * <code>string cpu_platform = 410285354;</code>
      *
      * @param value The cpuPlatform to set.
      * @return This builder for chaining.
@@ -1254,7 +1546,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       cpuPlatform_ = value;
       onChanged();
       return this;
@@ -1266,12 +1558,12 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 141849898;</code>
+     * <code>string cpu_platform = 410285354;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCpuPlatform() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cpuPlatform_ = getDefaultInstance().getCpuPlatform();
       onChanged();
       return this;
@@ -1283,7 +1575,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 141849898;</code>
+     * <code>string cpu_platform = 410285354;</code>
      *
      * @param value The bytes for cpuPlatform to set.
      * @return This builder for chaining.
@@ -1293,13 +1585,27 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       cpuPlatform_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1360,7 +1666,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1377,7 +1683,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1399,7 +1705,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1418,12 +1724,12 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return Whether the deprecated field is set.
      */
     public boolean hasDeprecated() {
-      return deprecatedBuilder_ != null || deprecated_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1432,7 +1738,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      *
      * @return The deprecated.
      */
@@ -1452,7 +1758,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1464,7 +1770,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1474,7 +1780,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1484,7 +1790,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1494,11 +1800,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
-        if (deprecated_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && deprecated_ != null
+            && deprecated_ != com.google.cloud.compute.v1.DeprecationStatus.getDefaultInstance()) {
           deprecated_ =
               com.google.cloud.compute.v1.DeprecationStatus.newBuilder(deprecated_)
                   .mergeFrom(value)
@@ -1510,7 +1818,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       } else {
         deprecatedBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1520,17 +1828,16 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
         deprecated_ = null;
         onChanged();
       } else {
-        deprecated_ = null;
-        deprecatedBuilder_ = null;
+        deprecatedBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1540,10 +1847,10 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeprecatedFieldBuilder().getBuilder();
     }
@@ -1554,7 +1861,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1572,7 +1879,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1599,7 +1906,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional textual description of the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1621,7 +1942,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1643,7 +1964,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1652,7 +1973,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1664,12 +1985,12 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1681,7 +2002,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1691,7 +2012,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1705,7 +2026,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 124921298;</code>
+     * <code>int32 guest_cpus = 393356754;</code>
+     *
+     * @return Whether the guestCpus field is set.
+     */
+    @java.lang.Override
+    public boolean hasGuestCpus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The number of virtual CPUs that are available to the node type.
+     * </pre>
+     *
+     * <code>int32 guest_cpus = 393356754;</code>
      *
      * @return The guestCpus.
      */
@@ -1720,13 +2056,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 124921298;</code>
+     * <code>int32 guest_cpus = 393356754;</code>
      *
      * @param value The guestCpus to set.
      * @return This builder for chaining.
      */
     public Builder setGuestCpus(int value) {
-
+      bitField0_ |= 0x00000010;
       guestCpus_ = value;
       onChanged();
       return this;
@@ -1738,18 +2074,32 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 124921298;</code>
+     * <code>int32 guest_cpus = 393356754;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGuestCpus() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       guestCpus_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -1810,7 +2160,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -1827,7 +2177,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1849,13 +2199,27 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The type of the resource. Always compute#nodeType for node types.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
     /**
      *
      *
@@ -1916,7 +2280,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -1933,7 +2297,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1955,7 +2319,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -1969,7 +2333,22 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 60802122;</code>
+     * <code>int32 local_ssd_gb = 329237578;</code>
+     *
+     * @return Whether the localSsdGb field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalSsdGb() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Local SSD available to the node type, defined in GB.
+     * </pre>
+     *
+     * <code>int32 local_ssd_gb = 329237578;</code>
      *
      * @return The localSsdGb.
      */
@@ -1984,13 +2363,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 60802122;</code>
+     * <code>int32 local_ssd_gb = 329237578;</code>
      *
      * @param value The localSsdGb to set.
      * @return This builder for chaining.
      */
     public Builder setLocalSsdGb(int value) {
-
+      bitField0_ |= 0x00000080;
       localSsdGb_ = value;
       onChanged();
       return this;
@@ -2002,18 +2381,33 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 60802122;</code>
+     * <code>int32 local_ssd_gb = 329237578;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       localSsdGb_ = 0;
       onChanged();
       return this;
     }
 
     private int memoryMb_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The amount of physical memory available to the node type, defined in MB.
+     * </pre>
+     *
+     * <code>int32 memory_mb = 116001171;</code>
+     *
+     * @return Whether the memoryMb field is set.
+     */
+    @java.lang.Override
+    public boolean hasMemoryMb() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2042,7 +2436,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMemoryMb(int value) {
-
+      bitField0_ |= 0x00000100;
       memoryMb_ = value;
       onChanged();
       return this;
@@ -2059,13 +2453,27 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       memoryMb_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Name of the resource.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2126,7 +2534,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
@@ -2143,7 +2551,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2165,7 +2573,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
@@ -2179,7 +2587,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2201,7 +2623,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2223,7 +2645,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2232,7 +2654,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2244,12 +2666,12 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2261,7 +2683,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2271,13 +2693,27 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -2338,7 +2774,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       zone_ = value;
       onChanged();
       return this;
@@ -2355,7 +2791,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -2377,7 +2813,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       zone_ = value;
       onChanged();
       return this;

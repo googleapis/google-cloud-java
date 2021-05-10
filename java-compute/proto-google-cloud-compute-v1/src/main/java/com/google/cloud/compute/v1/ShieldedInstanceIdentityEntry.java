@@ -61,6 +61,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,17 +72,17 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
           case 0:
             done = true;
             break;
-          case 324099874:
+          case -1823383774:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               ekPub_ = s;
               break;
             }
-          case 1453945066:
+          case -693538582:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               ekCert_ = s;
               break;
             }
@@ -119,7 +120,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder.class);
   }
 
-  public static final int EK_CERT_FIELD_NUMBER = 181743133;
+  private int bitField0_;
+  public static final int EK_CERT_FIELD_NUMBER = 450178589;
   private volatile java.lang.Object ekCert_;
   /**
    *
@@ -128,7 +130,22 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 181743133;</code>
+   * <code>string ek_cert = 450178589;</code>
+   *
+   * @return Whether the ekCert field is set.
+   */
+  @java.lang.Override
+  public boolean hasEkCert() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A PEM-encoded X.509 certificate. This field can be empty.
+   * </pre>
+   *
+   * <code>string ek_cert = 450178589;</code>
    *
    * @return The ekCert.
    */
@@ -151,7 +168,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 181743133;</code>
+   * <code>string ek_cert = 450178589;</code>
    *
    * @return The bytes for ekCert.
    */
@@ -168,7 +185,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     }
   }
 
-  public static final int EK_PUB_FIELD_NUMBER = 40512484;
+  public static final int EK_PUB_FIELD_NUMBER = 308947940;
   private volatile java.lang.Object ekPub_;
   /**
    *
@@ -177,7 +194,22 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 40512484;</code>
+   * <code>string ek_pub = 308947940;</code>
+   *
+   * @return Whether the ekPub field is set.
+   */
+  @java.lang.Override
+  public boolean hasEkPub() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A PEM-encoded public key.
+   * </pre>
+   *
+   * <code>string ek_pub = 308947940;</code>
    *
    * @return The ekPub.
    */
@@ -200,7 +232,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 40512484;</code>
+   * <code>string ek_pub = 308947940;</code>
    *
    * @return The bytes for ekPub.
    */
@@ -231,11 +263,11 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getEkPubBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 40512484, ekPub_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 308947940, ekPub_);
     }
-    if (!getEkCertBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 181743133, ekCert_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 450178589, ekCert_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!getEkPubBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40512484, ekPub_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308947940, ekPub_);
     }
-    if (!getEkCertBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181743133, ekCert_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(450178589, ekCert_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,8 +300,14 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry other =
         (com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry) obj;
 
-    if (!getEkCert().equals(other.getEkCert())) return false;
-    if (!getEkPub().equals(other.getEkPub())) return false;
+    if (hasEkCert() != other.hasEkCert()) return false;
+    if (hasEkCert()) {
+      if (!getEkCert().equals(other.getEkCert())) return false;
+    }
+    if (hasEkPub() != other.hasEkPub()) return false;
+    if (hasEkPub()) {
+      if (!getEkPub().equals(other.getEkPub())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,10 +319,14 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EK_CERT_FIELD_NUMBER;
-    hash = (53 * hash) + getEkCert().hashCode();
-    hash = (37 * hash) + EK_PUB_FIELD_NUMBER;
-    hash = (53 * hash) + getEkPub().hashCode();
+    if (hasEkCert()) {
+      hash = (37 * hash) + EK_CERT_FIELD_NUMBER;
+      hash = (53 * hash) + getEkCert().hashCode();
+    }
+    if (hasEkPub()) {
+      hash = (37 * hash) + EK_PUB_FIELD_NUMBER;
+      hash = (53 * hash) + getEkPub().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -432,9 +474,9 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     public Builder clear() {
       super.clear();
       ekCert_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ekPub_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -462,8 +504,17 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry buildPartial() {
       com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry result =
           new com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.ekCert_ = ekCert_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.ekPub_ = ekPub_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -514,11 +565,13 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     public Builder mergeFrom(com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry other) {
       if (other == com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance())
         return this;
-      if (!other.getEkCert().isEmpty()) {
+      if (other.hasEkCert()) {
+        bitField0_ |= 0x00000001;
         ekCert_ = other.ekCert_;
         onChanged();
       }
-      if (!other.getEkPub().isEmpty()) {
+      if (other.hasEkPub()) {
+        bitField0_ |= 0x00000002;
         ekPub_ = other.ekPub_;
         onChanged();
       }
@@ -552,6 +605,8 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object ekCert_ = "";
     /**
      *
@@ -560,7 +615,21 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 181743133;</code>
+     * <code>string ek_cert = 450178589;</code>
+     *
+     * @return Whether the ekCert field is set.
+     */
+    public boolean hasEkCert() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A PEM-encoded X.509 certificate. This field can be empty.
+     * </pre>
+     *
+     * <code>string ek_cert = 450178589;</code>
      *
      * @return The ekCert.
      */
@@ -582,7 +651,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 181743133;</code>
+     * <code>string ek_cert = 450178589;</code>
      *
      * @return The bytes for ekCert.
      */
@@ -604,7 +673,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 181743133;</code>
+     * <code>string ek_cert = 450178589;</code>
      *
      * @param value The ekCert to set.
      * @return This builder for chaining.
@@ -613,7 +682,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       ekCert_ = value;
       onChanged();
       return this;
@@ -625,12 +694,12 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 181743133;</code>
+     * <code>string ek_cert = 450178589;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEkCert() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       ekCert_ = getDefaultInstance().getEkCert();
       onChanged();
       return this;
@@ -642,7 +711,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 181743133;</code>
+     * <code>string ek_cert = 450178589;</code>
      *
      * @param value The bytes for ekCert to set.
      * @return This builder for chaining.
@@ -652,7 +721,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       ekCert_ = value;
       onChanged();
       return this;
@@ -666,7 +735,21 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 40512484;</code>
+     * <code>string ek_pub = 308947940;</code>
+     *
+     * @return Whether the ekPub field is set.
+     */
+    public boolean hasEkPub() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A PEM-encoded public key.
+     * </pre>
+     *
+     * <code>string ek_pub = 308947940;</code>
      *
      * @return The ekPub.
      */
@@ -688,7 +771,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 40512484;</code>
+     * <code>string ek_pub = 308947940;</code>
      *
      * @return The bytes for ekPub.
      */
@@ -710,7 +793,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 40512484;</code>
+     * <code>string ek_pub = 308947940;</code>
      *
      * @param value The ekPub to set.
      * @return This builder for chaining.
@@ -719,7 +802,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       ekPub_ = value;
       onChanged();
       return this;
@@ -731,12 +814,12 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 40512484;</code>
+     * <code>string ek_pub = 308947940;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEkPub() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ekPub_ = getDefaultInstance().getEkPub();
       onChanged();
       return this;
@@ -748,7 +831,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 40512484;</code>
+     * <code>string ek_pub = 308947940;</code>
      *
      * @param value The bytes for ekPub to set.
      * @return This builder for chaining.
@@ -758,7 +841,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       ekPub_ = value;
       onChanged();
       return this;

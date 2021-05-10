@@ -32,7 +32,21 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  boolean hasService();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Run service is the main resource of Cloud Run.
+   * The service must be 1-63 characters long, and comply with RFC1035.
+   * Example value: "run-service".
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -46,12 +60,26 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
   com.google.protobuf.ByteString getServiceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional Cloud Run tag represents the "named-revision" to provide additional fine-grained traffic routing information.
+   * The tag must be 1-63 characters long, and comply with RFC1035.
+   * Example value: "revision-0010".
+   * </pre>
+   *
+   * <code>string tag = 114586;</code>
+   *
+   * @return Whether the tag field is set.
+   */
+  boolean hasTag();
   /**
    *
    *
@@ -81,6 +109,19 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    */
   com.google.protobuf.ByteString getTagBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A template to parse service and tag fields from a request URL. URL mask allows for routing to multiple Run services without having to create multiple network endpoint groups and backend services.
+   * For example, request URLs "foo1.domain.com/bar1" and "foo1.domain.com/bar2" can be backed by the same Serverless Network Endpoint Group (NEG) with URL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" } and { service="bar2", tag="foo2" } respectively.
+   * </pre>
+   *
+   * <code>string url_mask = 103352252;</code>
+   *
+   * @return Whether the urlMask field is set.
+   */
+  boolean hasUrlMask();
   /**
    *
    *

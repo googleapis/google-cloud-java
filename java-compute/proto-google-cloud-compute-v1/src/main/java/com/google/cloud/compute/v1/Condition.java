@@ -78,37 +78,37 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           case 28426:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               op_ = s;
               break;
             }
           case 832170:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               iam_ = s;
               break;
             }
           case 914178:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               svc_ = s;
               break;
             }
           case 915050:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               sys_ = s;
               break;
             }
           case 1999431954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 values_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000010;
               }
               values_.add(s);
               break;
@@ -127,7 +127,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         values_ = values_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -150,8 +150,24 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Condition.Builder.class);
   }
 
+  private int bitField0_;
   public static final int IAM_FIELD_NUMBER = 104021;
   private volatile java.lang.Object iam_;
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes supplied by the IAM system.
+   * </pre>
+   *
+   * <code>string iam = 104021;</code>
+   *
+   * @return Whether the iam field is set.
+   */
+  @java.lang.Override
+  public boolean hasIam() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -210,6 +226,21 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string op = 3553;</code>
    *
+   * @return Whether the op field is set.
+   */
+  @java.lang.Override
+  public boolean hasOp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An operator to apply the subject with.
+   * </pre>
+   *
+   * <code>string op = 3553;</code>
+   *
    * @return The op.
    */
   @java.lang.Override
@@ -259,6 +290,21 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string svc = 114272;</code>
    *
+   * @return Whether the svc field is set.
+   */
+  @java.lang.Override
+  public boolean hasSvc() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes discharged by the service.
+   * </pre>
+   *
+   * <code>string svc = 114272;</code>
+   *
    * @return The svc.
    */
   @java.lang.Override
@@ -299,6 +345,21 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SYS_FIELD_NUMBER = 114381;
   private volatile java.lang.Object sys_;
+  /**
+   *
+   *
+   * <pre>
+   * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+   * </pre>
+   *
+   * <code>string sys = 114381;</code>
+   *
+   * @return Whether the sys field is set.
+   */
+  @java.lang.Override
+  public boolean hasSys() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
   /**
    *
    *
@@ -421,16 +482,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getOpBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3553, op_);
     }
-    if (!getIamBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104021, iam_);
     }
-    if (!getSvcBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 114272, svc_);
     }
-    if (!getSysBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 114381, sys_);
     }
     for (int i = 0; i < values_.size(); i++) {
@@ -445,16 +506,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getOpBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3553, op_);
     }
-    if (!getIamBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104021, iam_);
     }
-    if (!getSvcBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114272, svc_);
     }
-    if (!getSysBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114381, sys_);
     }
     {
@@ -480,10 +541,22 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Condition other = (com.google.cloud.compute.v1.Condition) obj;
 
-    if (!getIam().equals(other.getIam())) return false;
-    if (!getOp().equals(other.getOp())) return false;
-    if (!getSvc().equals(other.getSvc())) return false;
-    if (!getSys().equals(other.getSys())) return false;
+    if (hasIam() != other.hasIam()) return false;
+    if (hasIam()) {
+      if (!getIam().equals(other.getIam())) return false;
+    }
+    if (hasOp() != other.hasOp()) return false;
+    if (hasOp()) {
+      if (!getOp().equals(other.getOp())) return false;
+    }
+    if (hasSvc() != other.hasSvc()) return false;
+    if (hasSvc()) {
+      if (!getSvc().equals(other.getSvc())) return false;
+    }
+    if (hasSys() != other.hasSys()) return false;
+    if (hasSys()) {
+      if (!getSys().equals(other.getSys())) return false;
+    }
     if (!getValuesList().equals(other.getValuesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -496,14 +569,22 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + IAM_FIELD_NUMBER;
-    hash = (53 * hash) + getIam().hashCode();
-    hash = (37 * hash) + OP_FIELD_NUMBER;
-    hash = (53 * hash) + getOp().hashCode();
-    hash = (37 * hash) + SVC_FIELD_NUMBER;
-    hash = (53 * hash) + getSvc().hashCode();
-    hash = (37 * hash) + SYS_FIELD_NUMBER;
-    hash = (53 * hash) + getSys().hashCode();
+    if (hasIam()) {
+      hash = (37 * hash) + IAM_FIELD_NUMBER;
+      hash = (53 * hash) + getIam().hashCode();
+    }
+    if (hasOp()) {
+      hash = (37 * hash) + OP_FIELD_NUMBER;
+      hash = (53 * hash) + getOp().hashCode();
+    }
+    if (hasSvc()) {
+      hash = (37 * hash) + SVC_FIELD_NUMBER;
+      hash = (53 * hash) + getSvc().hashCode();
+    }
+    if (hasSys()) {
+      hash = (37 * hash) + SYS_FIELD_NUMBER;
+      hash = (53 * hash) + getSys().hashCode();
+    }
     if (getValuesCount() > 0) {
       hash = (37 * hash) + VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getValuesList().hashCode();
@@ -653,15 +734,15 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       iam_ = "";
-
-      op_ = "";
-
-      svc_ = "";
-
-      sys_ = "";
-
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      op_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
+      svc_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sys_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
+      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -690,15 +771,29 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.Condition result =
           new com.google.cloud.compute.v1.Condition(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.iam_ = iam_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.op_ = op_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.svc_ = svc_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.sys_ = sys_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.values_ = values_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -748,26 +843,30 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Condition other) {
       if (other == com.google.cloud.compute.v1.Condition.getDefaultInstance()) return this;
-      if (!other.getIam().isEmpty()) {
+      if (other.hasIam()) {
+        bitField0_ |= 0x00000001;
         iam_ = other.iam_;
         onChanged();
       }
-      if (!other.getOp().isEmpty()) {
+      if (other.hasOp()) {
+        bitField0_ |= 0x00000002;
         op_ = other.op_;
         onChanged();
       }
-      if (!other.getSvc().isEmpty()) {
+      if (other.hasSvc()) {
+        bitField0_ |= 0x00000004;
         svc_ = other.svc_;
         onChanged();
       }
-      if (!other.getSys().isEmpty()) {
+      if (other.hasSys()) {
+        bitField0_ |= 0x00000008;
         sys_ = other.sys_;
         onChanged();
       }
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -806,6 +905,20 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object iam_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Trusted attributes supplied by the IAM system.
+     * </pre>
+     *
+     * <code>string iam = 104021;</code>
+     *
+     * @return Whether the iam field is set.
+     */
+    public boolean hasIam() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -866,7 +979,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       iam_ = value;
       onChanged();
       return this;
@@ -883,7 +996,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIam() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       iam_ = getDefaultInstance().getIam();
       onChanged();
       return this;
@@ -905,13 +1018,27 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       iam_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object op_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An operator to apply the subject with.
+     * </pre>
+     *
+     * <code>string op = 3553;</code>
+     *
+     * @return Whether the op field is set.
+     */
+    public boolean hasOp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -972,7 +1099,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       op_ = value;
       onChanged();
       return this;
@@ -989,7 +1116,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       op_ = getDefaultInstance().getOp();
       onChanged();
       return this;
@@ -1011,13 +1138,27 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       op_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object svc_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Trusted attributes discharged by the service.
+     * </pre>
+     *
+     * <code>string svc = 114272;</code>
+     *
+     * @return Whether the svc field is set.
+     */
+    public boolean hasSvc() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1078,7 +1219,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       svc_ = value;
       onChanged();
       return this;
@@ -1095,7 +1236,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSvc() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       svc_ = getDefaultInstance().getSvc();
       onChanged();
       return this;
@@ -1117,13 +1258,27 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       svc_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object sys_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Trusted attributes supplied by any service that owns resources and uses the IAM system for access control.
+     * </pre>
+     *
+     * <code>string sys = 114381;</code>
+     *
+     * @return Whether the sys field is set.
+     */
+    public boolean hasSys() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1184,7 +1339,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       sys_ = value;
       onChanged();
       return this;
@@ -1201,7 +1356,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSys() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sys_ = getDefaultInstance().getSys();
       onChanged();
       return this;
@@ -1223,7 +1378,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       sys_ = value;
       onChanged();
       return this;
@@ -1233,9 +1388,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1370,7 +1525,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

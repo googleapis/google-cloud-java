@@ -32,6 +32,18 @@ public interface VpnTunnelOrBuilder
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
@@ -55,7 +67,19 @@ public interface VpnTunnelOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -67,7 +91,7 @@ public interface VpnTunnelOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -80,7 +104,19 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 65065569;</code>
+   * <code>string detailed_status = 333501025;</code>
+   *
+   * @return Whether the detailedStatus field is set.
+   */
+  boolean hasDetailedStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Detailed status message for the VPN tunnel.
+   * </pre>
+   *
+   * <code>string detailed_status = 333501025;</code>
    *
    * @return The detailedStatus.
    */
@@ -92,12 +128,24 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 65065569;</code>
+   * <code>string detailed_status = 333501025;</code>
    *
    * @return The bytes for detailedStatus.
    */
   com.google.protobuf.ByteString getDetailedStatusBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -132,10 +180,34 @@ public interface VpnTunnelOrBuilder
    *
    * <code>int32 ike_version = 218376220;</code>
    *
+   * @return Whether the ikeVersion field is set.
+   */
+  boolean hasIkeVersion();
+  /**
+   *
+   *
+   * <pre>
+   * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
+   * </pre>
+   *
+   * <code>int32 ike_version = 218376220;</code>
+   *
    * @return The ikeVersion.
    */
   int getIkeVersion();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -168,7 +240,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 48879157;</code>
+   * <code>repeated string local_traffic_selector = 317314613;</code>
    *
    * @return A list containing the localTrafficSelector.
    */
@@ -180,7 +252,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 48879157;</code>
+   * <code>repeated string local_traffic_selector = 317314613;</code>
    *
    * @return The count of localTrafficSelector.
    */
@@ -192,7 +264,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 48879157;</code>
+   * <code>repeated string local_traffic_selector = 317314613;</code>
    *
    * @param index The index of the element to return.
    * @return The localTrafficSelector at the given index.
@@ -205,13 +277,25 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 48879157;</code>
+   * <code>repeated string local_traffic_selector = 317314613;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the localTrafficSelector at the given index.
    */
   com.google.protobuf.ByteString getLocalTrafficSelectorBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -244,7 +328,19 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 116520717;</code>
+   * <code>string peer_external_gateway = 384956173;</code>
+   *
+   * @return Whether the peerExternalGateway field is set.
+   */
+  boolean hasPeerExternalGateway();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
+   * </pre>
+   *
+   * <code>string peer_external_gateway = 384956173;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -256,7 +352,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 116520717;</code>
+   * <code>string peer_external_gateway = 384956173;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -269,7 +365,19 @@ public interface VpnTunnelOrBuilder
    * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>int32 peer_external_gateway_interface = 184332935;</code>
+   * <code>int32 peer_external_gateway_interface = 452768391;</code>
+   *
+   * @return Whether the peerExternalGatewayInterface field is set.
+   */
+  boolean hasPeerExternalGatewayInterface();
+  /**
+   *
+   *
+   * <pre>
+   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+   * </pre>
+   *
+   * <code>int32 peer_external_gateway_interface = 452768391;</code>
    *
    * @return The peerExternalGatewayInterface.
    */
@@ -282,7 +390,19 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 13431996;</code>
+   * <code>string peer_gcp_gateway = 281867452;</code>
+   *
+   * @return Whether the peerGcpGateway field is set.
+   */
+  boolean hasPeerGcpGateway();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
+   * </pre>
+   *
+   * <code>string peer_gcp_gateway = 281867452;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -294,7 +414,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 13431996;</code>
+   * <code>string peer_gcp_gateway = 281867452;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -307,7 +427,19 @@ public interface VpnTunnelOrBuilder
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 114814244;</code>
+   * <code>string peer_ip = 383249700;</code>
+   *
+   * @return Whether the peerIp field is set.
+   */
+  boolean hasPeerIp();
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the peer VPN gateway. Only IPv4 is supported.
+   * </pre>
+   *
+   * <code>string peer_ip = 383249700;</code>
    *
    * @return The peerIp.
    */
@@ -319,12 +451,24 @@ public interface VpnTunnelOrBuilder
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 114814244;</code>
+   * <code>string peer_ip = 383249700;</code>
    *
    * @return The bytes for peerIp.
    */
   com.google.protobuf.ByteString getPeerIpBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
   /**
    *
    *
@@ -357,7 +501,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 90451642;</code>
+   * <code>repeated string remote_traffic_selector = 358887098;</code>
    *
    * @return A list containing the remoteTrafficSelector.
    */
@@ -369,7 +513,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 90451642;</code>
+   * <code>repeated string remote_traffic_selector = 358887098;</code>
    *
    * @return The count of remoteTrafficSelector.
    */
@@ -381,7 +525,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 90451642;</code>
+   * <code>repeated string remote_traffic_selector = 358887098;</code>
    *
    * @param index The index of the element to return.
    * @return The remoteTrafficSelector at the given index.
@@ -394,13 +538,25 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 90451642;</code>
+   * <code>repeated string remote_traffic_selector = 358887098;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the remoteTrafficSelector at the given index.
    */
   com.google.protobuf.ByteString getRemoteTrafficSelectorBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * URL of the router resource to be used for dynamic routing.
+   * </pre>
+   *
+   * <code>string router = 148608841;</code>
+   *
+   * @return Whether the router field is set.
+   */
+  boolean hasRouter();
   /**
    *
    *
@@ -433,7 +589,19 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -445,7 +613,7 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -458,7 +626,19 @@ public interface VpnTunnelOrBuilder
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 113497034;</code>
+   * <code>string shared_secret = 381932490;</code>
+   *
+   * @return Whether the sharedSecret field is set.
+   */
+  boolean hasSharedSecret();
+  /**
+   *
+   *
+   * <pre>
+   * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
+   * </pre>
+   *
+   * <code>string shared_secret = 381932490;</code>
    *
    * @return The sharedSecret.
    */
@@ -470,7 +650,7 @@ public interface VpnTunnelOrBuilder
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 113497034;</code>
+   * <code>string shared_secret = 381932490;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -483,7 +663,19 @@ public interface VpnTunnelOrBuilder
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 130446435;</code>
+   * <code>string shared_secret_hash = 398881891;</code>
+   *
+   * @return Whether the sharedSecretHash field is set.
+   */
+  boolean hasSharedSecretHash();
+  /**
+   *
+   *
+   * <pre>
+   * Hash of the shared secret.
+   * </pre>
+   *
+   * <code>string shared_secret_hash = 398881891;</code>
    *
    * @return The sharedSecretHash.
    */
@@ -495,12 +687,39 @@ public interface VpnTunnelOrBuilder
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 130446435;</code>
+   * <code>string shared_secret_hash = 398881891;</code>
    *
    * @return The bytes for sharedSecretHash.
    */
   com.google.protobuf.ByteString getSharedSecretHashBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the VPN tunnel, which can be one of the following:
+   * - PROVISIONING: Resource is being allocated for the VPN tunnel.
+   * - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel.
+   * - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
+   * - ESTABLISHED: Secure session is successfully established with the peer VPN.
+   * - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS
+   * - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret).
+   * - NEGOTIATION_FAILURE: Handshake failed.
+   * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
+   * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
+   * - NO_INCOMING_PACKETS: No incoming packets from peer.
+   * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+   * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
+   * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
+   * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
+   * - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.VpnTunnel.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *
@@ -563,7 +782,19 @@ public interface VpnTunnelOrBuilder
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 264077387;</code>
+   * <code>string target_vpn_gateway = 532512843;</code>
+   *
+   * @return Whether the targetVpnGateway field is set.
+   */
+  boolean hasTargetVpnGateway();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
+   * </pre>
+   *
+   * <code>string target_vpn_gateway = 532512843;</code>
    *
    * @return The targetVpnGateway.
    */
@@ -575,7 +806,7 @@ public interface VpnTunnelOrBuilder
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 264077387;</code>
+   * <code>string target_vpn_gateway = 532512843;</code>
    *
    * @return The bytes for targetVpnGateway.
    */
@@ -588,7 +819,19 @@ public interface VpnTunnelOrBuilder
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 138248697;</code>
+   * <code>string vpn_gateway = 406684153;</code>
+   *
+   * @return Whether the vpnGateway field is set.
+   */
+  boolean hasVpnGateway();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
+   * </pre>
+   *
+   * <code>string vpn_gateway = 406684153;</code>
    *
    * @return The vpnGateway.
    */
@@ -600,12 +843,24 @@ public interface VpnTunnelOrBuilder
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 138248697;</code>
+   * <code>string vpn_gateway = 406684153;</code>
    *
    * @return The bytes for vpnGateway.
    */
   com.google.protobuf.ByteString getVpnGatewayBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+   * </pre>
+   *
+   * <code>int32 vpn_gateway_interface = 95979123;</code>
+   *
+   * @return Whether the vpnGatewayInterface field is set.
+   */
+  boolean hasVpnGatewayInterface();
   /**
    *
    *

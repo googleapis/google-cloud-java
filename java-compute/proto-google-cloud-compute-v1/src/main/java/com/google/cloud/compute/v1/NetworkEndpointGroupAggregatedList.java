@@ -78,21 +78,21 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               kind_ = s;
               break;
             }
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -102,22 +102,22 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000010;
               break;
             }
           case 638380202:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               nextPageToken_ = s;
               break;
             }
           case 804208130:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 items_ =
                     com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.compute.v1.NetworkEndpointGroupsScopedList>
@@ -128,21 +128,21 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
               items_.getMutableMap().put(items__.getKey(), items__.getValue());
               break;
             }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
           case 1946976506:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 unreachables_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000020;
               }
               unreachables_.add(s);
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              selfLink_ = s;
               break;
             }
           default:
@@ -159,7 +159,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         unreachables_ = unreachables_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -193,8 +193,24 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
             com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the resource; defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -377,6 +393,21 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource type, which is always compute#networkEndpointGroupAggregatedList for aggregated lists of network endpoint groups.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -426,6 +457,21 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    *
    * <code>string next_page_token = 79797525;</code>
    *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -464,7 +510,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -473,7 +519,22 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -496,7 +557,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -589,7 +650,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -617,7 +678,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -634,26 +695,26 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetItems(), ItemsDefaultEntryHolder.defaultEntry, 100526016);
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
     for (int i = 0; i < unreachables_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 243372063, unreachables_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -664,16 +725,16 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
     }
     for (java.util.Map.Entry<
@@ -689,9 +750,6 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100526016, items__);
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < unreachables_.size(); i++) {
@@ -699,6 +757,9 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       }
       size += dataSize;
       size += 5 * getUnreachablesList().size();
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -716,11 +777,23 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList other =
         (com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList) obj;
 
-    if (!getId().equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!internalGetItems().equals(other.internalGetItems())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!getUnreachablesList().equals(other.getUnreachablesList())) return false;
     if (hasWarning() != other.hasWarning()) return false;
     if (hasWarning()) {
@@ -737,18 +810,26 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     if (!internalGetItems().getMap().isEmpty()) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetItems().hashCode();
     }
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (getUnreachablesCount() > 0) {
       hash = (37 * hash) + UNREACHABLES_FIELD_NUMBER;
       hash = (53 * hash) + getUnreachablesList().hashCode();
@@ -916,29 +997,31 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getWarningFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableItems().clear();
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       unreachables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -968,22 +1051,39 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
       result.items_ = internalGetItems();
       result.items_.makeImmutable();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.nextPageToken_ = nextPageToken_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         unreachables_ = unreachables_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.unreachables_ = unreachables_;
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1035,27 +1135,31 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.NetworkEndpointGroupAggregatedList.getDefaultInstance())
         return this;
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000001;
         id_ = other.id_;
         onChanged();
       }
       internalGetMutableItems().mergeFrom(other.internalGetItems());
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000008;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000010;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (!other.unreachables_.isEmpty()) {
         if (unreachables_.isEmpty()) {
           unreachables_ = other.unreachables_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureUnreachablesIsMutable();
           unreachables_.addAll(other.unreachables_);
@@ -1099,6 +1203,20 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Unique identifier for the resource; defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1159,7 +1277,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -1176,7 +1294,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1198,7 +1316,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -1403,6 +1521,20 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      *
      * <code>string kind = 3292052;</code>
      *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The resource type, which is always compute#networkEndpointGroupAggregatedList for aggregated lists of network endpoint groups.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
      * @return The kind.
      */
     public java.lang.String getKind() {
@@ -1454,7 +1586,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
@@ -1471,7 +1603,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1493,13 +1625,27 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1560,7 +1706,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1577,7 +1723,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -1599,7 +1745,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1613,7 +1759,21 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1635,7 +1795,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1657,7 +1817,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1666,7 +1826,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1678,12 +1838,12 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1695,7 +1855,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1705,7 +1865,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1715,9 +1875,9 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnreachablesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         unreachables_ = new com.google.protobuf.LazyStringArrayList(unreachables_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1852,7 +2012,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      */
     public Builder clearUnreachables() {
       unreachables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1897,7 +2057,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1938,7 +2098,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1957,7 +2117,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1971,7 +2131,9 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1983,7 +2145,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2000,10 +2162,9 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -2016,7 +2177,7 @@ public final class NetworkEndpointGroupAggregatedList extends com.google.protobu
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

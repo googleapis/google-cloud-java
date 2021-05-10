@@ -65,6 +65,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,23 +76,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
           case 0:
             done = true;
             break;
-          case 28990146:
-            {
-              com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (shieldedInstanceConfigResource_ != null) {
-                subBuilder = shieldedInstanceConfigResource_.toBuilder();
-              }
-              shieldedInstanceConfigResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ShieldedInstanceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceConfigResource_);
-                shieldedInstanceConfigResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -109,7 +93,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -118,6 +102,23 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -2118493502:
+            {
+              com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfigResource_ != null) {
+                subBuilder = shieldedInstanceConfigResource_.toBuilder();
+              }
+              shieldedInstanceConfigResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ShieldedInstanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfigResource_);
+                shieldedInstanceConfigResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -154,6 +155,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
             com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -265,6 +267,23 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -305,7 +324,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
   }
 
-  public static final int SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER = 3623768;
+  public static final int SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER = 272059224;
   private com.google.cloud.compute.v1.ShieldedInstanceConfig shieldedInstanceConfigResource_;
   /**
    *
@@ -315,7 +334,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the shieldedInstanceConfigResource field is set.
@@ -332,7 +351,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The shieldedInstanceConfigResource.
@@ -351,7 +370,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -423,20 +442,20 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (shieldedInstanceConfigResource_ != null) {
-      output.writeMessage(3623768, getShieldedInstanceConfigResource());
-    }
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (shieldedInstanceConfigResource_ != null) {
+      output.writeMessage(272059224, getShieldedInstanceConfigResource());
     }
     unknownFields.writeTo(output);
   }
@@ -447,22 +466,22 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     if (size != -1) return size;
 
     size = 0;
-    if (shieldedInstanceConfigResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              3623768, getShieldedInstanceConfigResource());
-    }
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (shieldedInstanceConfigResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              272059224, getShieldedInstanceConfigResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -482,7 +501,10 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasShieldedInstanceConfigResource() != other.hasShieldedInstanceConfigResource())
       return false;
     if (hasShieldedInstanceConfigResource()) {
@@ -505,8 +527,10 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasShieldedInstanceConfigResource()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getShieldedInstanceConfigResource().hashCode();
@@ -667,7 +691,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (shieldedInstanceConfigResourceBuilder_ == null) {
         shieldedInstanceConfigResource_ = null;
       } else {
@@ -706,8 +730,13 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     public com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest result =
           new com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.instance_ = instance_;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (shieldedInstanceConfigResourceBuilder_ == null) {
         result.shieldedInstanceConfigResource_ = shieldedInstanceConfigResource_;
@@ -715,6 +744,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         result.shieldedInstanceConfigResource_ = shieldedInstanceConfigResourceBuilder_.build();
       }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -777,7 +807,8 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -818,6 +849,8 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instance_ = "";
     /**
@@ -1043,6 +1076,22 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1098,7 +1147,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1117,7 +1166,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1141,7 +1190,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1161,7 +1210,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the shieldedInstanceConfigResource field is set.
@@ -1178,7 +1227,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The shieldedInstanceConfigResource.
@@ -1200,7 +1249,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceConfigResource(
@@ -1225,7 +1274,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceConfigResource(
@@ -1247,7 +1296,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeShieldedInstanceConfigResource(
@@ -1277,7 +1326,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearShieldedInstanceConfigResource() {
@@ -1299,7 +1348,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
@@ -1316,7 +1365,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder
@@ -1337,7 +1386,7 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

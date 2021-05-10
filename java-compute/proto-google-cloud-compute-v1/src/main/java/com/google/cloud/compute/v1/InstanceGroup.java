@@ -91,94 +91,95 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 28246024:
             {
+              bitField0_ |= 0x00000200;
               size_ = input.readInt32();
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000800;
               zone_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 315137906:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1273306210:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              namedPorts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               network_ = s;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               fingerprint_ = s;
+              break;
+            }
+          case -1832345742:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              subnetwork_ = s;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -874177438:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              namedPorts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              selfLink_ = s;
               break;
             }
           default:
@@ -195,7 +196,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
       }
       this.unknownFields = unknownFields.build();
@@ -218,8 +219,24 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.InstanceGroup.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -267,7 +284,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -276,7 +293,22 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -299,7 +331,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -318,6 +350,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasFingerprint() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -376,6 +423,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string id = 3355;</code>
    *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A unique identifier for this instance group, generated by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
    * @return The id.
    */
   @java.lang.Override
@@ -416,6 +478,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -474,6 +551,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -512,7 +604,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NAMED_PORTS_FIELD_NUMBER = 159163276;
+  public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -523,7 +615,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
@@ -538,7 +630,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
@@ -554,7 +646,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public int getNamedPortsCount() {
@@ -569,7 +661,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
@@ -584,7 +676,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
@@ -593,6 +685,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
   private volatile java.lang.Object network_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -651,6 +758,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the region where the instance group is located (for regional resources).
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -689,7 +811,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -698,7 +820,22 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL for this instance group. The server generates this URL.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -721,7 +858,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -749,6 +886,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 size = 3530753;</code>
    *
+   * @return Whether the size field is set.
+   */
+  @java.lang.Override
+  public boolean hasSize() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The total number of instances in the instance group.
+   * </pre>
+   *
+   * <code>int32 size = 3530753;</code>
+   *
    * @return The size.
    */
   @java.lang.Override
@@ -756,7 +908,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     return size_;
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
+  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -765,7 +917,22 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetwork() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -788,7 +955,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -807,6 +974,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
   private volatile java.lang.Object zone_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  @java.lang.Override
+  public boolean hasZone() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
   /**
    *
    *
@@ -868,44 +1050,44 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (size_ != 0) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(3530753, size_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      output.writeMessage(159163276, namedPorts_.get(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      output.writeMessage(427598732, namedPorts_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -916,46 +1098,46 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (size_ != 0) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3530753, size_);
     }
-    if (!getZoneBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
-    }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     for (int i = 0; i < namedPorts_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(159163276, namedPorts_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -973,19 +1155,55 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.InstanceGroup other =
         (com.google.cloud.compute.v1.InstanceGroup) obj;
 
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getFingerprint().equals(other.getFingerprint())) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasFingerprint() != other.hasFingerprint()) return false;
+    if (hasFingerprint()) {
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!getNamedPortsList().equals(other.getNamedPortsList())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (getSize() != other.getSize()) return false;
-    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
-    if (!getZone().equals(other.getZone())) return false;
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSize() != other.hasSize()) return false;
+    if (hasSize()) {
+      if (getSize() != other.getSize()) return false;
+    }
+    if (hasSubnetwork() != other.hasSubnetwork()) return false;
+    if (hasSubnetwork()) {
+      if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    }
+    if (hasZone() != other.hasZone()) return false;
+    if (hasZone()) {
+      if (!getZone().equals(other.getZone())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -997,34 +1215,58 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getFingerprint().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasFingerprint()) {
+      hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     if (getNamedPortsCount() > 0) {
       hash = (37 * hash) + NAMED_PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getNamedPortsList().hashCode();
     }
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getSize();
-    hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getSubnetwork().hashCode();
-    hash = (37 * hash) + ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getZone().hashCode();
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSize()) {
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getSize();
+    }
+    if (hasSubnetwork()) {
+      hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetwork().hashCode();
+    }
+    if (hasZone()) {
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1179,35 +1421,35 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fingerprint_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         namedPortsBuilder_.clear();
       }
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       size_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       subnetwork_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       zone_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1236,27 +1478,65 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.InstanceGroup result =
           new com.google.cloud.compute.v1.InstanceGroup(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.fingerprint_ = fingerprint_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.name_ = name_;
       if (namedPortsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.namedPorts_ = namedPorts_;
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.network_ = network_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.selfLink_ = selfLink_;
-      result.size_ = size_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.size_ = size_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.subnetwork_ = subnetwork_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1306,27 +1586,33 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceGroup other) {
       if (other == com.google.cloud.compute.v1.InstanceGroup.getDefaultInstance()) return this;
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000001;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getFingerprint().isEmpty()) {
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000004;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000008;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000010;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000020;
         name_ = other.name_;
         onChanged();
       }
@@ -1334,7 +1620,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         if (!other.namedPorts_.isEmpty()) {
           if (namedPorts_.isEmpty()) {
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureNamedPortsIsMutable();
             namedPorts_.addAll(other.namedPorts_);
@@ -1347,7 +1633,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
             namedPortsBuilder_.dispose();
             namedPortsBuilder_ = null;
             namedPorts_ = other.namedPorts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             namedPortsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNamedPortsFieldBuilder()
@@ -1357,26 +1643,31 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000080;
         network_ = other.network_;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000100;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000200;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.getSize() != 0) {
+      if (other.hasSize()) {
         setSize(other.getSize());
       }
-      if (!other.getSubnetwork().isEmpty()) {
+      if (other.hasSubnetwork()) {
+        bitField0_ |= 0x00000800;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
-      if (!other.getZone().isEmpty()) {
+      if (other.hasZone()) {
+        bitField0_ |= 0x00001000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -1412,6 +1703,20 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1472,7 +1777,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1489,7 +1794,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1511,7 +1816,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1525,7 +1830,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1547,7 +1866,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1569,7 +1888,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1578,7 +1897,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -1590,12 +1909,12 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1607,7 +1926,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1617,13 +1936,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object fingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * </pre>
+     *
+     * <code>string fingerprint = 234678500;</code>
+     *
+     * @return Whether the fingerprint field is set.
+     */
+    public boolean hasFingerprint() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1684,7 +2017,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -1701,7 +2034,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -1723,13 +2056,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       fingerprint_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A unique identifier for this instance group, generated by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1790,7 +2137,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
@@ -1807,7 +2154,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1829,13 +2176,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      *
      *
@@ -1896,7 +2257,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
@@ -1913,7 +2274,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1935,13 +2296,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2002,7 +2377,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -2019,7 +2394,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2041,7 +2416,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       name_ = value;
       onChanged();
       return this;
@@ -2051,9 +2426,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNamedPortsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>(namedPorts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2072,7 +2447,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
       if (namedPortsBuilder_ == null) {
@@ -2090,7 +2465,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public int getNamedPortsCount() {
       if (namedPortsBuilder_ == null) {
@@ -2108,7 +2483,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2126,7 +2501,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder setNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2150,7 +2525,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder setNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -2172,7 +2547,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2196,7 +2571,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2220,7 +2595,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
       if (namedPortsBuilder_ == null) {
@@ -2241,7 +2616,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -2263,7 +2638,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder addAllNamedPorts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NamedPort> values) {
@@ -2285,12 +2660,12 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
         namedPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         namedPortsBuilder_.clear();
@@ -2306,7 +2681,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public Builder removeNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2327,7 +2702,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
@@ -2341,7 +2716,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2359,7 +2734,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
         getNamedPortsOrBuilderList() {
@@ -2378,7 +2753,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder() {
       return getNamedPortsFieldBuilder()
@@ -2393,7 +2768,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder()
@@ -2408,7 +2783,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort.Builder>
         getNamedPortsBuilderList() {
@@ -2426,13 +2801,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.NamedPort,
                 com.google.cloud.compute.v1.NamedPort.Builder,
                 com.google.cloud.compute.v1.NamedPortOrBuilder>(
-                namedPorts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                namedPorts_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         namedPorts_ = null;
       }
       return namedPortsBuilder_;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2493,7 +2882,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       network_ = value;
       onChanged();
       return this;
@@ -2510,7 +2899,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -2532,13 +2921,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       network_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2599,7 +3002,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       region_ = value;
       onChanged();
       return this;
@@ -2616,7 +3019,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -2638,7 +3041,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       region_ = value;
       onChanged();
       return this;
@@ -2652,7 +3055,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL for this instance group. The server generates this URL.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2674,7 +3091,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2696,7 +3113,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2705,7 +3122,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2717,12 +3134,12 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2734,7 +3151,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2744,13 +3161,28 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
     }
 
     private int size_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The total number of instances in the instance group.
+     * </pre>
+     *
+     * <code>int32 size = 3530753;</code>
+     *
+     * @return Whether the size field is set.
+     */
+    @java.lang.Override
+    public boolean hasSize() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -2779,7 +3211,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-
+      bitField0_ |= 0x00000400;
       size_ = value;
       onChanged();
       return this;
@@ -2796,7 +3228,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       size_ = 0;
       onChanged();
       return this;
@@ -2810,7 +3242,21 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return Whether the subnetwork field is set.
+     */
+    public boolean hasSubnetwork() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The subnetwork.
      */
@@ -2832,7 +3278,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -2854,7 +3300,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -2863,7 +3309,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -2875,12 +3321,12 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -2892,7 +3338,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 39392238;</code>
+     * <code>string subnetwork = 307827694;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -2902,13 +3348,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       subnetwork_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object zone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * </pre>
+     *
+     * <code>string zone = 3744684;</code>
+     *
+     * @return Whether the zone field is set.
+     */
+    public boolean hasZone() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
     /**
      *
      *
@@ -2969,7 +3429,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       zone_ = value;
       onChanged();
       return this;
@@ -2986,7 +3446,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -3008,7 +3468,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00001000;
       zone_ = value;
       onChanged();
       return this;

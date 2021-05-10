@@ -82,6 +82,18 @@ public interface InsertRegionUrlMapRequestOrBuilder
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  boolean hasRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * begin_interface: MixerMutationRequestBuilder Request ID to support idempotency.
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   java.lang.String getRequestId();

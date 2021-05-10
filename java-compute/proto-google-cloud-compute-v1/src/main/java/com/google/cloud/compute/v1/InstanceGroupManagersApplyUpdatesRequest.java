@@ -75,19 +75,12 @@ public final class InstanceGroupManagersApplyUpdatesRequest
           case 0:
             done = true;
             break;
-          case 17052834:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minimalAction_ = s;
-              break;
-            }
           case 232780786:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 instances_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               instances_.add(s);
               break;
@@ -95,12 +88,20 @@ public final class InstanceGroupManagersApplyUpdatesRequest
           case 528824426:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               mostDisruptiveAllowedAction_ = s;
               break;
             }
-          case 1081928448:
+          case -2130430814:
             {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              minimalAction_ = s;
+              break;
+            }
+          case -1065555200:
+            {
+              bitField0_ |= 0x00000001;
               allInstances_ = input.readBool();
               break;
             }
@@ -118,7 +119,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         instances_ = instances_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +142,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder.class);
   }
 
-  public static final int ALL_INSTANCES_FIELD_NUMBER = 135241056;
+  private int bitField0_;
+  public static final int ALL_INSTANCES_FIELD_NUMBER = 403676512;
   private boolean allInstances_;
   /**
    *
@@ -150,7 +152,22 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
-   * <code>bool all_instances = 135241056;</code>
+   * <code>bool all_instances = 403676512;</code>
+   *
+   * @return Whether the allInstances field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllInstances() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+   * </pre>
+   *
+   * <code>bool all_instances = 403676512;</code>
    *
    * @return The allInstances.
    */
@@ -220,7 +237,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     return instances_.getByteString(index);
   }
 
-  public static final int MINIMAL_ACTION_FIELD_NUMBER = 2131604;
+  public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
   private volatile java.lang.Object minimalAction_;
   /**
    *
@@ -233,7 +250,26 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
+   *
+   * @return Whether the minimalAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinimalAction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The minimal action that you want to perform on each instance during the update:
+   * - REPLACE: At minimum, delete the instance and create it again.
+   * - RESTART: Stop the instance and start it again.
+   * - REFRESH: Do not stop the instance.
+   * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * </pre>
+   *
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The minimalAction.
    */
@@ -260,7 +296,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 2131604;</code>
+   * <code>string minimal_action = 270567060;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -279,6 +315,25 @@ public final class InstanceGroupManagersApplyUpdatesRequest
 
   public static final int MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER = 66103053;
   private volatile java.lang.Object mostDisruptiveAllowedAction_;
+  /**
+   *
+   *
+   * <pre>
+   * The most disruptive action that you want to perform on each instance during the update:
+   * - REPLACE: Delete the instance and create it again.
+   * - RESTART: Stop the instance and start it again.
+   * - REFRESH: Do not stop the instance.
+   * - NONE: Do not disrupt the instance at all.  By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * </pre>
+   *
+   * <code>string most_disruptive_allowed_action = 66103053;</code>
+   *
+   * @return Whether the mostDisruptiveAllowedAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasMostDisruptiveAllowedAction() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -348,18 +403,18 @@ public final class InstanceGroupManagersApplyUpdatesRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getMinimalActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2131604, minimalAction_);
-    }
     for (int i = 0; i < instances_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29097598, instances_.getRaw(i));
     }
-    if (!getMostDisruptiveAllowedActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 66103053, mostDisruptiveAllowedAction_);
     }
-    if (allInstances_ != false) {
-      output.writeBool(135241056, allInstances_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(403676512, allInstances_);
     }
     unknownFields.writeTo(output);
   }
@@ -370,9 +425,6 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getMinimalActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2131604, minimalAction_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < instances_.size(); i++) {
@@ -381,13 +433,16 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       size += dataSize;
       size += 4 * getInstancesList().size();
     }
-    if (!getMostDisruptiveAllowedActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               66103053, mostDisruptiveAllowedAction_);
     }
-    if (allInstances_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(135241056, allInstances_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(403676512, allInstances_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,11 +460,20 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest other =
         (com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest) obj;
 
-    if (getAllInstances() != other.getAllInstances()) return false;
+    if (hasAllInstances() != other.hasAllInstances()) return false;
+    if (hasAllInstances()) {
+      if (getAllInstances() != other.getAllInstances()) return false;
+    }
     if (!getInstancesList().equals(other.getInstancesList())) return false;
-    if (!getMinimalAction().equals(other.getMinimalAction())) return false;
-    if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
-      return false;
+    if (hasMinimalAction() != other.hasMinimalAction()) return false;
+    if (hasMinimalAction()) {
+      if (!getMinimalAction().equals(other.getMinimalAction())) return false;
+    }
+    if (hasMostDisruptiveAllowedAction() != other.hasMostDisruptiveAllowedAction()) return false;
+    if (hasMostDisruptiveAllowedAction()) {
+      if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -421,16 +485,22 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ALL_INSTANCES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllInstances());
+    if (hasAllInstances()) {
+      hash = (37 * hash) + ALL_INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllInstances());
+    }
     if (getInstancesCount() > 0) {
       hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getInstancesList().hashCode();
     }
-    hash = (37 * hash) + MINIMAL_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getMinimalAction().hashCode();
-    hash = (37 * hash) + MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getMostDisruptiveAllowedAction().hashCode();
+    if (hasMinimalAction()) {
+      hash = (37 * hash) + MINIMAL_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimalAction().hashCode();
+    }
+    if (hasMostDisruptiveAllowedAction()) {
+      hash = (37 * hash) + MOST_DISRUPTIVE_ALLOWED_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMostDisruptiveAllowedAction().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -580,13 +650,13 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     public Builder clear() {
       super.clear();
       allInstances_ = false;
-
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       minimalAction_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       mostDisruptiveAllowedAction_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -617,14 +687,25 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest(this);
       int from_bitField0_ = bitField0_;
-      result.allInstances_ = allInstances_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allInstances_ = allInstances_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
         instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.instances_ = instances_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.minimalAction_ = minimalAction_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.mostDisruptiveAllowedAction_ = mostDisruptiveAllowedAction_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -678,24 +759,26 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
               .getDefaultInstance()) return this;
-      if (other.getAllInstances() != false) {
+      if (other.hasAllInstances()) {
         setAllInstances(other.getAllInstances());
       }
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
         }
         onChanged();
       }
-      if (!other.getMinimalAction().isEmpty()) {
+      if (other.hasMinimalAction()) {
+        bitField0_ |= 0x00000004;
         minimalAction_ = other.minimalAction_;
         onChanged();
       }
-      if (!other.getMostDisruptiveAllowedAction().isEmpty()) {
+      if (other.hasMostDisruptiveAllowedAction()) {
+        bitField0_ |= 0x00000008;
         mostDisruptiveAllowedAction_ = other.mostDisruptiveAllowedAction_;
         onChanged();
       }
@@ -740,7 +823,22 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
-     * <code>bool all_instances = 135241056;</code>
+     * <code>bool all_instances = 403676512;</code>
+     *
+     * @return Whether the allInstances field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllInstances() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     * </pre>
+     *
+     * <code>bool all_instances = 403676512;</code>
      *
      * @return The allInstances.
      */
@@ -755,13 +853,13 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
-     * <code>bool all_instances = 135241056;</code>
+     * <code>bool all_instances = 403676512;</code>
      *
      * @param value The allInstances to set.
      * @return This builder for chaining.
      */
     public Builder setAllInstances(boolean value) {
-
+      bitField0_ |= 0x00000001;
       allInstances_ = value;
       onChanged();
       return this;
@@ -773,12 +871,12 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
-     * <code>bool all_instances = 135241056;</code>
+     * <code>bool all_instances = 403676512;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allInstances_ = false;
       onChanged();
       return this;
@@ -788,9 +886,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -925,7 +1023,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      */
     public Builder clearInstances() {
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -964,7 +1062,25 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
+     *
+     * @return Whether the minimalAction field is set.
+     */
+    public boolean hasMinimalAction() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimal action that you want to perform on each instance during the update:
+     * - REPLACE: At minimum, delete the instance and create it again.
+     * - RESTART: Stop the instance and start it again.
+     * - REFRESH: Do not stop the instance.
+     * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * </pre>
+     *
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return The minimalAction.
      */
@@ -990,7 +1106,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -1016,7 +1132,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -1025,7 +1141,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       minimalAction_ = value;
       onChanged();
       return this;
@@ -1041,12 +1157,12 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMinimalAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minimalAction_ = getDefaultInstance().getMinimalAction();
       onChanged();
       return this;
@@ -1062,7 +1178,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 2131604;</code>
+     * <code>string minimal_action = 270567060;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.
@@ -1072,13 +1188,31 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       minimalAction_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object mostDisruptiveAllowedAction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The most disruptive action that you want to perform on each instance during the update:
+     * - REPLACE: Delete the instance and create it again.
+     * - RESTART: Stop the instance and start it again.
+     * - REFRESH: Do not stop the instance.
+     * - NONE: Do not disrupt the instance at all.  By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * </pre>
+     *
+     * <code>string most_disruptive_allowed_action = 66103053;</code>
+     *
+     * @return Whether the mostDisruptiveAllowedAction field is set.
+     */
+    public boolean hasMostDisruptiveAllowedAction() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1151,7 +1285,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       mostDisruptiveAllowedAction_ = value;
       onChanged();
       return this;
@@ -1172,7 +1306,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder clearMostDisruptiveAllowedAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       mostDisruptiveAllowedAction_ = getDefaultInstance().getMostDisruptiveAllowedAction();
       onChanged();
       return this;
@@ -1198,7 +1332,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       mostDisruptiveAllowedAction_ = value;
       onChanged();
       return this;

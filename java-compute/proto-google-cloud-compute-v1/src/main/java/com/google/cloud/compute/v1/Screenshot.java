@@ -61,6 +61,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               kind_ = s;
               break;
             }
-          case 1903876306:
+          case -243607342:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               contents_ = s;
               break;
             }
@@ -119,7 +120,8 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Screenshot.Builder.class);
   }
 
-  public static final int CONTENTS_FIELD_NUMBER = 237984538;
+  private int bitField0_;
+  public static final int CONTENTS_FIELD_NUMBER = 506419994;
   private volatile java.lang.Object contents_;
   /**
    *
@@ -128,7 +130,22 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
+   *
+   * @return Whether the contents field is set.
+   */
+  @java.lang.Override
+  public boolean hasContents() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The Base64-encoded screenshot data.
+   * </pre>
+   *
+   * <code>string contents = 506419994;</code>
    *
    * @return The contents.
    */
@@ -151,7 +168,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 237984538;</code>
+   * <code>string contents = 506419994;</code>
    *
    * @return The bytes for contents.
    */
@@ -170,6 +187,21 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -231,11 +263,11 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getContentsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 237984538, contents_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 506419994, contents_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getContentsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(237984538, contents_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(506419994, contents_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,8 +299,14 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Screenshot other = (com.google.cloud.compute.v1.Screenshot) obj;
 
-    if (!getContents().equals(other.getContents())) return false;
-    if (!getKind().equals(other.getKind())) return false;
+    if (hasContents() != other.hasContents()) return false;
+    if (hasContents()) {
+      if (!getContents().equals(other.getContents())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,10 +318,14 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
-    hash = (53 * hash) + getContents().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
+    if (hasContents()) {
+      hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContents().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,9 +472,9 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       contents_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -460,8 +502,17 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Screenshot buildPartial() {
       com.google.cloud.compute.v1.Screenshot result =
           new com.google.cloud.compute.v1.Screenshot(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.contents_ = contents_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.kind_ = kind_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -511,11 +562,13 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Screenshot other) {
       if (other == com.google.cloud.compute.v1.Screenshot.getDefaultInstance()) return this;
-      if (!other.getContents().isEmpty()) {
+      if (other.hasContents()) {
+        bitField0_ |= 0x00000001;
         contents_ = other.contents_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
         onChanged();
       }
@@ -548,6 +601,8 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object contents_ = "";
     /**
      *
@@ -556,7 +611,21 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
+     *
+     * @return Whether the contents field is set.
+     */
+    public boolean hasContents() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The Base64-encoded screenshot data.
+     * </pre>
+     *
+     * <code>string contents = 506419994;</code>
      *
      * @return The contents.
      */
@@ -578,7 +647,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @return The bytes for contents.
      */
@@ -600,7 +669,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @param value The contents to set.
      * @return This builder for chaining.
@@ -609,7 +678,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       contents_ = value;
       onChanged();
       return this;
@@ -621,12 +690,12 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       contents_ = getDefaultInstance().getContents();
       onChanged();
       return this;
@@ -638,7 +707,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 237984538;</code>
+     * <code>string contents = 506419994;</code>
      *
      * @param value The bytes for contents to set.
      * @return This builder for chaining.
@@ -648,13 +717,27 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       contents_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -715,7 +798,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;
@@ -732,7 +815,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -754,7 +837,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;

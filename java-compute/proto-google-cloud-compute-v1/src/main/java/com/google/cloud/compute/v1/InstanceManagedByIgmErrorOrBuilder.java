@@ -70,7 +70,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
@@ -84,7 +84,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -99,12 +99,24 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
       getInstanceActionDetailsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string timestamp = 55126294;</code>
+   *
+   * @return Whether the timestamp field is set.
+   */
+  boolean hasTimestamp();
   /**
    *
    *

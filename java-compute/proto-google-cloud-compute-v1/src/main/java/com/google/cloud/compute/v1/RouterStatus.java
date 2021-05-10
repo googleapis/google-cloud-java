@@ -97,16 +97,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(com.google.cloud.compute.v1.Route.parser(), extensionRegistry));
               break;
             }
-          case 1019129898:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bestRoutes_ = new java.util.ArrayList<com.google.cloud.compute.v1.Route>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bestRoutes_.add(
-                  input.readMessage(com.google.cloud.compute.v1.Route.parser(), extensionRegistry));
-              break;
-            }
           case 1747673050:
             {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -124,8 +114,18 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               network_ = s;
+              break;
+            }
+          case -1128353750:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                bestRoutes_ = new java.util.ArrayList<com.google.cloud.compute.v1.Route>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              bestRoutes_.add(
+                  input.readMessage(com.google.cloud.compute.v1.Route.parser(), extensionRegistry));
               break;
             }
           default:
@@ -148,11 +148,11 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         bestRoutesForRouter_ = java.util.Collections.unmodifiableList(bestRoutesForRouter_);
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        bestRoutes_ = java.util.Collections.unmodifiableList(bestRoutes_);
-      }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         bgpPeerStatus_ = java.util.Collections.unmodifiableList(bgpPeerStatus_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        bestRoutes_ = java.util.Collections.unmodifiableList(bestRoutes_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -174,7 +174,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.RouterStatus.Builder.class);
   }
 
-  public static final int BEST_ROUTES_FIELD_NUMBER = 127391237;
+  private int bitField0_;
+  public static final int BEST_ROUTES_FIELD_NUMBER = 395826693;
   private java.util.List<com.google.cloud.compute.v1.Route> bestRoutes_;
   /**
    *
@@ -183,7 +184,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Route> getBestRoutesList() {
@@ -196,7 +197,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
@@ -210,7 +211,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   @java.lang.Override
   public int getBestRoutesCount() {
@@ -223,7 +224,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Route getBestRoutes(int index) {
@@ -236,7 +237,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouteOrBuilder getBestRoutesOrBuilder(int index) {
@@ -399,6 +400,21 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the network to which this router belongs.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -457,14 +473,14 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bestRoutesForRouter_.size(); i++) {
       output.writeMessage(119389689, bestRoutesForRouter_.get(i));
     }
-    for (int i = 0; i < bestRoutes_.size(); i++) {
-      output.writeMessage(127391237, bestRoutes_.get(i));
-    }
     for (int i = 0; i < bgpPeerStatus_.size(); i++) {
       output.writeMessage(218459131, bgpPeerStatus_.get(i));
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
+    }
+    for (int i = 0; i < bestRoutes_.size(); i++) {
+      output.writeMessage(395826693, bestRoutes_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -483,17 +499,17 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               119389689, bestRoutesForRouter_.get(i));
     }
-    for (int i = 0; i < bestRoutes_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(127391237, bestRoutes_.get(i));
-    }
     for (int i = 0; i < bgpPeerStatus_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               218459131, bgpPeerStatus_.get(i));
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    for (int i = 0; i < bestRoutes_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(395826693, bestRoutes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -514,7 +530,10 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     if (!getBestRoutesForRouterList().equals(other.getBestRoutesForRouterList())) return false;
     if (!getBgpPeerStatusList().equals(other.getBgpPeerStatusList())) return false;
     if (!getNatStatusList().equals(other.getNatStatusList())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -542,8 +561,10 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NAT_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getNatStatusList().hashCode();
     }
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -718,7 +739,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         natStatusBuilder_.clear();
       }
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -747,6 +768,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.RouterStatus result =
           new com.google.cloud.compute.v1.RouterStatus(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (bestRoutesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bestRoutes_ = java.util.Collections.unmodifiableList(bestRoutes_);
@@ -783,7 +805,11 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.natStatus_ = natStatusBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.network_ = network_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -941,7 +967,8 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000010;
         network_ = other.network_;
         onChanged();
       }
@@ -999,7 +1026,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Route> getBestRoutesList() {
       if (bestRoutesBuilder_ == null) {
@@ -1015,7 +1042,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public int getBestRoutesCount() {
       if (bestRoutesBuilder_ == null) {
@@ -1031,7 +1058,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public com.google.cloud.compute.v1.Route getBestRoutes(int index) {
       if (bestRoutesBuilder_ == null) {
@@ -1047,7 +1074,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder setBestRoutes(int index, com.google.cloud.compute.v1.Route value) {
       if (bestRoutesBuilder_ == null) {
@@ -1069,7 +1096,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder setBestRoutes(
         int index, com.google.cloud.compute.v1.Route.Builder builderForValue) {
@@ -1089,7 +1116,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder addBestRoutes(com.google.cloud.compute.v1.Route value) {
       if (bestRoutesBuilder_ == null) {
@@ -1111,7 +1138,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder addBestRoutes(int index, com.google.cloud.compute.v1.Route value) {
       if (bestRoutesBuilder_ == null) {
@@ -1133,7 +1160,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder addBestRoutes(com.google.cloud.compute.v1.Route.Builder builderForValue) {
       if (bestRoutesBuilder_ == null) {
@@ -1152,7 +1179,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder addBestRoutes(
         int index, com.google.cloud.compute.v1.Route.Builder builderForValue) {
@@ -1172,7 +1199,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder addAllBestRoutes(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Route> values) {
@@ -1192,7 +1219,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder clearBestRoutes() {
       if (bestRoutesBuilder_ == null) {
@@ -1211,7 +1238,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public Builder removeBestRoutes(int index) {
       if (bestRoutesBuilder_ == null) {
@@ -1230,7 +1257,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public com.google.cloud.compute.v1.Route.Builder getBestRoutesBuilder(int index) {
       return getBestRoutesFieldBuilder().getBuilder(index);
@@ -1242,7 +1269,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public com.google.cloud.compute.v1.RouteOrBuilder getBestRoutesOrBuilder(int index) {
       if (bestRoutesBuilder_ == null) {
@@ -1258,7 +1285,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
         getBestRoutesOrBuilderList() {
@@ -1275,7 +1302,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public com.google.cloud.compute.v1.Route.Builder addBestRoutesBuilder() {
       return getBestRoutesFieldBuilder()
@@ -1288,7 +1315,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public com.google.cloud.compute.v1.Route.Builder addBestRoutesBuilder(int index) {
       return getBestRoutesFieldBuilder()
@@ -1301,7 +1328,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * Best routes for this router's network.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+     * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Route.Builder> getBestRoutesBuilderList() {
       return getBestRoutesFieldBuilder().getBuilderList();
@@ -2228,6 +2255,20 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string network = 232872494;</code>
      *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the network to which this router belongs.
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
      * @return The network.
      */
     public java.lang.String getNetwork() {
@@ -2279,7 +2320,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       network_ = value;
       onChanged();
       return this;
@@ -2296,7 +2337,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -2318,7 +2359,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       network_ = value;
       onChanged();
       return this;

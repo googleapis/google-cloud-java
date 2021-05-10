@@ -30,7 +30,19 @@ public interface HostRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -42,7 +54,7 @@ public interface HostRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -110,7 +122,19 @@ public interface HostRuleOrBuilder
    * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
-   * <code>string path_matcher = 69377816;</code>
+   * <code>string path_matcher = 337813272;</code>
+   *
+   * @return Whether the pathMatcher field is set.
+   */
+  boolean hasPathMatcher();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+   * </pre>
+   *
+   * <code>string path_matcher = 337813272;</code>
    *
    * @return The pathMatcher.
    */
@@ -122,7 +146,7 @@ public interface HostRuleOrBuilder
    * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
-   * <code>string path_matcher = 69377816;</code>
+   * <code>string path_matcher = 337813272;</code>
    *
    * @return The bytes for pathMatcher.
    */

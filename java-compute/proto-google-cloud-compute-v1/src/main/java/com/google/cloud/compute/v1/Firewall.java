@@ -90,89 +90,47 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               id_ = s;
-              break;
-            }
-          case 20042720:
-            {
-              disabled_ = input.readBool();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               name_ = s;
-              break;
-            }
-          case 54254810:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                denied_ = new java.util.ArrayList<com.google.cloud.compute.v1.Denied>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              denied_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Denied.parser(), extensionRegistry));
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               creationTimestamp_ = s;
-              break;
-            }
-          case 298115386:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                destinationRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              destinationRanges_.add(s);
               break;
             }
           case 503214138:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
                 targetTags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00040000;
               }
               targetTags_.add(s);
-              break;
-            }
-          case 662914282:
-            {
-              com.google.cloud.compute.v1.FirewallLogConfig.Builder subBuilder = null;
-              if (logConfig_ != null) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FirewallLogConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 840806050:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
                 sourceServiceAccounts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00008000;
               }
               sourceServiceAccounts_.add(s);
               break;
@@ -180,15 +138,8 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           case 889207800:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000004;
               direction_ = rawValue;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
           case 1299189058:
@@ -202,44 +153,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.Allowed.parser(), extensionRegistry));
               break;
             }
-          case 1413729568:
-            {
-              priority_ = input.readInt32();
-              break;
-            }
-          case 1470295530:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                sourceTags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              sourceTags_.add(s);
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case 1513634034:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                targetServiceAccounts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              targetServiceAccounts_.add(s);
-              break;
-            }
           case 1600781266:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 sourceRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00004000;
               }
               sourceRanges_.add(s);
               break;
@@ -247,8 +166,91 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000100;
               network_ = s;
+              break;
+            }
+          case -2127440928:
+            {
+              bitField0_ |= 0x00000008;
+              disabled_ = input.readBool();
+              break;
+            }
+          case -2093228838:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                denied_ = new java.util.ArrayList<com.google.cloud.compute.v1.Denied>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              denied_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Denied.parser(), extensionRegistry));
+              break;
+            }
+          case -1849368262:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                destinationRanges_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              destinationRanges_.add(s);
+              break;
+            }
+          case -1484569366:
+            {
+              com.google.cloud.compute.v1.FirewallLogConfig.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000040) != 0)) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.FirewallLogConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000040;
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -733754080:
+            {
+              bitField0_ |= 0x00000200;
+              priority_ = input.readInt32();
+              break;
+            }
+          case -677188118:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+                sourceTags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00010000;
+              }
+              sourceTags_.add(s);
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              selfLink_ = s;
+              break;
+            }
+          case -633849614:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+                targetServiceAccounts_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00020000;
+              }
+              targetServiceAccounts_.add(s);
               break;
             }
           default:
@@ -265,29 +267,29 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        denied_ = java.util.Collections.unmodifiableList(denied_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        destinationRanges_ = destinationRanges_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00040000) != 0)) {
         targetTags_ = targetTags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
         sourceServiceAccounts_ = sourceServiceAccounts_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         allowed_ = java.util.Collections.unmodifiableList(allowed_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
+        sourceRanges_ = sourceRanges_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        denied_ = java.util.Collections.unmodifiableList(denied_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        destinationRanges_ = destinationRanges_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         sourceTags_ = sourceTags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         targetServiceAccounts_ = targetServiceAccounts_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        sourceRanges_ = sourceRanges_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -329,10 +331,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     UNDEFINED_DIRECTION(0),
-    /** <code>EGRESS = 164445045;</code> */
-    EGRESS(164445045),
-    /** <code>INGRESS = 248495765;</code> */
-    INGRESS(248495765),
+    /** <code>EGRESS = 432880501;</code> */
+    EGRESS(432880501),
+    /** <code>INGRESS = 516931221;</code> */
+    INGRESS(516931221),
     UNRECOGNIZED(-1),
     ;
 
@@ -346,10 +348,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-    /** <code>EGRESS = 164445045;</code> */
-    public static final int EGRESS_VALUE = 164445045;
-    /** <code>INGRESS = 248495765;</code> */
-    public static final int INGRESS_VALUE = 248495765;
+    /** <code>EGRESS = 432880501;</code> */
+    public static final int EGRESS_VALUE = 432880501;
+    /** <code>INGRESS = 516931221;</code> */
+    public static final int INGRESS_VALUE = 516931221;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -377,9 +379,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_DIRECTION;
-        case 164445045:
+        case 432880501:
           return EGRESS;
-        case 248495765:
+        case 516931221:
           return INGRESS;
         default:
           return null;
@@ -434,6 +436,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Firewall.Direction)
   }
 
+  private int bitField0_;
   public static final int ALLOWED_FIELD_NUMBER = 162398632;
   private java.util.List<com.google.cloud.compute.v1.Allowed> allowed_;
   /**
@@ -514,6 +517,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   @java.lang.Override
@@ -552,7 +570,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DENIED_FIELD_NUMBER = 6781851;
+  public static final int DENIED_FIELD_NUMBER = 275217307;
   private java.util.List<com.google.cloud.compute.v1.Denied> denied_;
   /**
    *
@@ -561,7 +579,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Denied> getDeniedList() {
@@ -574,7 +592,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.DeniedOrBuilder>
@@ -588,7 +606,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   @java.lang.Override
   public int getDeniedCount() {
@@ -601,7 +619,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Denied getDenied(int index) {
@@ -614,14 +632,14 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+   * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeniedOrBuilder getDeniedOrBuilder(int index) {
     return denied_.get(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -630,7 +648,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this field when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -653,7 +686,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -670,7 +703,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESTINATION_RANGES_FIELD_NUMBER = 37264423;
+  public static final int DESTINATION_RANGES_FIELD_NUMBER = 305699879;
   private com.google.protobuf.LazyStringList destinationRanges_;
   /**
    *
@@ -679,7 +712,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @return A list containing the destinationRanges.
    */
@@ -693,7 +726,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @return The count of destinationRanges.
    */
@@ -707,7 +740,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @param index The index of the element to return.
    * @return The destinationRanges at the given index.
@@ -722,7 +755,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string destination_ranges = 37264423;</code>
+   * <code>repeated string destination_ranges = 305699879;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the destinationRanges at the given index.
@@ -733,6 +766,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
   private int direction_;
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   *
+   * @return Whether the direction field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirection() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -767,7 +815,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Firewall.Direction.UNRECOGNIZED : result;
   }
 
-  public static final int DISABLED_FIELD_NUMBER = 2505340;
+  public static final int DISABLED_FIELD_NUMBER = 270940796;
   private boolean disabled_;
   /**
    *
@@ -776,7 +824,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
    * </pre>
    *
-   * <code>bool disabled = 2505340;</code>
+   * <code>bool disabled = 270940796;</code>
+   *
+   * @return Whether the disabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisabled() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
+   * </pre>
+   *
+   * <code>bool disabled = 270940796;</code>
    *
    * @return The disabled.
    */
@@ -787,6 +850,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -845,6 +923,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -883,7 +976,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOG_CONFIG_FIELD_NUMBER = 82864285;
+  public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
   private com.google.cloud.compute.v1.FirewallLogConfig logConfig_;
   /**
    *
@@ -892,13 +985,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return Whether the logConfig field is set.
    */
   @java.lang.Override
   public boolean hasLogConfig() {
-    return logConfig_ != null;
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -907,7 +1000,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    *
    * @return The logConfig.
    */
@@ -924,15 +1017,32 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+   * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder() {
-    return getLogConfig();
+    return logConfig_ == null
+        ? com.google.cloud.compute.v1.FirewallLogConfig.getDefaultInstance()
+        : logConfig_;
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
   /**
    *
    *
@@ -996,6 +1106,26 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string network = 232872494;</code>
    *
+   * @return Whether the network field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetwork() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
+   * global/networks/default
+   * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
+   * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
+   * - projects/myproject/global/networks/my-network
+   * - global/networks/default
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
    * @return The network.
    */
   @java.lang.Override
@@ -1039,7 +1169,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -1048,7 +1178,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -1057,7 +1202,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     return priority_;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1066,7 +1211,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -1089,7 +1249,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1228,7 +1388,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     return sourceServiceAccounts_.getByteString(index);
   }
 
-  public static final int SOURCE_TAGS_FIELD_NUMBER = 183786941;
+  public static final int SOURCE_TAGS_FIELD_NUMBER = 452222397;
   private com.google.protobuf.LazyStringList sourceTags_;
   /**
    *
@@ -1237,7 +1397,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @return A list containing the sourceTags.
    */
@@ -1251,7 +1411,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @return The count of sourceTags.
    */
@@ -1265,7 +1425,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @param index The index of the element to return.
    * @return The sourceTags at the given index.
@@ -1280,7 +1440,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
    * </pre>
    *
-   * <code>repeated string source_tags = 183786941;</code>
+   * <code>repeated string source_tags = 452222397;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sourceTags at the given index.
@@ -1289,7 +1449,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     return sourceTags_.getByteString(index);
   }
 
-  public static final int TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER = 189204254;
+  public static final int TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER = 457639710;
   private com.google.protobuf.LazyStringList targetServiceAccounts_;
   /**
    *
@@ -1298,7 +1458,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @return A list containing the targetServiceAccounts.
    */
@@ -1312,7 +1472,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @return The count of targetServiceAccounts.
    */
@@ -1326,7 +1486,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @param index The index of the element to return.
    * @return The targetServiceAccounts at the given index.
@@ -1341,7 +1501,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
    * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
    * </pre>
    *
-   * <code>repeated string target_service_accounts = 189204254;</code>
+   * <code>repeated string target_service_accounts = 457639710;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetServiceAccounts at the given index.
@@ -1425,67 +1585,66 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (disabled_ != false) {
-      output.writeBool(2505340, disabled_);
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    for (int i = 0; i < denied_.size(); i++) {
-      output.writeMessage(6781851, denied_.get(i));
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
-    }
-    for (int i = 0; i < destinationRanges_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 37264423, destinationRanges_.getRaw(i));
     }
     for (int i = 0; i < targetTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 62901767, targetTags_.getRaw(i));
-    }
-    if (logConfig_ != null) {
-      output.writeMessage(82864285, getLogConfig());
     }
     for (int i = 0; i < sourceServiceAccounts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 105100756, sourceServiceAccounts_.getRaw(i));
     }
-    if (direction_
-        != com.google.cloud.compute.v1.Firewall.Direction.UNDEFINED_DIRECTION.getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(111150975, direction_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       output.writeMessage(162398632, allowed_.get(i));
-    }
-    if (priority_ != 0) {
-      output.writeInt32(176716196, priority_);
-    }
-    for (int i = 0; i < sourceTags_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 183786941, sourceTags_.getRaw(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
-    }
-    for (int i = 0; i < targetServiceAccounts_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 189204254, targetServiceAccounts_.getRaw(i));
     }
     for (int i = 0; i < sourceRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 200097658, sourceRanges_.getRaw(i));
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(270940796, disabled_);
+    }
+    for (int i = 0; i < denied_.size(); i++) {
+      output.writeMessage(275217307, denied_.get(i));
+    }
+    for (int i = 0; i < destinationRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 305699879, destinationRanges_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(351299741, getLogConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(445151652, priority_);
+    }
+    for (int i = 0; i < sourceTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 452222397, sourceTags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    for (int i = 0; i < targetServiceAccounts_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 457639710, targetServiceAccounts_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1496,32 +1655,18 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (disabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2505340, disabled_);
-    }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    for (int i = 0; i < denied_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6781851, denied_.get(i));
-    }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < destinationRanges_.size(); i++) {
-        dataSize += computeStringSizeNoTag(destinationRanges_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getDestinationRangesList().size();
     }
     {
       int dataSize = 0;
@@ -1531,9 +1676,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getTargetTagsList().size();
     }
-    if (logConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(82864285, getLogConfig());
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < sourceServiceAccounts_.size(); i++) {
@@ -1542,37 +1684,11 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSourceServiceAccountsList().size();
     }
-    if (direction_
-        != com.google.cloud.compute.v1.Firewall.Direction.UNDEFINED_DIRECTION.getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(162398632, allowed_.get(i));
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < sourceTags_.size(); i++) {
-        dataSize += computeStringSizeNoTag(sourceTags_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getSourceTagsList().size();
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < targetServiceAccounts_.size(); i++) {
-        dataSize += computeStringSizeNoTag(targetServiceAccounts_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getTargetServiceAccountsList().size();
     }
     {
       int dataSize = 0;
@@ -1582,8 +1698,50 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSourceRangesList().size();
     }
-    if (!getNetworkBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(270940796, disabled_);
+    }
+    for (int i = 0; i < denied_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(275217307, denied_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destinationRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destinationRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDestinationRangesList().size();
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sourceTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sourceTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSourceTagsList().size();
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetServiceAccounts_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetServiceAccounts_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getTargetServiceAccountsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1601,22 +1759,52 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.Firewall other = (com.google.cloud.compute.v1.Firewall) obj;
 
     if (!getAllowedList().equals(other.getAllowedList())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
     if (!getDeniedList().equals(other.getDeniedList())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
     if (!getDestinationRangesList().equals(other.getDestinationRangesList())) return false;
-    if (direction_ != other.direction_) return false;
-    if (getDisabled() != other.getDisabled()) return false;
-    if (!getId().equals(other.getId())) return false;
-    if (!getKind().equals(other.getKind())) return false;
+    if (hasDirection() != other.hasDirection()) return false;
+    if (hasDirection()) {
+      if (direction_ != other.direction_) return false;
+    }
+    if (hasDisabled() != other.hasDisabled()) return false;
+    if (hasDisabled()) {
+      if (getDisabled() != other.getDisabled()) return false;
+    }
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
       if (!getLogConfig().equals(other.getLogConfig())) return false;
     }
-    if (!getName().equals(other.getName())) return false;
-    if (!getNetwork().equals(other.getNetwork())) return false;
-    if (getPriority() != other.getPriority()) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNetwork() != other.hasNetwork()) return false;
+    if (hasNetwork()) {
+      if (!getNetwork().equals(other.getNetwork())) return false;
+    }
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (!getSourceRangesList().equals(other.getSourceRangesList())) return false;
     if (!getSourceServiceAccountsList().equals(other.getSourceServiceAccountsList())) return false;
     if (!getSourceTagsList().equals(other.getSourceTagsList())) return false;
@@ -1637,38 +1825,58 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedList().hashCode();
     }
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
     if (getDeniedCount() > 0) {
       hash = (37 * hash) + DENIED_FIELD_NUMBER;
       hash = (53 * hash) + getDeniedList().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
     if (getDestinationRangesCount() > 0) {
       hash = (37 * hash) + DESTINATION_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getDestinationRangesList().hashCode();
     }
-    hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-    hash = (53 * hash) + direction_;
-    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
+    if (hasDirection()) {
+      hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
+      hash = (53 * hash) + direction_;
+    }
+    if (hasDisabled()) {
+      hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+    }
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLogConfig().hashCode();
     }
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getNetwork().hashCode();
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNetwork()) {
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+    }
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (getSourceRangesCount() > 0) {
       hash = (37 * hash) + SOURCE_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSourceRangesList().hashCode();
@@ -1831,6 +2039,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAllowedFieldBuilder();
         getDeniedFieldBuilder();
+        getLogConfigFieldBuilder();
       }
     }
 
@@ -1844,49 +2053,49 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         allowedBuilder_.clear();
       }
       creationTimestamp_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (deniedBuilder_ == null) {
         denied_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         deniedBuilder_.clear();
       }
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       direction_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       disabled_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
       } else {
-        logConfig_ = null;
-        logConfigBuilder_ = null;
+        logConfigBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       network_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       priority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       sourceRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00004000);
       sourceServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00008000);
       sourceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00010000);
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00020000);
       targetTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -1914,6 +2123,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Firewall buildPartial() {
       com.google.cloud.compute.v1.Firewall result = new com.google.cloud.compute.v1.Firewall(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (allowedBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           allowed_ = java.util.Collections.unmodifiableList(allowed_);
@@ -1923,60 +2133,94 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.allowed_ = allowedBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.creationTimestamp_ = creationTimestamp_;
       if (deniedBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           denied_ = java.util.Collections.unmodifiableList(denied_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.denied_ = denied_;
       } else {
         result.denied_ = deniedBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.description_ = description_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        destinationRanges_ = destinationRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.destinationRanges_ = destinationRanges_;
-      result.direction_ = direction_;
-      result.disabled_ = disabled_;
-      result.id_ = id_;
-      result.kind_ = kind_;
-      if (logConfigBuilder_ == null) {
-        result.logConfig_ = logConfig_;
-      } else {
-        result.logConfig_ = logConfigBuilder_.build();
-      }
-      result.name_ = name_;
-      result.network_ = network_;
-      result.priority_ = priority_;
-      result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        sourceRanges_ = sourceRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.sourceRanges_ = sourceRanges_;
       if (((bitField0_ & 0x00000010) != 0)) {
-        sourceServiceAccounts_ = sourceServiceAccounts_.getUnmodifiableView();
+        destinationRanges_ = destinationRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
+      result.destinationRanges_ = destinationRanges_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.direction_ = direction_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.disabled_ = disabled_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
+      result.id_ = id_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (logConfigBuilder_ == null) {
+          result.logConfig_ = logConfig_;
+        } else {
+          result.logConfig_ = logConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
+      result.name_ = name_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
+      result.network_ = network_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
+      result.selfLink_ = selfLink_;
+      if (((bitField0_ & 0x00004000) != 0)) {
+        sourceRanges_ = sourceRanges_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      }
+      result.sourceRanges_ = sourceRanges_;
+      if (((bitField0_ & 0x00008000) != 0)) {
+        sourceServiceAccounts_ = sourceServiceAccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00008000);
+      }
       result.sourceServiceAccounts_ = sourceServiceAccounts_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         sourceTags_ = sourceTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.sourceTags_ = sourceTags_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         targetServiceAccounts_ = targetServiceAccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00020000);
       }
       result.targetServiceAccounts_ = targetServiceAccounts_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         targetTags_ = targetTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00040000);
       }
       result.targetTags_ = targetTags_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2053,7 +2297,8 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
@@ -2061,7 +2306,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         if (!other.denied_.isEmpty()) {
           if (denied_.isEmpty()) {
             denied_ = other.denied_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDeniedIsMutable();
             denied_.addAll(other.denied_);
@@ -2074,7 +2319,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
             deniedBuilder_.dispose();
             deniedBuilder_ = null;
             denied_ = other.denied_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             deniedBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDeniedFieldBuilder()
@@ -2084,56 +2329,62 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
       if (!other.destinationRanges_.isEmpty()) {
         if (destinationRanges_.isEmpty()) {
           destinationRanges_ = other.destinationRanges_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureDestinationRangesIsMutable();
           destinationRanges_.addAll(other.destinationRanges_);
         }
         onChanged();
       }
-      if (other.direction_ != 0) {
-        setDirectionValue(other.getDirectionValue());
+      if (other.hasDirection()) {
+        setDirection(other.getDirection());
       }
-      if (other.getDisabled() != false) {
+      if (other.hasDisabled()) {
         setDisabled(other.getDisabled());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000080;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000100;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000400;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getNetwork().isEmpty()) {
+      if (other.hasNetwork()) {
+        bitField0_ |= 0x00000800;
         network_ = other.network_;
         onChanged();
       }
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (!other.sourceRanges_.isEmpty()) {
         if (sourceRanges_.isEmpty()) {
           sourceRanges_ = other.sourceRanges_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00004000);
         } else {
           ensureSourceRangesIsMutable();
           sourceRanges_.addAll(other.sourceRanges_);
@@ -2143,7 +2394,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (!other.sourceServiceAccounts_.isEmpty()) {
         if (sourceServiceAccounts_.isEmpty()) {
           sourceServiceAccounts_ = other.sourceServiceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00008000);
         } else {
           ensureSourceServiceAccountsIsMutable();
           sourceServiceAccounts_.addAll(other.sourceServiceAccounts_);
@@ -2153,7 +2404,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (!other.sourceTags_.isEmpty()) {
         if (sourceTags_.isEmpty()) {
           sourceTags_ = other.sourceTags_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureSourceTagsIsMutable();
           sourceTags_.addAll(other.sourceTags_);
@@ -2163,7 +2414,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetServiceAccounts_.isEmpty()) {
         if (targetServiceAccounts_.isEmpty()) {
           targetServiceAccounts_ = other.targetServiceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00020000);
         } else {
           ensureTargetServiceAccountsIsMutable();
           targetServiceAccounts_.addAll(other.targetServiceAccounts_);
@@ -2173,7 +2424,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetTags_.isEmpty()) {
         if (targetTags_.isEmpty()) {
           targetTags_ = other.targetTags_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           ensureTargetTagsIsMutable();
           targetTags_.addAll(other.targetTags_);
@@ -2569,6 +2820,20 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string creation_timestamp = 30525366;</code>
      *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
      * @return The creationTimestamp.
      */
     public java.lang.String getCreationTimestamp() {
@@ -2620,7 +2885,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2637,7 +2902,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -2659,7 +2924,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2669,9 +2934,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDeniedIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         denied_ = new java.util.ArrayList<com.google.cloud.compute.v1.Denied>(denied_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2688,7 +2953,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Denied> getDeniedList() {
       if (deniedBuilder_ == null) {
@@ -2704,7 +2969,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public int getDeniedCount() {
       if (deniedBuilder_ == null) {
@@ -2720,7 +2985,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public com.google.cloud.compute.v1.Denied getDenied(int index) {
       if (deniedBuilder_ == null) {
@@ -2736,7 +3001,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder setDenied(int index, com.google.cloud.compute.v1.Denied value) {
       if (deniedBuilder_ == null) {
@@ -2758,7 +3023,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder setDenied(
         int index, com.google.cloud.compute.v1.Denied.Builder builderForValue) {
@@ -2778,7 +3043,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder addDenied(com.google.cloud.compute.v1.Denied value) {
       if (deniedBuilder_ == null) {
@@ -2800,7 +3065,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder addDenied(int index, com.google.cloud.compute.v1.Denied value) {
       if (deniedBuilder_ == null) {
@@ -2822,7 +3087,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder addDenied(com.google.cloud.compute.v1.Denied.Builder builderForValue) {
       if (deniedBuilder_ == null) {
@@ -2841,7 +3106,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder addDenied(
         int index, com.google.cloud.compute.v1.Denied.Builder builderForValue) {
@@ -2861,7 +3126,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder addAllDenied(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Denied> values) {
@@ -2881,12 +3146,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder clearDenied() {
       if (deniedBuilder_ == null) {
         denied_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         deniedBuilder_.clear();
@@ -2900,7 +3165,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public Builder removeDenied(int index) {
       if (deniedBuilder_ == null) {
@@ -2919,7 +3184,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public com.google.cloud.compute.v1.Denied.Builder getDeniedBuilder(int index) {
       return getDeniedFieldBuilder().getBuilder(index);
@@ -2931,7 +3196,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public com.google.cloud.compute.v1.DeniedOrBuilder getDeniedOrBuilder(int index) {
       if (deniedBuilder_ == null) {
@@ -2947,7 +3212,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.DeniedOrBuilder>
         getDeniedOrBuilderList() {
@@ -2964,7 +3229,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public com.google.cloud.compute.v1.Denied.Builder addDeniedBuilder() {
       return getDeniedFieldBuilder()
@@ -2977,7 +3242,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public com.google.cloud.compute.v1.Denied.Builder addDeniedBuilder(int index) {
       return getDeniedFieldBuilder()
@@ -2990,7 +3255,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Denied denied = 6781851;</code>
+     * <code>repeated .google.cloud.compute.v1.Denied denied = 275217307;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Denied.Builder> getDeniedBuilderList() {
       return getDeniedFieldBuilder().getBuilderList();
@@ -3007,7 +3272,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Denied,
                 com.google.cloud.compute.v1.Denied.Builder,
                 com.google.cloud.compute.v1.DeniedOrBuilder>(
-                denied_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                denied_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         denied_ = null;
       }
       return deniedBuilder_;
@@ -3021,7 +3286,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this field when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -3043,7 +3322,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -3065,7 +3344,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3074,7 +3353,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -3086,12 +3365,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -3103,7 +3382,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3113,7 +3392,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -3123,9 +3402,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDestinationRangesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         destinationRanges_ = new com.google.protobuf.LazyStringArrayList(destinationRanges_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -3135,7 +3414,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @return A list containing the destinationRanges.
      */
@@ -3149,7 +3428,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @return The count of destinationRanges.
      */
@@ -3163,7 +3442,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param index The index of the element to return.
      * @return The destinationRanges at the given index.
@@ -3178,7 +3457,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the destinationRanges at the given index.
@@ -3193,7 +3472,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param index The index to set the value at.
      * @param value The destinationRanges to set.
@@ -3215,7 +3494,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param value The destinationRanges to add.
      * @return This builder for chaining.
@@ -3236,7 +3515,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param values The destinationRanges to add.
      * @return This builder for chaining.
@@ -3254,13 +3533,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDestinationRanges() {
       destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3271,7 +3550,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string destination_ranges = 37264423;</code>
+     * <code>repeated string destination_ranges = 305699879;</code>
      *
      * @param value The bytes of the destinationRanges to add.
      * @return This builder for chaining.
@@ -3288,6 +3567,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int direction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     *
+     * @return Whether the direction field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirection() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -3316,7 +3610,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
-
+      bitField0_ |= 0x00000020;
       direction_ = value;
       onChanged();
       return this;
@@ -3355,7 +3649,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       direction_ = value.getNumber();
       onChanged();
       return this;
@@ -3372,7 +3666,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       direction_ = 0;
       onChanged();
       return this;
@@ -3386,7 +3680,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 2505340;</code>
+     * <code>bool disabled = 270940796;</code>
+     *
+     * @return Whether the disabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisabled() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
+     * </pre>
+     *
+     * <code>bool disabled = 270940796;</code>
      *
      * @return The disabled.
      */
@@ -3401,13 +3710,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 2505340;</code>
+     * <code>bool disabled = 270940796;</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
      */
     public Builder setDisabled(boolean value) {
-
+      bitField0_ |= 0x00000040;
       disabled_ = value;
       onChanged();
       return this;
@@ -3419,18 +3728,32 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      * </pre>
      *
-     * <code>bool disabled = 2505340;</code>
+     * <code>bool disabled = 270940796;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       disabled_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -3491,7 +3814,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       id_ = value;
       onChanged();
       return this;
@@ -3508,7 +3831,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -3530,13 +3853,27 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       id_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#firewall for firewall rules.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -3597,7 +3934,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
@@ -3614,7 +3951,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3636,7 +3973,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
@@ -3655,12 +3992,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      *
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return logConfigBuilder_ != null || logConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3669,7 +4006,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      *
      * @return The logConfig.
      */
@@ -3689,7 +4026,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.FirewallLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -3701,7 +4038,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3711,7 +4048,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.FirewallLogConfig.Builder builderForValue) {
@@ -3721,7 +4058,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3731,11 +4068,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.FirewallLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (logConfig_ != null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && logConfig_ != null
+            && logConfig_ != com.google.cloud.compute.v1.FirewallLogConfig.getDefaultInstance()) {
           logConfig_ =
               com.google.cloud.compute.v1.FirewallLogConfig.newBuilder(logConfig_)
                   .mergeFrom(value)
@@ -3747,7 +4086,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3757,17 +4096,16 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
         onChanged();
       } else {
-        logConfig_ = null;
-        logConfigBuilder_ = null;
+        logConfigBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
     /**
@@ -3777,10 +4115,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.FirewallLogConfig.Builder getLogConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -3791,7 +4129,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.FirewallLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -3809,7 +4147,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the logging options for a particular firewall rule. If logging is enabled, logs will be exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 82864285;</code>
+     * <code>.google.cloud.compute.v1.FirewallLogConfig log_config = 351299741;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FirewallLogConfig,
@@ -3829,6 +4167,20 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
     /**
      *
      *
@@ -3889,7 +4241,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       name_ = value;
       onChanged();
       return this;
@@ -3906,7 +4258,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3928,13 +4280,32 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall rule, the default network is used:
+     * global/networks/default
+     * If you choose to specify this field, you can specify the network as a full or partial URL. For example, the following are all valid URLs:
+     * - https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network
+     * - projects/myproject/global/networks/my-network
+     * - global/networks/default
+     * </pre>
+     *
+     * <code>string network = 232872494;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    public boolean hasNetwork() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
     /**
      *
      *
@@ -4010,7 +4381,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       network_ = value;
       onChanged();
       return this;
@@ -4032,7 +4403,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -4059,7 +4430,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000800;
       network_ = value;
       onChanged();
       return this;
@@ -4073,7 +4444,22 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
+     * </pre>
+     *
+     * <code>int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -4088,13 +4474,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00001000;
       priority_ = value;
       onChanged();
       return this;
@@ -4106,12 +4492,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * Priority for this rule. This is an integer between `0` and `65535`, both inclusive. The default value is `1000`. Relative priorities determine which rule takes effect if multiple rules apply. Lower values indicate higher priority. For example, a rule with priority `0` has higher precedence than a rule with priority `1`. DENY rules take precedence over ALLOW rules if they have equal priority. Note that VPC networks have implied rules with a priority of `65535`. To avoid conflicts with the implied rules, use a priority number less than `65535`.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       priority_ = 0;
       onChanged();
       return this;
@@ -4125,7 +4511,21 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -4147,7 +4547,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4169,7 +4569,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4178,7 +4578,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4190,12 +4590,12 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4207,7 +4607,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4217,7 +4617,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4227,9 +4627,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSourceRangesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         sourceRanges_ = new com.google.protobuf.LazyStringArrayList(sourceRanges_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00004000;
       }
     }
     /**
@@ -4364,7 +4764,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceRanges() {
       sourceRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4395,10 +4795,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSourceServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         sourceServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(sourceServiceAccounts_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00008000;
       }
     }
     /**
@@ -4533,7 +4933,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceServiceAccounts() {
       sourceServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4564,9 +4964,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSourceTagsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         sourceTags_ = new com.google.protobuf.LazyStringArrayList(sourceTags_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -4576,7 +4976,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @return A list containing the sourceTags.
      */
@@ -4590,7 +4990,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @return The count of sourceTags.
      */
@@ -4604,7 +5004,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param index The index of the element to return.
      * @return The sourceTags at the given index.
@@ -4619,7 +5019,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the sourceTags at the given index.
@@ -4634,7 +5034,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param index The index to set the value at.
      * @param value The sourceTags to set.
@@ -4656,7 +5056,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param value The sourceTags to add.
      * @return This builder for chaining.
@@ -4677,7 +5077,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param values The sourceTags to add.
      * @return This builder for chaining.
@@ -4695,13 +5095,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSourceTags() {
       sourceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4712,7 +5112,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * If source tags are specified, the firewall rule applies only to traffic with source IPs that match the primary network interfaces of VM instances that have the tag and are in the same VPC network. Source tags cannot be used to control traffic to an instance's external IP address, it only applies to traffic between instances in the same virtual network. Because tags are associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be set. If both fields are set, the firewall applies to traffic that has a source IP address within sourceRanges OR a source IP from a resource with a matching tag listed in the sourceTags field. The connection does not need to match both fields for the firewall to apply.
      * </pre>
      *
-     * <code>repeated string source_tags = 183786941;</code>
+     * <code>repeated string source_tags = 452222397;</code>
      *
      * @param value The bytes of the sourceTags to add.
      * @return This builder for chaining.
@@ -4732,10 +5132,10 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         targetServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(targetServiceAccounts_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00020000;
       }
     }
     /**
@@ -4745,7 +5145,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @return A list containing the targetServiceAccounts.
      */
@@ -4759,7 +5159,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @return The count of targetServiceAccounts.
      */
@@ -4773,7 +5173,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param index The index of the element to return.
      * @return The targetServiceAccounts at the given index.
@@ -4788,7 +5188,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetServiceAccounts at the given index.
@@ -4803,7 +5203,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param index The index to set the value at.
      * @param value The targetServiceAccounts to set.
@@ -4825,7 +5225,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param value The targetServiceAccounts to add.
      * @return This builder for chaining.
@@ -4846,7 +5246,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param values The targetServiceAccounts to add.
      * @return This builder for chaining.
@@ -4864,13 +5264,13 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTargetServiceAccounts() {
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4881,7 +5281,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * A list of service accounts indicating sets of instances located in the network that may make network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are specified, the firewall rule applies to all instances on the specified network.
      * </pre>
      *
-     * <code>repeated string target_service_accounts = 189204254;</code>
+     * <code>repeated string target_service_accounts = 457639710;</code>
      *
      * @param value The bytes of the targetServiceAccounts to add.
      * @return This builder for chaining.
@@ -4901,9 +5301,9 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetTagsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         targetTags_ = new com.google.protobuf.LazyStringArrayList(targetTags_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00040000;
       }
     }
     /**
@@ -5038,7 +5438,7 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetTags() {
       targetTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }

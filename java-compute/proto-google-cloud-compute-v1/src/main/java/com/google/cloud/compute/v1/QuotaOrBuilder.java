@@ -32,6 +32,18 @@ public interface QuotaOrBuilder
    *
    * <code>double limit = 102976443;</code>
    *
+   * @return Whether the limit field is set.
+   */
+  boolean hasLimit();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Quota limit for this metric.
+   * </pre>
+   *
+   * <code>double limit = 102976443;</code>
+   *
    * @return The limit.
    */
   double getLimit();
@@ -43,7 +55,19 @@ public interface QuotaOrBuilder
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   *
+   * @return Whether the metric field is set.
+   */
+  boolean hasMetric();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the quota metric.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
    *
    * @return The enum numeric value on the wire for metric.
    */
@@ -55,12 +79,24 @@ public interface QuotaOrBuilder
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
    *
    * @return The metric.
    */
   com.google.cloud.compute.v1.Quota.Metric getMetric();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * </pre>
+   *
+   * <code>string owner = 106164915;</code>
+   *
+   * @return Whether the owner field is set.
+   */
+  boolean hasOwner();
   /**
    *
    *
@@ -86,6 +122,18 @@ public interface QuotaOrBuilder
    */
   com.google.protobuf.ByteString getOwnerBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Current usage of this metric.
+   * </pre>
+   *
+   * <code>double usage = 111574433;</code>
+   *
+   * @return Whether the usage field is set.
+   */
+  boolean hasUsage();
   /**
    *
    *

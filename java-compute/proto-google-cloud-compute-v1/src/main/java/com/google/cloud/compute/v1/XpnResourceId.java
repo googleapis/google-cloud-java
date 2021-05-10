@@ -61,6 +61,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               id_ = s;
               break;
             }
           case 28604880:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               type_ = rawValue;
               break;
             }
@@ -139,8 +140,8 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>PROJECT = 140236537;</code> */
-    PROJECT(140236537),
+    /** <code>PROJECT = 408671993;</code> */
+    PROJECT(408671993),
     /** <code>XPN_RESOURCE_TYPE_UNSPECIFIED = 151607034;</code> */
     XPN_RESOURCE_TYPE_UNSPECIFIED(151607034),
     UNRECOGNIZED(-1),
@@ -156,8 +157,8 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>PROJECT = 140236537;</code> */
-    public static final int PROJECT_VALUE = 140236537;
+    /** <code>PROJECT = 408671993;</code> */
+    public static final int PROJECT_VALUE = 408671993;
     /** <code>XPN_RESOURCE_TYPE_UNSPECIFIED = 151607034;</code> */
     public static final int XPN_RESOURCE_TYPE_UNSPECIFIED_VALUE = 151607034;
 
@@ -187,7 +188,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 140236537:
+        case 408671993:
           return PROJECT;
         case 151607034:
           return XPN_RESOURCE_TYPE_UNSPECIFIED;
@@ -244,8 +245,24 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.XpnResourceId.Type)
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -304,6 +321,21 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
    *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of the service resource.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -343,10 +375,10 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (type_ != com.google.cloud.compute.v1.XpnResourceId.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(3575610, type_);
     }
     unknownFields.writeTo(output);
@@ -358,10 +390,10 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (type_ != com.google.cloud.compute.v1.XpnResourceId.Type.UNDEFINED_TYPE.getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     size += unknownFields.getSerializedSize();
@@ -380,8 +412,14 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.XpnResourceId other =
         (com.google.cloud.compute.v1.XpnResourceId) obj;
 
-    if (!getId().equals(other.getId())) return false;
-    if (type_ != other.type_) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -393,10 +431,14 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -543,9 +585,9 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -573,8 +615,17 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.XpnResourceId buildPartial() {
       com.google.cloud.compute.v1.XpnResourceId result =
           new com.google.cloud.compute.v1.XpnResourceId(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.type_ = type_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -624,12 +675,13 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.XpnResourceId other) {
       if (other == com.google.cloud.compute.v1.XpnResourceId.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000001;
         id_ = other.id_;
         onChanged();
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -660,7 +712,23 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -721,7 +789,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -738,7 +806,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -760,13 +828,28 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
     }
 
     private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of the service resource.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.XpnResourceId.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -795,7 +878,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      bitField0_ |= 0x00000002;
       type_ = value;
       onChanged();
       return this;
@@ -834,7 +917,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -851,7 +934,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

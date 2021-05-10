@@ -60,6 +60,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,10 +71,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
           case 0:
             done = true;
             break;
-          case 1653664736:
+          case -493818912:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               routingMode_ = rawValue;
               break;
             }
@@ -131,8 +132,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_ROUTING_MODE = 0;</code>
      */
     UNDEFINED_ROUTING_MODE(0),
-    /** <code>GLOBAL = 226228131;</code> */
-    GLOBAL(226228131),
+    /** <code>GLOBAL = 494663587;</code> */
+    GLOBAL(494663587),
     /** <code>REGIONAL = 92288543;</code> */
     REGIONAL(92288543),
     UNRECOGNIZED(-1),
@@ -148,8 +149,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_ROUTING_MODE = 0;</code>
      */
     public static final int UNDEFINED_ROUTING_MODE_VALUE = 0;
-    /** <code>GLOBAL = 226228131;</code> */
-    public static final int GLOBAL_VALUE = 226228131;
+    /** <code>GLOBAL = 494663587;</code> */
+    public static final int GLOBAL_VALUE = 494663587;
     /** <code>REGIONAL = 92288543;</code> */
     public static final int REGIONAL_VALUE = 92288543;
 
@@ -179,7 +180,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_ROUTING_MODE;
-        case 226228131:
+        case 494663587:
           return GLOBAL;
         case 92288543:
           return REGIONAL;
@@ -236,7 +237,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode)
   }
 
-  public static final int ROUTING_MODE_FIELD_NUMBER = 206708092;
+  private int bitField0_;
+  public static final int ROUTING_MODE_FIELD_NUMBER = 475143548;
   private int routingMode_;
   /**
    *
@@ -245,7 +247,23 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
+   * </code>
+   *
+   * @return Whether the routingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoutingMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
    * </code>
    *
    * @return The enum numeric value on the wire for routingMode.
@@ -261,7 +279,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
    * </code>
    *
    * @return The routingMode.
@@ -290,10 +308,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (routingMode_
-        != com.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode.UNDEFINED_ROUTING_MODE
-            .getNumber()) {
-      output.writeEnum(206708092, routingMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(475143548, routingMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -304,10 +320,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (routingMode_
-        != com.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode.UNDEFINED_ROUTING_MODE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(206708092, routingMode_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(475143548, routingMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -325,7 +339,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     com.google.cloud.compute.v1.NetworkRoutingConfig other =
         (com.google.cloud.compute.v1.NetworkRoutingConfig) obj;
 
-    if (routingMode_ != other.routingMode_) return false;
+    if (hasRoutingMode() != other.hasRoutingMode()) return false;
+    if (hasRoutingMode()) {
+      if (routingMode_ != other.routingMode_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -337,8 +354,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + routingMode_;
+    if (hasRoutingMode()) {
+      hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + routingMode_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,7 +504,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       routingMode_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -513,7 +532,13 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.compute.v1.NetworkRoutingConfig buildPartial() {
       com.google.cloud.compute.v1.NetworkRoutingConfig result =
           new com.google.cloud.compute.v1.NetworkRoutingConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.routingMode_ = routingMode_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -564,8 +589,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkRoutingConfig other) {
       if (other == com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance())
         return this;
-      if (other.routingMode_ != 0) {
-        setRoutingModeValue(other.getRoutingModeValue());
+      if (other.hasRoutingMode()) {
+        setRoutingMode(other.getRoutingMode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -596,6 +621,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private int routingMode_ = 0;
     /**
      *
@@ -604,7 +631,23 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
+     * </code>
+     *
+     * @return Whether the routingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoutingMode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
      * </code>
      *
      * @return The enum numeric value on the wire for routingMode.
@@ -620,14 +663,14 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
      * </code>
      *
      * @param value The enum numeric value on the wire for routingMode to set.
      * @return This builder for chaining.
      */
     public Builder setRoutingModeValue(int value) {
-
+      bitField0_ |= 0x00000001;
       routingMode_ = value;
       onChanged();
       return this;
@@ -639,7 +682,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
      * </code>
      *
      * @return The routingMode.
@@ -660,7 +703,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
      * </code>
      *
      * @param value The routingMode to set.
@@ -671,7 +714,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       routingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -683,13 +726,13 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 206708092;
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode routing_mode = 475143548;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRoutingMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       routingMode_ = 0;
       onChanged();
       return this;

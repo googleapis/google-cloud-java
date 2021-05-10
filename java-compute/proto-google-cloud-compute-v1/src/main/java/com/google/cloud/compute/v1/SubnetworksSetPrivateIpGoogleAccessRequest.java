@@ -59,6 +59,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,8 +70,9 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
           case 0:
             done = true;
             break;
-          case 1224450672:
+          case -923032976:
             {
+              bitField0_ |= 0x00000001;
               privateIpGoogleAccess_ = input.readBool();
               break;
             }
@@ -108,10 +110,20 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
             com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest.Builder.class);
   }
 
-  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 153056334;
+  private int bitField0_;
+  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
   private boolean privateIpGoogleAccess_;
   /**
-   * <code>bool private_ip_google_access = 153056334;</code>
+   * <code>bool private_ip_google_access = 421491790;</code>
+   *
+   * @return Whether the privateIpGoogleAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateIpGoogleAccess() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>bool private_ip_google_access = 421491790;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -134,8 +146,8 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (privateIpGoogleAccess_ != false) {
-      output.writeBool(153056334, privateIpGoogleAccess_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(421491790, privateIpGoogleAccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -146,9 +158,9 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     if (size != -1) return size;
 
     size = 0;
-    if (privateIpGoogleAccess_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(153056334, privateIpGoogleAccess_);
+          com.google.protobuf.CodedOutputStream.computeBoolSize(421491790, privateIpGoogleAccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -166,7 +178,10 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest other =
         (com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest) obj;
 
-    if (getPrivateIpGoogleAccess() != other.getPrivateIpGoogleAccess()) return false;
+    if (hasPrivateIpGoogleAccess() != other.hasPrivateIpGoogleAccess()) return false;
+    if (hasPrivateIpGoogleAccess()) {
+      if (getPrivateIpGoogleAccess() != other.getPrivateIpGoogleAccess()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -178,8 +193,10 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPrivateIpGoogleAccess());
+    if (hasPrivateIpGoogleAccess()) {
+      hash = (37 * hash) + PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPrivateIpGoogleAccess());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,7 +345,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     public Builder clear() {
       super.clear();
       privateIpGoogleAccess_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -359,7 +376,13 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     public com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest buildPartial() {
       com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest result =
           new com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest(this);
-      result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -413,7 +436,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       if (other
           == com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest
               .getDefaultInstance()) return this;
-      if (other.getPrivateIpGoogleAccess() != false) {
+      if (other.hasPrivateIpGoogleAccess()) {
         setPrivateIpGoogleAccess(other.getPrivateIpGoogleAccess());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -447,9 +470,20 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return this;
     }
 
+    private int bitField0_;
+
     private boolean privateIpGoogleAccess_;
     /**
-     * <code>bool private_ip_google_access = 153056334;</code>
+     * <code>bool private_ip_google_access = 421491790;</code>
+     *
+     * @return Whether the privateIpGoogleAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateIpGoogleAccess() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>bool private_ip_google_access = 421491790;</code>
      *
      * @return The privateIpGoogleAccess.
      */
@@ -458,24 +492,24 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return privateIpGoogleAccess_;
     }
     /**
-     * <code>bool private_ip_google_access = 153056334;</code>
+     * <code>bool private_ip_google_access = 421491790;</code>
      *
      * @param value The privateIpGoogleAccess to set.
      * @return This builder for chaining.
      */
     public Builder setPrivateIpGoogleAccess(boolean value) {
-
+      bitField0_ |= 0x00000001;
       privateIpGoogleAccess_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool private_ip_google_access = 153056334;</code>
+     * <code>bool private_ip_google_access = 421491790;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpGoogleAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       privateIpGoogleAccess_ = false;
       onChanged();
       return this;

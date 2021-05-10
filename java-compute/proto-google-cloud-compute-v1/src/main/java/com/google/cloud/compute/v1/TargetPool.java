@@ -85,30 +85,30 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000040;
               name_ = s;
               break;
             }
           case 232780786:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 instances_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000040;
               }
               instances_.add(s);
               break;
@@ -116,58 +116,59 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               creationTimestamp_ = s;
               break;
             }
           case 367076298:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               backupPool_ = s;
               break;
             }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               region_ = s;
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1439481202:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              healthChecks_.add(s);
-              break;
-            }
-          case 1502234730:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case 1563624840:
-            {
-              int rawValue = input.readEnum();
-
-              sessionAffinity_ = rawValue;
               break;
             }
           case 1701336053:
             {
+              bitField0_ |= 0x00000008;
               failoverRatio_ = input.readFloat();
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              description_ = s;
+              break;
+            }
+          case -708002446:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              healthChecks_.add(s);
+              break;
+            }
+          case -645248918:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              selfLink_ = s;
+              break;
+            }
+          case -583858808:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000200;
+              sessionAffinity_ = rawValue;
               break;
             }
           default:
@@ -184,10 +185,10 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         instances_ = instances_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         healthChecks_ = healthChecks_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -233,18 +234,18 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     UNDEFINED_SESSION_AFFINITY(0),
-    /** <code>CLIENT_IP = 77229595;</code> */
-    CLIENT_IP(77229595),
+    /** <code>CLIENT_IP = 345665051;</code> */
+    CLIENT_IP(345665051),
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     CLIENT_IP_PORT_PROTO(221722926),
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     CLIENT_IP_PROTO(25322148),
-    /** <code>GENERATED_COOKIE = 101885748;</code> */
-    GENERATED_COOKIE(101885748),
+    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    GENERATED_COOKIE(370321204),
     /** <code>HEADER_FIELD = 200737960;</code> */
     HEADER_FIELD(200737960),
-    /** <code>HTTP_COOKIE = 226546171;</code> */
-    HTTP_COOKIE(226546171),
+    /** <code>HTTP_COOKIE = 494981627;</code> */
+    HTTP_COOKIE(494981627),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
     UNRECOGNIZED(-1),
@@ -260,18 +261,18 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
-    /** <code>CLIENT_IP = 77229595;</code> */
-    public static final int CLIENT_IP_VALUE = 77229595;
+    /** <code>CLIENT_IP = 345665051;</code> */
+    public static final int CLIENT_IP_VALUE = 345665051;
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     public static final int CLIENT_IP_PROTO_VALUE = 25322148;
-    /** <code>GENERATED_COOKIE = 101885748;</code> */
-    public static final int GENERATED_COOKIE_VALUE = 101885748;
+    /** <code>GENERATED_COOKIE = 370321204;</code> */
+    public static final int GENERATED_COOKIE_VALUE = 370321204;
     /** <code>HEADER_FIELD = 200737960;</code> */
     public static final int HEADER_FIELD_VALUE = 200737960;
-    /** <code>HTTP_COOKIE = 226546171;</code> */
-    public static final int HTTP_COOKIE_VALUE = 226546171;
+    /** <code>HTTP_COOKIE = 494981627;</code> */
+    public static final int HTTP_COOKIE_VALUE = 494981627;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
 
@@ -301,17 +302,17 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_SESSION_AFFINITY;
-        case 77229595:
+        case 345665051:
           return CLIENT_IP;
         case 221722926:
           return CLIENT_IP_PORT_PROTO;
         case 25322148:
           return CLIENT_IP_PROTO;
-        case 101885748:
+        case 370321204:
           return GENERATED_COOKIE;
         case 200737960:
           return HEADER_FIELD;
-        case 226546171:
+        case 494981627:
           return HTTP_COOKIE;
         case 2402104:
           return NONE;
@@ -370,8 +371,26 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetPool.SessionAffinity)
   }
 
+  private int bitField0_;
   public static final int BACKUP_POOL_FIELD_NUMBER = 45884537;
   private volatile java.lang.Object backupPool_;
+  /**
+   *
+   *
+   * <pre>
+   * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+   * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
+   * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
+   * </pre>
+   *
+   * <code>string backup_pool = 45884537;</code>
+   *
+   * @return Whether the backupPool field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupPool() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -434,6 +453,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string creation_timestamp = 30525366;</code>
    *
+   * @return Whether the creationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
    * @return The creationTimestamp.
    */
   @java.lang.Override
@@ -472,7 +506,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -481,7 +515,22 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -504,7 +553,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -534,6 +583,23 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>float failover_ratio = 212667006;</code>
    *
+   * @return Whether the failoverRatio field is set.
+   */
+  @java.lang.Override
+  public boolean hasFailoverRatio() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool (i.e., not as a backup pool to some other target pool). The value of the field must be in [0, 1].
+   * If set, backupPool must also be set. They together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below this number, traffic arriving at the load-balanced IP will be directed to the backup pool.
+   * In case where failoverRatio is not set or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
+   * </pre>
+   *
+   * <code>float failover_ratio = 212667006;</code>
+   *
    * @return The failoverRatio.
    */
   @java.lang.Override
@@ -541,7 +607,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     return failoverRatio_;
   }
 
-  public static final int HEALTH_CHECKS_FIELD_NUMBER = 179935150;
+  public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
   private com.google.protobuf.LazyStringList healthChecks_;
   /**
    *
@@ -550,7 +616,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -564,7 +630,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @return The count of healthChecks.
    */
@@ -578,7 +644,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -593,7 +659,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 179935150;</code>
+   * <code>repeated string health_checks = 448370606;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -604,6 +670,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -723,6 +804,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#targetPool for target pools.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -763,6 +859,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
   /**
    *
    *
@@ -821,6 +932,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the target pool resides.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   @java.lang.Override
@@ -859,7 +985,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -868,7 +994,22 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -891,7 +1032,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -908,7 +1049,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SESSION_AFFINITY_FIELD_NUMBER = 195453105;
+  public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
   private int sessionAffinity_;
   /**
    *
@@ -920,7 +1061,25 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   *
+   * @return Whether the sessionAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionAffinity() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Session affinity option, must be one of the following values:
+   * NONE: Connections from the same client IP may go to any instance in the pool.
+   * CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy.
+   * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
    *
    * @return The enum numeric value on the wire for sessionAffinity.
    */
@@ -938,7 +1097,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
    *
    * @return The sessionAffinity.
    */
@@ -966,44 +1125,42 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     for (int i = 0; i < instances_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29097598, instances_.getRaw(i));
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (!getBackupPoolBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 45884537, backupPool_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeFloat(212667006, failoverRatio_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     for (int i = 0; i < healthChecks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 179935150, healthChecks_.getRaw(i));
+          output, 448370606, healthChecks_.getRaw(i));
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (sessionAffinity_
-        != com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNDEFINED_SESSION_AFFINITY
-            .getNumber()) {
-      output.writeEnum(195453105, sessionAffinity_);
-    }
-    if (failoverRatio_ != 0F) {
-      output.writeFloat(212667006, failoverRatio_);
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeEnum(463888561, sessionAffinity_);
     }
     unknownFields.writeTo(output);
   }
@@ -1014,13 +1171,13 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     {
@@ -1031,18 +1188,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getInstancesList().size();
     }
-    if (!getCreationTimestampBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getBackupPoolBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(45884537, backupPool_);
     }
-    if (!getRegionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     {
       int dataSize = 0;
@@ -1052,16 +1212,11 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (sessionAffinity_
-        != com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNDEFINED_SESSION_AFFINITY
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(195453105, sessionAffinity_);
-    }
-    if (failoverRatio_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(463888561, sessionAffinity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1078,19 +1233,49 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.TargetPool other = (com.google.cloud.compute.v1.TargetPool) obj;
 
-    if (!getBackupPool().equals(other.getBackupPool())) return false;
-    if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (java.lang.Float.floatToIntBits(getFailoverRatio())
-        != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    if (hasBackupPool() != other.hasBackupPool()) return false;
+    if (hasBackupPool()) {
+      if (!getBackupPool().equals(other.getBackupPool())) return false;
+    }
+    if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
+    if (hasCreationTimestamp()) {
+      if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasFailoverRatio() != other.hasFailoverRatio()) return false;
+    if (hasFailoverRatio()) {
+      if (java.lang.Float.floatToIntBits(getFailoverRatio())
+          != java.lang.Float.floatToIntBits(other.getFailoverRatio())) return false;
+    }
     if (!getHealthChecksList().equals(other.getHealthChecksList())) return false;
-    if (!getId().equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!getInstancesList().equals(other.getInstancesList())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
-    if (sessionAffinity_ != other.sessionAffinity_) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
+    if (hasSessionAffinity()) {
+      if (sessionAffinity_ != other.sessionAffinity_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1102,34 +1287,54 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BACKUP_POOL_FIELD_NUMBER;
-    hash = (53 * hash) + getBackupPool().hashCode();
-    hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
-    hash = (53 * hash) + getCreationTimestamp().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    if (hasBackupPool()) {
+      hash = (37 * hash) + BACKUP_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupPool().hashCode();
+    }
+    if (hasCreationTimestamp()) {
+      hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTimestamp().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasFailoverRatio()) {
+      hash = (37 * hash) + FAILOVER_RATIO_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getFailoverRatio());
+    }
     if (getHealthChecksCount() > 0) {
       hash = (37 * hash) + HEALTH_CHECKS_FIELD_NUMBER;
       hash = (53 * hash) + getHealthChecksList().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     if (getInstancesCount() > 0) {
       hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getInstancesList().hashCode();
     }
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
-    hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
-    hash = (53 * hash) + sessionAffinity_;
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSessionAffinity()) {
+      hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + sessionAffinity_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1277,29 +1482,29 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       backupPool_ = "";
-
-      creationTimestamp_ = "";
-
-      description_ = "";
-
-      failoverRatio_ = 0F;
-
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      id_ = "";
-
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      description_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
+      failoverRatio_ = 0F;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      id_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       region_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       sessionAffinity_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1328,26 +1533,58 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.TargetPool result =
           new com.google.cloud.compute.v1.TargetPool(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.backupPool_ = backupPool_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.description_ = description_;
-      result.failoverRatio_ = failoverRatio_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.failoverRatio_ = failoverRatio_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         healthChecks_ = healthChecks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.healthChecks_ = healthChecks_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
       result.id_ = id_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.instances_ = instances_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
       result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
       result.region_ = region_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.sessionAffinity_ = sessionAffinity_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1397,63 +1634,71 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetPool other) {
       if (other == com.google.cloud.compute.v1.TargetPool.getDefaultInstance()) return this;
-      if (!other.getBackupPool().isEmpty()) {
+      if (other.hasBackupPool()) {
+        bitField0_ |= 0x00000001;
         backupPool_ = other.backupPool_;
         onChanged();
       }
-      if (!other.getCreationTimestamp().isEmpty()) {
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000002;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000004;
         description_ = other.description_;
         onChanged();
       }
-      if (other.getFailoverRatio() != 0F) {
+      if (other.hasFailoverRatio()) {
         setFailoverRatio(other.getFailoverRatio());
       }
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
         }
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000020;
         id_ = other.id_;
         onChanged();
       }
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
         }
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000080;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
+      if (other.hasName()) {
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000200;
         region_ = other.region_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000400;
         selfLink_ = other.selfLink_;
         onChanged();
       }
-      if (other.sessionAffinity_ != 0) {
-        setSessionAffinityValue(other.getSessionAffinityValue());
+      if (other.hasSessionAffinity()) {
+        setSessionAffinity(other.getSessionAffinity());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1487,6 +1732,22 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object backupPool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
+     * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
+     * </pre>
+     *
+     * <code>string backup_pool = 45884537;</code>
+     *
+     * @return Whether the backupPool field is set.
+     */
+    public boolean hasBackupPool() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -1553,7 +1814,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       backupPool_ = value;
       onChanged();
       return this;
@@ -1572,7 +1833,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackupPool() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       backupPool_ = getDefaultInstance().getBackupPool();
       onChanged();
       return this;
@@ -1596,13 +1857,27 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       backupPool_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object creationTimestamp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Creation timestamp in RFC3339 text format.
+     * </pre>
+     *
+     * <code>string creation_timestamp = 30525366;</code>
+     *
+     * @return Whether the creationTimestamp field is set.
+     */
+    public boolean hasCreationTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -1663,7 +1938,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1680,7 +1955,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1702,7 +1977,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1716,7 +1991,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -1738,7 +2027,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -1760,7 +2049,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1769,7 +2058,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
@@ -1781,12 +2070,12 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1798,7 +2087,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1808,13 +2097,30 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       description_ = value;
       onChanged();
       return this;
     }
 
     private float failoverRatio_;
+    /**
+     *
+     *
+     * <pre>
+     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool (i.e., not as a backup pool to some other target pool). The value of the field must be in [0, 1].
+     * If set, backupPool must also be set. They together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below this number, traffic arriving at the load-balanced IP will be directed to the backup pool.
+     * In case where failoverRatio is not set or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
+     * </pre>
+     *
+     * <code>float failover_ratio = 212667006;</code>
+     *
+     * @return Whether the failoverRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasFailoverRatio() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1847,7 +2153,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFailoverRatio(float value) {
-
+      bitField0_ |= 0x00000008;
       failoverRatio_ = value;
       onChanged();
       return this;
@@ -1866,7 +2172,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailoverRatio() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       failoverRatio_ = 0F;
       onChanged();
       return this;
@@ -1876,9 +2182,9 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureHealthChecksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1888,7 +2194,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return A list containing the healthChecks.
      */
@@ -1902,7 +2208,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return The count of healthChecks.
      */
@@ -1916,7 +2222,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index of the element to return.
      * @return The healthChecks at the given index.
@@ -1931,7 +2237,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the healthChecks at the given index.
@@ -1946,7 +2252,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param index The index to set the value at.
      * @param value The healthChecks to set.
@@ -1968,7 +2274,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param value The healthChecks to add.
      * @return This builder for chaining.
@@ -1989,7 +2295,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param values The healthChecks to add.
      * @return This builder for chaining.
@@ -2007,13 +2313,13 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearHealthChecks() {
       healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2024,7 +2330,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 179935150;</code>
+     * <code>repeated string health_checks = 448370606;</code>
      *
      * @param value The bytes of the healthChecks to add.
      * @return This builder for chaining.
@@ -2041,6 +2347,20 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
     /**
      *
      *
@@ -2101,7 +2421,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -2118,7 +2438,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -2140,7 +2460,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -2150,9 +2470,9 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2287,7 +2607,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstances() {
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2315,6 +2635,20 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the resource. Always compute#targetPool for target pools.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
     /**
      *
      *
@@ -2375,7 +2709,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -2392,7 +2726,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2414,13 +2748,27 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
     /**
      *
      *
@@ -2481,7 +2829,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2498,7 +2846,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2520,13 +2868,27 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the target pool resides.
+     * </pre>
+     *
+     * <code>string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
     /**
      *
      *
@@ -2587,7 +2949,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       region_ = value;
       onChanged();
       return this;
@@ -2604,7 +2966,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -2626,7 +2988,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000200;
       region_ = value;
       onChanged();
       return this;
@@ -2640,7 +3002,21 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for the resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -2662,7 +3038,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2684,7 +3060,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2693,7 +3069,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2705,12 +3081,12 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2722,7 +3098,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2732,7 +3108,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000400;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2749,7 +3125,26 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * </code>
+     *
+     * @return Whether the sessionAffinity field is set.
+     */
+    @java.lang.Override
+    public boolean hasSessionAffinity() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Session affinity option, must be one of the following values:
+     * NONE: Connections from the same client IP may go to any instance in the pool.
+     * CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy.
+     * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return The enum numeric value on the wire for sessionAffinity.
@@ -2768,14 +3163,14 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @param value The enum numeric value on the wire for sessionAffinity to set.
      * @return This builder for chaining.
      */
     public Builder setSessionAffinityValue(int value) {
-
+      bitField0_ |= 0x00000800;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -2790,7 +3185,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return The sessionAffinity.
@@ -2814,7 +3209,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @param value The sessionAffinity to set.
@@ -2825,7 +3220,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       sessionAffinity_ = value.getNumber();
       onChanged();
       return this;
@@ -2840,13 +3235,13 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       sessionAffinity_ = 0;
       onChanged();
       return this;

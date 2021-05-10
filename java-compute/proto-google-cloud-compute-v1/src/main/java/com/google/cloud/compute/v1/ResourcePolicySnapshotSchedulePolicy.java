@@ -60,6 +60,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,7 +76,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
                       .Builder
                   subBuilder = null;
-              if (retentionPolicy_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = retentionPolicy_.toBuilder();
               }
               retentionPolicy_ =
@@ -87,26 +88,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
                 subBuilder.mergeFrom(retentionPolicy_);
                 retentionPolicy_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 859083962:
-            {
-              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
-                  subBuilder = null;
-              if (schedule_ != null) {
-                subBuilder = schedule_.toBuilder();
-              }
-              schedule_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schedule_);
-                schedule_ = subBuilder.buildPartial();
-              }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1482970226:
@@ -114,7 +96,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
                       .Builder
                   subBuilder = null;
-              if (snapshotProperties_ != null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
                 subBuilder = snapshotProperties_.toBuilder();
               }
               snapshotProperties_ =
@@ -126,7 +108,26 @@ public final class ResourcePolicySnapshotSchedulePolicy
                 subBuilder.mergeFrom(snapshotProperties_);
                 snapshotProperties_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000004;
+              break;
+            }
+          case -1288399686:
+            {
+              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000002) != 0)) {
+                subBuilder = schedule_.toBuilder();
+              }
+              schedule_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(schedule_);
+                schedule_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
               break;
             }
           default:
@@ -163,6 +164,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
             com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RETENTION_POLICY_FIELD_NUMBER = 68625779;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       retentionPolicy_;
@@ -181,7 +183,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    */
   @java.lang.Override
   public boolean hasRetentionPolicy() {
-    return retentionPolicy_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -218,10 +220,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
       getRetentionPolicyOrBuilder() {
-    return getRetentionPolicy();
+    return retentionPolicy_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
+            .getDefaultInstance()
+        : retentionPolicy_;
   }
 
-  public static final int SCHEDULE_FIELD_NUMBER = 107385495;
+  public static final int SCHEDULE_FIELD_NUMBER = 375820951;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule_;
   /**
    *
@@ -231,14 +236,14 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    *
    * @return Whether the schedule field is set.
    */
   @java.lang.Override
   public boolean hasSchedule() {
-    return schedule_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -248,7 +253,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    *
    * @return The schedule.
@@ -268,13 +273,16 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
       getScheduleOrBuilder() {
-    return getSchedule();
+    return schedule_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
+            .getDefaultInstance()
+        : schedule_;
   }
 
   public static final int SNAPSHOT_PROPERTIES_FIELD_NUMBER = 185371278;
@@ -295,7 +303,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    */
   @java.lang.Override
   public boolean hasSnapshotProperties() {
-    return snapshotProperties_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -332,7 +340,10 @@ public final class ResourcePolicySnapshotSchedulePolicy
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder
       getSnapshotPropertiesOrBuilder() {
-    return getSnapshotProperties();
+    return snapshotProperties_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
+            .getDefaultInstance()
+        : snapshotProperties_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -349,14 +360,14 @@ public final class ResourcePolicySnapshotSchedulePolicy
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (retentionPolicy_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(68625779, getRetentionPolicy());
     }
-    if (schedule_ != null) {
-      output.writeMessage(107385495, getSchedule());
-    }
-    if (snapshotProperties_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(185371278, getSnapshotProperties());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(375820951, getSchedule());
     }
     unknownFields.writeTo(output);
   }
@@ -367,17 +378,17 @@ public final class ResourcePolicySnapshotSchedulePolicy
     if (size != -1) return size;
 
     size = 0;
-    if (retentionPolicy_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(68625779, getRetentionPolicy());
     }
-    if (schedule_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(107385495, getSchedule());
-    }
-    if (snapshotProperties_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               185371278, getSnapshotProperties());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(375820951, getSchedule());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -570,7 +581,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRetentionPolicyFieldBuilder();
+        getScheduleFieldBuilder();
+        getSnapshotPropertiesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -579,21 +594,21 @@ public final class ResourcePolicySnapshotSchedulePolicy
       if (retentionPolicyBuilder_ == null) {
         retentionPolicy_ = null;
       } else {
-        retentionPolicy_ = null;
-        retentionPolicyBuilder_ = null;
+        retentionPolicyBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (scheduleBuilder_ == null) {
         schedule_ = null;
       } else {
-        schedule_ = null;
-        scheduleBuilder_ = null;
+        scheduleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (snapshotPropertiesBuilder_ == null) {
         snapshotProperties_ = null;
       } else {
-        snapshotProperties_ = null;
-        snapshotPropertiesBuilder_ = null;
+        snapshotPropertiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -622,21 +637,33 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy(this);
-      if (retentionPolicyBuilder_ == null) {
-        result.retentionPolicy_ = retentionPolicy_;
-      } else {
-        result.retentionPolicy_ = retentionPolicyBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (retentionPolicyBuilder_ == null) {
+          result.retentionPolicy_ = retentionPolicy_;
+        } else {
+          result.retentionPolicy_ = retentionPolicyBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
-      if (scheduleBuilder_ == null) {
-        result.schedule_ = schedule_;
-      } else {
-        result.schedule_ = scheduleBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (scheduleBuilder_ == null) {
+          result.schedule_ = schedule_;
+        } else {
+          result.schedule_ = scheduleBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000002;
       }
-      if (snapshotPropertiesBuilder_ == null) {
-        result.snapshotProperties_ = snapshotProperties_;
-      } else {
-        result.snapshotProperties_ = snapshotPropertiesBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (snapshotPropertiesBuilder_ == null) {
+          result.snapshotProperties_ = snapshotProperties_;
+        } else {
+          result.snapshotProperties_ = snapshotPropertiesBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -729,6 +756,8 @@ public final class ResourcePolicySnapshotSchedulePolicy
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         retentionPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -751,7 +780,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * @return Whether the retentionPolicy field is set.
      */
     public boolean hasRetentionPolicy() {
-      return retentionPolicyBuilder_ != null || retentionPolicy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -799,7 +828,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         retentionPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -822,7 +851,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         retentionPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -839,7 +868,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public Builder mergeRetentionPolicy(
         com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy value) {
       if (retentionPolicyBuilder_ == null) {
-        if (retentionPolicy_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && retentionPolicy_ != null
+            && retentionPolicy_
+                != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
+                    .getDefaultInstance()) {
           retentionPolicy_ =
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
                   .newBuilder(retentionPolicy_)
@@ -852,7 +885,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         retentionPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -871,10 +904,9 @@ public final class ResourcePolicySnapshotSchedulePolicy
         retentionPolicy_ = null;
         onChanged();
       } else {
-        retentionPolicy_ = null;
-        retentionPolicyBuilder_ = null;
+        retentionPolicyBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -890,7 +922,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.Builder
         getRetentionPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRetentionPolicyFieldBuilder().getBuilder();
     }
@@ -961,13 +993,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      *
      * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
-      return scheduleBuilder_ != null || schedule_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -977,7 +1009,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      *
      * @return The schedule.
@@ -1000,7 +1032,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder setSchedule(
@@ -1014,7 +1046,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         scheduleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1025,7 +1057,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder setSchedule(
@@ -1037,7 +1069,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1048,13 +1080,17 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder mergeSchedule(
         com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule value) {
       if (scheduleBuilder_ == null) {
-        if (schedule_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && schedule_ != null
+            && schedule_
+                != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
+                    .getDefaultInstance()) {
           schedule_ =
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.newBuilder(
                       schedule_)
@@ -1067,7 +1103,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         scheduleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1078,7 +1114,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public Builder clearSchedule() {
@@ -1086,10 +1122,9 @@ public final class ResourcePolicySnapshotSchedulePolicy
         schedule_ = null;
         onChanged();
       } else {
-        schedule_ = null;
-        scheduleBuilder_ = null;
+        scheduleBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1100,12 +1135,12 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
         getScheduleBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
@@ -1117,7 +1152,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
@@ -1139,7 +1174,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1182,7 +1217,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * @return Whether the snapshotProperties field is set.
      */
     public boolean hasSnapshotProperties() {
-      return snapshotPropertiesBuilder_ != null || snapshotProperties_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1230,7 +1265,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         snapshotPropertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1253,7 +1288,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         snapshotPropertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1270,7 +1305,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public Builder mergeSnapshotProperties(
         com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties value) {
       if (snapshotPropertiesBuilder_ == null) {
-        if (snapshotProperties_ != null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && snapshotProperties_ != null
+            && snapshotProperties_
+                != com.google.cloud.compute.v1
+                    .ResourcePolicySnapshotSchedulePolicySnapshotProperties.getDefaultInstance()) {
           snapshotProperties_ =
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
                   .newBuilder(snapshotProperties_)
@@ -1283,7 +1322,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
       } else {
         snapshotPropertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1302,10 +1341,9 @@ public final class ResourcePolicySnapshotSchedulePolicy
         snapshotProperties_ = null;
         onChanged();
       } else {
-        snapshotProperties_ = null;
-        snapshotPropertiesBuilder_ = null;
+        snapshotPropertiesBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
     /**
@@ -1322,7 +1360,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
             .Builder
         getSnapshotPropertiesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSnapshotPropertiesFieldBuilder().getBuilder();
     }

@@ -31,7 +31,7 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceReferenceResource field is set.
@@ -45,7 +45,7 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceReferenceResource.
@@ -59,7 +59,7 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceReferenceOrBuilder getInstanceReferenceResourceOrBuilder();

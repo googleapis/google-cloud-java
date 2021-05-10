@@ -57,6 +57,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,6 +70,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
             break;
           case 1079983440:
             {
+              bitField0_ |= 0x00000001;
               additionalNodeCount_ = input.readInt32();
               break;
             }
@@ -106,8 +108,24 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.NodeGroupsAddNodesRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ADDITIONAL_NODE_COUNT_FIELD_NUMBER = 134997930;
   private int additionalNodeCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Count of additional nodes to be added to the node group.
+   * </pre>
+   *
+   * <code>int32 additional_node_count = 134997930;</code>
+   *
+   * @return Whether the additionalNodeCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdditionalNodeCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -138,7 +156,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (additionalNodeCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(134997930, additionalNodeCount_);
     }
     unknownFields.writeTo(output);
@@ -150,7 +168,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (additionalNodeCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(134997930, additionalNodeCount_);
     }
@@ -170,7 +188,10 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     com.google.cloud.compute.v1.NodeGroupsAddNodesRequest other =
         (com.google.cloud.compute.v1.NodeGroupsAddNodesRequest) obj;
 
-    if (getAdditionalNodeCount() != other.getAdditionalNodeCount()) return false;
+    if (hasAdditionalNodeCount() != other.hasAdditionalNodeCount()) return false;
+    if (hasAdditionalNodeCount()) {
+      if (getAdditionalNodeCount() != other.getAdditionalNodeCount()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +203,10 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ADDITIONAL_NODE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAdditionalNodeCount();
+    if (hasAdditionalNodeCount()) {
+      hash = (37 * hash) + ADDITIONAL_NODE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalNodeCount();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,7 +353,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       additionalNodeCount_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -358,7 +381,13 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public com.google.cloud.compute.v1.NodeGroupsAddNodesRequest buildPartial() {
       com.google.cloud.compute.v1.NodeGroupsAddNodesRequest result =
           new com.google.cloud.compute.v1.NodeGroupsAddNodesRequest(this);
-      result.additionalNodeCount_ = additionalNodeCount_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.additionalNodeCount_ = additionalNodeCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -409,7 +438,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.compute.v1.NodeGroupsAddNodesRequest other) {
       if (other == com.google.cloud.compute.v1.NodeGroupsAddNodesRequest.getDefaultInstance())
         return this;
-      if (other.getAdditionalNodeCount() != 0) {
+      if (other.hasAdditionalNodeCount()) {
         setAdditionalNodeCount(other.getAdditionalNodeCount());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -442,7 +471,24 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private int additionalNodeCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Count of additional nodes to be added to the node group.
+     * </pre>
+     *
+     * <code>int32 additional_node_count = 134997930;</code>
+     *
+     * @return Whether the additionalNodeCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdditionalNodeCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -471,7 +517,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAdditionalNodeCount(int value) {
-
+      bitField0_ |= 0x00000001;
       additionalNodeCount_ = value;
       onChanged();
       return this;
@@ -488,7 +534,7 @@ public final class NodeGroupsAddNodesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAdditionalNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       additionalNodeCount_ = 0;
       onChanged();
       return this;

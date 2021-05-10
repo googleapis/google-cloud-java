@@ -33,6 +33,19 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    * <code>bool disable_connection_drain_on_failover = 182150753;</code>
    *
+   * @return Whether the disableConnectionDrainOnFailover field is set.
+   */
+  boolean hasDisableConnectionDrainOnFailover();
+  /**
+   *
+   *
+   * <pre>
+   * This can be set to true only if the protocol is TCP.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool disable_connection_drain_on_failover = 182150753;</code>
+   *
    * @return The disableConnectionDrainOnFailover.
    */
   boolean getDisableConnectionDrainOnFailover();
@@ -46,10 +59,34 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
    *
+   * @return Whether the dropTrafficIfUnhealthy field is set.
+   */
+  boolean hasDropTrafficIfUnhealthy();
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing, If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. The default is false.
+   * </pre>
+   *
+   * <code>bool drop_traffic_if_unhealthy = 112289428;</code>
+   *
    * @return The dropTrafficIfUnhealthy.
    */
   boolean getDropTrafficIfUnhealthy();
 
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only to Failover for Internal TCP/UDP Load Balancing and Network Load Balancing. The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio.
+   * </pre>
+   *
+   * <code>float failover_ratio = 212667006;</code>
+   *
+   * @return Whether the failoverRatio field is set.
+   */
+  boolean hasFailoverRatio();
   /**
    *
    *

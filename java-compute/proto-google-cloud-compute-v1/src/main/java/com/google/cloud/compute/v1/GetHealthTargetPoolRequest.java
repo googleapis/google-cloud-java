@@ -72,22 +72,6 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case 195924834:
-            {
-              com.google.cloud.compute.v1.InstanceReference.Builder subBuilder = null;
-              if (instanceReferenceResource_ != null) {
-                subBuilder = instanceReferenceResource_.toBuilder();
-              }
-              instanceReferenceResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceReference.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instanceReferenceResource_);
-                instanceReferenceResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 502370386:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -107,6 +91,22 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1951558814:
+            {
+              com.google.cloud.compute.v1.InstanceReference.Builder subBuilder = null;
+              if (instanceReferenceResource_ != null) {
+                subBuilder = instanceReferenceResource_.toBuilder();
+              }
+              instanceReferenceResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InstanceReference.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instanceReferenceResource_);
+                instanceReferenceResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -143,7 +143,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.GetHealthTargetPoolRequest.Builder.class);
   }
 
-  public static final int INSTANCE_REFERENCE_RESOURCE_FIELD_NUMBER = 24490604;
+  public static final int INSTANCE_REFERENCE_RESOURCE_FIELD_NUMBER = 292926060;
   private com.google.cloud.compute.v1.InstanceReference instanceReferenceResource_;
   /**
    *
@@ -153,7 +153,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceReferenceResource field is set.
@@ -170,7 +170,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceReferenceResource.
@@ -189,7 +189,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -359,9 +359,6 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (instanceReferenceResource_ != null) {
-      output.writeMessage(24490604, getInstanceReferenceResource());
-    }
     if (!getTargetPoolBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 62796298, targetPool_);
     }
@@ -370,6 +367,9 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (instanceReferenceResource_ != null) {
+      output.writeMessage(292926060, getInstanceReferenceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -380,11 +380,6 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (instanceReferenceResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              24490604, getInstanceReferenceResource());
-    }
     if (!getTargetPoolBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(62796298, targetPool_);
     }
@@ -393,6 +388,11 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (instanceReferenceResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              292926060, getInstanceReferenceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -741,7 +741,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceReferenceResource field is set.
@@ -757,7 +757,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceReferenceResource.
@@ -779,7 +779,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceReferenceResource(
@@ -804,7 +804,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceReferenceResource(
@@ -826,7 +826,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceReferenceResource(
@@ -855,7 +855,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceReferenceResource() {
@@ -877,7 +877,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceReference.Builder
@@ -894,7 +894,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceReferenceOrBuilder
@@ -915,7 +915,7 @@ public final class GetHealthTargetPoolRequest extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

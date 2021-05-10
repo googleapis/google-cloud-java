@@ -61,6 +61,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,21 +75,21 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
           case 24473450:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               code_ = s;
               break;
             }
-          case 175963562:
+          case -1971520086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               location_ = s;
               break;
             }
-          case 1196949562:
+          case -950534086:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               message_ = s;
               break;
             }
@@ -126,8 +127,24 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Errors.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
   private volatile java.lang.Object code_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The error type identifier for this error.
+   * </pre>
+   *
+   * <code>string code = 3059181;</code>
+   *
+   * @return Whether the code field is set.
+   */
+  @java.lang.Override
+  public boolean hasCode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -175,7 +192,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOCATION_FIELD_NUMBER = 21995445;
+  public static final int LOCATION_FIELD_NUMBER = 290430901;
   private volatile java.lang.Object location_;
   /**
    *
@@ -184,7 +201,22 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
+   *
+   * @return Whether the location field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+   * </pre>
+   *
+   * <code>string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -207,7 +239,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
@@ -224,7 +256,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 149618695;
+  public static final int MESSAGE_FIELD_NUMBER = 418054151;
   private volatile java.lang.Object message_;
   /**
    *
@@ -233,7 +265,22 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
+   *
+   * @return Whether the message field is set.
+   */
+  @java.lang.Override
+  public boolean hasMessage() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional, human-readable error message.
+   * </pre>
+   *
+   * <code>string message = 418054151;</code>
    *
    * @return The message.
    */
@@ -256,7 +303,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable error message.
    * </pre>
    *
-   * <code>string message = 149618695;</code>
+   * <code>string message = 418054151;</code>
    *
    * @return The bytes for message.
    */
@@ -287,14 +334,14 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCodeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3059181, code_);
     }
-    if (!getLocationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21995445, location_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
     }
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 149618695, message_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418054151, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -305,14 +352,14 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCodeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3059181, code_);
     }
-    if (!getLocationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21995445, location_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
     }
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149618695, message_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418054151, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -329,9 +376,18 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Errors other = (com.google.cloud.compute.v1.Errors) obj;
 
-    if (!getCode().equals(other.getCode())) return false;
-    if (!getLocation().equals(other.getLocation())) return false;
-    if (!getMessage().equals(other.getMessage())) return false;
+    if (hasCode() != other.hasCode()) return false;
+    if (hasCode()) {
+      if (!getCode().equals(other.getCode())) return false;
+    }
+    if (hasLocation() != other.hasLocation()) return false;
+    if (hasLocation()) {
+      if (!getLocation().equals(other.getLocation())) return false;
+    }
+    if (hasMessage() != other.hasMessage()) return false;
+    if (hasMessage()) {
+      if (!getMessage().equals(other.getMessage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -343,12 +399,18 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getCode().hashCode();
-    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
-    hash = (53 * hash) + getLocation().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
+    if (hasCode()) {
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+    }
+    if (hasLocation()) {
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+    }
+    if (hasMessage()) {
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -493,11 +555,11 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       code_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       location_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       message_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -524,9 +586,21 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Errors buildPartial() {
       com.google.cloud.compute.v1.Errors result = new com.google.cloud.compute.v1.Errors(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.code_ = code_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.location_ = location_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.message_ = message_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -576,15 +650,18 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Errors other) {
       if (other == com.google.cloud.compute.v1.Errors.getDefaultInstance()) return this;
-      if (!other.getCode().isEmpty()) {
+      if (other.hasCode()) {
+        bitField0_ |= 0x00000001;
         code_ = other.code_;
         onChanged();
       }
-      if (!other.getLocation().isEmpty()) {
+      if (other.hasLocation()) {
+        bitField0_ |= 0x00000002;
         location_ = other.location_;
         onChanged();
       }
-      if (!other.getMessage().isEmpty()) {
+      if (other.hasMessage()) {
+        bitField0_ |= 0x00000004;
         message_ = other.message_;
         onChanged();
       }
@@ -617,7 +694,23 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object code_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The error type identifier for this error.
+     * </pre>
+     *
+     * <code>string code = 3059181;</code>
+     *
+     * @return Whether the code field is set.
+     */
+    public boolean hasCode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -678,7 +771,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value;
       onChanged();
       return this;
@@ -695,7 +788,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = getDefaultInstance().getCode();
       onChanged();
       return this;
@@ -717,7 +810,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       code_ = value;
       onChanged();
       return this;
@@ -731,7 +824,21 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
+     *
+     * @return Whether the location field is set.
+     */
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+     * </pre>
+     *
+     * <code>string location = 290430901;</code>
      *
      * @return The location.
      */
@@ -753,7 +860,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @return The bytes for location.
      */
@@ -775,7 +882,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -784,7 +891,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       location_ = value;
       onChanged();
       return this;
@@ -796,12 +903,12 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       location_ = getDefaultInstance().getLocation();
       onChanged();
       return this;
@@ -813,7 +920,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Indicates the field in the request that caused the error. This property is optional.
      * </pre>
      *
-     * <code>string location = 21995445;</code>
+     * <code>string location = 290430901;</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -823,7 +930,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       location_ = value;
       onChanged();
       return this;
@@ -837,7 +944,21 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
+     *
+     * @return Whether the message field is set.
+     */
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional, human-readable error message.
+     * </pre>
+     *
+     * <code>string message = 418054151;</code>
      *
      * @return The message.
      */
@@ -859,7 +980,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return The bytes for message.
      */
@@ -881,7 +1002,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -890,7 +1011,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       message_ = value;
       onChanged();
       return this;
@@ -902,12 +1023,12 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
@@ -919,7 +1040,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable error message.
      * </pre>
      *
-     * <code>string message = 149618695;</code>
+     * <code>string message = 418054151;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.
@@ -929,7 +1050,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       message_ = value;
       onChanged();
       return this;

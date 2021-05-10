@@ -29,7 +29,7 @@ echo ${JOB_TYPE}
 
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
-  mvn install -B -V \
+  mvn install -B -V -ntp \
     -DskipTests=true \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
@@ -37,7 +37,7 @@ retry_with_backoff 3 10 \
     -Dgcloud.download.skip=true \
     -T 1C
 
-# if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
+# if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
@@ -60,6 +60,7 @@ javadoc)
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
+      -ntp \
       -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
@@ -78,9 +79,15 @@ samples)
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
+
         pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
+          -ntp \
           -DtrimStackTrace=false \
           -Dclirr.skip=true \
           -Denforcer.skip=true \
@@ -110,8 +117,8 @@ bash .kokoro/coerce_logs.sh
 
 if [[ "${ENABLE_BUILD_COP}" == "true" ]]
 then
-    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
-    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop -repo=googleapis/java-compute
+    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
+    ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/java-compute
 fi
 
 echo "exiting with ${RETURN_CODE}"

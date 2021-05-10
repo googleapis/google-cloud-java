@@ -32,6 +32,18 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    * <code>string instance = 18257045;</code>
    *
+   * @return Whether the instance field is set.
+   */
+  boolean hasInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL of the instance.
+   * </pre>
+   *
+   * <code>string instance = 18257045;</code>
+   *
    * @return The instance.
    */
   java.lang.String getInstance();
@@ -55,7 +67,7 @@ public interface InstanceWithNamedPortsOrBuilder
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
   /**
@@ -65,7 +77,7 @@ public interface InstanceWithNamedPortsOrBuilder
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
   /**
@@ -75,7 +87,7 @@ public interface InstanceWithNamedPortsOrBuilder
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
   /**
@@ -85,7 +97,7 @@ public interface InstanceWithNamedPortsOrBuilder
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
@@ -96,10 +108,22 @@ public interface InstanceWithNamedPortsOrBuilder
    * [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.InstanceWithNamedPorts.Status status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
   /**
    *
    *

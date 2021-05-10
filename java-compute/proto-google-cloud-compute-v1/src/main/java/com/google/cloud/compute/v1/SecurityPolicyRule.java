@@ -62,6 +62,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,14 +76,14 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               kind_ = s;
               break;
             }
           case 829345322:
             {
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder subBuilder = null;
-              if (match_ != null) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = match_.toBuilder();
               }
               match_ =
@@ -93,31 +94,33 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
                 subBuilder.mergeFrom(match_);
                 match_ = subBuilder.buildPartial();
               }
-
-              break;
-            }
-          case 1236017122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 1413729568:
-            {
-              priority_ = input.readInt32();
+              bitField0_ |= 0x00000008;
               break;
             }
           case 1501295026:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               action_ = s;
               break;
             }
           case 1749491264:
             {
+              bitField0_ |= 0x00000010;
               preview_ = input.readBool();
+              break;
+            }
+          case -911466526:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              description_ = s;
+              break;
+            }
+          case -733754080:
+            {
+              bitField0_ |= 0x00000020;
+              priority_ = input.readInt32();
               break;
             }
           default:
@@ -154,8 +157,24 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRule.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
   private volatile java.lang.Object action_;
+  /**
+   *
+   *
+   * <pre>
+   * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * </pre>
+   *
+   * <code>string action = 187661878;</code>
+   *
+   * @return Whether the action field is set.
+   */
+  @java.lang.Override
+  public boolean hasAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -203,7 +222,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -212,7 +231,22 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -235,7 +269,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -254,6 +288,21 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -316,7 +365,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasMatch() {
-    return match_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -346,11 +395,28 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherOrBuilder getMatchOrBuilder() {
-    return getMatch();
+    return match_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.getDefaultInstance()
+        : match_;
   }
 
   public static final int PREVIEW_FIELD_NUMBER = 218686408;
   private boolean preview_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, the specified action is not enforced.
+   * </pre>
+   *
+   * <code>bool preview = 218686408;</code>
+   *
+   * @return Whether the preview field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreview() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
   /**
    *
    *
@@ -367,7 +433,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     return preview_;
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 176716196;
+  public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_;
   /**
    *
@@ -376,7 +442,22 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
-   * <code>int32 priority = 176716196;</code>
+   * <code>int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
+   * </pre>
+   *
+   * <code>int32 priority = 445151652;</code>
    *
    * @return The priority.
    */
@@ -399,23 +480,23 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (match_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(103668165, getMatch());
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
-    }
-    if (priority_ != 0) {
-      output.writeInt32(176716196, priority_);
-    }
-    if (!getActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
     }
-    if (preview_ != false) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(218686408, preview_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -426,23 +507,23 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (match_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
-    }
-    if (!getActionBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
     }
-    if (preview_ != false) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(218686408, preview_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,15 +541,30 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.SecurityPolicyRule other =
         (com.google.cloud.compute.v1.SecurityPolicyRule) obj;
 
-    if (!getAction().equals(other.getAction())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getKind().equals(other.getKind())) return false;
+    if (hasAction() != other.hasAction()) return false;
+    if (hasAction()) {
+      if (!getAction().equals(other.getAction())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
     if (hasMatch() != other.hasMatch()) return false;
     if (hasMatch()) {
       if (!getMatch().equals(other.getMatch())) return false;
     }
-    if (getPreview() != other.getPreview()) return false;
-    if (getPriority() != other.getPriority()) return false;
+    if (hasPreview() != other.hasPreview()) return false;
+    if (hasPreview()) {
+      if (getPreview() != other.getPreview()) return false;
+    }
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -480,20 +576,30 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getAction().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
+    if (hasAction()) {
+      hash = (37 * hash) + ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAction().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
     if (hasMatch()) {
       hash = (37 * hash) + MATCH_FIELD_NUMBER;
       hash = (53 * hash) + getMatch().hashCode();
     }
-    hash = (37 * hash) + PREVIEW_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreview());
-    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPriority();
+    if (hasPreview()) {
+      hash = (37 * hash) + PREVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreview());
+    }
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -633,28 +739,30 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMatchFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       action_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (matchBuilder_ == null) {
         match_ = null;
       } else {
-        match_ = null;
-        matchBuilder_ = null;
+        matchBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       preview_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       priority_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -682,16 +790,37 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.SecurityPolicyRule buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRule result =
           new com.google.cloud.compute.v1.SecurityPolicyRule(this);
-      result.action_ = action_;
-      result.description_ = description_;
-      result.kind_ = kind_;
-      if (matchBuilder_ == null) {
-        result.match_ = match_;
-      } else {
-        result.match_ = matchBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
       }
-      result.preview_ = preview_;
-      result.priority_ = priority_;
+      result.action_ = action_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (matchBuilder_ == null) {
+          result.match_ = match_;
+        } else {
+          result.match_ = matchBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.preview_ = preview_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00000020;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -741,25 +870,28 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SecurityPolicyRule other) {
       if (other == com.google.cloud.compute.v1.SecurityPolicyRule.getDefaultInstance()) return this;
-      if (!other.getAction().isEmpty()) {
+      if (other.hasAction()) {
+        bitField0_ |= 0x00000001;
         action_ = other.action_;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000002;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasMatch()) {
         mergeMatch(other.getMatch());
       }
-      if (other.getPreview() != false) {
+      if (other.hasPreview()) {
         setPreview(other.getPreview());
       }
-      if (other.getPriority() != 0) {
+      if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -791,7 +923,23 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object action_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * </pre>
+     *
+     * <code>string action = 187661878;</code>
+     *
+     * @return Whether the action field is set.
+     */
+    public boolean hasAction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -852,7 +1000,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       action_ = value;
       onChanged();
       return this;
@@ -869,7 +1017,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       action_ = getDefaultInstance().getAction();
       onChanged();
       return this;
@@ -891,7 +1039,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       action_ = value;
       onChanged();
       return this;
@@ -905,7 +1053,21 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional description of this resource. Provide this property when you create the resource.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -927,7 +1089,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -949,7 +1111,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -958,7 +1120,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
@@ -970,12 +1132,12 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -987,7 +1149,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -997,13 +1159,27 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1064,7 +1240,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
@@ -1081,7 +1257,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1103,7 +1279,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
@@ -1127,7 +1303,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the match field is set.
      */
     public boolean hasMatch() {
-      return matchBuilder_ != null || match_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1168,7 +1344,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1188,7 +1364,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1202,7 +1378,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMatch(com.google.cloud.compute.v1.SecurityPolicyRuleMatcher value) {
       if (matchBuilder_ == null) {
-        if (match_ != null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && match_ != null
+            && match_
+                != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.getDefaultInstance()) {
           match_ =
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.newBuilder(match_)
                   .mergeFrom(value)
@@ -1214,7 +1393,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         matchBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1231,10 +1410,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         match_ = null;
         onChanged();
       } else {
-        match_ = null;
-        matchBuilder_ = null;
+        matchBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1247,7 +1425,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.compute.v1.SecurityPolicyRuleMatcher match = 103668165;</code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder getMatchBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
@@ -1305,6 +1483,21 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      * <code>bool preview = 218686408;</code>
      *
+     * @return Whether the preview field is set.
+     */
+    @java.lang.Override
+    public boolean hasPreview() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, the specified action is not enforced.
+     * </pre>
+     *
+     * <code>bool preview = 218686408;</code>
+     *
      * @return The preview.
      */
     @java.lang.Override
@@ -1324,7 +1517,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPreview(boolean value) {
-
+      bitField0_ |= 0x00000010;
       preview_ = value;
       onChanged();
       return this;
@@ -1341,7 +1534,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPreview() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       preview_ = false;
       onChanged();
       return this;
@@ -1355,7 +1548,22 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
+     * </pre>
+     *
+     * <code>int32 priority = 445151652;</code>
      *
      * @return The priority.
      */
@@ -1370,13 +1578,13 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
      */
     public Builder setPriority(int value) {
-
+      bitField0_ |= 0x00000020;
       priority_ = value;
       onChanged();
       return this;
@@ -1388,12 +1596,12 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 176716196;</code>
+     * <code>int32 priority = 445151652;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       priority_ = 0;
       onChanged();
       return this;

@@ -33,6 +33,19 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    * <code>string name = 3373707;</code>
    *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of metadata label.
+   * The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
@@ -50,6 +63,19 @@ public interface MetadataFilterLabelMatchOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The value of the label must match the specified value.
+   * value can have a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>string value = 111972721;</code>
+   *
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
   /**
    *
    *

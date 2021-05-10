@@ -61,6 +61,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,14 +75,14 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
           case 866241002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               range_ = s;
               break;
             }
-          case 1236017122:
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               description_ = s;
               break;
             }
@@ -119,7 +120,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.RouterAdvertisedIpRange.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
+  private int bitField0_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
    *
@@ -128,7 +130,22 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-specified description for the IP range.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -151,7 +168,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -170,6 +187,21 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
 
   public static final int RANGE_FIELD_NUMBER = 108280125;
   private volatile java.lang.Object range_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP range to advertise. The value must be a CIDR-formatted string.
+   * </pre>
+   *
+   * <code>string range = 108280125;</code>
+   *
+   * @return Whether the range field is set.
+   */
+  @java.lang.Override
+  public boolean hasRange() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -231,11 +263,11 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 108280125, range_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +278,11 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getRangeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(108280125, range_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,8 +300,14 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.RouterAdvertisedIpRange other =
         (com.google.cloud.compute.v1.RouterAdvertisedIpRange) obj;
 
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getRange().equals(other.getRange())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasRange() != other.hasRange()) return false;
+    if (hasRange()) {
+      if (!getRange().equals(other.getRange())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -281,10 +319,14 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + RANGE_FIELD_NUMBER;
-    hash = (53 * hash) + getRange().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasRange()) {
+      hash = (37 * hash) + RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRange().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,9 +473,9 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       description_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       range_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -461,8 +503,17 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.RouterAdvertisedIpRange buildPartial() {
       com.google.cloud.compute.v1.RouterAdvertisedIpRange result =
           new com.google.cloud.compute.v1.RouterAdvertisedIpRange(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.description_ = description_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.range_ = range_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -513,11 +564,13 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterAdvertisedIpRange other) {
       if (other == com.google.cloud.compute.v1.RouterAdvertisedIpRange.getDefaultInstance())
         return this;
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
+        bitField0_ |= 0x00000001;
         description_ = other.description_;
         onChanged();
       }
-      if (!other.getRange().isEmpty()) {
+      if (other.hasRange()) {
+        bitField0_ |= 0x00000002;
         range_ = other.range_;
         onChanged();
       }
@@ -551,6 +604,8 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -559,7 +614,21 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-specified description for the IP range.
+     * </pre>
+     *
+     * <code>string description = 422937596;</code>
      *
      * @return The description.
      */
@@ -581,7 +650,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return The bytes for description.
      */
@@ -603,7 +672,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -612,7 +681,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
@@ -624,12 +693,12 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -641,7 +710,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 154502140;</code>
+     * <code>string description = 422937596;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -651,13 +720,27 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object range_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The IP range to advertise. The value must be a CIDR-formatted string.
+     * </pre>
+     *
+     * <code>string range = 108280125;</code>
+     *
+     * @return Whether the range field is set.
+     */
+    public boolean hasRange() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -718,7 +801,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       range_ = value;
       onChanged();
       return this;
@@ -735,7 +818,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRange() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       range_ = getDefaultInstance().getRange();
       onChanged();
       return this;
@@ -757,7 +840,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       range_ = value;
       onChanged();
       return this;

@@ -30,7 +30,7 @@ public interface RouterStatusOrBuilder
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getBestRoutesList();
   /**
@@ -40,7 +40,7 @@ public interface RouterStatusOrBuilder
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   com.google.cloud.compute.v1.Route getBestRoutes(int index);
   /**
@@ -50,7 +50,7 @@ public interface RouterStatusOrBuilder
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   int getBestRoutesCount();
   /**
@@ -60,7 +60,7 @@ public interface RouterStatusOrBuilder
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder> getBestRoutesOrBuilderList();
   /**
@@ -70,7 +70,7 @@ public interface RouterStatusOrBuilder
    * Best routes for this router's network.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route best_routes = 127391237;</code>
+   * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   com.google.cloud.compute.v1.RouteOrBuilder getBestRoutesOrBuilder(int index);
 
@@ -166,6 +166,18 @@ public interface RouterStatusOrBuilder
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   com.google.cloud.compute.v1.RouterStatusNatStatusOrBuilder getNatStatusOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * URI of the network to which this router belongs.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *

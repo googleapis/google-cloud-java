@@ -24,13 +24,19 @@ public interface BindingOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string binding_id = 172652821;</code>
+   * <code>string binding_id = 441088277;</code>
+   *
+   * @return Whether the bindingId field is set.
+   */
+  boolean hasBindingId();
+  /**
+   * <code>string binding_id = 441088277;</code>
    *
    * @return The bindingId.
    */
   java.lang.String getBindingId();
   /**
-   * <code>string binding_id = 172652821;</code>
+   * <code>string binding_id = 441088277;</code>
    *
    * @return The bytes for bindingId.
    */
@@ -96,7 +102,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @return A list containing the members.
    */
@@ -117,7 +123,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @return The count of members.
    */
@@ -138,7 +144,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @param index The index of the element to return.
    * @return The members at the given index.
@@ -160,13 +166,25 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 143575321;</code>
+   * <code>repeated string members = 412010777;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the members at the given index.
    */
   com.google.protobuf.ByteString getMembersBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+   * </pre>
+   *
+   * <code>string role = 3506294;</code>
+   *
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
   /**
    *
    *

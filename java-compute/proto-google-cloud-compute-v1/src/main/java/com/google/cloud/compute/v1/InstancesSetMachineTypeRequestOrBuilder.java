@@ -32,6 +32,18 @@ public interface InstancesSetMachineTypeRequestOrBuilder
    *
    * <code>string machine_type = 227711026;</code>
    *
+   * @return Whether the machineType field is set.
+   */
+  boolean hasMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of the machine type resource. See Machine Types for a full list of machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
    * @return The machineType.
    */
   java.lang.String getMachineType();

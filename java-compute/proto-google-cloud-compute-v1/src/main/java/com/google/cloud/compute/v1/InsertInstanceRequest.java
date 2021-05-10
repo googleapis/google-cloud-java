@@ -63,6 +63,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -83,15 +84,8 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
-              break;
-            }
-          case 511905282:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceInstanceTemplate_ = s;
               break;
             }
           case 1727906754:
@@ -115,6 +109,13 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case -1635578366:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              sourceInstanceTemplate_ = s;
               break;
             }
           default:
@@ -151,6 +152,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.InsertInstanceRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_RESOURCE_FIELD_NUMBER = 215988344;
   private com.google.cloud.compute.v1.Instance instanceResource_;
   /**
@@ -267,6 +269,23 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -307,7 +326,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 63988160;
+  public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 332423616;
   private volatile java.lang.Object sourceInstanceTemplate_;
   /**
    *
@@ -320,7 +339,26 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 63988160;</code>
+   * <code>string source_instance_template = 332423616;</code>
+   *
+   * @return Whether the sourceInstanceTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstanceTemplate() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies instance template to create the instance.
+   * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
+   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   * - projects/project/global/instanceTemplates/instanceTemplate
+   * - global/instanceTemplates/instanceTemplate
+   * </pre>
+   *
+   * <code>string source_instance_template = 332423616;</code>
    *
    * @return The sourceInstanceTemplate.
    */
@@ -347,7 +385,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 63988160;</code>
+   * <code>string source_instance_template = 332423616;</code>
    *
    * @return The bytes for sourceInstanceTemplate.
    */
@@ -430,17 +468,18 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (!getSourceInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 63988160, sourceInstanceTemplate_);
     }
     if (instanceResource_ != null) {
       output.writeMessage(215988344, getInstanceResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 332423616, sourceInstanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -454,13 +493,8 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (!getSourceInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              63988160, sourceInstanceTemplate_);
     }
     if (instanceResource_ != null) {
       size +=
@@ -469,6 +503,11 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              332423616, sourceInstanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -491,8 +530,14 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       if (!getInstanceResource().equals(other.getInstanceResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
-    if (!getSourceInstanceTemplate().equals(other.getSourceInstanceTemplate())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
+    if (hasSourceInstanceTemplate() != other.hasSourceInstanceTemplate()) return false;
+    if (hasSourceInstanceTemplate()) {
+      if (!getSourceInstanceTemplate().equals(other.getSourceInstanceTemplate())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -511,10 +556,14 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
-    hash = (37 * hash) + SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER;
-    hash = (53 * hash) + getSourceInstanceTemplate().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
+    if (hasSourceInstanceTemplate()) {
+      hash = (37 * hash) + SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstanceTemplate().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -671,9 +720,9 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceInstanceTemplate_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
 
       return this;
@@ -703,15 +752,24 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.InsertInstanceRequest buildPartial() {
       com.google.cloud.compute.v1.InsertInstanceRequest result =
           new com.google.cloud.compute.v1.InsertInstanceRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (instanceResourceBuilder_ == null) {
         result.instanceResource_ = instanceResource_;
       } else {
         result.instanceResource_ = instanceResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.sourceInstanceTemplate_ = sourceInstanceTemplate_;
       result.zone_ = zone_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -769,11 +827,13 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
-      if (!other.getSourceInstanceTemplate().isEmpty()) {
+      if (other.hasSourceInstanceTemplate()) {
+        bitField0_ |= 0x00000002;
         sourceInstanceTemplate_ = other.sourceInstanceTemplate_;
         onChanged();
       }
@@ -810,6 +870,8 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.compute.v1.Instance instanceResource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1133,6 +1195,22 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1188,7 +1266,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1207,7 +1285,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1231,7 +1309,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1249,7 +1327,25 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 63988160;</code>
+     * <code>string source_instance_template = 332423616;</code>
+     *
+     * @return Whether the sourceInstanceTemplate field is set.
+     */
+    public boolean hasSourceInstanceTemplate() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies instance template to create the instance.
+     * This field is optional. It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
+     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     * - projects/project/global/instanceTemplates/instanceTemplate
+     * - global/instanceTemplates/instanceTemplate
+     * </pre>
+     *
+     * <code>string source_instance_template = 332423616;</code>
      *
      * @return The sourceInstanceTemplate.
      */
@@ -1275,7 +1371,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 63988160;</code>
+     * <code>string source_instance_template = 332423616;</code>
      *
      * @return The bytes for sourceInstanceTemplate.
      */
@@ -1301,7 +1397,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 63988160;</code>
+     * <code>string source_instance_template = 332423616;</code>
      *
      * @param value The sourceInstanceTemplate to set.
      * @return This builder for chaining.
@@ -1310,7 +1406,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       sourceInstanceTemplate_ = value;
       onChanged();
       return this;
@@ -1326,12 +1422,12 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 63988160;</code>
+     * <code>string source_instance_template = 332423616;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSourceInstanceTemplate() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sourceInstanceTemplate_ = getDefaultInstance().getSourceInstanceTemplate();
       onChanged();
       return this;
@@ -1347,7 +1443,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 63988160;</code>
+     * <code>string source_instance_template = 332423616;</code>
      *
      * @param value The bytes for sourceInstanceTemplate to set.
      * @return This builder for chaining.
@@ -1357,7 +1453,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       sourceInstanceTemplate_ = value;
       onChanged();
       return this;

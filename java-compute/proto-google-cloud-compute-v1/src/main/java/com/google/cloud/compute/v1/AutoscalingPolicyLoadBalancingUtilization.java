@@ -60,6 +60,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,6 +73,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
             break;
           case 1727246961:
             {
+              bitField0_ |= 0x00000001;
               utilizationTarget_ = input.readDouble();
               break;
             }
@@ -109,8 +111,24 @@ public final class AutoscalingPolicyLoadBalancingUtilization
             com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization.Builder.class);
   }
 
+  private int bitField0_;
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_;
+  /**
+   *
+   *
+   * <pre>
+   * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
+   * </pre>
+   *
+   * <code>double utilization_target = 215905870;</code>
+   *
+   * @return Whether the utilizationTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasUtilizationTarget() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -141,7 +159,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (utilizationTarget_ != 0D) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(215905870, utilizationTarget_);
     }
     unknownFields.writeTo(output);
@@ -153,7 +171,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     if (size != -1) return size;
 
     size = 0;
-    if (utilizationTarget_ != 0D) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(215905870, utilizationTarget_);
     }
@@ -173,8 +191,11 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization other =
         (com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization) obj;
 
-    if (java.lang.Double.doubleToLongBits(getUtilizationTarget())
-        != java.lang.Double.doubleToLongBits(other.getUtilizationTarget())) return false;
+    if (hasUtilizationTarget() != other.hasUtilizationTarget()) return false;
+    if (hasUtilizationTarget()) {
+      if (java.lang.Double.doubleToLongBits(getUtilizationTarget())
+          != java.lang.Double.doubleToLongBits(other.getUtilizationTarget())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,11 +207,13 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getUtilizationTarget()));
+    if (hasUtilizationTarget()) {
+      hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getUtilizationTarget()));
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -340,7 +363,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     public Builder clear() {
       super.clear();
       utilizationTarget_ = 0D;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -370,7 +393,13 @@ public final class AutoscalingPolicyLoadBalancingUtilization
     public com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization buildPartial() {
       com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization result =
           new com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization(this);
-      result.utilizationTarget_ = utilizationTarget_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.utilizationTarget_ = utilizationTarget_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -424,7 +453,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
       if (other
           == com.google.cloud.compute.v1.AutoscalingPolicyLoadBalancingUtilization
               .getDefaultInstance()) return this;
-      if (other.getUtilizationTarget() != 0D) {
+      if (other.hasUtilizationTarget()) {
         setUtilizationTarget(other.getUtilizationTarget());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -458,7 +487,24 @@ public final class AutoscalingPolicyLoadBalancingUtilization
       return this;
     }
 
+    private int bitField0_;
+
     private double utilizationTarget_;
+    /**
+     *
+     *
+     * <pre>
+     * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8.
+     * </pre>
+     *
+     * <code>double utilization_target = 215905870;</code>
+     *
+     * @return Whether the utilizationTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasUtilizationTarget() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -487,7 +533,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-
+      bitField0_ |= 0x00000001;
       utilizationTarget_ = value;
       onChanged();
       return this;
@@ -504,7 +550,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization
      * @return This builder for chaining.
      */
     public Builder clearUtilizationTarget() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       utilizationTarget_ = 0D;
       onChanged();
       return this;

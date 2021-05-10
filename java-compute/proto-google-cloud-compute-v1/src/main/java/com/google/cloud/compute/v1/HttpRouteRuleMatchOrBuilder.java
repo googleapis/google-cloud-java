@@ -34,6 +34,20 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    * <code>string full_path_match = 214598875;</code>
    *
+   * @return Whether the fullPathMatch field is set.
+   */
+  boolean hasFullPathMatch();
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the path of the request must exactly match the value specified in fullPathMatch after removing any query parameters and anchor that may be part of the original URL.
+   * fullPathMatch must be between 1 and 1024 characters.
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * </pre>
+   *
+   * <code>string full_path_match = 214598875;</code>
+   *
    * @return The fullPathMatch.
    */
   java.lang.String getFullPathMatch();
@@ -59,7 +73,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpHeaderMatch> getHeaderMatchesList();
   /**
@@ -69,7 +83,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderMatch getHeaderMatches(int index);
   /**
@@ -79,7 +93,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   int getHeaderMatchesCount();
   /**
@@ -89,7 +103,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder>
       getHeaderMatchesOrBuilderList();
@@ -100,7 +114,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Specifies a list of header match criteria, all of which must match corresponding headers in the request.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 93468033;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpHeaderMatch header_matches = 361903489;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderMatchOrBuilder getHeaderMatchesOrBuilder(int index);
 
@@ -114,7 +128,22 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>bool ignore_case = 195889533;</code>
+   * <code>bool ignore_case = 464324989;</code>
+   *
+   * @return Whether the ignoreCase field is set.
+   */
+  boolean hasIgnoreCase();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that prefixMatch and fullPathMatch matches are case sensitive.
+   * The default value is false.
+   * ignoreCase must not be used with regexMatch.
+   * Not supported when the URL map is bound to target gRPC proxy.
+   * </pre>
+   *
+   * <code>bool ignore_case = 464324989;</code>
    *
    * @return The ignoreCase.
    */
@@ -131,7 +160,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList();
   /**
@@ -145,7 +174,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index);
   /**
@@ -159,7 +188,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   int getMetadataFiltersCount();
   /**
@@ -173,7 +202,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
       getMetadataFiltersOrBuilderList();
@@ -188,10 +217,24 @@ public interface HttpRouteRuleMatchOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /.
+   * The value must be between 1 and 1024 characters.
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * </pre>
+   *
+   * <code>string prefix_match = 257898968;</code>
+   *
+   * @return Whether the prefixMatch field is set.
+   */
+  boolean hasPrefixMatch();
   /**
    *
    *
@@ -230,7 +273,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpQueryParameterMatch>
@@ -244,7 +287,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   com.google.cloud.compute.v1.HttpQueryParameterMatch getQueryParameterMatches(int index);
@@ -257,7 +300,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   int getQueryParameterMatchesCount();
@@ -270,7 +313,7 @@ public interface HttpRouteRuleMatchOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder>
@@ -284,12 +327,26 @@ public interface HttpRouteRuleMatchOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 17795814;
+   * repeated .google.cloud.compute.v1.HttpQueryParameterMatch query_parameter_matches = 286231270;
    * </code>
    */
   com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder getQueryParameterMatchesOrBuilder(
       int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * For satisfying the matchRule condition, the path of the request must satisfy the regular expression specified in regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
+   * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>string regex_match = 107387853;</code>
+   *
+   * @return Whether the regexMatch field is set.
+   */
+  boolean hasRegexMatch();
   /**
    *
    *

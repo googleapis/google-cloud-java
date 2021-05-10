@@ -59,6 +59,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,10 +70,10 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 788681826:
+          case -1358801822:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               urlMap_ = s;
               break;
             }
@@ -110,10 +111,20 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.UrlMapReference.Builder.class);
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 98585228;
+  private int bitField0_;
+  public static final int URL_MAP_FIELD_NUMBER = 367020684;
   private volatile java.lang.Object urlMap_;
   /**
-   * <code>string url_map = 98585228;</code>
+   * <code>string url_map = 367020684;</code>
+   *
+   * @return Whether the urlMap field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrlMap() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>string url_map = 367020684;</code>
    *
    * @return The urlMap.
    */
@@ -130,7 +141,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     }
   }
   /**
-   * <code>string url_map = 98585228;</code>
+   * <code>string url_map = 367020684;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -161,8 +172,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
   }
@@ -173,8 +184,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,7 +203,10 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.compute.v1.UrlMapReference other =
         (com.google.cloud.compute.v1.UrlMapReference) obj;
 
-    if (!getUrlMap().equals(other.getUrlMap())) return false;
+    if (hasUrlMap() != other.hasUrlMap()) return false;
+    if (hasUrlMap()) {
+      if (!getUrlMap().equals(other.getUrlMap())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -204,8 +218,10 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + URL_MAP_FIELD_NUMBER;
-    hash = (53 * hash) + getUrlMap().hashCode();
+    if (hasUrlMap()) {
+      hash = (37 * hash) + URL_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + getUrlMap().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +367,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       urlMap_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -379,7 +395,13 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.UrlMapReference buildPartial() {
       com.google.cloud.compute.v1.UrlMapReference result =
           new com.google.cloud.compute.v1.UrlMapReference(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.urlMap_ = urlMap_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -429,7 +451,8 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlMapReference other) {
       if (other == com.google.cloud.compute.v1.UrlMapReference.getDefaultInstance()) return this;
-      if (!other.getUrlMap().isEmpty()) {
+      if (other.hasUrlMap()) {
+        bitField0_ |= 0x00000001;
         urlMap_ = other.urlMap_;
         onChanged();
       }
@@ -462,9 +485,19 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object urlMap_ = "";
     /**
-     * <code>string url_map = 98585228;</code>
+     * <code>string url_map = 367020684;</code>
+     *
+     * @return Whether the urlMap field is set.
+     */
+    public boolean hasUrlMap() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>string url_map = 367020684;</code>
      *
      * @return The urlMap.
      */
@@ -480,7 +513,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 98585228;</code>
+     * <code>string url_map = 367020684;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -496,7 +529,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 98585228;</code>
+     * <code>string url_map = 367020684;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -505,24 +538,24 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       urlMap_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string url_map = 98585228;</code>
+     * <code>string url_map = 367020684;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       urlMap_ = getDefaultInstance().getUrlMap();
       onChanged();
       return this;
     }
     /**
-     * <code>string url_map = 98585228;</code>
+     * <code>string url_map = 367020684;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.
@@ -532,7 +565,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       urlMap_ = value;
       onChanged();
       return this;

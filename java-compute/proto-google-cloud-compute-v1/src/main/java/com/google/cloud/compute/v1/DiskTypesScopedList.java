@@ -73,7 +73,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -83,7 +83,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1591409338:
@@ -134,6 +134,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.DiskTypesScopedList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISK_TYPES_FIELD_NUMBER = 198926167;
   private java.util.List<com.google.cloud.compute.v1.DiskType> diskTypes_;
   /**
@@ -218,7 +219,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -246,7 +247,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,7 +264,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < diskTypes_.size(); i++) {
@@ -278,7 +279,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < diskTypes_.size(); i++) {
@@ -465,6 +466,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDiskTypesFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -480,9 +482,9 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -511,6 +513,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       com.google.cloud.compute.v1.DiskTypesScopedList result =
           new com.google.cloud.compute.v1.DiskTypesScopedList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (diskTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           diskTypes_ = java.util.Collections.unmodifiableList(diskTypes_);
@@ -520,11 +523,15 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         result.diskTypes_ = diskTypesBuilder_.build();
       }
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1002,7 +1009,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1043,7 +1050,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1062,7 +1069,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1076,7 +1083,9 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1088,7 +1097,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1105,10 +1114,9 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1121,7 +1129,7 @@ public final class DiskTypesScopedList extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

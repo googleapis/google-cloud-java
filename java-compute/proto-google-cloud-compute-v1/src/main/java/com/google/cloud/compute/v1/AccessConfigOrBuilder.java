@@ -32,6 +32,18 @@ public interface AccessConfigOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -48,6 +60,18 @@ public interface AccessConfigOrBuilder
    */
   com.google.protobuf.ByteString getKindBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -82,6 +106,18 @@ public interface AccessConfigOrBuilder
    *
    * <code>string nat_i_p = 117634556;</code>
    *
+   * @return Whether the natIP field is set.
+   */
+  boolean hasNatIP();
+  /**
+   *
+   *
+   * <pre>
+   * An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+   * </pre>
+   *
+   * <code>string nat_i_p = 117634556;</code>
+   *
    * @return The natIP.
    */
   java.lang.String getNatIP();
@@ -107,7 +143,21 @@ public interface AccessConfigOrBuilder
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  boolean hasNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
+   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
+   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -121,7 +171,7 @@ public interface AccessConfigOrBuilder
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
    *
    * @return The networkTier.
    */
@@ -134,7 +184,19 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 48163711;</code>
+   * <code>string public_ptr_domain_name = 316599167;</code>
+   *
+   * @return Whether the publicPtrDomainName field is set.
+   */
+  boolean hasPublicPtrDomainName();
+  /**
+   *
+   *
+   * <pre>
+   * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
+   * </pre>
+   *
+   * <code>string public_ptr_domain_name = 316599167;</code>
    *
    * @return The publicPtrDomainName.
    */
@@ -146,7 +208,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 48163711;</code>
+   * <code>string public_ptr_domain_name = 316599167;</code>
    *
    * @return The bytes for publicPtrDomainName.
    */
@@ -159,12 +221,36 @@ public interface AccessConfigOrBuilder
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
    * </pre>
    *
-   * <code>bool set_public_ptr = 255434773;</code>
+   * <code>bool set_public_ptr = 523870229;</code>
+   *
+   * @return Whether the setPublicPtr field is set.
+   */
+  boolean hasSetPublicPtr();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
+   * </pre>
+   *
+   * <code>bool set_public_ptr = 523870229;</code>
    *
    * @return The setPublicPtr.
    */
   boolean getSetPublicPtr();
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
   /**
    *
    *

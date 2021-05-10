@@ -78,21 +78,21 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               id_ = s;
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               kind_ = s;
               break;
             }
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (warning_ != null) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = warning_.toBuilder();
               }
               warning_ =
@@ -102,31 +102,31 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
                 subBuilder.mergeFrom(warning_);
                 warning_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000010;
               break;
             }
           case 638380202:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               nextPageToken_ = s;
               break;
             }
           case 804208130:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 items_ = new java.util.ArrayList<com.google.cloud.compute.v1.PacketMirroring>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               items_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.PacketMirroring.parser(), extensionRegistry));
               break;
             }
-          case 1502234730:
+          case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               selfLink_ = s;
               break;
             }
@@ -144,7 +144,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         items_ = java.util.Collections.unmodifiableList(items_);
       }
       this.unknownFields = unknownFields.build();
@@ -167,8 +167,24 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.PacketMirroringList.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the resource; defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -296,6 +312,21 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  @java.lang.Override
+  public boolean hasKind() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of resource. Always compute#packetMirroring for packetMirrorings.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   @java.lang.Override
@@ -345,6 +376,21 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    * <code>string next_page_token = 79797525;</code>
    *
+   * @return Whether the nextPageToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextPageToken() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * </pre>
+   *
+   * <code>string next_page_token = 79797525;</code>
+   *
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -383,7 +429,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
+  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -392,7 +438,22 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLink() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -415,7 +476,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -447,7 +508,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasWarning() {
-    return warning_ != null;
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -475,7 +536,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningOrBuilder getWarningOrBuilder() {
-    return getWarning();
+    return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -492,23 +553,23 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
       output.writeMessage(100526016, items_.get(i));
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -519,23 +580,23 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
-    if (!getKindBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (warning_ != null) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(79797525, nextPageToken_);
     }
     for (int i = 0; i < items_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100526016, items_.get(i));
     }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -553,11 +614,23 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     com.google.cloud.compute.v1.PacketMirroringList other =
         (com.google.cloud.compute.v1.PacketMirroringList) obj;
 
-    if (!getId().equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!getItemsList().equals(other.getItemsList())) return false;
-    if (!getKind().equals(other.getKind())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
-    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (hasKind() != other.hasKind()) return false;
+    if (hasKind()) {
+      if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasNextPageToken() != other.hasNextPageToken()) return false;
+    if (hasNextPageToken()) {
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    }
+    if (hasSelfLink() != other.hasSelfLink()) return false;
+    if (hasSelfLink()) {
+      if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
     if (hasWarning() != other.hasWarning()) return false;
     if (hasWarning()) {
       if (!getWarning().equals(other.getWarning())) return false;
@@ -573,18 +646,26 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     if (getItemsCount() > 0) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
     }
-    hash = (37 * hash) + KIND_FIELD_NUMBER;
-    hash = (53 * hash) + getKind().hashCode();
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
-    hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getSelfLink().hashCode();
+    if (hasKind()) {
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasNextPageToken()) {
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+    }
+    if (hasSelfLink()) {
+      hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLink().hashCode();
+    }
     if (hasWarning()) {
       hash = (37 * hash) + WARNING_FIELD_NUMBER;
       hash = (53 * hash) + getWarning().hashCode();
@@ -730,6 +811,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getItemsFieldBuilder();
+        getWarningFieldBuilder();
       }
     }
 
@@ -737,25 +819,25 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         itemsBuilder_.clear();
       }
       kind_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       nextPageToken_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       selfLink_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -784,24 +866,41 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       com.google.cloud.compute.v1.PacketMirroringList result =
           new com.google.cloud.compute.v1.PacketMirroringList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
       if (itemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           items_ = java.util.Collections.unmodifiableList(items_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.items_ = items_;
       } else {
         result.items_ = itemsBuilder_.build();
       }
-      result.kind_ = kind_;
-      result.nextPageToken_ = nextPageToken_;
-      result.selfLink_ = selfLink_;
-      if (warningBuilder_ == null) {
-        result.warning_ = warning_;
-      } else {
-        result.warning_ = warningBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
+      result.nextPageToken_ = nextPageToken_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
+      result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (warningBuilder_ == null) {
+          result.warning_ = warning_;
+        } else {
+          result.warning_ = warningBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000010;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -852,7 +951,8 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.compute.v1.PacketMirroringList other) {
       if (other == com.google.cloud.compute.v1.PacketMirroringList.getDefaultInstance())
         return this;
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000001;
         id_ = other.id_;
         onChanged();
       }
@@ -860,7 +960,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         if (!other.items_.isEmpty()) {
           if (items_.isEmpty()) {
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureItemsIsMutable();
             items_.addAll(other.items_);
@@ -873,7 +973,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
             itemsBuilder_.dispose();
             itemsBuilder_ = null;
             items_ = other.items_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             itemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getItemsFieldBuilder()
@@ -883,15 +983,18 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
           }
         }
       }
-      if (!other.getKind().isEmpty()) {
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000004;
         kind_ = other.kind_;
         onChanged();
       }
-      if (!other.getNextPageToken().isEmpty()) {
+      if (other.hasNextPageToken()) {
+        bitField0_ |= 0x00000008;
         nextPageToken_ = other.nextPageToken_;
         onChanged();
       }
-      if (!other.getSelfLink().isEmpty()) {
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000010;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -930,6 +1033,20 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Unique identifier for the resource; defined by the server.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -990,7 +1107,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -1007,7 +1124,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -1029,7 +1146,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -1039,9 +1156,9 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureItemsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         items_ = new java.util.ArrayList<com.google.cloud.compute.v1.PacketMirroring>(items_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1256,7 +1373,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
         items_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         itemsBuilder_.clear();
@@ -1378,13 +1495,27 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
                 com.google.cloud.compute.v1.PacketMirroring,
                 com.google.cloud.compute.v1.PacketMirroring.Builder,
                 com.google.cloud.compute.v1.PacketMirroringOrBuilder>(
-                items_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                items_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         items_ = null;
       }
       return itemsBuilder_;
     }
 
     private java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of resource. Always compute#packetMirroring for packetMirrorings.
+     * </pre>
+     *
+     * <code>string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1445,7 +1576,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
@@ -1462,7 +1593,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1484,13 +1615,27 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       kind_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * </pre>
+     *
+     * <code>string next_page_token = 79797525;</code>
+     *
+     * @return Whether the nextPageToken field is set.
+     */
+    public boolean hasNextPageToken() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
     /**
      *
      *
@@ -1551,7 +1696,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1568,7 +1713,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
@@ -1590,7 +1735,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000008;
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1604,7 +1749,21 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
+     *
+     * @return Whether the selfLink field is set.
+     */
+    public boolean hasSelfLink() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource.
+     * </pre>
+     *
+     * <code>string self_link = 456214797;</code>
      *
      * @return The selfLink.
      */
@@ -1626,7 +1785,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1648,7 +1807,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1657,7 +1816,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1669,12 +1828,12 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -1686,7 +1845,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 187779341;</code>
+     * <code>string self_link = 456214797;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1696,7 +1855,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000010;
       selfLink_ = value;
       onChanged();
       return this;
@@ -1720,7 +1879,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * @return Whether the warning field is set.
      */
     public boolean hasWarning() {
-      return warningBuilder_ != null || warning_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1761,7 +1920,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1780,7 +1939,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1794,7 +1953,9 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeWarning(com.google.cloud.compute.v1.Warning value) {
       if (warningBuilder_ == null) {
-        if (warning_ != null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && warning_ != null
+            && warning_ != com.google.cloud.compute.v1.Warning.getDefaultInstance()) {
           warning_ =
               com.google.cloud.compute.v1.Warning.newBuilder(warning_)
                   .mergeFrom(value)
@@ -1806,7 +1967,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
       } else {
         warningBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1823,10 +1984,9 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
         warning_ = null;
         onChanged();
       } else {
-        warning_ = null;
-        warningBuilder_ = null;
+        warningBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -1839,7 +1999,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.compute.v1.Warning warning = 50704284;</code>
      */
     public com.google.cloud.compute.v1.Warning.Builder getWarningBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }

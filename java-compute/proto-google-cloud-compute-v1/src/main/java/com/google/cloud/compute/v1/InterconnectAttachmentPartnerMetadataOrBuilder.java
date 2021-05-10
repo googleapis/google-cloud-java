@@ -30,7 +30,19 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 246527900;</code>
+   * <code>string interconnect_name = 514963356;</code>
+   *
+   * @return Whether the interconnectName field is set.
+   */
+  boolean hasInterconnectName();
+  /**
+   *
+   *
+   * <pre>
+   * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string interconnect_name = 514963356;</code>
    *
    * @return The interconnectName.
    */
@@ -42,12 +54,24 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 246527900;</code>
+   * <code>string interconnect_name = 514963356;</code>
    *
    * @return The bytes for interconnectName.
    */
   com.google.protobuf.ByteString getInterconnectNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string partner_name = 161747874;</code>
+   *
+   * @return Whether the partnerName field is set.
+   */
+  boolean hasPartnerName();
   /**
    *
    *
@@ -80,7 +104,19 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 747292;</code>
+   * <code>string portal_url = 269182748;</code>
+   *
+   * @return Whether the portalUrl field is set.
+   */
+  boolean hasPortalUrl();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+   * </pre>
+   *
+   * <code>string portal_url = 269182748;</code>
    *
    * @return The portalUrl.
    */
@@ -92,7 +128,7 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 747292;</code>
+   * <code>string portal_url = 269182748;</code>
    *
    * @return The bytes for portalUrl.
    */

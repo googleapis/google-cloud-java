@@ -63,6 +63,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,21 +77,21 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
           case 916690:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               tag_ = s;
               break;
             }
           case 826818018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               urlMask_ = s;
               break;
             }
-          case 840840618:
+          case -1306643030:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               service_ = s;
               break;
             }
@@ -128,7 +129,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder.class);
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 105105077;
+  private int bitField0_;
+  public static final int SERVICE_FIELD_NUMBER = 373540533;
   private volatile java.lang.Object service_;
   /**
    *
@@ -139,7 +141,24 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Run service is the main resource of Cloud Run.
+   * The service must be 1-63 characters long, and comply with RFC1035.
+   * Example value: "run-service".
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -164,7 +183,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -183,6 +202,23 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
 
   public static final int TAG_FIELD_NUMBER = 114586;
   private volatile java.lang.Object tag_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional Cloud Run tag represents the "named-revision" to provide additional fine-grained traffic routing information.
+   * The tag must be 1-63 characters long, and comply with RFC1035.
+   * Example value: "revision-0010".
+   * </pre>
+   *
+   * <code>string tag = 114586;</code>
+   *
+   * @return Whether the tag field is set.
+   */
+  @java.lang.Override
+  public boolean hasTag() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -246,6 +282,22 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
    *
    * <code>string url_mask = 103352252;</code>
    *
+   * @return Whether the urlMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrlMask() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A template to parse service and tag fields from a request URL. URL mask allows for routing to multiple Run services without having to create multiple network endpoint groups and backend services.
+   * For example, request URLs "foo1.domain.com/bar1" and "foo1.domain.com/bar2" can be backed by the same Serverless Network Endpoint Group (NEG) with URL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" } and { service="bar2", tag="foo2" } respectively.
+   * </pre>
+   *
+   * <code>string url_mask = 103352252;</code>
+   *
    * @return The urlMask.
    */
   @java.lang.Override
@@ -299,14 +351,14 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 114586, tag_);
     }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
     }
-    if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     unknownFields.writeTo(output);
   }
@@ -317,14 +369,14 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (!getTagBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114586, tag_);
     }
-    if (!getUrlMaskBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
     }
-    if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -342,9 +394,18 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun other =
         (com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun) obj;
 
-    if (!getService().equals(other.getService())) return false;
-    if (!getTag().equals(other.getTag())) return false;
-    if (!getUrlMask().equals(other.getUrlMask())) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
+    if (hasTag() != other.hasTag()) return false;
+    if (hasTag()) {
+      if (!getTag().equals(other.getTag())) return false;
+    }
+    if (hasUrlMask() != other.hasUrlMask()) return false;
+    if (hasUrlMask()) {
+      if (!getUrlMask().equals(other.getUrlMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -356,12 +417,18 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getService().hashCode();
-    hash = (37 * hash) + TAG_FIELD_NUMBER;
-    hash = (53 * hash) + getTag().hashCode();
-    hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
-    hash = (53 * hash) + getUrlMask().hashCode();
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+    }
+    if (hasTag()) {
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTag().hashCode();
+    }
+    if (hasUrlMask()) {
+      hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUrlMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -510,11 +577,11 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       service_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tag_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       urlMask_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -542,9 +609,21 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun buildPartial() {
       com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun result =
           new com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.service_ = service_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.tag_ = tag_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.urlMask_ = urlMask_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -595,15 +674,18 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
     public Builder mergeFrom(com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun other) {
       if (other == com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.getDefaultInstance())
         return this;
-      if (!other.getService().isEmpty()) {
+      if (other.hasService()) {
+        bitField0_ |= 0x00000001;
         service_ = other.service_;
         onChanged();
       }
-      if (!other.getTag().isEmpty()) {
+      if (other.hasTag()) {
+        bitField0_ |= 0x00000002;
         tag_ = other.tag_;
         onChanged();
       }
-      if (!other.getUrlMask().isEmpty()) {
+      if (other.hasUrlMask()) {
+        bitField0_ |= 0x00000004;
         urlMask_ = other.urlMask_;
         onChanged();
       }
@@ -637,6 +719,8 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object service_ = "";
     /**
      *
@@ -647,7 +731,23 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Run service is the main resource of Cloud Run.
+     * The service must be 1-63 characters long, and comply with RFC1035.
+     * Example value: "run-service".
+     * </pre>
+     *
+     * <code>string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -671,7 +771,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -695,7 +795,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -704,7 +804,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;
@@ -718,12 +818,12 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -737,7 +837,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -747,13 +847,29 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       service_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object tag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional Cloud Run tag represents the "named-revision" to provide additional fine-grained traffic routing information.
+     * The tag must be 1-63 characters long, and comply with RFC1035.
+     * Example value: "revision-0010".
+     * </pre>
+     *
+     * <code>string tag = 114586;</code>
+     *
+     * @return Whether the tag field is set.
+     */
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -820,7 +936,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       tag_ = value;
       onChanged();
       return this;
@@ -839,7 +955,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       tag_ = getDefaultInstance().getTag();
       onChanged();
       return this;
@@ -863,13 +979,28 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       tag_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object urlMask_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A template to parse service and tag fields from a request URL. URL mask allows for routing to multiple Run services without having to create multiple network endpoint groups and backend services.
+     * For example, request URLs "foo1.domain.com/bar1" and "foo1.domain.com/bar2" can be backed by the same Serverless Network Endpoint Group (NEG) with URL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" } and { service="bar2", tag="foo2" } respectively.
+     * </pre>
+     *
+     * <code>string url_mask = 103352252;</code>
+     *
+     * @return Whether the urlMask field is set.
+     */
+    public boolean hasUrlMask() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -933,7 +1064,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       urlMask_ = value;
       onChanged();
       return this;
@@ -951,7 +1082,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUrlMask() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       urlMask_ = getDefaultInstance().getUrlMask();
       onChanged();
       return this;
@@ -974,7 +1105,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       urlMask_ = value;
       onChanged();
       return this;

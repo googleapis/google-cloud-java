@@ -30,7 +30,19 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 141849898;</code>
+   * <code>string cpu_platform = 410285354;</code>
+   *
+   * @return Whether the cpuPlatform field is set.
+   */
+  boolean hasCpuPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The CPU platform used by this node type.
+   * </pre>
+   *
+   * <code>string cpu_platform = 410285354;</code>
    *
    * @return The cpuPlatform.
    */
@@ -42,12 +54,24 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 141849898;</code>
+   * <code>string cpu_platform = 410285354;</code>
    *
    * @return The bytes for cpuPlatform.
    */
   com.google.protobuf.ByteString getCpuPlatformBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -80,7 +104,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -92,7 +116,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    *
    * @return The deprecated.
    */
@@ -104,7 +128,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -115,7 +139,19 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional textual description of the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -127,7 +163,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -140,12 +176,36 @@ public interface NodeTypeOrBuilder
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 124921298;</code>
+   * <code>int32 guest_cpus = 393356754;</code>
+   *
+   * @return Whether the guestCpus field is set.
+   */
+  boolean hasGuestCpus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The number of virtual CPUs that are available to the node type.
+   * </pre>
+   *
+   * <code>int32 guest_cpus = 393356754;</code>
    *
    * @return The guestCpus.
    */
   int getGuestCpus();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -180,6 +240,18 @@ public interface NodeTypeOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of the resource. Always compute#nodeType for node types.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -203,7 +275,19 @@ public interface NodeTypeOrBuilder
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 60802122;</code>
+   * <code>int32 local_ssd_gb = 329237578;</code>
+   *
+   * @return Whether the localSsdGb field is set.
+   */
+  boolean hasLocalSsdGb();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Local SSD available to the node type, defined in GB.
+   * </pre>
+   *
+   * <code>int32 local_ssd_gb = 329237578;</code>
    *
    * @return The localSsdGb.
    */
@@ -218,10 +302,34 @@ public interface NodeTypeOrBuilder
    *
    * <code>int32 memory_mb = 116001171;</code>
    *
+   * @return Whether the memoryMb field is set.
+   */
+  boolean hasMemoryMb();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The amount of physical memory available to the node type, defined in MB.
+   * </pre>
+   *
+   * <code>int32 memory_mb = 116001171;</code>
+   *
    * @return The memoryMb.
    */
   int getMemoryMb();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Name of the resource.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -254,7 +362,19 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -266,12 +386,24 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+   * </pre>
+   *
+   * <code>string zone = 3744684;</code>
+   *
+   * @return Whether the zone field is set.
+   */
+  boolean hasZone();
   /**
    *
    *

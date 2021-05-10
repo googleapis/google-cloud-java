@@ -30,7 +30,19 @@ public interface ExprOrBuilder
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -42,7 +54,7 @@ public interface ExprOrBuilder
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -55,7 +67,19 @@ public interface ExprOrBuilder
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 83595928;</code>
+   * <code>string expression = 352031384;</code>
+   *
+   * @return Whether the expression field is set.
+   */
+  boolean hasExpression();
+  /**
+   *
+   *
+   * <pre>
+   * Textual representation of an expression in Common Expression Language syntax.
+   * </pre>
+   *
+   * <code>string expression = 352031384;</code>
    *
    * @return The expression.
    */
@@ -67,7 +91,7 @@ public interface ExprOrBuilder
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 83595928;</code>
+   * <code>string expression = 352031384;</code>
    *
    * @return The bytes for expression.
    */
@@ -80,7 +104,19 @@ public interface ExprOrBuilder
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
+   *
+   * @return Whether the location field is set.
+   */
+  boolean hasLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+   * </pre>
+   *
+   * <code>string location = 290430901;</code>
    *
    * @return The location.
    */
@@ -92,12 +128,24 @@ public interface ExprOrBuilder
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 21995445;</code>
+   * <code>string location = 290430901;</code>
    *
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+   * </pre>
+   *
+   * <code>string title = 110371416;</code>
+   *
+   * @return Whether the title field is set.
+   */
+  boolean hasTitle();
   /**
    *
    *

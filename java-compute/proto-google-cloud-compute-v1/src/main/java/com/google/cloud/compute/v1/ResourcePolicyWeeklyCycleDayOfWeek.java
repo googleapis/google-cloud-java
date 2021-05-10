@@ -62,6 +62,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,21 +76,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
           case 793824:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               day_ = rawValue;
               break;
             }
           case 299738194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               startTime_ = s;
               break;
             }
           case 1243770018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               duration_ = s;
               break;
             }
@@ -147,22 +148,22 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * <code>UNDEFINED_DAY = 0;</code>
      */
     UNDEFINED_DAY(0),
-    /** <code>FRIDAY = 202963295;</code> */
-    FRIDAY(202963295),
-    /** <code>INVALID = 261848535;</code> */
-    INVALID(261848535),
+    /** <code>FRIDAY = 471398751;</code> */
+    FRIDAY(471398751),
+    /** <code>INVALID = 530283991;</code> */
+    INVALID(530283991),
     /** <code>MONDAY = 132310288;</code> */
     MONDAY(132310288),
-    /** <code>SATURDAY = 10602425;</code> */
-    SATURDAY(10602425),
-    /** <code>SUNDAY = 41190864;</code> */
-    SUNDAY(41190864),
+    /** <code>SATURDAY = 279037881;</code> */
+    SATURDAY(279037881),
+    /** <code>SUNDAY = 309626320;</code> */
+    SUNDAY(309626320),
     /** <code>THURSDAY = 207198682;</code> */
     THURSDAY(207198682),
-    /** <code>TUESDAY = 9074221;</code> */
-    TUESDAY(9074221),
-    /** <code>WEDNESDAY = 153593654;</code> */
-    WEDNESDAY(153593654),
+    /** <code>TUESDAY = 277509677;</code> */
+    TUESDAY(277509677),
+    /** <code>WEDNESDAY = 422029110;</code> */
+    WEDNESDAY(422029110),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,22 +177,22 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * <code>UNDEFINED_DAY = 0;</code>
      */
     public static final int UNDEFINED_DAY_VALUE = 0;
-    /** <code>FRIDAY = 202963295;</code> */
-    public static final int FRIDAY_VALUE = 202963295;
-    /** <code>INVALID = 261848535;</code> */
-    public static final int INVALID_VALUE = 261848535;
+    /** <code>FRIDAY = 471398751;</code> */
+    public static final int FRIDAY_VALUE = 471398751;
+    /** <code>INVALID = 530283991;</code> */
+    public static final int INVALID_VALUE = 530283991;
     /** <code>MONDAY = 132310288;</code> */
     public static final int MONDAY_VALUE = 132310288;
-    /** <code>SATURDAY = 10602425;</code> */
-    public static final int SATURDAY_VALUE = 10602425;
-    /** <code>SUNDAY = 41190864;</code> */
-    public static final int SUNDAY_VALUE = 41190864;
+    /** <code>SATURDAY = 279037881;</code> */
+    public static final int SATURDAY_VALUE = 279037881;
+    /** <code>SUNDAY = 309626320;</code> */
+    public static final int SUNDAY_VALUE = 309626320;
     /** <code>THURSDAY = 207198682;</code> */
     public static final int THURSDAY_VALUE = 207198682;
-    /** <code>TUESDAY = 9074221;</code> */
-    public static final int TUESDAY_VALUE = 9074221;
-    /** <code>WEDNESDAY = 153593654;</code> */
-    public static final int WEDNESDAY_VALUE = 153593654;
+    /** <code>TUESDAY = 277509677;</code> */
+    public static final int TUESDAY_VALUE = 277509677;
+    /** <code>WEDNESDAY = 422029110;</code> */
+    public static final int WEDNESDAY_VALUE = 422029110;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -219,21 +220,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       switch (value) {
         case 0:
           return UNDEFINED_DAY;
-        case 202963295:
+        case 471398751:
           return FRIDAY;
-        case 261848535:
+        case 530283991:
           return INVALID;
         case 132310288:
           return MONDAY;
-        case 10602425:
+        case 279037881:
           return SATURDAY;
-        case 41190864:
+        case 309626320:
           return SUNDAY;
         case 207198682:
           return THURSDAY;
-        case 9074221:
+        case 277509677:
           return TUESDAY;
-        case 153593654:
+        case 422029110:
           return WEDNESDAY;
         default:
           return null;
@@ -290,8 +291,24 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day)
   }
 
+  private int bitField0_;
   public static final int DAY_FIELD_NUMBER = 99228;
   private int day_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   *
+   * @return Whether the day field is set.
+   */
+  @java.lang.Override
+  public boolean hasDay() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -330,6 +347,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   public static final int DURATION_FIELD_NUMBER = 155471252;
   private volatile java.lang.Object duration_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * </pre>
+   *
+   * <code>string duration = 155471252;</code>
+   *
+   * @return Whether the duration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDuration() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -379,6 +411,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   public static final int START_TIME_FIELD_NUMBER = 37467274;
   private volatile java.lang.Object startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * </pre>
+   *
+   * <code>string start_time = 37467274;</code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -440,15 +487,13 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (day_
-        != com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.UNDEFINED_DAY
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(99228, day_);
     }
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 155471252, duration_);
     }
     unknownFields.writeTo(output);
@@ -460,15 +505,13 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (day_
-        != com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day.UNDEFINED_DAY
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(99228, day_);
     }
-    if (!getStartTimeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
-    if (!getDurationBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(155471252, duration_);
     }
     size += unknownFields.getSerializedSize();
@@ -487,9 +530,18 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek other =
         (com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek) obj;
 
-    if (day_ != other.day_) return false;
-    if (!getDuration().equals(other.getDuration())) return false;
-    if (!getStartTime().equals(other.getStartTime())) return false;
+    if (hasDay() != other.hasDay()) return false;
+    if (hasDay()) {
+      if (day_ != other.day_) return false;
+    }
+    if (hasDuration() != other.hasDuration()) return false;
+    if (hasDuration()) {
+      if (!getDuration().equals(other.getDuration())) return false;
+    }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -501,12 +553,18 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DAY_FIELD_NUMBER;
-    hash = (53 * hash) + day_;
-    hash = (37 * hash) + DURATION_FIELD_NUMBER;
-    hash = (53 * hash) + getDuration().hashCode();
-    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getStartTime().hashCode();
+    if (hasDay()) {
+      hash = (37 * hash) + DAY_FIELD_NUMBER;
+      hash = (53 * hash) + day_;
+    }
+    if (hasDuration()) {
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -653,11 +711,11 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public Builder clear() {
       super.clear();
       day_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       duration_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startTime_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -686,9 +744,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek buildPartial() {
       com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek result =
           new com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.day_ = day_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.duration_ = duration_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.startTime_ = startTime_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -740,14 +810,16 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.getDefaultInstance())
         return this;
-      if (other.day_ != 0) {
-        setDayValue(other.getDayValue());
+      if (other.hasDay()) {
+        setDay(other.getDay());
       }
-      if (!other.getDuration().isEmpty()) {
+      if (other.hasDuration()) {
+        bitField0_ |= 0x00000002;
         duration_ = other.duration_;
         onChanged();
       }
-      if (!other.getStartTime().isEmpty()) {
+      if (other.hasStartTime()) {
+        bitField0_ |= 0x00000004;
         startTime_ = other.startTime_;
         onChanged();
       }
@@ -782,7 +854,24 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private int day_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     *
+     * @return Whether the day field is set.
+     */
+    @java.lang.Override
+    public boolean hasDay() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -811,7 +900,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setDayValue(int value) {
-
+      bitField0_ |= 0x00000001;
       day_ = value;
       onChanged();
       return this;
@@ -853,7 +942,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       day_ = value.getNumber();
       onChanged();
       return this;
@@ -870,13 +959,27 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDay() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       day_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object duration_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * </pre>
+     *
+     * <code>string duration = 155471252;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -937,7 +1040,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       duration_ = value;
       onChanged();
       return this;
@@ -954,7 +1057,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDuration() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       duration_ = getDefaultInstance().getDuration();
       onChanged();
       return this;
@@ -976,13 +1079,27 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       duration_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object startTime_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * </pre>
+     *
+     * <code>string start_time = 37467274;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1043,7 +1160,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;
@@ -1060,7 +1177,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearStartTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       startTime_ = getDefaultInstance().getStartTime();
       onChanged();
       return this;
@@ -1082,7 +1199,7 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       startTime_ = value;
       onChanged();
       return this;

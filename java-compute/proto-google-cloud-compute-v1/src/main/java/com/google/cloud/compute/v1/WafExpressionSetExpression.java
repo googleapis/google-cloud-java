@@ -59,6 +59,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,7 +73,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
           case 26842:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               id_ = s;
               break;
             }
@@ -110,8 +111,24 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.WafExpressionSetExpression.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 3355;
   private volatile java.lang.Object id_;
+  /**
+   *
+   *
+   * <pre>
+   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -173,7 +190,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
     unknownFields.writeTo(output);
@@ -185,7 +202,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
     size += unknownFields.getSerializedSize();
@@ -204,7 +221,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     com.google.cloud.compute.v1.WafExpressionSetExpression other =
         (com.google.cloud.compute.v1.WafExpressionSetExpression) obj;
 
-    if (!getId().equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId().equals(other.getId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,8 +236,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,7 +386,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -392,7 +414,13 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.WafExpressionSetExpression buildPartial() {
       com.google.cloud.compute.v1.WafExpressionSetExpression result =
           new com.google.cloud.compute.v1.WafExpressionSetExpression(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -443,7 +471,8 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.compute.v1.WafExpressionSetExpression other) {
       if (other == com.google.cloud.compute.v1.WafExpressionSetExpression.getDefaultInstance())
         return this;
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000001;
         id_ = other.id_;
         onChanged();
       }
@@ -477,7 +506,23 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive.
+     * </pre>
+     *
+     * <code>string id = 3355;</code>
+     *
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -538,7 +583,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -555,7 +600,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -577,7 +622,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;

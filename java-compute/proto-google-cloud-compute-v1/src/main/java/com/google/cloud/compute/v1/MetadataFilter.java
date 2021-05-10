@@ -74,7 +74,14 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 315741490:
+          case 1919762944:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              filterMatchCriteria_ = rawValue;
+              break;
+            }
+          case -1831742158:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 filterLabels_ =
@@ -85,13 +92,6 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(
                       com.google.cloud.compute.v1.MetadataFilterLabelMatch.parser(),
                       extensionRegistry));
-              break;
-            }
-          case 1919762944:
-            {
-              int rawValue = input.readEnum();
-
-              filterMatchCriteria_ = rawValue;
               break;
             }
           default:
@@ -268,7 +268,8 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria)
   }
 
-  public static final int FILTER_LABELS_FIELD_NUMBER = 39467686;
+  private int bitField0_;
+  public static final int FILTER_LABELS_FIELD_NUMBER = 307903142;
   private java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch> filterLabels_;
   /**
    *
@@ -278,7 +279,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   @java.lang.Override
@@ -294,7 +295,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   @java.lang.Override
@@ -310,7 +311,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   @java.lang.Override
@@ -325,7 +326,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   @java.lang.Override
@@ -340,7 +341,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
    * This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+   * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
    * </code>
    */
   @java.lang.Override
@@ -351,6 +352,26 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILTER_MATCH_CRITERIA_FIELD_NUMBER = 239970368;
   private int filterMatchCriteria_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
+   * Supported values are:
+   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
+   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
+   * </code>
+   *
+   * @return Whether the filterMatchCriteria field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilterMatchCriteria() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -412,14 +433,11 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < filterLabels_.size(); i++) {
-      output.writeMessage(39467686, filterLabels_.get(i));
-    }
-    if (filterMatchCriteria_
-        != com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria
-            .UNDEFINED_FILTER_MATCH_CRITERIA
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(239970368, filterMatchCriteria_);
+    }
+    for (int i = 0; i < filterLabels_.size(); i++) {
+      output.writeMessage(307903142, filterLabels_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -430,16 +448,13 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < filterLabels_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(39467686, filterLabels_.get(i));
-    }
-    if (filterMatchCriteria_
-        != com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria
-            .UNDEFINED_FILTER_MATCH_CRITERIA
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(239970368, filterMatchCriteria_);
+    }
+    for (int i = 0; i < filterLabels_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(307903142, filterLabels_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -458,7 +473,10 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.compute.v1.MetadataFilter) obj;
 
     if (!getFilterLabelsList().equals(other.getFilterLabelsList())) return false;
-    if (filterMatchCriteria_ != other.filterMatchCriteria_) return false;
+    if (hasFilterMatchCriteria() != other.hasFilterMatchCriteria()) return false;
+    if (hasFilterMatchCriteria()) {
+      if (filterMatchCriteria_ != other.filterMatchCriteria_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -474,8 +492,10 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FILTER_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getFilterLabelsList().hashCode();
     }
-    hash = (37 * hash) + FILTER_MATCH_CRITERIA_FIELD_NUMBER;
-    hash = (53 * hash) + filterMatchCriteria_;
+    if (hasFilterMatchCriteria()) {
+      hash = (37 * hash) + FILTER_MATCH_CRITERIA_FIELD_NUMBER;
+      hash = (53 * hash) + filterMatchCriteria_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -632,7 +652,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         filterLabelsBuilder_.clear();
       }
       filterMatchCriteria_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -661,6 +681,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.MetadataFilter result =
           new com.google.cloud.compute.v1.MetadataFilter(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (filterLabelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           filterLabels_ = java.util.Collections.unmodifiableList(filterLabels_);
@@ -670,7 +691,11 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.filterLabels_ = filterLabelsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.filterMatchCriteria_ = filterMatchCriteria_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -747,8 +772,8 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.filterMatchCriteria_ != 0) {
-        setFilterMatchCriteriaValue(other.getFilterMatchCriteriaValue());
+      if (other.hasFilterMatchCriteria()) {
+        setFilterMatchCriteria(other.getFilterMatchCriteria());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -807,7 +832,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch>
@@ -826,7 +851,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public int getFilterLabelsCount() {
@@ -844,7 +869,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataFilterLabelMatch getFilterLabels(int index) {
@@ -862,7 +887,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder setFilterLabels(
@@ -887,7 +912,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder setFilterLabels(
@@ -909,7 +934,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder addFilterLabels(com.google.cloud.compute.v1.MetadataFilterLabelMatch value) {
@@ -933,7 +958,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder addFilterLabels(
@@ -958,7 +983,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder addFilterLabels(
@@ -980,7 +1005,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder addFilterLabels(
@@ -1002,7 +1027,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder addAllFilterLabels(
@@ -1024,7 +1049,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder clearFilterLabels() {
@@ -1045,7 +1070,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public Builder removeFilterLabels(int index) {
@@ -1066,7 +1091,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataFilterLabelMatch.Builder getFilterLabelsBuilder(
@@ -1081,7 +1106,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataFilterLabelMatchOrBuilder getFilterLabelsOrBuilder(
@@ -1100,7 +1125,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterLabelMatchOrBuilder>
@@ -1119,7 +1144,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataFilterLabelMatch.Builder addFilterLabelsBuilder() {
@@ -1134,7 +1159,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public com.google.cloud.compute.v1.MetadataFilterLabelMatch.Builder addFilterLabelsBuilder(
@@ -1151,7 +1176,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * This list must not be empty and can have at the most 64 entries.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 39467686;
+     * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch.Builder>
@@ -1191,6 +1216,26 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
      * </code>
      *
+     * @return Whether the filterMatchCriteria field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilterMatchCriteria() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
+     * Supported values are:
+     * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
+     * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;
+     * </code>
+     *
      * @return The enum numeric value on the wire for filterMatchCriteria.
      */
     @java.lang.Override
@@ -1215,7 +1260,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFilterMatchCriteriaValue(int value) {
-
+      bitField0_ |= 0x00000002;
       filterMatchCriteria_ = value;
       onChanged();
       return this;
@@ -1268,7 +1313,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       filterMatchCriteria_ = value.getNumber();
       onChanged();
       return this;
@@ -1290,7 +1335,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilterMatchCriteria() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       filterMatchCriteria_ = 0;
       onChanged();
       return this;

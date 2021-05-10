@@ -32,6 +32,18 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    * <code>int32 availability_domain_count = 12453432;</code>
    *
+   * @return Whether the availabilityDomainCount field is set.
+   */
+  boolean hasAvailabilityDomainCount();
+  /**
+   *
+   *
+   * <pre>
+   * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+   * </pre>
+   *
+   * <code>int32 availability_domain_count = 12453432;</code>
+   *
    * @return The availabilityDomainCount.
    */
   int getAvailabilityDomainCount();
@@ -44,7 +56,21 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * </code>
+   *
+   * @return Whether the collocation field is set.
+   */
+  boolean hasCollocation();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies network collocation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
    * </code>
    *
    * @return The enum numeric value on the wire for collocation.
@@ -58,13 +84,25 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
    * </code>
    *
    * @return The collocation.
    */
   com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation getCollocation();
 
+  /**
+   *
+   *
+   * <pre>
+   * Number of vms in this placement group
+   * </pre>
+   *
+   * <code>int32 vm_count = 261463431;</code>
+   *
+   * @return Whether the vmCount field is set.
+   */
+  boolean hasVmCount();
   /**
    *
    *

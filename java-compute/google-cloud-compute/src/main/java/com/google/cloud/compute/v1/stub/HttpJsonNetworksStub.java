@@ -93,7 +93,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AddPeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -141,7 +144,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -230,7 +235,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<InsertNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -275,12 +282,22 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<ListNetworksRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "filter", request.getFilter());
-                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          serializer.putQueryParam(
-                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                          if (request.hasFilter()) {
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                          }
+                          if (request.hasMaxResults()) {
+                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
+                          }
+                          if (request.hasOrderBy()) {
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                          }
+                          if (request.hasPageToken()) {
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                          }
+                          if (request.hasReturnPartialSuccess()) {
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                          }
                           return fields;
                         }
                       })
@@ -332,19 +349,37 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListPeeringRoutesNetworksRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "direction", request.getDirection());
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields, "peeringName", request.getPeeringName());
-                              serializer.putQueryParam(fields, "region", request.getRegion());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasDirection()) {
+                                serializer.putQueryParam(
+                                    fields, "direction", request.getDirection());
+                              }
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasPeeringName()) {
+                                serializer.putQueryParam(
+                                    fields, "peeringName", request.getPeeringName());
+                              }
+                              if (request.hasRegion()) {
+                                serializer.putQueryParam(fields, "region", request.getRegion());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -389,7 +424,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<PatchNetworkRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -439,7 +476,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<RemovePeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -492,7 +532,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SwitchToCustomModeNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -541,7 +584,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<UpdatePeeringNetworkRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })

@@ -58,6 +58,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,16 +71,19 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
             break;
           case 779565984:
             {
+              bitField0_ |= 0x00000002;
               fixed_ = input.readInt32();
               break;
             }
-          case 1011032616:
+          case -1136451032:
             {
+              bitField0_ |= 0x00000004;
               percent_ = input.readInt32();
               break;
             }
-          case 1629179376:
+          case -518304272:
             {
+              bitField0_ |= 0x00000001;
               calculated_ = input.readInt32();
               break;
             }
@@ -117,7 +121,8 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.FixedOrPercent.Builder.class);
   }
 
-  public static final int CALCULATED_FIELD_NUMBER = 203647422;
+  private int bitField0_;
+  public static final int CALCULATED_FIELD_NUMBER = 472082878;
   private int calculated_;
   /**
    *
@@ -128,7 +133,24 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
    * </pre>
    *
-   * <code>int32 calculated = 203647422;</code>
+   * <code>int32 calculated = 472082878;</code>
+   *
+   * @return Whether the calculated field is set.
+   */
+  @java.lang.Override
+  public boolean hasCalculated() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Absolute value of VM instances calculated based on the specific mode.
+   * - If the value is fixed, then the calculated value is equal to the fixed value.
+   * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
+   * </pre>
+   *
+   * <code>int32 calculated = 472082878;</code>
    *
    * @return The calculated.
    */
@@ -148,6 +170,21 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 fixed = 97445748;</code>
    *
+   * @return Whether the fixed field is set.
+   */
+  @java.lang.Override
+  public boolean hasFixed() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a fixed number of VM instances. This must be a positive integer.
+   * </pre>
+   *
+   * <code>int32 fixed = 97445748;</code>
+   *
    * @return The fixed.
    */
   @java.lang.Override
@@ -155,7 +192,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     return fixed_;
   }
 
-  public static final int PERCENT_FIELD_NUMBER = 126379077;
+  public static final int PERCENT_FIELD_NUMBER = 394814533;
   private int percent_;
   /**
    *
@@ -164,7 +201,22 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
    * </pre>
    *
-   * <code>int32 percent = 126379077;</code>
+   * <code>int32 percent = 394814533;</code>
+   *
+   * @return Whether the percent field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercent() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
+   * </pre>
+   *
+   * <code>int32 percent = 394814533;</code>
    *
    * @return The percent.
    */
@@ -187,14 +239,14 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (fixed_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(97445748, fixed_);
     }
-    if (percent_ != 0) {
-      output.writeInt32(126379077, percent_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(394814533, percent_);
     }
-    if (calculated_ != 0) {
-      output.writeInt32(203647422, calculated_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(472082878, calculated_);
     }
     unknownFields.writeTo(output);
   }
@@ -205,14 +257,14 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (fixed_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(97445748, fixed_);
     }
-    if (percent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(126379077, percent_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(394814533, percent_);
     }
-    if (calculated_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(203647422, calculated_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(472082878, calculated_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -230,9 +282,18 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.FixedOrPercent other =
         (com.google.cloud.compute.v1.FixedOrPercent) obj;
 
-    if (getCalculated() != other.getCalculated()) return false;
-    if (getFixed() != other.getFixed()) return false;
-    if (getPercent() != other.getPercent()) return false;
+    if (hasCalculated() != other.hasCalculated()) return false;
+    if (hasCalculated()) {
+      if (getCalculated() != other.getCalculated()) return false;
+    }
+    if (hasFixed() != other.hasFixed()) return false;
+    if (hasFixed()) {
+      if (getFixed() != other.getFixed()) return false;
+    }
+    if (hasPercent() != other.hasPercent()) return false;
+    if (hasPercent()) {
+      if (getPercent() != other.getPercent()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -244,12 +305,18 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CALCULATED_FIELD_NUMBER;
-    hash = (53 * hash) + getCalculated();
-    hash = (37 * hash) + FIXED_FIELD_NUMBER;
-    hash = (53 * hash) + getFixed();
-    hash = (37 * hash) + PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + getPercent();
+    if (hasCalculated()) {
+      hash = (37 * hash) + CALCULATED_FIELD_NUMBER;
+      hash = (53 * hash) + getCalculated();
+    }
+    if (hasFixed()) {
+      hash = (37 * hash) + FIXED_FIELD_NUMBER;
+      hash = (53 * hash) + getFixed();
+    }
+    if (hasPercent()) {
+      hash = (37 * hash) + PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + getPercent();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -396,11 +463,11 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       calculated_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fixed_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       percent_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -428,9 +495,21 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.FixedOrPercent buildPartial() {
       com.google.cloud.compute.v1.FixedOrPercent result =
           new com.google.cloud.compute.v1.FixedOrPercent(this);
-      result.calculated_ = calculated_;
-      result.fixed_ = fixed_;
-      result.percent_ = percent_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.calculated_ = calculated_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fixed_ = fixed_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.percent_ = percent_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -480,13 +559,13 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.FixedOrPercent other) {
       if (other == com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()) return this;
-      if (other.getCalculated() != 0) {
+      if (other.hasCalculated()) {
         setCalculated(other.getCalculated());
       }
-      if (other.getFixed() != 0) {
+      if (other.hasFixed()) {
         setFixed(other.getFixed());
       }
-      if (other.getPercent() != 0) {
+      if (other.hasPercent()) {
         setPercent(other.getPercent());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -518,6 +597,8 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int calculated_;
     /**
      *
@@ -528,7 +609,24 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 203647422;</code>
+     * <code>int32 calculated = 472082878;</code>
+     *
+     * @return Whether the calculated field is set.
+     */
+    @java.lang.Override
+    public boolean hasCalculated() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Absolute value of VM instances calculated based on the specific mode.
+     * - If the value is fixed, then the calculated value is equal to the fixed value.
+     * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
+     * </pre>
+     *
+     * <code>int32 calculated = 472082878;</code>
      *
      * @return The calculated.
      */
@@ -545,13 +643,13 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 203647422;</code>
+     * <code>int32 calculated = 472082878;</code>
      *
      * @param value The calculated to set.
      * @return This builder for chaining.
      */
     public Builder setCalculated(int value) {
-
+      bitField0_ |= 0x00000001;
       calculated_ = value;
       onChanged();
       return this;
@@ -565,18 +663,33 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 203647422;</code>
+     * <code>int32 calculated = 472082878;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCalculated() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       calculated_ = 0;
       onChanged();
       return this;
     }
 
     private int fixed_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a fixed number of VM instances. This must be a positive integer.
+     * </pre>
+     *
+     * <code>int32 fixed = 97445748;</code>
+     *
+     * @return Whether the fixed field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixed() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -605,7 +718,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFixed(int value) {
-
+      bitField0_ |= 0x00000002;
       fixed_ = value;
       onChanged();
       return this;
@@ -622,7 +735,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFixed() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fixed_ = 0;
       onChanged();
       return this;
@@ -636,7 +749,22 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 126379077;</code>
+     * <code>int32 percent = 394814533;</code>
+     *
+     * @return Whether the percent field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercent() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
+     * </pre>
+     *
+     * <code>int32 percent = 394814533;</code>
      *
      * @return The percent.
      */
@@ -651,13 +779,13 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 126379077;</code>
+     * <code>int32 percent = 394814533;</code>
      *
      * @param value The percent to set.
      * @return This builder for chaining.
      */
     public Builder setPercent(int value) {
-
+      bitField0_ |= 0x00000004;
       percent_ = value;
       onChanged();
       return this;
@@ -669,12 +797,12 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 126379077;</code>
+     * <code>int32 percent = 394814533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       percent_ = 0;
       onChanged();
       return this;

@@ -64,6 +64,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,7 +78,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
               break;
             }
@@ -106,7 +107,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
               project_ = s;
               break;
             }
-          case 1877039890:
+          case -270443758:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -147,6 +148,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
             com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -198,6 +200,23 @@ public final class SetProxyHeaderTargetTcpProxyRequest
 
   public static final int REQUEST_ID_FIELD_NUMBER = 37109963;
   private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -307,7 +326,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     return getTargetTcpProxiesSetProxyHeaderRequestResource();
   }
 
-  public static final int TARGET_TCP_PROXY_FIELD_NUMBER = 234629986;
+  public static final int TARGET_TCP_PROXY_FIELD_NUMBER = 503065442;
   private volatile java.lang.Object targetTcpProxy_;
   /**
    *
@@ -316,7 +335,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetTcpProxy.
    */
@@ -339,7 +358,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetTcpProxy.
    */
@@ -370,7 +389,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (targetTcpProxiesSetProxyHeaderRequestResource_ != null) {
@@ -380,7 +399,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getTargetTcpProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234629986, targetTcpProxy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 503065442, targetTcpProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -391,7 +410,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (targetTcpProxiesSetProxyHeaderRequestResource_ != null) {
@@ -403,7 +422,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getTargetTcpProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234629986, targetTcpProxy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(503065442, targetTcpProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -422,7 +441,10 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         (com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasTargetTcpProxiesSetProxyHeaderRequestResource()
         != other.hasTargetTcpProxiesSetProxyHeaderRequestResource()) return false;
     if (hasTargetTcpProxiesSetProxyHeaderRequestResource()) {
@@ -443,8 +465,10 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasTargetTcpProxiesSetProxyHeaderRequestResource()) {
       hash = (37 * hash) + TARGET_TCP_PROXIES_SET_PROXY_HEADER_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetTcpProxiesSetProxyHeaderRequestResource().hashCode();
@@ -600,7 +624,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (targetTcpProxiesSetProxyHeaderRequestResourceBuilder_ == null) {
         targetTcpProxiesSetProxyHeaderRequestResource_ = null;
       } else {
@@ -637,7 +661,12 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     public com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest buildPartial() {
       com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest result =
           new com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (targetTcpProxiesSetProxyHeaderRequestResourceBuilder_ == null) {
         result.targetTcpProxiesSetProxyHeaderRequestResource_ =
@@ -647,6 +676,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
             targetTcpProxiesSetProxyHeaderRequestResourceBuilder_.build();
       }
       result.targetTcpProxy_ = targetTcpProxy_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -703,7 +733,8 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -745,6 +776,8 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -864,6 +897,22 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -919,7 +968,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -938,7 +987,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -962,7 +1011,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1190,7 +1239,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetTcpProxy.
      */
@@ -1212,7 +1261,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetTcpProxy.
      */
@@ -1234,7 +1283,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetTcpProxy to set.
      * @return This builder for chaining.
@@ -1255,7 +1304,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1272,7 +1321,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetTcpProxy to set.
      * @return This builder for chaining.

@@ -62,6 +62,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,25 +76,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               requestId_ = s;
-              break;
-            }
-          case 962999722:
-            {
-              com.google.cloud.compute.v1.NetworksAddPeeringRequest.Builder subBuilder = null;
-              if (networksAddPeeringRequestResource_ != null) {
-                subBuilder = networksAddPeeringRequestResource_.toBuilder();
-              }
-              networksAddPeeringRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NetworksAddPeeringRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(networksAddPeeringRequestResource_);
-                networksAddPeeringRequestResource_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           case 1820481738:
@@ -108,6 +92,23 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
               java.lang.String s = input.readStringRequireUtf8();
 
               network_ = s;
+              break;
+            }
+          case -1184483926:
+            {
+              com.google.cloud.compute.v1.NetworksAddPeeringRequest.Builder subBuilder = null;
+              if (networksAddPeeringRequestResource_ != null) {
+                subBuilder = networksAddPeeringRequestResource_.toBuilder();
+              }
+              networksAddPeeringRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NetworksAddPeeringRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networksAddPeeringRequestResource_);
+                networksAddPeeringRequestResource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -144,6 +145,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.AddPeeringNetworkRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 232872494;
   private volatile java.lang.Object network_;
   /**
@@ -193,7 +195,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int NETWORKS_ADD_PEERING_REQUEST_RESOURCE_FIELD_NUMBER = 120374965;
+  public static final int NETWORKS_ADD_PEERING_REQUEST_RESOURCE_FIELD_NUMBER = 388810421;
   private com.google.cloud.compute.v1.NetworksAddPeeringRequest networksAddPeeringRequestResource_;
   /**
    *
@@ -203,7 +205,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksAddPeeringRequestResource field is set.
@@ -220,7 +222,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksAddPeeringRequestResource.
@@ -240,7 +242,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -311,6 +313,23 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -365,17 +384,17 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
-    }
-    if (networksAddPeeringRequestResource_ != null) {
-      output.writeMessage(120374965, getNetworksAddPeeringRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
+    }
+    if (networksAddPeeringRequestResource_ != null) {
+      output.writeMessage(388810421, getNetworksAddPeeringRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -386,19 +405,19 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
-    }
-    if (networksAddPeeringRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              120374965, getNetworksAddPeeringRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
+    }
+    if (networksAddPeeringRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              388810421, getNetworksAddPeeringRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -424,7 +443,10 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
           .equals(other.getNetworksAddPeeringRequestResource())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -444,8 +466,10 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -602,7 +626,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -630,6 +654,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.AddPeeringNetworkRequest buildPartial() {
       com.google.cloud.compute.v1.AddPeeringNetworkRequest result =
           new com.google.cloud.compute.v1.AddPeeringNetworkRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.network_ = network_;
       if (networksAddPeeringRequestResourceBuilder_ == null) {
         result.networksAddPeeringRequestResource_ = networksAddPeeringRequestResource_;
@@ -638,7 +664,11 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
             networksAddPeeringRequestResourceBuilder_.build();
       }
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -700,7 +730,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -733,6 +764,8 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -855,7 +888,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networksAddPeeringRequestResource field is set.
@@ -872,7 +905,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networksAddPeeringRequestResource.
@@ -895,7 +928,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksAddPeeringRequestResource(
@@ -920,7 +953,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksAddPeeringRequestResource(
@@ -942,7 +975,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworksAddPeeringRequestResource(
@@ -972,7 +1005,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworksAddPeeringRequestResource() {
@@ -994,7 +1027,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksAddPeeringRequest.Builder
@@ -1011,7 +1044,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksAddPeeringRequestOrBuilder
@@ -1032,7 +1065,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1170,6 +1203,22 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -1225,7 +1274,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -1244,7 +1293,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1268,7 +1317,7 @@ public final class AddPeeringNetworkRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;

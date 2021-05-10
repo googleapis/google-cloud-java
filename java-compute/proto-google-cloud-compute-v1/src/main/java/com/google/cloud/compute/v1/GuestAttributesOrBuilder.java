@@ -32,6 +32,18 @@ public interface GuestAttributesOrBuilder
    *
    * <code>string kind = 3292052;</code>
    *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
    * @return The kind.
    */
   java.lang.String getKind();
@@ -55,7 +67,19 @@ public interface GuestAttributesOrBuilder
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
+   *
+   * @return Whether the queryPath field is set.
+   */
+  boolean hasQueryPath();
+  /**
+   *
+   *
+   * <pre>
+   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * </pre>
+   *
+   * <code>string query_path = 368591164;</code>
    *
    * @return The queryPath.
    */
@@ -67,7 +91,7 @@ public interface GuestAttributesOrBuilder
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 100155708;</code>
+   * <code>string query_path = 368591164;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -115,7 +139,19 @@ public interface GuestAttributesOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -127,12 +163,24 @@ public interface GuestAttributesOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The key to search for.
+   * </pre>
+   *
+   * <code>string variable_key = 164364828;</code>
+   *
+   * @return Whether the variableKey field is set.
+   */
+  boolean hasVariableKey();
   /**
    *
    *
@@ -158,6 +206,18 @@ public interface GuestAttributesOrBuilder
    */
   com.google.protobuf.ByteString getVariableKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The value found for the requested key.
+   * </pre>
+   *
+   * <code>string variable_value = 124582382;</code>
+   *
+   * @return Whether the variableValue field is set.
+   */
+  boolean hasVariableValue();
   /**
    *
    *

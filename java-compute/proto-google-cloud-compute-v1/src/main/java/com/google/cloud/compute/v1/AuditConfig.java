@@ -77,14 +77,24 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 840840618:
+          case 1860924610:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                exemptedMembers_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              exemptedMembers_.add(s);
+              break;
+            }
+          case -1306643030:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
               service_ = s;
               break;
             }
-          case 1759881362:
+          case -387602286:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 auditLogConfigs_ =
@@ -94,16 +104,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
               auditLogConfigs_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.AuditLogConfig.parser(), extensionRegistry));
-              break;
-            }
-          case 1860924610:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                exemptedMembers_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              exemptedMembers_.add(s);
               break;
             }
           default:
@@ -120,11 +120,11 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        auditLogConfigs_ = java.util.Collections.unmodifiableList(auditLogConfigs_);
-      }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         exemptedMembers_ = exemptedMembers_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        auditLogConfigs_ = java.util.Collections.unmodifiableList(auditLogConfigs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -146,7 +146,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.AuditConfig.Builder.class);
   }
 
-  public static final int AUDIT_LOG_CONFIGS_FIELD_NUMBER = 219985170;
+  private int bitField0_;
+  public static final int AUDIT_LOG_CONFIGS_FIELD_NUMBER = 488420626;
   private java.util.List<com.google.cloud.compute.v1.AuditLogConfig> auditLogConfigs_;
   /**
    *
@@ -155,7 +156,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.AuditLogConfig> getAuditLogConfigsList() {
@@ -168,7 +169,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.AuditLogConfigOrBuilder>
@@ -182,7 +183,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   @java.lang.Override
   public int getAuditLogConfigsCount() {
@@ -195,7 +196,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AuditLogConfig getAuditLogConfigs(int index) {
@@ -208,7 +209,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * The configuration for logging of each type of permission.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AuditLogConfigOrBuilder getAuditLogConfigsOrBuilder(
@@ -253,7 +254,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     return exemptedMembers_.getByteString(index);
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 105105077;
+  public static final int SERVICE_FIELD_NUMBER = 373540533;
   private volatile java.lang.Object service_;
   /**
    *
@@ -262,7 +263,22 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * </pre>
+   *
+   * <code>string service = 373540533;</code>
    *
    * @return The service.
    */
@@ -285,7 +301,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
    * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
    * </pre>
    *
-   * <code>string service = 105105077;</code>
+   * <code>string service = 373540533;</code>
    *
    * @return The bytes for service.
    */
@@ -316,15 +332,15 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
-    }
-    for (int i = 0; i < auditLogConfigs_.size(); i++) {
-      output.writeMessage(219985170, auditLogConfigs_.get(i));
-    }
     for (int i = 0; i < exemptedMembers_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 232615576, exemptedMembers_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
+    }
+    for (int i = 0; i < auditLogConfigs_.size(); i++) {
+      output.writeMessage(488420626, auditLogConfigs_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -335,14 +351,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
-    }
-    for (int i = 0; i < auditLogConfigs_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              219985170, auditLogConfigs_.get(i));
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < exemptedMembers_.size(); i++) {
@@ -350,6 +358,14 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getExemptedMembersList().size();
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
+    }
+    for (int i = 0; i < auditLogConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              488420626, auditLogConfigs_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -368,7 +384,10 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (!getAuditLogConfigsList().equals(other.getAuditLogConfigsList())) return false;
     if (!getExemptedMembersList().equals(other.getExemptedMembersList())) return false;
-    if (!getService().equals(other.getService())) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -388,8 +407,10 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXEMPTED_MEMBERS_FIELD_NUMBER;
       hash = (53 * hash) + getExemptedMembersList().hashCode();
     }
-    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
-    hash = (53 * hash) + getService().hashCode();
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -550,7 +571,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       service_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -579,6 +600,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.AuditConfig result =
           new com.google.cloud.compute.v1.AuditConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (auditLogConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           auditLogConfigs_ = java.util.Collections.unmodifiableList(auditLogConfigs_);
@@ -593,7 +615,11 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.exemptedMembers_ = exemptedMembers_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.service_ = service_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -680,7 +706,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getService().isEmpty()) {
+      if (other.hasService()) {
+        bitField0_ |= 0x00000004;
         service_ = other.service_;
         onChanged();
       }
@@ -739,7 +766,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AuditLogConfig> getAuditLogConfigsList() {
       if (auditLogConfigsBuilder_ == null) {
@@ -755,7 +782,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public int getAuditLogConfigsCount() {
       if (auditLogConfigsBuilder_ == null) {
@@ -771,7 +798,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public com.google.cloud.compute.v1.AuditLogConfig getAuditLogConfigs(int index) {
       if (auditLogConfigsBuilder_ == null) {
@@ -787,7 +814,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder setAuditLogConfigs(int index, com.google.cloud.compute.v1.AuditLogConfig value) {
       if (auditLogConfigsBuilder_ == null) {
@@ -809,7 +836,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder setAuditLogConfigs(
         int index, com.google.cloud.compute.v1.AuditLogConfig.Builder builderForValue) {
@@ -829,7 +856,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder addAuditLogConfigs(com.google.cloud.compute.v1.AuditLogConfig value) {
       if (auditLogConfigsBuilder_ == null) {
@@ -851,7 +878,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder addAuditLogConfigs(int index, com.google.cloud.compute.v1.AuditLogConfig value) {
       if (auditLogConfigsBuilder_ == null) {
@@ -873,7 +900,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder addAuditLogConfigs(
         com.google.cloud.compute.v1.AuditLogConfig.Builder builderForValue) {
@@ -893,7 +920,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder addAuditLogConfigs(
         int index, com.google.cloud.compute.v1.AuditLogConfig.Builder builderForValue) {
@@ -913,7 +940,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder addAllAuditLogConfigs(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.AuditLogConfig> values) {
@@ -933,7 +960,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder clearAuditLogConfigs() {
       if (auditLogConfigsBuilder_ == null) {
@@ -952,7 +979,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public Builder removeAuditLogConfigs(int index) {
       if (auditLogConfigsBuilder_ == null) {
@@ -971,7 +998,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public com.google.cloud.compute.v1.AuditLogConfig.Builder getAuditLogConfigsBuilder(int index) {
       return getAuditLogConfigsFieldBuilder().getBuilder(index);
@@ -983,7 +1010,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public com.google.cloud.compute.v1.AuditLogConfigOrBuilder getAuditLogConfigsOrBuilder(
         int index) {
@@ -1000,7 +1027,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AuditLogConfigOrBuilder>
         getAuditLogConfigsOrBuilderList() {
@@ -1017,7 +1044,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public com.google.cloud.compute.v1.AuditLogConfig.Builder addAuditLogConfigsBuilder() {
       return getAuditLogConfigsFieldBuilder()
@@ -1030,7 +1057,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public com.google.cloud.compute.v1.AuditLogConfig.Builder addAuditLogConfigsBuilder(int index) {
       return getAuditLogConfigsFieldBuilder()
@@ -1043,7 +1070,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * The configuration for logging of each type of permission.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 219985170;</code>
+     * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AuditLogConfig.Builder>
         getAuditLogConfigsBuilderList() {
@@ -1192,7 +1219,21 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+     * </pre>
+     *
+     * <code>string service = 373540533;</code>
      *
      * @return The service.
      */
@@ -1214,7 +1255,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return The bytes for service.
      */
@@ -1236,7 +1277,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -1245,7 +1286,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       service_ = value;
       onChanged();
       return this;
@@ -1257,12 +1298,12 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -1274,7 +1315,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
      * </pre>
      *
-     * <code>string service = 105105077;</code>
+     * <code>string service = 373540533;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -1284,7 +1325,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       service_ = value;
       onChanged();
       return this;

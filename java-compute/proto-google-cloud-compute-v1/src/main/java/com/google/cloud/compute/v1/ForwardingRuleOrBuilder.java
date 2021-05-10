@@ -31,7 +31,20 @@ public interface ForwardingRuleOrBuilder
    * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
    * </pre>
    *
-   * <code>bool all_ports = 176740340;</code>
+   * <code>bool all_ports = 445175796;</code>
+   *
+   * @return Whether the allPorts field is set.
+   */
+  boolean hasAllPorts();
+  /**
+   *
+   *
+   * <pre>
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
+   * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
+   * </pre>
+   *
+   * <code>bool all_ports = 445175796;</code>
    *
    * @return The allPorts.
    */
@@ -44,7 +57,19 @@ public interface ForwardingRuleOrBuilder
    * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
    * </pre>
    *
-   * <code>bool allow_global_access = 230974218;</code>
+   * <code>bool allow_global_access = 499409674;</code>
+   *
+   * @return Whether the allowGlobalAccess field is set.
+   */
+  boolean hasAllowGlobalAccess();
+  /**
+   *
+   *
+   * <pre>
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * </pre>
+   *
+   * <code>bool allow_global_access = 499409674;</code>
    *
    * @return The allowGlobalAccess.
    */
@@ -57,7 +82,19 @@ public interface ForwardingRuleOrBuilder
    * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
+   *
+   * @return Whether the backendService field is set.
+   */
+  boolean hasBackendService();
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
+   * </pre>
+   *
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The backendService.
    */
@@ -69,12 +106,24 @@ public interface ForwardingRuleOrBuilder
    * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 38510602;</code>
+   * <code>string backend_service = 306946058;</code>
    *
    * @return The bytes for backendService.
    */
   com.google.protobuf.ByteString getBackendServiceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp in RFC3339 text format.
+   * </pre>
+   *
+   * <code>string creation_timestamp = 30525366;</code>
+   *
+   * @return Whether the creationTimestamp field is set.
+   */
+  boolean hasCreationTimestamp();
   /**
    *
    *
@@ -107,7 +156,19 @@ public interface ForwardingRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional description of this resource. Provide this property when you create the resource.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -119,12 +180,25 @@ public interface ForwardingRuleOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
   /**
    *
    *
@@ -168,7 +242,28 @@ public interface ForwardingRuleOrBuilder
    * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 254156495;</code>
+   * <code>string i_p_address = 522591951;</code>
+   *
+   * @return Whether the iPAddress field is set.
+   */
+  boolean hasIPAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
+   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * </pre>
+   *
+   * <code>string i_p_address = 522591951;</code>
    *
    * @return The iPAddress.
    */
@@ -189,7 +284,7 @@ public interface ForwardingRuleOrBuilder
    * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 254156495;</code>
+   * <code>string i_p_address = 522591951;</code>
    *
    * @return The bytes for iPAddress.
    */
@@ -209,7 +304,26 @@ public interface ForwardingRuleOrBuilder
    * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+   *
+   * @return Whether the iPProtocol field is set.
+   */
+  boolean hasIPProtocol();
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
    *
    * @return The enum numeric value on the wire for iPProtocol.
    */
@@ -228,12 +342,24 @@ public interface ForwardingRuleOrBuilder
    * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
    *
    * @return The iPProtocol.
    */
   com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * </pre>
+   *
+   * <code>string id = 3355;</code>
+   *
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
   /**
    *
    *
@@ -266,7 +392,19 @@ public interface ForwardingRuleOrBuilder
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  boolean hasIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -278,7 +416,7 @@ public interface ForwardingRuleOrBuilder
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
    *
    * @return The ipVersion.
    */
@@ -293,10 +431,34 @@ public interface ForwardingRuleOrBuilder
    *
    * <code>bool is_mirroring_collector = 119255164;</code>
    *
+   * @return Whether the isMirroringCollector field is set.
+   */
+  boolean hasIsMirroringCollector();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
+   * </pre>
+   *
+   * <code>bool is_mirroring_collector = 119255164;</code>
+   *
    * @return The isMirroringCollector.
    */
   boolean getIsMirroringCollector();
 
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule resources.
+   * </pre>
+   *
+   * <code>string kind = 3292052;</code>
+   *
+   * @return Whether the kind field is set.
+   */
+  boolean hasKind();
   /**
    *
    *
@@ -342,7 +504,33 @@ public interface ForwardingRuleOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * </code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  boolean hasLoadBalancingScheme();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the forwarding rule type.
+   * - EXTERNAL is used for:
+   * - Classic Cloud VPN gateways
+   * - Protocol forwarding to VMs from an external IP address
+   * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
+   * - INTERNAL is used for:
+   * - Protocol forwarding to VMs from an internal IP address
+   * - Internal TCP/UDP Load Balancing
+   * - INTERNAL_MANAGED is used for:
+   * - Internal HTTP(S) Load Balancing
+   * - INTERNAL_SELF_MANAGED is used for:
+   * - Traffic Director
+   * For more information about forwarding rules, refer to Forwarding rule concepts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -368,7 +556,7 @@ public interface ForwardingRuleOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
    * </code>
    *
    * @return The loadBalancingScheme.
@@ -385,7 +573,7 @@ public interface ForwardingRuleOrBuilder
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList();
   /**
@@ -398,7 +586,7 @@ public interface ForwardingRuleOrBuilder
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index);
   /**
@@ -411,7 +599,7 @@ public interface ForwardingRuleOrBuilder
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   int getMetadataFiltersCount();
   /**
@@ -424,7 +612,7 @@ public interface ForwardingRuleOrBuilder
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
       getMetadataFiltersOrBuilderList();
@@ -438,10 +626,22 @@ public interface ForwardingRuleOrBuilder
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
   /**
    *
    *
@@ -467,6 +667,20 @@ public interface ForwardingRuleOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field is not used for external load balancing.
+   * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
   /**
    *
    *
@@ -505,7 +719,21 @@ public interface ForwardingRuleOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   *
+   * @return Whether the networkTier field is set.
+   */
+  boolean hasNetworkTier();
+  /**
+   *
+   *
+   * <pre>
+   * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD.
+   * For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM.
+   * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -519,12 +747,32 @@ public interface ForwardingRuleOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
    *
    * @return The networkTier.
    */
   com.google.cloud.compute.v1.ForwardingRule.NetworkTier getNetworkTier();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+   * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+   * Some types of forwarding target have constraints on the acceptable ports:
+   * - TargetHttpProxy: 80, 8080
+   * - TargetHttpsProxy: 443
+   * - TargetGrpcProxy: no constraints
+   * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+   * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
+   * - TargetVpnGateway: 500, 4500
+   * </pre>
+   *
+   * <code>string port_range = 217518079;</code>
+   *
+   * @return Whether the portRange field is set.
+   */
+  boolean hasPortRange();
   /**
    *
    *
@@ -642,6 +890,18 @@ public interface ForwardingRuleOrBuilder
    *
    * <code>string region = 138946292;</code>
    *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>string region = 138946292;</code>
+   *
    * @return The region.
    */
   java.lang.String getRegion();
@@ -665,7 +925,19 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
+   *
+   * @return Whether the selfLink field is set.
+   */
+  boolean hasSelfLink();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for the resource.
+   * </pre>
+   *
+   * <code>string self_link = 456214797;</code>
    *
    * @return The selfLink.
    */
@@ -677,7 +949,7 @@ public interface ForwardingRuleOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 187779341;</code>
+   * <code>string self_link = 456214797;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -692,7 +964,21 @@ public interface ForwardingRuleOrBuilder
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 148573418;</code>
+   * <code>string service_label = 417008874;</code>
+   *
+   * @return Whether the serviceLabel field is set.
+   */
+  boolean hasServiceLabel();
+  /**
+   *
+   *
+   * <pre>
+   * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
+   * The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * This field is only used for internal load balancing.
+   * </pre>
+   *
+   * <code>string service_label = 417008874;</code>
    *
    * @return The serviceLabel.
    */
@@ -706,7 +992,7 @@ public interface ForwardingRuleOrBuilder
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 148573418;</code>
+   * <code>string service_label = 417008874;</code>
    *
    * @return The bytes for serviceLabel.
    */
@@ -720,7 +1006,20 @@ public interface ForwardingRuleOrBuilder
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 91444693;</code>
+   * <code>string service_name = 359880149;</code>
+   *
+   * @return Whether the serviceName field is set.
+   */
+  boolean hasServiceName();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+   * This field is only used for internal load balancing.
+   * </pre>
+   *
+   * <code>string service_name = 359880149;</code>
    *
    * @return The serviceName.
    */
@@ -733,7 +1032,7 @@ public interface ForwardingRuleOrBuilder
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 91444693;</code>
+   * <code>string service_name = 359880149;</code>
    *
    * @return The bytes for serviceName.
    */
@@ -748,7 +1047,21 @@ public interface ForwardingRuleOrBuilder
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  boolean hasSubnetwork();
+  /**
+   *
+   *
+   * <pre>
+   * This field is only used for internal load balancing.
+   * For internal load balancing, this field identifies the subnetwork that the load balanced IP should belong to for this Forwarding Rule.
+   * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The subnetwork.
    */
@@ -762,12 +1075,27 @@ public interface ForwardingRuleOrBuilder
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 39392238;</code>
+   * <code>string subnetwork = 307827694;</code>
    *
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+   * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+   * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
+   * </pre>
+   *
+   * <code>string target = 192835985;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  boolean hasTarget();
   /**
    *
    *

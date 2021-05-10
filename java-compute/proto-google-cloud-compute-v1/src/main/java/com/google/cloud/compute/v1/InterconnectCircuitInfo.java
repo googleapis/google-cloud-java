@@ -62,6 +62,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,22 +76,22 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
           case 230174874:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               customerDemarcId_ = s;
-              break;
-            }
-          case 1438086514:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              googleDemarcId_ = s;
               break;
             }
           case 2096117690:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               googleCircuitId_ = s;
+              break;
+            }
+          case -709397134:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              googleDemarcId_ = s;
               break;
             }
           default:
@@ -127,8 +128,24 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.InterconnectCircuitInfo.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CUSTOMER_DEMARC_ID_FIELD_NUMBER = 28771859;
   private volatile java.lang.Object customerDemarcId_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer-side demarc ID for this circuit.
+   * </pre>
+   *
+   * <code>string customer_demarc_id = 28771859;</code>
+   *
+   * @return Whether the customerDemarcId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomerDemarcId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -187,6 +204,21 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    *
    * <code>string google_circuit_id = 262014711;</code>
    *
+   * @return Whether the googleCircuitId field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleCircuitId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
+   * </pre>
+   *
+   * <code>string google_circuit_id = 262014711;</code>
+   *
    * @return The googleCircuitId.
    */
   @java.lang.Override
@@ -225,7 +257,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     }
   }
 
-  public static final int GOOGLE_DEMARC_ID_FIELD_NUMBER = 179760814;
+  public static final int GOOGLE_DEMARC_ID_FIELD_NUMBER = 448196270;
   private volatile java.lang.Object googleDemarcId_;
   /**
    *
@@ -234,7 +266,22 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 179760814;</code>
+   * <code>string google_demarc_id = 448196270;</code>
+   *
+   * @return Whether the googleDemarcId field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleDemarcId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+   * </pre>
+   *
+   * <code>string google_demarc_id = 448196270;</code>
    *
    * @return The googleDemarcId.
    */
@@ -257,7 +304,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 179760814;</code>
+   * <code>string google_demarc_id = 448196270;</code>
    *
    * @return The bytes for googleDemarcId.
    */
@@ -288,14 +335,14 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCustomerDemarcIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28771859, customerDemarcId_);
     }
-    if (!getGoogleDemarcIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 179760814, googleDemarcId_);
-    }
-    if (!getGoogleCircuitIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 262014711, googleCircuitId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 448196270, googleDemarcId_);
     }
     unknownFields.writeTo(output);
   }
@@ -306,14 +353,14 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getCustomerDemarcIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28771859, customerDemarcId_);
     }
-    if (!getGoogleDemarcIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(179760814, googleDemarcId_);
-    }
-    if (!getGoogleCircuitIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(262014711, googleCircuitId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(448196270, googleDemarcId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -331,9 +378,18 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.InterconnectCircuitInfo other =
         (com.google.cloud.compute.v1.InterconnectCircuitInfo) obj;
 
-    if (!getCustomerDemarcId().equals(other.getCustomerDemarcId())) return false;
-    if (!getGoogleCircuitId().equals(other.getGoogleCircuitId())) return false;
-    if (!getGoogleDemarcId().equals(other.getGoogleDemarcId())) return false;
+    if (hasCustomerDemarcId() != other.hasCustomerDemarcId()) return false;
+    if (hasCustomerDemarcId()) {
+      if (!getCustomerDemarcId().equals(other.getCustomerDemarcId())) return false;
+    }
+    if (hasGoogleCircuitId() != other.hasGoogleCircuitId()) return false;
+    if (hasGoogleCircuitId()) {
+      if (!getGoogleCircuitId().equals(other.getGoogleCircuitId())) return false;
+    }
+    if (hasGoogleDemarcId() != other.hasGoogleDemarcId()) return false;
+    if (hasGoogleDemarcId()) {
+      if (!getGoogleDemarcId().equals(other.getGoogleDemarcId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -345,12 +401,18 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CUSTOMER_DEMARC_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCustomerDemarcId().hashCode();
-    hash = (37 * hash) + GOOGLE_CIRCUIT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGoogleCircuitId().hashCode();
-    hash = (37 * hash) + GOOGLE_DEMARC_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGoogleDemarcId().hashCode();
+    if (hasCustomerDemarcId()) {
+      hash = (37 * hash) + CUSTOMER_DEMARC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerDemarcId().hashCode();
+    }
+    if (hasGoogleCircuitId()) {
+      hash = (37 * hash) + GOOGLE_CIRCUIT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleCircuitId().hashCode();
+    }
+    if (hasGoogleDemarcId()) {
+      hash = (37 * hash) + GOOGLE_DEMARC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleDemarcId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -497,11 +559,11 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       customerDemarcId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       googleCircuitId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       googleDemarcId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -529,9 +591,21 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.InterconnectCircuitInfo buildPartial() {
       com.google.cloud.compute.v1.InterconnectCircuitInfo result =
           new com.google.cloud.compute.v1.InterconnectCircuitInfo(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.customerDemarcId_ = customerDemarcId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
       result.googleCircuitId_ = googleCircuitId_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.googleDemarcId_ = googleDemarcId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -582,15 +656,18 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.InterconnectCircuitInfo other) {
       if (other == com.google.cloud.compute.v1.InterconnectCircuitInfo.getDefaultInstance())
         return this;
-      if (!other.getCustomerDemarcId().isEmpty()) {
+      if (other.hasCustomerDemarcId()) {
+        bitField0_ |= 0x00000001;
         customerDemarcId_ = other.customerDemarcId_;
         onChanged();
       }
-      if (!other.getGoogleCircuitId().isEmpty()) {
+      if (other.hasGoogleCircuitId()) {
+        bitField0_ |= 0x00000002;
         googleCircuitId_ = other.googleCircuitId_;
         onChanged();
       }
-      if (!other.getGoogleDemarcId().isEmpty()) {
+      if (other.hasGoogleDemarcId()) {
+        bitField0_ |= 0x00000004;
         googleDemarcId_ = other.googleDemarcId_;
         onChanged();
       }
@@ -624,7 +701,23 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object customerDemarcId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Customer-side demarc ID for this circuit.
+     * </pre>
+     *
+     * <code>string customer_demarc_id = 28771859;</code>
+     *
+     * @return Whether the customerDemarcId field is set.
+     */
+    public boolean hasCustomerDemarcId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -685,7 +778,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       customerDemarcId_ = value;
       onChanged();
       return this;
@@ -702,7 +795,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCustomerDemarcId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       customerDemarcId_ = getDefaultInstance().getCustomerDemarcId();
       onChanged();
       return this;
@@ -724,13 +817,27 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       customerDemarcId_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object googleCircuitId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
+     * </pre>
+     *
+     * <code>string google_circuit_id = 262014711;</code>
+     *
+     * @return Whether the googleCircuitId field is set.
+     */
+    public boolean hasGoogleCircuitId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
     /**
      *
      *
@@ -791,7 +898,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       googleCircuitId_ = value;
       onChanged();
       return this;
@@ -808,7 +915,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearGoogleCircuitId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       googleCircuitId_ = getDefaultInstance().getGoogleCircuitId();
       onChanged();
       return this;
@@ -830,7 +937,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       googleCircuitId_ = value;
       onChanged();
       return this;
@@ -844,7 +951,21 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 179760814;</code>
+     * <code>string google_demarc_id = 448196270;</code>
+     *
+     * @return Whether the googleDemarcId field is set.
+     */
+    public boolean hasGoogleDemarcId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * </pre>
+     *
+     * <code>string google_demarc_id = 448196270;</code>
      *
      * @return The googleDemarcId.
      */
@@ -866,7 +987,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 179760814;</code>
+     * <code>string google_demarc_id = 448196270;</code>
      *
      * @return The bytes for googleDemarcId.
      */
@@ -888,7 +1009,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 179760814;</code>
+     * <code>string google_demarc_id = 448196270;</code>
      *
      * @param value The googleDemarcId to set.
      * @return This builder for chaining.
@@ -897,7 +1018,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       googleDemarcId_ = value;
       onChanged();
       return this;
@@ -909,12 +1030,12 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 179760814;</code>
+     * <code>string google_demarc_id = 448196270;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoogleDemarcId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       googleDemarcId_ = getDefaultInstance().getGoogleDemarcId();
       onChanged();
       return this;
@@ -926,7 +1047,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
      * </pre>
      *
-     * <code>string google_demarc_id = 179760814;</code>
+     * <code>string google_demarc_id = 448196270;</code>
      *
      * @param value The bytes for googleDemarcId to set.
      * @return This builder for chaining.
@@ -936,7 +1057,7 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       googleDemarcId_ = value;
       onChanged();
       return this;

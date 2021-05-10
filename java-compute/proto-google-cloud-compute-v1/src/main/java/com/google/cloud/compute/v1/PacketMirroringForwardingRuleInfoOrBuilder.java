@@ -30,7 +30,19 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * [Output Only] Unique identifier for the forwarding rule; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
+   *
+   * @return Whether the canonicalUrl field is set.
+   */
+  boolean hasCanonicalUrl();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+   * </pre>
+   *
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The canonicalUrl.
    */
@@ -42,12 +54,24 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * [Output Only] Unique identifier for the forwarding rule; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 243859364;</code>
+   * <code>string canonical_url = 512294820;</code>
    *
    * @return The bytes for canonicalUrl.
    */
   com.google.protobuf.ByteString getCanonicalUrlBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+   * </pre>
+   *
+   * <code>string url = 116079;</code>
+   *
+   * @return Whether the url field is set.
+   */
+  boolean hasUrl();
   /**
    *
    *

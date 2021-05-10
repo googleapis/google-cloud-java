@@ -61,6 +61,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -71,7 +72,21 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case 51651138:
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case -2095832510:
             {
               com.google.cloud.compute.v1.SslPolicy.Builder subBuilder = null;
               if (sslPolicyResource_ != null) {
@@ -85,20 +100,6 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
                 sslPolicyResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
               break;
             }
           default:
@@ -135,6 +136,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.InsertSslPolicyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -197,6 +199,23 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string request_id = 37109963;</code>
    *
+   * @return Whether the requestId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 37109963;</code>
+   *
    * @return The requestId.
    */
   @java.lang.Override
@@ -237,7 +256,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 6456392;
+  public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 274891848;
   private com.google.cloud.compute.v1.SslPolicy sslPolicyResource_;
   /**
    *
@@ -247,7 +266,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the sslPolicyResource field is set.
@@ -264,7 +283,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The sslPolicyResource.
@@ -283,7 +302,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -305,14 +324,14 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (sslPolicyResource_ != null) {
-      output.writeMessage(6456392, getSslPolicyResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (sslPolicyResource_ != null) {
+      output.writeMessage(274891848, getSslPolicyResource());
     }
     unknownFields.writeTo(output);
   }
@@ -323,15 +342,16 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (sslPolicyResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(6456392, getSslPolicyResource());
-    }
-    if (!getRequestIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (sslPolicyResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              274891848, getSslPolicyResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -350,7 +370,10 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
         (com.google.cloud.compute.v1.InsertSslPolicyRequest) obj;
 
     if (!getProject().equals(other.getProject())) return false;
-    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasRequestId() != other.hasRequestId()) return false;
+    if (hasRequestId()) {
+      if (!getRequestId().equals(other.getRequestId())) return false;
+    }
     if (hasSslPolicyResource() != other.hasSslPolicyResource()) return false;
     if (hasSslPolicyResource()) {
       if (!getSslPolicyResource().equals(other.getSslPolicyResource())) return false;
@@ -368,8 +391,10 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRequestId().hashCode();
+    if (hasRequestId()) {
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+    }
     if (hasSslPolicyResource()) {
       hash = (37 * hash) + SSL_POLICY_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSslPolicyResource().hashCode();
@@ -522,7 +547,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
       project_ = "";
 
       requestId_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (sslPolicyResourceBuilder_ == null) {
         sslPolicyResource_ = null;
       } else {
@@ -556,13 +581,19 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InsertSslPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.InsertSslPolicyRequest result =
           new com.google.cloud.compute.v1.InsertSslPolicyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.requestId_ = requestId_;
       if (sslPolicyResourceBuilder_ == null) {
         result.sslPolicyResource_ = sslPolicyResource_;
       } else {
         result.sslPolicyResource_ = sslPolicyResourceBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -617,7 +648,8 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
         project_ = other.project_;
         onChanged();
       }
-      if (!other.getRequestId().isEmpty()) {
+      if (other.hasRequestId()) {
+        bitField0_ |= 0x00000001;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -653,6 +685,8 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -772,6 +806,22 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string request_id = 37109963;</code>
      *
+     * @return Whether the requestId field is set.
+     */
+    public boolean hasRequestId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+     * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 37109963;</code>
+     *
      * @return The requestId.
      */
     public java.lang.String getRequestId() {
@@ -827,7 +877,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -846,7 +896,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -870,7 +920,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000001;
       requestId_ = value;
       onChanged();
       return this;
@@ -890,7 +940,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the sslPolicyResource field is set.
@@ -906,7 +956,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The sslPolicyResource.
@@ -928,7 +978,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyResource(com.google.cloud.compute.v1.SslPolicy value) {
@@ -952,7 +1002,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyResource(
@@ -974,7 +1024,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSslPolicyResource(com.google.cloud.compute.v1.SslPolicy value) {
@@ -1002,7 +1052,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSslPolicyResource() {
@@ -1024,7 +1074,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicy.Builder getSslPolicyResourceBuilder() {
@@ -1040,7 +1090,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder() {
@@ -1060,7 +1110,7 @@ public final class InsertSslPolicyRequest extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

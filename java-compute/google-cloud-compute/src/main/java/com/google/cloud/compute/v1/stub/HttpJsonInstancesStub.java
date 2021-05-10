@@ -136,7 +136,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   ProtoRestSerializer.create();
                               serializer.putQueryParam(
                                   fields, "networkInterface", request.getNetworkInterface());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -189,7 +192,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AddResourcePoliciesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -241,17 +247,30 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AggregatedListInstancesRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "includeAllScopes", request.getIncludeAllScopes());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasIncludeAllScopes()) {
+                                serializer.putQueryParam(
+                                    fields, "includeAllScopes", request.getIncludeAllScopes());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -300,9 +319,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<AttachDiskInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "forceAttach", request.getForceAttach());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasForceAttach()) {
+                                serializer.putQueryParam(
+                                    fields, "forceAttach", request.getForceAttach());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -350,7 +374,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<DeleteInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -405,7 +431,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   fields, "accessConfig", request.getAccessConfig());
                               serializer.putQueryParam(
                                   fields, "networkInterface", request.getNetworkInterface());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -456,7 +485,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   ProtoRestSerializer.create();
                               serializer.putQueryParam(
                                   fields, "deviceName", request.getDeviceName());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -553,9 +585,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetGuestAttributesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "queryPath", request.getQueryPath());
-                              serializer.putQueryParam(
-                                  fields, "variableKey", request.getVariableKey());
+                              if (request.hasQueryPath()) {
+                                serializer.putQueryParam(
+                                    fields, "queryPath", request.getQueryPath());
+                              }
+                              if (request.hasVariableKey()) {
+                                serializer.putQueryParam(
+                                    fields, "variableKey", request.getVariableKey());
+                              }
                               return fields;
                             }
                           })
@@ -605,10 +642,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetIamPolicyInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields,
-                                  "optionsRequestedPolicyVersion",
-                                  request.getOptionsRequestedPolicyVersion());
+                              if (request.hasOptionsRequestedPolicyVersion()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "optionsRequestedPolicyVersion",
+                                    request.getOptionsRequestedPolicyVersion());
+                              }
                               return fields;
                             }
                           })
@@ -709,8 +748,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<GetSerialPortOutputInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "port", request.getPort());
-                              serializer.putQueryParam(fields, "start", request.getStart());
+                              if (request.hasPort()) {
+                                serializer.putQueryParam(fields, "port", request.getPort());
+                              }
+                              if (request.hasStart()) {
+                                serializer.putQueryParam(fields, "start", request.getStart());
+                              }
                               return fields;
                             }
                           })
@@ -812,11 +855,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<InsertInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
-                          serializer.putQueryParam(
-                              fields,
-                              "sourceInstanceTemplate",
-                              request.getSourceInstanceTemplate());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
+                          if (request.hasSourceInstanceTemplate()) {
+                            serializer.putQueryParam(
+                                fields,
+                                "sourceInstanceTemplate",
+                                request.getSourceInstanceTemplate());
+                          }
                           return fields;
                         }
                       })
@@ -862,12 +909,22 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<ListInstancesRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "filter", request.getFilter());
-                          serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
-                          serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                          serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                          serializer.putQueryParam(
-                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                          if (request.hasFilter()) {
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                          }
+                          if (request.hasMaxResults()) {
+                            serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
+                          }
+                          if (request.hasOrderBy()) {
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                          }
+                          if (request.hasPageToken()) {
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                          }
+                          if (request.hasReturnPartialSuccess()) {
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                          }
                           return fields;
                         }
                       })
@@ -918,15 +975,26 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<ListReferrersInstancesRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "filter", request.getFilter());
-                              serializer.putQueryParam(
-                                  fields, "maxResults", request.getMaxResults());
-                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
-                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
+                              if (request.hasFilter()) {
+                                serializer.putQueryParam(fields, "filter", request.getFilter());
+                              }
+                              if (request.hasMaxResults()) {
+                                serializer.putQueryParam(
+                                    fields, "maxResults", request.getMaxResults());
+                              }
+                              if (request.hasOrderBy()) {
+                                serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                              }
+                              if (request.hasPageToken()) {
+                                serializer.putQueryParam(
+                                    fields, "pageToken", request.getPageToken());
+                              }
+                              if (request.hasReturnPartialSuccess()) {
+                                serializer.putQueryParam(
+                                    fields,
+                                    "returnPartialSuccess",
+                                    request.getReturnPartialSuccess());
+                              }
                               return fields;
                             }
                           })
@@ -977,7 +1045,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<RemoveResourcePoliciesInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1026,7 +1097,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<ResetInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -1077,9 +1150,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetDeletionProtectionInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(
-                                  fields, "deletionProtection", request.getDeletionProtection());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasDeletionProtection()) {
+                                serializer.putQueryParam(
+                                    fields, "deletionProtection", request.getDeletionProtection());
+                              }
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1134,7 +1212,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   fields, "autoDelete", request.getAutoDelete());
                               serializer.putQueryParam(
                                   fields, "deviceName", request.getDeviceName());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1236,7 +1317,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetLabelsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1290,7 +1374,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetMachineResourcesInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1344,7 +1431,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetMachineTypeInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1396,7 +1486,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetMetadataInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1448,7 +1541,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetMinCpuPlatformInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1501,7 +1597,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetSchedulingInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1553,7 +1652,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetServiceAccountInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1613,7 +1715,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetShieldedInstanceIntegrityPolicyInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1666,7 +1771,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<SetTagsInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1765,7 +1873,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<StartInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -1816,7 +1926,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<StartWithEncryptionKeyInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -1865,7 +1978,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<StopInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -1967,13 +2082,19 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           Map<String, List<String>> fields = new HashMap<>();
                           ProtoRestSerializer<UpdateInstanceRequest> serializer =
                               ProtoRestSerializer.create();
-                          serializer.putQueryParam(
-                              fields, "minimalAction", request.getMinimalAction());
-                          serializer.putQueryParam(
-                              fields,
-                              "mostDisruptiveAllowedAction",
-                              request.getMostDisruptiveAllowedAction());
-                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          if (request.hasMinimalAction()) {
+                            serializer.putQueryParam(
+                                fields, "minimalAction", request.getMinimalAction());
+                          }
+                          if (request.hasMostDisruptiveAllowedAction()) {
+                            serializer.putQueryParam(
+                                fields,
+                                "mostDisruptiveAllowedAction",
+                                request.getMostDisruptiveAllowedAction());
+                          }
+                          if (request.hasRequestId()) {
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                          }
                           return fields;
                         }
                       })
@@ -2027,7 +2148,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   ProtoRestSerializer.create();
                               serializer.putQueryParam(
                                   fields, "networkInterface", request.getNetworkInterface());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -2080,7 +2204,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateDisplayDeviceInstanceRequest> serializer =
                                   ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -2135,7 +2262,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   serializer = ProtoRestSerializer.create();
                               serializer.putQueryParam(
                                   fields, "networkInterface", request.getNetworkInterface());
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })
@@ -2191,7 +2321,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               Map<String, List<String>> fields = new HashMap<>();
                               ProtoRestSerializer<UpdateShieldedInstanceConfigInstanceRequest>
                                   serializer = ProtoRestSerializer.create();
-                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
                               return fields;
                             }
                           })

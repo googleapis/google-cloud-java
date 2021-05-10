@@ -30,7 +30,19 @@ public interface InstancePropertiesOrBuilder
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 199295868;</code>
+   * <code>bool can_ip_forward = 467731324;</code>
+   *
+   * @return Whether the canIpForward field is set.
+   */
+  boolean hasCanIpForward();
+  /**
+   *
+   *
+   * <pre>
+   * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 467731324;</code>
    *
    * @return The canIpForward.
    */
@@ -44,7 +56,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -58,7 +70,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -72,7 +84,7 @@ public interface InstancePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
    * </code>
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -85,7 +97,19 @@ public interface InstancePropertiesOrBuilder
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+  /**
+   *
+   *
+   * <pre>
+   * An optional text description for the instances that are created from these properties.
+   * </pre>
+   *
+   * <code>string description = 422937596;</code>
    *
    * @return The description.
    */
@@ -97,7 +121,7 @@ public interface InstancePropertiesOrBuilder
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 154502140;</code>
+   * <code>string description = 422937596;</code>
    *
    * @return The bytes for description.
    */
@@ -162,7 +186,7 @@ public interface InstancePropertiesOrBuilder
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
@@ -173,7 +197,7 @@ public interface InstancePropertiesOrBuilder
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
@@ -184,7 +208,7 @@ public interface InstancePropertiesOrBuilder
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   int getGuestAcceleratorsCount();
@@ -195,7 +219,7 @@ public interface InstancePropertiesOrBuilder
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -207,7 +231,7 @@ public interface InstancePropertiesOrBuilder
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(int index);
@@ -219,7 +243,7 @@ public interface InstancePropertiesOrBuilder
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
   /**
@@ -229,7 +253,7 @@ public interface InstancePropertiesOrBuilder
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -242,7 +266,7 @@ public interface InstancePropertiesOrBuilder
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -252,7 +276,7 @@ public interface InstancePropertiesOrBuilder
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -262,10 +286,22 @@ public interface InstancePropertiesOrBuilder
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 231759871;</code>
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * The machine type to use for instances that are created from these properties.
+   * </pre>
+   *
+   * <code>string machine_type = 227711026;</code>
+   *
+   * @return Whether the machineType field is set.
+   */
+  boolean hasMachineType();
   /**
    *
    *
@@ -326,6 +362,18 @@ public interface InstancePropertiesOrBuilder
    */
   com.google.cloud.compute.v1.MetadataOrBuilder getMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  boolean hasMinCpuPlatform();
   /**
    *
    *
@@ -403,6 +451,20 @@ public interface InstancePropertiesOrBuilder
    */
   com.google.cloud.compute.v1.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;
+   * </code>
+   *
+   * @return Whether the privateIpv6GoogleAccess field is set.
+   */
+  boolean hasPrivateIpv6GoogleAccess();
   /**
    *
    *
@@ -526,7 +588,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -538,7 +600,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    *
    * @return The scheduling.
    */
@@ -550,7 +612,7 @@ public interface InstancePropertiesOrBuilder
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
    */
   com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -561,7 +623,7 @@ public interface InstancePropertiesOrBuilder
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList();
   /**
@@ -571,7 +633,7 @@ public interface InstancePropertiesOrBuilder
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index);
   /**
@@ -581,7 +643,7 @@ public interface InstancePropertiesOrBuilder
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   int getServiceAccountsCount();
   /**
@@ -591,7 +653,7 @@ public interface InstancePropertiesOrBuilder
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
@@ -602,7 +664,7 @@ public interface InstancePropertiesOrBuilder
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
    */
   com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(int index);
 

@@ -60,6 +60,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,7 +74,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
           case 737788728:
             {
               int rawValue = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               instanceState_ = rawValue;
               break;
             }
@@ -238,8 +239,26 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState)
   }
 
+  private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
   private int instanceState_;
+  /**
+   *
+   *
+   * <pre>
+   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
+   * </code>
+   *
+   * @return Whether the instanceState field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceState() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -296,10 +315,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (instanceState_
-        != com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState
-            .UNDEFINED_INSTANCE_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(92223591, instanceState_);
     }
     unknownFields.writeTo(output);
@@ -311,10 +327,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (instanceState_
-        != com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState
-            .UNDEFINED_INSTANCE_STATE
-            .getNumber()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(92223591, instanceState_);
     }
     size += unknownFields.getSerializedSize();
@@ -333,7 +346,10 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest other =
         (com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest) obj;
 
-    if (instanceState_ != other.instanceState_) return false;
+    if (hasInstanceState() != other.hasInstanceState()) return false;
+    if (hasInstanceState()) {
+      if (instanceState_ != other.instanceState_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -345,8 +361,10 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + instanceState_;
+    if (hasInstanceState()) {
+      hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + instanceState_;
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -493,7 +511,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     public Builder clear() {
       super.clear();
       instanceState_ = 0;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -522,7 +540,13 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
     public com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.instanceState_ = instanceState_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -574,8 +598,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest.getDefaultInstance())
         return this;
-      if (other.instanceState_ != 0) {
-        setInstanceStateValue(other.getInstanceStateValue());
+      if (other.hasInstanceState()) {
+        setInstanceState(other.getInstanceState());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -608,7 +632,26 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private int instanceState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;
+     * </code>
+     *
+     * @return Whether the instanceState field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstanceState() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -641,7 +684,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setInstanceStateValue(int value) {
-
+      bitField0_ |= 0x00000001;
       instanceState_ = value;
       onChanged();
       return this;
@@ -690,7 +733,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       instanceState_ = value.getNumber();
       onChanged();
       return this;
@@ -709,7 +752,7 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearInstanceState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instanceState_ = 0;
       onChanged();
       return this;

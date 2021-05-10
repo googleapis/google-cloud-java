@@ -62,6 +62,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +77,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
             {
               com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.Builder
                   subBuilder = null;
-              if (httpCookie_ != null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = httpCookie_.toBuilder();
               }
               httpCookie_ =
@@ -88,20 +89,20 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
                 subBuilder.mergeFrom(httpCookie_);
                 httpCookie_ = subBuilder.buildPartial();
               }
-
+              bitField0_ |= 0x00000001;
               break;
             }
           case 1875045882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               minimumRingSize_ = s;
               break;
             }
           case 1878384178:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               httpHeaderName_ = s;
               break;
             }
@@ -139,6 +140,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
             com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HTTP_COOKIE_FIELD_NUMBER = 6673915;
   private com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie httpCookie_;
   /**
@@ -156,7 +158,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasHttpCookie() {
-    return httpCookie_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
@@ -192,11 +194,29 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookieOrBuilder
       getHttpCookieOrBuilder() {
-    return getHttpCookie();
+    return httpCookie_ == null
+        ? com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie
+            .getDefaultInstance()
+        : httpCookie_;
   }
 
   public static final int HTTP_HEADER_NAME_FIELD_NUMBER = 234798022;
   private volatile java.lang.Object httpHeaderName_;
+  /**
+   *
+   *
+   * <pre>
+   * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
+   * </pre>
+   *
+   * <code>string http_header_name = 234798022;</code>
+   *
+   * @return Whether the httpHeaderName field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpHeaderName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
   /**
    *
    *
@@ -246,6 +266,21 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
 
   public static final int MINIMUM_RING_SIZE_FIELD_NUMBER = 234380735;
   private volatile java.lang.Object minimumRingSize_;
+  /**
+   *
+   *
+   * <pre>
+   * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
+   * </pre>
+   *
+   * <code>string minimum_ring_size = 234380735;</code>
+   *
+   * @return Whether the minimumRingSize field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinimumRingSize() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
   /**
    *
    *
@@ -307,13 +342,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (httpCookie_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6673915, getHttpCookie());
     }
-    if (!getMinimumRingSizeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234380735, minimumRingSize_);
     }
-    if (!getHttpHeaderNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234798022, httpHeaderName_);
     }
     unknownFields.writeTo(output);
@@ -325,13 +360,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (httpCookie_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6673915, getHttpCookie());
     }
-    if (!getMinimumRingSizeBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234380735, minimumRingSize_);
     }
-    if (!getHttpHeaderNameBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234798022, httpHeaderName_);
     }
     size += unknownFields.getSerializedSize();
@@ -354,8 +389,14 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     if (hasHttpCookie()) {
       if (!getHttpCookie().equals(other.getHttpCookie())) return false;
     }
-    if (!getHttpHeaderName().equals(other.getHttpHeaderName())) return false;
-    if (!getMinimumRingSize().equals(other.getMinimumRingSize())) return false;
+    if (hasHttpHeaderName() != other.hasHttpHeaderName()) return false;
+    if (hasHttpHeaderName()) {
+      if (!getHttpHeaderName().equals(other.getHttpHeaderName())) return false;
+    }
+    if (hasMinimumRingSize() != other.hasMinimumRingSize()) return false;
+    if (hasMinimumRingSize()) {
+      if (!getMinimumRingSize().equals(other.getMinimumRingSize())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -371,10 +412,14 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       hash = (37 * hash) + HTTP_COOKIE_FIELD_NUMBER;
       hash = (53 * hash) + getHttpCookie().hashCode();
     }
-    hash = (37 * hash) + HTTP_HEADER_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getHttpHeaderName().hashCode();
-    hash = (37 * hash) + MINIMUM_RING_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getMinimumRingSize().hashCode();
+    if (hasHttpHeaderName()) {
+      hash = (37 * hash) + HTTP_HEADER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpHeaderName().hashCode();
+    }
+    if (hasMinimumRingSize()) {
+      hash = (37 * hash) + MINIMUM_RING_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimumRingSize().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -515,7 +560,9 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getHttpCookieFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +571,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       if (httpCookieBuilder_ == null) {
         httpCookie_ = null;
       } else {
-        httpCookie_ = null;
-        httpCookieBuilder_ = null;
+        httpCookieBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       httpHeaderName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minimumRingSize_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -559,13 +606,25 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings buildPartial() {
       com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings result =
           new com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettings(this);
-      if (httpCookieBuilder_ == null) {
-        result.httpCookie_ = httpCookie_;
-      } else {
-        result.httpCookie_ = httpCookieBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (httpCookieBuilder_ == null) {
+          result.httpCookie_ = httpCookie_;
+        } else {
+          result.httpCookie_ = httpCookieBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.httpHeaderName_ = httpHeaderName_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
+      }
       result.minimumRingSize_ = minimumRingSize_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -620,11 +679,13 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       if (other.hasHttpCookie()) {
         mergeHttpCookie(other.getHttpCookie());
       }
-      if (!other.getHttpHeaderName().isEmpty()) {
+      if (other.hasHttpHeaderName()) {
+        bitField0_ |= 0x00000002;
         httpHeaderName_ = other.httpHeaderName_;
         onChanged();
       }
-      if (!other.getMinimumRingSize().isEmpty()) {
+      if (other.hasMinimumRingSize()) {
+        bitField0_ |= 0x00000004;
         minimumRingSize_ = other.minimumRingSize_;
         onChanged();
       }
@@ -659,6 +720,8 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie httpCookie_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie,
@@ -679,7 +742,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * @return Whether the httpCookie field is set.
      */
     public boolean hasHttpCookie() {
-      return httpCookieBuilder_ != null || httpCookie_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -727,7 +790,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       } else {
         httpCookieBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -750,7 +813,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       } else {
         httpCookieBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -767,7 +830,11 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
     public Builder mergeHttpCookie(
         com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie value) {
       if (httpCookieBuilder_ == null) {
-        if (httpCookie_ != null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && httpCookie_ != null
+            && httpCookie_
+                != com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie
+                    .getDefaultInstance()) {
           httpCookie_ =
               com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.newBuilder(
                       httpCookie_)
@@ -780,7 +847,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       } else {
         httpCookieBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -799,10 +866,9 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         httpCookie_ = null;
         onChanged();
       } else {
-        httpCookie_ = null;
-        httpCookieBuilder_ = null;
+        httpCookieBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -818,7 +884,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      */
     public com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie.Builder
         getHttpCookieBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHttpCookieFieldBuilder().getBuilder();
     }
@@ -882,6 +948,20 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      *
      * <code>string http_header_name = 234798022;</code>
      *
+     * @return Whether the httpHeaderName field is set.
+     */
+    public boolean hasHttpHeaderName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hash based on the value of the specified header field. This field is applicable if the sessionAffinity is set to HEADER_FIELD.
+     * </pre>
+     *
+     * <code>string http_header_name = 234798022;</code>
+     *
      * @return The httpHeaderName.
      */
     public java.lang.String getHttpHeaderName() {
@@ -933,7 +1013,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       httpHeaderName_ = value;
       onChanged();
       return this;
@@ -950,7 +1030,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearHttpHeaderName() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       httpHeaderName_ = getDefaultInstance().getHttpHeaderName();
       onChanged();
       return this;
@@ -972,13 +1052,27 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000002;
       httpHeaderName_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object minimumRingSize_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The minimum number of virtual nodes to use for the hash ring. Defaults to 1024. Larger ring sizes result in more granular load distributions. If the number of hosts in the load balancing pool is larger than the ring size, each host will be assigned a single virtual node.
+     * </pre>
+     *
+     * <code>string minimum_ring_size = 234380735;</code>
+     *
+     * @return Whether the minimumRingSize field is set.
+     */
+    public boolean hasMinimumRingSize() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
     /**
      *
      *
@@ -1039,7 +1133,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       minimumRingSize_ = value;
       onChanged();
       return this;
@@ -1056,7 +1150,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearMinimumRingSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       minimumRingSize_ = getDefaultInstance().getMinimumRingSize();
       onChanged();
       return this;
@@ -1078,7 +1172,7 @@ public final class ConsistentHashLoadBalancerSettings extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
+      bitField0_ |= 0x00000004;
       minimumRingSize_ = value;
       onChanged();
       return this;

@@ -58,6 +58,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,6 +71,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
             break;
           case 114135088:
             {
+              bitField0_ |= 0x00000001;
               enableDisplay_ = input.readBool();
               break;
             }
@@ -107,8 +109,24 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.DisplayDevice.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENABLE_DISPLAY_FIELD_NUMBER = 14266886;
   private boolean enableDisplay_;
+  /**
+   *
+   *
+   * <pre>
+   * Defines whether the instance has Display enabled.
+   * </pre>
+   *
+   * <code>bool enable_display = 14266886;</code>
+   *
+   * @return Whether the enableDisplay field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableDisplay() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    *
    *
@@ -139,7 +157,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (enableDisplay_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(14266886, enableDisplay_);
     }
     unknownFields.writeTo(output);
@@ -151,7 +169,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (enableDisplay_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14266886, enableDisplay_);
     }
     size += unknownFields.getSerializedSize();
@@ -170,7 +188,10 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.DisplayDevice other =
         (com.google.cloud.compute.v1.DisplayDevice) obj;
 
-    if (getEnableDisplay() != other.getEnableDisplay()) return false;
+    if (hasEnableDisplay() != other.hasEnableDisplay()) return false;
+    if (hasEnableDisplay()) {
+      if (getEnableDisplay() != other.getEnableDisplay()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +203,10 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENABLE_DISPLAY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDisplay());
+    if (hasEnableDisplay()) {
+      hash = (37 * hash) + ENABLE_DISPLAY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDisplay());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,7 +353,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       enableDisplay_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -358,7 +381,13 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.DisplayDevice buildPartial() {
       com.google.cloud.compute.v1.DisplayDevice result =
           new com.google.cloud.compute.v1.DisplayDevice(this);
-      result.enableDisplay_ = enableDisplay_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableDisplay_ = enableDisplay_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -408,7 +437,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.DisplayDevice other) {
       if (other == com.google.cloud.compute.v1.DisplayDevice.getDefaultInstance()) return this;
-      if (other.getEnableDisplay() != false) {
+      if (other.hasEnableDisplay()) {
         setEnableDisplay(other.getEnableDisplay());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -440,7 +469,24 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private boolean enableDisplay_;
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether the instance has Display enabled.
+     * </pre>
+     *
+     * <code>bool enable_display = 14266886;</code>
+     *
+     * @return Whether the enableDisplay field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableDisplay() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
     /**
      *
      *
@@ -469,7 +515,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEnableDisplay(boolean value) {
-
+      bitField0_ |= 0x00000001;
       enableDisplay_ = value;
       onChanged();
       return this;
@@ -486,7 +532,7 @@ public final class DisplayDevice extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableDisplay() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableDisplay_ = false;
       onChanged();
       return this;

@@ -31,7 +31,21 @@ public interface ReservationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;
+   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
+   * </code>
+   *
+   * @return Whether the consumeReservationType field is set.
+   */
+  boolean hasConsumeReservationType();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See  Consuming reserved instances for examples.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
    * </code>
    *
    * @return The enum numeric value on the wire for consumeReservationType.
@@ -45,7 +59,7 @@ public interface ReservationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;
+   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
    * </code>
    *
    * @return The consumeReservationType.
@@ -53,6 +67,18 @@ public interface ReservationAffinityOrBuilder
   com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType
       getConsumeReservationType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+   * </pre>
+   *
+   * <code>string key = 106079;</code>
+   *
+   * @return Whether the key field is set.
+   */
+  boolean hasKey();
   /**
    *
    *
