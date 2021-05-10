@@ -38,7 +38,7 @@ export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # V3 generates docfx yml from javadoc
 # generate yml
-mvn clean javadoc:aggregate-jar -B -q -P docFX
+mvn clean site -B -q -P docFX
 
 # copy README to docfx-yml dir and rename index.md
 cp README.md target/docfx-yml/index.md
@@ -49,6 +49,13 @@ pushd target/docfx-yml
 python3 -m docuploader create-metadata \
  --name ${NAME} \
  --version ${VERSION} \
+ --xrefs devsite://java/gax \
+ --xrefs devsite://java/google-cloud-core \
+ --xrefs devsite://java/api-common \
+ --xrefs devsite://java/proto-google-common-protos \
+ --xrefs devsite://java/google-api-client \
+ --xrefs devsite://java/google-http-client \
+ --xrefs devsite://java/protobuf \
  --language java
 
 # upload yml to production bucket
