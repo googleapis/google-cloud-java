@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-policy-troubleshooter.git",
-        "sha": "2e63594182b8889deb9fe66005c30087bd5d43f2"
+        "sha": "43da566961ce2ae93c205a6002b833556869f0e3"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8285c2b4cdbc3771d031ad91e1c4ec9e55fff45d"
+        "sha": "046994f491c02806aea60118e214a9edd67f5ab7"
       }
     }
   ],
