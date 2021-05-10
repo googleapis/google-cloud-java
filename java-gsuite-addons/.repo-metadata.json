@@ -1,0 +1,15 @@
+{
+  "name": "gsuite-addons",
+  "name_pretty": "Google Workspace Add-ons API",
+  "product_documentation": "https://developers.google.com/workspace/add-ons/overview",
+  "api_description": "are customized applications that integrate with Google Workspace productivity applications.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-gsuite-addons/latest/index.html",
+  "release_level": "ga",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-gsuite-addons",
+  "repo_short": "java-gsuite-addons",
+  "distribution_name": "com.google.cloud:google-cloud-gsuite-addons",
+  "api_id": "gsuite-addons.googleapis.com",
+  "requires_billing": true
+}
