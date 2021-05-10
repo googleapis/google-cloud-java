@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.0.0...v1.1.0) (2021-05-10)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-bom to v3.16.0 ([#348](https://www.github.com/googleapis/java-shared-dependencies/issues/348)) ([0aacfde](https://www.github.com/googleapis/java-shared-dependencies/commit/0aacfdeec70e30803734db8287c47e4fad5481ef))
+* update gax.version to v1.64.0 ([#345](https://www.github.com/googleapis/java-shared-dependencies/issues/345)) ([478bd35](https://www.github.com/googleapis/java-shared-dependencies/commit/478bd35296293e81c7e70157f50bfbebdc1bb54d))
+* update iam.version to v1.0.13 ([#343](https://www.github.com/googleapis/java-shared-dependencies/issues/343)) ([3637923](https://www.github.com/googleapis/java-shared-dependencies/commit/363792392b71deff5cc5731104b631122fba5e61))
+
 ## [1.0.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.21.1...v1.0.0) (2021-04-23)
 
 
