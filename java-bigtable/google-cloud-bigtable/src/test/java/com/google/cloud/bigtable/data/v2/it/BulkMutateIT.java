@@ -21,11 +21,13 @@ import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowControlEventStats;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -44,12 +46,14 @@ public class BulkMutateIT {
     // Set target latency really low so it'll trigger adjusting thresholds
     BigtableDataSettings.Builder builder =
         settings.toBuilder().enableBatchMutationLatencyBasedThrottling(2L);
-    BigtableDataClient client = BigtableDataClient.create(builder.build());
-    BatcherImpl batcher =
-        (BatcherImpl) client.newBulkMutationBatcher(testEnvRule.env().getTableId());
-    try {
+
+    try (BigtableDataClient client = BigtableDataClient.create(builder.build());
+        BatcherImpl<RowMutationEntry, Void, BulkMutation, Void> batcher =
+            (BatcherImpl<RowMutationEntry, Void, BulkMutation, Void>)
+                client.newBulkMutationBatcher(testEnvRule.env().getTableId())) {
       FlowControlEventStats events = batcher.getFlowController().getFlowControlEventStats();
-      long initialThreashold = batcher.getFlowController().getCurrentElementCountLimit();
+      long initialThreashold =
+          Objects.requireNonNull(batcher.getFlowController().getCurrentElementCountLimit());
       assertThat(batcher.getFlowController().getCurrentElementCountLimit())
           .isNotEqualTo(batcher.getFlowController().getMinElementCountLimit());
       assertThat(batcher.getFlowController().getCurrentElementCountLimit())
@@ -77,8 +81,6 @@ public class BulkMutateIT {
                   Query.create(testEnvRule.env().getTableId())
                       .rowKey(rowPrefix + "test-key" + initial));
       assertThat(row.getCells()).hasSize(1);
-    } finally {
-      batcher.close();
     }
   }
 }

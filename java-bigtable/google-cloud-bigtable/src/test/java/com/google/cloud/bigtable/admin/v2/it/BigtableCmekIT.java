@@ -33,7 +33,6 @@ import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.common.Status;
 import com.google.cloud.bigtable.common.Status.Code;
-import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableSet;
@@ -89,7 +88,7 @@ public class BigtableCmekIT {
     assertThat(kmsKeyName).isNotNull();
     assertThat(kmsKeyName).isNotEmpty();
 
-    instanceId = AbstractTestEnv.TEST_INSTANCE_PREFIX + Instant.now().getEpochSecond();
+    instanceId = testEnvRule.env().newPrefix();
     clusterId1 = instanceId + "-c1";
     clusterId2 = instanceId + "-c2";
     clusterId3 = instanceId + "-c3";

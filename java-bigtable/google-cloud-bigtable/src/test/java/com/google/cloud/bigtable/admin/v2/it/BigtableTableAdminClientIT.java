@@ -61,7 +61,7 @@ public class BigtableTableAdminClientIT {
   @Before
   public void setUp() {
     tableAdmin = testEnvRule.env().getTableAdminClient();
-    tableId = testEnvRule.env().generateTableId(testNameRule.getMethodName());
+    tableId = testEnvRule.env().newPrefix();
   }
 
   @After

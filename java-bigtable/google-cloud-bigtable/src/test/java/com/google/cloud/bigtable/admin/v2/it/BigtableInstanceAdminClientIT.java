@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.admin.v2.it;
 
-import static com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.TEST_APP_PREFIX;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
@@ -32,7 +31,6 @@ import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
-import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import java.util.List;
@@ -42,7 +40,6 @@ import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class BigtableInstanceAdminClientIT {
@@ -69,7 +66,7 @@ public class BigtableInstanceAdminClientIT {
 
   @Test
   public void appProfileTest() {
-    String testAppProfile = TEST_APP_PREFIX + Instant.now().getEpochSecond();
+    String testAppProfile = testEnvRule.env().newPrefix();
 
     AppProfile newlyCreatedAppProfile =
         client.createAppProfile(
@@ -118,8 +115,8 @@ public class BigtableInstanceAdminClientIT {
   /** To optimize test run time, instance & cluster creation is tested at the same time */
   @Test
   public void instanceAndClusterCreationDeletionTest() {
-    String newInstanceId = AbstractTestEnv.TEST_INSTANCE_PREFIX + Instant.now().getEpochSecond();
-    String newClusterId = newInstanceId + "-c1";
+    String newInstanceId = testEnvRule.env().newPrefix();
+    String newClusterId = newInstanceId;
 
     client.createInstance(
         CreateInstanceRequest.of(newInstanceId)
@@ -155,7 +152,7 @@ public class BigtableInstanceAdminClientIT {
   // This will avoid the need to copy any existing tables and will also reduce flakiness in case a
   // previous run failed to clean up a cluster in the secondary zone.
   private void clusterCreationDeletionTestHelper(String newInstanceId) {
-    String newClusterId = AbstractTestEnv.TEST_CLUSTER_PREFIX + Instant.now().getEpochSecond();
+    String newClusterId = testEnvRule.env().newPrefix();
     boolean isClusterDeleted = false;
     client.createCluster(
         CreateClusterRequest.of(newInstanceId, newClusterId)
