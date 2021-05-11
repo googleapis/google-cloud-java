@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.20.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.3...v1.20.4) (2021-05-11)
+
+
+### Bug Fixes
+
+* migrate json writer to use StreamWriterV2 ([#1058](https://www.github.com/googleapis/java-bigquerystorage/issues/1058)) ([586777f](https://www.github.com/googleapis/java-bigquerystorage/commit/586777f289f3dc84d2d6237463f128d278d2465f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#1061](https://www.github.com/googleapis/java-bigquerystorage/issues/1061)) ([d6c3146](https://www.github.com/googleapis/java-bigquerystorage/commit/d6c3146d21282d1e0724583f68a31184d2d7167b))
+
 ### [1.20.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.2...v1.20.3) (2021-05-04)
 
 
