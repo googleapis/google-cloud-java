@@ -96,7 +96,6 @@ public class GcpManagedChannel extends ManagedChannel {
   protected ChannelRef getChannelRef(@Nullable String key) {
 
     if (key != null && key != "") {
-      // System.out.println("affinity");
       synchronized (bindLock) {
         return affinityKeyToChannelRef.get(key);
       }
@@ -105,18 +104,16 @@ public class GcpManagedChannel extends ManagedChannel {
       int size = channelRefs.size();
       channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
 
-      // Create a new channel if the max size has not been reached.
-      if (size == 0 || (size < maxSize && channelRefs.get(0).getActiveStreamsCount() > 0)) {
+      // Create a new channel if the max size has not been reached and we reached the low watermark
+      // of active streams on every existing channel.
+      if (size == 0
+          || (size < maxSize
+              && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
         ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
         channelRefs.add(channelRef);
         return channelRef;
       }
       // Choose the channelRef that has the least busy delegate channel.
-
-      if (channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
-        return channelRefs.get(0);
-      }
-      // Otherwise return first ChannelRef.
       return channelRefs.get(0);
     }
   }
@@ -290,12 +287,12 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     // Get the channelPool parameters
-    if (apiConfig.getChannelPool().getMaxSize() != 0) {
+    if (apiConfig.getChannelPool().getMaxSize() > 0) {
       maxSize = apiConfig.getChannelPool().getMaxSize();
     }
-    if (apiConfig.getChannelPool().getMaxConcurrentStreamsLowWatermark() != 0) {
-      maxConcurrentStreamsLowWatermark =
-          apiConfig.getChannelPool().getMaxConcurrentStreamsLowWatermark();
+    final int lowWatermark = apiConfig.getChannelPool().getMaxConcurrentStreamsLowWatermark();
+    if (lowWatermark >= 0 && lowWatermark <= DEFAULT_MAX_STREAM) {
+      this.maxConcurrentStreamsLowWatermark = lowWatermark;
     }
     // Get method parameters.
     for (MethodConfig method : apiConfig.getMethodList()) {
