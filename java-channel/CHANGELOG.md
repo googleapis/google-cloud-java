@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-channel/compare/v2.1.0...v2.1.1) (2021-05-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#91](https://www.github.com/googleapis/java-channel/issues/91)) ([60ce7f7](https://www.github.com/googleapis/java-channel/commit/60ce7f785ac999dc9fd70659020a21e54784ff9b))
+
 ## [2.1.0](https://www.github.com/googleapis/java-channel/compare/v2.0.1...v2.1.0) (2021-04-23)
 
 
