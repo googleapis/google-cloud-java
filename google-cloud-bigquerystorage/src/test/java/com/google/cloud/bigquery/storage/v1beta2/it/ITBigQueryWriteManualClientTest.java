@@ -41,7 +41,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.threeten.bp.Duration;
 import org.threeten.bp.LocalDateTime;
 
 /** Integration tests for BigQuery Write API. */
@@ -178,54 +177,6 @@ public class ITBigQueryWriteManualClientTest {
     }
     dataBuilder.setRows(rows.build());
     return requestBuilder.setProtoRows(dataBuilder.build()).setWriteStream(streamName);
-  }
-
-  @Test
-  public void testBatchWriteWithCommittedStream()
-      throws IOException, InterruptedException, ExecutionException {
-    WriteStream writeStream =
-        client.createWriteStream(
-            CreateWriteStreamRequest.newBuilder()
-                .setParent(tableId)
-                .setWriteStream(
-                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
-                .build());
-    try (StreamWriter streamWriter =
-        StreamWriter.newBuilder(writeStream.getName())
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setRequestByteThreshold(1024 * 1024L) // 1 Mb
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(2))
-                    .build())
-            .build()) {
-      LOG.info("Sending one message");
-      ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build());
-      assertEquals(0, response.get().getAppendResult().getOffset().getValue());
-
-      LOG.info("Sending two more messages");
-      ApiFuture<AppendRowsResponse> response1 =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"bbb", "ccc"}).build());
-      ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(
-              createAppendRequest(writeStream.getName(), new String[] {"ddd"}).build());
-      assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
-      assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
-
-      TableResult result =
-          bigquery.listTableData(
-              tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
-      Iterator<FieldValueList> iter = result.getValues().iterator();
-      assertEquals("aaa", iter.next().get(0).getStringValue());
-      assertEquals("bbb", iter.next().get(0).getStringValue());
-      assertEquals("ccc", iter.next().get(0).getStringValue());
-      assertEquals("ddd", iter.next().get(0).getStringValue());
-      assertEquals(false, iter.hasNext());
-    }
   }
 
   ProtoRows CreateProtoRows(String[] messages) {
@@ -389,7 +340,6 @@ public class ITBigQueryWriteManualClientTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
-            .createDefaultStream()
             .build()) {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();

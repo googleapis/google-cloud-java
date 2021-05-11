@@ -104,7 +104,6 @@ public class ITBigQueryTimeEncoderTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, TABLE);
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
-            .createDefaultStream()
             .build()) {
       JSONObject row = new JSONObject();
       row.put("test_str", "Start of the day");

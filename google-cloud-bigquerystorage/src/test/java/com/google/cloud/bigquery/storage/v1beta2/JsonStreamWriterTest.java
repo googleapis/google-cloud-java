@@ -529,7 +529,6 @@ public class JsonStreamWriterTest {
                 .build());
     try (JsonStreamWriter writer =
         JsonStreamWriter.newBuilder(TEST_TABLE, v2Schema)
-            .createDefaultStream()
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build()) {
