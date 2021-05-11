@@ -121,6 +121,48 @@ public interface WebhookOrBuilder
    *
    *
    * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   *
+   * @return Whether the serviceDirectory field is set.
+   */
+  boolean hasServiceDirectory();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   *
+   * @return The serviceDirectory.
+   */
+  com.google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig getServiceDirectory();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfigOrBuilder
+      getServiceDirectoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Webhook execution timeout. Execution is considered failed if Dialogflow
    * doesn't receive a response from webhook at the end of the timeout period.
    * Defaults to 5 seconds, maximum allowed timeout is 30 seconds.

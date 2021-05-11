@@ -118,19 +118,19 @@ public final class SessionProto {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/dialogflow/cx/v3/session."
           + "proto\022\035google.cloud.dialogflow.cx.v3\032\034go"
-          + "ogle/api/annotations.proto\032\027google/api/c"
-          + "lient.proto\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\0320google/"
-          + "cloud/dialogflow/cx/v3/audio_config.prot"
-          + "o\032(google/cloud/dialogflow/cx/v3/flow.pr"
-          + "oto\032*google/cloud/dialogflow/cx/v3/inten"
-          + "t.proto\032(google/cloud/dialogflow/cx/v3/p"
-          + "age.proto\0324google/cloud/dialogflow/cx/v3"
-          + "/response_message.proto\0327google/cloud/di"
-          + "alogflow/cx/v3/session_entity_type.proto"
-          + "\032\036google/protobuf/duration.proto\032\034google"
-          + "/protobuf/struct.proto\032\027google/rpc/statu"
-          + "s.proto\032\030google/type/latlng.proto\"\253\002\n\023De"
+          + "ogle/api/annotations.proto\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\0320google/cloud/dialogflow/cx/v3/au"
+          + "dio_config.proto\032(google/cloud/dialogflo"
+          + "w/cx/v3/flow.proto\032*google/cloud/dialogf"
+          + "low/cx/v3/intent.proto\032(google/cloud/dia"
+          + "logflow/cx/v3/page.proto\0324google/cloud/d"
+          + "ialogflow/cx/v3/response_message.proto\0327"
+          + "google/cloud/dialogflow/cx/v3/session_en"
+          + "tity_type.proto\032\036google/protobuf/duratio"
+          + "n.proto\032\034google/protobuf/struct.proto\032\027g"
+          + "oogle/rpc/status.proto\032\030google/type/latl"
+          + "ng.proto\032\027google/api/client.proto\"\253\002\n\023De"
           + "tectIntentRequest\022:\n\007session\030\001 \001(\tB)\340A\002\372"
           + "A#\n!dialogflow.googleapis.com/Session\022D\n"
           + "\014query_params\030\002 \001(\0132..google.cloud.dialo"
@@ -296,7 +296,6 @@ public final class SessionProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.AudioConfigProto.getDescriptor(),
@@ -309,6 +308,7 @@ public final class SessionProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_DetectIntentRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -518,7 +518,6 @@ public final class SessionProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.AudioConfigProto.getDescriptor();
@@ -531,6 +530,7 @@ public final class SessionProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

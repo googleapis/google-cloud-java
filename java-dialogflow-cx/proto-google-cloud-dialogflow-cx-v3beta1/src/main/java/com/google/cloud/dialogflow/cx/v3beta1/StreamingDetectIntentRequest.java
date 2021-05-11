@@ -23,26 +23,21 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * The top-level message sent by the client to the
- * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
- * method.
+ * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
  * Multiple request messages should be sent in order:
  * 1.  The first message must contain
  * [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
- *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
- *     plus optionally
- *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params].
- *     If the client wants to receive an audio response, it should also contain
+ *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] plus optionally
+ *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params]. If the client
+ *     wants to receive an audio response, it should also contain
  *     [output_audio_config][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.output_audio_config].
- * 2.  If
- * [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
- * was set to
- *     [query_input.audio.config][google.cloud.dialogflow.cx.v3beta1.AudioInput.config],
- *     all subsequent messages must contain
- *     [query_input.audio.audio][google.cloud.dialogflow.cx.v3beta1.AudioInput.audio]
- *     to continue with Speech recognition. If you decide to rather detect an
- *     intent from text input after you already started Speech recognition,
- *     please send a message with
- *     [query_input.text][google.cloud.dialogflow.cx.v3beta1.QueryInput.text].
+ * 2.  If [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] was set to
+ *     [query_input.audio.config][google.cloud.dialogflow.cx.v3beta1.AudioInput.config], all subsequent messages
+ *     must contain [query_input.audio.audio][google.cloud.dialogflow.cx.v3beta1.AudioInput.audio] to continue with
+ *     Speech recognition.
+ *     If you decide to rather detect an intent from text
+ *     input after you already started Speech recognition, please send a message
+ *     with [query_input.text][google.cloud.dialogflow.cx.v3beta1.QueryInput.text].
  *     However, note that:
  *     * Dialogflow will bill you for the audio duration so far.
  *     * Dialogflow discards all Speech recognition results in favor of the
@@ -624,26 +619,21 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The top-level message sent by the client to the
-   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
-   * method.
+   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
    * Multiple request messages should be sent in order:
    * 1.  The first message must contain
    * [session][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.session],
-   *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
-   *     plus optionally
-   *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params].
-   *     If the client wants to receive an audio response, it should also contain
+   *     [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] plus optionally
+   *     [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params]. If the client
+   *     wants to receive an audio response, it should also contain
    *     [output_audio_config][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.output_audio_config].
-   * 2.  If
-   * [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
-   * was set to
-   *     [query_input.audio.config][google.cloud.dialogflow.cx.v3beta1.AudioInput.config],
-   *     all subsequent messages must contain
-   *     [query_input.audio.audio][google.cloud.dialogflow.cx.v3beta1.AudioInput.audio]
-   *     to continue with Speech recognition. If you decide to rather detect an
-   *     intent from text input after you already started Speech recognition,
-   *     please send a message with
-   *     [query_input.text][google.cloud.dialogflow.cx.v3beta1.QueryInput.text].
+   * 2.  If [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input] was set to
+   *     [query_input.audio.config][google.cloud.dialogflow.cx.v3beta1.AudioInput.config], all subsequent messages
+   *     must contain [query_input.audio.audio][google.cloud.dialogflow.cx.v3beta1.AudioInput.audio] to continue with
+   *     Speech recognition.
+   *     If you decide to rather detect an intent from text
+   *     input after you already started Speech recognition, please send a message
+   *     with [query_input.text][google.cloud.dialogflow.cx.v3beta1.QueryInput.text].
    *     However, note that:
    *     * Dialogflow will bill you for the audio duration so far.
    *     * Dialogflow discards all Speech recognition results in favor of the

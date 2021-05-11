@@ -27,10 +27,9 @@ public interface MatchOrBuilder
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * query. Some, not all fields are filled in this message, including but not
-   * limited to: `name` and `display_name`. Only filled for
-   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
+   * this message, including but not limited to: `name` and `display_name`. Only
+   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -42,10 +41,9 @@ public interface MatchOrBuilder
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * query. Some, not all fields are filled in this message, including but not
-   * limited to: `name` and `display_name`. Only filled for
-   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
+   * this message, including but not limited to: `name` and `display_name`. Only
+   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -57,10 +55,9 @@ public interface MatchOrBuilder
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * query. Some, not all fields are filled in this message, including but not
-   * limited to: `name` and `display_name`. Only filled for
-   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
+   * this message, including but not limited to: `name` and `display_name`. Only
+   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>

@@ -27,8 +27,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-   * provided as input, this field will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+   * will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -40,8 +40,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-   * provided as input, this field will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+   * will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -53,8 +53,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-   * provided as input, this field will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+   * will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -67,9 +67,9 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-   * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -82,9 +82,9 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-   * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -97,9 +97,9 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-   * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -113,8 +113,7 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language speech
-   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -127,8 +126,7 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language speech
-   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -141,8 +139,7 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If [natural language speech
-   * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
    * this field will contain the transcript for the audio.
    * </pre>
    *
@@ -156,8 +153,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-   * input, this field will contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+   * contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -169,8 +166,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-   * input, this field will contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+   * contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -182,8 +179,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-   * input, this field will contain a copy of the event name.
+   * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+   * contain a copy of the event name.
    * </pre>
    *
    * <code>string trigger_event = 6;</code>
@@ -253,9 +250,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -267,9 +263,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
@@ -281,9 +276,8 @@ public interface MatchIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>

@@ -129,6 +129,30 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 58:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder
+                  subBuilder = null;
+              if (webhookCase_ == 7) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+                            webhook_)
+                        .toBuilder();
+              }
+              webhook_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+                        webhook_);
+                webhook_ = subBuilder.buildPartial();
+              }
+              webhookCase_ = 7;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1662,6 +1686,1089 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ServiceDirectoryConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+     * `Location ID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The service.
+     */
+    java.lang.String getService();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+     * `Location ID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for service.
+     */
+    com.google.protobuf.ByteString getServiceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     *
+     * @return Whether the genericWebService field is set.
+     */
+    boolean hasGenericWebService();
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     *
+     * @return The genericWebService.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService getGenericWebService();
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder
+        getGenericWebServiceOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig}
+   */
+  public static final class ServiceDirectoryConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+      ServiceDirectoryConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ServiceDirectoryConfig.newBuilder() to construct.
+    private ServiceDirectoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ServiceDirectoryConfig() {
+      service_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ServiceDirectoryConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ServiceDirectoryConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                service_ = s;
+                break;
+              }
+            case 18:
+              {
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder
+                    subBuilder = null;
+                if (genericWebService_ != null) {
+                  subBuilder = genericWebService_.toBuilder();
+                }
+                genericWebService_ =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(genericWebService_);
+                  genericWebService_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder.class);
+    }
+
+    public static final int SERVICE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object service_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+     * `Location ID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The service.
+     */
+    @java.lang.Override
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        service_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+     * `Location ID` of the service directory must be the same as the location
+     * of the agent.
+     * </pre>
+     *
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for service.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceBytes() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        service_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GENERIC_WEB_SERVICE_FIELD_NUMBER = 2;
+    private com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService genericWebService_;
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     *
+     * @return Whether the genericWebService field is set.
+     */
+    @java.lang.Override
+    public boolean hasGenericWebService() {
+      return genericWebService_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     *
+     * @return The genericWebService.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService getGenericWebService() {
+      return genericWebService_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.getDefaultInstance()
+          : genericWebService_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Generic Service configuration of this webhook.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder
+        getGenericWebServiceOrBuilder() {
+      return getGenericWebService();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getServiceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
+      }
+      if (genericWebService_ != null) {
+        output.writeMessage(2, getGenericWebService());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getServiceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
+      }
+      if (genericWebService_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGenericWebService());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) obj;
+
+      if (!getService().equals(other.getService())) return false;
+      if (hasGenericWebService() != other.hasGenericWebService()) return false;
+      if (hasGenericWebService()) {
+        if (!getGenericWebService().equals(other.getGenericWebService())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+      if (hasGenericWebService()) {
+        hash = (37 * hash) + GENERIC_WEB_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getGenericWebService().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        service_ = "";
+
+        if (genericWebServiceBuilder_ == null) {
+          genericWebService_ = null;
+        } else {
+          genericWebService_ = null;
+          genericWebServiceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig(this);
+        result.service_ = service_;
+        if (genericWebServiceBuilder_ == null) {
+          result.genericWebService_ = genericWebService_;
+        } else {
+          result.genericWebService_ = genericWebServiceBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+                .getDefaultInstance()) return this;
+        if (!other.getService().isEmpty()) {
+          service_ = other.service_;
+          onChanged();
+        }
+        if (other.hasGenericWebService()) {
+          mergeGenericWebService(other.getGenericWebService());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object service_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+       * `Location ID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The service.
+       */
+      public java.lang.String getService() {
+        java.lang.Object ref = service_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          service_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+       * `Location ID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for service.
+       */
+      public com.google.protobuf.ByteString getServiceBytes() {
+        java.lang.Object ref = service_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          service_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+       * `Location ID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setService(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        service_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+       * `Location ID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearService() {
+
+        service_ = getDefaultInstance().getService();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of [Service
+       * Directory](https://cloud.google.com/service-directory) service.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/namespaces/&lt;Namespace ID&gt;/services/&lt;Service ID&gt;`.
+       * `Location ID` of the service directory must be the same as the location
+       * of the agent.
+       * </pre>
+       *
+       * <code>
+       * string service = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        service_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService genericWebService_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder>
+          genericWebServiceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       *
+       * @return Whether the genericWebService field is set.
+       */
+      public boolean hasGenericWebService() {
+        return genericWebServiceBuilder_ != null || genericWebService_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       *
+       * @return The genericWebService.
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+          getGenericWebService() {
+        if (genericWebServiceBuilder_ == null) {
+          return genericWebService_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .getDefaultInstance()
+              : genericWebService_;
+        } else {
+          return genericWebServiceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public Builder setGenericWebService(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService value) {
+        if (genericWebServiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          genericWebService_ = value;
+          onChanged();
+        } else {
+          genericWebServiceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public Builder setGenericWebService(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder
+              builderForValue) {
+        if (genericWebServiceBuilder_ == null) {
+          genericWebService_ = builderForValue.build();
+          onChanged();
+        } else {
+          genericWebServiceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public Builder mergeGenericWebService(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService value) {
+        if (genericWebServiceBuilder_ == null) {
+          if (genericWebService_ != null) {
+            genericWebService_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.newBuilder(
+                        genericWebService_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            genericWebService_ = value;
+          }
+          onChanged();
+        } else {
+          genericWebServiceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public Builder clearGenericWebService() {
+        if (genericWebServiceBuilder_ == null) {
+          genericWebService_ = null;
+          onChanged();
+        } else {
+          genericWebService_ = null;
+          genericWebServiceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder
+          getGenericWebServiceBuilder() {
+
+        onChanged();
+        return getGenericWebServiceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder
+          getGenericWebServiceOrBuilder() {
+        if (genericWebServiceBuilder_ != null) {
+          return genericWebServiceBuilder_.getMessageOrBuilder();
+        } else {
+          return genericWebService_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .getDefaultInstance()
+              : genericWebService_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Generic Service configuration of this webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService generic_web_service = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder>
+          getGenericWebServiceFieldBuilder() {
+        if (genericWebServiceBuilder_ == null) {
+          genericWebServiceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebServiceOrBuilder>(
+                  getGenericWebService(), getParentForChildren(), isClean());
+          genericWebService_ = null;
+        }
+        return genericWebServiceBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ServiceDirectoryConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ServiceDirectoryConfig>() {
+          @java.lang.Override
+          public ServiceDirectoryConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ServiceDirectoryConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ServiceDirectoryConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ServiceDirectoryConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int webhookCase_ = 0;
   private java.lang.Object webhook_;
 
@@ -1670,6 +2777,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GENERIC_WEB_SERVICE(4),
+    SERVICE_DIRECTORY(7),
     WEBHOOK_NOT_SET(0);
     private final int value;
 
@@ -1690,6 +2798,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 4:
           return GENERIC_WEB_SERVICE;
+        case 7:
+          return SERVICE_DIRECTORY;
         case 0:
           return WEBHOOK_NOT_SET;
         default:
@@ -1867,6 +2977,67 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.getDefaultInstance();
   }
 
+  public static final int SERVICE_DIRECTORY_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   *
+   * @return Whether the serviceDirectory field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceDirectory() {
+    return webhookCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   *
+   * @return The serviceDirectory.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+      getServiceDirectory() {
+    if (webhookCase_ == 7) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a [Service
+   * Directory](https://cloud.google.com/service-directory) service.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder
+      getServiceDirectoryOrBuilder() {
+    if (webhookCase_ == 7) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        .getDefaultInstance();
+  }
+
   public static final int TIMEOUT_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration timeout_;
   /**
@@ -1967,6 +3138,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     if (timeout_ != null) {
       output.writeMessage(6, getTimeout());
     }
+    if (webhookCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1992,6 +3167,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     }
     if (timeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTimeout());
+    }
+    if (webhookCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2021,6 +3201,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       case 4:
         if (!getGenericWebService().equals(other.getGenericWebService())) return false;
         break;
+      case 7:
+        if (!getServiceDirectory().equals(other.getServiceDirectory())) return false;
+        break;
       case 0:
       default:
     }
@@ -2049,6 +3232,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + GENERIC_WEB_SERVICE_FIELD_NUMBER;
         hash = (53 * hash) + getGenericWebService().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + SERVICE_DIRECTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceDirectory().hashCode();
         break;
       case 0:
       default:
@@ -2251,6 +3438,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           result.webhook_ = genericWebServiceBuilder_.build();
         }
       }
+      if (webhookCase_ == 7) {
+        if (serviceDirectoryBuilder_ == null) {
+          result.webhook_ = webhook_;
+        } else {
+          result.webhook_ = serviceDirectoryBuilder_.build();
+        }
+      }
       if (timeoutBuilder_ == null) {
         result.timeout_ = timeout_;
       } else {
@@ -2325,6 +3519,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         case GENERIC_WEB_SERVICE:
           {
             mergeGenericWebService(other.getGenericWebService());
+            break;
+          }
+        case SERVICE_DIRECTORY:
+          {
+            mergeServiceDirectory(other.getServiceDirectory());
             break;
           }
         case WEBHOOK_NOT_SET:
@@ -2833,6 +4032,256 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return genericWebServiceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder>
+        serviceDirectoryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     *
+     * @return Whether the serviceDirectory field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceDirectory() {
+      return webhookCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     *
+     * @return The serviceDirectory.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+        getServiceDirectory() {
+      if (serviceDirectoryBuilder_ == null) {
+        if (webhookCase_ == 7) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+            .getDefaultInstance();
+      } else {
+        if (webhookCase_ == 7) {
+          return serviceDirectoryBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    public Builder setServiceDirectory(
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig value) {
+      if (serviceDirectoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        webhook_ = value;
+        onChanged();
+      } else {
+        serviceDirectoryBuilder_.setMessage(value);
+      }
+      webhookCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    public Builder setServiceDirectory(
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder
+            builderForValue) {
+      if (serviceDirectoryBuilder_ == null) {
+        webhook_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceDirectoryBuilder_.setMessage(builderForValue.build());
+      }
+      webhookCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    public Builder mergeServiceDirectory(
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig value) {
+      if (serviceDirectoryBuilder_ == null) {
+        if (webhookCase_ == 7
+            && webhook_
+                != com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+                    .getDefaultInstance()) {
+          webhook_ =
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig)
+                          webhook_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          webhook_ = value;
+        }
+        onChanged();
+      } else {
+        if (webhookCase_ == 7) {
+          serviceDirectoryBuilder_.mergeFrom(value);
+        }
+        serviceDirectoryBuilder_.setMessage(value);
+      }
+      webhookCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    public Builder clearServiceDirectory() {
+      if (serviceDirectoryBuilder_ == null) {
+        if (webhookCase_ == 7) {
+          webhookCase_ = 0;
+          webhook_ = null;
+          onChanged();
+        }
+      } else {
+        if (webhookCase_ == 7) {
+          webhookCase_ = 0;
+          webhook_ = null;
+        }
+        serviceDirectoryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder
+        getServiceDirectoryBuilder() {
+      return getServiceDirectoryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder
+        getServiceDirectoryOrBuilder() {
+      if ((webhookCase_ == 7) && (serviceDirectoryBuilder_ != null)) {
+        return serviceDirectoryBuilder_.getMessageOrBuilder();
+      } else {
+        if (webhookCase_ == 7) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder>
+        getServiceDirectoryFieldBuilder() {
+      if (serviceDirectoryBuilder_ == null) {
+        if (!(webhookCase_ == 7)) {
+          webhook_ =
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig
+                  .getDefaultInstance();
+        }
+        serviceDirectoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig,
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfigOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig) webhook_,
+                getParentForChildren(),
+                isClean());
+        webhook_ = null;
+      }
+      webhookCase_ = 7;
+      onChanged();
+      ;
+      return serviceDirectoryBuilder_;
     }
 
     private com.google.protobuf.Duration timeout_;
