@@ -10,6 +10,7 @@
   "repo": "googleapis/java-service-usage",
   "repo_short": "java-service-usage",
   "distribution_name": "com.google.cloud:google-cloud-service-usage",
-  "api_id": "service-usage.googleapis.com",
-  "requires_billing": true
+  "api_id": "serviceusage.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
