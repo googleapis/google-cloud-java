@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-notification:0.121.11-beta:0.121.11-beta
+google-cloud-notification:0.121.11-beta:0.121.12-beta-SNAPSHOT
