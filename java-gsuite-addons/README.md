@@ -1,6 +1,6 @@
-# Service Usage API Client for Java
+# Google Workspace Add-ons API Client for Java
 
-Java idiomatic client for [Service Usage API][product-docs].
+Java idiomatic client for [Google Workspace Add-ons API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -19,19 +19,19 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-service-usage</artifactId>
+  <artifactId>google-cloud-gsuite-addons</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-service-usage:0.0.0'
+compile 'com.google.cloud:google-cloud-gsuite-addons:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-service-usage" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-gsuite-addons" % "0.0.0"
 ```
 
 ## Authentication
@@ -42,24 +42,24 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Service Usage API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Service Usage API.
+You will need a [Google Cloud Platform Console][developer-console] project with the Google Workspace Add-ons API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Workspace Add-ons API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-service-usage` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-service-usage` as a dependency in your code.
+You'll need to obtain the `google-cloud-gsuite-addons` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-gsuite-addons` as a dependency in your code.
 
-## About Service Usage API
+## About Google Workspace Add-ons API
 
 
-[Service Usage API][product-docs] are customized applications that integrate with Google Workspace productivity applications.
+[Google Workspace Add-ons API][product-docs] are customized applications that integrate with Google Workspace productivity applications.
 
-See the [Service Usage API client library docs][javadocs] to learn how to
-use this Service Usage API Client Library.
+See the [Google Workspace Add-ons API client library docs][javadocs] to learn how to
+use this Google Workspace Add-ons API Client Library.
 
 
 
@@ -72,7 +72,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Service Usage API uses gRPC for the transport layer.
+Google Workspace Add-ons API uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -115,29 +115,29 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://developers.google.com/workspace/add-ons/overview
-[javadocs]: https://googleapis.dev/java/google-cloud-service-usage/latest/index.html
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-service-usage/java11.html
+[javadocs]: https://googleapis.dev/java/google-cloud-gsuite-addons/latest/index.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gsuite-addons/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-service-usage.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-service-usage&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gsuite-addons.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-gsuite-addons&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-service-usage/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-service-usage/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-service-usage/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-gsuite-addons/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-gsuite-addons/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-gsuite-addons/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=service-usage.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=gsuite-addons.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
