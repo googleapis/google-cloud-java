@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.28.0](https://www.github.com/googleapis/java-speech/compare/v1.27.1...v1.28.0) (2021-05-11)
+
+
+### Features
+
+* add webm opus support ([#500](https://www.github.com/googleapis/java-speech/issues/500)) ([e496559](https://www.github.com/googleapis/java-speech/commit/e496559c17e00a1fb3989c6c38cb87a0453c5b29))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#515](https://www.github.com/googleapis/java-speech/issues/515)) ([43fa489](https://www.github.com/googleapis/java-speech/commit/43fa4896b1a20115c98cd6a037db7a93727b724f))
+
 ### [1.27.1](https://www.github.com/googleapis/java-speech/compare/v1.27.0...v1.27.1) (2021-04-23)
 
 
