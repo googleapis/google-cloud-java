@@ -19,9 +19,9 @@
 
   <developers>
     <developer>
-      <id>chingor</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
+      <id>neenushaji</id>
+      <name>Neenu Shaji</name>
+      <email>neenushaji@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>
@@ -105,6 +105,7 @@
     <module>grpc-google-cloud-gsuite-addons-v1</module>
     <module>proto-google-cloud-gsuite-addons-v1</module>
     <module>google-cloud-gsuite-addons-bom</module>
+    <module>proto-google-apps-script-type-protos</module>
   </modules>
 
   <reporting>

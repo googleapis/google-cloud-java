@@ -33,6 +33,11 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-apps-script-type-protos</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>

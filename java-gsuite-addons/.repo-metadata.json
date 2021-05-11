@@ -10,6 +10,7 @@
   "repo": "googleapis/java-gsuite-addons",
   "repo_short": "java-gsuite-addons",
   "distribution_name": "com.google.cloud:google-cloud-gsuite-addons",
-  "api_id": "gsuite-addons.googleapis.com",
-  "requires_billing": true
+  "api_id": "gsuiteaddons.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
