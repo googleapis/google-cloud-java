@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.18](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.17...v1.0.18) (2021-05-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#423](https://www.github.com/googleapis/java-accessapproval/issues/423)) ([66d6f24](https://www.github.com/googleapis/java-accessapproval/commit/66d6f241f05755637c8adb657ea91487cb6167e7))
+
 ### [1.0.17](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.16...v1.0.17) (2021-04-27)
 
 
