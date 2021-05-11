@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-datastore:1.106.3:1.106.4-SNAPSHOT
-google-cloud-datastore-bom:1.106.3:1.106.4-SNAPSHOT
-google-cloud-datastore-parent:1.106.3:1.106.4-SNAPSHOT
-proto-google-cloud-datastore-v1:0.89.3:0.89.4-SNAPSHOT
+google-cloud-datastore:1.106.4:1.106.4
+google-cloud-datastore-bom:1.106.4:1.106.4
+google-cloud-datastore-parent:1.106.4:1.106.4
+proto-google-cloud-datastore-v1:0.89.4:0.89.4
 
