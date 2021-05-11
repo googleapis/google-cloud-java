@@ -4,12 +4,13 @@
   "product_documentation": "https://cloud.google.com/dataproc-metastore/docs",
   "api_description": "is a fully managed, highly available, autoscaled, autohealing, OSS-native metastore service that greatly simplifies technical metadata management. Dataproc Metastore service is based on Apache Hive metastore and serves as a critical component towards enterprise data lakes.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-dataproc-metastore/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-dataproc-metastore",
   "repo_short": "java-dataproc-metastore",
   "distribution_name": "com.google.cloud:google-cloud-dataproc-metastore",
-  "api_id": "dataproc-metastore.googleapis.com",
-  "requires_billing": true
+  "api_id": "metastore.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
