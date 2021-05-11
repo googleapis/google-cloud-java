@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.api.serviceusage.v1beta1",
+  "libraryPackage": "com.google.api.serviceusage.v1beta1",
+  "services": {
+    "ServiceUsage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceUsageClient",
+          "rpcs": {
+            "BatchEnableServices": {
+              "methods": ["batchEnableServicesAsync", "batchEnableServicesOperationCallable", "batchEnableServicesCallable"]
+            },
+            "CreateAdminOverride": {
+              "methods": ["createAdminOverrideAsync", "createAdminOverrideOperationCallable", "createAdminOverrideCallable"]
+            },
+            "CreateConsumerOverride": {
+              "methods": ["createConsumerOverrideAsync", "createConsumerOverrideOperationCallable", "createConsumerOverrideCallable"]
+            },
+            "DeleteAdminOverride": {
+              "methods": ["deleteAdminOverrideAsync", "deleteAdminOverrideOperationCallable", "deleteAdminOverrideCallable"]
+            },
+            "DeleteConsumerOverride": {
+              "methods": ["deleteConsumerOverrideAsync", "deleteConsumerOverrideOperationCallable", "deleteConsumerOverrideCallable"]
+            },
+            "DisableService": {
+              "methods": ["disableServiceAsync", "disableServiceOperationCallable", "disableServiceCallable"]
+            },
+            "EnableService": {
+              "methods": ["enableServiceAsync", "enableServiceOperationCallable", "enableServiceCallable"]
+            },
+            "GenerateServiceIdentity": {
+              "methods": ["generateServiceIdentityAsync", "generateServiceIdentityOperationCallable", "generateServiceIdentityCallable"]
+            },
+            "GetConsumerQuotaLimit": {
+              "methods": ["getConsumerQuotaLimit", "getConsumerQuotaLimitCallable"]
+            },
+            "GetConsumerQuotaMetric": {
+              "methods": ["getConsumerQuotaMetric", "getConsumerQuotaMetricCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getServiceCallable"]
+            },
+            "ImportAdminOverrides": {
+              "methods": ["importAdminOverridesAsync", "importAdminOverridesOperationCallable", "importAdminOverridesCallable"]
+            },
+            "ImportConsumerOverrides": {
+              "methods": ["importConsumerOverridesAsync", "importConsumerOverridesOperationCallable", "importConsumerOverridesCallable"]
+            },
+            "ListAdminOverrides": {
+              "methods": ["listAdminOverrides", "listAdminOverridesPagedCallable", "listAdminOverridesCallable"]
+            },
+            "ListConsumerOverrides": {
+              "methods": ["listConsumerOverrides", "listConsumerOverridesPagedCallable", "listConsumerOverridesCallable"]
+            },
+            "ListConsumerQuotaMetrics": {
+              "methods": ["listConsumerQuotaMetrics", "listConsumerQuotaMetricsPagedCallable", "listConsumerQuotaMetricsCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "UpdateAdminOverride": {
+              "methods": ["updateAdminOverrideAsync", "updateAdminOverrideOperationCallable", "updateAdminOverrideCallable"]
+            },
+            "UpdateConsumerOverride": {
+              "methods": ["updateConsumerOverrideAsync", "updateConsumerOverrideOperationCallable", "updateConsumerOverrideCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

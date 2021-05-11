@@ -1,0 +1,15 @@
+{
+  "name": "service-usage",
+  "name_pretty": "Service Usage",
+  "product_documentation": "https://cloud.google.com/service-usage/docs/overview",
+  "api_description": "is an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-service-usage/latest/index.html",
+  "release_level": "ga",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-service-usage",
+  "repo_short": "java-service-usage",
+  "distribution_name": "com.google.cloud:google-cloud-service-usage",
+  "api_id": "service-usage.googleapis.com",
+  "requires_billing": true
+}
