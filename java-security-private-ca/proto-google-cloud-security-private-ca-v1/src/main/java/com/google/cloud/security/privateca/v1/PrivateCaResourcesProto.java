@@ -472,11 +472,13 @@ public final class PrivateCaResourcesProto {
           + "\022\027\n\017email_addresses\030\003 \003(\t\022\024\n\014ip_addresse"
           + "s\030\004 \003(\t\022F\n\013custom_sans\030\005 \003(\01321.google.cl"
           + "oud.security.privateca.v1.X509Extension\""
-          + "\252\001\n\036CertificateIdentityConstraints\022.\n\016ce"
+          + "\372\001\n\036CertificateIdentityConstraints\022.\n\016ce"
           + "l_expression\030\001 \001(\0132\021.google.type.ExprB\003\340"
-          + "A\001\022&\n\031allow_subject_passthrough\030\002 \001(\010B\003\340"
-          + "A\001\0220\n#allow_subject_alt_names_passthroug"
-          + "h\030\003 \001(\010B\003\340A\001\"\236\003\n\037CertificateExtensionCon"
+          + "A\001\022+\n\031allow_subject_passthrough\030\002 \001(\010B\003\340"
+          + "A\002H\000\210\001\001\0225\n#allow_subject_alt_names_passt"
+          + "hrough\030\003 \001(\010B\003\340A\002H\001\210\001\001B\034\n\032_allow_subject"
+          + "_passthroughB&\n$_allow_subject_alt_names"
+          + "_passthrough\"\236\003\n\037CertificateExtensionCon"
           + "straints\022|\n\020known_extensions\030\001 \003(\0162].goo"
           + "gle.cloud.security.privateca.v1.Certific"
           + "ateExtensionConstraints.KnownCertificate"
@@ -954,7 +956,11 @@ public final class PrivateCaResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1_CertificateIdentityConstraints_descriptor,
             new java.lang.String[] {
-              "CelExpression", "AllowSubjectPassthrough", "AllowSubjectAltNamesPassthrough",
+              "CelExpression",
+              "AllowSubjectPassthrough",
+              "AllowSubjectAltNamesPassthrough",
+              "AllowSubjectPassthrough",
+              "AllowSubjectAltNamesPassthrough",
             });
     internal_static_google_cloud_security_privateca_v1_CertificateExtensionConstraints_descriptor =
         getDescriptor().getMessageTypes().get(16);

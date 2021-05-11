@@ -60,6 +60,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -86,11 +87,13 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
             }
           case 16:
             {
+              bitField0_ |= 0x00000001;
               allowSubjectPassthrough_ = input.readBool();
               break;
             }
           case 24:
             {
+              bitField0_ |= 0x00000002;
               allowSubjectAltNamesPassthrough_ = input.readBool();
               break;
             }
@@ -128,6 +131,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
             com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CEL_EXPRESSION_FIELD_NUMBER = 1;
   private com.google.type.Expr celExpression_;
   /**
@@ -189,12 +193,29 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+   * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
    * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-   * will be discarded.
+   * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
    * </pre>
    *
-   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the allowSubjectPassthrough field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowSubjectPassthrough() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+   * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
+   * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+   * </pre>
+   *
+   * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The allowSubjectPassthrough.
    */
@@ -209,12 +230,32 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+   * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
    * certificate request into the signed certificate. Otherwise, the requested
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+   * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
    * </pre>
    *
-   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the allowSubjectAltNamesPassthrough field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowSubjectAltNamesPassthrough() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+   * certificate request into the signed certificate. Otherwise, the requested
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+   * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+   * </pre>
+   *
+   * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The allowSubjectAltNamesPassthrough.
@@ -241,10 +282,10 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     if (celExpression_ != null) {
       output.writeMessage(1, getCelExpression());
     }
-    if (allowSubjectPassthrough_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(2, allowSubjectPassthrough_);
     }
-    if (allowSubjectAltNamesPassthrough_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(3, allowSubjectAltNamesPassthrough_);
     }
     unknownFields.writeTo(output);
@@ -259,10 +300,10 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     if (celExpression_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCelExpression());
     }
-    if (allowSubjectPassthrough_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowSubjectPassthrough_);
     }
-    if (allowSubjectAltNamesPassthrough_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               3, allowSubjectAltNamesPassthrough_);
@@ -287,9 +328,16 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     if (hasCelExpression()) {
       if (!getCelExpression().equals(other.getCelExpression())) return false;
     }
-    if (getAllowSubjectPassthrough() != other.getAllowSubjectPassthrough()) return false;
-    if (getAllowSubjectAltNamesPassthrough() != other.getAllowSubjectAltNamesPassthrough())
+    if (hasAllowSubjectPassthrough() != other.hasAllowSubjectPassthrough()) return false;
+    if (hasAllowSubjectPassthrough()) {
+      if (getAllowSubjectPassthrough() != other.getAllowSubjectPassthrough()) return false;
+    }
+    if (hasAllowSubjectAltNamesPassthrough() != other.hasAllowSubjectAltNamesPassthrough())
       return false;
+    if (hasAllowSubjectAltNamesPassthrough()) {
+      if (getAllowSubjectAltNamesPassthrough() != other.getAllowSubjectAltNamesPassthrough())
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -305,12 +353,16 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
       hash = (37 * hash) + CEL_EXPRESSION_FIELD_NUMBER;
       hash = (53 * hash) + getCelExpression().hashCode();
     }
-    hash = (37 * hash) + ALLOW_SUBJECT_PASSTHROUGH_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowSubjectPassthrough());
-    hash = (37 * hash) + ALLOW_SUBJECT_ALT_NAMES_PASSTHROUGH_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashBoolean(getAllowSubjectAltNamesPassthrough());
+    if (hasAllowSubjectPassthrough()) {
+      hash = (37 * hash) + ALLOW_SUBJECT_PASSTHROUGH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowSubjectPassthrough());
+    }
+    if (hasAllowSubjectAltNamesPassthrough()) {
+      hash = (37 * hash) + ALLOW_SUBJECT_ALT_NAMES_PASSTHROUGH_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getAllowSubjectAltNamesPassthrough());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -467,9 +519,9 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
         celExpressionBuilder_ = null;
       }
       allowSubjectPassthrough_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowSubjectAltNamesPassthrough_ = false;
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -499,13 +551,22 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints buildPartial() {
       com.google.cloud.security.privateca.v1.CertificateIdentityConstraints result =
           new com.google.cloud.security.privateca.v1.CertificateIdentityConstraints(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (celExpressionBuilder_ == null) {
         result.celExpression_ = celExpression_;
       } else {
         result.celExpression_ = celExpressionBuilder_.build();
       }
-      result.allowSubjectPassthrough_ = allowSubjectPassthrough_;
-      result.allowSubjectAltNamesPassthrough_ = allowSubjectAltNamesPassthrough_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowSubjectPassthrough_ = allowSubjectPassthrough_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowSubjectAltNamesPassthrough_ = allowSubjectAltNamesPassthrough_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -562,10 +623,10 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
       if (other.hasCelExpression()) {
         mergeCelExpression(other.getCelExpression());
       }
-      if (other.getAllowSubjectPassthrough() != false) {
+      if (other.hasAllowSubjectPassthrough()) {
         setAllowSubjectPassthrough(other.getAllowSubjectPassthrough());
       }
-      if (other.getAllowSubjectAltNamesPassthrough() != false) {
+      if (other.hasAllowSubjectAltNamesPassthrough()) {
         setAllowSubjectAltNamesPassthrough(other.getAllowSubjectAltNamesPassthrough());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -598,6 +659,8 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.type.Expr celExpression_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -804,12 +867,29 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the allowSubjectPassthrough field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowSubjectPassthrough() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * </pre>
+     *
+     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The allowSubjectPassthrough.
      */
@@ -821,18 +901,18 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The allowSubjectPassthrough to set.
      * @return This builder for chaining.
      */
     public Builder setAllowSubjectPassthrough(boolean value) {
-
+      bitField0_ |= 0x00000001;
       allowSubjectPassthrough_ = value;
       onChanged();
       return this;
@@ -841,17 +921,17 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectPassthrough() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowSubjectPassthrough_ = false;
       onChanged();
       return this;
@@ -862,12 +942,32 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the allowSubjectAltNamesPassthrough field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowSubjectAltNamesPassthrough() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * certificate request into the signed certificate. Otherwise, the requested
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
+     * </pre>
+     *
+     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The allowSubjectAltNamesPassthrough.
@@ -880,19 +980,20 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The allowSubjectAltNamesPassthrough to set.
      * @return This builder for chaining.
      */
     public Builder setAllowSubjectAltNamesPassthrough(boolean value) {
-
+      bitField0_ |= 0x00000002;
       allowSubjectAltNamesPassthrough_ = value;
       onChanged();
       return this;
@@ -901,18 +1002,19 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * </pre>
      *
-     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectAltNamesPassthrough() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowSubjectAltNamesPassthrough_ = false;
       onChanged();
       return this;
