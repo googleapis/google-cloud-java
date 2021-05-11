@@ -1363,7 +1363,7 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup.  The
+     * must be in the same project as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -1929,7 +1929,7 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup.  The
+     * must be in the same project as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -2308,7 +2308,7 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup.  The
+     * must be in the same project as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
@@ -2678,7 +2678,7 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup.  The
+     * must be in the same project as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
      * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
