@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-bigquerydatatransfer'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.12'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.13'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.12"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.13"
 ```
 
 ## Authentication
