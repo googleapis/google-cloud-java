@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.0.16](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.15...v1.0.16) (2021-05-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#394](https://www.github.com/googleapis/java-bigqueryconnection/issues/394)) ([926e7b1](https://www.github.com/googleapis/java-bigqueryconnection/commit/926e7b1c8db0e2b97f67bdc9e6234ad090f6c255))
+* update dependency com.google.protobuf:protobuf-java-util to v3.16.0 ([#391](https://www.github.com/googleapis/java-bigqueryconnection/issues/391)) ([440d94a](https://www.github.com/googleapis/java-bigqueryconnection/commit/440d94aaeaea8f8622f352bb2a7ef34bff5235b9))
+
 ### [1.0.15](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.14...v1.0.15) (2021-04-24)
 
 
