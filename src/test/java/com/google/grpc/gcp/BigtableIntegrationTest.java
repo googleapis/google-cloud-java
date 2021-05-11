@@ -220,7 +220,7 @@ public class BigtableIntegrationTest {
           new AsyncResponseObserver<MutateRowResponse>();
       stub.mutateRow(request, responseObserver);
       // Test the number of channels.
-      assertEquals(Math.min(i + 1, NEW_MAX_CHANNEL), gcpChannel.channelRefs.size());
+      assertEquals(Math.min(i / NEW_MAX_STREAM + 1, NEW_MAX_CHANNEL), gcpChannel.channelRefs.size());
       clearObservers.add(responseObserver);
     }
 
