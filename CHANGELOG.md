@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.129.0](https://www.github.com/googleapis/java-bigquery/compare/v1.128.3...v1.129.0) (2021-05-11)
+
+
+### Features
+
+* add support for user defined TVFs ([#1278](https://www.github.com/googleapis/java-bigquery/issues/1278)) ([89958e9](https://www.github.com/googleapis/java-bigquery/commit/89958e9b5e4330b31878aa31b90569d2fd0310f2))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210422-1.31.0 ([#1275](https://www.github.com/googleapis/java-bigquery/issues/1275)) ([acc88c5](https://www.github.com/googleapis/java-bigquery/commit/acc88c5de445d166055825bf51d56a031e642675))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210430-1.31.0 ([#1285](https://www.github.com/googleapis/java-bigquery/issues/1285)) ([e74ae1c](https://www.github.com/googleapis/java-bigquery/commit/e74ae1c180c8ce27c9c8985c1935a894889b6375))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#1290](https://www.github.com/googleapis/java-bigquery/issues/1290)) ([e60f2cd](https://www.github.com/googleapis/java-bigquery/commit/e60f2cd823b1551e43154f87a5157acca51b346c))
+* update jmh.version to v1.30 ([#1281](https://www.github.com/googleapis/java-bigquery/issues/1281)) ([3704a6c](https://www.github.com/googleapis/java-bigquery/commit/3704a6cc46b84ce3b5ba01466ba39333f1b16886))
+
 ### [1.128.3](https://www.github.com/googleapis/java-bigquery/compare/v1.128.2...v1.128.3) (2021-04-30)
 
 
