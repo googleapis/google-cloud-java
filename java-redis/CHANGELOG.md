@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.15](https://www.github.com/googleapis/java-redis/compare/v1.1.14...v1.1.15) (2021-05-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#405](https://www.github.com/googleapis/java-redis/issues/405)) ([c1df139](https://www.github.com/googleapis/java-redis/commit/c1df13933f9da4fb380bb9e0e83c5f85d1c64a0d))
+
 ### [1.1.14](https://www.github.com/googleapis/java-redis/compare/v1.1.13...v1.1.14) (2021-04-24)
 
 
