@@ -46,12 +46,12 @@ public final class FindingOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/securitycenter/v1p1beta1/"
           + "finding.proto\022%google.cloud.securitycent"
-          + "er.v1p1beta1\032\034google/api/annotations.pro"
-          + "to\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\032:google/cloud/sec"
-          + "uritycenter/v1p1beta1/security_marks.pro"
-          + "to\032\034google/protobuf/struct.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\327\006\n\007Finding\022\014\n"
+          + "er.v1p1beta1\032\037google/api/field_behavior."
+          + "proto\032\031google/api/resource.proto\032:google"
+          + "/cloud/securitycenter/v1p1beta1/security"
+          + "_marks.proto\032\034google/protobuf/struct.pro"
+          + "to\032\037google/protobuf/timestamp.proto\032\034goo"
+          + "gle/api/annotations.proto\"\337\007\n\007Finding\022\014\n"
           + "\004name\030\001 \001(\t\022\016\n\006parent\030\002 \001(\t\022\025\n\rresource_"
           + "name\030\003 \001(\t\022C\n\005state\030\004 \001(\01624.google.cloud"
           + ".securitycenter.v1p1beta1.Finding.State\022"
@@ -64,33 +64,37 @@ public final class FindingOuterClass {
           + "\032.google.protobuf.Timestamp\022/\n\013create_ti"
           + "me\030\n \001(\0132\032.google.protobuf.Timestamp\022I\n\010"
           + "severity\030\r \001(\01627.google.cloud.securityce"
-          + "nter.v1p1beta1.Finding.Severity\032O\n\025Sourc"
-          + "ePropertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002"
-          + " \001(\0132\026.google.protobuf.Value:\0028\001\"8\n\005Stat"
-          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010"
-          + "INACTIVE\020\002\"Q\n\010Severity\022\030\n\024SEVERITY_UNSPE"
-          + "CIFIED\020\000\022\014\n\010CRITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDI"
-          + "UM\020\003\022\007\n\003LOW\020\004:l\352Ai\n%securitycenter.googl"
-          + "eapis.com/Finding\022@organizations/{organi"
-          + "zation}/sources/{source}/findings/{findi"
-          + "ng}B\375\001\n)com.google.cloud.securitycenter."
-          + "v1p1beta1P\001ZSgoogle.golang.org/genproto/"
-          + "googleapis/cloud/securitycenter/v1p1beta"
-          + "1;securitycenter\252\002%Google.Cloud.Security"
-          + "Center.V1P1Beta1\312\002%Google\\Cloud\\Security"
-          + "Center\\V1p1beta1\352\002(Google::Cloud::Securi"
-          + "tyCenter::V1p1beta1b\006proto3"
+          + "nter.v1p1beta1.Finding.Severity\022\026\n\016canon"
+          + "ical_name\030\016 \001(\t\032O\n\025SourcePropertiesEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.pr"
+          + "otobuf.Value:\0028\001\"8\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\"Q\n\010Se"
+          + "verity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010CRIT"
+          + "ICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004:\333\001"
+          + "\352A\327\001\n%securitycenter.googleapis.com/Find"
+          + "ing\022@organizations/{organization}/source"
+          + "s/{source}/findings/{finding}\0224folders/{"
+          + "folder}/sources/{source}/findings/{findi"
+          + "ng}\0226projects/{project}/sources/{source}"
+          + "/findings/{finding}B\375\001\n)com.google.cloud"
+          + ".securitycenter.v1p1beta1P\001ZSgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/securit"
+          + "ycenter/v1p1beta1;securitycenter\252\002%Googl"
+          + "e.Cloud.SecurityCenter.V1P1Beta1\312\002%Googl"
+          + "e\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Googl"
+          + "e::Cloud::SecurityCenter::V1p1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1p1beta1.SecurityMarksOuterClass.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_Finding_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -109,6 +113,7 @@ public final class FindingOuterClass {
               "EventTime",
               "CreateTime",
               "Severity",
+              "CanonicalName",
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_Finding_SourcePropertiesEntry_descriptor =
         internal_static_google_cloud_securitycenter_v1p1beta1_Finding_descriptor
@@ -126,12 +131,12 @@ public final class FindingOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1p1beta1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

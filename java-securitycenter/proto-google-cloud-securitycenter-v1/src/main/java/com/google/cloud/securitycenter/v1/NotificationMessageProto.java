@@ -42,10 +42,10 @@ public final class NotificationMessageProto {
     java.lang.String[] descriptorData = {
       "\n9google/cloud/securitycenter/v1/notific"
           + "ation_message.proto\022\036google.cloud.securi"
-          + "tycenter.v1\032\034google/api/annotations.prot"
-          + "o\032,google/cloud/securitycenter/v1/findin"
-          + "g.proto\032-google/cloud/securitycenter/v1/"
-          + "resource.proto\"\270\001\n\023NotificationMessage\022 "
+          + "tycenter.v1\032,google/cloud/securitycenter"
+          + "/v1/finding.proto\032-google/cloud/security"
+          + "center/v1/resource.proto\032\034google/api/ann"
+          + "otations.proto\"\270\001\n\023NotificationMessage\022 "
           + "\n\030notification_config_name\030\001 \001(\t\022:\n\007find"
           + "ing\030\002 \001(\0132\'.google.cloud.securitycenter."
           + "v1.FindingH\000\022:\n\010resource\030\003 \001(\0132(.google."
@@ -62,9 +62,9 @@ public final class NotificationMessageProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor(),
               com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_NotificationMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -74,9 +74,9 @@ public final class NotificationMessageProto {
             new java.lang.String[] {
               "NotificationConfigName", "Finding", "Resource", "Event",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

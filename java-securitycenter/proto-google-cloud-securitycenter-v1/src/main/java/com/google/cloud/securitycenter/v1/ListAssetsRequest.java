@@ -192,7 +192,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -218,7 +219,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -1223,7 +1225,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the organization assets should belong to. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1248,7 +1251,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the organization assets should belong to. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1273,7 +1277,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the organization assets should belong to. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1297,7 +1302,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the organization assets should belong to. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1317,7 +1323,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the organization assets should belong to. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>

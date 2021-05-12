@@ -41,7 +41,7 @@
               "methods": ["groupFindings", "groupFindings", "groupFindings", "groupFindingsPagedCallable", "groupFindingsCallable"]
             },
             "ListAssets": {
-              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
             },
             "ListFindings": {
               "methods": ["listFindings", "listFindings", "listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
@@ -50,7 +50,7 @@
               "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
             },
             "ListSources": {
-              "methods": ["listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
+              "methods": ["listSources", "listSources", "listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
             },
             "RunAssetDiscovery": {
               "methods": ["runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryOperationCallable", "runAssetDiscoveryCallable"]

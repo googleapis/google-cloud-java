@@ -46,36 +46,36 @@ public final class OrganizationSettingsOuterClass {
     java.lang.String[] descriptorData = {
       "\nAgoogle/cloud/securitycenter/v1p1beta1/"
           + "organization_settings.proto\022%google.clou"
-          + "d.securitycenter.v1p1beta1\032\034google/api/a"
-          + "nnotations.proto\032\031google/api/resource.pr"
-          + "oto\"\230\004\n\024OrganizationSettings\022\014\n\004name\030\001 \001"
+          + "d.securitycenter.v1p1beta1\032\031google/api/r"
+          + "esource.proto\032\034google/api/annotations.pr"
+          + "oto\"\254\004\n\024OrganizationSettings\022\014\n\004name\030\001 \001"
           + "(\t\022\036\n\026enable_asset_discovery\030\002 \001(\010\022p\n\026as"
           + "set_discovery_config\030\003 \001(\0132P.google.clou"
           + "d.securitycenter.v1p1beta1.OrganizationS"
-          + "ettings.AssetDiscoveryConfig\032\363\001\n\024AssetDi"
+          + "ettings.AssetDiscoveryConfig\032\207\002\n\024AssetDi"
           + "scoveryConfig\022\023\n\013project_ids\030\001 \003(\t\022v\n\016in"
           + "clusion_mode\030\002 \001(\0162^.google.cloud.securi"
           + "tycenter.v1p1beta1.OrganizationSettings."
-          + "AssetDiscoveryConfig.InclusionMode\"N\n\rIn"
-          + "clusionMode\022\036\n\032INCLUSION_MODE_UNSPECIFIE"
-          + "D\020\000\022\020\n\014INCLUDE_ONLY\020\001\022\013\n\007EXCLUDE\020\002:j\352Ag\n"
-          + "2securitycenter.googleapis.com/Organizat"
-          + "ionSettings\0221organizations/{organization"
-          + "}/organizationSettingsB\375\001\n)com.google.cl"
-          + "oud.securitycenter.v1p1beta1P\001ZSgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/secu"
-          + "ritycenter/v1p1beta1;securitycenter\252\002%Go"
-          + "ogle.Cloud.SecurityCenter.V1P1Beta1\312\002%Go"
-          + "ogle\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Go"
-          + "ogle::Cloud::SecurityCenter::V1p1beta1b\006"
-          + "proto3"
+          + "AssetDiscoveryConfig.InclusionMode\022\022\n\nfo"
+          + "lder_ids\030\003 \003(\t\"N\n\rInclusionMode\022\036\n\032INCLU"
+          + "SION_MODE_UNSPECIFIED\020\000\022\020\n\014INCLUDE_ONLY\020"
+          + "\001\022\013\n\007EXCLUDE\020\002:j\352Ag\n2securitycenter.goog"
+          + "leapis.com/OrganizationSettings\0221organiz"
+          + "ations/{organization}/organizationSettin"
+          + "gsB\375\001\n)com.google.cloud.securitycenter.v"
+          + "1p1beta1P\001ZSgoogle.golang.org/genproto/g"
+          + "oogleapis/cloud/securitycenter/v1p1beta1"
+          + ";securitycenter\252\002%Google.Cloud.SecurityC"
+          + "enter.V1P1Beta1\312\002%Google\\Cloud\\SecurityC"
+          + "enter\\V1p1beta1\352\002(Google::Cloud::Securit"
+          + "yCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_OrganizationSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -93,15 +93,15 @@ public final class OrganizationSettingsOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1p1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor,
             new java.lang.String[] {
-              "ProjectIds", "InclusionMode",
+              "ProjectIds", "InclusionMode", "FolderIds",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -44,6 +44,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   private Asset() {
     name_ = "";
+    canonicalName_ = "";
   }
 
   @java.lang.Override
@@ -180,6 +181,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                 iamPolicy_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              canonicalName_ = s;
               break;
             }
           default:
@@ -471,6 +479,68 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for resourceProjectDisplayName.
      */
     com.google.protobuf.ByteString getResourceProjectDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    com.google.cloud.securitycenter.v1.Folder getFolders(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    int getFoldersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
+        getFoldersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
   }
   /**
    *
@@ -501,6 +571,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       resourceDisplayName_ = "";
       resourceParentDisplayName_ = "";
       resourceProjectDisplayName_ = "";
+      folders_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -592,6 +663,17 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                 resourceProjectDisplayName_ = s;
                 break;
               }
+            case 82:
+              {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  folders_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.Folder>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                folders_.add(
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.Folder.parser(), extensionRegistry));
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -608,6 +690,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          folders_ = java.util.Collections.unmodifiableList(folders_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1047,6 +1132,85 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int FOLDERS_FIELD_NUMBER = 10;
+    private java.util.List<com.google.cloud.securitycenter.v1.Folder> folders_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList() {
+      return folders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
+        getFoldersOrBuilderList() {
+      return folders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    @java.lang.Override
+    public int getFoldersCount() {
+      return folders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Folder getFolders(int index) {
+      return folders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains a Folder message for each folder in the assets ancestry.
+     * The first folder is the deepest nested folder, and the last folder is the
+     * folder directly under the Organization.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index) {
+      return folders_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1084,6 +1248,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!getResourceProjectDisplayNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceProjectDisplayName_);
+      }
+      for (int i = 0; i < folders_.size(); i++) {
+        output.writeMessage(10, folders_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1126,6 +1293,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.GeneratedMessageV3.computeStringSize(
                 8, resourceProjectDisplayName_);
       }
+      for (int i = 0; i < folders_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, folders_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1152,6 +1322,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return false;
       if (!getResourceProjectDisplayName().equals(other.getResourceProjectDisplayName()))
         return false;
+      if (!getFoldersList().equals(other.getFoldersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1181,6 +1352,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getResourceParentDisplayName().hashCode();
       hash = (37 * hash) + RESOURCE_PROJECT_DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getResourceProjectDisplayName().hashCode();
+      if (getFoldersCount() > 0) {
+        hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
+        hash = (53 * hash) + getFoldersList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1326,7 +1501,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getFoldersFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1348,6 +1525,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
         resourceProjectDisplayName_ = "";
 
+        if (foldersBuilder_ == null) {
+          folders_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          foldersBuilder_.clear();
+        }
         return this;
       }
 
@@ -1390,6 +1573,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         result.resourceDisplayName_ = resourceDisplayName_;
         result.resourceParentDisplayName_ = resourceParentDisplayName_;
         result.resourceProjectDisplayName_ = resourceProjectDisplayName_;
+        if (foldersBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            folders_ = java.util.Collections.unmodifiableList(folders_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.folders_ = folders_;
+        } else {
+          result.folders_ = foldersBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1482,6 +1674,33 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.getResourceProjectDisplayName().isEmpty()) {
           resourceProjectDisplayName_ = other.resourceProjectDisplayName_;
           onChanged();
+        }
+        if (foldersBuilder_ == null) {
+          if (!other.folders_.isEmpty()) {
+            if (folders_.isEmpty()) {
+              folders_ = other.folders_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureFoldersIsMutable();
+              folders_.addAll(other.folders_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.folders_.isEmpty()) {
+            if (foldersBuilder_.isEmpty()) {
+              foldersBuilder_.dispose();
+              foldersBuilder_ = null;
+              folders_ = other.folders_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              foldersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFoldersFieldBuilder()
+                      : null;
+            } else {
+              foldersBuilder_.addAllMessages(other.folders_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2459,6 +2678,391 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         resourceProjectDisplayName_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.google.cloud.securitycenter.v1.Folder> folders_ =
+          java.util.Collections.emptyList();
+
+      private void ensureFoldersIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          folders_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.Folder>(folders_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.securitycenter.v1.Folder,
+              com.google.cloud.securitycenter.v1.Folder.Builder,
+              com.google.cloud.securitycenter.v1.FolderOrBuilder>
+          foldersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList() {
+        if (foldersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(folders_);
+        } else {
+          return foldersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public int getFoldersCount() {
+        if (foldersBuilder_ == null) {
+          return folders_.size();
+        } else {
+          return foldersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Folder getFolders(int index) {
+        if (foldersBuilder_ == null) {
+          return folders_.get(index);
+        } else {
+          return foldersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder setFolders(int index, com.google.cloud.securitycenter.v1.Folder value) {
+        if (foldersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFoldersIsMutable();
+          folders_.set(index, value);
+          onChanged();
+        } else {
+          foldersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder setFolders(
+          int index, com.google.cloud.securitycenter.v1.Folder.Builder builderForValue) {
+        if (foldersBuilder_ == null) {
+          ensureFoldersIsMutable();
+          folders_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          foldersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder addFolders(com.google.cloud.securitycenter.v1.Folder value) {
+        if (foldersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFoldersIsMutable();
+          folders_.add(value);
+          onChanged();
+        } else {
+          foldersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder addFolders(int index, com.google.cloud.securitycenter.v1.Folder value) {
+        if (foldersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFoldersIsMutable();
+          folders_.add(index, value);
+          onChanged();
+        } else {
+          foldersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder addFolders(com.google.cloud.securitycenter.v1.Folder.Builder builderForValue) {
+        if (foldersBuilder_ == null) {
+          ensureFoldersIsMutable();
+          folders_.add(builderForValue.build());
+          onChanged();
+        } else {
+          foldersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder addFolders(
+          int index, com.google.cloud.securitycenter.v1.Folder.Builder builderForValue) {
+        if (foldersBuilder_ == null) {
+          ensureFoldersIsMutable();
+          folders_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          foldersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder addAllFolders(
+          java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Folder> values) {
+        if (foldersBuilder_ == null) {
+          ensureFoldersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+          onChanged();
+        } else {
+          foldersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder clearFolders() {
+        if (foldersBuilder_ == null) {
+          folders_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          foldersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public Builder removeFolders(int index) {
+        if (foldersBuilder_ == null) {
+          ensureFoldersIsMutable();
+          folders_.remove(index);
+          onChanged();
+        } else {
+          foldersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Folder.Builder getFoldersBuilder(int index) {
+        return getFoldersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index) {
+        if (foldersBuilder_ == null) {
+          return folders_.get(index);
+        } else {
+          return foldersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
+          getFoldersOrBuilderList() {
+        if (foldersBuilder_ != null) {
+          return foldersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(folders_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Folder.Builder addFoldersBuilder() {
+        return getFoldersFieldBuilder()
+            .addBuilder(com.google.cloud.securitycenter.v1.Folder.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Folder.Builder addFoldersBuilder(int index) {
+        return getFoldersFieldBuilder()
+            .addBuilder(index, com.google.cloud.securitycenter.v1.Folder.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains a Folder message for each folder in the assets ancestry.
+       * The first folder is the deepest nested folder, and the last folder is the
+       * folder directly under the Organization.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Folder folders = 10;</code>
+       */
+      public java.util.List<com.google.cloud.securitycenter.v1.Folder.Builder>
+          getFoldersBuilderList() {
+        return getFoldersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.securitycenter.v1.Folder,
+              com.google.cloud.securitycenter.v1.Folder.Builder,
+              com.google.cloud.securitycenter.v1.FolderOrBuilder>
+          getFoldersFieldBuilder() {
+        if (foldersBuilder_ == null) {
+          foldersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.securitycenter.v1.Folder,
+                  com.google.cloud.securitycenter.v1.Folder.Builder,
+                  com.google.cloud.securitycenter.v1.FolderOrBuilder>(
+                  folders_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          folders_ = null;
+        }
+        return foldersBuilder_;
       }
 
       @java.lang.Override
@@ -3520,8 +4124,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -3536,8 +4139,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -3552,8 +4154,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -3620,6 +4221,63 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return getIamPolicy();
   }
 
+  public static final int CANONICAL_NAME_FIELD_NUMBER = 13;
+  private volatile java.lang.Object canonicalName_;
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the resource. It's either
+   * "organizations/{organization_id}/assets/{asset_id}",
+   * "folders/{folder_id}/assets/{asset_id}" or
+   * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+   * ancestor of the resource.
+   * </pre>
+   *
+   * <code>string canonical_name = 13;</code>
+   *
+   * @return The canonicalName.
+   */
+  @java.lang.Override
+  public java.lang.String getCanonicalName() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      canonicalName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the resource. It's either
+   * "organizations/{organization_id}/assets/{asset_id}",
+   * "folders/{folder_id}/assets/{asset_id}" or
+   * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+   * ancestor of the resource.
+   * </pre>
+   *
+   * <code>string canonical_name = 13;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCanonicalNameBytes() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      canonicalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3656,6 +4314,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     if (iamPolicy_ != null) {
       output.writeMessage(11, getIamPolicy());
+    }
+    if (!getCanonicalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, canonicalName_);
     }
     unknownFields.writeTo(output);
   }
@@ -3697,6 +4358,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (iamPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getIamPolicy());
     }
+    if (!getCanonicalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, canonicalName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3735,6 +4399,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (hasIamPolicy()) {
       if (!getIamPolicy().equals(other.getIamPolicy())) return false;
     }
+    if (!getCanonicalName().equals(other.getCanonicalName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3772,6 +4437,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + IAM_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getIamPolicy().hashCode();
     }
+    hash = (37 * hash) + CANONICAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCanonicalName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3975,6 +4642,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         iamPolicy_ = null;
         iamPolicyBuilder_ = null;
       }
+      canonicalName_ = "";
+
       return this;
     }
 
@@ -4031,6 +4700,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.iamPolicy_ = iamPolicyBuilder_.build();
       }
+      result.canonicalName_ = canonicalName_;
       onBuilt();
       return result;
     }
@@ -4099,6 +4769,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasIamPolicy()) {
         mergeIamPolicy(other.getIamPolicy());
+      }
+      if (!other.getCanonicalName().isEmpty()) {
+        canonicalName_ = other.canonicalName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5033,8 +5707,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5048,8 +5721,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5069,8 +5741,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5092,8 +5763,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5112,8 +5782,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5137,8 +5806,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5158,8 +5826,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5173,8 +5840,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5192,8 +5858,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was last updated, added, or deleted in Security
-     * Command Center.
+     * The time at which the asset was last updated or added in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -5426,6 +6091,132 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         iamPolicy_ = null;
       }
       return iamPolicyBuilder_;
+    }
+
+    private java.lang.Object canonicalName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the resource. It's either
+     * "organizations/{organization_id}/assets/{asset_id}",
+     * "folders/{folder_id}/assets/{asset_id}" or
+     * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+     * ancestor of the resource.
+     * </pre>
+     *
+     * <code>string canonical_name = 13;</code>
+     *
+     * @return The canonicalName.
+     */
+    public java.lang.String getCanonicalName() {
+      java.lang.Object ref = canonicalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the resource. It's either
+     * "organizations/{organization_id}/assets/{asset_id}",
+     * "folders/{folder_id}/assets/{asset_id}" or
+     * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+     * ancestor of the resource.
+     * </pre>
+     *
+     * <code>string canonical_name = 13;</code>
+     *
+     * @return The bytes for canonicalName.
+     */
+    public com.google.protobuf.ByteString getCanonicalNameBytes() {
+      java.lang.Object ref = canonicalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        canonicalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the resource. It's either
+     * "organizations/{organization_id}/assets/{asset_id}",
+     * "folders/{folder_id}/assets/{asset_id}" or
+     * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+     * ancestor of the resource.
+     * </pre>
+     *
+     * <code>string canonical_name = 13;</code>
+     *
+     * @param value The canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      canonicalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the resource. It's either
+     * "organizations/{organization_id}/assets/{asset_id}",
+     * "folders/{folder_id}/assets/{asset_id}" or
+     * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+     * ancestor of the resource.
+     * </pre>
+     *
+     * <code>string canonical_name = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanonicalName() {
+
+      canonicalName_ = getDefaultInstance().getCanonicalName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the resource. It's either
+     * "organizations/{organization_id}/assets/{asset_id}",
+     * "folders/{folder_id}/assets/{asset_id}" or
+     * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+     * ancestor of the resource.
+     * </pre>
+     *
+     * <code>string canonical_name = 13;</code>
+     *
+     * @param value The bytes for canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      canonicalName_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -50,6 +50,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     category_ = "";
     externalUri_ = "";
     severity_ = 0;
+    canonicalName_ = "";
   }
 
   @java.lang.Override
@@ -193,6 +194,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               severity_ = rawValue;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              canonicalName_ = s;
               break;
             }
           default:
@@ -1175,7 +1183,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -1194,7 +1203,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -1213,7 +1223,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -1309,6 +1320,65 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int CANONICAL_NAME_FIELD_NUMBER = 14;
+  private volatile java.lang.Object canonicalName_;
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The canonicalName.
+   */
+  @java.lang.Override
+  public java.lang.String getCanonicalName() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      canonicalName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCanonicalNameBytes() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      canonicalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1355,6 +1425,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (severity_
         != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, severity_);
+    }
+    if (!getCanonicalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, canonicalName_);
     }
     unknownFields.writeTo(output);
   }
@@ -1406,6 +1479,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, severity_);
     }
+    if (!getCanonicalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, canonicalName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1442,6 +1518,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (severity_ != other.severity_) return false;
+    if (!getCanonicalName().equals(other.getCanonicalName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1483,6 +1560,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
     hash = (53 * hash) + severity_;
+    hash = (37 * hash) + CANONICAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCanonicalName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1686,6 +1765,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       severity_ = 0;
 
+      canonicalName_ = "";
+
       return this;
     }
 
@@ -1738,6 +1819,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.createTime_ = createTimeBuilder_.build();
       }
       result.severity_ = severity_;
+      result.canonicalName_ = canonicalName_;
       onBuilt();
       return result;
     }
@@ -1822,6 +1904,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.severity_ != 0) {
         setSeverityValue(other.getSeverityValue());
+      }
+      if (!other.getCanonicalName().isEmpty()) {
+        canonicalName_ = other.canonicalName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2979,7 +3065,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2997,7 +3084,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3019,7 +3107,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3045,7 +3134,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3068,7 +3158,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3096,7 +3187,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3120,7 +3212,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3138,7 +3231,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3158,7 +3252,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * occurred. For example, if the finding represents an open firewall it would
      * capture the time the detector believes the firewall became open. The
      * accuracy is determined by the detector. If the finding were to be resolved
-     * afterward, this time would reflect when the finding was resolved.
+     * afterward, this time would reflect when the finding was resolved. Must not
+     * be set to a value greater than the current timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -3457,6 +3552,137 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSeverity() {
 
       severity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object canonicalName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the finding. It's either
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+     * depending on the closest CRM ancestor of the resource associated with the
+     * finding.
+     * </pre>
+     *
+     * <code>string canonical_name = 14;</code>
+     *
+     * @return The canonicalName.
+     */
+    public java.lang.String getCanonicalName() {
+      java.lang.Object ref = canonicalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the finding. It's either
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+     * depending on the closest CRM ancestor of the resource associated with the
+     * finding.
+     * </pre>
+     *
+     * <code>string canonical_name = 14;</code>
+     *
+     * @return The bytes for canonicalName.
+     */
+    public com.google.protobuf.ByteString getCanonicalNameBytes() {
+      java.lang.Object ref = canonicalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        canonicalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the finding. It's either
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+     * depending on the closest CRM ancestor of the resource associated with the
+     * finding.
+     * </pre>
+     *
+     * <code>string canonical_name = 14;</code>
+     *
+     * @param value The canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      canonicalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the finding. It's either
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+     * depending on the closest CRM ancestor of the resource associated with the
+     * finding.
+     * </pre>
+     *
+     * <code>string canonical_name = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanonicalName() {
+
+      canonicalName_ = getDefaultInstance().getCanonicalName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The canonical name of the finding. It's either
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+     * depending on the closest CRM ancestor of the resource associated with the
+     * finding.
+     * </pre>
+     *
+     * <code>string canonical_name = 14;</code>
+     *
+     * @param value The bytes for canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      canonicalName_ = value;
       onChanged();
       return this;
     }

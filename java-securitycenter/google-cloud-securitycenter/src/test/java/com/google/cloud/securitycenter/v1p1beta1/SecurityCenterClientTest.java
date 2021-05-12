@@ -106,9 +106,10 @@ public class SecurityCenterClientTest {
   public void createSourceTest() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -149,9 +150,10 @@ public class SecurityCenterClientTest {
   public void createSourceTest2() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -192,7 +194,10 @@ public class SecurityCenterClientTest {
   public void createFindingTest() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -201,10 +206,11 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     Finding finding = Finding.newBuilder().build();
     String findingId = "findingId439150212";
 
@@ -230,7 +236,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       Finding finding = Finding.newBuilder().build();
       String findingId = "findingId439150212";
       client.createFinding(parent, finding, findingId);
@@ -244,7 +250,10 @@ public class SecurityCenterClientTest {
   public void createFindingTest2() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -253,10 +262,11 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     String findingId = "findingId439150212";
     Finding finding = Finding.newBuilder().build();
 
@@ -282,7 +292,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       String findingId = "findingId439150212";
       Finding finding = Finding.newBuilder().build();
       client.createFinding(parent, findingId, finding);
@@ -296,7 +306,10 @@ public class SecurityCenterClientTest {
   public void createFindingTest3() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -305,6 +318,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -348,7 +362,10 @@ public class SecurityCenterClientTest {
   public void createFindingTest4() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -357,6 +374,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -670,7 +688,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -692,7 +710,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -914,13 +932,14 @@ public class SecurityCenterClientTest {
   public void getSourceTest() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    SourceName name = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
 
     Source actualResponse = client.getSource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -942,7 +961,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      SourceName name = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       client.getSource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -954,9 +973,10 @@ public class SecurityCenterClientTest {
   public void getSourceTest2() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1002,7 +1022,7 @@ public class SecurityCenterClientTest {
 
     GroupAssetsRequest request =
         GroupAssetsRequest.newBuilder()
-            .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+            .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
             .setFilter("filter-1274492040")
             .setGroupBy("groupBy293428022")
             .setCompareDuration(Duration.newBuilder().build())
@@ -1043,7 +1063,7 @@ public class SecurityCenterClientTest {
     try {
       GroupAssetsRequest request =
           GroupAssetsRequest.newBuilder()
-              .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+              .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
               .setFilter("filter-1274492040")
               .setGroupBy("groupBy293428022")
               .setCompareDuration(Duration.newBuilder().build())
@@ -1068,7 +1088,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     String groupBy = "groupBy293428022";
 
     GroupFindingsPagedResponse pagedListResponse = client.groupFindings(parent, groupBy);
@@ -1096,7 +1116,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       String groupBy = "groupBy293428022";
       client.groupFindings(parent, groupBy);
       Assert.fail("No exception raised");
@@ -1163,7 +1183,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
 
     ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
 
@@ -1190,7 +1210,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       client.listAssets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1200,6 +1220,98 @@ public class SecurityCenterClientTest {
 
   @Test
   public void listAssetsTest2() throws Exception {
+    ListAssetsResponse.ListAssetsResult responsesElement =
+        ListAssetsResponse.ListAssetsResult.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllListAssetsResults(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<ListAssetsResponse.ListAssetsResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getListAssetsResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAssetsRequest actualRequest = ((ListAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAssetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest3() throws Exception {
+    ListAssetsResponse.ListAssetsResult responsesElement =
+        ListAssetsResponse.ListAssetsResult.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllListAssetsResults(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<ListAssetsResponse.ListAssetsResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getListAssetsResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAssetsRequest actualRequest = ((ListAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAssetsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest4() throws Exception {
     ListAssetsResponse.ListAssetsResult responsesElement =
         ListAssetsResponse.ListAssetsResult.newBuilder().build();
     ListAssetsResponse expectedResponse =
@@ -1231,7 +1343,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listAssetsExceptionTest2() throws Exception {
+  public void listAssetsExceptionTest4() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -1255,7 +1367,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
 
     ListFindingsPagedResponse pagedListResponse = client.listFindings(parent);
 
@@ -1282,7 +1394,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       client.listFindings(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1436,7 +1548,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
 
     ListSourcesPagedResponse pagedListResponse = client.listSources(parent);
 
@@ -1462,7 +1574,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       client.listSources(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1472,6 +1584,94 @@ public class SecurityCenterClientTest {
 
   @Test
   public void listSourcesTest2() throws Exception {
+    Source responsesElement = Source.newBuilder().build();
+    ListSourcesResponse expectedResponse =
+        ListSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSources(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListSourcesPagedResponse pagedListResponse = client.listSources(parent);
+
+    List<Source> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSourcesRequest actualRequest = ((ListSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSourcesTest3() throws Exception {
+    Source responsesElement = Source.newBuilder().build();
+    ListSourcesResponse expectedResponse =
+        ListSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSources(Arrays.asList(responsesElement))
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListSourcesPagedResponse pagedListResponse = client.listSources(parent);
+
+    List<Source> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSourcesRequest actualRequest = ((ListSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSourcesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSourcesTest4() throws Exception {
     Source responsesElement = Source.newBuilder().build();
     ListSourcesResponse expectedResponse =
         ListSourcesResponse.newBuilder()
@@ -1501,7 +1701,7 @@ public class SecurityCenterClientTest {
   }
 
   @Test
-  public void listSourcesExceptionTest2() throws Exception {
+  public void listSourcesExceptionTest4() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecurityCenter.addException(exception);
 
@@ -1606,7 +1806,10 @@ public class SecurityCenterClientTest {
   public void setFindingStateTest() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -1615,10 +1818,12 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+    FindingName name =
+        FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     Finding.State state = Finding.State.forNumber(0);
     Timestamp startTime = Timestamp.newBuilder().build();
 
@@ -1644,7 +1849,8 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+      FindingName name =
+          FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
       Finding.State state = Finding.State.forNumber(0);
       Timestamp startTime = Timestamp.newBuilder().build();
       client.setFindingState(name, state, startTime);
@@ -1658,7 +1864,10 @@ public class SecurityCenterClientTest {
   public void setFindingStateTest2() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -1667,6 +1876,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1716,7 +1926,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1740,7 +1950,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1798,7 +2008,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1822,7 +2032,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -1874,7 +2084,10 @@ public class SecurityCenterClientTest {
   public void updateFindingTest() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -1883,6 +2096,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1920,7 +2134,10 @@ public class SecurityCenterClientTest {
   public void updateFindingTest2() throws Exception {
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+            .setName(
+                FindingName.ofOrganizationSourceFindingName(
+                        "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+                    .toString())
             .setParent("parent-995424086")
             .setResourceName("resourceName-384566343")
             .setCategory("category50511102")
@@ -1929,6 +2146,7 @@ public class SecurityCenterClientTest {
             .setSecurityMarks(SecurityMarks.newBuilder().build())
             .setEventTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2100,9 +2318,10 @@ public class SecurityCenterClientTest {
   public void updateSourceTest() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2140,9 +2359,10 @@ public class SecurityCenterClientTest {
   public void updateSourceTest2() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
-            .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+            .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2187,6 +2407,7 @@ public class SecurityCenterClientTest {
                 SecurityMarksName.ofOrganizationAssetSecurityMarksName("[ORGANIZATION]", "[ASSET]")
                     .toString())
             .putAllMarks(new HashMap<String, String>())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2228,6 +2449,7 @@ public class SecurityCenterClientTest {
                 SecurityMarksName.ofOrganizationAssetSecurityMarksName("[ORGANIZATION]", "[ASSET]")
                     .toString())
             .putAllMarks(new HashMap<String, String>())
+            .setCanonicalName("canonicalName2122381727")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

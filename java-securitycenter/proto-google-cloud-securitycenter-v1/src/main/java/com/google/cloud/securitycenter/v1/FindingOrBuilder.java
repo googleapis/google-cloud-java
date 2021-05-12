@@ -330,7 +330,8 @@ public interface FindingOrBuilder
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -346,7 +347,8 @@ public interface FindingOrBuilder
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -362,7 +364,8 @@ public interface FindingOrBuilder
    * occurred. For example, if the finding represents an open firewall it would
    * capture the time the detector believes the firewall became open. The
    * accuracy is determined by the detector. If the finding were to be resolved
-   * afterward, this time would reflect when the finding was resolved.
+   * afterward, this time would reflect when the finding was resolved. Must not
+   * be set to a value greater than the current timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -430,4 +433,39 @@ public interface FindingOrBuilder
    * @return The severity.
    */
   com.google.cloud.securitycenter.v1.Finding.Severity getSeverity();
+
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The canonicalName.
+   */
+  java.lang.String getCanonicalName();
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}" or
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  com.google.protobuf.ByteString getCanonicalNameBytes();
 }

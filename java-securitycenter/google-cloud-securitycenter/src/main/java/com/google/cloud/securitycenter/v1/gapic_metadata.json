@@ -50,7 +50,7 @@
               "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
             },
             "ListSources": {
-              "methods": ["listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
+              "methods": ["listSources", "listSources", "listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
             },
             "RunAssetDiscovery": {
               "methods": ["runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryOperationCallable", "runAssetDiscoveryCallable"]

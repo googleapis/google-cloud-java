@@ -42,8 +42,8 @@ public final class RunAssetDiscoveryResponseOuterClass {
     java.lang.String[] descriptorData = {
       "\nAgoogle/cloud/securitycenter/v1/run_ass"
           + "et_discovery_response.proto\022\036google.clou"
-          + "d.securitycenter.v1\032\034google/api/annotati"
-          + "ons.proto\032\036google/protobuf/duration.prot"
+          + "d.securitycenter.v1\032\036google/protobuf/dur"
+          + "ation.proto\032\034google/api/annotations.prot"
           + "o\"\347\001\n\031RunAssetDiscoveryResponse\022N\n\005state"
           + "\030\001 \001(\0162?.google.cloud.securitycenter.v1."
           + "RunAssetDiscoveryResponse.State\022+\n\010durat"
@@ -61,8 +61,8 @@ public final class RunAssetDiscoveryResponseOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_RunAssetDiscoveryResponse_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -72,8 +72,8 @@ public final class RunAssetDiscoveryResponseOuterClass {
             new java.lang.String[] {
               "State", "Duration",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

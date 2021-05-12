@@ -1302,7 +1302,9 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1/organizations/{organization_id}/sources/-/findings
+     * Example: /v1/organizations/{organization_id}/sources/-/findings,
+     * /v1/folders/{folder_id}/sources/-/findings,
+     * /v1/projects/{project_id}/sources/-/findings
      * </pre>
      */
     public void groupFindings(
@@ -1843,7 +1845,9 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1/organizations/{organization_id}/sources/-/findings
+     * Example: /v1/organizations/{organization_id}/sources/-/findings,
+     * /v1/folders/{folder_id}/sources/-/findings,
+     * /v1/projects/{project_id}/sources/-/findings
      * </pre>
      */
     public void groupFindings(
@@ -2224,7 +2228,9 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1/organizations/{organization_id}/sources/-/findings
+     * Example: /v1/organizations/{organization_id}/sources/-/findings,
+     * /v1/folders/{folder_id}/sources/-/findings,
+     * /v1/projects/{project_id}/sources/-/findings
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.GroupFindingsResponse groupFindings(
@@ -2567,7 +2573,9 @@ public final class SecurityCenterGrpc {
      * Filters an organization or source's findings and  groups them by their
      * specified properties.
      * To group across all sources provide a `-` as the source id.
-     * Example: /v1/organizations/{organization_id}/sources/-/findings
+     * Example: /v1/organizations/{organization_id}/sources/-/findings,
+     * /v1/folders/{folder_id}/sources/-/findings,
+     * /v1/projects/{project_id}/sources/-/findings
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

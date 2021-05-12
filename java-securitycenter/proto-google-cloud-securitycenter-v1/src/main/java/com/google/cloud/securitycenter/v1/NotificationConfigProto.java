@@ -46,9 +46,9 @@ public final class NotificationConfigProto {
     java.lang.String[] descriptorData = {
       "\n8google/cloud/securitycenter/v1/notific"
           + "ation_config.proto\022\036google.cloud.securit"
-          + "ycenter.v1\032\034google/api/annotations.proto"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\"\240\003\n\022NotificationCon"
+          + "ycenter.v1\032\037google/api/field_behavior.pr"
+          + "oto\032\031google/api/resource.proto\032\034google/a"
+          + "pi/annotations.proto\"\240\003\n\022NotificationCon"
           + "fig\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\0226"
           + "\n\014pubsub_topic\030\003 \001(\tB \372A\035\n\033pubsub.google"
           + "apis.com/Topic\022\034\n\017service_account\030\004 \001(\tB"
@@ -72,9 +72,9 @@ public final class NotificationConfigProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1_NotificationConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -107,9 +107,9 @@ public final class NotificationConfigProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

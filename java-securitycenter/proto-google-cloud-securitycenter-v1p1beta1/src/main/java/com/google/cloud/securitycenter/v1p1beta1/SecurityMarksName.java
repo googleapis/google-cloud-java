@@ -37,6 +37,16 @@ public class SecurityMarksName implements ResourceName {
   private static final PathTemplate ORGANIZATION_SOURCE_FINDING =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/sources/{source}/findings/{finding}/securityMarks");
+  private static final PathTemplate FOLDER_ASSET =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}/assets/{asset}/securityMarks");
+  private static final PathTemplate PROJECT_ASSET =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/assets/{asset}/securityMarks");
+  private static final PathTemplate FOLDER_SOURCE_FINDING =
+      PathTemplate.createWithoutUrlEncoding(
+          "folders/{folder}/sources/{source}/findings/{finding}/securityMarks");
+  private static final PathTemplate PROJECT_SOURCE_FINDING =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/sources/{source}/findings/{finding}/securityMarks");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -44,6 +54,8 @@ public class SecurityMarksName implements ResourceName {
   private final String asset;
   private final String source;
   private final String finding;
+  private final String folder;
+  private final String project;
 
   @Deprecated
   protected SecurityMarksName() {
@@ -51,6 +63,8 @@ public class SecurityMarksName implements ResourceName {
     asset = null;
     source = null;
     finding = null;
+    folder = null;
+    project = null;
   }
 
   private SecurityMarksName(Builder builder) {
@@ -58,6 +72,8 @@ public class SecurityMarksName implements ResourceName {
     asset = Preconditions.checkNotNull(builder.getAsset());
     source = null;
     finding = null;
+    folder = null;
+    project = null;
     pathTemplate = ORGANIZATION_ASSET;
   }
 
@@ -66,7 +82,49 @@ public class SecurityMarksName implements ResourceName {
     source = Preconditions.checkNotNull(builder.getSource());
     finding = Preconditions.checkNotNull(builder.getFinding());
     asset = null;
+    folder = null;
+    project = null;
     pathTemplate = ORGANIZATION_SOURCE_FINDING;
+  }
+
+  private SecurityMarksName(FolderAssetBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    asset = Preconditions.checkNotNull(builder.getAsset());
+    organization = null;
+    source = null;
+    finding = null;
+    project = null;
+    pathTemplate = FOLDER_ASSET;
+  }
+
+  private SecurityMarksName(ProjectAssetBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    asset = Preconditions.checkNotNull(builder.getAsset());
+    organization = null;
+    source = null;
+    finding = null;
+    folder = null;
+    pathTemplate = PROJECT_ASSET;
+  }
+
+  private SecurityMarksName(FolderSourceFindingBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+    organization = null;
+    asset = null;
+    project = null;
+    pathTemplate = FOLDER_SOURCE_FINDING;
+  }
+
+  private SecurityMarksName(ProjectSourceFindingBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+    organization = null;
+    asset = null;
+    folder = null;
+    pathTemplate = PROJECT_SOURCE_FINDING;
   }
 
   public String getOrganization() {
@@ -85,6 +143,14 @@ public class SecurityMarksName implements ResourceName {
     return finding;
   }
 
+  public String getFolder() {
+    return folder;
+  }
+
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -98,6 +164,26 @@ public class SecurityMarksName implements ResourceName {
   public static OrganizationSourceFindingSecurityMarksBuilder
       newOrganizationSourceFindingSecurityMarksBuilder() {
     return new OrganizationSourceFindingSecurityMarksBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderAssetBuilder newFolderAssetBuilder() {
+    return new FolderAssetBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectAssetBuilder newProjectAssetBuilder() {
+    return new ProjectAssetBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderSourceFindingBuilder newFolderSourceFindingBuilder() {
+    return new FolderSourceFindingBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectSourceFindingBuilder newProjectSourceFindingBuilder() {
+    return new ProjectSourceFindingBuilder();
   }
 
   public Builder toBuilder() {
@@ -124,6 +210,36 @@ public class SecurityMarksName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SecurityMarksName ofFolderAssetName(String folder, String asset) {
+    return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SecurityMarksName ofProjectAssetName(String project, String asset) {
+    return newProjectAssetBuilder().setProject(project).setAsset(asset).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SecurityMarksName ofFolderSourceFindingName(
+      String folder, String source, String finding) {
+    return newFolderSourceFindingBuilder()
+        .setFolder(folder)
+        .setSource(source)
+        .setFinding(finding)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SecurityMarksName ofProjectSourceFindingName(
+      String project, String source, String finding) {
+    return newProjectSourceFindingBuilder()
+        .setProject(project)
+        .setSource(source)
+        .setFinding(finding)
+        .build();
+  }
+
   public static String format(String organization, String asset) {
     return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
   }
@@ -144,6 +260,37 @@ public class SecurityMarksName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderAssetName(String folder, String asset) {
+    return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectAssetName(String project, String asset) {
+    return newProjectAssetBuilder().setProject(project).setAsset(asset).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderSourceFindingName(String folder, String source, String finding) {
+    return newFolderSourceFindingBuilder()
+        .setFolder(folder)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectSourceFindingName(
+      String project, String source, String finding) {
+    return newProjectSourceFindingBuilder()
+        .setProject(project)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
+  }
+
   public static SecurityMarksName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -156,6 +303,20 @@ public class SecurityMarksName implements ResourceName {
       Map<String, String> matchMap = ORGANIZATION_SOURCE_FINDING.match(formattedString);
       return ofOrganizationSourceFindingSecurityMarksName(
           matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
+    } else if (FOLDER_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_ASSET.match(formattedString);
+      return ofFolderAssetName(matchMap.get("folder"), matchMap.get("asset"));
+    } else if (PROJECT_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_ASSET.match(formattedString);
+      return ofProjectAssetName(matchMap.get("project"), matchMap.get("asset"));
+    } else if (FOLDER_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SOURCE_FINDING.match(formattedString);
+      return ofFolderSourceFindingName(
+          matchMap.get("folder"), matchMap.get("source"), matchMap.get("finding"));
+    } else if (PROJECT_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SOURCE_FINDING.match(formattedString);
+      return ofProjectSourceFindingName(
+          matchMap.get("project"), matchMap.get("source"), matchMap.get("finding"));
     }
     throw new ValidationException("SecurityMarksName.parse: formattedString not in valid format");
   }
@@ -182,7 +343,11 @@ public class SecurityMarksName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return ORGANIZATION_ASSET.matches(formattedString)
-        || ORGANIZATION_SOURCE_FINDING.matches(formattedString);
+        || ORGANIZATION_SOURCE_FINDING.matches(formattedString)
+        || FOLDER_ASSET.matches(formattedString)
+        || PROJECT_ASSET.matches(formattedString)
+        || FOLDER_SOURCE_FINDING.matches(formattedString)
+        || PROJECT_SOURCE_FINDING.matches(formattedString);
   }
 
   @Override
@@ -202,6 +367,12 @@ public class SecurityMarksName implements ResourceName {
           }
           if (finding != null) {
             fieldMapBuilder.put("finding", finding);
+          }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -229,7 +400,9 @@ public class SecurityMarksName implements ResourceName {
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.asset, that.asset)
           && Objects.equals(this.source, that.source)
-          && Objects.equals(this.finding, that.finding);
+          && Objects.equals(this.finding, that.finding)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -247,6 +420,10 @@ public class SecurityMarksName implements ResourceName {
     h ^= Objects.hashCode(source);
     h *= 1000003;
     h ^= Objects.hashCode(finding);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -320,6 +497,150 @@ public class SecurityMarksName implements ResourceName {
     }
 
     public OrganizationSourceFindingSecurityMarksBuilder setFinding(String finding) {
+      this.finding = finding;
+      return this;
+    }
+
+    public SecurityMarksName build() {
+      return new SecurityMarksName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/assets/{asset}/securityMarks. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderAssetBuilder {
+    private String folder;
+    private String asset;
+
+    protected FolderAssetBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getAsset() {
+      return asset;
+    }
+
+    public FolderAssetBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderAssetBuilder setAsset(String asset) {
+      this.asset = asset;
+      return this;
+    }
+
+    public SecurityMarksName build() {
+      return new SecurityMarksName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/assets/{asset}/securityMarks. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectAssetBuilder {
+    private String project;
+    private String asset;
+
+    protected ProjectAssetBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getAsset() {
+      return asset;
+    }
+
+    public ProjectAssetBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectAssetBuilder setAsset(String asset) {
+      this.asset = asset;
+      return this;
+    }
+
+    public SecurityMarksName build() {
+      return new SecurityMarksName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/sources/{source}/findings/{finding}/securityMarks. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderSourceFindingBuilder {
+    private String folder;
+    private String source;
+    private String finding;
+
+    protected FolderSourceFindingBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getSource() {
+      return source;
+    }
+
+    public String getFinding() {
+      return finding;
+    }
+
+    public FolderSourceFindingBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderSourceFindingBuilder setSource(String source) {
+      this.source = source;
+      return this;
+    }
+
+    public FolderSourceFindingBuilder setFinding(String finding) {
+      this.finding = finding;
+      return this;
+    }
+
+    public SecurityMarksName build() {
+      return new SecurityMarksName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/sources/{source}/findings/{finding}/securityMarks. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectSourceFindingBuilder {
+    private String project;
+    private String source;
+    private String finding;
+
+    protected ProjectSourceFindingBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getSource() {
+      return source;
+    }
+
+    public String getFinding() {
+      return finding;
+    }
+
+    public ProjectSourceFindingBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectSourceFindingBuilder setSource(String source) {
+      this.source = source;
+      return this;
+    }
+
+    public ProjectSourceFindingBuilder setFinding(String finding) {
       this.finding = finding;
       return this;
     }

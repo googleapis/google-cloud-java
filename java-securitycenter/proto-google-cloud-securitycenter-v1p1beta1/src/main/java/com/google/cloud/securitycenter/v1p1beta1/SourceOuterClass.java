@@ -42,26 +42,28 @@ public final class SourceOuterClass {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/securitycenter/v1p1beta1/"
           + "source.proto\022%google.cloud.securitycente"
-          + "r.v1p1beta1\032\034google/api/annotations.prot"
-          + "o\032\031google/api/resource.proto\"\233\001\n\006Source\022"
+          + "r.v1p1beta1\032\031google/api/resource.proto\032\034"
+          + "google/api/annotations.proto\"\375\001\n\006Source\022"
           + "\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013d"
-          + "escription\030\003 \001(\t:X\352AU\n$securitycenter.go"
-          + "ogleapis.com/Source\022-organizations/{orga"
-          + "nization}/sources/{source}B\375\001\n)com.googl"
-          + "e.cloud.securitycenter.v1p1beta1P\001ZSgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "securitycenter/v1p1beta1;securitycenter\252"
-          + "\002%Google.Cloud.SecurityCenter.V1P1Beta1\312"
-          + "\002%Google\\Cloud\\SecurityCenter\\V1p1beta1\352"
-          + "\002(Google::Cloud::SecurityCenter::V1p1bet"
-          + "a1b\006proto3"
+          + "escription\030\003 \001(\t\022\026\n\016canonical_name\030\016 \001(\t"
+          + ":\241\001\352A\235\001\n$securitycenter.googleapis.com/S"
+          + "ource\022-organizations/{organization}/sour"
+          + "ces/{source}\022!folders/{folder}/sources/{"
+          + "source}\022#projects/{project}/sources/{sou"
+          + "rce}B\375\001\n)com.google.cloud.securitycenter"
+          + ".v1p1beta1P\001ZSgoogle.golang.org/genproto"
+          + "/googleapis/cloud/securitycenter/v1p1bet"
+          + "a1;securitycenter\252\002%Google.Cloud.Securit"
+          + "yCenter.V1P1Beta1\312\002%Google\\Cloud\\Securit"
+          + "yCenter\\V1p1beta1\352\002(Google::Cloud::Secur"
+          + "ityCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_Source_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -69,15 +71,15 @@ public final class SourceOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1p1beta1_Source_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Description",
+              "Name", "DisplayName", "Description", "CanonicalName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

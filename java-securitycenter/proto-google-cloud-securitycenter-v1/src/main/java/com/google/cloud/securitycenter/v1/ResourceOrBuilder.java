@@ -149,4 +149,76 @@ public interface ResourceOrBuilder
    * @return The bytes for parentDisplayName.
    */
   com.google.protobuf.ByteString getParentDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains a Folder message for each folder in the assets ancestry.
+   * The first folder is the deepest nested folder, and the last folder is the
+   * folder directly under the Organization.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.Folder folders = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Folder> getFoldersList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains a Folder message for each folder in the assets ancestry.
+   * The first folder is the deepest nested folder, and the last folder is the
+   * folder directly under the Organization.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.Folder folders = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.Folder getFolders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains a Folder message for each folder in the assets ancestry.
+   * The first folder is the deepest nested folder, and the last folder is the
+   * folder directly under the Organization.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.Folder folders = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getFoldersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains a Folder message for each folder in the assets ancestry.
+   * The first folder is the deepest nested folder, and the last folder is the
+   * folder directly under the Organization.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.Folder folders = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.FolderOrBuilder>
+      getFoldersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains a Folder message for each folder in the assets ancestry.
+   * The first folder is the deepest nested folder, and the last folder is the
+   * folder directly under the Organization.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.Folder folders = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
 }

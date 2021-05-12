@@ -16,7 +16,9 @@
 
 package com.google.cloud.securitycenter.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,19 +33,48 @@ import javax.annotation.Generated;
 public class AssetName implements ResourceName {
   private static final PathTemplate ORGANIZATION_ASSET =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/assets/{asset}");
+  private static final PathTemplate FOLDER_ASSET =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}/assets/{asset}");
+  private static final PathTemplate PROJECT_ASSET =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/assets/{asset}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String asset;
+  private final String folder;
+  private final String project;
 
   @Deprecated
   protected AssetName() {
     organization = null;
     asset = null;
+    folder = null;
+    project = null;
   }
 
   private AssetName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     asset = Preconditions.checkNotNull(builder.getAsset());
+    folder = null;
+    project = null;
+    pathTemplate = ORGANIZATION_ASSET;
+  }
+
+  private AssetName(FolderAssetBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    asset = Preconditions.checkNotNull(builder.getAsset());
+    organization = null;
+    project = null;
+    pathTemplate = FOLDER_ASSET;
+  }
+
+  private AssetName(ProjectAssetBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    asset = Preconditions.checkNotNull(builder.getAsset());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_ASSET;
   }
 
   public String getOrganization() {
@@ -54,8 +85,31 @@ public class AssetName implements ResourceName {
     return asset;
   }
 
+  public String getFolder() {
+    return folder;
+  }
+
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newOrganizationAssetBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderAssetBuilder newFolderAssetBuilder() {
+    return new FolderAssetBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectAssetBuilder newProjectAssetBuilder() {
+    return new ProjectAssetBuilder();
   }
 
   public Builder toBuilder() {
@@ -66,18 +120,55 @@ public class AssetName implements ResourceName {
     return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static AssetName ofOrganizationAssetName(String organization, String asset) {
+    return newBuilder().setOrganization(organization).setAsset(asset).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static AssetName ofFolderAssetName(String folder, String asset) {
+    return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static AssetName ofProjectAssetName(String project, String asset) {
+    return newProjectAssetBuilder().setProject(project).setAsset(asset).build();
+  }
+
   public static String format(String organization, String asset) {
     return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationAssetName(String organization, String asset) {
+    return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderAssetName(String folder, String asset) {
+    return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectAssetName(String project, String asset) {
+    return newProjectAssetBuilder().setProject(project).setAsset(asset).build().toString();
   }
 
   public static AssetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_ASSET.validatedMatch(
-            formattedString, "AssetName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("asset"));
+    if (ORGANIZATION_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_ASSET.match(formattedString);
+      return ofOrganizationAssetName(matchMap.get("organization"), matchMap.get("asset"));
+    } else if (FOLDER_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_ASSET.match(formattedString);
+      return ofFolderAssetName(matchMap.get("folder"), matchMap.get("asset"));
+    } else if (PROJECT_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_ASSET.match(formattedString);
+      return ofProjectAssetName(matchMap.get("project"), matchMap.get("asset"));
+    }
+    throw new ValidationException("AssetName.parse: formattedString not in valid format");
   }
 
   public static List<AssetName> parseList(List<String> formattedStrings) {
@@ -101,7 +192,9 @@ public class AssetName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_ASSET.matches(formattedString);
+    return ORGANIZATION_ASSET.matches(formattedString)
+        || FOLDER_ASSET.matches(formattedString)
+        || PROJECT_ASSET.matches(formattedString);
   }
 
   @Override
@@ -116,6 +209,12 @@ public class AssetName implements ResourceName {
           if (asset != null) {
             fieldMapBuilder.put("asset", asset);
           }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -129,7 +228,7 @@ public class AssetName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_ASSET.instantiate("organization", organization, "asset", asset);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -140,7 +239,9 @@ public class AssetName implements ResourceName {
     if (o != null || getClass() == o.getClass()) {
       AssetName that = ((AssetName) o);
       return Objects.equals(this.organization, that.organization)
-          && Objects.equals(this.asset, that.asset);
+          && Objects.equals(this.asset, that.asset)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -149,9 +250,15 @@ public class AssetName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(asset);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -181,8 +288,73 @@ public class AssetName implements ResourceName {
     }
 
     private Builder(AssetName assetName) {
+      Preconditions.checkArgument(
+          Objects.equals(assetName.pathTemplate, ORGANIZATION_ASSET),
+          "toBuilder is only supported when AssetName has the pattern of organizations/{organization}/assets/{asset}");
       organization = assetName.organization;
       asset = assetName.asset;
+    }
+
+    public AssetName build() {
+      return new AssetName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/assets/{asset}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderAssetBuilder {
+    private String folder;
+    private String asset;
+
+    protected FolderAssetBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getAsset() {
+      return asset;
+    }
+
+    public FolderAssetBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderAssetBuilder setAsset(String asset) {
+      this.asset = asset;
+      return this;
+    }
+
+    public AssetName build() {
+      return new AssetName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/assets/{asset}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectAssetBuilder {
+    private String project;
+    private String asset;
+
+    protected ProjectAssetBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getAsset() {
+      return asset;
+    }
+
+    public ProjectAssetBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectAssetBuilder setAsset(String asset) {
+      this.asset = asset;
+      return this;
     }
 
     public AssetName build() {

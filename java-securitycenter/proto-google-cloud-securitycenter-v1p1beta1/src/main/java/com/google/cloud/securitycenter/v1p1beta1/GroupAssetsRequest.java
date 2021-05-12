@@ -177,7 +177,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Name of the organization to groupBy. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -203,7 +204,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Name of the organization to groupBy. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -1125,7 +1127,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the organization to groupBy. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1150,7 +1153,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the organization to groupBy. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1175,7 +1179,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the organization to groupBy. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1199,7 +1204,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the organization to groupBy. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -1219,7 +1225,8 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the organization to groupBy. Its format is
-     * "organizations/[organization_id]".
+     * "organizations/[organization_id], folders/[folder_id], or
+     * projects/[project_id]".
      * </pre>
      *
      * <code>

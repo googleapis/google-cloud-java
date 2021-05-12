@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter.git",
-        "sha": "e60d3a9218ff1e9d563e85b552bef1d34ade3695"
+        "sha": "e2e967141448cfb6cbf9e9d661a2e6442a882a96"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "0a992df8020d2fce3a18ccb7d43f727fb4f4a3cb",
+        "internalRef": "372965035"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "0a992df8020d2fce3a18ccb7d43f727fb4f4a3cb",
+        "internalRef": "372965035"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "0a992df8020d2fce3a18ccb7d43f727fb4f4a3cb",
+        "internalRef": "372965035"
       }
     },
     {
@@ -190,6 +190,10 @@
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FindingName.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FindingOrBuilder.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FindingOuterClass.java",
+    "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/Folder.java",
+    "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FolderName.java",
+    "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FolderOrBuilder.java",
+    "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/FolderProto.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/GetNotificationConfigRequest.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/GetNotificationConfigRequestOrBuilder.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/GetOrganizationSettingsRequest.java",
@@ -234,6 +238,7 @@
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/OrganizationSettingsName.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/OrganizationSettingsOrBuilder.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/OrganizationSettingsOuterClass.java",
+    "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/ProjectName.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/Resource.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/ResourceOrBuilder.java",
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/ResourceProto.java",
@@ -266,6 +271,7 @@
     "proto-google-cloud-securitycenter-v1/src/main/java/com/google/cloud/securitycenter/v1/UpdateSourceRequestOrBuilder.java",
     "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/asset.proto",
     "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/finding.proto",
+    "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/folder.proto",
     "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/notification_config.proto",
     "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/notification_message.proto",
     "proto-google-cloud-securitycenter-v1/src/main/proto/google/cloud/securitycenter/v1/organization_settings.proto",
@@ -364,6 +370,10 @@
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FindingName.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FindingOrBuilder.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FindingOuterClass.java",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/Folder.java",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FolderName.java",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FolderOrBuilder.java",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/FolderProto.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/GetNotificationConfigRequest.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/GetNotificationConfigRequestOrBuilder.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/GetOrganizationSettingsRequest.java",
@@ -408,6 +418,7 @@
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/OrganizationSettingsName.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/OrganizationSettingsOrBuilder.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/OrganizationSettingsOuterClass.java",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/ProjectName.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/Resource.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/ResourceOrBuilder.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/ResourceProto.java",
@@ -440,6 +451,7 @@
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/java/com/google/cloud/securitycenter/v1p1beta1/UpdateSourceRequestOrBuilder.java",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/asset.proto",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/finding.proto",
+    "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/folder.proto",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/notification_config.proto",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/notification_message.proto",
     "proto-google-cloud-securitycenter-v1p1beta1/src/main/proto/google/cloud/securitycenter/v1p1beta1/organization_settings.proto",

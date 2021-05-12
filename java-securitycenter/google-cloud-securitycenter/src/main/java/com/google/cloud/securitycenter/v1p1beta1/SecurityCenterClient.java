@@ -283,7 +283,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
    *   Finding finding = Finding.newBuilder().build();
    *   String findingId = "findingId439150212";
    *   Finding response = securityCenterClient.createFinding(parent, finding, findingId);
@@ -315,7 +315,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
    *   String findingId = "findingId439150212";
    *   Finding finding = Finding.newBuilder().build();
    *   Finding response = securityCenterClient.createFinding(parent, findingId, finding);
@@ -347,7 +347,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
    *   Finding finding = Finding.newBuilder().build();
    *   String findingId = "findingId439150212";
    *   Finding response = securityCenterClient.createFinding(parent, finding, findingId);
@@ -379,7 +379,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
    *   String findingId = "findingId439150212";
    *   Finding finding = Finding.newBuilder().build();
    *   Finding response = securityCenterClient.createFinding(parent, findingId, finding);
@@ -413,7 +413,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   CreateFindingRequest request =
    *       CreateFindingRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFindingId("findingId439150212")
    *           .setFinding(Finding.newBuilder().build())
    *           .build();
@@ -438,7 +439,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   CreateFindingRequest request =
    *       CreateFindingRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFindingId("findingId439150212")
    *           .setFinding(Finding.newBuilder().build())
    *           .build();
@@ -744,7 +746,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -769,7 +771,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = ProjectName.of("[PROJECT]").toString();
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -793,7 +795,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.getIamPolicy(request);
@@ -817,7 +819,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);
@@ -1032,7 +1034,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   SourceName name = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
    *   Source response = securityCenterClient.getSource(name);
    * }
    * }</pre>
@@ -1055,7 +1057,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String name = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String name = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
    *   Source response = securityCenterClient.getSource(name);
    * }
    * }</pre>
@@ -1079,7 +1081,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetSourceRequest request =
    *       GetSourceRequest.newBuilder()
-   *           .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .build();
    *   Source response = securityCenterClient.getSource(request);
    * }
@@ -1102,7 +1104,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetSourceRequest request =
    *       GetSourceRequest.newBuilder()
-   *           .setName(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setName(SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .build();
    *   ApiFuture<Source> future = securityCenterClient.getSourceCallable().futureCall(request);
    *   // Do something.
@@ -1124,7 +1126,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1155,7 +1157,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1187,7 +1189,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupAssetsRequest request =
    *       GroupAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setCompareDuration(Duration.newBuilder().build())
@@ -1219,13 +1221,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1p1beta1/organizations/{organization_id}/sources/-/findings
+   * /v1/organizations/{organization_id}/sources/-/findings,
+   * /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
    *   String groupBy = "groupBy293428022";
    *   for (GroupResult element : securityCenterClient.groupFindings(parent, groupBy).iterateAll()) {
    *     // doThingsWith(element);
@@ -1234,8 +1237,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the source to groupBy. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   *     "organizations/[organization_id]/sources/[source_id]",
+   *     folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]. To
+   *     groupBy across all sources provide a source_id of `-`. For example:
+   *     organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-, or
+   *     projects/{project_id}/sources/-
    * @param groupBy Required. Expression that defines what assets fields to use for grouping
    *     (including `state_change`). The string value should follow SQL syntax: comma separated list
    *     of fields. For example: "parent,resource_name".
@@ -1268,13 +1274,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1p1beta1/organizations/{organization_id}/sources/-/findings
+   * /v1/organizations/{organization_id}/sources/-/findings,
+   * /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
    *   String groupBy = "groupBy293428022";
    *   for (GroupResult element : securityCenterClient.groupFindings(parent, groupBy).iterateAll()) {
    *     // doThingsWith(element);
@@ -1283,8 +1290,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the source to groupBy. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   *     "organizations/[organization_id]/sources/[source_id]",
+   *     folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]. To
+   *     groupBy across all sources provide a source_id of `-`. For example:
+   *     organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-, or
+   *     projects/{project_id}/sources/-
    * @param groupBy Required. Expression that defines what assets fields to use for grouping
    *     (including `state_change`). The string value should follow SQL syntax: comma separated list
    *     of fields. For example: "parent,resource_name".
@@ -1314,7 +1324,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1p1beta1/organizations/{organization_id}/sources/-/findings
+   * /v1/organizations/{organization_id}/sources/-/findings,
+   * /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1322,7 +1333,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupFindingsRequest request =
    *       GroupFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1348,7 +1360,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1p1beta1/organizations/{organization_id}/sources/-/findings
+   * /v1/organizations/{organization_id}/sources/-/findings,
+   * /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1356,7 +1369,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupFindingsRequest request =
    *       GroupFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1383,7 +1397,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1p1beta1/organizations/{organization_id}/sources/-/findings
+   * /v1/organizations/{organization_id}/sources/-/findings,
+   * /v1/folders/{folder_id}/sources/-/findings, /v1/projects/{project_id}/sources/-/findings
    *
    * <p>Sample code:
    *
@@ -1391,7 +1406,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GroupFindingsRequest request =
    *       GroupFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setGroupBy("groupBy293428022")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1426,6 +1442,32 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (ListAssetsResponse.ListAssetsResult element :
+   *       securityCenterClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization assets should belong to. Its format is
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(FolderName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists an organization's assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (ListAssetsResponse.ListAssetsResult element :
    *       securityCenterClient.listAssets(parent).iterateAll()) {
@@ -1435,7 +1477,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the organization assets should belong to. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAssetsPagedResponse listAssets(OrganizationName parent) {
@@ -1452,7 +1494,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (ListAssetsResponse.ListAssetsResult element :
    *       securityCenterClient.listAssets(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1461,7 +1503,33 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the organization assets should belong to. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(ProjectName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists an organization's assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString();
+   *   for (ListAssetsResponse.ListAssetsResult element :
+   *       securityCenterClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization assets should belong to. Its format is
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAssetsPagedResponse listAssets(String parent) {
@@ -1479,7 +1547,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1512,7 +1580,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1544,7 +1612,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(AssetName.ofOrganizationAssetName("[ORGANIZATION]", "[ASSET]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1583,7 +1651,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   SourceName parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
    *   for (ListFindingsResponse.ListFindingsResult element :
    *       securityCenterClient.listFindings(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1592,8 +1660,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the source the findings belong to. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To list across all sources provide a
-   *     source_id of `-`. For example: organizations/{organization_id}/sources/-
+   *     "organizations/[organization_id]/sources/[source_id],
+   *     folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]". To
+   *     list across all sources provide a source_id of `-`. For example:
+   *     organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+   *     projects/{projects_id}/sources/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingsPagedResponse listFindings(SourceName parent) {
@@ -1615,7 +1686,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
    *   for (ListFindingsResponse.ListFindingsResult element :
    *       securityCenterClient.listFindings(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1624,8 +1695,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the source the findings belong to. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To list across all sources provide a
-   *     source_id of `-`. For example: organizations/{organization_id}/sources/-
+   *     "organizations/[organization_id]/sources/[source_id],
+   *     folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]". To
+   *     list across all sources provide a source_id of `-`. For example:
+   *     organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+   *     projects/{projects_id}/sources/-
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingsPagedResponse listFindings(String parent) {
@@ -1646,7 +1720,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1682,7 +1757,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1718,7 +1794,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
-   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setReadTime(Timestamp.newBuilder().build())
@@ -1901,6 +1978,33 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the parent of sources to list. Its format should be
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSourcesPagedResponse listSources(FolderName parent) {
+    ListSourcesRequest request =
+        ListSourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all sources belonging to an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1909,7 +2013,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(OrganizationName parent) {
@@ -1928,7 +2032,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1936,7 +2040,34 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSourcesPagedResponse listSources(ProjectName parent) {
+    ListSourcesRequest request =
+        ListSourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all sources belonging to an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString();
+   *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the parent of sources to list. Its format should be
+   *     "organizations/[organization_id], folders/[folder_id], or projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSourcesPagedResponse listSources(String parent) {
@@ -1954,7 +2085,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -1981,7 +2113,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -2009,7 +2142,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   ListSourcesRequest request =
    *       ListSourcesRequest.newBuilder()
-   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setParent(
+   *               SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -2179,7 +2313,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
+   *   FindingName name =
+   *       FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
    *   Finding.State state = Finding.State.forNumber(0);
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Finding response = securityCenterClient.setFindingState(name, state, startTime);
@@ -2211,7 +2346,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString();
+   *   String name =
+   *       FindingName.ofOrganizationSourceFindingName("[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *           .toString();
    *   Finding.State state = Finding.State.forNumber(0);
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Finding response = securityCenterClient.setFindingState(name, state, startTime);
@@ -2245,7 +2382,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetFindingStateRequest request =
    *       SetFindingStateRequest.newBuilder()
-   *           .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+   *           .setName(
+   *               FindingName.ofOrganizationSourceFindingName(
+   *                       "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *                   .toString())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .build();
    *   Finding response = securityCenterClient.setFindingState(request);
@@ -2269,7 +2409,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetFindingStateRequest request =
    *       SetFindingStateRequest.newBuilder()
-   *           .setName(FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]").toString())
+   *           .setName(
+   *               FindingName.ofOrganizationSourceFindingName(
+   *                       "[ORGANIZATION]", "[SOURCE]", "[FINDING]")
+   *                   .toString())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .build();
    *   ApiFuture<Finding> future =
@@ -2291,7 +2434,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -2321,7 +2464,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = ProjectName.of("[PROJECT]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -2350,7 +2493,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.setIamPolicy(request);
@@ -2374,7 +2517,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.setIamPolicyCallable().futureCall(request);
@@ -2395,7 +2538,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -2427,7 +2570,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = ProjectName.of("[PROJECT]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -2461,7 +2604,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
@@ -2485,7 +2628,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

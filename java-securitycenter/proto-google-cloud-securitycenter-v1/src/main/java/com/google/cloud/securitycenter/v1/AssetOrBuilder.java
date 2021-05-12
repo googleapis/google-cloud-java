@@ -236,8 +236,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -249,8 +248,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -262,8 +260,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Security
-   * Command Center.
+   * The time at which the asset was last updated or added in Cloud SCC.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -313,4 +310,37 @@ public interface AssetOrBuilder
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
    */
   com.google.cloud.securitycenter.v1.Asset.IamPolicyOrBuilder getIamPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the resource. It's either
+   * "organizations/{organization_id}/assets/{asset_id}",
+   * "folders/{folder_id}/assets/{asset_id}" or
+   * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+   * ancestor of the resource.
+   * </pre>
+   *
+   * <code>string canonical_name = 13;</code>
+   *
+   * @return The canonicalName.
+   */
+  java.lang.String getCanonicalName();
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the resource. It's either
+   * "organizations/{organization_id}/assets/{asset_id}",
+   * "folders/{folder_id}/assets/{asset_id}" or
+   * "projects/{project_number}/assets/{asset_id}", depending on the closest CRM
+   * ancestor of the resource.
+   * </pre>
+   *
+   * <code>string canonical_name = 13;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  com.google.protobuf.ByteString getCanonicalNameBytes();
 }

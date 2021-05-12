@@ -16,7 +16,9 @@
 
 package com.google.cloud.securitycenter.v1p1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +34,54 @@ public class FindingName implements ResourceName {
   private static final PathTemplate ORGANIZATION_SOURCE_FINDING =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/sources/{source}/findings/{finding}");
+  private static final PathTemplate FOLDER_SOURCE_FINDING =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}/sources/{source}/findings/{finding}");
+  private static final PathTemplate PROJECT_SOURCE_FINDING =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/sources/{source}/findings/{finding}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String source;
   private final String finding;
+  private final String folder;
+  private final String project;
 
   @Deprecated
   protected FindingName() {
     organization = null;
     source = null;
     finding = null;
+    folder = null;
+    project = null;
   }
 
   private FindingName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     source = Preconditions.checkNotNull(builder.getSource());
     finding = Preconditions.checkNotNull(builder.getFinding());
+    folder = null;
+    project = null;
+    pathTemplate = ORGANIZATION_SOURCE_FINDING;
+  }
+
+  private FindingName(FolderSourceFindingBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+    organization = null;
+    project = null;
+    pathTemplate = FOLDER_SOURCE_FINDING;
+  }
+
+  private FindingName(ProjectSourceFindingBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_SOURCE_FINDING;
   }
 
   public String getOrganization() {
@@ -62,8 +96,31 @@ public class FindingName implements ResourceName {
     return finding;
   }
 
+  public String getFolder() {
+    return folder;
+  }
+
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newOrganizationSourceFindingBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderSourceFindingBuilder newFolderSourceFindingBuilder() {
+    return new FolderSourceFindingBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectSourceFindingBuilder newProjectSourceFindingBuilder() {
+    return new ProjectSourceFindingBuilder();
   }
 
   public Builder toBuilder() {
@@ -72,6 +129,32 @@ public class FindingName implements ResourceName {
 
   public static FindingName of(String organization, String source, String finding) {
     return newBuilder().setOrganization(organization).setSource(source).setFinding(finding).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static FindingName ofOrganizationSourceFindingName(
+      String organization, String source, String finding) {
+    return newBuilder().setOrganization(organization).setSource(source).setFinding(finding).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static FindingName ofFolderSourceFindingName(
+      String folder, String source, String finding) {
+    return newFolderSourceFindingBuilder()
+        .setFolder(folder)
+        .setSource(source)
+        .setFinding(finding)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static FindingName ofProjectSourceFindingName(
+      String project, String source, String finding) {
+    return newProjectSourceFindingBuilder()
+        .setProject(project)
+        .setSource(source)
+        .setFinding(finding)
+        .build();
   }
 
   public static String format(String organization, String source, String finding) {
@@ -83,14 +166,56 @@ public class FindingName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationSourceFindingName(
+      String organization, String source, String finding) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderSourceFindingName(String folder, String source, String finding) {
+    return newFolderSourceFindingBuilder()
+        .setFolder(folder)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectSourceFindingName(
+      String project, String source, String finding) {
+    return newProjectSourceFindingBuilder()
+        .setProject(project)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
+  }
+
   public static FindingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_SOURCE_FINDING.validatedMatch(
-            formattedString, "FindingName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
+    if (ORGANIZATION_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_SOURCE_FINDING.match(formattedString);
+      return ofOrganizationSourceFindingName(
+          matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
+    } else if (FOLDER_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SOURCE_FINDING.match(formattedString);
+      return ofFolderSourceFindingName(
+          matchMap.get("folder"), matchMap.get("source"), matchMap.get("finding"));
+    } else if (PROJECT_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SOURCE_FINDING.match(formattedString);
+      return ofProjectSourceFindingName(
+          matchMap.get("project"), matchMap.get("source"), matchMap.get("finding"));
+    }
+    throw new ValidationException("FindingName.parse: formattedString not in valid format");
   }
 
   public static List<FindingName> parseList(List<String> formattedStrings) {
@@ -114,7 +239,9 @@ public class FindingName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_SOURCE_FINDING.matches(formattedString);
+    return ORGANIZATION_SOURCE_FINDING.matches(formattedString)
+        || FOLDER_SOURCE_FINDING.matches(formattedString)
+        || PROJECT_SOURCE_FINDING.matches(formattedString);
   }
 
   @Override
@@ -132,6 +259,12 @@ public class FindingName implements ResourceName {
           if (finding != null) {
             fieldMapBuilder.put("finding", finding);
           }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -145,8 +278,7 @@ public class FindingName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_SOURCE_FINDING.instantiate(
-        "organization", organization, "source", source, "finding", finding);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -158,7 +290,9 @@ public class FindingName implements ResourceName {
       FindingName that = ((FindingName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.source, that.source)
-          && Objects.equals(this.finding, that.finding);
+          && Objects.equals(this.finding, that.finding)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -167,11 +301,17 @@ public class FindingName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(source);
     h *= 1000003;
     h ^= Objects.hashCode(finding);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -211,9 +351,94 @@ public class FindingName implements ResourceName {
     }
 
     private Builder(FindingName findingName) {
+      Preconditions.checkArgument(
+          Objects.equals(findingName.pathTemplate, ORGANIZATION_SOURCE_FINDING),
+          "toBuilder is only supported when FindingName has the pattern of organizations/{organization}/sources/{source}/findings/{finding}");
       organization = findingName.organization;
       source = findingName.source;
       finding = findingName.finding;
+    }
+
+    public FindingName build() {
+      return new FindingName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/sources/{source}/findings/{finding}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderSourceFindingBuilder {
+    private String folder;
+    private String source;
+    private String finding;
+
+    protected FolderSourceFindingBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getSource() {
+      return source;
+    }
+
+    public String getFinding() {
+      return finding;
+    }
+
+    public FolderSourceFindingBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderSourceFindingBuilder setSource(String source) {
+      this.source = source;
+      return this;
+    }
+
+    public FolderSourceFindingBuilder setFinding(String finding) {
+      this.finding = finding;
+      return this;
+    }
+
+    public FindingName build() {
+      return new FindingName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/sources/{source}/findings/{finding}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectSourceFindingBuilder {
+    private String project;
+    private String source;
+    private String finding;
+
+    protected ProjectSourceFindingBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getSource() {
+      return source;
+    }
+
+    public String getFinding() {
+      return finding;
+    }
+
+    public ProjectSourceFindingBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectSourceFindingBuilder setSource(String source) {
+      this.source = source;
+      return this;
+    }
+
+    public ProjectSourceFindingBuilder setFinding(String finding) {
+      this.finding = finding;
+      return this;
     }
 
     public FindingName build() {

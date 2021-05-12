@@ -139,4 +139,43 @@ public interface SecurityMarksOrBuilder
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
   java.lang.String getMarksOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the marks.
+   * Examples:
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * "projects/{project_number}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * </pre>
+   *
+   * <code>string canonical_name = 3;</code>
+   *
+   * @return The canonicalName.
+   */
+  java.lang.String getCanonicalName();
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the marks.
+   * Examples:
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * "projects/{project_number}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * </pre>
+   *
+   * <code>string canonical_name = 3;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  com.google.protobuf.ByteString getCanonicalNameBytes();
 }

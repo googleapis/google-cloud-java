@@ -123,4 +123,39 @@ public interface SourceOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}",
+   * "folders/{folder_id}/sources/{source_id}" or
+   * "projects/{project_number}/sources/{source_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The canonicalName.
+   */
+  java.lang.String getCanonicalName();
+  /**
+   *
+   *
+   * <pre>
+   * The canonical name of the finding. It's either
+   * "organizations/{organization_id}/sources/{source_id}",
+   * "folders/{folder_id}/sources/{source_id}" or
+   * "projects/{project_number}/sources/{source_id}",
+   * depending on the closest CRM ancestor of the resource associated with the
+   * finding.
+   * </pre>
+   *
+   * <code>string canonical_name = 14;</code>
+   *
+   * @return The bytes for canonicalName.
+   */
+  com.google.protobuf.ByteString getCanonicalNameBytes();
 }
