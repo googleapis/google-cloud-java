@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>1.2.12</version>
+  <version>1.2.14</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-bigquerydatatransfer'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.13'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.14'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.13"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.14"
 ```
 
 ## Authentication
