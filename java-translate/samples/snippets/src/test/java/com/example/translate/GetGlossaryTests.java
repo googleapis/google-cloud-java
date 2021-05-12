@@ -22,10 +22,6 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -40,8 +36,7 @@ public class GetGlossaryTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String GLOSSARY_INPUT_URI =
       "gs://cloud-samples-data/translation/glossary_ja.csv";
-  private static final String GLOSSARY_ID =
-      String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+  private static final String GLOSSARY_ID = "DO_NOT_DELETE_TEST_GLOSSARY";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -60,14 +55,10 @@ public class GetGlossaryTests {
   }
 
   @Before
-  public void setUp() throws InterruptedException, ExecutionException, IOException {
+  public void setUp() {
     // Create a glossary that can be used in the test
     PrintStream temp = new PrintStream(new ByteArrayOutputStream());
     System.setOut(temp);
-    List<String> languageCodes = new ArrayList<>();
-    languageCodes.add("en");
-    languageCodes.add("ja");
-    CreateGlossary.createGlossary(PROJECT_ID, GLOSSARY_ID, languageCodes, GLOSSARY_INPUT_URI);
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
@@ -76,9 +67,7 @@ public class GetGlossaryTests {
   }
 
   @After
-  public void tearDown() throws InterruptedException, ExecutionException, IOException {
-    // Delete the created glossary
-    DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
+  public void tearDown() {
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);

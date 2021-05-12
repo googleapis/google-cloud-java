@@ -27,8 +27,6 @@ import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -47,11 +45,8 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String INPUT_URI =
       "gs://cloud-samples-data/translation/text_with_custom_model_and_glossary.txt";
-  private static final String GLOSSARY_ID =
-      String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
+  private static final String GLOSSARY_ID = "DO_NOT_DELETE_TEST_GLOSSARY";
   private static final String MODEL_ID = "TRL2188848820815848149";
-  private static final String GLOSSARY_INPUT_URI =
-      "gs://cloud-samples-data/translation/glossary_ja.csv";
   private static final String PREFIX = "BATCH_TRANSLATION_WITH_MODEL_OUTPUT/";
   private static final String OUTPUT_URI =
       String.format("gs://%s/%s%s/", PROJECT_ID, PREFIX, UUID.randomUUID());
@@ -100,14 +95,9 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   private PrintStream originalPrintStream;
 
   @Before
-  public void setUp() throws InterruptedException, ExecutionException, IOException {
-    // Create a glossary that can be used in the test
+  public void setUp() {
     PrintStream temp = new PrintStream(new ByteArrayOutputStream());
     System.setOut(temp);
-    List<String> languageCodes = new ArrayList<>();
-    languageCodes.add("en");
-    languageCodes.add("ja");
-    CreateGlossary.createGlossary(PROJECT_ID, GLOSSARY_ID, languageCodes, GLOSSARY_INPUT_URI);
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
@@ -116,16 +106,13 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
   }
 
   @After
-  public void tearDown() throws InterruptedException, ExecutionException, IOException {
+  public void tearDown() {
     cleanUpBucket();
-    // Delete the created glossary
-    DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testBatchTranslateTextWithGlossaryAndModel()
