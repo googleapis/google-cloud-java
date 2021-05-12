@@ -545,7 +545,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -561,7 +561,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -648,60 +648,60 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private static Builder initDefaults(Builder builder) {
       builder
           .uploadModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .getModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .listModelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .updateModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .deleteModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .exportModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .getModelEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .listModelEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .getModelEvaluationSliceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .listModelEvaluationSlicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .uploadModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UploadModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(UploadModelResponse.class))
@@ -724,8 +724,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .deleteModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -747,8 +747,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .exportModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ExportModelResponse.class))

@@ -802,6 +802,606 @@ public class PipelineServiceClient implements BackgroundResource {
     return stub.cancelTrainingPipelineCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PipelineJob. A PipelineJob will run immediately when created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   PipelineJob pipelineJob = PipelineJob.newBuilder().build();
+   *   String pipelineJobId = "pipelineJobId-1711315914";
+   *   PipelineJob response =
+   *       pipelineServiceClient.createPipelineJob(parent, pipelineJob, pipelineJobId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the PipelineJob in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param pipelineJob Required. The PipelineJob to create.
+   * @param pipelineJobId The ID to use for the PipelineJob, which will become the final component
+   *     of the PipelineJob name. If not provided, an ID will be automatically generated.
+   *     <p>This value should be less than 128 characters, and valid characters are /[a-z][0-9]-/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob createPipelineJob(
+      LocationName parent, PipelineJob pipelineJob, String pipelineJobId) {
+    CreatePipelineJobRequest request =
+        CreatePipelineJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPipelineJob(pipelineJob)
+            .setPipelineJobId(pipelineJobId)
+            .build();
+    return createPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PipelineJob. A PipelineJob will run immediately when created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   PipelineJob pipelineJob = PipelineJob.newBuilder().build();
+   *   String pipelineJobId = "pipelineJobId-1711315914";
+   *   PipelineJob response =
+   *       pipelineServiceClient.createPipelineJob(parent, pipelineJob, pipelineJobId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the PipelineJob in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param pipelineJob Required. The PipelineJob to create.
+   * @param pipelineJobId The ID to use for the PipelineJob, which will become the final component
+   *     of the PipelineJob name. If not provided, an ID will be automatically generated.
+   *     <p>This value should be less than 128 characters, and valid characters are /[a-z][0-9]-/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob createPipelineJob(
+      String parent, PipelineJob pipelineJob, String pipelineJobId) {
+    CreatePipelineJobRequest request =
+        CreatePipelineJobRequest.newBuilder()
+            .setParent(parent)
+            .setPipelineJob(pipelineJob)
+            .setPipelineJobId(pipelineJobId)
+            .build();
+    return createPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PipelineJob. A PipelineJob will run immediately when created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   CreatePipelineJobRequest request =
+   *       CreatePipelineJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPipelineJob(PipelineJob.newBuilder().build())
+   *           .setPipelineJobId("pipelineJobId-1711315914")
+   *           .build();
+   *   PipelineJob response = pipelineServiceClient.createPipelineJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob createPipelineJob(CreatePipelineJobRequest request) {
+    return createPipelineJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a PipelineJob. A PipelineJob will run immediately when created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   CreatePipelineJobRequest request =
+   *       CreatePipelineJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPipelineJob(PipelineJob.newBuilder().build())
+   *           .setPipelineJobId("pipelineJobId-1711315914")
+   *           .build();
+   *   ApiFuture<PipelineJob> future =
+   *       pipelineServiceClient.createPipelineJobCallable().futureCall(request);
+   *   // Do something.
+   *   PipelineJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePipelineJobRequest, PipelineJob> createPipelineJobCallable() {
+    return stub.createPipelineJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   PipelineJobName name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]");
+   *   PipelineJob response = pipelineServiceClient.getPipelineJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob resource. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob getPipelineJob(PipelineJobName name) {
+    GetPipelineJobRequest request =
+        GetPipelineJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString();
+   *   PipelineJob response = pipelineServiceClient.getPipelineJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob resource. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob getPipelineJob(String name) {
+    GetPipelineJobRequest request = GetPipelineJobRequest.newBuilder().setName(name).build();
+    return getPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   GetPipelineJobRequest request =
+   *       GetPipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   PipelineJob response = pipelineServiceClient.getPipelineJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PipelineJob getPipelineJob(GetPipelineJobRequest request) {
+    return getPipelineJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   GetPipelineJobRequest request =
+   *       GetPipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   ApiFuture<PipelineJob> future =
+   *       pipelineServiceClient.getPipelineJobCallable().futureCall(request);
+   *   // Do something.
+   *   PipelineJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPipelineJobRequest, PipelineJob> getPipelineJobCallable() {
+    return stub.getPipelineJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists PipelineJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (PipelineJob element : pipelineServiceClient.listPipelineJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list the PipelineJobs from.
+   *     Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPipelineJobsPagedResponse listPipelineJobs(LocationName parent) {
+    ListPipelineJobsRequest request =
+        ListPipelineJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPipelineJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists PipelineJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (PipelineJob element : pipelineServiceClient.listPipelineJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list the PipelineJobs from.
+   *     Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPipelineJobsPagedResponse listPipelineJobs(String parent) {
+    ListPipelineJobsRequest request =
+        ListPipelineJobsRequest.newBuilder().setParent(parent).build();
+    return listPipelineJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists PipelineJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   ListPipelineJobsRequest request =
+   *       ListPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PipelineJob element : pipelineServiceClient.listPipelineJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPipelineJobsPagedResponse listPipelineJobs(ListPipelineJobsRequest request) {
+    return listPipelineJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists PipelineJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   ListPipelineJobsRequest request =
+   *       ListPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PipelineJob> future =
+   *       pipelineServiceClient.listPipelineJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PipelineJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPipelineJobsRequest, ListPipelineJobsPagedResponse>
+      listPipelineJobsPagedCallable() {
+    return stub.listPipelineJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists PipelineJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   ListPipelineJobsRequest request =
+   *       ListPipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPipelineJobsResponse response =
+   *         pipelineServiceClient.listPipelineJobsCallable().call(request);
+   *     for (PipelineJob element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPipelineJobsRequest, ListPipelineJobsResponse>
+      listPipelineJobsCallable() {
+    return stub.listPipelineJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   PipelineJobName name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]");
+   *   pipelineServiceClient.deletePipelineJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deletePipelineJobAsync(
+      PipelineJobName name) {
+    DeletePipelineJobRequest request =
+        DeletePipelineJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deletePipelineJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString();
+   *   pipelineServiceClient.deletePipelineJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deletePipelineJobAsync(String name) {
+    DeletePipelineJobRequest request = DeletePipelineJobRequest.newBuilder().setName(name).build();
+    return deletePipelineJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   DeletePipelineJobRequest request =
+   *       DeletePipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   pipelineServiceClient.deletePipelineJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deletePipelineJobAsync(
+      DeletePipelineJobRequest request) {
+    return deletePipelineJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   DeletePipelineJobRequest request =
+   *       DeletePipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       pipelineServiceClient.deletePipelineJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+      deletePipelineJobOperationCallable() {
+    return stub.deletePipelineJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a PipelineJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   DeletePipelineJobRequest request =
+   *       DeletePipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       pipelineServiceClient.deletePipelineJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeletePipelineJobRequest, Operation> deletePipelineJobCallable() {
+    return stub.deletePipelineJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a
+   * best effort to cancel the pipeline, but success is not guaranteed. Clients can use
+   * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob]
+   * or other methods to check whether the cancellation succeeded or whether the pipeline completed
+   * despite cancellation. On successful cancellation, the PipelineJob is not deleted; instead it
+   * becomes a pipeline with a
+   * [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   PipelineJobName name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]");
+   *   pipelineServiceClient.cancelPipelineJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob to cancel. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelPipelineJob(PipelineJobName name) {
+    CancelPipelineJobRequest request =
+        CancelPipelineJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    cancelPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a
+   * best effort to cancel the pipeline, but success is not guaranteed. Clients can use
+   * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob]
+   * or other methods to check whether the cancellation succeeded or whether the pipeline completed
+   * despite cancellation. On successful cancellation, the PipelineJob is not deleted; instead it
+   * becomes a pipeline with a
+   * [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String name = PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString();
+   *   pipelineServiceClient.cancelPipelineJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PipelineJob to cancel. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelPipelineJob(String name) {
+    CancelPipelineJobRequest request = CancelPipelineJobRequest.newBuilder().setName(name).build();
+    cancelPipelineJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a
+   * best effort to cancel the pipeline, but success is not guaranteed. Clients can use
+   * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob]
+   * or other methods to check whether the cancellation succeeded or whether the pipeline completed
+   * despite cancellation. On successful cancellation, the PipelineJob is not deleted; instead it
+   * becomes a pipeline with a
+   * [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   CancelPipelineJobRequest request =
+   *       CancelPipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   pipelineServiceClient.cancelPipelineJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelPipelineJob(CancelPipelineJobRequest request) {
+    cancelPipelineJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a
+   * best effort to cancel the pipeline, but success is not guaranteed. Clients can use
+   * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob]
+   * or other methods to check whether the cancellation succeeded or whether the pipeline completed
+   * despite cancellation. On successful cancellation, the PipelineJob is not deleted; instead it
+   * becomes a pipeline with a
+   * [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   CancelPipelineJobRequest request =
+   *       CancelPipelineJobRequest.newBuilder()
+   *           .setName(PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       pipelineServiceClient.cancelPipelineJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
+    return stub.cancelPipelineJobCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -918,6 +1518,88 @@ public class PipelineServiceClient implements BackgroundResource {
     protected ListTrainingPipelinesFixedSizeCollection createCollection(
         List<ListTrainingPipelinesPage> pages, int collectionSize) {
       return new ListTrainingPipelinesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPipelineJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPipelineJobsRequest,
+          ListPipelineJobsResponse,
+          PipelineJob,
+          ListPipelineJobsPage,
+          ListPipelineJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListPipelineJobsPagedResponse> createAsync(
+        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
+        ApiFuture<ListPipelineJobsResponse> futureResponse) {
+      ApiFuture<ListPipelineJobsPage> futurePage =
+          ListPipelineJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListPipelineJobsPage, ListPipelineJobsPagedResponse>() {
+            @Override
+            public ListPipelineJobsPagedResponse apply(ListPipelineJobsPage input) {
+              return new ListPipelineJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPipelineJobsPagedResponse(ListPipelineJobsPage page) {
+      super(page, ListPipelineJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPipelineJobsPage
+      extends AbstractPage<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob, ListPipelineJobsPage> {
+
+    private ListPipelineJobsPage(
+        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
+        ListPipelineJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPipelineJobsPage createEmptyPage() {
+      return new ListPipelineJobsPage(null, null);
+    }
+
+    @Override
+    protected ListPipelineJobsPage createPage(
+        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
+        ListPipelineJobsResponse response) {
+      return new ListPipelineJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPipelineJobsPage> createPageAsync(
+        PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob> context,
+        ApiFuture<ListPipelineJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPipelineJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPipelineJobsRequest,
+          ListPipelineJobsResponse,
+          PipelineJob,
+          ListPipelineJobsPage,
+          ListPipelineJobsFixedSizeCollection> {
+
+    private ListPipelineJobsFixedSizeCollection(
+        List<ListPipelineJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPipelineJobsFixedSizeCollection createEmptyCollection() {
+      return new ListPipelineJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPipelineJobsFixedSizeCollection createCollection(
+        List<ListPipelineJobsPage> pages, int collectionSize) {
+      return new ListPipelineJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -20,6 +20,8 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListBatchPred
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListCustomJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -223,6 +225,86 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   public UnaryCallSettings<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).cancelBatchPredictionJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .createModelDeploymentMonitoringJobSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * searchModelDeploymentMonitoringStatsAnomalies.
+   */
+  public PagedCallSettings<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .searchModelDeploymentMonitoringStatsAnomaliesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).getModelDeploymentMonitoringJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listModelDeploymentMonitoringJobs. */
+  public PagedCallSettings<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).listModelDeploymentMonitoringJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .updateModelDeploymentMonitoringJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateModelDeploymentMonitoringJob. */
+  public OperationCallSettings<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .updateModelDeploymentMonitoringJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .deleteModelDeploymentMonitoringJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelDeploymentMonitoringJob. */
+  public OperationCallSettings<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .deleteModelDeploymentMonitoringJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pauseModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).pauseModelDeploymentMonitoringJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings())
+        .resumeModelDeploymentMonitoringJobSettings();
   }
 
   public static final JobServiceSettings create(JobServiceStubSettings stub) throws IOException {
@@ -473,6 +555,93 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     public UnaryCallSettings.Builder<CancelBatchPredictionJobRequest, Empty>
         cancelBatchPredictionJobSettings() {
       return getStubSettingsBuilder().cancelBatchPredictionJobSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<
+            CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        createModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().createModelDeploymentMonitoringJobSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * searchModelDeploymentMonitoringStatsAnomalies.
+     */
+    public PagedCallSettings.Builder<
+            SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+            SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+            SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+        searchModelDeploymentMonitoringStatsAnomaliesSettings() {
+      return getStubSettingsBuilder().searchModelDeploymentMonitoringStatsAnomaliesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getModelDeploymentMonitoringJob. */
+    public UnaryCallSettings.Builder<
+            GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        getModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().getModelDeploymentMonitoringJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listModelDeploymentMonitoringJobs. */
+    public PagedCallSettings.Builder<
+            ListModelDeploymentMonitoringJobsRequest,
+            ListModelDeploymentMonitoringJobsResponse,
+            ListModelDeploymentMonitoringJobsPagedResponse>
+        listModelDeploymentMonitoringJobsSettings() {
+      return getStubSettingsBuilder().listModelDeploymentMonitoringJobsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<UpdateModelDeploymentMonitoringJobRequest, Operation>
+        updateModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().updateModelDeploymentMonitoringJobSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateModelDeploymentMonitoringJob.
+     */
+    public OperationCallSettings.Builder<
+            UpdateModelDeploymentMonitoringJobRequest,
+            ModelDeploymentMonitoringJob,
+            UpdateModelDeploymentMonitoringJobOperationMetadata>
+        updateModelDeploymentMonitoringJobOperationSettings() {
+      return getStubSettingsBuilder().updateModelDeploymentMonitoringJobOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<DeleteModelDeploymentMonitoringJobRequest, Operation>
+        deleteModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().deleteModelDeploymentMonitoringJobSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteModelDeploymentMonitoringJob.
+     */
+    public OperationCallSettings.Builder<
+            DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+        deleteModelDeploymentMonitoringJobOperationSettings() {
+      return getStubSettingsBuilder().deleteModelDeploymentMonitoringJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pauseModelDeploymentMonitoringJob. */
+    public UnaryCallSettings.Builder<PauseModelDeploymentMonitoringJobRequest, Empty>
+        pauseModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().pauseModelDeploymentMonitoringJobSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to resumeModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<ResumeModelDeploymentMonitoringJobRequest, Empty>
+        resumeModelDeploymentMonitoringJobSettings() {
+      return getStubSettingsBuilder().resumeModelDeploymentMonitoringJobSettings();
     }
 
     @Override

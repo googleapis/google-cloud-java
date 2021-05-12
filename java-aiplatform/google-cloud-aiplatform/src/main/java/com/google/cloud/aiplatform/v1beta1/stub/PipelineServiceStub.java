@@ -16,19 +16,27 @@
 
 package com.google.cloud.aiplatform.v1beta1.stub;
 
+import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListPipelineJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse;
+import com.google.cloud.aiplatform.v1beta1.PipelineJob;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -81,6 +89,38 @@ public abstract class PipelineServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelTrainingPipelineCallable()");
+  }
+
+  public UnaryCallable<CreatePipelineJobRequest, PipelineJob> createPipelineJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPipelineJobCallable()");
+  }
+
+  public UnaryCallable<GetPipelineJobRequest, PipelineJob> getPipelineJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPipelineJobCallable()");
+  }
+
+  public UnaryCallable<ListPipelineJobsRequest, ListPipelineJobsPagedResponse>
+      listPipelineJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPipelineJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListPipelineJobsRequest, ListPipelineJobsResponse>
+      listPipelineJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPipelineJobsCallable()");
+  }
+
+  public OperationCallable<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+      deletePipelineJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deletePipelineJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeletePipelineJobRequest, Operation> deletePipelineJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePipelineJobCallable()");
+  }
+
+  public UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelPipelineJobCallable()");
   }
 
   @Override

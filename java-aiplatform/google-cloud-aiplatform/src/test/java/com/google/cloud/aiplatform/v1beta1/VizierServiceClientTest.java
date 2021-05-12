@@ -568,8 +568,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -615,8 +618,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -662,8 +668,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -706,8 +715,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -838,8 +850,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -892,8 +907,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);
@@ -1072,8 +1090,11 @@ public class VizierServiceClientTest {
             .setId("id3355")
             .addAllParameters(new ArrayList<Trial.Parameter>())
             .setFinalMeasurement(Measurement.newBuilder().build())
+            .addAllMeasurements(new ArrayList<Measurement>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setClientId("clientId908408390")
+            .setInfeasibleReason("infeasibleReason1040725388")
             .setCustomJob(CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]").toString())
             .build();
     mockVizierService.addResponse(expectedResponse);

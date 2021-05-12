@@ -34,6 +34,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -2614,6 +2615,1091 @@ public class JobServiceClient implements BackgroundResource {
     return stub.cancelBatchPredictionJobCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+   *       ModelDeploymentMonitoringJob.newBuilder().build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param modelDeploymentMonitoringJob Required. The ModelDeploymentMonitoringJob to create
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob createModelDeploymentMonitoringJob(
+      LocationName parent, ModelDeploymentMonitoringJob modelDeploymentMonitoringJob) {
+    CreateModelDeploymentMonitoringJobRequest request =
+        CreateModelDeploymentMonitoringJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setModelDeploymentMonitoringJob(modelDeploymentMonitoringJob)
+            .build();
+    return createModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+   *       ModelDeploymentMonitoringJob.newBuilder().build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param modelDeploymentMonitoringJob Required. The ModelDeploymentMonitoringJob to create
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob createModelDeploymentMonitoringJob(
+      String parent, ModelDeploymentMonitoringJob modelDeploymentMonitoringJob) {
+    CreateModelDeploymentMonitoringJobRequest request =
+        CreateModelDeploymentMonitoringJobRequest.newBuilder()
+            .setParent(parent)
+            .setModelDeploymentMonitoringJob(modelDeploymentMonitoringJob)
+            .build();
+    return createModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateModelDeploymentMonitoringJobRequest request =
+   *       CreateModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelDeploymentMonitoringJob(ModelDeploymentMonitoringJob.newBuilder().build())
+   *           .build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.createModelDeploymentMonitoringJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob createModelDeploymentMonitoringJob(
+      CreateModelDeploymentMonitoringJobRequest request) {
+    return createModelDeploymentMonitoringJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateModelDeploymentMonitoringJobRequest request =
+   *       CreateModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelDeploymentMonitoringJob(ModelDeploymentMonitoringJob.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ModelDeploymentMonitoringJob> future =
+   *       jobServiceClient.createModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   ModelDeploymentMonitoringJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobCallable() {
+    return stub.createModelDeploymentMonitoringJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Model Monitoring Statistics generated within a given time window.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJobName modelDeploymentMonitoringJob =
+   *       ModelDeploymentMonitoringJobName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+   *   String deployedModelId = "deployedModelId-1817547906";
+   *   for (ModelMonitoringStatsAnomalies element :
+   *       jobServiceClient
+   *           .searchModelDeploymentMonitoringStatsAnomalies(
+   *               modelDeploymentMonitoringJob, deployedModelId)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param modelDeploymentMonitoringJob Required. ModelDeploymentMonitoring Job resource name.
+   *     Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+   * @param deployedModelId Required. The DeployedModel ID of the
+   *     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse
+      searchModelDeploymentMonitoringStatsAnomalies(
+          ModelDeploymentMonitoringJobName modelDeploymentMonitoringJob, String deployedModelId) {
+    SearchModelDeploymentMonitoringStatsAnomaliesRequest request =
+        SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder()
+            .setModelDeploymentMonitoringJob(
+                modelDeploymentMonitoringJob == null
+                    ? null
+                    : modelDeploymentMonitoringJob.toString())
+            .setDeployedModelId(deployedModelId)
+            .build();
+    return searchModelDeploymentMonitoringStatsAnomalies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Model Monitoring Statistics generated within a given time window.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String modelDeploymentMonitoringJob =
+   *       ModelDeploymentMonitoringJobName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *           .toString();
+   *   String deployedModelId = "deployedModelId-1817547906";
+   *   for (ModelMonitoringStatsAnomalies element :
+   *       jobServiceClient
+   *           .searchModelDeploymentMonitoringStatsAnomalies(
+   *               modelDeploymentMonitoringJob, deployedModelId)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param modelDeploymentMonitoringJob Required. ModelDeploymentMonitoring Job resource name.
+   *     Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+   * @param deployedModelId Required. The DeployedModel ID of the
+   *     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse
+      searchModelDeploymentMonitoringStatsAnomalies(
+          String modelDeploymentMonitoringJob, String deployedModelId) {
+    SearchModelDeploymentMonitoringStatsAnomaliesRequest request =
+        SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder()
+            .setModelDeploymentMonitoringJob(modelDeploymentMonitoringJob)
+            .setDeployedModelId(deployedModelId)
+            .build();
+    return searchModelDeploymentMonitoringStatsAnomalies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Model Monitoring Statistics generated within a given time window.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchModelDeploymentMonitoringStatsAnomaliesRequest request =
+   *       SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .setDeployedModelId("deployedModelId-1817547906")
+   *           .setFeatureDisplayName("featureDisplayName-1741181545")
+   *           .addAllObjectives(
+   *               new ArrayList<
+   *                   SearchModelDeploymentMonitoringStatsAnomaliesRequest
+   *                       .StatsAnomaliesObjective>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   for (ModelMonitoringStatsAnomalies element :
+   *       jobServiceClient.searchModelDeploymentMonitoringStatsAnomalies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse
+      searchModelDeploymentMonitoringStatsAnomalies(
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest request) {
+    return searchModelDeploymentMonitoringStatsAnomaliesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Model Monitoring Statistics generated within a given time window.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchModelDeploymentMonitoringStatsAnomaliesRequest request =
+   *       SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .setDeployedModelId("deployedModelId-1817547906")
+   *           .setFeatureDisplayName("featureDisplayName-1741181545")
+   *           .addAllObjectives(
+   *               new ArrayList<
+   *                   SearchModelDeploymentMonitoringStatsAnomaliesRequest
+   *                       .StatsAnomaliesObjective>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ModelMonitoringStatsAnomalies> future =
+   *       jobServiceClient
+   *           .searchModelDeploymentMonitoringStatsAnomaliesPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (ModelMonitoringStatsAnomalies element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesPagedCallable() {
+    return stub.searchModelDeploymentMonitoringStatsAnomaliesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches Model Monitoring Statistics generated within a given time window.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchModelDeploymentMonitoringStatsAnomaliesRequest request =
+   *       SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .setDeployedModelId("deployedModelId-1817547906")
+   *           .setFeatureDisplayName("featureDisplayName-1741181545")
+   *           .addAllObjectives(
+   *               new ArrayList<
+   *                   SearchModelDeploymentMonitoringStatsAnomaliesRequest
+   *                       .StatsAnomaliesObjective>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     SearchModelDeploymentMonitoringStatsAnomaliesResponse response =
+   *         jobServiceClient.searchModelDeploymentMonitoringStatsAnomaliesCallable().call(request);
+   *     for (ModelMonitoringStatsAnomalies element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesCallable() {
+    return stub.searchModelDeploymentMonitoringStatsAnomaliesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJobName name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.getModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob getModelDeploymentMonitoringJob(
+      ModelDeploymentMonitoringJobName name) {
+    GetModelDeploymentMonitoringJobRequest request =
+        GetModelDeploymentMonitoringJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *           .toString();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.getModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob getModelDeploymentMonitoringJob(String name) {
+    GetModelDeploymentMonitoringJobRequest request =
+        GetModelDeploymentMonitoringJobRequest.newBuilder().setName(name).build();
+    return getModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetModelDeploymentMonitoringJobRequest request =
+   *       GetModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.getModelDeploymentMonitoringJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModelDeploymentMonitoringJob getModelDeploymentMonitoringJob(
+      GetModelDeploymentMonitoringJobRequest request) {
+    return getModelDeploymentMonitoringJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetModelDeploymentMonitoringJobRequest request =
+   *       GetModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ModelDeploymentMonitoringJob> future =
+   *       jobServiceClient.getModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   ModelDeploymentMonitoringJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobCallable() {
+    return stub.getModelDeploymentMonitoringJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ModelDeploymentMonitoringJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ModelDeploymentMonitoringJob element :
+   *       jobServiceClient.listModelDeploymentMonitoringJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelDeploymentMonitoringJobsPagedResponse listModelDeploymentMonitoringJobs(
+      LocationName parent) {
+    ListModelDeploymentMonitoringJobsRequest request =
+        ListModelDeploymentMonitoringJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listModelDeploymentMonitoringJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ModelDeploymentMonitoringJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ModelDeploymentMonitoringJob element :
+   *       jobServiceClient.listModelDeploymentMonitoringJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the ModelDeploymentMonitoringJob. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelDeploymentMonitoringJobsPagedResponse listModelDeploymentMonitoringJobs(
+      String parent) {
+    ListModelDeploymentMonitoringJobsRequest request =
+        ListModelDeploymentMonitoringJobsRequest.newBuilder().setParent(parent).build();
+    return listModelDeploymentMonitoringJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ModelDeploymentMonitoringJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListModelDeploymentMonitoringJobsRequest request =
+   *       ListModelDeploymentMonitoringJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (ModelDeploymentMonitoringJob element :
+   *       jobServiceClient.listModelDeploymentMonitoringJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelDeploymentMonitoringJobsPagedResponse listModelDeploymentMonitoringJobs(
+      ListModelDeploymentMonitoringJobsRequest request) {
+    return listModelDeploymentMonitoringJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ModelDeploymentMonitoringJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListModelDeploymentMonitoringJobsRequest request =
+   *       ListModelDeploymentMonitoringJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ModelDeploymentMonitoringJob> future =
+   *       jobServiceClient.listModelDeploymentMonitoringJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ModelDeploymentMonitoringJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsPagedCallable() {
+    return stub.listModelDeploymentMonitoringJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ModelDeploymentMonitoringJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListModelDeploymentMonitoringJobsRequest request =
+   *       ListModelDeploymentMonitoringJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     ListModelDeploymentMonitoringJobsResponse response =
+   *         jobServiceClient.listModelDeploymentMonitoringJobsCallable().call(request);
+   *     for (ModelDeploymentMonitoringJob element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse>
+      listModelDeploymentMonitoringJobsCallable() {
+    return stub.listModelDeploymentMonitoringJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+   *       ModelDeploymentMonitoringJob.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient
+   *           .updateModelDeploymentMonitoringJobAsync(modelDeploymentMonitoringJob, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param modelDeploymentMonitoringJob Required. The model monitoring configuration which replaces
+   *     the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ModelDeploymentMonitoringJob, UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobAsync(
+          ModelDeploymentMonitoringJob modelDeploymentMonitoringJob, FieldMask updateMask) {
+    UpdateModelDeploymentMonitoringJobRequest request =
+        UpdateModelDeploymentMonitoringJobRequest.newBuilder()
+            .setModelDeploymentMonitoringJob(modelDeploymentMonitoringJob)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateModelDeploymentMonitoringJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   UpdateModelDeploymentMonitoringJobRequest request =
+   *       UpdateModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(ModelDeploymentMonitoringJob.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ModelDeploymentMonitoringJob response =
+   *       jobServiceClient.updateModelDeploymentMonitoringJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ModelDeploymentMonitoringJob, UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobAsync(UpdateModelDeploymentMonitoringJobRequest request) {
+    return updateModelDeploymentMonitoringJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   UpdateModelDeploymentMonitoringJobRequest request =
+   *       UpdateModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(ModelDeploymentMonitoringJob.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<
+   *           ModelDeploymentMonitoringJob, UpdateModelDeploymentMonitoringJobOperationMetadata>
+   *       future =
+   *           jobServiceClient
+   *               .updateModelDeploymentMonitoringJobOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   ModelDeploymentMonitoringJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationCallable() {
+    return stub.updateModelDeploymentMonitoringJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   UpdateModelDeploymentMonitoringJobRequest request =
+   *       UpdateModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setModelDeploymentMonitoringJob(ModelDeploymentMonitoringJob.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       jobServiceClient.updateModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobCallable() {
+    return stub.updateModelDeploymentMonitoringJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJobName name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+   *   jobServiceClient.deleteModelDeploymentMonitoringJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the model monitoring job to delete. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobAsync(ModelDeploymentMonitoringJobName name) {
+    DeleteModelDeploymentMonitoringJobRequest request =
+        DeleteModelDeploymentMonitoringJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteModelDeploymentMonitoringJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *           .toString();
+   *   jobServiceClient.deleteModelDeploymentMonitoringJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the model monitoring job to delete. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobAsync(String name) {
+    DeleteModelDeploymentMonitoringJobRequest request =
+        DeleteModelDeploymentMonitoringJobRequest.newBuilder().setName(name).build();
+    return deleteModelDeploymentMonitoringJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteModelDeploymentMonitoringJobRequest request =
+   *       DeleteModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   jobServiceClient.deleteModelDeploymentMonitoringJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobAsync(DeleteModelDeploymentMonitoringJobRequest request) {
+    return deleteModelDeploymentMonitoringJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteModelDeploymentMonitoringJobRequest request =
+   *       DeleteModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       jobServiceClient
+   *           .deleteModelDeploymentMonitoringJobOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationCallable() {
+    return stub.deleteModelDeploymentMonitoringJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ModelDeploymentMonitoringJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteModelDeploymentMonitoringJobRequest request =
+   *       DeleteModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       jobServiceClient.deleteModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobCallable() {
+    return stub.deleteModelDeploymentMonitoringJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server makes a best effort to
+   * cancel the job. Will mark
+   * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state]
+   * to 'PAUSED'.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJobName name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+   *   jobServiceClient.pauseModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob to pause. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseModelDeploymentMonitoringJob(ModelDeploymentMonitoringJobName name) {
+    PauseModelDeploymentMonitoringJobRequest request =
+        PauseModelDeploymentMonitoringJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    pauseModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server makes a best effort to
+   * cancel the job. Will mark
+   * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state]
+   * to 'PAUSED'.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *           .toString();
+   *   jobServiceClient.pauseModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob to pause. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseModelDeploymentMonitoringJob(String name) {
+    PauseModelDeploymentMonitoringJobRequest request =
+        PauseModelDeploymentMonitoringJobRequest.newBuilder().setName(name).build();
+    pauseModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server makes a best effort to
+   * cancel the job. Will mark
+   * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state]
+   * to 'PAUSED'.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   PauseModelDeploymentMonitoringJobRequest request =
+   *       PauseModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   jobServiceClient.pauseModelDeploymentMonitoringJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void pauseModelDeploymentMonitoringJob(
+      PauseModelDeploymentMonitoringJobRequest request) {
+    pauseModelDeploymentMonitoringJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server makes a best effort to
+   * cancel the job. Will mark
+   * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state]
+   * to 'PAUSED'.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   PauseModelDeploymentMonitoringJobRequest request =
+   *       PauseModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       jobServiceClient.pauseModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobCallable() {
+    return stub.pauseModelDeploymentMonitoringJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from next scheduled time. A
+   * deleted ModelDeploymentMonitoringJob can't be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ModelDeploymentMonitoringJobName name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+   *   jobServiceClient.resumeModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob to resume. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeModelDeploymentMonitoringJob(ModelDeploymentMonitoringJobName name) {
+    ResumeModelDeploymentMonitoringJobRequest request =
+        ResumeModelDeploymentMonitoringJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    resumeModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from next scheduled time. A
+   * deleted ModelDeploymentMonitoringJob can't be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name =
+   *       ModelDeploymentMonitoringJobName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *           .toString();
+   *   jobServiceClient.resumeModelDeploymentMonitoringJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ModelDeploymentMonitoringJob to resume. Format:
+   *     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeModelDeploymentMonitoringJob(String name) {
+    ResumeModelDeploymentMonitoringJobRequest request =
+        ResumeModelDeploymentMonitoringJobRequest.newBuilder().setName(name).build();
+    resumeModelDeploymentMonitoringJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from next scheduled time. A
+   * deleted ModelDeploymentMonitoringJob can't be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ResumeModelDeploymentMonitoringJobRequest request =
+   *       ResumeModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   jobServiceClient.resumeModelDeploymentMonitoringJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeModelDeploymentMonitoringJob(
+      ResumeModelDeploymentMonitoringJobRequest request) {
+    resumeModelDeploymentMonitoringJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from next scheduled time. A
+   * deleted ModelDeploymentMonitoringJob can't be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ResumeModelDeploymentMonitoringJobRequest request =
+   *       ResumeModelDeploymentMonitoringJobRequest.newBuilder()
+   *           .setName(
+   *               ModelDeploymentMonitoringJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       jobServiceClient.resumeModelDeploymentMonitoringJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobCallable() {
+    return stub.resumeModelDeploymentMonitoringJobCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3008,6 +4094,222 @@ public class JobServiceClient implements BackgroundResource {
     protected ListBatchPredictionJobsFixedSizeCollection createCollection(
         List<ListBatchPredictionJobsPage> pages, int collectionSize) {
       return new ListBatchPredictionJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          ModelMonitoringStatsAnomalies,
+          SearchModelDeploymentMonitoringStatsAnomaliesPage,
+          SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection> {
+
+    public static ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse> createAsync(
+        PageContext<
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+                ModelMonitoringStatsAnomalies>
+            context,
+        ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesResponse> futureResponse) {
+      ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesPage> futurePage =
+          SearchModelDeploymentMonitoringStatsAnomaliesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              SearchModelDeploymentMonitoringStatsAnomaliesPage,
+              SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>() {
+            @Override
+            public SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse apply(
+                SearchModelDeploymentMonitoringStatsAnomaliesPage input) {
+              return new SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse(
+        SearchModelDeploymentMonitoringStatsAnomaliesPage page) {
+      super(
+          page,
+          SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchModelDeploymentMonitoringStatsAnomaliesPage
+      extends AbstractPage<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          ModelMonitoringStatsAnomalies,
+          SearchModelDeploymentMonitoringStatsAnomaliesPage> {
+
+    private SearchModelDeploymentMonitoringStatsAnomaliesPage(
+        PageContext<
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+                ModelMonitoringStatsAnomalies>
+            context,
+        SearchModelDeploymentMonitoringStatsAnomaliesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchModelDeploymentMonitoringStatsAnomaliesPage createEmptyPage() {
+      return new SearchModelDeploymentMonitoringStatsAnomaliesPage(null, null);
+    }
+
+    @Override
+    protected SearchModelDeploymentMonitoringStatsAnomaliesPage createPage(
+        PageContext<
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+                ModelMonitoringStatsAnomalies>
+            context,
+        SearchModelDeploymentMonitoringStatsAnomaliesResponse response) {
+      return new SearchModelDeploymentMonitoringStatsAnomaliesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesPage> createPageAsync(
+        PageContext<
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+                ModelMonitoringStatsAnomalies>
+            context,
+        ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          ModelMonitoringStatsAnomalies,
+          SearchModelDeploymentMonitoringStatsAnomaliesPage,
+          SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection> {
+
+    private SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection(
+        List<SearchModelDeploymentMonitoringStatsAnomaliesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection
+        createEmptyCollection() {
+      return new SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection createCollection(
+        List<SearchModelDeploymentMonitoringStatsAnomaliesPage> pages, int collectionSize) {
+      return new SearchModelDeploymentMonitoringStatsAnomaliesFixedSizeCollection(
+          pages, collectionSize);
+    }
+  }
+
+  public static class ListModelDeploymentMonitoringJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ModelDeploymentMonitoringJob,
+          ListModelDeploymentMonitoringJobsPage,
+          ListModelDeploymentMonitoringJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListModelDeploymentMonitoringJobsPagedResponse> createAsync(
+        PageContext<
+                ListModelDeploymentMonitoringJobsRequest,
+                ListModelDeploymentMonitoringJobsResponse,
+                ModelDeploymentMonitoringJob>
+            context,
+        ApiFuture<ListModelDeploymentMonitoringJobsResponse> futureResponse) {
+      ApiFuture<ListModelDeploymentMonitoringJobsPage> futurePage =
+          ListModelDeploymentMonitoringJobsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListModelDeploymentMonitoringJobsPage,
+              ListModelDeploymentMonitoringJobsPagedResponse>() {
+            @Override
+            public ListModelDeploymentMonitoringJobsPagedResponse apply(
+                ListModelDeploymentMonitoringJobsPage input) {
+              return new ListModelDeploymentMonitoringJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListModelDeploymentMonitoringJobsPagedResponse(
+        ListModelDeploymentMonitoringJobsPage page) {
+      super(page, ListModelDeploymentMonitoringJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListModelDeploymentMonitoringJobsPage
+      extends AbstractPage<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ModelDeploymentMonitoringJob,
+          ListModelDeploymentMonitoringJobsPage> {
+
+    private ListModelDeploymentMonitoringJobsPage(
+        PageContext<
+                ListModelDeploymentMonitoringJobsRequest,
+                ListModelDeploymentMonitoringJobsResponse,
+                ModelDeploymentMonitoringJob>
+            context,
+        ListModelDeploymentMonitoringJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListModelDeploymentMonitoringJobsPage createEmptyPage() {
+      return new ListModelDeploymentMonitoringJobsPage(null, null);
+    }
+
+    @Override
+    protected ListModelDeploymentMonitoringJobsPage createPage(
+        PageContext<
+                ListModelDeploymentMonitoringJobsRequest,
+                ListModelDeploymentMonitoringJobsResponse,
+                ModelDeploymentMonitoringJob>
+            context,
+        ListModelDeploymentMonitoringJobsResponse response) {
+      return new ListModelDeploymentMonitoringJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListModelDeploymentMonitoringJobsPage> createPageAsync(
+        PageContext<
+                ListModelDeploymentMonitoringJobsRequest,
+                ListModelDeploymentMonitoringJobsResponse,
+                ModelDeploymentMonitoringJob>
+            context,
+        ApiFuture<ListModelDeploymentMonitoringJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListModelDeploymentMonitoringJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ModelDeploymentMonitoringJob,
+          ListModelDeploymentMonitoringJobsPage,
+          ListModelDeploymentMonitoringJobsFixedSizeCollection> {
+
+    private ListModelDeploymentMonitoringJobsFixedSizeCollection(
+        List<ListModelDeploymentMonitoringJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListModelDeploymentMonitoringJobsFixedSizeCollection createEmptyCollection() {
+      return new ListModelDeploymentMonitoringJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListModelDeploymentMonitoringJobsFixedSizeCollection createCollection(
+        List<ListModelDeploymentMonitoringJobsPage> pages, int collectionSize) {
+      return new ListModelDeploymentMonitoringJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

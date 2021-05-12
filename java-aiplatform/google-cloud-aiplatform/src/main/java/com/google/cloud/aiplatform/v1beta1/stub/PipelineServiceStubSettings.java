@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1.stub;
 
+import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListPipelineJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,13 +45,20 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse;
+import com.google.cloud.aiplatform.v1beta1.PipelineJob;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -117,6 +125,15 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       deleteTrainingPipelineOperationSettings;
   private final UnaryCallSettings<CancelTrainingPipelineRequest, Empty>
       cancelTrainingPipelineSettings;
+  private final UnaryCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobSettings;
+  private final UnaryCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobSettings;
+  private final PagedCallSettings<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+      listPipelineJobsSettings;
+  private final UnaryCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobSettings;
+  private final OperationCallSettings<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+      deletePipelineJobOperationSettings;
+  private final UnaryCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings;
 
   private static final PagedListDescriptor<
           ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
@@ -159,6 +176,46 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>
+      LIST_PIPELINE_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPipelineJobsRequest injectToken(
+                ListPipelineJobsRequest payload, String token) {
+              return ListPipelineJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPipelineJobsRequest injectPageSize(
+                ListPipelineJobsRequest payload, int pageSize) {
+              return ListPipelineJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPipelineJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPipelineJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PipelineJob> extractResources(ListPipelineJobsResponse payload) {
+              return payload.getPipelineJobsList() == null
+                  ? ImmutableList.<PipelineJob>of()
+                  : payload.getPipelineJobsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTrainingPipelinesRequest,
           ListTrainingPipelinesResponse,
@@ -180,6 +237,25 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
                       PageContext.create(
                           callable, LIST_TRAINING_PIPELINES_PAGE_STR_DESC, request, context);
               return ListTrainingPipelinesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+      LIST_PIPELINE_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPipelineJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPipelineJobsRequest, ListPipelineJobsResponse> callable,
+                ListPipelineJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPipelineJobsResponse> futureResponse) {
+              PageContext<ListPipelineJobsRequest, ListPipelineJobsResponse, PipelineJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PIPELINE_JOBS_PAGE_STR_DESC, request, context);
+              return ListPipelineJobsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -219,6 +295,39 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
   /** Returns the object with the settings used for calls to cancelTrainingPipeline. */
   public UnaryCallSettings<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineSettings() {
     return cancelTrainingPipelineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPipelineJob. */
+  public UnaryCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobSettings() {
+    return createPipelineJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPipelineJob. */
+  public UnaryCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobSettings() {
+    return getPipelineJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPipelineJobs. */
+  public PagedCallSettings<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+      listPipelineJobsSettings() {
+    return listPipelineJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePipelineJob. */
+  public UnaryCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobSettings() {
+    return deletePipelineJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePipelineJob. */
+  public OperationCallSettings<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+      deletePipelineJobOperationSettings() {
+    return deletePipelineJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelPipelineJob. */
+  public UnaryCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
+    return cancelPipelineJobSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -297,6 +406,13 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     deleteTrainingPipelineOperationSettings =
         settingsBuilder.deleteTrainingPipelineOperationSettings().build();
     cancelTrainingPipelineSettings = settingsBuilder.cancelTrainingPipelineSettings().build();
+    createPipelineJobSettings = settingsBuilder.createPipelineJobSettings().build();
+    getPipelineJobSettings = settingsBuilder.getPipelineJobSettings().build();
+    listPipelineJobsSettings = settingsBuilder.listPipelineJobsSettings().build();
+    deletePipelineJobSettings = settingsBuilder.deletePipelineJobSettings().build();
+    deletePipelineJobOperationSettings =
+        settingsBuilder.deletePipelineJobOperationSettings().build();
+    cancelPipelineJobSettings = settingsBuilder.cancelPipelineJobSettings().build();
   }
 
   /** Builder for PipelineServiceStubSettings. */
@@ -318,6 +434,20 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
         deleteTrainingPipelineOperationSettings;
     private final UnaryCallSettings.Builder<CancelTrainingPipelineRequest, Empty>
         cancelTrainingPipelineSettings;
+    private final UnaryCallSettings.Builder<CreatePipelineJobRequest, PipelineJob>
+        createPipelineJobSettings;
+    private final UnaryCallSettings.Builder<GetPipelineJobRequest, PipelineJob>
+        getPipelineJobSettings;
+    private final PagedCallSettings.Builder<
+            ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+        listPipelineJobsSettings;
+    private final UnaryCallSettings.Builder<DeletePipelineJobRequest, Operation>
+        deletePipelineJobSettings;
+    private final OperationCallSettings.Builder<
+            DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+        deletePipelineJobOperationSettings;
+    private final UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty>
+        cancelPipelineJobSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -325,7 +455,8 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_8_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -341,7 +472,9 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_4_params", settings);
+      definitions.put("no_retry_8_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -359,6 +492,12 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       deleteTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTrainingPipelineOperationSettings = OperationCallSettings.newBuilder();
       cancelTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPipelineJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPipelineJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPipelineJobsSettings = PagedCallSettings.newBuilder(LIST_PIPELINE_JOBS_PAGE_STR_FACT);
+      deletePipelineJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePipelineJobOperationSettings = OperationCallSettings.newBuilder();
+      cancelPipelineJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -366,7 +505,12 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               getTrainingPipelineSettings,
               listTrainingPipelinesSettings,
               deleteTrainingPipelineSettings,
-              cancelTrainingPipelineSettings);
+              cancelTrainingPipelineSettings,
+              createPipelineJobSettings,
+              getPipelineJobSettings,
+              listPipelineJobsSettings,
+              deletePipelineJobSettings,
+              cancelPipelineJobSettings);
       initDefaults(this);
     }
 
@@ -380,6 +524,12 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       deleteTrainingPipelineOperationSettings =
           settings.deleteTrainingPipelineOperationSettings.toBuilder();
       cancelTrainingPipelineSettings = settings.cancelTrainingPipelineSettings.toBuilder();
+      createPipelineJobSettings = settings.createPipelineJobSettings.toBuilder();
+      getPipelineJobSettings = settings.getPipelineJobSettings.toBuilder();
+      listPipelineJobsSettings = settings.listPipelineJobsSettings.toBuilder();
+      deletePipelineJobSettings = settings.deletePipelineJobSettings.toBuilder();
+      deletePipelineJobOperationSettings = settings.deletePipelineJobOperationSettings.toBuilder();
+      cancelPipelineJobSettings = settings.cancelPipelineJobSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -387,7 +537,12 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               getTrainingPipelineSettings,
               listTrainingPipelinesSettings,
               deleteTrainingPipelineSettings,
-              cancelTrainingPipelineSettings);
+              cancelTrainingPipelineSettings,
+              createPipelineJobSettings,
+              getPipelineJobSettings,
+              listPipelineJobsSettings,
+              deletePipelineJobSettings,
+              cancelPipelineJobSettings);
     }
 
     private static Builder createDefault() {
@@ -404,36 +559,85 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     private static Builder initDefaults(Builder builder) {
       builder
           .createTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"));
 
       builder
           .getTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"));
 
       builder
           .listTrainingPipelinesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"));
 
       builder
           .deleteTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"));
 
       builder
           .cancelTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"));
+
+      builder
+          .createPipelineJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPipelineJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listPipelineJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deletePipelineJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelPipelineJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteTrainingPipelineOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteTrainingPipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_8_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_8_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deletePipelineJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePipelineJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -510,6 +714,43 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     public UnaryCallSettings.Builder<CancelTrainingPipelineRequest, Empty>
         cancelTrainingPipelineSettings() {
       return cancelTrainingPipelineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPipelineJob. */
+    public UnaryCallSettings.Builder<CreatePipelineJobRequest, PipelineJob>
+        createPipelineJobSettings() {
+      return createPipelineJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPipelineJob. */
+    public UnaryCallSettings.Builder<GetPipelineJobRequest, PipelineJob> getPipelineJobSettings() {
+      return getPipelineJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPipelineJobs. */
+    public PagedCallSettings.Builder<
+            ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+        listPipelineJobsSettings() {
+      return listPipelineJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipelineJob. */
+    public UnaryCallSettings.Builder<DeletePipelineJobRequest, Operation>
+        deletePipelineJobSettings() {
+      return deletePipelineJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipelineJob. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+        deletePipelineJobOperationSettings() {
+      return deletePipelineJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelPipelineJob. */
+    public UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
+      return cancelPipelineJobSettings;
     }
 
     @Override

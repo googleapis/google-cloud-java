@@ -20,6 +20,8 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListBatchPred
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListCustomJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -56,17 +58,20 @@ import com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CustomJob;
 import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse;
@@ -76,6 +81,16 @@ import com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies;
+import com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
+import com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -181,6 +196,38 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       deleteBatchPredictionJobOperationSettings;
   private final UnaryCallSettings<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobSettings;
+  private final UnaryCallSettings<
+          CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobSettings;
+  private final PagedCallSettings<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesSettings;
+  private final UnaryCallSettings<
+          GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobSettings;
+  private final PagedCallSettings<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsSettings;
+  private final UnaryCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobSettings;
+  private final OperationCallSettings<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationSettings;
+  private final UnaryCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobSettings;
+  private final OperationCallSettings<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationSettings;
+  private final UnaryCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobSettings;
+  private final UnaryCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobSettings;
 
   private static final PagedListDescriptor<ListCustomJobsRequest, ListCustomJobsResponse, CustomJob>
       LIST_CUSTOM_JOBS_PAGE_STR_DESC =
@@ -354,6 +401,106 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          ModelMonitoringStatsAnomalies>
+      SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+              SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+              ModelMonitoringStatsAnomalies>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchModelDeploymentMonitoringStatsAnomaliesRequest injectToken(
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest payload, String token) {
+              return SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public SearchModelDeploymentMonitoringStatsAnomaliesRequest injectPageSize(
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest payload, int pageSize) {
+              return SearchModelDeploymentMonitoringStatsAnomaliesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                SearchModelDeploymentMonitoringStatsAnomaliesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelMonitoringStatsAnomalies> extractResources(
+                SearchModelDeploymentMonitoringStatsAnomaliesResponse payload) {
+              return payload.getMonitoringStatsList() == null
+                  ? ImmutableList.<ModelMonitoringStatsAnomalies>of()
+                  : payload.getMonitoringStatsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ModelDeploymentMonitoringJob>
+      LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelDeploymentMonitoringJobsRequest,
+              ListModelDeploymentMonitoringJobsResponse,
+              ModelDeploymentMonitoringJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelDeploymentMonitoringJobsRequest injectToken(
+                ListModelDeploymentMonitoringJobsRequest payload, String token) {
+              return ListModelDeploymentMonitoringJobsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListModelDeploymentMonitoringJobsRequest injectPageSize(
+                ListModelDeploymentMonitoringJobsRequest payload, int pageSize) {
+              return ListModelDeploymentMonitoringJobsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelDeploymentMonitoringJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelDeploymentMonitoringJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelDeploymentMonitoringJob> extractResources(
+                ListModelDeploymentMonitoringJobsResponse payload) {
+              return payload.getModelDeploymentMonitoringJobsList() == null
+                  ? ImmutableList.<ModelDeploymentMonitoringJob>of()
+                  : payload.getModelDeploymentMonitoringJobsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCustomJobsRequest, ListCustomJobsResponse, ListCustomJobsPagedResponse>
       LIST_CUSTOM_JOBS_PAGE_STR_FACT =
@@ -451,6 +598,74 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
                       PageContext.create(
                           callable, LIST_BATCH_PREDICTION_JOBS_PAGE_STR_DESC, request, context);
               return ListBatchPredictionJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+              SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+              SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                            SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+                        callable,
+                    SearchModelDeploymentMonitoringStatsAnomaliesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+                        futureResponse) {
+              PageContext<
+                      SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                      SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+                      ModelMonitoringStatsAnomalies>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsPagedResponse>
+      LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelDeploymentMonitoringJobsRequest,
+              ListModelDeploymentMonitoringJobsResponse,
+              ListModelDeploymentMonitoringJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelDeploymentMonitoringJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListModelDeploymentMonitoringJobsRequest,
+                        ListModelDeploymentMonitoringJobsResponse>
+                    callable,
+                ListModelDeploymentMonitoringJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelDeploymentMonitoringJobsResponse> futureResponse) {
+              PageContext<
+                      ListModelDeploymentMonitoringJobsRequest,
+                      ListModelDeploymentMonitoringJobsResponse,
+                      ModelDeploymentMonitoringJob>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListModelDeploymentMonitoringJobsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -603,6 +818,79 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     return cancelBatchPredictionJobSettings;
   }
 
+  /** Returns the object with the settings used for calls to createModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      createModelDeploymentMonitoringJobSettings() {
+    return createModelDeploymentMonitoringJobSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * searchModelDeploymentMonitoringStatsAnomalies.
+   */
+  public PagedCallSettings<
+          SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+          SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+      searchModelDeploymentMonitoringStatsAnomaliesSettings() {
+    return searchModelDeploymentMonitoringStatsAnomaliesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+      getModelDeploymentMonitoringJobSettings() {
+    return getModelDeploymentMonitoringJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listModelDeploymentMonitoringJobs. */
+  public PagedCallSettings<
+          ListModelDeploymentMonitoringJobsRequest,
+          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsPagedResponse>
+      listModelDeploymentMonitoringJobsSettings() {
+    return listModelDeploymentMonitoringJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
+      updateModelDeploymentMonitoringJobSettings() {
+    return updateModelDeploymentMonitoringJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateModelDeploymentMonitoringJob. */
+  public OperationCallSettings<
+          UpdateModelDeploymentMonitoringJobRequest,
+          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobOperationMetadata>
+      updateModelDeploymentMonitoringJobOperationSettings() {
+    return updateModelDeploymentMonitoringJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
+      deleteModelDeploymentMonitoringJobSettings() {
+    return deleteModelDeploymentMonitoringJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelDeploymentMonitoringJob. */
+  public OperationCallSettings<
+          DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+      deleteModelDeploymentMonitoringJobOperationSettings() {
+    return deleteModelDeploymentMonitoringJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pauseModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<PauseModelDeploymentMonitoringJobRequest, Empty>
+      pauseModelDeploymentMonitoringJobSettings() {
+    return pauseModelDeploymentMonitoringJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeModelDeploymentMonitoringJob. */
+  public UnaryCallSettings<ResumeModelDeploymentMonitoringJobRequest, Empty>
+      resumeModelDeploymentMonitoringJobSettings() {
+    return resumeModelDeploymentMonitoringJobSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -704,6 +992,26 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     deleteBatchPredictionJobOperationSettings =
         settingsBuilder.deleteBatchPredictionJobOperationSettings().build();
     cancelBatchPredictionJobSettings = settingsBuilder.cancelBatchPredictionJobSettings().build();
+    createModelDeploymentMonitoringJobSettings =
+        settingsBuilder.createModelDeploymentMonitoringJobSettings().build();
+    searchModelDeploymentMonitoringStatsAnomaliesSettings =
+        settingsBuilder.searchModelDeploymentMonitoringStatsAnomaliesSettings().build();
+    getModelDeploymentMonitoringJobSettings =
+        settingsBuilder.getModelDeploymentMonitoringJobSettings().build();
+    listModelDeploymentMonitoringJobsSettings =
+        settingsBuilder.listModelDeploymentMonitoringJobsSettings().build();
+    updateModelDeploymentMonitoringJobSettings =
+        settingsBuilder.updateModelDeploymentMonitoringJobSettings().build();
+    updateModelDeploymentMonitoringJobOperationSettings =
+        settingsBuilder.updateModelDeploymentMonitoringJobOperationSettings().build();
+    deleteModelDeploymentMonitoringJobSettings =
+        settingsBuilder.deleteModelDeploymentMonitoringJobSettings().build();
+    deleteModelDeploymentMonitoringJobOperationSettings =
+        settingsBuilder.deleteModelDeploymentMonitoringJobOperationSettings().build();
+    pauseModelDeploymentMonitoringJobSettings =
+        settingsBuilder.pauseModelDeploymentMonitoringJobSettings().build();
+    resumeModelDeploymentMonitoringJobSettings =
+        settingsBuilder.resumeModelDeploymentMonitoringJobSettings().build();
   }
 
   /** Builder for JobServiceStubSettings. */
@@ -771,6 +1079,38 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
         deleteBatchPredictionJobOperationSettings;
     private final UnaryCallSettings.Builder<CancelBatchPredictionJobRequest, Empty>
         cancelBatchPredictionJobSettings;
+    private final UnaryCallSettings.Builder<
+            CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        createModelDeploymentMonitoringJobSettings;
+    private final PagedCallSettings.Builder<
+            SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+            SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+            SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+        searchModelDeploymentMonitoringStatsAnomaliesSettings;
+    private final UnaryCallSettings.Builder<
+            GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        getModelDeploymentMonitoringJobSettings;
+    private final PagedCallSettings.Builder<
+            ListModelDeploymentMonitoringJobsRequest,
+            ListModelDeploymentMonitoringJobsResponse,
+            ListModelDeploymentMonitoringJobsPagedResponse>
+        listModelDeploymentMonitoringJobsSettings;
+    private final UnaryCallSettings.Builder<UpdateModelDeploymentMonitoringJobRequest, Operation>
+        updateModelDeploymentMonitoringJobSettings;
+    private final OperationCallSettings.Builder<
+            UpdateModelDeploymentMonitoringJobRequest,
+            ModelDeploymentMonitoringJob,
+            UpdateModelDeploymentMonitoringJobOperationMetadata>
+        updateModelDeploymentMonitoringJobOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteModelDeploymentMonitoringJobRequest, Operation>
+        deleteModelDeploymentMonitoringJobSettings;
+    private final OperationCallSettings.Builder<
+            DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+        deleteModelDeploymentMonitoringJobOperationSettings;
+    private final UnaryCallSettings.Builder<PauseModelDeploymentMonitoringJobRequest, Empty>
+        pauseModelDeploymentMonitoringJobSettings;
+    private final UnaryCallSettings.Builder<ResumeModelDeploymentMonitoringJobRequest, Empty>
+        resumeModelDeploymentMonitoringJobSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -778,7 +1118,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -794,7 +1136,15 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -832,6 +1182,19 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       deleteBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBatchPredictionJobOperationSettings = OperationCallSettings.newBuilder();
       cancelBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchModelDeploymentMonitoringStatsAnomaliesSettings =
+          PagedCallSettings.newBuilder(
+              SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES_PAGE_STR_FACT);
+      getModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listModelDeploymentMonitoringJobsSettings =
+          PagedCallSettings.newBuilder(LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_FACT);
+      updateModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateModelDeploymentMonitoringJobOperationSettings = OperationCallSettings.newBuilder();
+      deleteModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteModelDeploymentMonitoringJobOperationSettings = OperationCallSettings.newBuilder();
+      pauseModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumeModelDeploymentMonitoringJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -854,7 +1217,15 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               getBatchPredictionJobSettings,
               listBatchPredictionJobsSettings,
               deleteBatchPredictionJobSettings,
-              cancelBatchPredictionJobSettings);
+              cancelBatchPredictionJobSettings,
+              createModelDeploymentMonitoringJobSettings,
+              searchModelDeploymentMonitoringStatsAnomaliesSettings,
+              getModelDeploymentMonitoringJobSettings,
+              listModelDeploymentMonitoringJobsSettings,
+              updateModelDeploymentMonitoringJobSettings,
+              deleteModelDeploymentMonitoringJobSettings,
+              pauseModelDeploymentMonitoringJobSettings,
+              resumeModelDeploymentMonitoringJobSettings);
       initDefaults(this);
     }
 
@@ -892,6 +1263,26 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       deleteBatchPredictionJobOperationSettings =
           settings.deleteBatchPredictionJobOperationSettings.toBuilder();
       cancelBatchPredictionJobSettings = settings.cancelBatchPredictionJobSettings.toBuilder();
+      createModelDeploymentMonitoringJobSettings =
+          settings.createModelDeploymentMonitoringJobSettings.toBuilder();
+      searchModelDeploymentMonitoringStatsAnomaliesSettings =
+          settings.searchModelDeploymentMonitoringStatsAnomaliesSettings.toBuilder();
+      getModelDeploymentMonitoringJobSettings =
+          settings.getModelDeploymentMonitoringJobSettings.toBuilder();
+      listModelDeploymentMonitoringJobsSettings =
+          settings.listModelDeploymentMonitoringJobsSettings.toBuilder();
+      updateModelDeploymentMonitoringJobSettings =
+          settings.updateModelDeploymentMonitoringJobSettings.toBuilder();
+      updateModelDeploymentMonitoringJobOperationSettings =
+          settings.updateModelDeploymentMonitoringJobOperationSettings.toBuilder();
+      deleteModelDeploymentMonitoringJobSettings =
+          settings.deleteModelDeploymentMonitoringJobSettings.toBuilder();
+      deleteModelDeploymentMonitoringJobOperationSettings =
+          settings.deleteModelDeploymentMonitoringJobOperationSettings.toBuilder();
+      pauseModelDeploymentMonitoringJobSettings =
+          settings.pauseModelDeploymentMonitoringJobSettings.toBuilder();
+      resumeModelDeploymentMonitoringJobSettings =
+          settings.resumeModelDeploymentMonitoringJobSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -914,7 +1305,15 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               getBatchPredictionJobSettings,
               listBatchPredictionJobsSettings,
               deleteBatchPredictionJobSettings,
-              cancelBatchPredictionJobSettings);
+              cancelBatchPredictionJobSettings,
+              createModelDeploymentMonitoringJobSettings,
+              searchModelDeploymentMonitoringStatsAnomaliesSettings,
+              getModelDeploymentMonitoringJobSettings,
+              listModelDeploymentMonitoringJobsSettings,
+              updateModelDeploymentMonitoringJobSettings,
+              deleteModelDeploymentMonitoringJobSettings,
+              pauseModelDeploymentMonitoringJobSettings,
+              resumeModelDeploymentMonitoringJobSettings);
     }
 
     private static Builder createDefault() {
@@ -931,111 +1330,151 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private static Builder initDefaults(Builder builder) {
       builder
           .createCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .getCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .listCustomJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .cancelCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .createDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .getDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .listDataLabelingJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .cancelDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .createHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .getHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .listHyperparameterTuningJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .cancelHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .createBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .getBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .listBatchPredictionJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .cancelBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .createModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .searchModelDeploymentMonitoringStatsAnomaliesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .getModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .listModelDeploymentMonitoringJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .updateModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .deleteModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .pauseModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .resumeModelDeploymentMonitoringJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .deleteCustomJobOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteCustomJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1058,8 +1497,8 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteDataLabelingJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1083,8 +1522,8 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               UnaryCallSettings
                   .<DeleteHyperparameterTuningJobRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1107,8 +1546,60 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteBatchPredictionJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateModelDeploymentMonitoringJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateModelDeploymentMonitoringJobRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ModelDeploymentMonitoringJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateModelDeploymentMonitoringJobOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteModelDeploymentMonitoringJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteModelDeploymentMonitoringJobRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1304,6 +1795,97 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     public UnaryCallSettings.Builder<CancelBatchPredictionJobRequest, Empty>
         cancelBatchPredictionJobSettings() {
       return cancelBatchPredictionJobSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<
+            CreateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        createModelDeploymentMonitoringJobSettings() {
+      return createModelDeploymentMonitoringJobSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * searchModelDeploymentMonitoringStatsAnomalies.
+     */
+    public PagedCallSettings.Builder<
+            SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+            SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+            SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse>
+        searchModelDeploymentMonitoringStatsAnomaliesSettings() {
+      return searchModelDeploymentMonitoringStatsAnomaliesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getModelDeploymentMonitoringJob. */
+    public UnaryCallSettings.Builder<
+            GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
+        getModelDeploymentMonitoringJobSettings() {
+      return getModelDeploymentMonitoringJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listModelDeploymentMonitoringJobs. */
+    public PagedCallSettings.Builder<
+            ListModelDeploymentMonitoringJobsRequest,
+            ListModelDeploymentMonitoringJobsResponse,
+            ListModelDeploymentMonitoringJobsPagedResponse>
+        listModelDeploymentMonitoringJobsSettings() {
+      return listModelDeploymentMonitoringJobsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<UpdateModelDeploymentMonitoringJobRequest, Operation>
+        updateModelDeploymentMonitoringJobSettings() {
+      return updateModelDeploymentMonitoringJobSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateModelDeploymentMonitoringJob.
+     */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateModelDeploymentMonitoringJobRequest,
+            ModelDeploymentMonitoringJob,
+            UpdateModelDeploymentMonitoringJobOperationMetadata>
+        updateModelDeploymentMonitoringJobOperationSettings() {
+      return updateModelDeploymentMonitoringJobOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<DeleteModelDeploymentMonitoringJobRequest, Operation>
+        deleteModelDeploymentMonitoringJobSettings() {
+      return deleteModelDeploymentMonitoringJobSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteModelDeploymentMonitoringJob.
+     */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
+        deleteModelDeploymentMonitoringJobOperationSettings() {
+      return deleteModelDeploymentMonitoringJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pauseModelDeploymentMonitoringJob. */
+    public UnaryCallSettings.Builder<PauseModelDeploymentMonitoringJobRequest, Empty>
+        pauseModelDeploymentMonitoringJobSettings() {
+      return pauseModelDeploymentMonitoringJobSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to resumeModelDeploymentMonitoringJob.
+     */
+    public UnaryCallSettings.Builder<ResumeModelDeploymentMonitoringJobRequest, Empty>
+        resumeModelDeploymentMonitoringJobSettings() {
+      return resumeModelDeploymentMonitoringJobSettings;
     }
 
     @Override

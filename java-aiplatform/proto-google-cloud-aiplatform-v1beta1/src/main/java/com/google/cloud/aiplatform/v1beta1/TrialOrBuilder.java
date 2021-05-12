@@ -209,6 +209,78 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Measurement> getMeasurementsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Measurement getMeasurements(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getMeasurementsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MeasurementOrBuilder>
+      getMeasurementsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of measurements that are strictly lexicographically
+   * ordered by their induced tuples (steps, elapsed_duration).
+   * These are used for early stopping computations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Measurement measurements = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MeasurementOrBuilder getMeasurementsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time when the Trial was started.
    * </pre>
    *
@@ -280,6 +352,72 @@ public interface TrialOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identifier of the client that originally requested this Trial.
+   * Each client is identified by a unique client_id. When a client
+   * asks for a suggestion, Vizier will assign it a Trial. The client should
+   * evaluate the Trial, complete it, and report back to Vizier.
+   * If suggestion is asked again by same client_id before the Trial is
+   * completed, the same Trial will be returned. Multiple clients with
+   * different client_ids can ask for suggestions simultaneously, each of them
+   * will get their own Trial.
+   * </pre>
+   *
+   * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identifier of the client that originally requested this Trial.
+   * Each client is identified by a unique client_id. When a client
+   * asks for a suggestion, Vizier will assign it a Trial. The client should
+   * evaluate the Trial, complete it, and report back to Vizier.
+   * If suggestion is asked again by same client_id before the Trial is
+   * completed, the same Trial will be returned. Multiple clients with
+   * different client_ids can ask for suggestions simultaneously, each of them
+   * will get their own Trial.
+   * </pre>
+   *
+   * <code>string client_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString getClientIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A human readable string describing why the Trial is
+   * infeasible. This is set only if Trial state is `INFEASIBLE`.
+   * </pre>
+   *
+   * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The infeasibleReason.
+   */
+  java.lang.String getInfeasibleReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A human readable string describing why the Trial is
+   * infeasible. This is set only if Trial state is `INFEASIBLE`.
+   * </pre>
+   *
+   * <code>string infeasible_reason = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for infeasibleReason.
+   */
+  com.google.protobuf.ByteString getInfeasibleReasonBytes();
 
   /**
    *

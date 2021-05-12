@@ -477,7 +477,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_11_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -493,7 +493,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_7_params", settings);
+      definitions.put("no_retry_11_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -598,86 +598,86 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
     private static Builder initDefaults(Builder builder) {
       builder
           .createStudySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .getStudySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .listStudiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .deleteStudySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .lookupStudySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .suggestTrialsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .createTrialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .getTrialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .listTrialsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .addTrialMeasurementSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .completeTrialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .deleteTrialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .checkTrialEarlyStoppingStateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .stopTrialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .listOptimalTrialsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .suggestTrialsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SuggestTrialsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(SuggestTrialsResponse.class))
@@ -701,8 +701,8 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
               UnaryCallSettings
                   .<CheckTrialEarlyStoppingStateRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(

@@ -1005,6 +1005,455 @@ public final class JobServiceGrpc {
     return getCancelBatchPredictionJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+      getCreateModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+      getCreateModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
+            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+        getCreateModelDeploymentMonitoringJobMethod;
+    if ((getCreateModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getCreateModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getCreateModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getCreateModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getCreateModelDeploymentMonitoringJobMethod =
+              getCreateModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .CreateModelDeploymentMonitoringJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .CreateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "CreateModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateModelDeploymentMonitoringJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      getSearchModelDeploymentMonitoringStatsAnomaliesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchModelDeploymentMonitoringStatsAnomalies",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+              .class,
+      responseType =
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+          com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+      getSearchModelDeploymentMonitoringStatsAnomaliesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1
+                .SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+            com.google.cloud.aiplatform.v1beta1
+                .SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+        getSearchModelDeploymentMonitoringStatsAnomaliesMethod;
+    if ((getSearchModelDeploymentMonitoringStatsAnomaliesMethod =
+            JobServiceGrpc.getSearchModelDeploymentMonitoringStatsAnomaliesMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getSearchModelDeploymentMonitoringStatsAnomaliesMethod =
+                JobServiceGrpc.getSearchModelDeploymentMonitoringStatsAnomaliesMethod)
+            == null) {
+          JobServiceGrpc.getSearchModelDeploymentMonitoringStatsAnomaliesMethod =
+              getSearchModelDeploymentMonitoringStatsAnomaliesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                          com.google.cloud.aiplatform.v1beta1
+                              .SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "SearchModelDeploymentMonitoringStatsAnomalies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .SearchModelDeploymentMonitoringStatsAnomaliesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .SearchModelDeploymentMonitoringStatsAnomaliesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "SearchModelDeploymentMonitoringStatsAnomalies"))
+                      .build();
+        }
+      }
+    }
+    return getSearchModelDeploymentMonitoringStatsAnomaliesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+      getGetModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+      getGetModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+        getGetModelDeploymentMonitoringJobMethod;
+    if ((getGetModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getGetModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getGetModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getGetModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getGetModelDeploymentMonitoringJobMethod =
+              getGetModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .GetModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("GetModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetModelDeploymentMonitoringJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+      getListModelDeploymentMonitoringJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModelDeploymentMonitoringJobs",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest.class,
+      responseType =
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+      getListModelDeploymentMonitoringJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+        getListModelDeploymentMonitoringJobsMethod;
+    if ((getListModelDeploymentMonitoringJobsMethod =
+            JobServiceGrpc.getListModelDeploymentMonitoringJobsMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getListModelDeploymentMonitoringJobsMethod =
+                JobServiceGrpc.getListModelDeploymentMonitoringJobsMethod)
+            == null) {
+          JobServiceGrpc.getListModelDeploymentMonitoringJobsMethod =
+              getListModelDeploymentMonitoringJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .ListModelDeploymentMonitoringJobsRequest,
+                          com.google.cloud.aiplatform.v1beta1
+                              .ListModelDeploymentMonitoringJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListModelDeploymentMonitoringJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .ListModelDeploymentMonitoringJobsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .ListModelDeploymentMonitoringJobsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "ListModelDeploymentMonitoringJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListModelDeploymentMonitoringJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
+          com.google.longrunning.Operation>
+      getUpdateModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
+          com.google.longrunning.Operation>
+      getUpdateModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
+            com.google.longrunning.Operation>
+        getUpdateModelDeploymentMonitoringJobMethod;
+    if ((getUpdateModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getUpdateModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getUpdateModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getUpdateModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getUpdateModelDeploymentMonitoringJobMethod =
+              getUpdateModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .UpdateModelDeploymentMonitoringJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .UpdateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "UpdateModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateModelDeploymentMonitoringJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
+            com.google.longrunning.Operation>
+        getDeleteModelDeploymentMonitoringJobMethod;
+    if ((getDeleteModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getDeleteModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getDeleteModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getDeleteModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getDeleteModelDeploymentMonitoringJobMethod =
+              getDeleteModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .DeleteModelDeploymentMonitoringJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .DeleteModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "DeleteModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteModelDeploymentMonitoringJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
+          com.google.protobuf.Empty>
+      getPauseModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PauseModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
+          com.google.protobuf.Empty>
+      getPauseModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
+            com.google.protobuf.Empty>
+        getPauseModelDeploymentMonitoringJobMethod;
+    if ((getPauseModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getPauseModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getPauseModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getPauseModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getPauseModelDeploymentMonitoringJobMethod =
+              getPauseModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .PauseModelDeploymentMonitoringJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "PauseModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .PauseModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "PauseModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getPauseModelDeploymentMonitoringJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
+          com.google.protobuf.Empty>
+      getResumeModelDeploymentMonitoringJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResumeModelDeploymentMonitoringJob",
+      requestType =
+          com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
+          com.google.protobuf.Empty>
+      getResumeModelDeploymentMonitoringJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
+            com.google.protobuf.Empty>
+        getResumeModelDeploymentMonitoringJobMethod;
+    if ((getResumeModelDeploymentMonitoringJobMethod =
+            JobServiceGrpc.getResumeModelDeploymentMonitoringJobMethod)
+        == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getResumeModelDeploymentMonitoringJobMethod =
+                JobServiceGrpc.getResumeModelDeploymentMonitoringJobMethod)
+            == null) {
+          JobServiceGrpc.getResumeModelDeploymentMonitoringJobMethod =
+              getResumeModelDeploymentMonitoringJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1
+                              .ResumeModelDeploymentMonitoringJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ResumeModelDeploymentMonitoringJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .ResumeModelDeploymentMonitoringJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier(
+                              "ResumeModelDeploymentMonitoringJob"))
+                      .build();
+        }
+      }
+    }
+    return getResumeModelDeploymentMonitoringJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static JobServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<JobServiceStub> factory =
@@ -1378,6 +1827,133 @@ public final class JobServiceGrpc {
           getCancelBatchPredictionJobMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * </pre>
+     */
+    public void createModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * </pre>
+     */
+    public void searchModelDeploymentMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1
+                    .SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchModelDeploymentMonitoringStatsAnomaliesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void getModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * </pre>
+     */
+    public void listModelDeploymentMonitoringJobs(
+        com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelDeploymentMonitoringJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void updateModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void deleteModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     * </pre>
+     */
+    public void pauseModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPauseModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * </pre>
+     */
+    public void resumeModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResumeModelDeploymentMonitoringJobMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1515,6 +2091,65 @@ public final class JobServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_CANCEL_BATCH_PREDICTION_JOB)))
+          .addMethod(
+              getCreateModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
+                      this, METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+          .addMethod(
+              getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1
+                          .SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                      com.google.cloud.aiplatform.v1beta1
+                          .SearchModelDeploymentMonitoringStatsAnomaliesResponse>(
+                      this, METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES)))
+          .addMethod(
+              getGetModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
+                      this, METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB)))
+          .addMethod(
+              getListModelDeploymentMonitoringJobsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
+                      com.google.cloud.aiplatform.v1beta1
+                          .ListModelDeploymentMonitoringJobsResponse>(
+                      this, METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS)))
+          .addMethod(
+              getUpdateModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+          .addMethod(
+              getDeleteModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+          .addMethod(
+              getPauseModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+          .addMethod(
+              getResumeModelDeploymentMonitoringJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB)))
           .build();
     }
   }
@@ -1899,6 +2534,150 @@ public final class JobServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * </pre>
+     */
+    public void createModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * </pre>
+     */
+    public void searchModelDeploymentMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1
+                    .SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getSearchModelDeploymentMonitoringStatsAnomaliesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void getModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * </pre>
+     */
+    public void listModelDeploymentMonitoringJobs(
+        com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListModelDeploymentMonitoringJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void updateModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public void deleteModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     * </pre>
+     */
+    public void pauseModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPauseModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * </pre>
+     */
+    public void resumeModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResumeModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2210,6 +2989,123 @@ public final class JobServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelBatchPredictionJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+        createModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesResponse
+        searchModelDeploymentMonitoringStatsAnomalies(
+            com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob
+        getModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse
+        listModelDeploymentMonitoringJobs(
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelDeploymentMonitoringJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     * </pre>
+     */
+    public com.google.protobuf.Empty pauseModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty resumeModelDeploymentMonitoringJob(
+        com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -2548,6 +3444,138 @@ public final class JobServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelBatchPredictionJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+        createModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1
+                .SearchModelDeploymentMonitoringStatsAnomaliesResponse>
+        searchModelDeploymentMonitoringStatsAnomalies(
+            com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getSearchModelDeploymentMonitoringStatsAnomaliesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
+        getModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
+        listModelDeploymentMonitoringJobs(
+            com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListModelDeploymentMonitoringJobsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ModelDeploymentMonitoringJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        pauseModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPauseModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        resumeModelDeploymentMonitoringJob(
+            com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResumeModelDeploymentMonitoringJobMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_CUSTOM_JOB = 0;
@@ -2570,6 +3598,14 @@ public final class JobServiceGrpc {
   private static final int METHODID_LIST_BATCH_PREDICTION_JOBS = 17;
   private static final int METHODID_DELETE_BATCH_PREDICTION_JOB = 18;
   private static final int METHODID_CANCEL_BATCH_PREDICTION_JOB = 19;
+  private static final int METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB = 20;
+  private static final int METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES = 21;
+  private static final int METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB = 22;
+  private static final int METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS = 23;
+  private static final int METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB = 24;
+  private static final int METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB = 25;
+  private static final int METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB = 26;
+  private static final int METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2706,6 +3742,64 @@ public final class JobServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.createModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES:
+          serviceImpl.searchModelDeploymentMonitoringStatsAnomalies(
+              (com.google.cloud.aiplatform.v1beta1
+                      .SearchModelDeploymentMonitoringStatsAnomaliesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1
+                          .SearchModelDeploymentMonitoringStatsAnomaliesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.getModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS:
+          serviceImpl.listModelDeploymentMonitoringJobs(
+              (com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1
+                          .ListModelDeploymentMonitoringJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.updateModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.deleteModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.pauseModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB:
+          serviceImpl.resumeModelDeploymentMonitoringJob(
+              (com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2790,6 +3884,14 @@ public final class JobServiceGrpc {
                       .addMethod(getListBatchPredictionJobsMethod())
                       .addMethod(getDeleteBatchPredictionJobMethod())
                       .addMethod(getCancelBatchPredictionJobMethod())
+                      .addMethod(getCreateModelDeploymentMonitoringJobMethod())
+                      .addMethod(getSearchModelDeploymentMonitoringStatsAnomaliesMethod())
+                      .addMethod(getGetModelDeploymentMonitoringJobMethod())
+                      .addMethod(getListModelDeploymentMonitoringJobsMethod())
+                      .addMethod(getUpdateModelDeploymentMonitoringJobMethod())
+                      .addMethod(getDeleteModelDeploymentMonitoringJobMethod())
+                      .addMethod(getPauseModelDeploymentMonitoringJobMethod())
+                      .addMethod(getResumeModelDeploymentMonitoringJobMethod())
                       .build();
         }
       }

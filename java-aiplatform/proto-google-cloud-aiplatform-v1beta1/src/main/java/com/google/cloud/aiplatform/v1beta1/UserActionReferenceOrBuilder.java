@@ -119,8 +119,8 @@ public interface UserActionReferenceOrBuilder
    *
    *
    * <pre>
-   * The method name of the API call. For example,
-   * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+   * The method name of the API RPC call. For example,
+   * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
    * </pre>
    *
    * <code>string method = 3;</code>
@@ -132,8 +132,8 @@ public interface UserActionReferenceOrBuilder
    *
    *
    * <pre>
-   * The method name of the API call. For example,
-   * "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+   * The method name of the API RPC call. For example,
+   * "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
    * </pre>
    *
    * <code>string method = 3;</code>

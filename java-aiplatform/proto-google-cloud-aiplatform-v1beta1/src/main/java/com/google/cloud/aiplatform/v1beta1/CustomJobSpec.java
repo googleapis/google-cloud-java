@@ -41,6 +41,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     workerPoolSpecs_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     network_ = "";
+    tensorboard_ = "";
   }
 
   @java.lang.Override
@@ -131,6 +132,13 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 baseOutputDirectory_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tensorboard_ = s;
               break;
             }
           default:
@@ -381,7 +389,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The network.
    */
@@ -412,7 +420,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for network.
    */
@@ -523,6 +531,65 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     return getBaseOutputDirectory();
   }
 
+  public static final int TENSORBOARD_FIELD_NUMBER = 7;
+  private volatile java.lang.Object tensorboard_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tensorboard.
+   */
+  @java.lang.Override
+  public java.lang.String getTensorboard() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tensorboard_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tensorboard.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTensorboardBytes() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tensorboard_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -552,6 +619,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (baseOutputDirectory_ != null) {
       output.writeMessage(6, getBaseOutputDirectory());
     }
+    if (!getTensorboardBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tensorboard_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -575,6 +645,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (baseOutputDirectory_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBaseOutputDirectory());
+    }
+    if (!getTensorboardBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, tensorboard_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -603,6 +676,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (hasBaseOutputDirectory()) {
       if (!getBaseOutputDirectory().equals(other.getBaseOutputDirectory())) return false;
     }
+    if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -630,6 +704,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
     }
+    hash = (37 * hash) + TENSORBOARD_FIELD_NUMBER;
+    hash = (53 * hash) + getTensorboard().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -799,6 +875,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         baseOutputDirectory_ = null;
         baseOutputDirectoryBuilder_ = null;
       }
+      tensorboard_ = "";
+
       return this;
     }
 
@@ -848,6 +926,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.baseOutputDirectory_ = baseOutputDirectoryBuilder_.build();
       }
+      result.tensorboard_ = tensorboard_;
       onBuilt();
       return result;
     }
@@ -938,6 +1017,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBaseOutputDirectory()) {
         mergeBaseOutputDirectory(other.getBaseOutputDirectory());
+      }
+      if (!other.getTensorboard().isEmpty()) {
+        tensorboard_ = other.tensorboard_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1728,7 +1811,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The network.
      */
@@ -1758,7 +1841,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for network.
      */
@@ -1788,7 +1871,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -1817,7 +1900,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1842,7 +1925,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -2181,6 +2264,137 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         baseOutputDirectory_ = null;
       }
       return baseOutputDirectoryBuilder_;
+    }
+
+    private java.lang.Object tensorboard_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>
+     * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The tensorboard.
+     */
+    public java.lang.String getTensorboard() {
+      java.lang.Object ref = tensorboard_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tensorboard_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>
+     * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for tensorboard.
+     */
+    public com.google.protobuf.ByteString getTensorboardBytes() {
+      java.lang.Object ref = tensorboard_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tensorboard_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>
+     * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboard(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      tensorboard_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>
+     * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTensorboard() {
+
+      tensorboard_ = getDefaultInstance().getTensorboard();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>
+     * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboardBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      tensorboard_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

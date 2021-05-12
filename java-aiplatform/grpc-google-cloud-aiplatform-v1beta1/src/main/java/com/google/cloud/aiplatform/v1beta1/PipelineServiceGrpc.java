@@ -281,6 +281,234 @@ public final class PipelineServiceGrpc {
     return getCancelTrainingPipelineMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,
+          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+      getCreatePipelineJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePipelineJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.PipelineJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,
+          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+      getCreatePipelineJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob>
+        getCreatePipelineJobMethod;
+    if ((getCreatePipelineJobMethod = PipelineServiceGrpc.getCreatePipelineJobMethod) == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getCreatePipelineJobMethod = PipelineServiceGrpc.getCreatePipelineJobMethod) == null) {
+          PipelineServiceGrpc.getCreatePipelineJobMethod =
+              getCreatePipelineJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePipelineJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.PipelineJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("CreatePipelineJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePipelineJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,
+          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+      getGetPipelineJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPipelineJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.PipelineJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,
+          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+      getGetPipelineJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob>
+        getGetPipelineJobMethod;
+    if ((getGetPipelineJobMethod = PipelineServiceGrpc.getGetPipelineJobMethod) == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getGetPipelineJobMethod = PipelineServiceGrpc.getGetPipelineJobMethod) == null) {
+          PipelineServiceGrpc.getGetPipelineJobMethod =
+              getGetPipelineJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.PipelineJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPipelineJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.PipelineJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("GetPipelineJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetPipelineJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+      getListPipelineJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelineJobs",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+      getListPipelineJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+        getListPipelineJobsMethod;
+    if ((getListPipelineJobsMethod = PipelineServiceGrpc.getListPipelineJobsMethod) == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getListPipelineJobsMethod = PipelineServiceGrpc.getListPipelineJobsMethod) == null) {
+          PipelineServiceGrpc.getListPipelineJobsMethod =
+              getListPipelineJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelineJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("ListPipelineJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListPipelineJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest,
+          com.google.longrunning.Operation>
+      getDeletePipelineJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePipelineJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest,
+          com.google.longrunning.Operation>
+      getDeletePipelineJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest,
+            com.google.longrunning.Operation>
+        getDeletePipelineJobMethod;
+    if ((getDeletePipelineJobMethod = PipelineServiceGrpc.getDeletePipelineJobMethod) == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getDeletePipelineJobMethod = PipelineServiceGrpc.getDeletePipelineJobMethod) == null) {
+          PipelineServiceGrpc.getDeletePipelineJobMethod =
+              getDeletePipelineJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePipelineJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("DeletePipelineJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePipelineJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest, com.google.protobuf.Empty>
+      getCancelPipelineJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelPipelineJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest, com.google.protobuf.Empty>
+      getCancelPipelineJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest, com.google.protobuf.Empty>
+        getCancelPipelineJobMethod;
+    if ((getCancelPipelineJobMethod = PipelineServiceGrpc.getCancelPipelineJobMethod) == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getCancelPipelineJobMethod = PipelineServiceGrpc.getCancelPipelineJobMethod) == null) {
+          PipelineServiceGrpc.getCancelPipelineJobMethod =
+              getCancelPipelineJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelPipelineJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("CancelPipelineJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelPipelineJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PipelineServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PipelineServiceStub> factory =
@@ -415,6 +643,88 @@ public final class PipelineServiceGrpc {
           getCancelTrainingPipelineMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * </pre>
+     */
+    public void createPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePipelineJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PipelineJob.
+     * </pre>
+     */
+    public void getPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPipelineJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PipelineJobs in a Location.
+     * </pre>
+     */
+    public void listPipelineJobs(
+        com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPipelineJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PipelineJob.
+     * </pre>
+     */
+    public void deletePipelineJob(
+        com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePipelineJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public void cancelPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelPipelineJobMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -451,6 +761,39 @@ public final class PipelineServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest,
                       com.google.protobuf.Empty>(this, METHODID_CANCEL_TRAINING_PIPELINE)))
+          .addMethod(
+              getCreatePipelineJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.PipelineJob>(
+                      this, METHODID_CREATE_PIPELINE_JOB)))
+          .addMethod(
+              getGetPipelineJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.PipelineJob>(
+                      this, METHODID_GET_PIPELINE_JOB)))
+          .addMethod(
+              getListPipelineJobsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest,
+                      com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>(
+                      this, METHODID_LIST_PIPELINE_JOBS)))
+          .addMethod(
+              getDeletePipelineJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_PIPELINE_JOB)))
+          .addMethod(
+              getCancelPipelineJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest,
+                      com.google.protobuf.Empty>(this, METHODID_CANCEL_PIPELINE_JOB)))
           .build();
     }
   }
@@ -566,6 +909,98 @@ public final class PipelineServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * </pre>
+     */
+    public void createPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePipelineJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PipelineJob.
+     * </pre>
+     */
+    public void getPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPipelineJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PipelineJobs in a Location.
+     * </pre>
+     */
+    public void listPipelineJobs(
+        com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelineJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PipelineJob.
+     * </pre>
+     */
+    public void deletePipelineJob(
+        com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePipelineJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public void cancelPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelPipelineJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -660,6 +1095,80 @@ public final class PipelineServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelTrainingPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob createPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PipelineJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob getPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PipelineJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse listPipelineJobs(
+        com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelineJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PipelineJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePipelineJob(
+        com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelPipelineJob(
+        com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelPipelineJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -764,6 +1273,83 @@ public final class PipelineServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelTrainingPipelineMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a PipelineJob. A PipelineJob will run immediately when created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.PipelineJob>
+        createPipelineJob(com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePipelineJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a PipelineJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.PipelineJob>
+        getPipelineJob(com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPipelineJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PipelineJobs in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>
+        listPipelineJobs(com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelineJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a PipelineJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deletePipelineJob(com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePipelineJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a PipelineJob.
+     * Starts asynchronous cancellation on the PipelineJob. The server
+     * makes a best effort to cancel the pipeline, but success is not
+     * guaranteed. Clients can use [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob] or
+     * other methods to check whether the cancellation succeeded or whether the
+     * pipeline completed despite cancellation. On successful cancellation,
+     * the PipelineJob is not deleted; instead it becomes a pipeline with
+     * a [PipelineJob.error][google.cloud.aiplatform.v1beta1.PipelineJob.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`, and [PipelineJob.state][google.cloud.aiplatform.v1beta1.PipelineJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        cancelPipelineJob(com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelPipelineJobMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TRAINING_PIPELINE = 0;
@@ -771,6 +1357,11 @@ public final class PipelineServiceGrpc {
   private static final int METHODID_LIST_TRAINING_PIPELINES = 2;
   private static final int METHODID_DELETE_TRAINING_PIPELINE = 3;
   private static final int METHODID_CANCEL_TRAINING_PIPELINE = 4;
+  private static final int METHODID_CREATE_PIPELINE_JOB = 5;
+  private static final int METHODID_GET_PIPELINE_JOB = 6;
+  private static final int METHODID_LIST_PIPELINE_JOBS = 7;
+  private static final int METHODID_DELETE_PIPELINE_JOB = 8;
+  private static final int METHODID_CANCEL_PIPELINE_JOB = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -816,6 +1407,35 @@ public final class PipelineServiceGrpc {
         case METHODID_CANCEL_TRAINING_PIPELINE:
           serviceImpl.cancelTrainingPipeline(
               (com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_PIPELINE_JOB:
+          serviceImpl.createPipelineJob(
+              (com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PIPELINE_JOB:
+          serviceImpl.getPipelineJob(
+              (com.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PipelineJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PIPELINE_JOBS:
+          serviceImpl.listPipelineJobs(
+              (com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_PIPELINE_JOB:
+          serviceImpl.deletePipelineJob(
+              (com.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_PIPELINE_JOB:
+          serviceImpl.cancelPipelineJob(
+              (com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -887,6 +1507,11 @@ public final class PipelineServiceGrpc {
                       .addMethod(getListTrainingPipelinesMethod())
                       .addMethod(getDeleteTrainingPipelineMethod())
                       .addMethod(getCancelTrainingPipelineMethod())
+                      .addMethod(getCreatePipelineJobMethod())
+                      .addMethod(getGetPipelineJobMethod())
+                      .addMethod(getListPipelineJobsMethod())
+                      .addMethod(getDeletePipelineJobMethod())
+                      .addMethod(getCancelPipelineJobMethod())
                       .build();
         }
       }

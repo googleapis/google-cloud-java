@@ -349,7 +349,7 @@ public class SpecialistPoolServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_10_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -365,7 +365,7 @@ public class SpecialistPoolServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_6_params", settings);
+      definitions.put("no_retry_10_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -434,36 +434,36 @@ public class SpecialistPoolServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .createSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
 
       builder
           .getSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
 
       builder
           .listSpecialistPoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
 
       builder
           .deleteSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
 
       builder
           .updateSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
 
       builder
           .createSpecialistPoolOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))
@@ -487,8 +487,8 @@ public class SpecialistPoolServiceStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -511,8 +511,8 @@ public class SpecialistPoolServiceStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))

@@ -20,6 +20,8 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListBatchPred
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListCustomJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -33,7 +35,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import com.google.rpc.Status;
@@ -2008,6 +2012,796 @@ public class JobServiceClientTest {
     try {
       String name = "name3373707";
       client.cancelBatchPredictionJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createModelDeploymentMonitoringJobTest() throws Exception {
+    ModelDeploymentMonitoringJob expectedResponse =
+        ModelDeploymentMonitoringJob.newBuilder()
+            .setName(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setState(JobState.forNumber(0))
+            .addAllModelDeploymentMonitoringObjectiveConfigs(
+                new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
+            .setModelDeploymentMonitoringScheduleConfig(
+                ModelDeploymentMonitoringScheduleConfig.newBuilder().build())
+            .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
+            .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
+            .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
+            .setSamplePredictInstance(Value.newBuilder().build())
+            .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
+            .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
+            .setLogTtl(Duration.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextScheduleTime(Timestamp.newBuilder().build())
+            .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+        ModelDeploymentMonitoringJob.newBuilder().build();
+
+    ModelDeploymentMonitoringJob actualResponse =
+        client.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateModelDeploymentMonitoringJobRequest actualRequest =
+        ((CreateModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        modelDeploymentMonitoringJob, actualRequest.getModelDeploymentMonitoringJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+          ModelDeploymentMonitoringJob.newBuilder().build();
+      client.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createModelDeploymentMonitoringJobTest2() throws Exception {
+    ModelDeploymentMonitoringJob expectedResponse =
+        ModelDeploymentMonitoringJob.newBuilder()
+            .setName(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setState(JobState.forNumber(0))
+            .addAllModelDeploymentMonitoringObjectiveConfigs(
+                new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
+            .setModelDeploymentMonitoringScheduleConfig(
+                ModelDeploymentMonitoringScheduleConfig.newBuilder().build())
+            .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
+            .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
+            .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
+            .setSamplePredictInstance(Value.newBuilder().build())
+            .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
+            .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
+            .setLogTtl(Duration.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextScheduleTime(Timestamp.newBuilder().build())
+            .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+        ModelDeploymentMonitoringJob.newBuilder().build();
+
+    ModelDeploymentMonitoringJob actualResponse =
+        client.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateModelDeploymentMonitoringJobRequest actualRequest =
+        ((CreateModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        modelDeploymentMonitoringJob, actualRequest.getModelDeploymentMonitoringJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createModelDeploymentMonitoringJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+          ModelDeploymentMonitoringJob.newBuilder().build();
+      client.createModelDeploymentMonitoringJob(parent, modelDeploymentMonitoringJob);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchModelDeploymentMonitoringStatsAnomaliesTest() throws Exception {
+    ModelMonitoringStatsAnomalies responsesElement =
+        ModelMonitoringStatsAnomalies.newBuilder().build();
+    SearchModelDeploymentMonitoringStatsAnomaliesResponse expectedResponse =
+        SearchModelDeploymentMonitoringStatsAnomaliesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMonitoringStats(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    ModelDeploymentMonitoringJobName modelDeploymentMonitoringJob =
+        ModelDeploymentMonitoringJobName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+    String deployedModelId = "deployedModelId-1817547906";
+
+    SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse pagedListResponse =
+        client.searchModelDeploymentMonitoringStatsAnomalies(
+            modelDeploymentMonitoringJob, deployedModelId);
+
+    List<ModelMonitoringStatsAnomalies> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMonitoringStatsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchModelDeploymentMonitoringStatsAnomaliesRequest actualRequest =
+        ((SearchModelDeploymentMonitoringStatsAnomaliesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        modelDeploymentMonitoringJob.toString(), actualRequest.getModelDeploymentMonitoringJob());
+    Assert.assertEquals(deployedModelId, actualRequest.getDeployedModelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchModelDeploymentMonitoringStatsAnomaliesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJobName modelDeploymentMonitoringJob =
+          ModelDeploymentMonitoringJobName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+      String deployedModelId = "deployedModelId-1817547906";
+      client.searchModelDeploymentMonitoringStatsAnomalies(
+          modelDeploymentMonitoringJob, deployedModelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchModelDeploymentMonitoringStatsAnomaliesTest2() throws Exception {
+    ModelMonitoringStatsAnomalies responsesElement =
+        ModelMonitoringStatsAnomalies.newBuilder().build();
+    SearchModelDeploymentMonitoringStatsAnomaliesResponse expectedResponse =
+        SearchModelDeploymentMonitoringStatsAnomaliesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMonitoringStats(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String modelDeploymentMonitoringJob = "modelDeploymentMonitoringJob-1178077657";
+    String deployedModelId = "deployedModelId-1817547906";
+
+    SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse pagedListResponse =
+        client.searchModelDeploymentMonitoringStatsAnomalies(
+            modelDeploymentMonitoringJob, deployedModelId);
+
+    List<ModelMonitoringStatsAnomalies> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMonitoringStatsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchModelDeploymentMonitoringStatsAnomaliesRequest actualRequest =
+        ((SearchModelDeploymentMonitoringStatsAnomaliesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        modelDeploymentMonitoringJob, actualRequest.getModelDeploymentMonitoringJob());
+    Assert.assertEquals(deployedModelId, actualRequest.getDeployedModelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchModelDeploymentMonitoringStatsAnomaliesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String modelDeploymentMonitoringJob = "modelDeploymentMonitoringJob-1178077657";
+      String deployedModelId = "deployedModelId-1817547906";
+      client.searchModelDeploymentMonitoringStatsAnomalies(
+          modelDeploymentMonitoringJob, deployedModelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelDeploymentMonitoringJobTest() throws Exception {
+    ModelDeploymentMonitoringJob expectedResponse =
+        ModelDeploymentMonitoringJob.newBuilder()
+            .setName(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setState(JobState.forNumber(0))
+            .addAllModelDeploymentMonitoringObjectiveConfigs(
+                new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
+            .setModelDeploymentMonitoringScheduleConfig(
+                ModelDeploymentMonitoringScheduleConfig.newBuilder().build())
+            .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
+            .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
+            .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
+            .setSamplePredictInstance(Value.newBuilder().build())
+            .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
+            .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
+            .setLogTtl(Duration.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextScheduleTime(Timestamp.newBuilder().build())
+            .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    ModelDeploymentMonitoringJobName name =
+        ModelDeploymentMonitoringJobName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+
+    ModelDeploymentMonitoringJob actualResponse = client.getModelDeploymentMonitoringJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelDeploymentMonitoringJobRequest actualRequest =
+        ((GetModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJobName name =
+          ModelDeploymentMonitoringJobName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+      client.getModelDeploymentMonitoringJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelDeploymentMonitoringJobTest2() throws Exception {
+    ModelDeploymentMonitoringJob expectedResponse =
+        ModelDeploymentMonitoringJob.newBuilder()
+            .setName(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setState(JobState.forNumber(0))
+            .addAllModelDeploymentMonitoringObjectiveConfigs(
+                new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
+            .setModelDeploymentMonitoringScheduleConfig(
+                ModelDeploymentMonitoringScheduleConfig.newBuilder().build())
+            .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
+            .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
+            .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
+            .setSamplePredictInstance(Value.newBuilder().build())
+            .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
+            .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
+            .setLogTtl(Duration.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextScheduleTime(Timestamp.newBuilder().build())
+            .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ModelDeploymentMonitoringJob actualResponse = client.getModelDeploymentMonitoringJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelDeploymentMonitoringJobRequest actualRequest =
+        ((GetModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelDeploymentMonitoringJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModelDeploymentMonitoringJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelDeploymentMonitoringJobsTest() throws Exception {
+    ModelDeploymentMonitoringJob responsesElement =
+        ModelDeploymentMonitoringJob.newBuilder().build();
+    ListModelDeploymentMonitoringJobsResponse expectedResponse =
+        ListModelDeploymentMonitoringJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModelDeploymentMonitoringJobs(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListModelDeploymentMonitoringJobsPagedResponse pagedListResponse =
+        client.listModelDeploymentMonitoringJobs(parent);
+
+    List<ModelDeploymentMonitoringJob> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getModelDeploymentMonitoringJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelDeploymentMonitoringJobsRequest actualRequest =
+        ((ListModelDeploymentMonitoringJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelDeploymentMonitoringJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listModelDeploymentMonitoringJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelDeploymentMonitoringJobsTest2() throws Exception {
+    ModelDeploymentMonitoringJob responsesElement =
+        ModelDeploymentMonitoringJob.newBuilder().build();
+    ListModelDeploymentMonitoringJobsResponse expectedResponse =
+        ListModelDeploymentMonitoringJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModelDeploymentMonitoringJobs(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelDeploymentMonitoringJobsPagedResponse pagedListResponse =
+        client.listModelDeploymentMonitoringJobs(parent);
+
+    List<ModelDeploymentMonitoringJob> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getModelDeploymentMonitoringJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelDeploymentMonitoringJobsRequest actualRequest =
+        ((ListModelDeploymentMonitoringJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelDeploymentMonitoringJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModelDeploymentMonitoringJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateModelDeploymentMonitoringJobTest() throws Exception {
+    ModelDeploymentMonitoringJob expectedResponse =
+        ModelDeploymentMonitoringJob.newBuilder()
+            .setName(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setState(JobState.forNumber(0))
+            .addAllModelDeploymentMonitoringObjectiveConfigs(
+                new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
+            .setModelDeploymentMonitoringScheduleConfig(
+                ModelDeploymentMonitoringScheduleConfig.newBuilder().build())
+            .setLoggingSamplingStrategy(SamplingStrategy.newBuilder().build())
+            .setModelMonitoringAlertConfig(ModelMonitoringAlertConfig.newBuilder().build())
+            .setPredictInstanceSchemaUri("predictInstanceSchemaUri-1702051043")
+            .setSamplePredictInstance(Value.newBuilder().build())
+            .setAnalysisInstanceSchemaUri("analysisInstanceSchemaUri-1686197382")
+            .addAllBigqueryTables(new ArrayList<ModelDeploymentMonitoringBigQueryTable>())
+            .setLogTtl(Duration.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextScheduleTime(Timestamp.newBuilder().build())
+            .setStatsAnomaliesBaseDirectory(GcsDestination.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateModelDeploymentMonitoringJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+        ModelDeploymentMonitoringJob.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ModelDeploymentMonitoringJob actualResponse =
+        client
+            .updateModelDeploymentMonitoringJobAsync(modelDeploymentMonitoringJob, updateMask)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateModelDeploymentMonitoringJobRequest actualRequest =
+        ((UpdateModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        modelDeploymentMonitoringJob, actualRequest.getModelDeploymentMonitoringJob());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJob modelDeploymentMonitoringJob =
+          ModelDeploymentMonitoringJob.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client
+          .updateModelDeploymentMonitoringJobAsync(modelDeploymentMonitoringJob, updateMask)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelDeploymentMonitoringJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelDeploymentMonitoringJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    ModelDeploymentMonitoringJobName name =
+        ModelDeploymentMonitoringJobName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+
+    client.deleteModelDeploymentMonitoringJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelDeploymentMonitoringJobRequest actualRequest =
+        ((DeleteModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJobName name =
+          ModelDeploymentMonitoringJobName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+      client.deleteModelDeploymentMonitoringJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelDeploymentMonitoringJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelDeploymentMonitoringJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteModelDeploymentMonitoringJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelDeploymentMonitoringJobRequest actualRequest =
+        ((DeleteModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelDeploymentMonitoringJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteModelDeploymentMonitoringJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void pauseModelDeploymentMonitoringJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    ModelDeploymentMonitoringJobName name =
+        ModelDeploymentMonitoringJobName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+
+    client.pauseModelDeploymentMonitoringJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PauseModelDeploymentMonitoringJobRequest actualRequest =
+        ((PauseModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pauseModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJobName name =
+          ModelDeploymentMonitoringJobName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+      client.pauseModelDeploymentMonitoringJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pauseModelDeploymentMonitoringJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.pauseModelDeploymentMonitoringJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PauseModelDeploymentMonitoringJobRequest actualRequest =
+        ((PauseModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pauseModelDeploymentMonitoringJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.pauseModelDeploymentMonitoringJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumeModelDeploymentMonitoringJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    ModelDeploymentMonitoringJobName name =
+        ModelDeploymentMonitoringJobName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+
+    client.resumeModelDeploymentMonitoringJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeModelDeploymentMonitoringJobRequest actualRequest =
+        ((ResumeModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeModelDeploymentMonitoringJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      ModelDeploymentMonitoringJobName name =
+          ModelDeploymentMonitoringJobName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]");
+      client.resumeModelDeploymentMonitoringJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumeModelDeploymentMonitoringJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.resumeModelDeploymentMonitoringJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeModelDeploymentMonitoringJobRequest actualRequest =
+        ((ResumeModelDeploymentMonitoringJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeModelDeploymentMonitoringJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.resumeModelDeploymentMonitoringJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

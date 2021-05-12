@@ -182,7 +182,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_9_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -198,7 +198,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_5_params", settings);
+      definitions.put("no_retry_9_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -241,13 +241,13 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private static Builder initDefaults(Builder builder) {
       builder
           .predictSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .explainSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       return builder;
     }

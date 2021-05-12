@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListPipelineJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -110,6 +111,39 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
   /** Returns the object with the settings used for calls to cancelTrainingPipeline. */
   public UnaryCallSettings<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineSettings() {
     return ((PipelineServiceStubSettings) getStubSettings()).cancelTrainingPipelineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPipelineJob. */
+  public UnaryCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).createPipelineJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPipelineJob. */
+  public UnaryCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).getPipelineJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPipelineJobs. */
+  public PagedCallSettings<
+          ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+      listPipelineJobsSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).listPipelineJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePipelineJob. */
+  public UnaryCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).deletePipelineJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePipelineJob. */
+  public OperationCallSettings<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+      deletePipelineJobOperationSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).deletePipelineJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelPipelineJob. */
+  public UnaryCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).cancelPipelineJobSettings();
   }
 
   public static final PipelineServiceSettings create(PipelineServiceStubSettings stub)
@@ -248,6 +282,41 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     public UnaryCallSettings.Builder<CancelTrainingPipelineRequest, Empty>
         cancelTrainingPipelineSettings() {
       return getStubSettingsBuilder().cancelTrainingPipelineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPipelineJob. */
+    public UnaryCallSettings.Builder<CreatePipelineJobRequest, PipelineJob>
+        createPipelineJobSettings() {
+      return getStubSettingsBuilder().createPipelineJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPipelineJob. */
+    public UnaryCallSettings.Builder<GetPipelineJobRequest, PipelineJob> getPipelineJobSettings() {
+      return getStubSettingsBuilder().getPipelineJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPipelineJobs. */
+    public PagedCallSettings.Builder<
+            ListPipelineJobsRequest, ListPipelineJobsResponse, ListPipelineJobsPagedResponse>
+        listPipelineJobsSettings() {
+      return getStubSettingsBuilder().listPipelineJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipelineJob. */
+    public UnaryCallSettings.Builder<DeletePipelineJobRequest, Operation>
+        deletePipelineJobSettings() {
+      return getStubSettingsBuilder().deletePipelineJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipelineJob. */
+    public OperationCallSettings.Builder<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
+        deletePipelineJobOperationSettings() {
+      return getStubSettingsBuilder().deletePipelineJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelPipelineJob. */
+    public UnaryCallSettings.Builder<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
+      return getStubSettingsBuilder().cancelPipelineJobSettings();
     }
 
     @Override

@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+ * Request message for [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CancelDataLabelingJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest}
@@ -332,7 +332,7 @@ public final class CancelDataLabelingJobRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+   * Request message for [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CancelDataLabelingJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest}

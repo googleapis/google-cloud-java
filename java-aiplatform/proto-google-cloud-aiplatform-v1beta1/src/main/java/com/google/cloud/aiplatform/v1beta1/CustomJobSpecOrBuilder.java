@@ -177,7 +177,7 @@ public interface CustomJobSpecOrBuilder
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The network.
    */
@@ -197,7 +197,7 @@ public interface CustomJobSpecOrBuilder
    * unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for network.
    */
@@ -282,4 +282,39 @@ public interface CustomJobSpecOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.GcsDestination base_output_directory = 6;</code>
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getBaseOutputDirectoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tensorboard.
+   */
+  java.lang.String getTensorboard();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>
+   * string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tensorboard.
+   */
+  com.google.protobuf.ByteString getTensorboardBytes();
 }

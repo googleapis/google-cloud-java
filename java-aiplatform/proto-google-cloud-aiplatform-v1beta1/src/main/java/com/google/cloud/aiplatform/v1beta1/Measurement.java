@@ -73,6 +73,21 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 10:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (elapsedDuration_ != null) {
+                subBuilder = elapsedDuration_.toBuilder();
+              }
+              elapsedDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(elapsedDuration_);
+                elapsedDuration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 16:
             {
               stepCount_ = input.readInt64();
@@ -898,6 +913,60 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ELAPSED_DURATION_FIELD_NUMBER = 1;
+  private com.google.protobuf.Duration elapsedDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the elapsedDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasElapsedDuration() {
+    return elapsedDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The elapsedDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getElapsedDuration() {
+    return elapsedDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : elapsedDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getElapsedDurationOrBuilder() {
+    return getElapsedDuration();
+  }
+
   public static final int STEP_COUNT_FIELD_NUMBER = 2;
   private long stepCount_;
   /**
@@ -1016,6 +1085,9 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (elapsedDuration_ != null) {
+      output.writeMessage(1, getElapsedDuration());
+    }
     if (stepCount_ != 0L) {
       output.writeInt64(2, stepCount_);
     }
@@ -1031,6 +1103,9 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (elapsedDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getElapsedDuration());
+    }
     if (stepCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, stepCount_);
     }
@@ -1053,6 +1128,10 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.Measurement other =
         (com.google.cloud.aiplatform.v1beta1.Measurement) obj;
 
+    if (hasElapsedDuration() != other.hasElapsedDuration()) return false;
+    if (hasElapsedDuration()) {
+      if (!getElapsedDuration().equals(other.getElapsedDuration())) return false;
+    }
     if (getStepCount() != other.getStepCount()) return false;
     if (!getMetricsList().equals(other.getMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1066,6 +1145,10 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasElapsedDuration()) {
+      hash = (37 * hash) + ELAPSED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getElapsedDuration().hashCode();
+    }
     hash = (37 * hash) + STEP_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStepCount());
     if (getMetricsCount() > 0) {
@@ -1221,6 +1304,12 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (elapsedDurationBuilder_ == null) {
+        elapsedDuration_ = null;
+      } else {
+        elapsedDuration_ = null;
+        elapsedDurationBuilder_ = null;
+      }
       stepCount_ = 0L;
 
       if (metricsBuilder_ == null) {
@@ -1257,6 +1346,11 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1beta1.Measurement result =
           new com.google.cloud.aiplatform.v1beta1.Measurement(this);
       int from_bitField0_ = bitField0_;
+      if (elapsedDurationBuilder_ == null) {
+        result.elapsedDuration_ = elapsedDuration_;
+      } else {
+        result.elapsedDuration_ = elapsedDurationBuilder_.build();
+      }
       result.stepCount_ = stepCount_;
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -1317,6 +1411,9 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Measurement other) {
       if (other == com.google.cloud.aiplatform.v1beta1.Measurement.getDefaultInstance())
         return this;
+      if (other.hasElapsedDuration()) {
+        mergeElapsedDuration(other.getElapsedDuration());
+      }
       if (other.getStepCount() != 0L) {
         setStepCount(other.getStepCount());
       }
@@ -1377,6 +1474,209 @@ public final class Measurement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.Duration elapsedDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        elapsedDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the elapsedDuration field is set.
+     */
+    public boolean hasElapsedDuration() {
+      return elapsedDurationBuilder_ != null || elapsedDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The elapsedDuration.
+     */
+    public com.google.protobuf.Duration getElapsedDuration() {
+      if (elapsedDurationBuilder_ == null) {
+        return elapsedDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : elapsedDuration_;
+      } else {
+        return elapsedDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setElapsedDuration(com.google.protobuf.Duration value) {
+      if (elapsedDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        elapsedDuration_ = value;
+        onChanged();
+      } else {
+        elapsedDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setElapsedDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (elapsedDurationBuilder_ == null) {
+        elapsedDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        elapsedDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeElapsedDuration(com.google.protobuf.Duration value) {
+      if (elapsedDurationBuilder_ == null) {
+        if (elapsedDuration_ != null) {
+          elapsedDuration_ =
+              com.google.protobuf.Duration.newBuilder(elapsedDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          elapsedDuration_ = value;
+        }
+        onChanged();
+      } else {
+        elapsedDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearElapsedDuration() {
+      if (elapsedDurationBuilder_ == null) {
+        elapsedDuration_ = null;
+        onChanged();
+      } else {
+        elapsedDuration_ = null;
+        elapsedDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getElapsedDurationBuilder() {
+
+      onChanged();
+      return getElapsedDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getElapsedDurationOrBuilder() {
+      if (elapsedDurationBuilder_ != null) {
+        return elapsedDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return elapsedDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : elapsedDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time that the Trial has been running at the point of this Measurement.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration elapsed_duration = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getElapsedDurationFieldBuilder() {
+      if (elapsedDurationBuilder_ == null) {
+        elapsedDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getElapsedDuration(), getParentForChildren(), isClean());
+        elapsedDuration_ = null;
+      }
+      return elapsedDurationBuilder_;
+    }
 
     private long stepCount_;
     /**
