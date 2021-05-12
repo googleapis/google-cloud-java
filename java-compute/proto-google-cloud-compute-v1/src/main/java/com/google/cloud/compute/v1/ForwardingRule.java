@@ -43,12 +43,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private ForwardingRule() {
+    iPAddress_ = "";
+    iPProtocol_ = 0;
     backendService_ = "";
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
-    iPAddress_ = "";
-    iPProtocol_ = 0;
     id_ = "";
     ipVersion_ = 0;
     kind_ = "";
@@ -121,8 +121,15 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000020;
               creationTimestamp_ = s;
+              break;
+            }
+          case 343815546:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              iPAddress_ = s;
               break;
             }
           case 854835346:
@@ -172,7 +179,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000080;
               fingerprint_ = s;
               break;
             }
@@ -186,7 +193,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case -1839398830:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000010;
               backendService_ = s;
               break;
             }
@@ -195,13 +202,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00200000;
               subnetwork_ = s;
-              break;
-            }
-          case -1704773400:
-            {
-              int rawValue = input.readEnum();
-              bitField0_ |= 0x00000080;
-              iPProtocol_ = rawValue;
               break;
             }
           case -1415926102:
@@ -228,13 +228,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000040;
               description_ = s;
               break;
             }
           case -733560928:
             {
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000004;
               allPorts_ = input.readBool();
               break;
             }
@@ -257,9 +257,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
               break;
             }
+          case -390211096:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000002;
+              iPProtocol_ = rawValue;
+              break;
+            }
           case -299689904:
             {
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000008;
               allowGlobalAccess_ = input.readBool();
               break;
             }
@@ -268,13 +275,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
               bitField0_ |= 0x00008000;
               networkTier_ = rawValue;
-              break;
-            }
-          case -114231686:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              iPAddress_ = s;
               break;
             }
           default:
@@ -890,6 +890,171 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int I_P_ADDRESS_FIELD_NUMBER = 42976943;
+  private volatile java.lang.Object iPAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
+   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * </pre>
+   *
+   * <code>string I_p_address = 42976943;</code>
+   *
+   * @return Whether the iPAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPAddress() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
+   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * </pre>
+   *
+   * <code>string I_p_address = 42976943;</code>
+   *
+   * @return The iPAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIPAddress() {
+    java.lang.Object ref = iPAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      iPAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
+   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * </pre>
+   *
+   * <code>string I_p_address = 42976943;</code>
+   *
+   * @return The bytes for iPAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIPAddressBytes() {
+    java.lang.Object ref = iPAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      iPAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int I_P_PROTOCOL_FIELD_NUMBER = 488094525;
+  private int iPProtocol_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+   *
+   * @return Whether the iPProtocol field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPProtocol() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+   *
+   * @return The enum numeric value on the wire for iPProtocol.
+   */
+  @java.lang.Override
+  public int getIPProtocolValue() {
+    return iPProtocol_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+   *
+   * @return The iPProtocol.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.ForwardingRule.IPProtocol result =
+        com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
+    return result == null
+        ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED
+        : result;
+  }
+
   public static final int ALL_PORTS_FIELD_NUMBER = 445175796;
   private boolean allPorts_;
   /**
@@ -906,7 +1071,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAllPorts() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -940,7 +1105,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAllowGlobalAccess() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -973,7 +1138,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBackendService() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1037,7 +1202,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1101,7 +1266,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1166,7 +1331,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1215,171 +1380,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int I_P_ADDRESS_FIELD_NUMBER = 522591951;
-  private volatile java.lang.Object iPAddress_;
-  /**
-   *
-   *
-   * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-   * - projects/project_id/regions/region/addresses/address-name
-   * - regions/region/addresses/address-name
-   * - global/addresses/address-name
-   * - address-name
-   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-   * </pre>
-   *
-   * <code>string i_p_address = 522591951;</code>
-   *
-   * @return Whether the iPAddress field is set.
-   */
-  @java.lang.Override
-  public boolean hasIPAddress() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-   * - projects/project_id/regions/region/addresses/address-name
-   * - regions/region/addresses/address-name
-   * - global/addresses/address-name
-   * - address-name
-   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-   * </pre>
-   *
-   * <code>string i_p_address = 522591951;</code>
-   *
-   * @return The iPAddress.
-   */
-  @java.lang.Override
-  public java.lang.String getIPAddress() {
-    java.lang.Object ref = iPAddress_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      iPAddress_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-   * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-   * - projects/project_id/regions/region/addresses/address-name
-   * - regions/region/addresses/address-name
-   * - global/addresses/address-name
-   * - address-name
-   * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-   * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-   * </pre>
-   *
-   * <code>string i_p_address = 522591951;</code>
-   *
-   * @return The bytes for iPAddress.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIPAddressBytes() {
-    java.lang.Object ref = iPAddress_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      iPAddress_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int I_P_PROTOCOL_FIELD_NUMBER = 323774237;
-  private int iPProtocol_;
-  /**
-   *
-   *
-   * <pre>
-   * The IP protocol to which this rule applies.
-   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-   * The valid IP protocols are different for different load balancing products:
-   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-   *
-   * @return Whether the iPProtocol field is set.
-   */
-  @java.lang.Override
-  public boolean hasIPProtocol() {
-    return ((bitField0_ & 0x00000080) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The IP protocol to which this rule applies.
-   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-   * The valid IP protocols are different for different load balancing products:
-   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-   *
-   * @return The enum numeric value on the wire for iPProtocol.
-   */
-  @java.lang.Override
-  public int getIPProtocolValue() {
-    return iPProtocol_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The IP protocol to which this rule applies.
-   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-   * The valid IP protocols are different for different load balancing products:
-   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-   * </pre>
-   *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-   *
-   * @return The iPProtocol.
-   */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.IPProtocol result =
-        com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
-    return result == null
-        ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED
-        : result;
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
@@ -2566,8 +2566,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 42976943, iPAddress_);
     }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
@@ -2587,20 +2590,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(323774237, iPProtocol_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
@@ -2611,10 +2611,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(445175796, allPorts_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
@@ -2624,13 +2624,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(464725739, metadataFilters_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(488094525, iPProtocol_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(499409674, allowGlobalAccess_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeEnum(517397843, networkTier_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 522591951, iPAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -2650,9 +2650,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42976943, iPAddress_);
     }
     {
       int dataSize = 0;
@@ -2678,20 +2681,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(323774237, iPProtocol_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
@@ -2703,10 +2703,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445175796, allPorts_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
@@ -2718,13 +2718,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               464725739, metadataFilters_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(488094525, iPProtocol_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(499409674, allowGlobalAccess_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522591951, iPAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2742,6 +2742,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.ForwardingRule other =
         (com.google.cloud.compute.v1.ForwardingRule) obj;
 
+    if (hasIPAddress() != other.hasIPAddress()) return false;
+    if (hasIPAddress()) {
+      if (!getIPAddress().equals(other.getIPAddress())) return false;
+    }
+    if (hasIPProtocol() != other.hasIPProtocol()) return false;
+    if (hasIPProtocol()) {
+      if (iPProtocol_ != other.iPProtocol_) return false;
+    }
     if (hasAllPorts() != other.hasAllPorts()) return false;
     if (hasAllPorts()) {
       if (getAllPorts() != other.getAllPorts()) return false;
@@ -2765,14 +2773,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
       if (!getFingerprint().equals(other.getFingerprint())) return false;
-    }
-    if (hasIPAddress() != other.hasIPAddress()) return false;
-    if (hasIPAddress()) {
-      if (!getIPAddress().equals(other.getIPAddress())) return false;
-    }
-    if (hasIPProtocol() != other.hasIPProtocol()) return false;
-    if (hasIPProtocol()) {
-      if (iPProtocol_ != other.iPProtocol_) return false;
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
@@ -2847,6 +2847,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasIPAddress()) {
+      hash = (37 * hash) + I_P_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIPAddress().hashCode();
+    }
+    if (hasIPProtocol()) {
+      hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + iPProtocol_;
+    }
     if (hasAllPorts()) {
       hash = (37 * hash) + ALL_PORTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllPorts());
@@ -2870,14 +2878,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
-    }
-    if (hasIPAddress()) {
-      hash = (37 * hash) + I_P_ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getIPAddress().hashCode();
-    }
-    if (hasIPProtocol()) {
-      hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + iPProtocol_;
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -3099,21 +3099,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      allPorts_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      allowGlobalAccess_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      backendService_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
-      description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      fingerprint_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
       iPAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000001);
       iPProtocol_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      allPorts_ = false;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      allowGlobalAccess_ = false;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      backendService_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
+      creationTimestamp_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
+      description_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       id_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -3183,37 +3183,37 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.allPorts_ = allPorts_;
         to_bitField0_ |= 0x00000001;
       }
+      result.iPAddress_ = iPAddress_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.allowGlobalAccess_ = allowGlobalAccess_;
         to_bitField0_ |= 0x00000002;
       }
+      result.iPProtocol_ = iPProtocol_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allPorts_ = allPorts_;
         to_bitField0_ |= 0x00000004;
       }
-      result.backendService_ = backendService_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowGlobalAccess_ = allowGlobalAccess_;
         to_bitField0_ |= 0x00000008;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.description_ = description_;
+      result.backendService_ = backendService_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000020;
       }
-      result.fingerprint_ = fingerprint_;
+      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.iPAddress_ = iPAddress_;
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.iPProtocol_ = iPProtocol_;
+      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
@@ -3338,6 +3338,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ForwardingRule other) {
       if (other == com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance()) return this;
+      if (other.hasIPAddress()) {
+        bitField0_ |= 0x00000001;
+        iPAddress_ = other.iPAddress_;
+        onChanged();
+      }
+      if (other.hasIPProtocol()) {
+        setIPProtocol(other.getIPProtocol());
+      }
       if (other.hasAllPorts()) {
         setAllPorts(other.getAllPorts());
       }
@@ -3345,32 +3353,24 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         setAllowGlobalAccess(other.getAllowGlobalAccess());
       }
       if (other.hasBackendService()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         backendService_ = other.backendService_;
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         fingerprint_ = other.fingerprint_;
         onChanged();
-      }
-      if (other.hasIPAddress()) {
-        bitField0_ |= 0x00000040;
-        iPAddress_ = other.iPAddress_;
-        onChanged();
-      }
-      if (other.hasIPProtocol()) {
-        setIPProtocol(other.getIPProtocol());
       }
       if (other.hasId()) {
         bitField0_ |= 0x00000100;
@@ -3507,6 +3507,330 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object iPAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @return Whether the iPAddress field is set.
+     */
+    public boolean hasIPAddress() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @return The iPAddress.
+     */
+    public java.lang.String getIPAddress() {
+      java.lang.Object ref = iPAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iPAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @return The bytes for iPAddress.
+     */
+    public com.google.protobuf.ByteString getIPAddressBytes() {
+      java.lang.Object ref = iPAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        iPAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @param value The iPAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      iPAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIPAddress() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      iPAddress_ = getDefaultInstance().getIPAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
+     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * </pre>
+     *
+     * <code>string I_p_address = 42976943;</code>
+     *
+     * @param value The bytes for iPAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      iPAddress_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int iPProtocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @return Whether the iPProtocol field is set.
+     */
+    @java.lang.Override
+    public boolean hasIPProtocol() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @return The enum numeric value on the wire for iPProtocol.
+     */
+    @java.lang.Override
+    public int getIPProtocolValue() {
+      return iPProtocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @param value The enum numeric value on the wire for iPProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPProtocolValue(int value) {
+      bitField0_ |= 0x00000002;
+      iPProtocol_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @return The iPProtocol.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.ForwardingRule.IPProtocol result =
+          com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
+      return result == null
+          ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @param value The iPProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPProtocol(com.google.cloud.compute.v1.ForwardingRule.IPProtocol value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      iPProtocol_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIPProtocol() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      iPProtocol_ = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean allPorts_;
     /**
      *
@@ -3522,7 +3846,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAllPorts() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3554,7 +3878,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAllPorts(boolean value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       allPorts_ = value;
       onChanged();
       return this;
@@ -3572,7 +3896,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllPorts() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       allPorts_ = false;
       onChanged();
       return this;
@@ -3592,7 +3916,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAllowGlobalAccess() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3622,7 +3946,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAllowGlobalAccess(boolean value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       allowGlobalAccess_ = value;
       onChanged();
       return this;
@@ -3639,7 +3963,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowGlobalAccess() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowGlobalAccess_ = false;
       onChanged();
       return this;
@@ -3658,7 +3982,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the backendService field is set.
      */
     public boolean hasBackendService() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3720,7 +4044,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       backendService_ = value;
       onChanged();
       return this;
@@ -3737,7 +4061,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackendService() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       backendService_ = getDefaultInstance().getBackendService();
       onChanged();
       return this;
@@ -3759,7 +4083,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       backendService_ = value;
       onChanged();
       return this;
@@ -3778,7 +4102,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3840,7 +4164,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3857,7 +4181,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -3879,7 +4203,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -3898,7 +4222,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3960,7 +4284,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       description_ = value;
       onChanged();
       return this;
@@ -3977,7 +4301,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -3999,7 +4323,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       description_ = value;
       onChanged();
       return this;
@@ -4019,7 +4343,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4084,7 +4408,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -4102,7 +4426,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -4125,332 +4449,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       fingerprint_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object iPAddress_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @return Whether the iPAddress field is set.
-     */
-    public boolean hasIPAddress() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @return The iPAddress.
-     */
-    public java.lang.String getIPAddress() {
-      java.lang.Object ref = iPAddress_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        iPAddress_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @return The bytes for iPAddress.
-     */
-    public com.google.protobuf.ByteString getIPAddressBytes() {
-      java.lang.Object ref = iPAddress_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        iPAddress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @param value The iPAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPAddress(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      iPAddress_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIPAddress() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      iPAddress_ = getDefaultInstance().getIPAddress();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-     * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-     * - projects/project_id/regions/region/addresses/address-name
-     * - regions/region/addresses/address-name
-     * - global/addresses/address-name
-     * - address-name
-     * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-     * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     * </pre>
-     *
-     * <code>string i_p_address = 522591951;</code>
-     *
-     * @param value The bytes for iPAddress to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPAddressBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
-      iPAddress_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int iPProtocol_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @return Whether the iPProtocol field is set.
-     */
-    @java.lang.Override
-    public boolean hasIPProtocol() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @return The enum numeric value on the wire for iPProtocol.
-     */
-    @java.lang.Override
-    public int getIPProtocolValue() {
-      return iPProtocol_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @param value The enum numeric value on the wire for iPProtocol to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPProtocolValue(int value) {
-      bitField0_ |= 0x00000080;
-      iPProtocol_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @return The iPProtocol.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.IPProtocol result =
-          com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
-      return result == null
-          ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @param value The iPProtocol to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPProtocol(com.google.cloud.compute.v1.ForwardingRule.IPProtocol value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      iPProtocol_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The IP protocol to which this rule applies.
-     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-     * The valid IP protocols are different for different load balancing products:
-     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-     * </pre>
-     *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIPProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      iPProtocol_ = 0;
       onChanged();
       return this;
     }

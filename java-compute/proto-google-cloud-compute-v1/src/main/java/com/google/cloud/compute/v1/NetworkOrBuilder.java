@@ -27,6 +27,43 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return Whether the iPv4Range field is set.
+   */
+  boolean hasIPv4Range();
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return The iPv4Range.
+   */
+  java.lang.String getIPv4Range();
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return The bytes for iPv4Range.
+   */
+  com.google.protobuf.ByteString getIPv4RangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Must be set to create a VPC network. If not set, a legacy network is created.
    * When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
    * An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described in Auto mode VPC network IP ranges.
@@ -164,43 +201,6 @@ public interface NetworkOrBuilder
    * @return The bytes for gatewayIPv4.
    */
   com.google.protobuf.ByteString getGatewayIPv4Bytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return Whether the iPv4Range field is set.
-   */
-  boolean hasIPv4Range();
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return The iPv4Range.
-   */
-  java.lang.String getIPv4Range();
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return The bytes for iPv4Range.
-   */
-  com.google.protobuf.ByteString getIPv4RangeBytes();
 
   /**
    *

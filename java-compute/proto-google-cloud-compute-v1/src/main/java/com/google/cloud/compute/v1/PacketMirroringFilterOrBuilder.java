@@ -27,6 +27,57 @@ public interface PacketMirroringFilterOrBuilder
    *
    *
    * <pre>
+   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+   * </pre>
+   *
+   * <code>repeated string I_p_protocols = 98544854;</code>
+   *
+   * @return A list containing the iPProtocols.
+   */
+  java.util.List<java.lang.String> getIPProtocolsList();
+  /**
+   *
+   *
+   * <pre>
+   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+   * </pre>
+   *
+   * <code>repeated string I_p_protocols = 98544854;</code>
+   *
+   * @return The count of iPProtocols.
+   */
+  int getIPProtocolsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+   * </pre>
+   *
+   * <code>repeated string I_p_protocols = 98544854;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The iPProtocols at the given index.
+   */
+  java.lang.String getIPProtocols(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+   * </pre>
+   *
+   * <code>repeated string I_p_protocols = 98544854;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the iPProtocols at the given index.
+   */
+  com.google.protobuf.ByteString getIPProtocolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
@@ -110,55 +161,4 @@ public interface PacketMirroringFilterOrBuilder
    * @return The direction.
    */
   com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection();
-
-  /**
-   *
-   *
-   * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
-   * </pre>
-   *
-   * <code>repeated string i_p_protocols = 373325046;</code>
-   *
-   * @return A list containing the iPProtocols.
-   */
-  java.util.List<java.lang.String> getIPProtocolsList();
-  /**
-   *
-   *
-   * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
-   * </pre>
-   *
-   * <code>repeated string i_p_protocols = 373325046;</code>
-   *
-   * @return The count of iPProtocols.
-   */
-  int getIPProtocolsCount();
-  /**
-   *
-   *
-   * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
-   * </pre>
-   *
-   * <code>repeated string i_p_protocols = 373325046;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The iPProtocols at the given index.
-   */
-  java.lang.String getIPProtocols(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
-   * </pre>
-   *
-   * <code>repeated string i_p_protocols = 373325046;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the iPProtocols at the given index.
-   */
-  com.google.protobuf.ByteString getIPProtocolsBytes(int index);
 }

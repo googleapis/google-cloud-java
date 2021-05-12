@@ -30,7 +30,7 @@ public interface DeniedOrBuilder
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 323774237;</code>
+   * <code>string I_p_protocol = 488094525;</code>
    *
    * @return Whether the iPProtocol field is set.
    */
@@ -42,7 +42,7 @@ public interface DeniedOrBuilder
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 323774237;</code>
+   * <code>string I_p_protocol = 488094525;</code>
    *
    * @return The iPProtocol.
    */
@@ -54,7 +54,7 @@ public interface DeniedOrBuilder
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 323774237;</code>
+   * <code>string I_p_protocol = 488094525;</code>
    *
    * @return The bytes for iPProtocol.
    */

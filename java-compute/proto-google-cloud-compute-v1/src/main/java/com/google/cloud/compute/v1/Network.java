@@ -39,10 +39,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Network() {
+    iPv4Range_ = "";
     creationTimestamp_ = "";
     description_ = "";
     gatewayIPv4_ = "";
-    iPv4Range_ = "";
     id_ = "";
     kind_ = "";
     name_ = "";
@@ -94,13 +94,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
               mtu_ = input.readInt32();
               break;
             }
-          case 15827634:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              iPv4Range_ = s;
-              break;
-            }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -118,8 +111,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               creationTimestamp_ = s;
+              break;
+            }
+          case 473874866:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              iPv4Range_ = s;
               break;
             }
           case 559065498:
@@ -136,13 +136,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           case 1429431018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               gatewayIPv4_ = s;
               break;
             }
           case 2049253520:
             {
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               autoCreateSubnetworks_ = input.readBool();
               break;
             }
@@ -159,7 +159,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               description_ = s;
               break;
             }
@@ -227,6 +227,70 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int I_PV4_RANGE_FIELD_NUMBER = 59234358;
+  private volatile java.lang.Object iPv4Range_;
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return Whether the iPv4Range field is set.
+   */
+  @java.lang.Override
+  public boolean hasIPv4Range() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return The iPv4Range.
+   */
+  @java.lang.Override
+  public java.lang.String getIPv4Range() {
+    java.lang.Object ref = iPv4Range_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      iPv4Range_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * </pre>
+   *
+   * <code>string I_pv4_range = 59234358;</code>
+   *
+   * @return The bytes for iPv4Range.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIPv4RangeBytes() {
+    java.lang.Object ref = iPv4Range_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      iPv4Range_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER = 256156690;
   private boolean autoCreateSubnetworks_;
   /**
@@ -245,7 +309,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAutoCreateSubnetworks() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -281,7 +345,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -345,7 +409,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -409,7 +473,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGatewayIPv4() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -452,70 +516,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       gatewayIPv4_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int I_PV4_RANGE_FIELD_NUMBER = 1978454;
-  private volatile java.lang.Object iPv4Range_;
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return Whether the iPv4Range field is set.
-   */
-  @java.lang.Override
-  public boolean hasIPv4Range() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return The iPv4Range.
-   */
-  @java.lang.Override
-  public java.lang.String getIPv4Range() {
-    java.lang.Object ref = iPv4Range_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      iPv4Range_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-   * </pre>
-   *
-   * <code>string i_pv4_range = 1978454;</code>
-   *
-   * @return The bytes for iPv4Range.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIPv4RangeBytes() {
-    java.lang.Object ref = iPv4Range_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      iPv4Range_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1011,31 +1011,31 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(108462, mtu_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1978454, iPv4Range_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 59234358, iPv4Range_);
     }
     for (int i = 0; i < peerings_.size(); i++) {
       output.writeMessage(69883187, peerings_.get(i));
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178678877, gatewayIPv4_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(256156690, autoCreateSubnetworks_);
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 415853125, subnetworks_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -1059,26 +1059,26 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1978454, iPv4Range_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59234358, iPv4Range_);
     }
     for (int i = 0; i < peerings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(69883187, peerings_.get(i));
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
     }
@@ -1090,7 +1090,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getSubnetworksList().size();
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -1115,6 +1115,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.Network other = (com.google.cloud.compute.v1.Network) obj;
 
+    if (hasIPv4Range() != other.hasIPv4Range()) return false;
+    if (hasIPv4Range()) {
+      if (!getIPv4Range().equals(other.getIPv4Range())) return false;
+    }
     if (hasAutoCreateSubnetworks() != other.hasAutoCreateSubnetworks()) return false;
     if (hasAutoCreateSubnetworks()) {
       if (getAutoCreateSubnetworks() != other.getAutoCreateSubnetworks()) return false;
@@ -1130,10 +1134,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayIPv4() != other.hasGatewayIPv4()) return false;
     if (hasGatewayIPv4()) {
       if (!getGatewayIPv4().equals(other.getGatewayIPv4())) return false;
-    }
-    if (hasIPv4Range() != other.hasIPv4Range()) return false;
-    if (hasIPv4Range()) {
-      if (!getIPv4Range().equals(other.getIPv4Range())) return false;
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
@@ -1172,6 +1172,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasIPv4Range()) {
+      hash = (37 * hash) + I_PV4_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getIPv4Range().hashCode();
+    }
     if (hasAutoCreateSubnetworks()) {
       hash = (37 * hash) + AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCreateSubnetworks());
@@ -1187,10 +1191,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayIPv4()) {
       hash = (37 * hash) + GATEWAY_I_PV4_FIELD_NUMBER;
       hash = (53 * hash) + getGatewayIPv4().hashCode();
-    }
-    if (hasIPv4Range()) {
-      hash = (37 * hash) + I_PV4_RANGE_FIELD_NUMBER;
-      hash = (53 * hash) + getIPv4Range().hashCode();
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -1372,15 +1372,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      autoCreateSubnetworks_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      creationTimestamp_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      description_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      gatewayIPv4_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       iPv4Range_ = "";
+      bitField0_ = (bitField0_ & ~0x00000001);
+      autoCreateSubnetworks_ = false;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      creationTimestamp_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
+      description_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
+      gatewayIPv4_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       id_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1435,25 +1435,25 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
         to_bitField0_ |= 0x00000001;
       }
+      result.iPv4Range_ = iPv4Range_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
         to_bitField0_ |= 0x00000002;
       }
-      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
+      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
-      result.gatewayIPv4_ = gatewayIPv4_;
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.iPv4Range_ = iPv4Range_;
+      result.gatewayIPv4_ = gatewayIPv4_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000020;
       }
@@ -1546,27 +1546,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Network other) {
       if (other == com.google.cloud.compute.v1.Network.getDefaultInstance()) return this;
+      if (other.hasIPv4Range()) {
+        bitField0_ |= 0x00000001;
+        iPv4Range_ = other.iPv4Range_;
+        onChanged();
+      }
       if (other.hasAutoCreateSubnetworks()) {
         setAutoCreateSubnetworks(other.getAutoCreateSubnetworks());
       }
       if (other.hasCreationTimestamp()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasGatewayIPv4()) {
-        bitField0_ |= 0x00000008;
-        gatewayIPv4_ = other.gatewayIPv4_;
-        onChanged();
-      }
-      if (other.hasIPv4Range()) {
         bitField0_ |= 0x00000010;
-        iPv4Range_ = other.iPv4Range_;
+        gatewayIPv4_ = other.gatewayIPv4_;
         onChanged();
       }
       if (other.hasId()) {
@@ -1663,6 +1663,126 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object iPv4Range_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @return Whether the iPv4Range field is set.
+     */
+    public boolean hasIPv4Range() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @return The iPv4Range.
+     */
+    public java.lang.String getIPv4Range() {
+      java.lang.Object ref = iPv4Range_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iPv4Range_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @return The bytes for iPv4Range.
+     */
+    public com.google.protobuf.ByteString getIPv4RangeBytes() {
+      java.lang.Object ref = iPv4Range_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        iPv4Range_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @param value The iPv4Range to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPv4Range(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      iPv4Range_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIPv4Range() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      iPv4Range_ = getDefaultInstance().getIPv4Range();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+     * </pre>
+     *
+     * <code>string I_pv4_range = 59234358;</code>
+     *
+     * @param value The bytes for iPv4Range to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPv4RangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      iPv4Range_ = value;
+      onChanged();
+      return this;
+    }
+
     private boolean autoCreateSubnetworks_;
     /**
      *
@@ -1680,7 +1800,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAutoCreateSubnetworks() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1716,7 +1836,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAutoCreateSubnetworks(boolean value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       autoCreateSubnetworks_ = value;
       onChanged();
       return this;
@@ -1736,7 +1856,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoCreateSubnetworks() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       autoCreateSubnetworks_ = false;
       onChanged();
       return this;
@@ -1755,7 +1875,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1817,7 +1937,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1834,7 +1954,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -1856,7 +1976,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -1875,7 +1995,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1937,7 +2057,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1954,7 +2074,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -1976,7 +2096,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -1995,7 +2115,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gatewayIPv4 field is set.
      */
     public boolean hasGatewayIPv4() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2057,7 +2177,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       gatewayIPv4_ = value;
       onChanged();
       return this;
@@ -2074,7 +2194,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayIPv4() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       gatewayIPv4_ = getDefaultInstance().getGatewayIPv4();
       onChanged();
       return this;
@@ -2096,128 +2216,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       gatewayIPv4_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object iPv4Range_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @return Whether the iPv4Range field is set.
-     */
-    public boolean hasIPv4Range() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @return The iPv4Range.
-     */
-    public java.lang.String getIPv4Range() {
-      java.lang.Object ref = iPv4Range_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        iPv4Range_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @return The bytes for iPv4Range.
-     */
-    public com.google.protobuf.ByteString getIPv4RangeBytes() {
-      java.lang.Object ref = iPv4Range_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        iPv4Range_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @param value The iPv4Range to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPv4Range(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      iPv4Range_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIPv4Range() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      iPv4Range_ = getDefaultInstance().getIPv4Range();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-     * </pre>
-     *
-     * <code>string i_pv4_range = 1978454;</code>
-     *
-     * @param value The bytes for iPv4Range to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIPv4RangeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
-      iPv4Range_ = value;
       onChanged();
       return this;
     }

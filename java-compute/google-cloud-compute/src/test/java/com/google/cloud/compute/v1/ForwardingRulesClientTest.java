@@ -247,13 +247,13 @@ public class ForwardingRulesClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTest() {
+    String iPAddress = "iPAddress1116718767";
     boolean allPorts = true;
     boolean allowGlobalAccess = true;
     String backendService = "backendService306946058";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String fingerprint = "fingerprint-1375934236";
-    String iPAddress = "iPAddress-551149873";
     String id = "id3355";
     boolean isMirroringCollector = true;
     String kind = "kind3292052";
@@ -268,13 +268,13 @@ public class ForwardingRulesClientTest {
     String target = "target-880905839";
     ForwardingRule expectedResponse =
         ForwardingRule.newBuilder()
+            .setIPAddress(iPAddress)
             .setAllPorts(allPorts)
             .setAllowGlobalAccess(allowGlobalAccess)
             .setBackendService(backendService)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setFingerprint(fingerprint)
-            .setIPAddress(iPAddress)
             .setId(id)
             .setIsMirroringCollector(isMirroringCollector)
             .setKind(kind)

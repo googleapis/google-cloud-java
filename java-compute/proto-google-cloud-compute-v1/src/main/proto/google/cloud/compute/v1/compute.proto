@@ -3102,7 +3102,7 @@ message FileContentBuffer {
 //
 message Allowed {
   // The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
-  optional string i_p_protocol = 323774237;
+  optional string I_p_protocol = 488094525;
 
   // An optional list of ports to which this rule applies. This field is only applicable for the UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
   //
@@ -3114,7 +3114,7 @@ message Allowed {
 //
 message Denied {
   // The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
-  optional string i_p_protocol = 323774237;
+  optional string I_p_protocol = 488094525;
 
   // An optional list of ports to which this rule applies. This field is only applicable for the UDP or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule applies to connections through any port.
   //
@@ -3377,6 +3377,35 @@ message ForwardingRule {
 
   }
 
+  // IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
+  //
+  // If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
+  //
+  // * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+  // - projects/project_id/regions/region/addresses/address-name
+  // - regions/region/addresses/address-name
+  // - global/addresses/address-name
+  // - address-name
+  //
+  // The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+  //
+  // Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+  //
+  // For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+  optional string I_p_address = 42976943;
+
+  // The IP protocol to which this rule applies.
+  //
+  // For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+  //
+  // The valid IP protocols are different for different load balancing products:
+  // - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+  // - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+  // - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+  // - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+  // - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+  optional IPProtocol I_p_protocol = 488094525;
+
   // This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. This field cannot be used with port or portRange fields.
   //
   // When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
@@ -3398,35 +3427,6 @@ message ForwardingRule {
   //
   // To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
   optional string fingerprint = 234678500;
-
-  // IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
-  //
-  // If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-  //
-  // * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
-  // - projects/project_id/regions/region/addresses/address-name
-  // - regions/region/addresses/address-name
-  // - global/addresses/address-name
-  // - address-name
-  //
-  // The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
-  //
-  // Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
-  //
-  // For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-  optional string i_p_address = 522591951;
-
-  // The IP protocol to which this rule applies.
-  //
-  // For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
-  //
-  // The valid IP protocols are different for different load balancing products:
-  // - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
-  // - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
-  // - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
-  // - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
-  // - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
-  optional IPProtocol i_p_protocol = 323774237;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   optional string id = 3355;
@@ -7766,6 +7766,9 @@ message NetworkRoutingConfig {
 //
 // Networks connect resources to each other and to the internet. For more information, read Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.networks ==)
 message Network {
+  // Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+  optional string I_pv4_range = 59234358;
+
   // Must be set to create a VPC network. If not set, a legacy network is created.
   //
   // When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode.
@@ -7783,9 +7786,6 @@ message Network {
 
   // [Output Only] The gateway address for default routing out of the network, selected by GCP.
   optional string gateway_i_pv4 = 178678877;
-
-  // Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-  optional string i_pv4_range = 1978454;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   optional string id = 3355;
@@ -9000,14 +9000,14 @@ message PacketMirroringFilter {
 
   }
 
+  // Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
+  repeated string I_p_protocols = 98544854;
+
   // IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
   repeated string cidr_ranges = 487901697;
 
   // Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
   optional Direction direction = 111150975;
-
-  // Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
-  repeated string i_p_protocols = 373325046;
 
 }
 

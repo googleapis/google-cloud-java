@@ -278,11 +278,11 @@ public class NetworksClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTest() {
+    String iPv4Range = "iPv4Range1132976182";
     boolean autoCreateSubnetworks = true;
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String gatewayIPv4 = "gatewayIPv4-1431933859";
-    String iPv4Range = "iPv4Range-534892458";
     String id = "id3355";
     String kind = "kind3292052";
     int mtu = 108462;
@@ -290,11 +290,11 @@ public class NetworksClientTest {
     String selfLink = "selfLink-1691268851";
     Network expectedResponse =
         Network.newBuilder()
+            .setIPv4Range(iPv4Range)
             .setAutoCreateSubnetworks(autoCreateSubnetworks)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setGatewayIPv4(gatewayIPv4)
-            .setIPv4Range(iPv4Range)
             .setId(id)
             .setKind(kind)
             .setMtu(mtu)
