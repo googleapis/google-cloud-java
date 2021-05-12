@@ -615,7 +615,8 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create documents by importing data from external sources.
+   * Create documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
    *
    * <p>Sample code:
    *
@@ -644,7 +645,8 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create documents by importing data from external sources.
+   * Create documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
    *
    * <p>Sample code:
    *
@@ -674,7 +676,8 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create documents by importing data from external sources.
+   * Create documents by importing data from external sources. Dialogflow supports up to 350
+   * documents in each request. If you try to import more, Dialogflow will return an error.
    *
    * <p>Sample code:
    *

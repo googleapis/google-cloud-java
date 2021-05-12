@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -26,10 +27,18 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest;
+import com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest;
+import com.google.cloud.dialogflow.v2beta1.Environment;
+import com.google.cloud.dialogflow.v2beta1.EnvironmentHistory;
+import com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest;
+import com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse;
+import com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -57,10 +66,69 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetEnvironmentRequest, Environment>
+      getEnvironmentMethodDescriptor =
+          MethodDescriptor.<GetEnvironmentRequest, Environment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Environments/GetEnvironment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateEnvironmentRequest, Environment>
+      createEnvironmentMethodDescriptor =
+          MethodDescriptor.<CreateEnvironmentRequest, Environment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Environments/CreateEnvironment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEnvironmentRequest, Environment>
+      updateEnvironmentMethodDescriptor =
+          MethodDescriptor.<UpdateEnvironmentRequest, Environment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Environments/UpdateEnvironment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteEnvironmentRequest, Empty>
+      deleteEnvironmentMethodDescriptor =
+          MethodDescriptor.<DeleteEnvironmentRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Environments/DeleteEnvironment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetEnvironmentHistoryRequest, EnvironmentHistory>
+      getEnvironmentHistoryMethodDescriptor =
+          MethodDescriptor.<GetEnvironmentHistoryRequest, EnvironmentHistory>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Environments/GetEnvironmentHistory")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEnvironmentHistoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EnvironmentHistory.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable;
+  private final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable;
+  private final UnaryCallable<CreateEnvironmentRequest, Environment> createEnvironmentCallable;
+  private final UnaryCallable<UpdateEnvironmentRequest, Environment> updateEnvironmentCallable;
+  private final UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable;
+  private final UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory>
+      getEnvironmentHistoryCallable;
+  private final UnaryCallable<GetEnvironmentHistoryRequest, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistoryPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -118,6 +186,73 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
+        GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
+            .setMethodDescriptor(getEnvironmentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEnvironmentRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEnvironmentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentTransportSettings =
+        GrpcCallSettings.<CreateEnvironmentRequest, Environment>newBuilder()
+            .setMethodDescriptor(createEnvironmentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateEnvironmentRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateEnvironmentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentTransportSettings =
+        GrpcCallSettings.<UpdateEnvironmentRequest, Environment>newBuilder()
+            .setMethodDescriptor(updateEnvironmentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateEnvironmentRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateEnvironmentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "environment.name", String.valueOf(request.getEnvironment().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentTransportSettings =
+        GrpcCallSettings.<DeleteEnvironmentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEnvironmentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEnvironmentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetEnvironmentHistoryRequest, EnvironmentHistory>
+        getEnvironmentHistoryTransportSettings =
+            GrpcCallSettings.<GetEnvironmentHistoryRequest, EnvironmentHistory>newBuilder()
+                .setMethodDescriptor(getEnvironmentHistoryMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetEnvironmentHistoryRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetEnvironmentHistoryRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listEnvironmentsCallable =
         callableFactory.createUnaryCallable(
@@ -125,6 +260,34 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     this.listEnvironmentsPagedCallable =
         callableFactory.createPagedCallable(
             listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
+    this.getEnvironmentCallable =
+        callableFactory.createUnaryCallable(
+            getEnvironmentTransportSettings, settings.getEnvironmentSettings(), clientContext);
+    this.createEnvironmentCallable =
+        callableFactory.createUnaryCallable(
+            createEnvironmentTransportSettings,
+            settings.createEnvironmentSettings(),
+            clientContext);
+    this.updateEnvironmentCallable =
+        callableFactory.createUnaryCallable(
+            updateEnvironmentTransportSettings,
+            settings.updateEnvironmentSettings(),
+            clientContext);
+    this.deleteEnvironmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteEnvironmentTransportSettings,
+            settings.deleteEnvironmentSettings(),
+            clientContext);
+    this.getEnvironmentHistoryCallable =
+        callableFactory.createUnaryCallable(
+            getEnvironmentHistoryTransportSettings,
+            settings.getEnvironmentHistorySettings(),
+            clientContext);
+    this.getEnvironmentHistoryPagedCallable =
+        callableFactory.createPagedCallable(
+            getEnvironmentHistoryTransportSettings,
+            settings.getEnvironmentHistorySettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -144,6 +307,38 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return listEnvironmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    return getEnvironmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEnvironmentRequest, Environment> createEnvironmentCallable() {
+    return createEnvironmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEnvironmentRequest, Environment> updateEnvironmentCallable() {
+    return updateEnvironmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
+    return deleteEnvironmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory>
+      getEnvironmentHistoryCallable() {
+    return getEnvironmentHistoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnvironmentHistoryRequest, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistoryPagedCallable() {
+    return getEnvironmentHistoryPagedCallable;
   }
 
   @Override

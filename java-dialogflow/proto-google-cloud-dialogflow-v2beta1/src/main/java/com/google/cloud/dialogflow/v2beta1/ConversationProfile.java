@@ -589,6 +589,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -605,6 +607,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -623,6 +627,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2550,6 +2556,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2566,6 +2574,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2589,6 +2599,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2614,6 +2626,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2636,6 +2650,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2666,6 +2682,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2688,6 +2706,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2705,6 +2725,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -2726,6 +2748,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>

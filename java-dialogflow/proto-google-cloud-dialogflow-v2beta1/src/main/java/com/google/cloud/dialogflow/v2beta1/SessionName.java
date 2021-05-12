@@ -39,6 +39,9 @@ public class SessionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_SESSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agent/sessions/{session}");
+  private static final PathTemplate PROJECT_LOCATION_ENVIRONMENT_USER_SESSION =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -84,6 +87,15 @@ public class SessionName implements ResourceName {
     pathTemplate = PROJECT_LOCATION_SESSION;
   }
 
+  private SessionName(ProjectLocationEnvironmentUserSessionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    pathTemplate = PROJECT_LOCATION_ENVIRONMENT_USER_SESSION;
+  }
+
   public String getProject() {
     return project;
   }
@@ -123,6 +135,12 @@ public class SessionName implements ResourceName {
     return new ProjectLocationSessionBuilder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationEnvironmentUserSessionBuilder
+      newProjectLocationEnvironmentUserSessionBuilder() {
+    return new ProjectLocationEnvironmentUserSessionBuilder();
+  }
+
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -153,6 +171,18 @@ public class SessionName implements ResourceName {
     return newProjectLocationSessionBuilder()
         .setProject(project)
         .setLocation(location)
+        .setSession(session)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SessionName ofProjectLocationEnvironmentUserSessionName(
+      String project, String location, String environment, String user, String session) {
+    return newProjectLocationEnvironmentUserSessionBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .setUser(user)
         .setSession(session)
         .build();
   }
@@ -189,6 +219,19 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationEnvironmentUserSessionName(
+      String project, String location, String environment, String user, String session) {
+    return newProjectLocationEnvironmentUserSessionBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .build()
+        .toString();
+  }
+
   public static SessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -207,6 +250,15 @@ public class SessionName implements ResourceName {
       Map<String, String> matchMap = PROJECT_LOCATION_SESSION.match(formattedString);
       return ofProjectLocationSessionName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("session"));
+    } else if (PROJECT_LOCATION_ENVIRONMENT_USER_SESSION.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_ENVIRONMENT_USER_SESSION.match(formattedString);
+      return ofProjectLocationEnvironmentUserSessionName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("environment"),
+          matchMap.get("user"),
+          matchMap.get("session"));
     }
     throw new ValidationException("SessionName.parse: formattedString not in valid format");
   }
@@ -234,7 +286,8 @@ public class SessionName implements ResourceName {
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_SESSION.matches(formattedString)
         || PROJECT_ENVIRONMENT_USER_SESSION.matches(formattedString)
-        || PROJECT_LOCATION_SESSION.matches(formattedString);
+        || PROJECT_LOCATION_SESSION.matches(formattedString)
+        || PROJECT_LOCATION_ENVIRONMENT_USER_SESSION.matches(formattedString);
   }
 
   @Override
@@ -432,6 +485,70 @@ public class SessionName implements ResourceName {
     }
 
     public ProjectLocationSessionBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public SessionName build() {
+      return new SessionName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationEnvironmentUserSessionBuilder {
+    private String project;
+    private String location;
+    private String environment;
+    private String user;
+    private String session;
+
+    protected ProjectLocationEnvironmentUserSessionBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public String getUser() {
+      return user;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public ProjectLocationEnvironmentUserSessionBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionBuilder setEnvironment(String environment) {
+      this.environment = environment;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionBuilder setUser(String user) {
+      this.user = user;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionBuilder setSession(String session) {
       this.session = session;
       return this;
     }

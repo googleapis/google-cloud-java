@@ -36,12 +36,9 @@ package com.google.cloud.dialogflow.v2beta1;
  * agent assistant suggestion generated.
  * A typical workflow for customers provide feedback to an answer is:
  * 1. For human agent assistant, customers get suggestion via ListSuggestions
- *    API. Together with the answers,
- *    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are
- *    returned to the customers.
- * 2. The customer uses the
- * [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to
- * call the
+ *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are returned to the
+ *    customers.
+ * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to call the
  *    [UpdateAnswerRecord][] method to send feedback about a specific answer
  *    that they believe is wrong.
  * </pre>
@@ -220,9 +217,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of this answer record.
-   * Required for
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
    * </pre>
    *
@@ -247,9 +243,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of this answer record.
-   * Required for
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
    * </pre>
    *
@@ -277,8 +272,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -294,8 +289,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -313,8 +308,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -591,12 +586,9 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    * agent assistant suggestion generated.
    * A typical workflow for customers provide feedback to an answer is:
    * 1. For human agent assistant, customers get suggestion via ListSuggestions
-   *    API. Together with the answers,
-   *    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are
-   *    returned to the customers.
-   * 2. The customer uses the
-   * [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to
-   * call the
+   *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are returned to the
+   *    customers.
+   * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to call the
    *    [UpdateAnswerRecord][] method to send feedback about a specific answer
    *    that they believe is wrong.
    * </pre>
@@ -807,9 +799,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of this answer record.
-     * Required for
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
      * </pre>
      *
@@ -833,9 +824,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of this answer record.
-     * Required for
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
      * </pre>
      *
@@ -859,9 +849,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of this answer record.
-     * Required for
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
      * </pre>
      *
@@ -884,9 +873,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of this answer record.
-     * Required for
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
      * </pre>
      *
@@ -905,9 +893,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of this answer record.
-     * Required for
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
      * </pre>
      *
@@ -938,8 +925,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -954,8 +941,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -976,8 +963,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1000,8 +987,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1022,8 +1009,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1050,8 +1037,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1072,8 +1059,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1088,8 +1075,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -1109,8 +1096,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>

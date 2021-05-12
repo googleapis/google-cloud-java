@@ -10438,11 +10438,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The model.
      */
@@ -10451,11 +10451,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for model.
      */
@@ -10564,11 +10564,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The model.
      */
@@ -10588,11 +10588,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for model.
      */
@@ -10983,11 +10983,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return The model.
        */
@@ -11006,11 +11006,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return The bytes for model.
        */
@@ -11029,11 +11029,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @param value The model to set.
        * @return This builder for chaining.
@@ -11051,11 +11051,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return This builder for chaining.
        */
@@ -11069,11 +11069,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @param value The bytes for model to set.
        * @return This builder for chaining.
@@ -11160,6 +11160,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>bool enable_entity_extraction = 2;</code>
@@ -11300,6 +11302,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>bool enable_entity_extraction = 2;</code>
@@ -11728,6 +11732,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -11745,6 +11751,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -11765,6 +11773,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -12042,6 +12052,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>
@@ -12059,6 +12071,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>
@@ -12080,6 +12094,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>
@@ -12992,6 +13008,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13008,6 +13026,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13032,6 +13052,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13057,6 +13079,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13080,6 +13104,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13110,6 +13136,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13132,6 +13160,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13149,6 +13179,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>
@@ -13171,6 +13203,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>

@@ -195,8 +195,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A maximum of 1000 Messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
-   * messages will have identical
-   * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+   * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * </pre>
    *
    * <code>
@@ -214,8 +213,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A maximum of 1000 Messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
-   * messages will have identical
-   * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+   * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * </pre>
    *
    * <code>
@@ -233,8 +231,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A maximum of 1000 Messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
-   * messages will have identical
-   * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+   * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * </pre>
    *
    * <code>
@@ -251,8 +248,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A maximum of 1000 Messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
-   * messages will have identical
-   * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+   * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * </pre>
    *
    * <code>
@@ -269,8 +265,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A maximum of 1000 Messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
-   * messages will have identical
-   * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+   * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
    * </pre>
    *
    * <code>
@@ -813,8 +808,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -835,8 +829,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -856,8 +849,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -877,8 +869,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -905,8 +896,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -931,8 +921,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -958,8 +947,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -986,8 +974,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1011,8 +998,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1037,8 +1023,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1063,8 +1048,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1087,8 +1071,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1111,8 +1094,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1129,8 +1111,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1151,8 +1132,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1174,8 +1154,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1193,8 +1172,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>
@@ -1213,8 +1191,7 @@ public final class BatchCreateMessagesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * </pre>
      *
      * <code>

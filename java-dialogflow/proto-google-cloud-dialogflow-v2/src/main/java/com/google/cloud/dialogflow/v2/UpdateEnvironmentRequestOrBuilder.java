@@ -31,7 +31,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the environment field is set.
@@ -45,7 +45,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The environment.
@@ -59,7 +59,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.dialogflow.v2.EnvironmentOrBuilder getEnvironmentOrBuilder();

@@ -148,7 +148,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the environment field is set.
@@ -165,7 +165,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The environment.
@@ -184,7 +184,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -657,7 +657,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the environment field is set.
@@ -673,7 +673,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The environment.
@@ -695,7 +695,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEnvironment(com.google.cloud.dialogflow.v2.Environment value) {
@@ -719,7 +719,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEnvironment(
@@ -741,7 +741,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeEnvironment(com.google.cloud.dialogflow.v2.Environment value) {
@@ -769,7 +769,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearEnvironment() {
@@ -791,7 +791,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Environment.Builder getEnvironmentBuilder() {
@@ -807,7 +807,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.EnvironmentOrBuilder getEnvironmentOrBuilder() {
@@ -827,7 +827,7 @@ public final class UpdateEnvironmentRequest extends com.google.protobuf.Generate
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

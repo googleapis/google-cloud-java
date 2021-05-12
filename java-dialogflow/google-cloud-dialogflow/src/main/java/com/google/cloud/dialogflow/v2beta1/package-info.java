@@ -130,10 +130,26 @@
  *
  * <pre>{@code
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
- *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   GetEnvironmentRequest request =
+ *       GetEnvironmentRequest.newBuilder()
+ *           .setName(
+ *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+ *           .build();
+ *   Environment response = environmentsClient.getEnvironment(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FulfillmentsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+ *
+ * <p>Sample for FulfillmentsClient:
+ *
+ * <pre>{@code
+ * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
+ *   FulfillmentName name = FulfillmentName.ofProjectName("[PROJECT]");
+ *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
  * }
  * }</pre>
  *
@@ -211,6 +227,19 @@
  *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
  *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VersionsClient =======================
+ *
+ * <p>Service Description: Service for managing [Versions][google.cloud.dialogflow.v2beta1.Version].
+ *
+ * <p>Sample for VersionsClient:
+ *
+ * <pre>{@code
+ * try (VersionsClient versionsClient = VersionsClient.create()) {
+ *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
+ *   Version response = versionsClient.getVersion(name);
  * }
  * }</pre>
  */

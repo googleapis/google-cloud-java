@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -30,6 +31,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.EnvironmentsStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -49,15 +51,15 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listEnvironments to 30 seconds:
+ * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
  *
  * <pre>{@code
  * EnvironmentsSettings.Builder environmentsSettingsBuilder = EnvironmentsSettings.newBuilder();
  * environmentsSettingsBuilder
- *     .listEnvironmentsSettings()
+ *     .getEnvironmentSettings()
  *     .setRetrySettings(
  *         environmentsSettingsBuilder
- *             .listEnvironmentsSettings()
+ *             .getEnvironmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -74,6 +76,33 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).listEnvironmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEnvironment. */
+  public UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEnvironment. */
+  public UnaryCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).createEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnvironment. */
+  public UnaryCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).updateEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnvironment. */
+  public UnaryCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).deleteEnvironmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEnvironmentHistory. */
+  public PagedCallSettings<
+          GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistorySettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getEnvironmentHistorySettings();
   }
 
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
@@ -179,6 +208,35 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
             ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings() {
       return getStubSettingsBuilder().listEnvironmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnvironment. */
+    public UnaryCallSettings.Builder<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+      return getStubSettingsBuilder().getEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEnvironment. */
+    public UnaryCallSettings.Builder<CreateEnvironmentRequest, Environment>
+        createEnvironmentSettings() {
+      return getStubSettingsBuilder().createEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnvironment. */
+    public UnaryCallSettings.Builder<UpdateEnvironmentRequest, Environment>
+        updateEnvironmentSettings() {
+      return getStubSettingsBuilder().updateEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnvironment. */
+    public UnaryCallSettings.Builder<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings() {
+      return getStubSettingsBuilder().deleteEnvironmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnvironmentHistory. */
+    public PagedCallSettings.Builder<
+            GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+        getEnvironmentHistorySettings() {
+      return getStubSettingsBuilder().getEnvironmentHistorySettings();
     }
 
     @Override

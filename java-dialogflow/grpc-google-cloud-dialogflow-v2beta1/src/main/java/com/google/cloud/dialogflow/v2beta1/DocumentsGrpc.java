@@ -454,6 +454,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      * </pre>
      */
     public void importDocuments(
@@ -645,6 +647,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      * </pre>
      */
     public void importDocuments(
@@ -786,6 +790,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
@@ -916,6 +922,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

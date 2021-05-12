@@ -211,8 +211,38 @@
         "grpc": {
           "libraryClient": "EnvironmentsClient",
           "rpcs": {
+            "CreateEnvironment": {
+              "methods": ["createEnvironment", "createEnvironmentCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironment", "deleteEnvironmentCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironmentCallable"]
+            },
+            "GetEnvironmentHistory": {
+              "methods": ["getEnvironmentHistory", "getEnvironmentHistoryPagedCallable", "getEnvironmentHistoryCallable"]
+            },
             "ListEnvironments": {
               "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironment", "updateEnvironmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Fulfillments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FulfillmentsClient",
+          "rpcs": {
+            "GetFulfillment": {
+              "methods": ["getFulfillment", "getFulfillment", "getFulfillment", "getFulfillmentCallable"]
+            },
+            "UpdateFulfillment": {
+              "methods": ["updateFulfillment", "updateFulfillment", "updateFulfillmentCallable"]
             }
           }
         }
@@ -345,6 +375,30 @@
             },
             "UpdateSessionEntityType": {
               "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VersionsClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": ["createVersion", "createVersion", "createVersion", "createVersionCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersion", "updateVersion", "updateVersionCallable"]
             }
           }
         }
