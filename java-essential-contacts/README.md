@@ -8,9 +8,6 @@ Java idiomatic client for [Essential Contacts API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 ## Quickstart
 
 
@@ -56,8 +53,7 @@ to add `google-cloud-essential-contacts` as a dependency in your code.
 ## About Essential Contacts API
 
 
-[Essential Contacts API][product-docs] helps you customize who receives 
-notifications by providing your own list of contacts in many Google Cloud services.
+[Essential Contacts API][product-docs] helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.
 
 See the [Essential Contacts API client library docs][javadocs] to learn how to
 use this Essential Contacts API Client Library.
@@ -84,9 +80,6 @@ Java 7 or above is required for using this client.
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
 
 ## Contributing
 
@@ -115,7 +108,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/appengine/docs/admin-api/
+[product-docs]: https://cloud.google.com/resource-manager/docs/managing-notification-contacts/
 [javadocs]: https://googleapis.dev/java/google-cloud-essential-contacts/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-essential-contacts/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-essential-contacts/java7.html
@@ -127,7 +120,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-essential-contacts/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-essential-contacts/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-essential-contacts/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-essential-contacts.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-essential-contacts&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
@@ -139,6 +132,6 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/java-essential-contacts/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-essential-contacts/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=essential-contacts.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=essentialcontacts.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
