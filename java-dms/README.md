@@ -8,9 +8,6 @@ Java idiomatic client for [Database Migration Service][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 ## Quickstart
 
 
@@ -22,6 +19,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-dms</artifactId>
   <version>0.0.0</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
@@ -56,9 +54,7 @@ to add `google-cloud-dms` as a dependency in your code.
 ## About Database Migration Service
 
 
-[Database Migration Service][product-docs] makes it easier for you to migrate 
-your data to Google Cloud. This service helps you lift and shift your MySQL and 
-PostgreSQL workloads into Cloud SQL.
+[Database Migration Service][product-docs] makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.
 
 See the [Database Migration Service client library docs][javadocs] to learn how to
 use this Database Migration Service Client Library.
@@ -85,9 +81,6 @@ Java 7 or above is required for using this client.
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
 
 ## Contributing
 
@@ -116,7 +109,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/appengine/docs/admin-api/
+[product-docs]: https://cloud.google.com/database-migration/docs
 [javadocs]: https://googleapis.dev/java/google-cloud-dms/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dms/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dms/java7.html
@@ -128,7 +121,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dms/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dms/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-dms/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dms.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dms&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication

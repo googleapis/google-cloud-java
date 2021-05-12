@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-dms.git",
+        "sha": "c406e50b2c3264d28f35f2b00fd08653d19ad9ce"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "c0edb1b97d81f56eaba1e896e9756268940c56c1"
+      }
+    }
+  ]
+}
