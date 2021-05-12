@@ -212,7 +212,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource link for the VPC network from which the Cloud SQL instance is
    * accessible for private IP. For example,
-   * `/projects/myProject/global/networks/default`. This setting can
+   * `projects/myProject/global/networks/default`. This setting can
    * be updated, but it cannot be removed after it is set.
    * </pre>
    *
@@ -238,7 +238,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource link for the VPC network from which the Cloud SQL instance is
    * accessible for private IP. For example,
-   * `/projects/myProject/global/networks/default`. This setting can
+   * `projects/myProject/global/networks/default`. This setting can
    * be updated, but it cannot be removed after it is set.
    * </pre>
    *
@@ -1010,7 +1010,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource link for the VPC network from which the Cloud SQL instance is
      * accessible for private IP. For example,
-     * `/projects/myProject/global/networks/default`. This setting can
+     * `projects/myProject/global/networks/default`. This setting can
      * be updated, but it cannot be removed after it is set.
      * </pre>
      *
@@ -1035,7 +1035,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource link for the VPC network from which the Cloud SQL instance is
      * accessible for private IP. For example,
-     * `/projects/myProject/global/networks/default`. This setting can
+     * `projects/myProject/global/networks/default`. This setting can
      * be updated, but it cannot be removed after it is set.
      * </pre>
      *
@@ -1060,7 +1060,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource link for the VPC network from which the Cloud SQL instance is
      * accessible for private IP. For example,
-     * `/projects/myProject/global/networks/default`. This setting can
+     * `projects/myProject/global/networks/default`. This setting can
      * be updated, but it cannot be removed after it is set.
      * </pre>
      *
@@ -1084,7 +1084,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource link for the VPC network from which the Cloud SQL instance is
      * accessible for private IP. For example,
-     * `/projects/myProject/global/networks/default`. This setting can
+     * `projects/myProject/global/networks/default`. This setting can
      * be updated, but it cannot be removed after it is set.
      * </pre>
      *
@@ -1104,7 +1104,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource link for the VPC network from which the Cloud SQL instance is
      * accessible for private IP. For example,
-     * `/projects/myProject/global/networks/default`. This setting can
+     * `projects/myProject/global/networks/default`. This setting can
      * be updated, but it cannot be removed after it is set.
      * </pre>
      *
