@@ -66,6 +66,15 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
+    },
+    {
+      "packagePatterns": [
+        "^com.google.api.grpc:proto-google-cloud-datacatalog",
+        "^com.google.cloud:google-cloud-datacatalog"
+      ],
+      "groupName": "datacatalog dependencies",
+      "semanticCommitType": "test",
+      "semanticCommitScope": "deps"
     }
   ],
   "semanticCommits": true,
