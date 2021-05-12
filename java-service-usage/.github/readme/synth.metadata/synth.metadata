@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-service-usage.git",
+        "sha": "bd896edcd4f71e4221cbbfd10c817dc3060a6471"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "c0edb1b97d81f56eaba1e896e9756268940c56c1"
+      }
+    }
+  ]
+}
