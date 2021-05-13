@@ -16,7 +16,16 @@
 
 package com.google.grpc.gcp;
 
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_CHANNELS;
+import static com.google.grpc.gcp.GcpMetricsConstants.METRIC_NUM_TOTAL_ACTIVE_STREAMS;
+import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_DESC;
+import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
+
 import com.google.common.annotations.VisibleForTesting;
+import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.grpc.gcp.proto.AffinityConfig;
 import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.grpc.gcp.proto.MethodConfig;
@@ -28,24 +37,34 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import io.opencensus.metrics.DerivedLongGauge;
+import io.opencensus.metrics.LabelKey;
+import io.opencensus.metrics.LabelValue;
+import io.opencensus.metrics.MetricOptions;
+import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalInt;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
-
+  private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
+  private static final AtomicInteger channelPoolIndex = new AtomicInteger();
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
 
   private final ManagedChannelBuilder delegateChannelBuilder;
+  private final GcpManagedChannelOptions options;
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
@@ -67,9 +86,13 @@ public class GcpManagedChannel extends ManagedChannel {
    *
    * @param delegateChannelBuilder the underlying delegate ManagedChannelBuilder.
    * @param apiConfig the ApiConfig object for configuring GcpManagedChannel.
+   * @param options the options for GcpManagedChannel.
    */
   public GcpManagedChannel(
-      ManagedChannelBuilder delegateChannelBuilder, ApiConfig apiConfig, int poolSize) {
+      ManagedChannelBuilder delegateChannelBuilder,
+      ApiConfig apiConfig,
+      int poolSize,
+      GcpManagedChannelOptions options) {
     loadApiConfig(apiConfig);
     if (poolSize != 0) {
       this.maxSize = poolSize;
@@ -77,6 +100,95 @@ public class GcpManagedChannel extends ManagedChannel {
     this.delegateChannelBuilder = delegateChannelBuilder;
     // Initialize the first delegate channel.
     getChannelRef(null);
+    this.options = options;
+    initOptions();
+  }
+
+  private void initOptions() {
+    initMetrics();
+  }
+
+  private void initMetrics() {
+    final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
+    if (metricsOptions == null) {
+      logger.info("Metrics options are empty. Metrics disabled.");
+      return;
+    }
+    if (metricsOptions.getMetricRegistry() == null) {
+      logger.info("Metric registry is null. Metrics disabled.");
+      return;
+    }
+    logger.info("Metrics enabled.");
+
+    final MetricRegistry metricRegistry = metricsOptions.getMetricRegistry();
+    final List<LabelKey> labelKeys = new ArrayList<>(metricsOptions.getLabelKeys());
+    final List<LabelValue> labelValues = new ArrayList<>(metricsOptions.getLabelValues());
+    labelKeys.add(LabelKey.create(POOL_INDEX_LABEL, POOL_INDEX_DESC));
+    labelValues.add(
+        LabelValue.create(String.format("pool-%d", channelPoolIndex.getAndIncrement())));
+
+    final DerivedLongGauge numChannelsMetric =
+        metricRegistry.addDerivedLongGauge(
+            metricsOptions.getNamePrefix() + METRIC_NUM_CHANNELS,
+            MetricOptions.builder()
+                .setDescription("The number of channels in the pool.")
+                .setLabelKeys(labelKeys)
+                .setUnit(GcpMetricsOptions.COUNT)
+                .build());
+
+    numChannelsMetric.removeTimeSeries(labelValues);
+    numChannelsMetric.createTimeSeries(labelValues, this, GcpManagedChannel::getNumberOfChannels);
+
+    final DerivedLongGauge maxChannelsMetric =
+        metricRegistry.addDerivedLongGauge(
+            metricsOptions.getNamePrefix() + METRIC_MAX_ALLOWED_CHANNELS,
+            MetricOptions.builder()
+                .setDescription("The maximum number of channels allowed in the pool.")
+                .setLabelKeys(labelKeys)
+                .setUnit(GcpMetricsOptions.COUNT)
+                .build());
+
+    maxChannelsMetric.removeTimeSeries(labelValues);
+    maxChannelsMetric.createTimeSeries(labelValues, this, GcpManagedChannel::getMaxSize);
+
+    final DerivedLongGauge minActiveStreamsMetric =
+        metricRegistry.addDerivedLongGauge(
+            metricsOptions.getNamePrefix() + METRIC_MIN_ACTIVE_STREAMS,
+            MetricOptions.builder()
+                .setDescription("The minimum number of active streams on any channel.")
+                .setLabelKeys(labelKeys)
+                .setUnit(GcpMetricsOptions.COUNT)
+                .build());
+
+    minActiveStreamsMetric.removeTimeSeries(labelValues);
+    minActiveStreamsMetric.createTimeSeries(
+        labelValues, this, GcpManagedChannel::getMinActiveStreams);
+
+    final DerivedLongGauge maxActiveStreamsMetric =
+        metricRegistry.addDerivedLongGauge(
+            metricsOptions.getNamePrefix() + METRIC_MAX_ACTIVE_STREAMS,
+            MetricOptions.builder()
+                .setDescription("The maximum number of active streams on any channel.")
+                .setLabelKeys(labelKeys)
+                .setUnit(GcpMetricsOptions.COUNT)
+                .build());
+
+    maxActiveStreamsMetric.removeTimeSeries(labelValues);
+    maxActiveStreamsMetric.createTimeSeries(
+        labelValues, this, GcpManagedChannel::getMaxActiveStreams);
+
+    final DerivedLongGauge totalActiveStreamsMetric =
+        metricRegistry.addDerivedLongGauge(
+            metricsOptions.getNamePrefix() + METRIC_NUM_TOTAL_ACTIVE_STREAMS,
+            MetricOptions.builder()
+                .setDescription("The total number of active streams across all channels.")
+                .setLabelKeys(labelKeys)
+                .setUnit(GcpMetricsOptions.COUNT)
+                .build());
+
+    totalActiveStreamsMetric.removeTimeSeries(labelValues);
+    totalActiveStreamsMetric.createTimeSeries(
+        labelValues, this, GcpManagedChannel::getTotalActiveStreams);
   }
 
   public int getMaxSize() {
@@ -89,6 +201,28 @@ public class GcpManagedChannel extends ManagedChannel {
 
   public int getStreamsLowWatermark() {
     return maxConcurrentStreamsLowWatermark;
+  }
+
+  public int getMinActiveStreams() {
+    final OptionalInt minStreams =
+        channelRefs.stream().mapToInt(value -> value.activeStreamsCount).min();
+    if (minStreams.isPresent()) {
+      return minStreams.getAsInt();
+    }
+    return 0;
+  }
+
+  public int getMaxActiveStreams() {
+    final OptionalInt maxStreams =
+        channelRefs.stream().mapToInt(value -> value.activeStreamsCount).max();
+    if (maxStreams.isPresent()) {
+      return maxStreams.getAsInt();
+    }
+    return 0;
+  }
+
+  public int getTotalActiveStreams() {
+    return channelRefs.stream().mapToInt(value -> value.activeStreamsCount).sum();
   }
 
   /**

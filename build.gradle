@@ -13,6 +13,7 @@ repositories {
     mavenLocal()
 }
 
+version = '0.0.1-METRICS'
 group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
@@ -21,13 +22,15 @@ def grpcVersion = '1.36.0'
 def protobufVersion = '3.12.0'
 def protocVersion = '3.12.0'
 def spannerVersion = '6.1.0'
+def opencensusVersion = '0.28.0'
 
 dependencies {
+    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
+    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
     implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
-    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
-    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    implementation "io.opencensus:opencensus-api:${opencensusVersion}"
 
     compileOnly "org.apache.tomcat:annotations-api:6.0.53" // necessary for Java 9+
 
@@ -91,9 +94,9 @@ publishing {
             from components.java
             artifact javadocJar
             artifact sourcesJar
-            groupId = 'grpc.gcp.extension'
-            artifactId = 'grpc-gcp-extension'
-            version = '1.0.0'
+            groupId = group
+            artifactId = 'grpc-gcp'
+            version = version
             pom {
                 name = "gRPC extension library for Google Cloud Library"
                 url = 'https://github.com/GoogleCloudPlatform/grpc-gcp-java/tree/master/grpc-gcp'

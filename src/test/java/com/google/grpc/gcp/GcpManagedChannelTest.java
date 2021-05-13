@@ -16,8 +16,13 @@
 
 package com.google.grpc.gcp;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.grpc.gcp.MetricRegistryTestUtils.FakeMetricRegistry;
+import com.google.grpc.gcp.MetricRegistryTestUtils.MetricsRecord;
+import com.google.grpc.gcp.MetricRegistryTestUtils.PointWithFunction;
 import com.google.grpc.gcp.proto.AffinityConfig;
 import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.grpc.gcp.proto.ChannelPoolConfig;
@@ -27,8 +32,11 @@ import com.google.spanner.v1.TransactionSelector;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.opencensus.metrics.LabelKey;
+import io.opencensus.metrics.LabelValue;
 import java.io.File;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -279,5 +287,86 @@ public final class GcpManagedChannelTest {
             .build());
     assertEquals(expectedMethod2.build(), apiconfig.getMethod(1));
     assertEquals(MethodConfig.getDefaultInstance(), apiconfig.getMethod(2));
+  }
+
+  @Test
+  public void testMetrics() {
+    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
+    final String prefix = "some/prefix/";
+    final List<LabelKey> labelKeys =
+        Arrays.asList(LabelKey.create("key_a", ""), LabelKey.create("key_b", ""));
+    final List<LabelValue> labelValues =
+        Arrays.asList(LabelValue.create("val_a"), LabelValue.create("val_b"));
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withMetricsOptions(
+                            GcpMetricsOptions.newBuilder(fakeRegistry)
+                                .withNamePrefix(prefix)
+                                .withLabels(labelKeys, labelValues)
+                                .build())
+                        .build())
+                .build();
+
+    List<LabelKey> expectedLabelKeys = new ArrayList<>();
+    expectedLabelKeys.addAll(labelKeys);
+    expectedLabelKeys.add(
+        LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
+    List<LabelValue> expectedLabelValues = new ArrayList<>();
+    expectedLabelValues.addAll(labelValues);
+    expectedLabelValues.add(LabelValue.create("pool-0"));
+
+    try {
+      // When we created the pool it creates the first channel automatically. Now let's add another
+      // four.
+      int[] streams = new int[] {0, 5, 7, 1};
+      for (int i = 0; i < 4; i++) {
+        ManagedChannel channel = builder.build();
+        pool.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i]));
+      }
+
+      MetricsRecord record = fakeRegistry.pollRecord();
+      assertThat(record.getMetrics().size()).isEqualTo(5);
+
+      List<PointWithFunction> numChannels =
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_NUM_CHANNELS);
+      assertThat(numChannels.size()).isEqualTo(1);
+      assertThat(numChannels.get(0).value()).isEqualTo(5L);
+      assertThat(numChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
+      assertThat(numChannels.get(0).values()).isEqualTo(expectedLabelValues);
+
+      List<PointWithFunction> maxAllowedChannels =
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS);
+      assertThat(maxAllowedChannels.size()).isEqualTo(1);
+      assertThat(maxAllowedChannels.get(0).value()).isEqualTo(MAX_CHANNEL);
+      assertThat(maxAllowedChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
+      assertThat(maxAllowedChannels.get(0).values()).isEqualTo(expectedLabelValues);
+
+      List<PointWithFunction> minActiveStreams =
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS);
+      assertThat(minActiveStreams.size()).isEqualTo(1);
+      assertThat(minActiveStreams.get(0).value()).isEqualTo(0L);
+      assertThat(minActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
+      assertThat(minActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+
+      List<PointWithFunction> maxActiveStreams =
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS);
+      assertThat(maxActiveStreams.size()).isEqualTo(1);
+      assertThat(maxActiveStreams.get(0).value()).isEqualTo(7L);
+      assertThat(maxActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
+      assertThat(maxActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+
+      List<PointWithFunction> totalActiveStreams =
+          record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_NUM_TOTAL_ACTIVE_STREAMS);
+      assertThat(totalActiveStreams.size()).isEqualTo(1);
+      assertThat(totalActiveStreams.get(0).value())
+          .isEqualTo(Arrays.stream(streams).asLongStream().sum());
+      assertThat(totalActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
+      assertThat(totalActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+    } finally {
+      pool.shutdownNow();
+    }
   }
 }
