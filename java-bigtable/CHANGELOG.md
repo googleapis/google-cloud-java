@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.24.1](https://www.github.com/googleapis/java-bigtable/compare/v1.24.0...v1.24.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* filter limit constant ([#787](https://www.github.com/googleapis/java-bigtable/issues/787)) ([04f8ad4](https://www.github.com/googleapis/java-bigtable/commit/04f8ad463d1fa9efe0ab941ee5f3d0794baed814))
+* fix flaky test ([#798](https://www.github.com/googleapis/java-bigtable/issues/798)) ([83e0e8c](https://www.github.com/googleapis/java-bigtable/commit/83e0e8cf2cdbc143c10ce0f8b053096d61d5686f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#805](https://www.github.com/googleapis/java-bigtable/issues/805)) ([a498687](https://www.github.com/googleapis/java-bigtable/commit/a498687d15dd9af35c57b0df6d08c87ef36833da))
+
+
+### Documentation
+
+* update the comments in Cloud Bigtable RestoreTable API to reflect the new API capability ([#804](https://www.github.com/googleapis/java-bigtable/issues/804)) ([f5e5d5a](https://www.github.com/googleapis/java-bigtable/commit/f5e5d5ac196529d5b070ef5fd8118038fec2e2de))
+
 ## [1.24.0](https://www.github.com/googleapis/java-bigtable/compare/v1.23.2...v1.24.0) (2021-04-30)
 
 
