@@ -19,10 +19,6 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
-    - name: coverage
-      uses: codecov/codecov-action@v1
-      with:
-        name: actions ${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
