@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "3704a6cc46b84ce3b5ba01466ba39333f1b16886"
+        "sha": "96363a969f8ac8ffb3627e8a0da69c030dc9f862"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "046994f491c02806aea60118e214a9edd67f5ab7"
+        "sha": "4f4b1b9b8d8b52f1e9e4a76165896debce5ab7f1"
       }
     }
   ],
@@ -82,7 +82,6 @@
     "LICENSE",
     "java.header",
     "license-checks.xml",
-    "renovate.json",
     "samples/install-without-bom/pom.xml",
     "samples/pom.xml",
     "samples/snapshot/pom.xml",
