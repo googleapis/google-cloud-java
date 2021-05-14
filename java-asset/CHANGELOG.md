@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.3.6](https://www.github.com/googleapis/java-asset/compare/v2.3.5...v2.3.6) (2021-05-14)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v1.1.5 ([#693](https://www.github.com/googleapis/java-asset/issues/693)) ([76fd8fb](https://www.github.com/googleapis/java-asset/commit/76fd8fb6e986201dfb0f0857406cd7990fe33c40))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.129.0 ([#683](https://www.github.com/googleapis/java-asset/issues/683)) ([4b2ad42](https://www.github.com/googleapis/java-asset/commit/4b2ad421e06b5ecd0ccc8e0e7538cb8fc7a97b18))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v0.119.4-alpha ([#677](https://www.github.com/googleapis/java-asset/issues/677)) ([28d5623](https://www.github.com/googleapis/java-asset/commit/28d56238dc81e9d51c70e3c90cadf5f159c3556d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#690](https://www.github.com/googleapis/java-asset/issues/690)) ([b2a1ce9](https://www.github.com/googleapis/java-asset/commit/b2a1ce9b9c3b977191cdf6e16d3c19507f882daa))
+* update dependency com.google.cloud:google-cloud-storage to v1.114.0 ([#695](https://www.github.com/googleapis/java-asset/issues/695)) ([6af6ec9](https://www.github.com/googleapis/java-asset/commit/6af6ec94a4ad1d6084afc8c6cc388d781a335dea))
+
 ### [2.3.5](https://www.github.com/googleapis/java-asset/compare/v2.3.4...v2.3.5) (2021-04-27)
 
 
