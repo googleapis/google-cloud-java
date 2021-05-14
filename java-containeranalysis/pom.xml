@@ -105,7 +105,7 @@
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.5</version>
       </dependency>
       <!-- TODO: Until gax-grpc && grafeas align  -->
 
