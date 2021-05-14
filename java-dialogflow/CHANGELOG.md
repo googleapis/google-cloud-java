@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.2...v3.1.0) (2021-05-14)
+
+
+### Features
+
+* added Fulfillment service ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added Fulfillment service ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added location in some resource patterns ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added more Environment RPCs ([#540](https://www.github.com/googleapis/java-dialogflow/issues/540)) ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added more Environment RPCs for v1beta1 ([#543](https://www.github.com/googleapis/java-dialogflow/issues/543)) ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added TextToSpeechSettings ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added TextToSpeechSettings ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+* added Versions service ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+* added Versions service ([b6b4391](https://www.github.com/googleapis/java-dialogflow/commit/b6b4391352f5d6458dce130b0f8c9923c71e0951))
+
+
+### Bug Fixes
+
+* removed incorrect resource annotation for UpdateEnvironmentRequest ([24327a3](https://www.github.com/googleapis/java-dialogflow/commit/24327a3f521e66fbd694beef0606d38f79d8c318))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#549](https://www.github.com/googleapis/java-dialogflow/issues/549)) ([905ec97](https://www.github.com/googleapis/java-dialogflow/commit/905ec977e0a9c03fde8304b967fcd7efdfbc40ae))
+
 ### [3.0.2](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.1...v3.0.2) (2021-04-27)
 
 
