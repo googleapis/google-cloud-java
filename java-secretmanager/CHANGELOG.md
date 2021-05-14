@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.5.2](https://www.github.com/googleapis/java-secretmanager/compare/v1.5.1...v1.5.2) (2021-05-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#473](https://www.github.com/googleapis/java-secretmanager/issues/473)) ([01de433](https://www.github.com/googleapis/java-secretmanager/commit/01de433cb20db0ca34f39a2eacd2d3c446f5bfba))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.0 ([#468](https://www.github.com/googleapis/java-secretmanager/issues/468)) ([3980505](https://www.github.com/googleapis/java-secretmanager/commit/3980505a7b7f791efda6293e73b8be05c8833db2))
+
 ### [1.5.1](https://www.github.com/googleapis/java-secretmanager/compare/v1.5.0...v1.5.1) (2021-04-26)
 
 
