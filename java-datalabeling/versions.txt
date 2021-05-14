@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-datalabeling-v1beta1:0.84.15:0.84.15
-grpc-google-cloud-datalabeling-v1beta1:0.84.15:0.84.15
-google-cloud-datalabeling:0.119.15:0.119.15
+proto-google-cloud-datalabeling-v1beta1:0.84.15:0.84.16-SNAPSHOT
+grpc-google-cloud-datalabeling-v1beta1:0.84.15:0.84.16-SNAPSHOT
+google-cloud-datalabeling:0.119.15:0.119.16-SNAPSHOT
