@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.4.0...v2.5.0) (2021-05-13)
+
+
+### Features
+
+* Implementation of Source Manifests: - Added message StorageSourceManifest as an option for the Source message - Added StorageSourceManifest field to the SourceProvenance message ([#473](https://www.github.com/googleapis/java-cloudbuild/issues/473)) ([46755bf](https://www.github.com/googleapis/java-cloudbuild/commit/46755bf2d6233c560ddc35ee1ecdd81bacb3358d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#477](https://www.github.com/googleapis/java-cloudbuild/issues/477)) ([0a1f601](https://www.github.com/googleapis/java-cloudbuild/commit/0a1f60101aaf7ecb44a425952259807ba10216c4))
+
 ## [2.4.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.3.1...v2.4.0) (2021-04-23)
 
 
