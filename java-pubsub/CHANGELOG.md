@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.112.5](https://www.github.com/googleapis/java-pubsub/compare/v1.112.4...v1.112.5) (2021-05-14)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.0 ([#660](https://www.github.com/googleapis/java-pubsub/issues/660)) ([5f33acf](https://www.github.com/googleapis/java-pubsub/commit/5f33acf204bd5d3a62eb06fc64a4ad779458ed82))
+
 ### [1.112.4](https://www.github.com/googleapis/java-pubsub/compare/v1.112.3...v1.112.4) (2021-05-12)
 
 
