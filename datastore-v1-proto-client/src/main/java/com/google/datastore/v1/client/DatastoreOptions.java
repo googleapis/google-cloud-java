@@ -48,11 +48,12 @@ public class DatastoreOptions {
 
   private final Credential credential;
   private final HttpTransport transport;
-  public static final List<String> SCOPES = Arrays.asList(
-      "https://www.googleapis.com/auth/datastore");
+  public static final List<String> SCOPES =
+      Arrays.asList("https://www.googleapis.com/auth/datastore");
 
   DatastoreOptions(Builder b) {
-    checkArgument(b.projectId != null || b.projectEndpoint != null,
+    checkArgument(
+        b.projectId != null || b.projectEndpoint != null,
         "Either project ID or project endpoint must be provided.");
     this.projectId = b.projectId;
     this.projectEndpoint = b.projectEndpoint;
@@ -63,9 +64,7 @@ public class DatastoreOptions {
     this.transport = b.transport;
   }
 
-  /**
-   * Builder for {@link DatastoreOptions}.
-   */
+  /** Builder for {@link DatastoreOptions}. */
   public static class Builder {
     private static final String PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR =
         "Cannot set both project endpoint and project ID.";
@@ -80,7 +79,7 @@ public class DatastoreOptions {
     private Credential credential;
     private HttpTransport transport;
 
-    public Builder() { }
+    public Builder() {}
 
     public Builder(DatastoreOptions options) {
       this.projectId = options.projectId;
@@ -96,9 +95,7 @@ public class DatastoreOptions {
       return new DatastoreOptions(this);
     }
 
-    /**
-     * Sets the project ID used to access Cloud Datastore.
-     */
+    /** Sets the project ID used to access Cloud Datastore. */
     public Builder projectId(String projectId) {
       checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
       this.projectId = projectId;
@@ -106,8 +103,8 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the host used to access Cloud Datastore. To connect to the Cloud Datastore Emulator,
-     * use {@link #localHost} instead.
+     * Sets the host used to access Cloud Datastore. To connect to the Cloud Datastore Emulator, use
+     * {@link #localHost} instead.
      */
     public Builder host(String host) {
       checkArgument(projectEndpoint == null && localHost == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
@@ -121,8 +118,8 @@ public class DatastoreOptions {
 
     /**
      * Configures the client to access Cloud Datastore on a local host (typically a Cloud Datastore
-     * Emulator instance). Call this method also configures the client not to attach credentials
-     * to requests.
+     * Emulator instance). Call this method also configures the client not to attach credentials to
+     * requests.
      */
     public Builder localHost(String localHost) {
       checkArgument(projectEndpoint == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
@@ -137,7 +134,7 @@ public class DatastoreOptions {
     /**
      * Sets the project endpoint used to access Cloud Datastore. Prefer using {@link #projectId}
      * and/or {@link #host}/{@link #localHost} when possible.
-     * 
+     *
      * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
      */
     @Deprecated
@@ -145,32 +142,26 @@ public class DatastoreOptions {
       checkArgument(projectId == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
       checkArgument(localHost == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
       if (!includesScheme(projectEndpoint)) {
-        throw new IllegalArgumentException(String.format(
-            "Project endpoint \"%s\" must include scheme.", projectEndpoint));
+        throw new IllegalArgumentException(
+            String.format("Project endpoint \"%s\" must include scheme.", projectEndpoint));
       }
       this.projectEndpoint = projectEndpoint;
       return this;
     }
 
-    /**
-     * Sets the (optional) initializer to run on HTTP requests to Cloud Datastore.
-     */
+    /** Sets the (optional) initializer to run on HTTP requests to Cloud Datastore. */
     public Builder initializer(HttpRequestInitializer initializer) {
       this.initializer = initializer;
       return this;
     }
 
-    /**
-     * Sets the Google APIs {@link Credential} used to access Cloud Datastore.
-     */
+    /** Sets the Google APIs {@link Credential} used to access Cloud Datastore. */
     public Builder credential(Credential credential) {
       this.credential = credential;
       return this;
     }
 
-    /**
-     * Sets the transport used to access Cloud Datastore.
-     */
+    /** Sets the transport used to access Cloud Datastore. */
     public Builder transport(HttpTransport transport) {
       this.transport = transport;
       return this;

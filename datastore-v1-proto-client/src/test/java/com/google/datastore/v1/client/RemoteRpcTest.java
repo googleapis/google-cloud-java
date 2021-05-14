@@ -40,9 +40,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Test for {@link RemoteRpc}.
- */
+/** Test for {@link RemoteRpc}. */
 @RunWith(JUnit4.class)
 public class RemoteRpcTest {
 
@@ -55,22 +53,35 @@ public class RemoteRpcTest {
             .setCode(Code.UNAUTHENTICATED_VALUE)
             .setMessage("The request does not have valid authentication credentials.")
             .build();
-    DatastoreException exception = RemoteRpc.makeException("url", METHOD_NAME,
-        new ByteArrayInputStream(statusProto.toByteArray()), "application/x-protobuf",
-        Charsets.UTF_8, new RuntimeException(), 401);
+    DatastoreException exception =
+        RemoteRpc.makeException(
+            "url",
+            METHOD_NAME,
+            new ByteArrayInputStream(statusProto.toByteArray()),
+            "application/x-protobuf",
+            Charsets.UTF_8,
+            new RuntimeException(),
+            401);
     assertEquals(Code.UNAUTHENTICATED, exception.getCode());
-    assertEquals("The request does not have valid authentication credentials.",
-        exception.getMessage());
+    assertEquals(
+        "The request does not have valid authentication credentials.", exception.getMessage());
     assertEquals(METHOD_NAME, exception.getMethodName());
   }
 
   @Test
   public void testInvalidProtoException() {
-    DatastoreException exception = RemoteRpc.makeException("url", METHOD_NAME,
-        new ByteArrayInputStream("<invalid proto>".getBytes()), "application/x-protobuf",
-        Charsets.UTF_8, new RuntimeException(), 401);
+    DatastoreException exception =
+        RemoteRpc.makeException(
+            "url",
+            METHOD_NAME,
+            new ByteArrayInputStream("<invalid proto>".getBytes()),
+            "application/x-protobuf",
+            Charsets.UTF_8,
+            new RuntimeException(),
+            401);
     assertEquals(Code.INTERNAL, exception.getCode());
-    assertEquals("Unable to parse Status protocol buffer: HTTP status code was 401.",
+    assertEquals(
+        "Unable to parse Status protocol buffer: HTTP status code was 401.",
         exception.getMessage());
     assertEquals(METHOD_NAME, exception.getMethodName());
   }
@@ -113,9 +124,15 @@ public class RemoteRpcTest {
 
   @Test
   public void testPlainTextException() {
-    DatastoreException exception = RemoteRpc.makeException("url", METHOD_NAME,
-        new ByteArrayInputStream("Text Error".getBytes()), "text/plain", Charsets.UTF_8,
-        new RuntimeException(), 401);
+    DatastoreException exception =
+        RemoteRpc.makeException(
+            "url",
+            METHOD_NAME,
+            new ByteArrayInputStream("Text Error".getBytes()),
+            "text/plain",
+            Charsets.UTF_8,
+            new RuntimeException(),
+            401);
     assertEquals(Code.INTERNAL, exception.getCode());
     assertEquals(
         "Non-protobuf error: Text Error. HTTP status code was 401.", exception.getMessage());
@@ -142,19 +159,21 @@ public class RemoteRpcTest {
   public void testHttpHeaders_expectE2eChecksumHeader() throws IOException {
     // Enable E2E-Checksum system env variable
     RemoteRpc.setSystemEnvE2EChecksum(true);
-    MessageLite request = RollbackRequest.newBuilder()
-        .setTransaction(ByteString.copyFromUtf8("project-id"))
-        .build();
-    RemoteRpc rpc = newRemoteRpc(new InjectedTestValues(gzip(newBeginTransactionResponse()),
-        new byte[1], true));
-    HttpRequest httpRequest = rpc.getClient().buildPostRequest(rpc.resolveURL("blah"),
-        new ProtoHttpContent(request));
+    MessageLite request =
+        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("project-id")).build();
+    RemoteRpc rpc =
+        newRemoteRpc(
+            new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
+    HttpRequest httpRequest =
+        rpc.getClient().buildPostRequest(rpc.resolveURL("blah"), new ProtoHttpContent(request));
     rpc.setHeaders(request, httpRequest);
-    assertNotNull(httpRequest.getHeaders()
-        .getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
+    assertNotNull(
+        httpRequest.getHeaders().getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
     // Expect to find e2e-checksum header
-    String header = httpRequest.getHeaders().getFirstHeaderStringValue(
-        EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER);
+    String header =
+        httpRequest
+            .getHeaders()
+            .getFirstHeaderStringValue(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER);
     assertEquals(32, header.length());
   }
 
@@ -162,19 +181,21 @@ public class RemoteRpcTest {
   public void testHttpHeaders_doNotExpectE2eChecksumHeader() throws IOException {
     // disable E2E-Checksum system env variable
     RemoteRpc.setSystemEnvE2EChecksum(false);
-    MessageLite request = RollbackRequest.newBuilder()
-        .setTransaction(ByteString.copyFromUtf8("project-id"))
-        .build();
-    RemoteRpc rpc = newRemoteRpc(new InjectedTestValues(gzip(newBeginTransactionResponse()),
-        new byte[1], true));
-    HttpRequest httpRequest = rpc.getClient().buildPostRequest(rpc.resolveURL("blah"),
-        new ProtoHttpContent(request));
+    MessageLite request =
+        RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("project-id")).build();
+    RemoteRpc rpc =
+        newRemoteRpc(
+            new InjectedTestValues(gzip(newBeginTransactionResponse()), new byte[1], true));
+    HttpRequest httpRequest =
+        rpc.getClient().buildPostRequest(rpc.resolveURL("blah"), new ProtoHttpContent(request));
     rpc.setHeaders(request, httpRequest);
-    assertNotNull(httpRequest.getHeaders()
-        .getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
+    assertNotNull(
+        httpRequest.getHeaders().getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
     // Do not expect to find e2e-checksum header
-    assertNull(httpRequest.getHeaders().getFirstHeaderStringValue(
-        EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER));
+    assertNull(
+        httpRequest
+            .getHeaders()
+            .getFirstHeaderStringValue(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER));
   }
 
   private static BeginTransactionResponse newBeginTransactionResponse() {

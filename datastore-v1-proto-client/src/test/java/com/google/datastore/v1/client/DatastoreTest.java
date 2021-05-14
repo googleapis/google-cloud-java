@@ -68,20 +68,16 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link DatastoreFactory} and {@link Datastore}.
- */
+/** Tests for {@link DatastoreFactory} and {@link Datastore}. */
 @RunWith(JUnit4.class)
 public class DatastoreTest {
   private static final String PROJECT_ID = "project-id";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private DatastoreFactory factory = new MockDatastoreFactory();
-  private DatastoreOptions.Builder options = new DatastoreOptions.Builder()
-      .projectId(PROJECT_ID)
-      .credential(new MockCredential());
+  private DatastoreOptions.Builder options =
+      new DatastoreOptions.Builder().projectId(PROJECT_ID).credential(new MockCredential());
 
   @Test
   public void options_NoProjectIdOrProjectEndpoint() throws Exception {
@@ -95,73 +91,73 @@ public class DatastoreTest {
   public void options_ProjectIdAndProjectEndpoint() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Cannot set both project endpoint and project ID");
-    options = new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
+    options =
+        new DatastoreOptions.Builder()
+            .projectId(PROJECT_ID)
+            .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
   }
 
   @Test
   public void options_LocalHostAndProjectEndpoint() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
-    options = new DatastoreOptions.Builder()
-        .localHost("localhost:8080")
-        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
+    options =
+        new DatastoreOptions.Builder()
+            .localHost("localhost:8080")
+            .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
   }
 
   @Test
   public void options_HostAndProjectEndpoint() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
-    options = new DatastoreOptions.Builder()
-        .host("foo-datastore.googleapis.com")
-        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
+    options =
+        new DatastoreOptions.Builder()
+            .host("foo-datastore.googleapis.com")
+            .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
   }
 
   @Test
   public void options_HostAndLocalHost() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
-    options = new DatastoreOptions.Builder()
-        .host("foo-datastore.googleapis.com")
-        .localHost("localhost:8080");
+    options =
+        new DatastoreOptions.Builder()
+            .host("foo-datastore.googleapis.com")
+            .localHost("localhost:8080");
   }
 
   @Test
   public void options_InvalidLocalHost() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Illegal character");
-    factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .localHost("!not a valid url!")
-        .build());
+    factory.create(
+        new DatastoreOptions.Builder()
+            .projectId(PROJECT_ID)
+            .localHost("!not a valid url!")
+            .build());
   }
 
   @Test
   public void options_SchemeInLocalHost() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Local host \"http://localhost:8080\" must not include scheme");
-    new DatastoreOptions.Builder()
-        .localHost("http://localhost:8080");
+    new DatastoreOptions.Builder().localHost("http://localhost:8080");
   }
 
   @Test
   public void options_InvalidHost() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Illegal character");
-    factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .host("!not a valid url!")
-        .build());
+    factory.create(
+        new DatastoreOptions.Builder().projectId(PROJECT_ID).host("!not a valid url!").build());
   }
 
   @Test
   public void options_SchemeInHost() {
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage(
-        "Host \"http://foo-datastore.googleapis.com\" must not include scheme");
-    new DatastoreOptions.Builder()
-        .host("http://foo-datastore.googleapis.com");
+    thrown.expectMessage("Host \"http://foo-datastore.googleapis.com\" must not include scheme");
+    new DatastoreOptions.Builder().host("http://foo-datastore.googleapis.com");
   }
 
   @Test
@@ -172,48 +168,55 @@ public class DatastoreTest {
 
   @Test
   public void create_Host() {
-    Datastore datastore = factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .host("foo-datastore.googleapis.com")
-        .build());
+    Datastore datastore =
+        factory.create(
+            new DatastoreOptions.Builder()
+                .projectId(PROJECT_ID)
+                .host("foo-datastore.googleapis.com")
+                .build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("https://foo-datastore.googleapis.com/v1/projects/project-id");
   }
 
   @Test
   public void create_LocalHost() {
-    Datastore datastore = factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .localHost("localhost:8080")
-        .build());
+    Datastore datastore =
+        factory.create(
+            new DatastoreOptions.Builder()
+                .projectId(PROJECT_ID)
+                .localHost("localhost:8080")
+                .build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("http://localhost:8080/v1/projects/project-id");
   }
 
   @Test
   public void create_LocalHostIp() {
-    Datastore datastore = factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .localHost("127.0.0.1:8080")
-        .build());
+    Datastore datastore =
+        factory.create(
+            new DatastoreOptions.Builder()
+                .projectId(PROJECT_ID)
+                .localHost("127.0.0.1:8080")
+                .build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("http://127.0.0.1:8080/v1/projects/project-id");
   }
 
   @Test
   public void create_DefaultHost() {
-    Datastore datastore = factory.create(new DatastoreOptions.Builder()
-        .projectId(PROJECT_ID)
-        .build());
+    Datastore datastore =
+        factory.create(new DatastoreOptions.Builder().projectId(PROJECT_ID).build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("https://datastore.googleapis.com/v1/projects/project-id");
   }
 
   @Test
   public void create_ProjectEndpoint() {
-    Datastore datastore = factory.create(new DatastoreOptions.Builder()
-        .projectEndpoint("http://prom-qa/datastore/v1beta42/projects/project-id")
-        .build());
+    Datastore datastore =
+        factory.create(
+            new DatastoreOptions.Builder()
+                .projectEndpoint("http://prom-qa/datastore/v1beta42/projects/project-id")
+                .build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("http://prom-qa/datastore/v1beta42/projects/project-id");
   }
@@ -223,20 +226,22 @@ public class DatastoreTest {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(
         "Project endpoint \"localhost:1234/datastore/v1beta42/projects/project-id\" must"
-        + " include scheme.");
-    factory.create(new DatastoreOptions.Builder()
-        .projectEndpoint("localhost:1234/datastore/v1beta42/projects/project-id")
-        .build());
+            + " include scheme.");
+    factory.create(
+        new DatastoreOptions.Builder()
+            .projectEndpoint("localhost:1234/datastore/v1beta42/projects/project-id")
+            .build());
   }
 
   @Test
   public void initializer() throws Exception {
-    options.initializer(new HttpRequestInitializer() {
-      @Override
-      public void initialize(HttpRequest request) {
-        request.getHeaders().setCookie("magic");
-      }
-    });
+    options.initializer(
+        new HttpRequestInitializer() {
+          @Override
+          public void initialize(HttpRequest request) {
+            request.getHeaders().setCookie("magic");
+          }
+        });
     Datastore datastore = factory.create(options.build());
     MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
     AllocateIdsRequest request = AllocateIdsRequest.newBuilder().build();
@@ -296,7 +301,8 @@ public class DatastoreTest {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
     request.getQueryBuilder();
     RunQueryResponse.Builder response = RunQueryResponse.newBuilder();
-    response.getBatchBuilder()
+    response
+        .getBatchBuilder()
         .setEntityResultType(EntityResult.ResultType.FULL)
         .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED);
     expectRpc("runQuery", request.build(), response.build());
@@ -308,9 +314,9 @@ public class DatastoreTest {
 
     mockClient.setNextResponse(response);
     @SuppressWarnings("rawtypes")
-    Class[] methodArgs = { request.getClass() };
+    Class[] methodArgs = {request.getClass()};
     Method call = Datastore.class.getMethod(methodName, methodArgs);
-    Object[] callArgs = { request };
+    Object[] callArgs = {request};
     assertEquals(response, call.invoke(datastore, callArgs));
 
     assertEquals("/v1/projects/project-id:" + methodName, mockClient.lastPath);
@@ -364,15 +370,16 @@ public class DatastoreTest {
 
   private static class MockCredential extends Credential {
     MockCredential() {
-      super(new AccessMethod() {
-          @Override
-          public void intercept(HttpRequest request, String accessToken) throws IOException {
-          }
-          @Override
-          public String getAccessTokenFromRequest(HttpRequest request) {
-            return "MockAccessToken";
-          }
-        });
+      super(
+          new AccessMethod() {
+            @Override
+            public void intercept(HttpRequest request, String accessToken) throws IOException {}
+
+            @Override
+            public String getAccessTokenFromRequest(HttpRequest request) {
+              return "MockAccessToken";
+            }
+          });
     }
   }
 
@@ -411,37 +418,40 @@ public class DatastoreTest {
 
     @Override
     public HttpRequestFactory makeClient(DatastoreOptions options) {
-      HttpTransport transport = new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() throws IOException {
-                lastPath = new GenericUrl(getUrl()).getRawPath();
-                lastMimeType = getContentType();
-                lastCookies = getHeaderValues("Cookie");
-                lastApiFormatHeaderValue =
-                    Iterables.getOnlyElement(getHeaderValues("X-Goog-Api-Format-Version"));
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                getStreamingContent().writeTo(out);
-                lastBody = out.toByteArray();
-                if (nextException != null) {
-                  throw nextException;
+      HttpTransport transport =
+          new MockHttpTransport() {
+            @Override
+            public LowLevelHttpRequest buildRequest(String method, String url) {
+              return new MockLowLevelHttpRequest(url) {
+                @Override
+                public LowLevelHttpResponse execute() throws IOException {
+                  lastPath = new GenericUrl(getUrl()).getRawPath();
+                  lastMimeType = getContentType();
+                  lastCookies = getHeaderValues("Cookie");
+                  lastApiFormatHeaderValue =
+                      Iterables.getOnlyElement(getHeaderValues("X-Goog-Api-Format-Version"));
+                  ByteArrayOutputStream out = new ByteArrayOutputStream();
+                  getStreamingContent().writeTo(out);
+                  lastBody = out.toByteArray();
+                  if (nextException != null) {
+                    throw nextException;
+                  }
+                  MockLowLevelHttpResponse response =
+                      new MockLowLevelHttpResponse()
+                          .setStatusCode(nextStatus)
+                          .setContentType("application/x-protobuf");
+                  if (nextError != null) {
+                    assertNull(nextResponse);
+                    response.setContent(new TestableByteArrayInputStream(nextError.toByteArray()));
+                  } else {
+                    response.setContent(
+                        new TestableByteArrayInputStream(nextResponse.toByteArray()));
+                  }
+                  return response;
                 }
-                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse()
-                    .setStatusCode(nextStatus)
-                    .setContentType("application/x-protobuf");
-                if (nextError != null) {
-                  assertNull(nextResponse);
-                  response.setContent(new TestableByteArrayInputStream(nextError.toByteArray()));
-                } else {
-                  response.setContent(new TestableByteArrayInputStream(nextResponse.toByteArray()));
-                }
-                return response;
-              }
-            };
-          }
-        };
+              };
+            }
+          };
       Credential credential = options.getCredential();
       return transport.createRequestFactory(credential);
     }

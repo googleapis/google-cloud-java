@@ -17,12 +17,9 @@ package com.google.datastore.v1.client;
 
 import com.google.datastore.v1.PartitionId;
 import com.google.datastore.v1.Query;
-
 import java.util.List;
 
-/**
- * Provides the ability to split a query into multiple shards.
- */
+/** Provides the ability to split a query into multiple shards. */
 public interface QuerySplitter {
 
   /**

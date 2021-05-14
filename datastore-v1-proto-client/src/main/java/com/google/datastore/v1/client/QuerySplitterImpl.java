@@ -30,7 +30,6 @@ import com.google.datastore.v1.Query;
 import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.datastore.v1.RunQueryRequest;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -39,16 +38,20 @@ import java.util.List;
 /**
  * Provides the ability to split a query into multiple shards using Cloud Datastore.
  *
- * <p>This implementation of the QuerySplitter uses the __scatter__ property to gather
- * random split points for a query.
+ * <p>This implementation of the QuerySplitter uses the __scatter__ property to gather random split
+ * points for a query.
  */
 final class QuerySplitterImpl implements QuerySplitter {
 
-  /** The number of keys to sample for each split. **/
+  /** The number of keys to sample for each split. * */
   private static final int KEYS_PER_SPLIT = 32;
 
-  private static final EnumSet<Operator> UNSUPPORTED_OPERATORS = EnumSet.of(Operator.LESS_THAN,
-      Operator.LESS_THAN_OR_EQUAL, Operator.GREATER_THAN, Operator.GREATER_THAN_OR_EQUAL);
+  private static final EnumSet<Operator> UNSUPPORTED_OPERATORS =
+      EnumSet.of(
+          Operator.LESS_THAN,
+          Operator.LESS_THAN_OR_EQUAL,
+          Operator.GREATER_THAN,
+          Operator.GREATER_THAN_OR_EQUAL);
 
   static final QuerySplitter INSTANCE = new QuerySplitterImpl();
 
@@ -81,6 +84,7 @@ final class QuerySplitterImpl implements QuerySplitter {
 
   /**
    * Verify that the given number of splits is not out of bounds.
+   *
    * @param numSplits the number of splits.
    * @throws IllegalArgumentException if the split size is invalid.
    */
@@ -93,8 +97,8 @@ final class QuerySplitterImpl implements QuerySplitter {
   /**
    * Validates that we only have allowable filters.
    *
-   * <p>Note that equality and ancestor filters are allowed, however they may result in
-   * inefficient sharding.
+   * <p>Note that equality and ancestor filters are allowed, however they may result in inefficient
+   * sharding.
    */
   private void validateFilter(Filter filter) throws IllegalArgumentException {
     switch (filter.getFilterTypeCase()) {
@@ -148,15 +152,21 @@ final class QuerySplitterImpl implements QuerySplitter {
       keyFilters.add(query.getFilter());
     }
     if (lastKey != null) {
-      Filter lowerBound = DatastoreHelper.makeFilter(DatastoreHelper.KEY_PROPERTY_NAME,
-          PropertyFilter.Operator.GREATER_THAN_OR_EQUAL,
-          DatastoreHelper.makeValue(lastKey)).build();
+      Filter lowerBound =
+          DatastoreHelper.makeFilter(
+                  DatastoreHelper.KEY_PROPERTY_NAME,
+                  PropertyFilter.Operator.GREATER_THAN_OR_EQUAL,
+                  DatastoreHelper.makeValue(lastKey))
+              .build();
       keyFilters.add(lowerBound);
     }
     if (nextKey != null) {
-      Filter upperBound = DatastoreHelper.makeFilter(DatastoreHelper.KEY_PROPERTY_NAME,
-          PropertyFilter.Operator.LESS_THAN,
-          DatastoreHelper.makeValue(nextKey)).build();
+      Filter upperBound =
+          DatastoreHelper.makeFilter(
+                  DatastoreHelper.KEY_PROPERTY_NAME,
+                  PropertyFilter.Operator.LESS_THAN,
+                  DatastoreHelper.makeValue(nextKey))
+              .build();
       keyFilters.add(upperBound);
     }
     return Query.newBuilder(query).setFilter(makeAndFilter(keyFilters)).build();
@@ -165,9 +175,8 @@ final class QuerySplitterImpl implements QuerySplitter {
   /**
    * Gets a list of split keys given a desired number of splits.
    *
-   * <p>This list will contain multiple split keys for each split. Only a single split key
-   * will be chosen as the split point, however providing multiple keys allows for more uniform
-   * sharding.
+   * <p>This list will contain multiple split keys for each split. Only a single split key will be
+   * chosen as the split point, however providing multiple keys allows for more uniform sharding.
    *
    * @param numSplits the number of desired splits.
    * @param query the user query.
@@ -194,8 +203,9 @@ final class QuerySplitterImpl implements QuerySplitter {
         keySplits.add(result.getEntity().getKey());
       }
       scatterPointQuery.setStartCursor(batch.getEndCursor());
-      scatterPointQuery.getLimitBuilder().setValue(
-          scatterPointQuery.getLimit().getValue() - batch.getEntityResultsCount());
+      scatterPointQuery
+          .getLimitBuilder()
+          .setValue(scatterPointQuery.getLimit().getValue() - batch.getEntityResultsCount());
     } while (batch.getMoreResults() == MoreResultsType.NOT_FINISHED);
     Collections.sort(keySplits, DatastoreHelper.getKeyComparator());
     return keySplits;
@@ -214,16 +224,16 @@ final class QuerySplitterImpl implements QuerySplitter {
     // the same category.
     Query.Builder scatterPointQuery = Query.newBuilder();
     scatterPointQuery.addAllKind(query.getKindList());
-    scatterPointQuery.addOrder(DatastoreHelper.makeOrder(
-        DatastoreHelper.SCATTER_PROPERTY_NAME, Direction.ASCENDING));
+    scatterPointQuery.addOrder(
+        DatastoreHelper.makeOrder(DatastoreHelper.SCATTER_PROPERTY_NAME, Direction.ASCENDING));
     // There is a split containing entities before and after each scatter entity:
     // ||---*------*------*------*------*------*------*---||  = scatter entity
     // If we represent each split as a region before a scatter entity, there is an extra region
     // following the last scatter point. Thus, we do not need the scatter entities for the last
     // region.
     scatterPointQuery.getLimitBuilder().setValue((numSplits - 1) * KEYS_PER_SPLIT);
-    scatterPointQuery.addProjection(Projection.newBuilder().setProperty(
-        PropertyReference.newBuilder().setName("__key__")));
+    scatterPointQuery.addProjection(
+        Projection.newBuilder().setProperty(PropertyReference.newBuilder().setName("__key__")));
     return scatterPointQuery;
   }
 
@@ -267,5 +277,4 @@ final class QuerySplitterImpl implements QuerySplitter {
 
     return keysList;
   }
-
 }

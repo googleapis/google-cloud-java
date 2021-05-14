@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC. All Rights Reserved.
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ class EndToEndChecksumHandler {
     if (bytes == null || (bytes.length == 0)) {
       return null;
     }
-    return com.google.common.io.BaseEncoding.base16().encode(
-        getMessageDigestInstance().digest(bytes));
+    return com.google.common.io.BaseEncoding.base16()
+        .encode(getMessageDigestInstance().digest(bytes));
   }
 
   /**

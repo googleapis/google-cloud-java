@@ -18,19 +18,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>datastore-v1-proto-client</artifactId>
-  <version>1.6.3</version>
+  <version>1.6.4-SNAPSHOT</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
 
-  <name>${project.groupId}:${project.artifactId}</name>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-datastore-parent</artifactId>
+    <version>1.106.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore-parent:current} -->
+  </parent>
 
   <packaging>jar</packaging>
   <description>
     Low level client for accessing Google Cloud Datastore v1.
   </description>
-  <parent>
-    <groupId>com.google.cloud.datastore</groupId>
-    <artifactId>datastore-v1-proto-client-parent</artifactId>
-    <version>1.6.3</version>
-  </parent>
 
   <dependencies>
     <dependency>
@@ -68,6 +67,21 @@
       <artifactId>guava</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+
     <!-- Test dependencies. -->
     <dependency>
       <groupId>junit</groupId>
@@ -78,31 +92,8 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
+      <version>1.1.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

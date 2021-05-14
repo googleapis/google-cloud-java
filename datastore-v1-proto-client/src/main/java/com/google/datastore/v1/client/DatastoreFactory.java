@@ -21,7 +21,6 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
@@ -32,9 +31,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.StreamHandler;
 
-/**
- * Client factory for {@link Datastore}.
- */
+/** Client factory for {@link Datastore}. */
 public class DatastoreFactory {
 
   // Lazy load this because we might be running inside App Engine and this
@@ -54,9 +51,8 @@ public class DatastoreFactory {
   }
 
   /**
-   * Provides access to a datastore using the provided options.  Logs
-   * into the application using the credentials available via these
-   * options.
+   * Provides access to a datastore using the provided options. Logs into the application using the
+   * credentials available via these options.
    *
    * @throws IllegalArgumentException if the server or credentials weren't provided.
    */
@@ -64,9 +60,7 @@ public class DatastoreFactory {
     return new Datastore(newRemoteRpc(options));
   }
 
-  /**
-   * Constructs a Google APIs HTTP client with the associated credentials.
-   */
+  /** Constructs a Google APIs HTTP client with the associated credentials. */
   public HttpRequestFactory makeClient(DatastoreOptions options) {
     Credential credential = options.getCredential();
     HttpTransport transport = options.getTransport();
@@ -77,9 +71,7 @@ public class DatastoreFactory {
     return transport.createRequestFactory(credential);
   }
 
-  /**
-   * Starts logging datastore method calls to the console. (Useful within tests.)
-   */
+  /** Starts logging datastore method calls to the console. (Useful within tests.) */
   public static void logMethodCalls() {
     Logger logger = Logger.getLogger(Datastore.class.getName());
     logger.setLevel(Level.FINE);
@@ -88,9 +80,7 @@ public class DatastoreFactory {
     }
   }
 
-  /**
-   * Build a valid datastore URL.
-   */
+  /** Build a valid datastore URL. */
   String buildProjectEndpoint(DatastoreOptions options) {
     if (options.getProjectEndpoint() != null) {
       return options.getProjectEndpoint();
@@ -98,14 +88,13 @@ public class DatastoreFactory {
     // DatastoreOptions ensures either project endpoint or project ID is set.
     String projectId = checkNotNull(options.getProjectId());
     if (options.getHost() != null) {
-      return validateUrl(String.format("https://%s/%s/projects/%s",
-          options.getHost(), VERSION, projectId));
+      return validateUrl(
+          String.format("https://%s/%s/projects/%s", options.getHost(), VERSION, projectId));
     } else if (options.getLocalHost() != null) {
-      return validateUrl(String.format("http://%s/%s/projects/%s",
-          options.getLocalHost(), VERSION, projectId));
+      return validateUrl(
+          String.format("http://%s/%s/projects/%s", options.getLocalHost(), VERSION, projectId));
     }
-    return validateUrl(String.format("%s/%s/projects/%s",
-        DEFAULT_HOST, VERSION, projectId));
+    return validateUrl(String.format("%s/%s/projects/%s", DEFAULT_HOST, VERSION, projectId));
   }
 
   protected RemoteRpc newRemoteRpc(DatastoreOptions options) {
@@ -127,12 +116,13 @@ public class DatastoreFactory {
   private static synchronized StreamHandler getStreamHandler() {
     if (methodHandler == null) {
       methodHandler = new ConsoleHandler();
-      methodHandler.setFormatter(new Formatter() {
-        @Override
-        public String format(LogRecord record) {
-          return record.getMessage() + "\n";
-        }
-      });
+      methodHandler.setFormatter(
+          new Formatter() {
+            @Override
+            public String format(LogRecord record) {
+              return record.getMessage() + "\n";
+            }
+          });
       methodHandler.setLevel(Level.FINE);
     }
     return methodHandler;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC. All Rights Reserved.
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package com.google.datastore.v1.client;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.google.api.client.http.HttpResponse;
+import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -27,16 +27,14 @@ class ChecksumEnforcingInputStream extends InputStream {
   private final MessageDigest messageDigest;
   private final String expectedChecksum;
 
-  ChecksumEnforcingInputStream(InputStream originalInputStream,
-                               HttpResponse response,
-                               MessageDigest digest) {
+  ChecksumEnforcingInputStream(
+      InputStream originalInputStream, HttpResponse response, MessageDigest digest) {
     this(originalInputStream, EndToEndChecksumHandler.getChecksumHeader(response), digest);
   }
 
   @VisibleForTesting
-  ChecksumEnforcingInputStream(InputStream originalInputStream,
-                               String checksum,
-                               MessageDigest digest) {
+  ChecksumEnforcingInputStream(
+      InputStream originalInputStream, String checksum, MessageDigest digest) {
     delegate = originalInputStream;
     expectedChecksum = checksum;
     messageDigest = digest;

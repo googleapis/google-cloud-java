@@ -28,34 +28,23 @@ import com.google.datastore.v1.Value;
 import com.google.datastore.v1.Value.ValueTypeCase;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
-
+import java.util.Date;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.util.Date;
-
-/**
- * Tests for {@link DatastoreHelper}.
- */
+/** Tests for {@link DatastoreHelper}. */
 @RunWith(JUnit4.class)
 public class DatastoreHelperTest {
 
-  private static final Key PARENT = Key.newBuilder()
-      .addPath(Key.PathElement.newBuilder()
-          .setKind("Parent")
-          .setId(23L))
-      .build();
-  private static final Key GRANDPARENT = Key.newBuilder()
-      .addPath(Key.PathElement.newBuilder()
-          .setKind("Grandparent")
-          .setId(24L))
-      .build();
-  private static final Key CHILD = Key.newBuilder()
-      .addPath(Key.PathElement.newBuilder()
-          .setKind("Child")
-          .setId(26L))
-      .build();
+  private static final Key PARENT =
+      Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Parent").setId(23L)).build();
+  private static final Key GRANDPARENT =
+      Key.newBuilder()
+          .addPath(Key.PathElement.newBuilder().setKind("Grandparent").setId(24L))
+          .build();
+  private static final Key CHILD =
+      Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Child").setId(26L)).build();
 
   @Test
   public void testMakeKey_BadTypeForKind() {
@@ -83,45 +72,35 @@ public class DatastoreHelperTest {
   @Test
   public void testMakeKey_Incomplete() {
     assertEquals(
-        Key.newBuilder()
-            .addPath(Key.PathElement.newBuilder().setKind("Foo"))
-            .build(),
+        Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Foo")).build(),
         makeKey("Foo").build());
   }
 
   @Test
   public void testMakeKey_IdInt() {
     assertEquals(
-        Key.newBuilder()
-            .addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1))
-            .build(),
+        Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1)).build(),
         makeKey("Foo", 1).build());
   }
 
   @Test
   public void testMakeKey_IdLong() {
     assertEquals(
-        Key.newBuilder()
-            .addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1))
-            .build(),
+        Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1)).build(),
         makeKey("Foo", 1L).build());
   }
 
   @Test
   public void testMakeKey_IdShort() {
     assertEquals(
-        Key.newBuilder()
-            .addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1))
-            .build(),
+        Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Foo").setId(1)).build(),
         makeKey("Foo", (short) 1).build());
   }
 
   @Test
   public void testMakeKey_Name() {
     assertEquals(
-        Key.newBuilder()
-            .addPath(Key.PathElement.newBuilder().setKind("Foo").setName("hi"))
-            .build(),
+        Key.newBuilder().addPath(Key.PathElement.newBuilder().setKind("Foo").setName("hi")).build(),
         makeKey("Foo", "hi").build());
   }
 
@@ -184,21 +163,14 @@ public class DatastoreHelperTest {
   @Test
   public void testMakeKey_Key() {
     // Just 1 key
-    assertEquals(
-        Key.newBuilder()
-            .addPath(CHILD.getPath(0))
-            .build(),
-        makeKey(CHILD).build());
+    assertEquals(Key.newBuilder().addPath(CHILD.getPath(0)).build(), makeKey(CHILD).build());
   }
 
   @Test
   public void testMakeKey_KeyKey() {
     // Just 2 keys
     assertEquals(
-        Key.newBuilder()
-            .addPath(PARENT.getPath(0))
-            .addPath(CHILD.getPath(0))
-            .build(),
+        Key.newBuilder().addPath(PARENT.getPath(0)).addPath(CHILD.getPath(0)).build(),
         makeKey(PARENT, CHILD).build());
   }
 
@@ -252,12 +224,8 @@ public class DatastoreHelperTest {
 
   @Test
   public void testMakeKey_PartitionId() {
-    PartitionId partitionId = PartitionId.newBuilder()
-        .setNamespaceId("namespace-id")
-        .build();
-    Key parent = PARENT.toBuilder()
-        .setPartitionId(partitionId)
-        .build();
+    PartitionId partitionId = PartitionId.newBuilder().setNamespaceId("namespace-id").build();
+    Key parent = PARENT.toBuilder().setPartitionId(partitionId).build();
     assertEquals(
         Key.newBuilder()
             .setPartitionId(partitionId)
@@ -269,12 +237,9 @@ public class DatastoreHelperTest {
 
   @Test
   public void testMakeKey_NonMatchingPartitionId2() {
-    PartitionId partitionId1 = PartitionId.newBuilder()
-        .setNamespaceId("namespace-id")
-        .build();
-    PartitionId partitionId2 = PartitionId.newBuilder()
-        .setNamespaceId("another-namespace-id")
-        .build();
+    PartitionId partitionId1 = PartitionId.newBuilder().setNamespaceId("namespace-id").build();
+    PartitionId partitionId2 =
+        PartitionId.newBuilder().setNamespaceId("another-namespace-id").build();
     try {
       makeKey(
           PARENT.toBuilder().setPartitionId(partitionId1).build(),
@@ -302,9 +267,9 @@ public class DatastoreHelperTest {
     // Timestamp specification requires that nanos >= 0 even if the timestamp
     // is before the epoch.
     assertConversion(0, 0, 0);
-    assertConversion(-250, -1, 750_000_000);  // 1/4 second before epoch
-    assertConversion(-500, -1, 500_000_000);  // 1/2 second before epoch
-    assertConversion(-750, -1, 250_000_000);  // 3/4 second before epoch
+    assertConversion(-250, -1, 750_000_000); // 1/4 second before epoch
+    assertConversion(-500, -1, 500_000_000); // 1/2 second before epoch
+    assertConversion(-750, -1, 250_000_000); // 3/4 second before epoch
 
     // If nanos % 1_000_000 != 0, precision is lost (via truncation) when
     // converting to milliseconds.
@@ -329,16 +294,16 @@ public class DatastoreHelperTest {
   }
 
   private void assertTimestampToMilliseconds(long millis, long seconds, int nanos) {
-    Value.Builder value = Value.newBuilder().setTimestampValue(Timestamp.newBuilder()
-        .setSeconds(seconds)
-        .setNanos(nanos));
+    Value.Builder value =
+        Value.newBuilder()
+            .setTimestampValue(Timestamp.newBuilder().setSeconds(seconds).setNanos(nanos));
     assertEquals(millis, DatastoreHelper.toDate(value.build()).getTime());
   }
 
   @Test
   public void testProjectionHandling() {
-    assertEquals(ByteString.copyFromUtf8("hi"),
-        getByteString(makeValue("hi").setMeaning(18).build()));
+    assertEquals(
+        ByteString.copyFromUtf8("hi"), getByteString(makeValue("hi").setMeaning(18).build()));
     try {
       getByteString(makeValue("hi").build());
       fail("Expected IllegalArgumentException");

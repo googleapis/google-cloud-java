@@ -56,9 +56,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
-/**
- * Helper methods for {@link Datastore}.
- */
+/** Helper methods for {@link Datastore}. */
 // TODO: Accept OrBuilders when possible.
 public final class DatastoreHelper {
   private static final Logger logger = Logger.getLogger(DatastoreHelper.class.getName());
@@ -66,39 +64,29 @@ public final class DatastoreHelper {
   private static final int MICROSECONDS_PER_SECOND = 1000 * 1000;
   private static final int NANOSECONDS_PER_MICROSECOND = 1000;
 
-  /** The property used in the Datastore to give us a random distribution. **/
+  /** The property used in the Datastore to give us a random distribution. * */
   public static final String SCATTER_PROPERTY_NAME = "__scatter__";
 
-  /** The property used in the Datastore to get the key of the entity. **/
+  /** The property used in the Datastore to get the key of the entity. * */
   public static final String KEY_PROPERTY_NAME = "__key__";
 
-  /**
-   * Name of the environment variable used to set the project ID.
-   */
+  /** Name of the environment variable used to set the project ID. */
   public static final String PROJECT_ID_ENV_VAR = "DATASTORE_PROJECT_ID";
-  
-  /**
-   * Name of the environment variable used to set the local host.
-   */
+
+  /** Name of the environment variable used to set the local host. */
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
-  
-  /**
-   * Name of the environment variable used to set the service account.
-   */
+
+  /** Name of the environment variable used to set the service account. */
   public static final String SERVICE_ACCOUNT_ENV_VAR = "DATASTORE_SERVICE_ACCOUNT";
-  
-  /**
-   * Name of the environment variable used to set the private key file.
-   */
+
+  /** Name of the environment variable used to set the private key file. */
   public static final String PRIVATE_KEY_FILE_ENV_VAR = "DATASTORE_PRIVATE_KEY_FILE";
 
   private static final String URL_OVERRIDE_ENV_VAR = "__DATASTORE_URL_OVERRIDE";
 
   private static final AtomicReference<String> projectIdFromComputeEngine = new AtomicReference<>();
 
-  /**
-   * Comparator for Keys
-   */
+  /** Comparator for Keys */
   private static final class KeyComparator implements Comparator<Key> {
 
     static final KeyComparator INSTANCE = new KeyComparator();
@@ -160,8 +148,8 @@ public final class DatastoreHelper {
    * @param privateKeyFile the file name from which to get the private key.
    * @return valid credentials or {@code null}
    */
-  public static Credential getServiceAccountCredential(String serviceAccountId,
-      String privateKeyFile) throws GeneralSecurityException, IOException {
+  public static Credential getServiceAccountCredential(
+      String serviceAccountId, String privateKeyFile) throws GeneralSecurityException, IOException {
     return getServiceAccountCredential(serviceAccountId, privateKeyFile, DatastoreOptions.SCOPES);
   }
 
@@ -170,13 +158,13 @@ public final class DatastoreHelper {
    *
    * @param serviceAccountId service account ID (typically an e-mail address).
    * @param privateKeyFile the file name from which to get the private key.
-   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service
-   *        account flow or {@code null} if not.
+   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service account flow
+   *     or {@code null} if not.
    * @return valid credentials or {@code null}
    */
-  public static Credential getServiceAccountCredential(String serviceAccountId,
-      String privateKeyFile, Collection<String> serviceAccountScopes)
-          throws GeneralSecurityException, IOException {
+  public static Credential getServiceAccountCredential(
+      String serviceAccountId, String privateKeyFile, Collection<String> serviceAccountScopes)
+      throws GeneralSecurityException, IOException {
     return getCredentialBuilderWithoutPrivateKey(serviceAccountId, serviceAccountScopes)
         .setServiceAccountPrivateKeyFromP12File(new File(privateKeyFile))
         .build();
@@ -187,12 +175,12 @@ public final class DatastoreHelper {
    *
    * @param serviceAccountId service account ID (typically an e-mail address).
    * @param privateKey the private key for the given account.
-   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service
-   *        account flow or {@code null} if not.
+   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service account flow
+   *     or {@code null} if not.
    * @return valid credentials or {@code null}
    */
-  public static Credential getServiceAccountCredential(String serviceAccountId,
-      PrivateKey privateKey, Collection<String> serviceAccountScopes)
+  public static Credential getServiceAccountCredential(
+      String serviceAccountId, PrivateKey privateKey, Collection<String> serviceAccountScopes)
       throws GeneralSecurityException, IOException {
     return getCredentialBuilderWithoutPrivateKey(serviceAccountId, serviceAccountScopes)
         .setServiceAccountPrivateKey(privateKey)
@@ -214,20 +202,22 @@ public final class DatastoreHelper {
   /**
    * Constructs a {@link Datastore} from environment variables and/or the Compute Engine metadata
    * server.
-   * 
+   *
    * <p>The project ID is determined from, in order of preference:
+   *
    * <ul>
    *   <li>DATASTORE_PROJECT_ID environment variable
    *   <li>Compute Engine
    * </ul>
    *
    * <p>Credentials are taken from, in order of preference:
+   *
    * <ol>
    *   <li>No credentials (if the DATASTORE_EMULATOR_HOST environment variable is set)
    *   <li>Service Account specified by the DATASTORE_SERVICE_ACCOUNT and DATASTORE_PRIVATE_KEY_FILE
-   *     environment variables
-   *   <li>Google Application Default as described at
-   *     {@link "https://developers.google.com/identity/protocols/application-default-credentials"}
+   *       environment variables
+   *   <li>Google Application Default as described at {@link
+   *       "https://developers.google.com/identity/protocols/application-default-credentials"}
    * </ol>
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
@@ -240,25 +230,28 @@ public final class DatastoreHelper {
 
   private static Credential getCredentialFromEnv() throws GeneralSecurityException, IOException {
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {
-      logger.log(Level.INFO, "{0} environment variable was set. Not using credentials.",
+      logger.log(
+          Level.INFO,
+          "{0} environment variable was set. Not using credentials.",
           new Object[] {LOCAL_HOST_ENV_VAR});
       return null;
     }
     String serviceAccount = System.getenv(SERVICE_ACCOUNT_ENV_VAR);
     String privateKeyFile = System.getenv(PRIVATE_KEY_FILE_ENV_VAR);
     if (serviceAccount != null && privateKeyFile != null) {
-      logger.log(Level.INFO, "{0} and {1} environment variables were set. "
-          + "Using service account credential.",
+      logger.log(
+          Level.INFO,
+          "{0} and {1} environment variables were set. " + "Using service account credential.",
           new Object[] {SERVICE_ACCOUNT_ENV_VAR, PRIVATE_KEY_FILE_ENV_VAR});
       return getServiceAccountCredential(serviceAccount, privateKeyFile);
     }
-    return GoogleCredential.getApplicationDefault()
-        .createScoped(DatastoreOptions.SCOPES);
+    return GoogleCredential.getApplicationDefault().createScoped(DatastoreOptions.SCOPES);
   }
 
   /**
    * Determines the project id from the environment. Uses the following sources in order of
    * preference:
+   *
    * <ol>
    *   <li>Value of the DATASTORE_PROJECT_ID environment variable
    *   <li>Compute Engine
@@ -274,9 +267,12 @@ public final class DatastoreHelper {
     if (projectIdFromComputeEngine != null) {
       return projectIdFromComputeEngine;
     }
-    throw new IllegalStateException(String.format("Could not determine project ID."
-        + " If you are not running on Compute Engine, set the"
-        + " %s environment variable.", PROJECT_ID_ENV_VAR));
+    throw new IllegalStateException(
+        String.format(
+            "Could not determine project ID."
+                + " If you are not running on Compute Engine, set the"
+                + " %s environment variable.",
+            PROJECT_ID_ENV_VAR));
   }
 
   /**
@@ -318,16 +314,17 @@ public final class DatastoreHelper {
   private static void setProjectEndpointFromEnv(DatastoreOptions.Builder options) {
     // DATASTORE_HOST is deprecated.
     if (System.getenv("DATASTORE_HOST") != null) {
-      logger.warning(String.format(
-          "Ignoring value of environment variable DATASTORE_HOST. "
-          + "To point datastore to a host running locally, use "
-          + "the environment variable %s.",
-          LOCAL_HOST_ENV_VAR));
+      logger.warning(
+          String.format(
+              "Ignoring value of environment variable DATASTORE_HOST. "
+                  + "To point datastore to a host running locally, use "
+                  + "the environment variable %s.",
+              LOCAL_HOST_ENV_VAR));
     }
     String projectId = getProjectIdFromEnv();
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
-      options.projectEndpoint(String.format("%s/projects/%s",
-          System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
+      options.projectEndpoint(
+          String.format("%s/projects/%s", System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
       return;
     }
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {
@@ -339,9 +336,7 @@ public final class DatastoreHelper {
     return;
   }
 
-  /**
-   * @see #getOptionsFromEnv()
-   */
+  /** @see #getOptionsFromEnv() */
   public static Datastore getDatastoreFromEnv() throws GeneralSecurityException, IOException {
     return DatastoreFactory.get().create(getOptionsFromEnv().build());
   }
@@ -349,7 +344,7 @@ public final class DatastoreHelper {
   /**
    * Gets a {@link QuerySplitter}.
    *
-   * The returned {@link QuerySplitter#getSplits} cannot accept a query that contains inequality
+   * <p>The returned {@link QuerySplitter#getSplits} cannot accept a query that contains inequality
    * filters, a sort filter, or a missing kind.
    */
   public static QuerySplitter getQuerySplitter() {
@@ -360,79 +355,64 @@ public final class DatastoreHelper {
     return KeyComparator.INSTANCE;
   }
 
-  /**
-   * Make a sort order for use in a query.
-   */
-  public static PropertyOrder.Builder makeOrder(String property,
-      PropertyOrder.Direction direction) {
+  /** Make a sort order for use in a query. */
+  public static PropertyOrder.Builder makeOrder(
+      String property, PropertyOrder.Direction direction) {
     return PropertyOrder.newBuilder()
         .setProperty(makePropertyReference(property))
         .setDirection(direction);
   }
 
-  /**
-   * Makes an ancestor filter.
-   */
+  /** Makes an ancestor filter. */
   public static Filter.Builder makeAncestorFilter(Key ancestor) {
     return makeFilter(
-        DatastoreHelper.KEY_PROPERTY_NAME, PropertyFilter.Operator.HAS_ANCESTOR,
+        DatastoreHelper.KEY_PROPERTY_NAME,
+        PropertyFilter.Operator.HAS_ANCESTOR,
         makeValue(ancestor));
   }
 
-  /**
-   * Make a filter on a property for use in a query.
-   */
-  public static Filter.Builder makeFilter(String property, PropertyFilter.Operator operator,
-      Value value) {
+  /** Make a filter on a property for use in a query. */
+  public static Filter.Builder makeFilter(
+      String property, PropertyFilter.Operator operator, Value value) {
     return Filter.newBuilder()
-        .setPropertyFilter(PropertyFilter.newBuilder()
-            .setProperty(makePropertyReference(property))
-            .setOp(operator)
-            .setValue(value));
+        .setPropertyFilter(
+            PropertyFilter.newBuilder()
+                .setProperty(makePropertyReference(property))
+                .setOp(operator)
+                .setValue(value));
   }
 
-  /**
-   * Make a filter on a property for use in a query.
-   */
-  public static Filter.Builder makeFilter(String property, PropertyFilter.Operator operator,
-      Value.Builder value) {
+  /** Make a filter on a property for use in a query. */
+  public static Filter.Builder makeFilter(
+      String property, PropertyFilter.Operator operator, Value.Builder value) {
     return makeFilter(property, operator, value.build());
   }
 
-  /**
-   * Make a composite filter from the given sub-filters using AND to combine filters.
-   */
+  /** Make a composite filter from the given sub-filters using AND to combine filters. */
   public static Filter.Builder makeAndFilter(Filter... subfilters) {
     return makeAndFilter(Arrays.asList(subfilters));
   }
 
-  /**
-   * Make a composite filter from the given sub-filters using AND to combine filters.
-   */
+  /** Make a composite filter from the given sub-filters using AND to combine filters. */
   public static Filter.Builder makeAndFilter(Iterable<Filter> subfilters) {
     return Filter.newBuilder()
-        .setCompositeFilter(CompositeFilter.newBuilder()
-            .addAllFilters(subfilters)
-            .setOp(CompositeFilter.Operator.AND));
+        .setCompositeFilter(
+            CompositeFilter.newBuilder()
+                .addAllFilters(subfilters)
+                .setOp(CompositeFilter.Operator.AND));
   }
 
-  /**
-   * Make a property reference for use in a query.
-   */
+  /** Make a property reference for use in a query. */
   public static PropertyReference.Builder makePropertyReference(String propertyName) {
     return PropertyReference.newBuilder().setName(propertyName);
   }
 
-  /**
-   * Make an array value containing the specified values.
-   */
+  /** Make an array value containing the specified values. */
   public static Value.Builder makeValue(Iterable<Value> values) {
     return Value.newBuilder().setArrayValue(ArrayValue.newBuilder().addAllValues(values));
   }
 
-  /**
-   * Make a list value containing the specified values.
-   */
+  /** Make a list value containing the specified values. */
   public static Value.Builder makeValue(Value value1, Value value2, Value... rest) {
     ArrayValue.Builder arrayValue = ArrayValue.newBuilder();
     arrayValue.addValues(value1);
@@ -441,11 +421,9 @@ public final class DatastoreHelper {
     return Value.newBuilder().setArrayValue(arrayValue);
   }
 
-  /**
-   * Make an array value containing the specified values.
-   */
-  public static Value.Builder makeValue(Value.Builder value1, Value.Builder value2,
-      Value.Builder... rest) {
+  /** Make an array value containing the specified values. */
+  public static Value.Builder makeValue(
+      Value.Builder value1, Value.Builder value2, Value.Builder... rest) {
     ArrayValue.Builder arrayValue = ArrayValue.newBuilder();
     arrayValue.addValues(value1);
     arrayValue.addValues(value2);
@@ -455,72 +433,52 @@ public final class DatastoreHelper {
     return Value.newBuilder().setArrayValue(arrayValue);
   }
 
-  /**
-   * Make a key value.
-   */
+  /** Make a key value. */
   public static Value.Builder makeValue(Key key) {
     return Value.newBuilder().setKeyValue(key);
   }
 
-  /**
-   * Make a key value.
-   */
+  /** Make a key value. */
   public static Value.Builder makeValue(Key.Builder key) {
     return makeValue(key.build());
   }
 
-  /**
-   * Make an integer value.
-   */
+  /** Make an integer value. */
   public static Value.Builder makeValue(long key) {
     return Value.newBuilder().setIntegerValue(key);
   }
 
-  /**
-   * Make a floating point value.
-   */
+  /** Make a floating point value. */
   public static Value.Builder makeValue(double value) {
     return Value.newBuilder().setDoubleValue(value);
   }
 
-  /**
-   * Make a boolean value.
-   */
+  /** Make a boolean value. */
   public static Value.Builder makeValue(boolean value) {
     return Value.newBuilder().setBooleanValue(value);
   }
 
-  /**
-   * Make a string value.
-   */
+  /** Make a string value. */
   public static Value.Builder makeValue(String value) {
     return Value.newBuilder().setStringValue(value);
   }
 
-  /**
-   * Make an entity value.
-   */
+  /** Make an entity value. */
   public static Value.Builder makeValue(Entity entity) {
     return Value.newBuilder().setEntityValue(entity);
   }
 
-  /**
-   * Make a entity value.
-   */
+  /** Make a entity value. */
   public static Value.Builder makeValue(Entity.Builder entity) {
     return makeValue(entity.build());
   }
 
-  /**
-   * Make a ByteString value.
-   */
+  /** Make a ByteString value. */
   public static Value.Builder makeValue(ByteString blob) {
     return Value.newBuilder().setBlobValue(blob);
   }
 
-  /**
-   * Make a timestamp value given a date.
-   */
+  /** Make a timestamp value given a date. */
   public static Value.Builder makeValue(Date date) {
     return Value.newBuilder().setTimestampValue(toTimestamp(date.getTime() * 1000L));
   }
@@ -539,45 +497,43 @@ public final class DatastoreHelper {
         .setNanos((int) microsecondsRemainder * NANOSECONDS_PER_MICROSECOND);
   }
 
-  /**
-   * Makes a GeoPoint value.
-   */
+  /** Makes a GeoPoint value. */
   public static Value.Builder makeValue(LatLng value) {
     return Value.newBuilder().setGeoPointValue(value);
   }
 
-  /**
-   * Makes a GeoPoint value.
-   */
+  /** Makes a GeoPoint value. */
   public static Value.Builder makeValue(LatLng.Builder value) {
     return makeValue(value.build());
   }
 
   /**
-   * Make a key from the specified path of kind/id-or-name pairs
-   * and/or Keys.
+   * Make a key from the specified path of kind/id-or-name pairs and/or Keys.
    *
    * <p>The id-or-name values must be either String, Long, Integer or Short.
    *
-   * <p>The last id-or-name value may be omitted, in which case an entity without
-   * an id is created (for use with automatic id allocation).
+   * <p>The last id-or-name value may be omitted, in which case an entity without an id is created
+   * (for use with automatic id allocation).
    *
-   * <p>The PartitionIds of all Keys in the path must be equal. The returned
-   * Key.Builder will use this PartitionId.
+   * <p>The PartitionIds of all Keys in the path must be equal. The returned Key.Builder will use
+   * this PartitionId.
    */
   public static Key.Builder makeKey(Object... elements) {
     Key.Builder key = Key.newBuilder();
     PartitionId partitionId = null;
     for (int pathIndex = 0; pathIndex < elements.length; pathIndex += 2) {
       PathElement.Builder pathElement = PathElement.newBuilder();
-      Object element =  elements[pathIndex];
+      Object element = elements[pathIndex];
       if (element instanceof Key) {
         Key subKey = (Key) element;
         if (partitionId == null) {
           partitionId = subKey.getPartitionId();
         } else if (!partitionId.equals(subKey.getPartitionId())) {
-          throw new IllegalArgumentException("Partition IDs did not match, found: "
-              + partitionId + " and " + subKey.getPartitionId());
+          throw new IllegalArgumentException(
+              "Partition IDs did not match, found: "
+                  + partitionId
+                  + " and "
+                  + subKey.getPartitionId());
         }
         key.addAllPath(((Key) element).getPathList());
         // We increment by 2, but since we got a Key argument we're only consuming 1 element in this

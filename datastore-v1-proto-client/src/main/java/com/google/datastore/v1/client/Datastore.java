@@ -46,24 +46,22 @@ public class Datastore {
     this.remoteRpc = remoteRpc;
   }
 
-  /**
-   * Reset the RPC count.
-   */
+  /** Reset the RPC count. */
   public void resetRpcCount() {
     remoteRpc.resetRpcCount();
   }
 
   /**
-   * Returns the number of RPC calls made since the client was created
-   * or {@link #resetRpcCount} was called.
+   * Returns the number of RPC calls made since the client was created or {@link #resetRpcCount} was
+   * called.
    */
   public int getRpcCount() {
     return remoteRpc.getRpcCount();
   }
 
   private DatastoreException invalidResponseException(String method, IOException exception) {
-    return RemoteRpc.makeException(remoteRpc.getUrl(), method, Code.UNAVAILABLE,
-        "Invalid response", exception);
+    return RemoteRpc.makeException(
+        remoteRpc.getUrl(), method, Code.UNAVAILABLE, "Invalid response", exception);
   }
 
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException {

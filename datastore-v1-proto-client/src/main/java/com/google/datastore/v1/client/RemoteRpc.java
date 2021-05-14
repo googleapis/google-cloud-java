@@ -43,8 +43,7 @@ import java.util.logging.Logger;
 class RemoteRpc {
   private static final Logger logger = Logger.getLogger(RemoteRpc.class.getName());
 
-  @VisibleForTesting
-  static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
+  @VisibleForTesting static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
   private static final String API_FORMAT_VERSION = "2";
 
   private final HttpRequestFactory client;
@@ -52,8 +51,8 @@ class RemoteRpc {
   private final String url;
   private final AtomicInteger rpcCount = new AtomicInteger(0);
   // Not final - so it can be set/reset in Unittests
-  private static boolean enableE2EChecksum = Boolean.parseBoolean(
-      System.getenv("GOOGLE_CLOUD_DATASTORE_HTTP_ENABLE_E2E_CHECKSUM"));
+  private static boolean enableE2EChecksum =
+      Boolean.parseBoolean(System.getenv("GOOGLE_CLOUD_DATASTORE_HTTP_ENABLE_E2E_CHECKSUM"));
 
   RemoteRpc(HttpRequestFactory client, HttpRequestInitializer initializer, String url) {
     this.client = client;
@@ -70,8 +69,8 @@ class RemoteRpc {
   /**
    * Makes an RPC call using the client. Logs how long it took and any exceptions.
    *
-   * NOTE: The request could be an InputStream too, but the http client will need to
-   * find its length, which will require buffering it anyways.
+   * <p>NOTE: The request could be an InputStream too, but the http client will need to find its
+   * length, which will require buffering it anyways.
    *
    * @throws DatastoreException if the RPC fails.
    */
@@ -98,16 +97,20 @@ class RemoteRpc {
         httpResponse = httpRequest.execute();
         if (!httpResponse.isSuccessStatusCode()) {
           try (InputStream content = httpResponse.getContent()) {
-            throw makeException(url, methodName, content,
-                httpResponse.getContentType(), httpResponse.getContentCharset(), null,
+            throw makeException(
+                url,
+                methodName,
+                content,
+                httpResponse.getContentType(),
+                httpResponse.getContentCharset(),
+                null,
                 httpResponse.getStatusCode());
           }
         }
         InputStream inputStream = httpResponse.getContent();
         return enableE2EChecksum && EndToEndChecksumHandler.hasChecksumHeader(httpResponse)
-            ? new ChecksumEnforcingInputStream(inputStream,
-                                               httpResponse,
-                                               EndToEndChecksumHandler.getMessageDigestInstance())
+            ? new ChecksumEnforcingInputStream(
+                inputStream, httpResponse, EndToEndChecksumHandler.getMessageDigestInstance())
             : inputStream;
       } catch (SocketTimeoutException e) {
         throw makeException(url, methodName, Code.DEADLINE_EXCEEDED, "Deadline exceeded", e);
@@ -126,8 +129,9 @@ class RemoteRpc {
     if (enableE2EChecksum && request != null) {
       String checksum = EndToEndChecksumHandler.computeChecksum(request.toByteArray());
       if (checksum != null) {
-        httpRequest.getHeaders().put(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER,
-            checksum);
+        httpRequest
+            .getHeaders()
+            .put(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER, checksum);
       }
     }
   }
@@ -162,14 +166,20 @@ class RemoteRpc {
     return client;
   }
 
-  public static DatastoreException makeException(String url, String methodName, Code code,
-      String message, Throwable cause) {
-    logger.fine("remote datastore call " + methodName + " against " + url  + " failed: " + message);
+  public static DatastoreException makeException(
+      String url, String methodName, Code code, String message, Throwable cause) {
+    logger.fine("remote datastore call " + methodName + " against " + url + " failed: " + message);
     return new DatastoreException(methodName, code, message, cause);
   }
 
-  static DatastoreException makeException(String url, String methodName, InputStream content,
-      String contentType, Charset contentCharset, Throwable cause, int httpStatusCode) {
+  static DatastoreException makeException(
+      String url,
+      String methodName,
+      InputStream content,
+      String contentType,
+      Charset contentCharset,
+      Throwable cause,
+      int httpStatusCode) {
     if (!contentType.equals("application/x-protobuf")) {
       String responseContent;
       try {
@@ -179,7 +189,10 @@ class RemoteRpc {
       } catch (IOException e) {
         responseContent = "";
       }
-      return makeException(url, methodName, Code.INTERNAL,
+      return makeException(
+          url,
+          methodName,
+          Code.INTERNAL,
           String.format(
               "Non-protobuf error: %s. HTTP status code was %d.", responseContent, httpStatusCode),
           cause);
@@ -189,7 +202,10 @@ class RemoteRpc {
     try {
       rpcStatus = Status.parseFrom(content);
     } catch (IOException e) {
-      return makeException(url, methodName, Code.INTERNAL,
+      return makeException(
+          url,
+          methodName,
+          Code.INTERNAL,
           String.format(
               "Unable to parse Status protocol buffer: HTTP status code was %s.", httpStatusCode),
           e);
@@ -197,7 +213,10 @@ class RemoteRpc {
 
     Code code = Code.forNumber(rpcStatus.getCode());
     if (code == null) {
-      return makeException(url, methodName, Code.INTERNAL,
+      return makeException(
+          url,
+          methodName,
+          Code.INTERNAL,
           String.format(
               "Invalid error code: %d. Message: %s.", rpcStatus.getCode(), rpcStatus.getMessage()),
           cause);
@@ -208,8 +227,12 @@ class RemoteRpc {
       if (httpStatusCode == HttpStatusCodes.STATUS_CODE_UNAUTHORIZED) {
         return makeException(url, methodName, Code.UNAUTHENTICATED, "Unauthenticated.", cause);
       }
-      return makeException(url, methodName, Code.INTERNAL,
-          String.format("Unexpected OK error code with HTTP status code of %d. Message: %s.",
+      return makeException(
+          url,
+          methodName,
+          Code.INTERNAL,
+          String.format(
+              "Unexpected OK error code with HTTP status code of %d. Message: %s.",
               httpStatusCode, rpcStatus.getMessage()),
           cause);
     }

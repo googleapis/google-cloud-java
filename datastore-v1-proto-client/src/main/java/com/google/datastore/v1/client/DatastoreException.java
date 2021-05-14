@@ -17,9 +17,7 @@ package com.google.datastore.v1.client;
 
 import com.google.rpc.Code;
 
-/**
- * Indicates an error in a {@link Datastore} call.
- */
+/** Indicates an error in a {@link Datastore} call. */
 public class DatastoreException extends Exception {
   private final String methodName;
   private final Code code;
@@ -30,20 +28,16 @@ public class DatastoreException extends Exception {
     this.code = code;
   }
 
-  /**
-   * @return the canonical error code
-   */
+  /** @return the canonical error code */
   public Code getCode() {
     return code;
   }
 
-  /**
-   * @return the datastore method name
-   */
+  /** @return the datastore method name */
   public String getMethodName() {
     return methodName;
   }
-  
+
   @Override
   public String toString() {
     return String.format("%s, code=%s", super.toString(), code);

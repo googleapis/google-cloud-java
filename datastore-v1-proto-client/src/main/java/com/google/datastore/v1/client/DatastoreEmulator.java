@@ -78,7 +78,11 @@ public class DatastoreEmulator extends Datastore {
   private final DatastoreEmulatorOptions options;
 
   /** Internal state lifecycle management. */
-  enum State {NEW, STARTED, STOPPED}
+  enum State {
+    NEW,
+    STARTED,
+    STOPPED
+  }
 
   private volatile State state = State.NEW;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC. All Rights Reserved.
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class ChecksumEnforcingInputStreamTest {
     byte[] buf = new byte[1000];
     try {
       while (testInstance.read(buf, 0, 1000) != -1) {
-         // do nothing with the bytes read
+        // do nothing with the bytes read
       }
     } catch (IOException e) {
       fail("checksum verification failed!");
@@ -63,10 +63,11 @@ public class ChecksumEnforcingInputStreamTest {
   @Test
   public void read_withInvalidChecksum() {
     // build a test instance with invalidchecksum
-    ChecksumEnforcingInputStream instance = new ChecksumEnforcingInputStream(
-        new ByteArrayInputStream("hello there".getBytes(UTF_8)),
-        "this checksum is invalid",
-        digest);
+    ChecksumEnforcingInputStream instance =
+        new ChecksumEnforcingInputStream(
+            new ByteArrayInputStream("hello there".getBytes(UTF_8)),
+            "this checksum is invalid",
+            digest);
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
     byte[] buf = new byte[1000];
@@ -103,7 +104,7 @@ public class ChecksumEnforcingInputStreamTest {
     }
     byte[] bytes = payload.getBytes(UTF_8);
     String expectedChecksum = EndToEndChecksumHandler.computeChecksum(bytes);
-    return new ChecksumEnforcingInputStream(new ByteArrayInputStream(bytes),
-                                            expectedChecksum, digest);
+    return new ChecksumEnforcingInputStream(
+        new ByteArrayInputStream(bytes), expectedChecksum, digest);
   }
 }
