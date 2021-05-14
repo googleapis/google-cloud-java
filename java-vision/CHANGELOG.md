@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.112.3](https://www.github.com/googleapis/java-vision/compare/v1.112.2...v1.112.3) (2021-05-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#502](https://www.github.com/googleapis/java-vision/issues/502)) ([4110847](https://www.github.com/googleapis/java-vision/commit/4110847e02efc2df44eca4deebe3ef215cae21d2))
+* update dependency com.google.cloud:google-cloud-storage to v1.114.0 ([#504](https://www.github.com/googleapis/java-vision/issues/504)) ([b83e34b](https://www.github.com/googleapis/java-vision/commit/b83e34ba5279911f9449ef038dc899b165555586))
+* update dependency org.springframework.cloud:spring-cloud-gcp-dependencies to v1.2.8.release ([#497](https://www.github.com/googleapis/java-vision/issues/497)) ([7b84b29](https://www.github.com/googleapis/java-vision/commit/7b84b291d0a57730e9075051e6379cc50d2bed6e))
+
 ### [1.112.2](https://www.github.com/googleapis/java-vision/compare/v1.112.1...v1.112.2) (2021-04-27)
 
 
