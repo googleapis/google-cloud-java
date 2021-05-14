@@ -57,6 +57,25 @@ public abstract class MaterializedViewDefinition extends TableDefinition {
     @Override
     public abstract Builder setType(Type type);
 
+    /**
+     * Sets the time partitioning configuration for the materialized view. If not set, the
+     * materialized view is not time-partitioned.
+     */
+    public abstract Builder setTimePartitioning(TimePartitioning timePartitioning);
+
+    /**
+     * Sets the range partitioning configuration for the materialized view. Only one of
+     * timePartitioning and rangePartitioning should be specified.
+     */
+    public abstract Builder setRangePartitioning(RangePartitioning rangePartitioning);
+
+    /**
+     * Set the clustering configuration for the materialized view. If not set, the materialized view
+     * is not clustered. BigQuery supports clustering for both partitioned and non-partitioned
+     * materialized views.
+     */
+    public abstract Builder setClustering(Clustering clustering);
+
     /** Creates a {@code MaterializedViewDefinition} object. */
     @Override
     public abstract MaterializedViewDefinition build();
@@ -86,6 +105,27 @@ public abstract class MaterializedViewDefinition extends TableDefinition {
   @Nullable
   public abstract Long getRefreshIntervalMs();
 
+  /**
+   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
+   * time-partitioned.
+   */
+  @Nullable
+  public abstract TimePartitioning getTimePartitioning();
+
+  /**
+   * Returns the range partitioning configuration for this table. If {@code null}, the table is not
+   * range-partitioned.
+   */
+  @Nullable
+  public abstract RangePartitioning getRangePartitioning();
+
+  /**
+   * Returns the clustering configuration for this table. If {@code null}, the table is not
+   * clustered.
+   */
+  @Nullable
+  public abstract Clustering getClustering();
+
   /** Returns a builder for the {@code MaterializedViewDefinition} object. */
   public abstract Builder toBuilder();
 
@@ -107,6 +147,15 @@ public abstract class MaterializedViewDefinition extends TableDefinition {
       materializedViewDefinition.setRefreshIntervalMs(getRefreshIntervalMs());
     }
     tablePb.setMaterializedView(materializedViewDefinition);
+    if (getTimePartitioning() != null) {
+      tablePb.setTimePartitioning(getTimePartitioning().toPb());
+    }
+    if (getRangePartitioning() != null) {
+      tablePb.setRangePartitioning(getRangePartitioning().toPb());
+    }
+    if (getClustering() != null) {
+      tablePb.setClustering(getClustering().toPb());
+    }
     return tablePb;
   }
 
@@ -148,6 +197,15 @@ public abstract class MaterializedViewDefinition extends TableDefinition {
       }
       if (materializedViewDefinition.getRefreshIntervalMs() != null) {
         builder.setRefreshIntervalMs(materializedViewDefinition.getRefreshIntervalMs());
+      }
+      if (tablePb.getTimePartitioning() != null) {
+        builder.setTimePartitioning(TimePartitioning.fromPb(tablePb.getTimePartitioning()));
+      }
+      if (tablePb.getRangePartitioning() != null) {
+        builder.setRangePartitioning(RangePartitioning.fromPb(tablePb.getRangePartitioning()));
+      }
+      if (tablePb.getClustering() != null) {
+        builder.setClustering(Clustering.fromPb(tablePb.getClustering()));
       }
     }
     return builder.build();

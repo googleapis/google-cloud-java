@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
 public class MaterializedViewDefinitionTest {
@@ -28,6 +29,10 @@ public class MaterializedViewDefinitionTest {
   private static final Boolean ENABLE_REFRESH = false;
   private static final Long REFRESH_INTERVAL_MS = 60000L;
   private static final Schema SCHEMA = Schema.of();
+  private static final TimePartitioning TIME_PARTITIONING =
+      TimePartitioning.of(TimePartitioning.Type.DAY, 42);
+  private static final Clustering CLUSTERING =
+      Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final MaterializedViewDefinition MATERIALIZED_VIEW_DEFINITION =
       MaterializedViewDefinition.newBuilder()
           .setSchema(SCHEMA)
@@ -35,6 +40,8 @@ public class MaterializedViewDefinitionTest {
           .setLastRefreshTime(LAST_REFRESH_TIME)
           .setEnableRefresh(ENABLE_REFRESH)
           .setRefreshIntervalMs(REFRESH_INTERVAL_MS)
+          .setClustering(CLUSTERING)
+          .setTimePartitioning(TIME_PARTITIONING)
           .build();
 
   @Test
@@ -68,6 +75,8 @@ public class MaterializedViewDefinitionTest {
             .setLastRefreshTime(LAST_REFRESH_TIME)
             .setEnableRefresh(ENABLE_REFRESH)
             .setRefreshIntervalMs(REFRESH_INTERVAL_MS)
+            .setClustering(CLUSTERING)
+            .setTimePartitioning(TIME_PARTITIONING)
             .build();
     assertEquals(MATERIALIZED_VIEW_DEFINITION, materializedViewDefinition);
   }
@@ -92,6 +101,8 @@ public class MaterializedViewDefinitionTest {
     assertEquals(expected.getLastRefreshTime(), actual.getLastRefreshTime());
     assertEquals(expected.getEnableRefresh(), actual.getEnableRefresh());
     assertEquals(expected.getRefreshIntervalMs(), actual.getRefreshIntervalMs());
+    assertEquals(expected.getClustering(), actual.getClustering());
+    assertEquals(expected.getTimePartitioning(), actual.getTimePartitioning());
     assertEquals(expected.toString(), actual.toString());
     assertEquals(expected.hashCode(), actual.hashCode());
     assertEquals(expected, actual);
