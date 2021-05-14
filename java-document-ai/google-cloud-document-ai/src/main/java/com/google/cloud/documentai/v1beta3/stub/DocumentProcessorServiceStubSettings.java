@@ -60,7 +60,7 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (us-documentai.googleapis.com) and default port (443) are used.
+ *   <li>The default service address (documentai.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -151,7 +151,7 @@ public class DocumentProcessorServiceStubSettings
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "us-documentai.googleapis.com:443";
+    return "documentai.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
