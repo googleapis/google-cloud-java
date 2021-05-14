@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.4.3](https://www.github.com/googleapis/java-automl/compare/v1.4.2...v1.4.3) (2021-05-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.128.1 ([#669](https://www.github.com/googleapis/java-automl/issues/669)) ([51c07e6](https://www.github.com/googleapis/java-automl/commit/51c07e664dfc7b8d49f26ffb0c47e5b3fce8b10a))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.129.0 ([#690](https://www.github.com/googleapis/java-automl/issues/690)) ([bdc3fb1](https://www.github.com/googleapis/java-automl/commit/bdc3fb1a93e90db844da9e291f085acf2069a0d2))
+* update dependency com.google.cloud:google-cloud-core to v1.94.8 ([#691](https://www.github.com/googleapis/java-automl/issues/691)) ([7c8a427](https://www.github.com/googleapis/java-automl/commit/7c8a427f5b3b50e50e8d051d5c2ff34f0b255ecd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#693](https://www.github.com/googleapis/java-automl/issues/693)) ([eb38c92](https://www.github.com/googleapis/java-automl/commit/eb38c92823b89db7a5ae9c0e6049a6e34ef09910))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#670](https://www.github.com/googleapis/java-automl/issues/670)) ([e978353](https://www.github.com/googleapis/java-automl/commit/e978353ca5b7a8f9a062b57b6a6e6835197a0d7d))
+* update dependency com.google.cloud:google-cloud-storage to v1.114.0 ([#697](https://www.github.com/googleapis/java-automl/issues/697)) ([c800c0e](https://www.github.com/googleapis/java-automl/commit/c800c0ede00df67fd7eaea4569c700c5bdc0bd96))
+
 ### [1.4.2](https://www.github.com/googleapis/java-automl/compare/v1.4.1...v1.4.2) (2021-04-26)
 
 
