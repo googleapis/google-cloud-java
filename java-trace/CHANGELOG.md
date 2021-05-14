@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.3.4](https://www.github.com/googleapis/java-trace/compare/v1.3.3...v1.3.4) (2021-05-14)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#507](https://www.github.com/googleapis/java-trace/issues/507)) ([cb4edcc](https://www.github.com/googleapis/java-trace/commit/cb4edccd7c2141d26830736e3e40f6a77f159e85))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#522](https://www.github.com/googleapis/java-trace/issues/522)) ([f255e5e](https://www.github.com/googleapis/java-trace/commit/f255e5e0a953faf27afac8119e006281b165b935))
+
 ### [1.3.3](https://www.github.com/googleapis/java-trace/compare/v1.3.2...v1.3.3) (2021-04-23)
 
 
