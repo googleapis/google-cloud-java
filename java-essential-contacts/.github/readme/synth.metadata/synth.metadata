@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-essential-contacts.git",
-        "sha": "a626fa8b981045b549a54c7af63398e116b6302f"
+        "sha": "89455552d0d91b7298ad91cc411e0d26bfa9c07f"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c0edb1b97d81f56eaba1e896e9756268940c56c1"
+        "sha": "4f4b1b9b8d8b52f1e9e4a76165896debce5ab7f1"
       }
     }
   ]
