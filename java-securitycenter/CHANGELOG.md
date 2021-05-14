@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.4.2...v1.5.0) (2021-05-14)
+
+
+### Features
+
+* add canonical_name and folder fields  ([#489](https://www.github.com/googleapis/java-securitycenter/issues/489)) ([75015df](https://www.github.com/googleapis/java-securitycenter/commit/75015df270e1ee837c2bd76c458da460d90b4ee0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#486](https://www.github.com/googleapis/java-securitycenter/issues/486)) ([31f05a4](https://www.github.com/googleapis/java-securitycenter/commit/31f05a410ef5c9bb3ab165429755d2e3da3ba53a))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.0 ([#480](https://www.github.com/googleapis/java-securitycenter/issues/480)) ([54124d2](https://www.github.com/googleapis/java-securitycenter/commit/54124d2f8f610013d567c3fe6d47c844cae6e049))
+
 ### [1.4.2](https://www.github.com/googleapis/java-securitycenter/compare/v1.4.1...v1.4.2) (2021-04-24)
 
 
