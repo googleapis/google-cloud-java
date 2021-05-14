@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-profiler</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
     <!-- [END profiler_install_without_bom] -->
 
