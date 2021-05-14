@@ -17,6 +17,13 @@ package com.google.cloud.bigtable.test_helpers.env;
 
 import static com.google.common.truth.TruthJUnit.assume;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile;
+import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
@@ -24,7 +31,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -33,6 +43,8 @@ import java.util.logging.SimpleFormatter;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
+import org.threeten.bp.Instant;
+import org.threeten.bp.temporal.ChronoUnit;
 
 /**
  * JUnit rule to start and stop the target test environment.
@@ -133,7 +145,7 @@ public class TestEnvRule implements TestRule {
 
   private void after() {
     try {
-      env().cleanUpStale();
+      cleanUpStale();
     } catch (Exception e) {
       LOGGER.log(Level.WARNING, "Failed to cleanup environment", e);
     }
@@ -157,6 +169,173 @@ public class TestEnvRule implements TestRule {
     }
     grpcLogHandler.flush();
     grpcLogHandler = null;
+  }
+
+  void cleanUpStale() throws ExecutionException, InterruptedException, IOException {
+    // Sortable resource prefix - time, process identifier, serial counterck
+    String stalePrefix = PrefixGenerator.newTimePrefix(Instant.now().minus(1, ChronoUnit.DAYS));
+
+    cleanupStaleTables(stalePrefix);
+    if (env().isInstanceAdminSupported()) {
+      cleanUpStaleAppProfile(stalePrefix);
+      cleanUpStaleClusters(stalePrefix);
+      cleanUpStaleInstances(stalePrefix);
+    }
+  }
+
+  /**
+   * Clean up AppProfile that were dynamically created in the default instance that have been
+   * orphaned.
+   *
+   * @param stalePrefix
+   */
+  private void cleanupStaleTables(String stalePrefix) {
+    for (String tableId : env().getTableAdminClient().listTables()) {
+      if (!tableId.startsWith(PrefixGenerator.PREFIX)) {
+        continue;
+      }
+      if (stalePrefix.compareTo(tableId) > 0) {
+        try {
+          env().getTableAdminClient().deleteTable(tableId);
+        } catch (NotFoundException ignored) {
+
+        }
+      }
+    }
+  }
+
+  /**
+   * Clean up AppProfile that were dynamically created in the default instance that have been
+   * orphaned.
+   *
+   * @param stalePrefix
+   */
+  private void cleanUpStaleAppProfile(String stalePrefix) {
+    for (AppProfile appProfile :
+        env().getInstanceAdminClient().listAppProfiles(env().getInstanceId())) {
+      if (!appProfile.getId().startsWith(PrefixGenerator.PREFIX)) {
+        continue;
+      }
+      boolean isNewerThanStale = appProfile.getId().compareTo(stalePrefix) > 0;
+      if (isNewerThanStale) {
+        continue;
+      }
+      try {
+        env()
+            .getInstanceAdminClient()
+            .deleteAppProfile(env().getInstanceId(), appProfile.getId(), true);
+      } catch (NotFoundException ignored) {
+
+      }
+    }
+  }
+
+  /**
+   * Clean up clusters that were dynamically created in the default instance that have been
+   * orphaned.
+   *
+   * @param stalePrefix
+   */
+  private void cleanUpStaleClusters(String stalePrefix)
+      throws ExecutionException, InterruptedException {
+    for (Cluster cluster : env().getInstanceAdminClient().listClusters(env().getInstanceId())) {
+      if (!cluster.getId().startsWith(PrefixGenerator.PREFIX)) {
+        continue;
+      }
+      boolean isNewerThanStale = cluster.getId().compareTo(stalePrefix) > 0;
+      if (isNewerThanStale) {
+        continue;
+      }
+
+      try {
+        deleteBackups(env().getTableAdminClient(), cluster.getId());
+      } catch (NotFoundException ignored) {
+      }
+      try {
+        env().getInstanceAdminClient().deleteCluster(env().getInstanceId(), cluster.getId());
+      } catch (NotFoundException ignored) {
+      }
+    }
+  }
+
+  /**
+   * Clean up dynamically created (non-default) instances that have been orphaned.
+   *
+   * @param stalePrefix
+   */
+  private void cleanUpStaleInstances(String stalePrefix)
+      throws IOException, ExecutionException, InterruptedException {
+    for (Instance instance : env().getInstanceAdminClient().listInstances()) {
+      if (!instance.getId().startsWith(PrefixGenerator.PREFIX)) {
+        continue;
+      }
+      boolean isNewerThanStale = instance.getId().compareTo(stalePrefix) > 0;
+      if (isNewerThanStale) {
+        continue;
+      }
+      try {
+        deleteInstance(instance.getId());
+      } catch (NotFoundException ignored) {
+
+      }
+    }
+  }
+
+  /** Delete an instance with all of its resources. */
+  private void deleteInstance(String instanceId)
+      throws IOException, ExecutionException, InterruptedException {
+    BigtableTableAdminSettings settings =
+        env().getTableAdminSettings().toBuilder().setInstanceId(instanceId).build();
+
+    // Delete all child resources (backups & clusters) that wont be automatically deleted
+    try (BigtableTableAdminClient tableAdmin = BigtableTableAdminClient.create(settings)) {
+      List<Cluster> clusters = env().getInstanceAdminClient().listClusters(instanceId);
+
+      boolean isFirstCluster = true;
+
+      for (Cluster cluster : clusters) {
+        deleteBackups(tableAdmin, cluster.getId());
+        // Skip the first cluster so that it can be delete by deleteInstance (instances can't exist
+        // without clusters)
+        if (!isFirstCluster) {
+          try {
+            env().getInstanceAdminClient().deleteCluster(instanceId, cluster.getId());
+          } catch (NotFoundException ignored) {
+
+          }
+        }
+        isFirstCluster = false;
+      }
+    }
+
+    // Delete everything else
+    try {
+      env().getInstanceAdminClient().deleteInstance(instanceId);
+    } catch (NotFoundException ignored) {
+
+    }
+  }
+
+  private void deleteBackups(BigtableTableAdminClient tableAdmin, String clusterId)
+      throws ExecutionException, InterruptedException {
+    List<ApiFuture<?>> futures = new ArrayList<>();
+
+    for (String backupId : tableAdmin.listBackups(clusterId)) {
+      ApiFuture<Void> f = tableAdmin.deleteBackupAsync(clusterId, backupId);
+      futures.add(f);
+    }
+
+    for (ApiFuture<?> future : futures) {
+      try {
+        future.get();
+      } catch (ExecutionException e) {
+        // Ignore not found
+        if (e.getCause() instanceof NotFoundException) {
+          continue;
+        }
+        throw e;
+      }
+    }
   }
 
   public AbstractTestEnv env() {

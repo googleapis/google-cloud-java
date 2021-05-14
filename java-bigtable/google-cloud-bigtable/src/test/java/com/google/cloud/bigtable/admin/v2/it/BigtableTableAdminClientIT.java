@@ -35,6 +35,7 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
@@ -45,7 +46,6 @@ import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
@@ -53,7 +53,7 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class BigtableTableAdminClientIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
-  @Rule public final TestName testNameRule = new TestName();
+  @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
 
   private BigtableTableAdminClient tableAdmin;
   private String tableId;
@@ -61,7 +61,7 @@ public class BigtableTableAdminClientIT {
   @Before
   public void setUp() {
     tableAdmin = testEnvRule.env().getTableAdminClient();
-    tableId = testEnvRule.env().newPrefix();
+    tableId = prefixGenerator.newPrefix();
   }
 
   @After

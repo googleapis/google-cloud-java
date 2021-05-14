@@ -34,6 +34,7 @@ import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.common.Status;
 import com.google.cloud.bigtable.common.Status.Code;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -45,6 +46,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -65,6 +67,7 @@ public class BigtableCmekIT {
   private static final String BACKUP_ID = "test-table-for-cmek-it-backup";
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+  @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
 
   private static String instanceId;
   private static String clusterId1;
@@ -88,7 +91,7 @@ public class BigtableCmekIT {
     assertThat(kmsKeyName).isNotNull();
     assertThat(kmsKeyName).isNotEmpty();
 
-    instanceId = testEnvRule.env().newPrefix();
+    instanceId = PrefixGenerator.newPrefix("BigtableCmekIT#validatePlatform");
     clusterId1 = instanceId + "-c1";
     clusterId2 = instanceId + "-c2";
     clusterId3 = instanceId + "-c3";

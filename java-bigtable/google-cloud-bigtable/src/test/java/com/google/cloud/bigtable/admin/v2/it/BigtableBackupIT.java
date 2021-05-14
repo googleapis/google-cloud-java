@@ -39,6 +39,7 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.ByteString;
@@ -53,6 +54,7 @@ import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -62,6 +64,7 @@ import org.threeten.bp.Instant;
 @RunWith(JUnit4.class)
 public class BigtableBackupIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
+  @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
 
   private static final Logger LOGGER = Logger.getLogger(BigtableBackupIT.class.getName());
 
@@ -102,7 +105,7 @@ public class BigtableBackupIT {
 
   @Test
   public void createAndGetBackupTest() {
-    String backupId = testEnvRule.env().newPrefix();
+    String backupId = prefixGenerator.newPrefix();
     Instant expireTime = Instant.now().plus(Duration.ofHours(6));
 
     CreateBackupRequest request =
@@ -148,8 +151,8 @@ public class BigtableBackupIT {
 
   @Test
   public void listBackupTest() {
-    String backupId1 = testEnvRule.env().newPrefix();
-    String backupId2 = testEnvRule.env().newPrefix();
+    String backupId1 = prefixGenerator.newPrefix();
+    String backupId2 = prefixGenerator.newPrefix();
 
     try {
       tableAdmin.createBackup(createBackupRequest(backupId1));
@@ -169,7 +172,7 @@ public class BigtableBackupIT {
 
   @Test
   public void updateBackupTest() {
-    String backupId = testEnvRule.env().newPrefix();
+    String backupId = prefixGenerator.newPrefix();
     tableAdmin.createBackup(createBackupRequest(backupId));
 
     Instant expireTime = Instant.now().plus(Duration.ofDays(20));
@@ -185,7 +188,7 @@ public class BigtableBackupIT {
 
   @Test
   public void deleteBackupTest() throws InterruptedException {
-    String backupId = testEnvRule.env().newPrefix();
+    String backupId = prefixGenerator.newPrefix();
 
     tableAdmin.createBackup(createBackupRequest(backupId));
     tableAdmin.deleteBackup(targetCluster, backupId);
@@ -210,8 +213,8 @@ public class BigtableBackupIT {
 
   @Test
   public void restoreTableTest() throws InterruptedException, ExecutionException {
-    String backupId = testEnvRule.env().newPrefix();
-    String restoredTableId = testEnvRule.env().newPrefix() + "-restore";
+    String backupId = prefixGenerator.newPrefix();
+    String restoredTableId = prefixGenerator.newPrefix();
     tableAdmin.createBackup(createBackupRequest(backupId));
 
     // Wait 2 minutes so that the RestoreTable API will trigger an optimize restored
@@ -244,8 +247,8 @@ public class BigtableBackupIT {
   @Test
   public void crossInstanceRestoreTest()
       throws InterruptedException, IOException, ExecutionException, TimeoutException {
-    String backupId = testEnvRule.env().newPrefix();
-    String restoredTableId = testEnvRule.env().newPrefix();
+    String backupId = prefixGenerator.newPrefix();
+    String restoredTableId = prefixGenerator.newPrefix();
 
     // Create the backup
     tableAdmin.createBackup(
@@ -256,7 +259,7 @@ public class BigtableBackupIT {
     Stopwatch stopwatch = Stopwatch.createStarted();
 
     // Set up a new instance to test cross-instance restore. The backup will be restored here
-    String targetInstance = testEnvRule.env().newPrefix();
+    String targetInstance = prefixGenerator.newPrefix();
     instanceAdmin.createInstance(
         CreateInstanceRequest.of(targetInstance)
             .addCluster(targetInstance, testEnvRule.env().getSecondaryZone(), 1, StorageType.SSD)
@@ -302,7 +305,7 @@ public class BigtableBackupIT {
 
   @Test
   public void backupIamTest() {
-    String backupId = testEnvRule.env().newPrefix();
+    String backupId = prefixGenerator.newPrefix();
 
     try {
       tableAdmin.createBackup(createBackupRequest(backupId));
@@ -341,7 +344,7 @@ public class BigtableBackupIT {
   private static Table createAndPopulateTestTable(
       BigtableTableAdminClient tableAdmin, BigtableDataClient dataClient)
       throws InterruptedException {
-    String tableId = testEnvRule.env().newPrefix();
+    String tableId = PrefixGenerator.newPrefix("BigtableBackupIT#createAndPopulateTestTable");
     Table testTable = tableAdmin.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
 
     // Populate test data.

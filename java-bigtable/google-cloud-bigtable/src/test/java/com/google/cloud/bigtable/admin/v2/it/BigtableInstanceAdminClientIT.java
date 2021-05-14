@@ -32,11 +32,13 @@ import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
+import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import java.util.List;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -45,6 +47,7 @@ import org.junit.runners.JUnit4;
 public class BigtableInstanceAdminClientIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+  @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
 
   private String instanceId = testEnvRule.env().getInstanceId();
   private BigtableInstanceAdminClient client;
@@ -66,7 +69,7 @@ public class BigtableInstanceAdminClientIT {
 
   @Test
   public void appProfileTest() {
-    String testAppProfile = testEnvRule.env().newPrefix();
+    String testAppProfile = prefixGenerator.newPrefix();
 
     AppProfile newlyCreatedAppProfile =
         client.createAppProfile(
@@ -115,7 +118,7 @@ public class BigtableInstanceAdminClientIT {
   /** To optimize test run time, instance & cluster creation is tested at the same time */
   @Test
   public void instanceAndClusterCreationDeletionTest() {
-    String newInstanceId = testEnvRule.env().newPrefix();
+    String newInstanceId = prefixGenerator.newPrefix();
     String newClusterId = newInstanceId;
 
     client.createInstance(
@@ -152,7 +155,7 @@ public class BigtableInstanceAdminClientIT {
   // This will avoid the need to copy any existing tables and will also reduce flakiness in case a
   // previous run failed to clean up a cluster in the secondary zone.
   private void clusterCreationDeletionTestHelper(String newInstanceId) {
-    String newClusterId = testEnvRule.env().newPrefix();
+    String newClusterId = prefixGenerator.newPrefix();
     boolean isClusterDeleted = false;
     client.createCluster(
         CreateClusterRequest.of(newInstanceId, newClusterId)
