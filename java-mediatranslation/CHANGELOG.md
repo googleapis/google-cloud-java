@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.3.2...v0.4.0) (2021-05-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove unsupported fields: recognition_result and alternative_source_language_codes (#276)
+
+### Bug Fixes
+
+* Remove unsupported fields: recognition_result and alternative_source_language_codes ([#276](https://www.github.com/googleapis/java-mediatranslation/issues/276)) ([d8eceda](https://www.github.com/googleapis/java-mediatranslation/commit/d8eceda8b3654155f5ace4d2c1eac2e73403a6c9))
+
+
+### Documentation
+
+* Add more comments for supported audio type ([d8eceda](https://www.github.com/googleapis/java-mediatranslation/commit/d8eceda8b3654155f5ace4d2c1eac2e73403a6c9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#283](https://www.github.com/googleapis/java-mediatranslation/issues/283)) ([c4dcc1f](https://www.github.com/googleapis/java-mediatranslation/commit/c4dcc1f198b2242a4e7e1339e5595a3818779fb7))
+
 ### [0.3.2](https://www.github.com/googleapis/java-mediatranslation/compare/v0.3.1...v0.3.2) (2021-04-23)
 
 
