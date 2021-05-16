@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.130.0](https://www.github.com/googleapis/java-bigquery/compare/v1.129.0...v1.130.0) (2021-05-15)
+
+
+### Features
+
+* add support for partitioning and clustering in MaterializedViewDefinition ([#1301](https://www.github.com/googleapis/java-bigquery/issues/1301)) ([b909754](https://www.github.com/googleapis/java-bigquery/commit/b909754b4c828871c8b360d0ddf69cc488b1d33c)), closes [#1300](https://www.github.com/googleapis/java-bigquery/issues/1300)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-datacatalog-v1 to v1.3.3 ([#1296](https://www.github.com/googleapis/java-bigquery/issues/1296)) ([558cb14](https://www.github.com/googleapis/java-bigquery/commit/558cb14a4091c9e44dea766b967ecb78132a46c5))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.24.1 ([#1305](https://www.github.com/googleapis/java-bigquery/issues/1305)) ([96363a9](https://www.github.com/googleapis/java-bigquery/commit/96363a969f8ac8ffb3627e8a0da69c030dc9f862))
+* update dependency com.google.cloud:google-cloud-datacatalog to v1.3.3 ([#1297](https://www.github.com/googleapis/java-bigquery/issues/1297)) ([c49e697](https://www.github.com/googleapis/java-bigquery/commit/c49e697086f6aaf8271daf799b985b468496c382))
+* update jmh.version to v1.31 ([#1303](https://www.github.com/googleapis/java-bigquery/issues/1303)) ([817cf7b](https://www.github.com/googleapis/java-bigquery/commit/817cf7bbecc920e9866cd85f2b1689926933c4da))
+
 ## [1.129.0](https://www.github.com/googleapis/java-bigquery/compare/v1.128.3...v1.129.0) (2021-05-11)
 
 
