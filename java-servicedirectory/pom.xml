@@ -128,11 +128,11 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-servicedirectory-v1beta1</module>
-    <module>proto-google-cloud-servicedirectory-v1</module>
+    <module>google-cloud-servicedirectory</module>
     <module>grpc-google-cloud-servicedirectory-v1beta1</module>
     <module>grpc-google-cloud-servicedirectory-v1</module>
-    <module>google-cloud-servicedirectory</module>
+    <module>proto-google-cloud-servicedirectory-v1beta1</module>
+    <module>proto-google-cloud-servicedirectory-v1</module>
     <module>google-cloud-servicedirectory-bom</module>
   </modules>
 
