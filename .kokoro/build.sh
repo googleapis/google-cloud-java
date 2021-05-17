@@ -47,7 +47,6 @@ set +e
 
 case ${JOB_TYPE} in
 test)
-    export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
     RETURN_CODE=$?
     ;;

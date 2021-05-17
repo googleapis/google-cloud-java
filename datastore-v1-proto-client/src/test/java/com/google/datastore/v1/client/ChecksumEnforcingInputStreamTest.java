@@ -64,7 +64,8 @@ public class ChecksumEnforcingInputStreamTest {
     // build a test instance with invalidchecksum
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
-    try (ChecksumEnforcingInputStream instance = new ChecksumEnforcingInputStream(
+    try (ChecksumEnforcingInputStream instance =
+        new ChecksumEnforcingInputStream(
             new ByteArrayInputStream("hello there".getBytes(UTF_8)),
             "this checksum is invalid",
             digest)) {
