@@ -42,6 +42,8 @@ public class ChecksumEnforcingInputStreamTest {
       }
     } catch (IOException e) {
       fail("checksum verification failed!");
+    } finally {
+      testInstance.close();
     }
   }
 
