@@ -62,15 +62,13 @@ public class ChecksumEnforcingInputStreamTest {
   @Test
   public void read_withInvalidChecksum() {
     // build a test instance with invalidchecksum
-    ChecksumEnforcingInputStream instance =
-        new ChecksumEnforcingInputStream(
-            new ByteArrayInputStream("hello there".getBytes(UTF_8)),
-            "this checksum is invalid",
-            digest);
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
-    byte[] buf = new byte[1000];
-    try {
+    try (ChecksumEnforcingInputStream instance = new ChecksumEnforcingInputStream(
+            new ByteArrayInputStream("hello there".getBytes(UTF_8)),
+            "this checksum is invalid",
+            digest)) {
+      byte[] buf = new byte[1000];
       while (instance.read(buf, 0, 1000) != -1) {
         // do nothing with the bytes read
       }
@@ -83,8 +81,9 @@ public class ChecksumEnforcingInputStreamTest {
 
   @Test
   public void markNotSupported() throws Exception {
-    ChecksumEnforcingInputStream testInstance = setUpData(1);
-    assertFalse(testInstance.markSupported());
+    try (ChecksumEnforcingInputStream testInstance = setUpData(1)) {
+      assertFalse(testInstance.markSupported());
+    }
   }
 
   private ChecksumEnforcingInputStream setUpData(int payloadSize) throws Exception {
@@ -93,7 +92,7 @@ public class ChecksumEnforcingInputStreamTest {
     String payload;
     if (payloadSize > str.length()) {
       int num = payloadSize / str.length();
-      StringBuffer buf = new StringBuffer();
+      StringBuilder buf = new StringBuilder();
       for (int i = 0; i < num; i++) {
         buf.append(str);
       }
