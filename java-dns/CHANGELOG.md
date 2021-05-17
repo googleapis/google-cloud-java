@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.6](https://www.github.com/googleapis/java-dns/compare/v1.1.5...v1.1.6) (2021-05-17)
+
+
+### Bug Fixes
+
+* make tests skippable with an environment variable ([#357](https://www.github.com/googleapis/java-dns/issues/357)) ([bec7b9f](https://www.github.com/googleapis/java-dns/commit/bec7b9fe4e0b45ed43bb7739292fc44f68527ebc))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20210423-1.31.0 ([#392](https://www.github.com/googleapis/java-dns/issues/392)) ([8358643](https://www.github.com/googleapis/java-dns/commit/8358643257afa3fc82938e4e12d9537f4e3b416c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#399](https://www.github.com/googleapis/java-dns/issues/399)) ([17352b1](https://www.github.com/googleapis/java-dns/commit/17352b160f59a918c29b554a651ee8adb2377b6c))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#407](https://www.github.com/googleapis/java-dns/issues/407)) ([0f2ef27](https://www.github.com/googleapis/java-dns/commit/0f2ef275ce5a56f3366740a55389a7e271adeb6e))
+
 ### [1.1.5](https://www.github.com/googleapis/java-dns/compare/v1.1.4...v1.1.5) (2021-04-23)
 
 
