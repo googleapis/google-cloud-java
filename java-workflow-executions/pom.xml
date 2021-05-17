@@ -32,9 +32,9 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-.git</developerConnection>
-    <url>https://github.com/googleapis/java-</url>
+    <connection>scm:git:git@github.com:googleapis/java-workflow-executions.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-workflow-executions.git</developerConnection>
+    <url>https://github.com/googleapis/java-workflow-executions</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
