@@ -51,6 +51,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -253,6 +254,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testCreateZoneWithErrors() {
     try {
       try {
@@ -1471,6 +1473,7 @@ public class ITDnsTest {
   }
 
   @Test
+  @Ignore
   public void testCreateZoneWithErrorsBatch() {
     try {
       DnsBatch batch = DNS.batch();
