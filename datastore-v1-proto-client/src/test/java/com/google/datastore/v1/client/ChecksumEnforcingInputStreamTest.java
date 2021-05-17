@@ -32,18 +32,15 @@ public class ChecksumEnforcingInputStreamTest {
   private final MessageDigest digest = EndToEndChecksumHandler.getMessageDigestInstance();
 
   public void test(int payloadSize) throws Exception {
-    ChecksumEnforcingInputStream testInstance = setUpData(payloadSize);
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
-    byte[] buf = new byte[1000];
-    try {
+    try (ChecksumEnforcingInputStream testInstance = setUpData(payloadSize)) {
+      byte[] buf = new byte[1000];
       while (testInstance.read(buf, 0, 1000) != -1) {
         // do nothing with the bytes read
       }
     } catch (IOException e) {
       fail("checksum verification failed!");
-    } finally {
-      testInstance.close();
     }
   }
 
