@@ -679,8 +679,8 @@
             <configuration>
               <doclet>com.microsoft.doclet.DocFxDoclet</doclet>
               <useStandardDocletOptions>false</useStandardDocletOptions>
-              <docletPath>${env.KOKORO_GFILE_DIR}/docfx-doclet-1.0-SNAPSHOT-jar-with-dependencies-172556.jar</docletPath>
-              <additionalOptions>-outputpath ${project.build.directory}/docfx-yml</additionalOptions>
+              <docletPath>${env.KOKORO_GFILE_DIR}/java-docfx-doclet-1.0.jar</docletPath>
+              <additionalOptions>-outputpath ${project.build.directory}/docfx-yml -projectname ${artifactId}</additionalOptions>
               <doclint>none</doclint>
               <show>protected</show>
               <nohelp>true</nohelp>
