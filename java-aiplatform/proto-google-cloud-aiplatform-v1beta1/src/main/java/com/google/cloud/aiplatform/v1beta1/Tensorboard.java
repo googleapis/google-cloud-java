@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Tensorboard is a physical database that stores users’ training metrics.
+ * Tensorboard is a physical database that stores users' training metrics.
  * A default Tensorboard is provided in each region of a GCP project.
  * If needed users can also create extra Tensorboards in their projects.
  * </pre>
@@ -1042,7 +1042,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tensorboard is a physical database that stores users’ training metrics.
+   * Tensorboard is a physical database that stores users' training metrics.
    * A default Tensorboard is provided in each region of a GCP project.
    * If needed users can also create extra Tensorboards in their projects.
    * </pre>

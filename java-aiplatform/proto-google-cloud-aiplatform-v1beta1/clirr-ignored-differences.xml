@@ -135,4 +135,49 @@
     <differenceType>6001</differenceType>
     <field>TPU*</field>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* set*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* has*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* clear*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* merge*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <method>* add*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <field>REPEATED_*</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <field>REPEATED_*</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs*</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
 </differences>

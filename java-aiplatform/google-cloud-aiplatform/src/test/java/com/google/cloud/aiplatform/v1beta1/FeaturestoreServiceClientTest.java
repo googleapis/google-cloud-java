@@ -95,7 +95,6 @@ public class FeaturestoreServiceClientTest {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
             .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
-            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -150,7 +149,6 @@ public class FeaturestoreServiceClientTest {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
             .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
-            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -205,7 +203,6 @@ public class FeaturestoreServiceClientTest {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
             .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
-            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -249,7 +246,6 @@ public class FeaturestoreServiceClientTest {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
             .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
-            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -381,7 +377,6 @@ public class FeaturestoreServiceClientTest {
     Featurestore expectedResponse =
         Featurestore.newBuilder()
             .setName(FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
-            .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -1495,6 +1490,7 @@ public class FeaturestoreServiceClientTest {
         ImportFeatureValuesResponse.newBuilder()
             .setImportedEntityCount(-1840044274)
             .setImportedFeatureValueCount(-1221471427)
+            .setInvalidRowCount(-366655966)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1544,6 +1540,7 @@ public class FeaturestoreServiceClientTest {
         ImportFeatureValuesResponse.newBuilder()
             .setImportedEntityCount(-1840044274)
             .setImportedFeatureValueCount(-1221471427)
+            .setInvalidRowCount(-366655966)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

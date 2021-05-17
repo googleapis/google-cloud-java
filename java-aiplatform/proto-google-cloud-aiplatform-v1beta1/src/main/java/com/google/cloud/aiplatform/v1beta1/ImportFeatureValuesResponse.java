@@ -78,6 +78,11 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
               importedFeatureValueCount_ = input.readInt64();
               break;
             }
+          case 48:
+            {
+              invalidRowCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -148,6 +153,28 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     return importedFeatureValueCount_;
   }
 
+  public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
+  private long invalidRowCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of rows in input source that weren't imported due to either
+   * * Not having any featureValues.
+   * * Having a null entityId.
+   * * Having a null timestamp.
+   * * Not being parsable (applicable for CSV sources).
+   * </pre>
+   *
+   * <code>int64 invalid_row_count = 6;</code>
+   *
+   * @return The invalidRowCount.
+   */
+  @java.lang.Override
+  public long getInvalidRowCount() {
+    return invalidRowCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -168,6 +195,9 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     if (importedFeatureValueCount_ != 0L) {
       output.writeInt64(2, importedFeatureValueCount_);
     }
+    if (invalidRowCount_ != 0L) {
+      output.writeInt64(6, invalidRowCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -182,6 +212,9 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     }
     if (importedFeatureValueCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, importedFeatureValueCount_);
+    }
+    if (invalidRowCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, invalidRowCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -201,6 +234,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
 
     if (getImportedEntityCount() != other.getImportedEntityCount()) return false;
     if (getImportedFeatureValueCount() != other.getImportedFeatureValueCount()) return false;
+    if (getInvalidRowCount() != other.getInvalidRowCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,6 +250,8 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedEntityCount());
     hash = (37 * hash) + IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedFeatureValueCount());
+    hash = (37 * hash) + INVALID_ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getInvalidRowCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,6 +402,8 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
 
       importedFeatureValueCount_ = 0L;
 
+      invalidRowCount_ = 0L;
+
       return this;
     }
 
@@ -396,6 +434,7 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
           new com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse(this);
       result.importedEntityCount_ = importedEntityCount_;
       result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      result.invalidRowCount_ = invalidRowCount_;
       onBuilt();
       return result;
     }
@@ -453,6 +492,9 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
       }
       if (other.getImportedFeatureValueCount() != 0L) {
         setImportedFeatureValueCount(other.getImportedFeatureValueCount());
+      }
+      if (other.getInvalidRowCount() != 0L) {
+        setInvalidRowCount(other.getInvalidRowCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -585,6 +627,70 @@ public final class ImportFeatureValuesResponse extends com.google.protobuf.Gener
     public Builder clearImportedFeatureValueCount() {
 
       importedFeatureValueCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long invalidRowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     *
+     * @return The invalidRowCount.
+     */
+    @java.lang.Override
+    public long getInvalidRowCount() {
+      return invalidRowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     *
+     * @param value The invalidRowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvalidRowCount(long value) {
+
+      invalidRowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvalidRowCount() {
+
+      invalidRowCount_ = 0L;
       onChanged();
       return this;
     }

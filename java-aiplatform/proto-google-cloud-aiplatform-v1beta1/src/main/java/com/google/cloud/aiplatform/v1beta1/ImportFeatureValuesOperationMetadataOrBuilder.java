@@ -84,4 +84,21 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The importedFeatureValueCount.
    */
   long getImportedFeatureValueCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of rows in input source that weren't imported due to either
+   * * Not having any featureValues.
+   * * Having a null entityId.
+   * * Having a null timestamp.
+   * * Not being parsable (applicable for CSV sources).
+   * </pre>
+   *
+   * <code>int64 invalid_row_count = 6;</code>
+   *
+   * @return The invalidRowCount.
+   */
+  long getInvalidRowCount();
 }

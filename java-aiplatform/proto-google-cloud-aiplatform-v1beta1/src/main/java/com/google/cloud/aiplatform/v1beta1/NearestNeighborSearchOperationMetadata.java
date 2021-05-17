@@ -196,7 +196,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -208,7 +208,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -766,7 +766,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -789,7 +789,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -1572,7 +1572,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1594,7 +1594,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1616,7 +1616,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1637,7 +1637,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1654,7 +1654,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1953,7 +1953,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -1965,7 +1965,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -2206,7 +2206,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -2229,7 +2229,7 @@ public final class NearestNeighborSearchOperationMetadata
      *
      *
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -2852,7 +2852,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2874,7 +2874,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2896,7 +2896,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2917,7 +2917,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2934,7 +2934,7 @@ public final class NearestNeighborSearchOperationMetadata
        *
        *
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>

@@ -53,28 +53,28 @@ public final class FeaturestoreProto {
           + "beta1\032\037google/api/field_behavior.proto\032\031"
           + "google/api/resource.proto\032\037google/protob"
           + "uf/timestamp.proto\032\034google/api/annotatio"
-          + "ns.proto\"\315\005\n\014Featurestore\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\0224\n\013creat"
-          + "e_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022\021\n\004etag\030\005 \001(\tB\003\340A\001\022N"
-          + "\n\006labels\030\006 \003(\01329.google.cloud.aiplatform"
-          + ".v1beta1.Featurestore.LabelsEntryB\003\340A\001\022e"
-          + "\n\025online_serving_config\030\007 \001(\0132A.google.c"
-          + "loud.aiplatform.v1beta1.Featurestore.Onl"
-          + "ineServingConfigB\003\340A\002\022G\n\005state\030\010 \001(\01623.g"
-          + "oogle.cloud.aiplatform.v1beta1.Featurest"
-          + "ore.StateB\003\340A\003\0324\n\023OnlineServingConfig\022\035\n"
-          + "\020fixed_node_count\030\002 \001(\005B\003\340A\002\032-\n\013LabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022"
-          + "\014\n\010UPDATING\020\002:q\352An\n&aiplatform.googleapi"
-          + "s.com/Featurestore\022Dprojects/{project}/l"
-          + "ocations/{location}/featurestores/{featu"
-          + "restore}B\205\001\n#com.google.cloud.aiplatform"
-          + ".v1beta1B\021FeaturestoreProtoP\001ZIgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatformb\006proto3"
+          + "ns.proto\"\262\005\n\014Featurestore\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004etag"
+          + "\030\005 \001(\tB\003\340A\001\022N\n\006labels\030\006 \003(\01329.google.clo"
+          + "ud.aiplatform.v1beta1.Featurestore.Label"
+          + "sEntryB\003\340A\001\022e\n\025online_serving_config\030\007 \001"
+          + "(\0132A.google.cloud.aiplatform.v1beta1.Fea"
+          + "turestore.OnlineServingConfigB\003\340A\002\022G\n\005st"
+          + "ate\030\010 \001(\01623.google.cloud.aiplatform.v1be"
+          + "ta1.Featurestore.StateB\003\340A\003\0324\n\023OnlineSer"
+          + "vingConfig\022\035\n\020fixed_node_count\030\002 \001(\005B\003\340A"
+          + "\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
+          + "\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:q\352An\n&aiplatf"
+          + "orm.googleapis.com/Featurestore\022Dproject"
+          + "s/{project}/locations/{location}/feature"
+          + "stores/{featurestore}B\205\001\n#com.google.clo"
+          + "ud.aiplatform.v1beta1B\021FeaturestoreProto"
+          + "P\001ZIgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,14 +91,7 @@ public final class FeaturestoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Featurestore_descriptor,
             new java.lang.String[] {
-              "Name",
-              "DisplayName",
-              "CreateTime",
-              "UpdateTime",
-              "Etag",
-              "Labels",
-              "OnlineServingConfig",
-              "State",
+              "Name", "CreateTime", "UpdateTime", "Etag", "Labels", "OnlineServingConfig", "State",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Featurestore_OnlineServingConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Featurestore_descriptor

@@ -54,39 +54,6 @@ public interface FeaturestoreOrBuilder
    *
    *
    * <pre>
-   * Required. The user-defined name of the Featurestore.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * Display name of a Featurestore must be unique within a single Project and
-   * Location Pair.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The displayName.
-   */
-  java.lang.String getDisplayName();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The user-defined name of the Featurestore.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * Display name of a Featurestore must be unique within a single Project and
-   * Location Pair.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for displayName.
-   */
-  com.google.protobuf.ByteString getDisplayNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Output only. Timestamp when this Featurestore was created.
    * </pre>
    *
