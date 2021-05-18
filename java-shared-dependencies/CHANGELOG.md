@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.1.0...v1.2.0) (2021-05-18)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.31.5 ([#353](https://www.github.com/googleapis/java-shared-dependencies/issues/353)) ([8d72ab0](https://www.github.com/googleapis/java-shared-dependencies/commit/8d72ab003e08c864aedc17fc190ba26f393bf0c7))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#360](https://www.github.com/googleapis/java-shared-dependencies/issues/360)) ([8f952d0](https://www.github.com/googleapis/java-shared-dependencies/commit/8f952d05745358fc426a1a2dcb688da5d5010239))
+* update dependency com.google.protobuf:protobuf-bom to v3.17.0 ([#355](https://www.github.com/googleapis/java-shared-dependencies/issues/355)) ([09858fb](https://www.github.com/googleapis/java-shared-dependencies/commit/09858fb4f1b78a77e828501597d20df4db0ebfcf))
+* update dependency io.grpc:grpc-bom to v1.37.1 ([#359](https://www.github.com/googleapis/java-shared-dependencies/issues/359)) ([bc9869e](https://www.github.com/googleapis/java-shared-dependencies/commit/bc9869e914314f951afd69f2acae95c414398f43))
+* update google.common-protos.version to v2.2.1 ([#358](https://www.github.com/googleapis/java-shared-dependencies/issues/358)) ([a3ed764](https://www.github.com/googleapis/java-shared-dependencies/commit/a3ed764a0e5143ee323d4b69c9747b8265d349e2))
+* update iam.version to v1.0.14 ([#352](https://www.github.com/googleapis/java-shared-dependencies/issues/352)) ([bea9a01](https://www.github.com/googleapis/java-shared-dependencies/commit/bea9a01788ac1332a4bc7e06574ef5701700fe90))
+
 ## [1.1.0](https://www.github.com/googleapis/java-shared-dependencies/compare/1.0.0...v1.1.0) (2021-05-10)
 
 
