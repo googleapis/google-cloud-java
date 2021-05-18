@@ -172,7 +172,7 @@
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
         <artifactId>datastore-v1-proto-client</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.4-SNAPSHOT</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
         <exclusions>
           <exclusion>
             <groupId>com.google.api.grpc</groupId>
@@ -220,6 +220,7 @@
   </build>
 
   <modules>
+    <module>datastore-v1-proto-client</module>
     <module>proto-google-cloud-datastore-v1</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-datastore-bom</module>
