@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.131.0](https://www.github.com/googleapis/java-bigquery/compare/v1.130.0...v1.131.0) (2021-05-18)
+
+
+### Features
+
+* add ParquetOptions support and expose it in LoadJobConfiguration and ExternalTableDefinition classes ([#1318](https://www.github.com/googleapis/java-bigquery/issues/1318)) ([72b1715](https://www.github.com/googleapis/java-bigquery/commit/72b17151c4f3c4a3d298d3791e58c3112a14b4f5))
+
 ## [1.130.0](https://www.github.com/googleapis/java-bigquery/compare/v1.129.0...v1.130.0) (2021-05-15)
 
 
