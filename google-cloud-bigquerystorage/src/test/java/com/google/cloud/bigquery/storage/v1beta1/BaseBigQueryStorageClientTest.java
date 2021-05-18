@@ -28,8 +28,10 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -82,7 +84,15 @@ public class BaseBigQueryStorageClientTest {
 
   @Test
   public void createReadSessionTest() throws Exception {
-    Storage.ReadSession expectedResponse = Storage.ReadSession.newBuilder().build();
+    Storage.ReadSession expectedResponse =
+        Storage.ReadSession.newBuilder()
+            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .addAllStreams(new ArrayList<Storage.Stream>())
+            .setTableReference(TableReferenceProto.TableReference.newBuilder().build())
+            .setTableModifiers(TableReferenceProto.TableModifiers.newBuilder().build())
+            .setShardingStrategy(Storage.ShardingStrategy.forNumber(0))
+            .build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     TableReferenceProto.TableReference tableReference =
@@ -127,7 +137,15 @@ public class BaseBigQueryStorageClientTest {
 
   @Test
   public void createReadSessionTest2() throws Exception {
-    Storage.ReadSession expectedResponse = Storage.ReadSession.newBuilder().build();
+    Storage.ReadSession expectedResponse =
+        Storage.ReadSession.newBuilder()
+            .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .addAllStreams(new ArrayList<Storage.Stream>())
+            .setTableReference(TableReferenceProto.TableReference.newBuilder().build())
+            .setTableModifiers(TableReferenceProto.TableModifiers.newBuilder().build())
+            .setShardingStrategy(Storage.ShardingStrategy.forNumber(0))
+            .build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     TableReferenceProto.TableReference tableReference =
@@ -172,9 +190,17 @@ public class BaseBigQueryStorageClientTest {
 
   @Test
   public void readRowsTest() throws Exception {
-    Storage.ReadRowsResponse expectedResponse = Storage.ReadRowsResponse.newBuilder().build();
+    Storage.ReadRowsResponse expectedResponse =
+        Storage.ReadRowsResponse.newBuilder()
+            .setRowCount(1340416618)
+            .setStatus(Storage.StreamStatus.newBuilder().build())
+            .setThrottleStatus(Storage.ThrottleStatus.newBuilder().build())
+            .build();
     mockBigQueryStorage.addResponse(expectedResponse);
-    Storage.ReadRowsRequest request = Storage.ReadRowsRequest.newBuilder().build();
+    Storage.ReadRowsRequest request =
+        Storage.ReadRowsRequest.newBuilder()
+            .setReadPosition(Storage.StreamPosition.newBuilder().build())
+            .build();
 
     MockStreamObserver<Storage.ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -191,7 +217,10 @@ public class BaseBigQueryStorageClientTest {
   public void readRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
-    Storage.ReadRowsRequest request = Storage.ReadRowsRequest.newBuilder().build();
+    Storage.ReadRowsRequest request =
+        Storage.ReadRowsRequest.newBuilder()
+            .setReadPosition(Storage.StreamPosition.newBuilder().build())
+            .build();
 
     MockStreamObserver<Storage.ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -212,7 +241,9 @@ public class BaseBigQueryStorageClientTest {
   @Test
   public void batchCreateReadSessionStreamsTest() throws Exception {
     Storage.BatchCreateReadSessionStreamsResponse expectedResponse =
-        Storage.BatchCreateReadSessionStreamsResponse.newBuilder().build();
+        Storage.BatchCreateReadSessionStreamsResponse.newBuilder()
+            .addAllStreams(new ArrayList<Storage.Stream>())
+            .build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     Storage.ReadSession session = Storage.ReadSession.newBuilder().build();
@@ -288,7 +319,10 @@ public class BaseBigQueryStorageClientTest {
   @Test
   public void splitReadStreamTest() throws Exception {
     Storage.SplitReadStreamResponse expectedResponse =
-        Storage.SplitReadStreamResponse.newBuilder().build();
+        Storage.SplitReadStreamResponse.newBuilder()
+            .setPrimaryStream(Storage.Stream.newBuilder().build())
+            .setRemainderStream(Storage.Stream.newBuilder().build())
+            .build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     Storage.Stream originalStream = Storage.Stream.newBuilder().build();

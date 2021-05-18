@@ -263,8 +263,13 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.CreateReadSessionRequest request =
    *       Storage.CreateReadSessionRequest.newBuilder()
+   *           .setTableReference(TableReferenceProto.TableReference.newBuilder().build())
    *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setTableModifiers(TableReferenceProto.TableModifiers.newBuilder().build())
    *           .setRequestedStreams(1017221410)
+   *           .setReadOptions(ReadOptions.TableReadOptions.newBuilder().build())
+   *           .setFormat(Storage.DataFormat.forNumber(0))
+   *           .setShardingStrategy(Storage.ShardingStrategy.forNumber(0))
    *           .build();
    *   Storage.ReadSession response = baseBigQueryStorageClient.createReadSession(request);
    * }
@@ -296,8 +301,13 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.CreateReadSessionRequest request =
    *       Storage.CreateReadSessionRequest.newBuilder()
+   *           .setTableReference(TableReferenceProto.TableReference.newBuilder().build())
    *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setTableModifiers(TableReferenceProto.TableModifiers.newBuilder().build())
    *           .setRequestedStreams(1017221410)
+   *           .setReadOptions(ReadOptions.TableReadOptions.newBuilder().build())
+   *           .setFormat(Storage.DataFormat.forNumber(0))
+   *           .setShardingStrategy(Storage.ShardingStrategy.forNumber(0))
    *           .build();
    *   ApiFuture<Storage.ReadSession> future =
    *       baseBigQueryStorageClient.createReadSessionCallable().futureCall(request);
@@ -326,7 +336,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
-   *   Storage.ReadRowsRequest request = Storage.ReadRowsRequest.newBuilder().build();
+   *   Storage.ReadRowsRequest request =
+   *       Storage.ReadRowsRequest.newBuilder()
+   *           .setReadPosition(Storage.StreamPosition.newBuilder().build())
+   *           .build();
    *   ServerStream<Storage.ReadRowsResponse> stream =
    *       baseBigQueryStorageClient.readRowsCallable().call(request);
    *   for (Storage.ReadRowsResponse response : stream) {
@@ -383,6 +396,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.BatchCreateReadSessionStreamsRequest request =
    *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
+   *           .setSession(Storage.ReadSession.newBuilder().build())
    *           .setRequestedStreams(1017221410)
    *           .build();
    *   Storage.BatchCreateReadSessionStreamsResponse response =
@@ -409,6 +423,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.BatchCreateReadSessionStreamsRequest request =
    *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
+   *           .setSession(Storage.ReadSession.newBuilder().build())
    *           .setRequestedStreams(1017221410)
    *           .build();
    *   ApiFuture<Storage.BatchCreateReadSessionStreamsResponse> future =
@@ -475,7 +490,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
-   *   Storage.FinalizeStreamRequest request = Storage.FinalizeStreamRequest.newBuilder().build();
+   *   Storage.FinalizeStreamRequest request =
+   *       Storage.FinalizeStreamRequest.newBuilder()
+   *           .setStream(Storage.Stream.newBuilder().build())
+   *           .build();
    *   baseBigQueryStorageClient.finalizeStream(request);
    * }
    * }</pre>
@@ -505,7 +523,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
-   *   Storage.FinalizeStreamRequest request = Storage.FinalizeStreamRequest.newBuilder().build();
+   *   Storage.FinalizeStreamRequest request =
+   *       Storage.FinalizeStreamRequest.newBuilder()
+   *           .setStream(Storage.Stream.newBuilder().build())
+   *           .build();
    *   ApiFuture<Empty> future =
    *       baseBigQueryStorageClient.finalizeStreamCallable().futureCall(request);
    *   // Do something.
@@ -569,7 +590,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.SplitReadStreamRequest request =
-   *       Storage.SplitReadStreamRequest.newBuilder().setFraction(-1653751294).build();
+   *       Storage.SplitReadStreamRequest.newBuilder()
+   *           .setOriginalStream(Storage.Stream.newBuilder().build())
+   *           .setFraction(-1653751294)
+   *           .build();
    *   Storage.SplitReadStreamResponse response = baseBigQueryStorageClient.splitReadStream(request);
    * }
    * }</pre>
@@ -601,7 +625,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.SplitReadStreamRequest request =
-   *       Storage.SplitReadStreamRequest.newBuilder().setFraction(-1653751294).build();
+   *       Storage.SplitReadStreamRequest.newBuilder()
+   *           .setOriginalStream(Storage.Stream.newBuilder().build())
+   *           .setFraction(-1653751294)
+   *           .build();
    *   ApiFuture<Storage.SplitReadStreamResponse> future =
    *       baseBigQueryStorageClient.splitReadStreamCallable().futureCall(request);
    *   // Do something.

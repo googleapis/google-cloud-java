@@ -142,6 +142,16 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>LZ4_FRAME = 1;</code>
      */
     LZ4_FRAME(1),
+    /**
+     *
+     *
+     * <pre>
+     * Zstandard compression.
+     * </pre>
+     *
+     * <code>ZSTD = 2;</code>
+     */
+    ZSTD(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -165,6 +175,16 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>LZ4_FRAME = 1;</code>
      */
     public static final int LZ4_FRAME_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Zstandard compression.
+     * </pre>
+     *
+     * <code>ZSTD = 2;</code>
+     */
+    public static final int ZSTD_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -194,6 +214,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
           return COMPRESSION_UNSPECIFIED;
         case 1:
           return LZ4_FRAME;
+        case 2:
+          return ZSTD;
         default:
           return null;
       }

@@ -1105,6 +1105,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     com.google.protobuf.ByteString getRowRestrictionBytes();
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1113,6 +1119,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     boolean hasArrowSerializationOptions();
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1121,6 +1133,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions getArrowSerializationOptions();
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1445,6 +1463,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER = 3;
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1456,6 +1480,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return outputFormatSerializationOptionsCase_ == 3;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1472,6 +1502,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>
      * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -2262,6 +2298,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder>
           arrowSerializationOptionsBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2273,6 +2315,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return outputFormatSerializationOptionsCase_ == 3;
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2298,6 +2346,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2317,6 +2371,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2333,6 +2393,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2364,6 +2430,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2385,6 +2457,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2394,6 +2472,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return getArrowSerializationOptionsFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2414,6 +2498,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>
        * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
@@ -2604,10 +2694,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2623,10 +2712,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2642,10 +2730,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2871,8 +2958,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>
@@ -2889,8 +2975,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>
@@ -2909,8 +2994,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>
@@ -3776,10 +3860,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3795,10 +3878,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3820,10 +3902,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3847,10 +3928,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3871,10 +3951,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3900,10 +3979,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3925,10 +4003,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3944,10 +4021,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -3967,10 +4043,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>
@@ -4680,8 +4755,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4697,8 +4771,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4720,8 +4793,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4746,8 +4818,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4769,8 +4840,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4800,8 +4870,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4823,8 +4892,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4841,8 +4909,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
@@ -4863,8 +4930,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>
