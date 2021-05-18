@@ -234,6 +234,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *       ConnectionProto.CreateConnectionRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConnectionId("connectionId1923106969")
+   *           .setConnection(ConnectionProto.Connection.newBuilder().build())
    *           .build();
    *   ConnectionProto.Connection response = connectionServiceClient.createConnection(request);
    * }
@@ -259,6 +260,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *       ConnectionProto.CreateConnectionRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConnectionId("connectionId1923106969")
+   *           .setConnection(ConnectionProto.Connection.newBuilder().build())
    *           .build();
    *   ApiFuture<ConnectionProto.Connection> future =
    *       connectionServiceClient.createConnectionCallable().futureCall(request);
@@ -562,6 +564,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *   ConnectionProto.UpdateConnectionRequest request =
    *       ConnectionProto.UpdateConnectionRequest.newBuilder()
    *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setConnection(ConnectionProto.Connection.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ConnectionProto.Connection response = connectionServiceClient.updateConnection(request);
@@ -588,6 +591,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *   ConnectionProto.UpdateConnectionRequest request =
    *       ConnectionProto.UpdateConnectionRequest.newBuilder()
    *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setConnection(ConnectionProto.Connection.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<ConnectionProto.Connection> future =
@@ -643,6 +647,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *   ConnectionProto.UpdateConnectionCredentialRequest request =
    *       ConnectionProto.UpdateConnectionCredentialRequest.newBuilder()
    *           .setName("name3373707")
+   *           .setCredential(ConnectionProto.ConnectionCredential.newBuilder().build())
    *           .build();
    *   connectionServiceClient.updateConnectionCredential(request);
    * }
@@ -667,6 +672,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *   ConnectionProto.UpdateConnectionCredentialRequest request =
    *       ConnectionProto.UpdateConnectionCredentialRequest.newBuilder()
    *           .setName("name3373707")
+   *           .setCredential(ConnectionProto.ConnectionCredential.newBuilder().build())
    *           .build();
    *   ApiFuture<Empty> future =
    *       connectionServiceClient.updateConnectionCredentialCallable().futureCall(request);

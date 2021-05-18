@@ -90,7 +90,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void createConnectionTest() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -133,7 +141,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void createConnectionTest2() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -176,7 +192,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void getConnectionTest() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
@@ -212,7 +236,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void getConnectionTest2() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -249,7 +281,10 @@ public class ConnectionServiceClientTest {
   @Test
   public void listConnectionsTest() throws Exception {
     ConnectionProto.ListConnectionsResponse expectedResponse =
-        ConnectionProto.ListConnectionsResponse.newBuilder().build();
+        ConnectionProto.ListConnectionsResponse.newBuilder()
+            .setNextPageToken("nextPageToken-1386094857")
+            .addAllConnections(new ArrayList<ConnectionProto.Connection>())
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -290,7 +325,10 @@ public class ConnectionServiceClientTest {
   @Test
   public void listConnectionsTest2() throws Exception {
     ConnectionProto.ListConnectionsResponse expectedResponse =
-        ConnectionProto.ListConnectionsResponse.newBuilder().build();
+        ConnectionProto.ListConnectionsResponse.newBuilder()
+            .setNextPageToken("nextPageToken-1386094857")
+            .addAllConnections(new ArrayList<ConnectionProto.Connection>())
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -330,7 +368,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void updateConnectionTest() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
@@ -373,7 +419,15 @@ public class ConnectionServiceClientTest {
 
   @Test
   public void updateConnectionTest2() throws Exception {
-    ConnectionProto.Connection expectedResponse = ConnectionProto.Connection.newBuilder().build();
+    ConnectionProto.Connection expectedResponse =
+        ConnectionProto.Connection.newBuilder()
+            .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+            .setFriendlyName("friendlyName461933014")
+            .setDescription("description-1724546052")
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setHasCredential(true)
+            .build();
     mockConnectionService.addResponse(expectedResponse);
 
     String name = "name3373707";
