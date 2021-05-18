@@ -390,6 +390,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
+  public ParquetOptions getParquetOptions() {
+    return formatOptions instanceof ParquetOptions ? (ParquetOptions) formatOptions : null;
+  }
+
   @Override
   public DatastoreBackupOptions getDatastoreBackupOptions() {
     return formatOptions instanceof DatastoreBackupOptions
@@ -544,6 +548,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         // todo(mziccard) remove checked cast or comment when #1044 is closed
         loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.getSkipLeadingRows()));
       }
+    }
+    if (getParquetOptions() != null) {
+      ParquetOptions parquetOptions = getParquetOptions();
+      loadConfigurationPb.setParquetOptions(parquetOptions.toPb());
     }
     if (schema != null) {
       loadConfigurationPb.setSchema(schema.toPb());

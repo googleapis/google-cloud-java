@@ -77,6 +77,7 @@ import com.google.cloud.bigquery.MaterializedViewDefinition;
 import com.google.cloud.bigquery.Model;
 import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
+import com.google.cloud.bigquery.ParquetOptions;
 import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
@@ -1840,10 +1841,13 @@ public class ITBigQueryTest {
             .setSourceUriPrefix(sourceUriPrefix)
             .build();
     TableId tableId = TableId.of(DATASET, tableName);
+    ParquetOptions parquetOptions =
+        ParquetOptions.newBuilder().setEnableListInference(true).setEnumAsString(true).build();
     ExternalTableDefinition externalTable =
         ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.parquet())
             .setAutodetect(true)
             .setHivePartitioningOptions(hivePartitioningOptions)
+            .setFormatOptions(parquetOptions)
             .build();
     assertNotNull(bigquery.create(TableInfo.of(tableId, externalTable)));
     String query =
@@ -1866,6 +1870,8 @@ public class ITBigQueryTest {
         "gs://"
             + CLOUD_SAMPLES_DATA
             + "/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
+    ParquetOptions parquetOptions =
+        ParquetOptions.newBuilder().setEnableListInference(true).setEnumAsString(true).build();
     HivePartitioningOptions hivePartitioningOptions =
         HivePartitioningOptions.newBuilder()
             .setMode("CUSTOM")
@@ -1877,6 +1883,7 @@ public class ITBigQueryTest {
         ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.parquet())
             .setAutodetect(true)
             .setHivePartitioningOptions(hivePartitioningOptions)
+            .setFormatOptions(parquetOptions)
             .build();
     assertNotNull(bigquery.create(TableInfo.of(tableId, externalTable)));
     String query =

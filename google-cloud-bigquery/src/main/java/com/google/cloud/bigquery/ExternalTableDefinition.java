@@ -449,6 +449,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         builder.setFormatOptions(
             BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
       }
+      if (externalDataConfiguration.getParquetOptions() != null) {
+        builder.setFormatOptions(
+            ParquetOptions.fromPb(externalDataConfiguration.getParquetOptions()));
+      }
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
       if (externalDataConfiguration.getHivePartitioningOptions() != null) {
@@ -490,6 +494,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (externalDataConfiguration.getBigtableOptions() != null) {
       builder.setFormatOptions(
           BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+    }
+    if (externalDataConfiguration.getParquetOptions() != null) {
+      builder.setFormatOptions(
+          ParquetOptions.fromPb(externalDataConfiguration.getParquetOptions()));
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());

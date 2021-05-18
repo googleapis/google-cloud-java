@@ -126,6 +126,8 @@ public class FormatOptions implements Serializable {
       return googleSheets();
     } else if (format.equals(BIGTABLE)) {
       return bigtable();
+    } else if (format.equals(PARQUET)) {
+      return parquet();
     }
     return new FormatOptions(format);
   }
