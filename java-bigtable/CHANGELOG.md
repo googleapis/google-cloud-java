@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.25.0](https://www.github.com/googleapis/java-bigtable/compare/v1.24.1...v1.25.0) (2021-05-19)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#815](https://www.github.com/googleapis/java-bigtable/issues/815)) ([ea558b0](https://www.github.com/googleapis/java-bigtable/commit/ea558b05b369c6131f94e471e5652866a037b948))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#814](https://www.github.com/googleapis/java-bigtable/issues/814)) ([1299d72](https://www.github.com/googleapis/java-bigtable/commit/1299d727066e0aa24319b99d438503ea0cf60d86))
+
 ### [1.24.1](https://www.github.com/googleapis/java-bigtable/compare/v1.24.0...v1.24.1) (2021-05-11)
 
 
