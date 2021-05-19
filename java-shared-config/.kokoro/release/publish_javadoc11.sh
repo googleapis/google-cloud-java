@@ -42,6 +42,8 @@ mvn clean site -B -q -P docFX
 
 # copy README to docfx-yml dir and rename index.md
 cp README.md target/docfx-yml/index.md
+# copy CHANGELOG to docfx-yml dir and rename history.md
+cp CHANGELOG.md target/docfx-yml/history.md
 
 pushd target/docfx-yml
 
@@ -49,6 +51,13 @@ pushd target/docfx-yml
 python3 -m docuploader create-metadata \
  --name ${NAME} \
  --version ${VERSION} \
+ --xrefs devsite://java/gax \
+ --xrefs devsite://java/google-cloud-core \
+ --xrefs devsite://java/api-common \
+ --xrefs devsite://java/proto-google-common-protos \
+ --xrefs devsite://java/google-api-client \
+ --xrefs devsite://java/google-http-client \
+ --xrefs devsite://java/protobuf \
  --language java
 
 # upload yml to production bucket
