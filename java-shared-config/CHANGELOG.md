@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.11.4](https://www.github.com/googleapis/java-shared-config/compare/v0.11.2...v0.11.4) (2021-05-19)
+
+
+### Features
+
+* update cloud-rad doclet ([#260](https://www.github.com/googleapis/java-shared-config/issues/260)) ([9f73e89](https://www.github.com/googleapis/java-shared-config/commit/9f73e89660956b90c235e99cfbdf440996a844e5))
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v8.42 ([#234](https://www.github.com/googleapis/java-shared-config/issues/234)) ([3ff0730](https://www.github.com/googleapis/java-shared-config/commit/3ff073033378e8a3fde62c52dbf3ad9820cc4538))
+
 ### [0.11.2](https://www.github.com/googleapis/java-shared-config/compare/v0.11.1...v0.11.2) (2021-04-22)
 
 
