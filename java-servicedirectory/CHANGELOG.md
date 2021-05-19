@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.3...v1.2.4) (2021-05-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#402](https://www.github.com/googleapis/java-servicedirectory/issues/402)) ([2a19e92](https://www.github.com/googleapis/java-servicedirectory/commit/2a19e9247129c607b50f5d50be373ef5a05b98ba))
+
 ### [1.2.3](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.2...v1.2.3) (2021-05-11)
 
 
