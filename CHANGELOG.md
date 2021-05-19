@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.21.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.6...v1.21.0) (2021-05-19)
+
+
+### Features
+
+* Add ZSTD compression as an option for Arrow proto changes ([d910a89](https://www.github.com/googleapis/java-bigquerystorage/commit/d910a8903d0eed6e8a8a4b7183dc7a0f401f66da))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.131.0 ([#1083](https://www.github.com/googleapis/java-bigquerystorage/issues/1083)) ([70ff6d5](https://www.github.com/googleapis/java-bigquerystorage/commit/70ff6d5ffaaa3ab3a2d6c940403b96ab6f711312))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#1084](https://www.github.com/googleapis/java-bigquerystorage/issues/1084)) ([99fae33](https://www.github.com/googleapis/java-bigquerystorage/commit/99fae331b2d97ff63b61750d7284cd04f6abc2e6))
+
 ### [1.20.6](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.5...v1.20.6) (2021-05-18)
 
 
