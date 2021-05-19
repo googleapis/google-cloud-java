@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.119.5](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.4...v0.119.5) (2021-05-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#493](https://www.github.com/googleapis/java-resourcemanager/issues/493)) ([df43bba](https://www.github.com/googleapis/java-resourcemanager/commit/df43bba788bbaa7d73e7f7024a60a37a1a3c7974))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#489](https://www.github.com/googleapis/java-resourcemanager/issues/489)) ([a46720f](https://www.github.com/googleapis/java-resourcemanager/commit/a46720f3c0a7528ef9eda7e1c80c1665edee6ea1))
+
 ### [0.119.4](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.3...v0.119.4) (2021-05-11)
 
 
