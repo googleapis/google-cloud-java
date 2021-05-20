@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-grafeas/compare/v1.1.5...v1.2.0) (2021-05-20)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#310](https://www.github.com/googleapis/java-grafeas/issues/310)) ([bac7c18](https://www.github.com/googleapis/java-grafeas/commit/bac7c1897e780a7340a1ffa52d5c144d53c565bd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#309](https://www.github.com/googleapis/java-grafeas/issues/309)) ([725ac02](https://www.github.com/googleapis/java-grafeas/commit/725ac02911f6b055d2a5c06d3acf42a7615a2b93))
+
 ### [1.1.5](https://www.github.com/googleapis/java-grafeas/compare/v1.1.4...v1.1.5) (2021-05-11)
 
 
