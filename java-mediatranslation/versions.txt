@@ -2,5 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-mediatranslation:0.4.0:0.4.1-SNAPSHOT
-proto-google-cloud-mediatranslation-v1beta1:0.4.0:0.4.1-SNAPSHOT
 grpc-google-cloud-mediatranslation-v1beta1:0.4.0:0.4.1-SNAPSHOT
+proto-google-cloud-mediatranslation-v1beta1:0.4.0:0.4.1-SNAPSHOT
