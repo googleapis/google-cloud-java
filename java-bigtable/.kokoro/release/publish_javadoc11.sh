@@ -38,7 +38,7 @@ export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # V3 generates docfx yml from javadoc
 # generate yml
-mvn clean javadoc:aggregate-jar -B -q -P docFX
+mvn clean site -B -q -P docFX
 
 # copy README to docfx-yml dir and rename index.md
 cp README.md target/docfx-yml/index.md
