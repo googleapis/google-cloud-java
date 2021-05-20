@@ -32,9 +32,12 @@
  *       PatchJobs.ExecutePatchJobRequest.newBuilder()
  *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .setDescription("description-1724546052")
+ *           .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+ *           .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
  *           .setDuration(Duration.newBuilder().build())
  *           .setDryRun(true)
  *           .setDisplayName("displayName1714148973")
+ *           .setRollout(PatchJobs.PatchRollout.newBuilder().build())
  *           .build();
  *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
  * }

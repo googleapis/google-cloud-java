@@ -31,6 +31,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -84,16 +85,37 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void executePatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment(
+                PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobs.ExecutePatchJobRequest request =
         PatchJobs.ExecutePatchJobRequest.newBuilder()
             .setParent(ProjectName.of("[PROJECT]").toString())
             .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setDryRun(true)
             .setDisplayName("displayName1714148973")
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
             .build();
 
     PatchJobs.PatchJob actualResponse = client.executePatchJob(request);
@@ -128,9 +150,12 @@ public class OsConfigServiceClientTest {
           PatchJobs.ExecutePatchJobRequest.newBuilder()
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setDescription("description-1724546052")
+              .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+              .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
               .setDuration(Duration.newBuilder().build())
               .setDryRun(true)
               .setDisplayName("displayName1714148973")
+              .setRollout(PatchJobs.PatchRollout.newBuilder().build())
               .build();
       client.executePatchJob(request);
       Assert.fail("No exception raised");
@@ -141,7 +166,25 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void getPatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment(
+                PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
@@ -177,7 +220,25 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void getPatchJobTest2() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment(
+                PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -213,7 +274,25 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void cancelPatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment(
+                PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobs.CancelPatchJobRequest request =
@@ -442,7 +521,17 @@ public class OsConfigServiceClientTest {
   @Test
   public void createPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -488,7 +577,17 @@ public class OsConfigServiceClientTest {
   @Test
   public void createPatchDeploymentTest2() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -534,7 +633,17 @@ public class OsConfigServiceClientTest {
   @Test
   public void getPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
@@ -571,7 +680,17 @@ public class OsConfigServiceClientTest {
   @Test
   public void getPatchDeploymentTest2() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .setRollout(PatchJobs.PatchRollout.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     String name = "name3373707";
