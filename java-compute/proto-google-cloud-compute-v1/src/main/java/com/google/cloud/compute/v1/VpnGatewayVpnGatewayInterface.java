@@ -38,6 +38,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
   }
 
   private VpnGatewayVpnGatewayInterface() {
+    interconnectAttachment_ = "";
     ipAddress_ = "";
   }
 
@@ -77,10 +78,17 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
               id_ = input.readUInt32();
               break;
             }
-          case -1044789534:
+          case -1829885022:
             {
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
+              interconnectAttachment_ = s;
+              break;
+            }
+          case -1044789534:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
               ipAddress_ = s;
               break;
             }
@@ -152,6 +160,73 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     return id_;
   }
 
+  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 308135284;
+  private volatile java.lang.Object interconnectAttachment_;
+  /**
+   *
+   *
+   * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return Whether the interconnectAttachment field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterconnectAttachment() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return The interconnectAttachment.
+   */
+  @java.lang.Override
+  public java.lang.String getInterconnectAttachment() {
+    java.lang.Object ref = interconnectAttachment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interconnectAttachment_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return The bytes for interconnectAttachment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInterconnectAttachmentBytes() {
+    java.lang.Object ref = interconnectAttachment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      interconnectAttachment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
   private volatile java.lang.Object ipAddress_;
   /**
@@ -167,7 +242,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasIpAddress() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -234,6 +309,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       output.writeUInt32(3355, id_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 308135284, interconnectAttachment_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     unknownFields.writeTo(output);
@@ -249,6 +328,11 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3355, id_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              308135284, interconnectAttachment_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
@@ -271,6 +355,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     if (hasId()) {
       if (getId() != other.getId()) return false;
     }
+    if (hasInterconnectAttachment() != other.hasInterconnectAttachment()) return false;
+    if (hasInterconnectAttachment()) {
+      if (!getInterconnectAttachment().equals(other.getInterconnectAttachment())) return false;
+    }
     if (hasIpAddress() != other.hasIpAddress()) return false;
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
@@ -289,6 +377,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
+    }
+    if (hasInterconnectAttachment()) {
+      hash = (37 * hash) + INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getInterconnectAttachment().hashCode();
     }
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
@@ -442,8 +534,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       super.clear();
       id_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ipAddress_ = "";
+      interconnectAttachment_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      ipAddress_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -479,6 +573,10 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
+      }
+      result.interconnectAttachment_ = interconnectAttachment_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.ipAddress_ = ipAddress_;
       result.bitField0_ = to_bitField0_;
@@ -535,8 +633,13 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       if (other.hasId()) {
         setId(other.getId());
       }
-      if (other.hasIpAddress()) {
+      if (other.hasInterconnectAttachment()) {
         bitField0_ |= 0x00000002;
+        interconnectAttachment_ = other.interconnectAttachment_;
+        onChanged();
+      }
+      if (other.hasIpAddress()) {
+        bitField0_ |= 0x00000004;
         ipAddress_ = other.ipAddress_;
         onChanged();
       }
@@ -639,6 +742,132 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       return this;
     }
 
+    private java.lang.Object interconnectAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @return Whether the interconnectAttachment field is set.
+     */
+    public boolean hasInterconnectAttachment() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @return The interconnectAttachment.
+     */
+    public java.lang.String getInterconnectAttachment() {
+      java.lang.Object ref = interconnectAttachment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interconnectAttachment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @return The bytes for interconnectAttachment.
+     */
+    public com.google.protobuf.ByteString getInterconnectAttachmentBytes() {
+      java.lang.Object ref = interconnectAttachment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        interconnectAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @param value The interconnectAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterconnectAttachment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      interconnectAttachment_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInterconnectAttachment() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      interconnectAttachment_ = getDefaultInstance().getInterconnectAttachment();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+     * Not currently available in all Interconnect locations.
+     * </pre>
+     *
+     * <code>string interconnect_attachment = 308135284;</code>
+     *
+     * @param value The bytes for interconnectAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterconnectAttachmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      interconnectAttachment_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object ipAddress_ = "";
     /**
      *
@@ -652,7 +881,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return Whether the ipAddress field is set.
      */
     public boolean hasIpAddress() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -714,7 +943,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       ipAddress_ = value;
       onChanged();
       return this;
@@ -731,7 +960,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       ipAddress_ = getDefaultInstance().getIpAddress();
       onChanged();
       return this;
@@ -753,7 +982,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       ipAddress_ = value;
       onChanged();
       return this;

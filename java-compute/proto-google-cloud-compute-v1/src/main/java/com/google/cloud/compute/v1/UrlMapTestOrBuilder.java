@@ -64,6 +64,131 @@ public interface UrlMapTestOrBuilder
    *
    *
    * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return Whether the expectedOutputUrl field is set.
+   */
+  boolean hasExpectedOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The expectedOutputUrl.
+   */
+  java.lang.String getExpectedOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The bytes for expectedOutputUrl.
+   */
+  com.google.protobuf.ByteString getExpectedOutputUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+   * expectedRedirectResponseCode cannot be set when service is set.
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return Whether the expectedRedirectResponseCode field is set.
+   */
+  boolean hasExpectedRedirectResponseCode();
+  /**
+   *
+   *
+   * <pre>
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+   * expectedRedirectResponseCode cannot be set when service is set.
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return The expectedRedirectResponseCode.
+   */
+  int getExpectedRedirectResponseCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  int getHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+      getHeadersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder getHeadersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Host portion of the URL. If headers contains a host header, then host must also match the header value.
    * </pre>
    *

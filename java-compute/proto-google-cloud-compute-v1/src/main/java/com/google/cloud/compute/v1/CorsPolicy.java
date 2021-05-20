@@ -356,7 +356,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
    * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
@@ -371,7 +371,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
    * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
@@ -386,7 +386,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
    * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
@@ -402,7 +402,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+   * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
    * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
    * </pre>
    *
@@ -1569,7 +1569,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1584,7 +1584,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1599,7 +1599,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1615,7 +1615,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1631,7 +1631,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1654,7 +1654,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1676,7 +1676,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1695,7 +1695,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *
@@ -1713,7 +1713,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see en.cppreference.com/w/cpp/regex/ecmascript
+     * Specifies the regualar expression patterns that match allowed origins. For regular expression grammar please see github.com/google/re2/wiki/Syntax
      * An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      * </pre>
      *

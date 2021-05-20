@@ -452,7 +452,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
    * <code>bool return_partial_success = 517198390;</code>
@@ -467,7 +467,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
    * </pre>
    *
    * <code>bool return_partial_success = 517198390;</code>
@@ -1557,7 +1557,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
      * <code>bool return_partial_success = 517198390;</code>
@@ -1572,7 +1572,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
      * <code>bool return_partial_success = 517198390;</code>
@@ -1587,7 +1587,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
      * <code>bool return_partial_success = 517198390;</code>
@@ -1605,7 +1605,7 @@ public final class ListMachineTypesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
      * </pre>
      *
      * <code>bool return_partial_success = 517198390;</code>

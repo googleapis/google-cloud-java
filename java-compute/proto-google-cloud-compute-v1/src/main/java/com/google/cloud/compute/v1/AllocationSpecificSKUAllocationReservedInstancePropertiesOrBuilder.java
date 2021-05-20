@@ -155,6 +155,43 @@ public interface AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuil
    *
    *
    * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  boolean hasLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The locationHint.
+   */
+  java.lang.String getLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *

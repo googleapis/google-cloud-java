@@ -303,4 +303,73 @@ public interface AutoscalingPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalingPolicyScaleInControlOrBuilder getScaleInControlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  int getScalingSchedulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  boolean containsScalingSchedules(java.lang.String key);
+  /** Use {@link #getScalingSchedulesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      getScalingSchedules();
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      getScalingSchedulesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrDefault(
+      java.lang.String key,
+      com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
+      java.lang.String key);
 }

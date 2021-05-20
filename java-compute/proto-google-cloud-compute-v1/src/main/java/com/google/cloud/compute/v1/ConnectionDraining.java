@@ -116,7 +116,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+   * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
    * <code>int32 draining_timeout_sec = 225127070;</code>
@@ -131,7 +131,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+   * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
    * </pre>
    *
    * <code>int32 draining_timeout_sec = 225127070;</code>
@@ -477,7 +477,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+     * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
      * <code>int32 draining_timeout_sec = 225127070;</code>
@@ -492,7 +492,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+     * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
      * <code>int32 draining_timeout_sec = 225127070;</code>
@@ -507,7 +507,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+     * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
      * <code>int32 draining_timeout_sec = 225127070;</code>
@@ -525,7 +525,7 @@ public final class ConnectionDraining extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The amount of time in seconds to allow existing connections to persist while on unhealthy backend VMs. Only applicable if the protocol is not UDP. The valid range is [0, 3600].
+     * Configures a duration timeout for existing requests on a removed backend instance. For supported load balancers and protocols, as described in Enabling connection draining.
      * </pre>
      *
      * <code>int32 draining_timeout_sec = 225127070;</code>

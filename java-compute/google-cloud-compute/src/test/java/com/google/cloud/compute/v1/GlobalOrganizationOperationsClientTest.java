@@ -136,6 +136,7 @@ public class GlobalOrganizationOperationsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -158,6 +159,7 @@ public class GlobalOrganizationOperationsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

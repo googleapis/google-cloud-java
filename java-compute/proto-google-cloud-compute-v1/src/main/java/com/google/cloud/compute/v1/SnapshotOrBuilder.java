@@ -507,6 +507,43 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  boolean hasLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The locationHint.
+   */
+  java.lang.String getLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -539,6 +576,31 @@ public interface SnapshotOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   /**
    *

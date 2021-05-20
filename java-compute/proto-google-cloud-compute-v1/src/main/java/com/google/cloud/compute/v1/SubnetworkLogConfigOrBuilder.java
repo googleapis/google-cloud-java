@@ -157,7 +157,7 @@ public interface SubnetworkLogConfigOrBuilder
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is INCLUDE_ALL_METADATA.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
@@ -169,7 +169,7 @@ public interface SubnetworkLogConfigOrBuilder
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is INCLUDE_ALL_METADATA.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
@@ -181,7 +181,7 @@ public interface SubnetworkLogConfigOrBuilder
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is INCLUDE_ALL_METADATA.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>

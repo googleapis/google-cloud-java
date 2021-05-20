@@ -39,6 +39,8 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   private UrlMapTest() {
     description_ = "";
+    expectedOutputUrl_ = "";
+    headers_ = java.util.Collections.emptyList();
     host_ = "";
     path_ = "";
     service_ = "";
@@ -77,21 +79,38 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
           case 25668930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000008;
               host_ = s;
               break;
             }
           case 27468074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000010;
               path_ = s;
+              break;
+            }
+          case 151104376:
+            {
+              bitField0_ |= 0x00000004;
+              expectedRedirectResponseCode_ = input.readInt32();
+              break;
+            }
+          case 2067495986:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                headers_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTestHeader>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              headers_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.UrlMapTestHeader.parser(), extensionRegistry));
               break;
             }
           case -1306643030:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000020;
               service_ = s;
               break;
             }
@@ -100,6 +119,13 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               description_ = s;
+              break;
+            }
+          case -823228222:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              expectedOutputUrl_ = s;
               break;
             }
           default:
@@ -116,6 +142,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        headers_ = java.util.Collections.unmodifiableList(headers_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -201,6 +230,183 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EXPECTED_OUTPUT_URL_FIELD_NUMBER = 433967384;
+  private volatile java.lang.Object expectedOutputUrl_;
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return Whether the expectedOutputUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpectedOutputUrl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The expectedOutputUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getExpectedOutputUrl() {
+    java.lang.Object ref = expectedOutputUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      expectedOutputUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+   * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+   * expectedOutputUrl is optional when service is specified.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The bytes for expectedOutputUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExpectedOutputUrlBytes() {
+    java.lang.Object ref = expectedOutputUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      expectedOutputUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXPECTED_REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 18888047;
+  private int expectedRedirectResponseCode_;
+  /**
+   *
+   *
+   * <pre>
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+   * expectedRedirectResponseCode cannot be set when service is set.
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return Whether the expectedRedirectResponseCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpectedRedirectResponseCode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+   * expectedRedirectResponseCode cannot be set when service is set.
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return The expectedRedirectResponseCode.
+   */
+  @java.lang.Override
+  public int getExpectedRedirectResponseCode() {
+    return expectedRedirectResponseCode_;
+  }
+
+  public static final int HEADERS_FIELD_NUMBER = 258436998;
+  private java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> headers_;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList() {
+    return headers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+      getHeadersOrBuilderList() {
+    return headers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  @java.lang.Override
+  public int getHeadersCount() {
+    return headers_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index) {
+    return headers_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder getHeadersOrBuilder(int index) {
+    return headers_.get(index);
+  }
+
   public static final int HOST_FIELD_NUMBER = 3208616;
   private volatile java.lang.Object host_;
   /**
@@ -216,7 +422,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasHost() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -280,7 +486,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPath() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -345,7 +551,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasService() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -410,17 +616,26 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3208616, host_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(18888047, expectedRedirectResponseCode_);
+    }
+    for (int i = 0; i < headers_.size(); i++) {
+      output.writeMessage(258436998, headers_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 433967384, expectedOutputUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -431,17 +646,29 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3208616, host_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              18888047, expectedRedirectResponseCode_);
+    }
+    for (int i = 0; i < headers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(258436998, headers_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(433967384, expectedOutputUrl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -462,6 +689,16 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (hasExpectedOutputUrl() != other.hasExpectedOutputUrl()) return false;
+    if (hasExpectedOutputUrl()) {
+      if (!getExpectedOutputUrl().equals(other.getExpectedOutputUrl())) return false;
+    }
+    if (hasExpectedRedirectResponseCode() != other.hasExpectedRedirectResponseCode()) return false;
+    if (hasExpectedRedirectResponseCode()) {
+      if (getExpectedRedirectResponseCode() != other.getExpectedRedirectResponseCode())
+        return false;
+    }
+    if (!getHeadersList().equals(other.getHeadersList())) return false;
     if (hasHost() != other.hasHost()) return false;
     if (hasHost()) {
       if (!getHost().equals(other.getHost())) return false;
@@ -488,6 +725,18 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasExpectedOutputUrl()) {
+      hash = (37 * hash) + EXPECTED_OUTPUT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedOutputUrl().hashCode();
+    }
+    if (hasExpectedRedirectResponseCode()) {
+      hash = (37 * hash) + EXPECTED_REDIRECT_RESPONSE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedRedirectResponseCode();
+    }
+    if (getHeadersCount() > 0) {
+      hash = (37 * hash) + HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadersList().hashCode();
     }
     if (hasHost()) {
       hash = (37 * hash) + HOST_FIELD_NUMBER;
@@ -640,7 +889,9 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getHeadersFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -648,12 +899,22 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      host_ = "";
+      expectedOutputUrl_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      path_ = "";
+      expectedRedirectResponseCode_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (headersBuilder_ == null) {
+        headers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        headersBuilder_.clear();
+      }
+      host_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
+      path_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
       service_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -690,13 +951,30 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.host_ = host_;
+      result.expectedOutputUrl_ = expectedOutputUrl_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.expectedRedirectResponseCode_ = expectedRedirectResponseCode_;
         to_bitField0_ |= 0x00000004;
       }
-      result.path_ = path_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (headersBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          headers_ = java.util.Collections.unmodifiableList(headers_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.headers_ = headers_;
+      } else {
+        result.headers_ = headersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000008;
+      }
+      result.host_ = host_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
+      result.path_ = path_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000020;
       }
       result.service_ = service_;
       result.bitField0_ = to_bitField0_;
@@ -754,18 +1032,53 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         description_ = other.description_;
         onChanged();
       }
-      if (other.hasHost()) {
+      if (other.hasExpectedOutputUrl()) {
         bitField0_ |= 0x00000002;
+        expectedOutputUrl_ = other.expectedOutputUrl_;
+        onChanged();
+      }
+      if (other.hasExpectedRedirectResponseCode()) {
+        setExpectedRedirectResponseCode(other.getExpectedRedirectResponseCode());
+      }
+      if (headersBuilder_ == null) {
+        if (!other.headers_.isEmpty()) {
+          if (headers_.isEmpty()) {
+            headers_ = other.headers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureHeadersIsMutable();
+            headers_.addAll(other.headers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.headers_.isEmpty()) {
+          if (headersBuilder_.isEmpty()) {
+            headersBuilder_.dispose();
+            headersBuilder_ = null;
+            headers_ = other.headers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            headersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getHeadersFieldBuilder()
+                    : null;
+          } else {
+            headersBuilder_.addAllMessages(other.headers_);
+          }
+        }
+      }
+      if (other.hasHost()) {
+        bitField0_ |= 0x00000010;
         host_ = other.host_;
         onChanged();
       }
       if (other.hasPath()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         path_ = other.path_;
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         service_ = other.service_;
         onChanged();
       }
@@ -920,6 +1233,565 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object expectedOutputUrl_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @return Whether the expectedOutputUrl field is set.
+     */
+    public boolean hasExpectedOutputUrl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @return The expectedOutputUrl.
+     */
+    public java.lang.String getExpectedOutputUrl() {
+      java.lang.Object ref = expectedOutputUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expectedOutputUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @return The bytes for expectedOutputUrl.
+     */
+    public com.google.protobuf.ByteString getExpectedOutputUrlBytes() {
+      java.lang.Object ref = expectedOutputUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        expectedOutputUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @param value The expectedOutputUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpectedOutputUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      expectedOutputUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExpectedOutputUrl() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expectedOutputUrl_ = getDefaultInstance().getExpectedOutputUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+     * For rules that forward requests to backends, the test passes only when expectedOutputUrl matches the request forwarded by load balancer to backends. For rules with urlRewrite, the test verifies that the forwarded request matches hostRewrite and pathPrefixRewrite in the urlRewrite action. When service is specified, expectedOutputUrl`s scheme is ignored.
+     * For rules with urlRedirect, the test passes only if expectedOutputUrl matches the URL in the load balancer's redirect response. If urlRedirect specifies https_redirect, the test passes only if the scheme in expectedOutputUrl is also set to https. If urlRedirect specifies strip_query, the test passes only if expectedOutputUrl does not contain any query parameters.
+     * expectedOutputUrl is optional when service is specified.
+     * </pre>
+     *
+     * <code>string expected_output_url = 433967384;</code>
+     *
+     * @param value The bytes for expectedOutputUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpectedOutputUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      expectedOutputUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int expectedRedirectResponseCode_;
+    /**
+     *
+     *
+     * <pre>
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+     * expectedRedirectResponseCode cannot be set when service is set.
+     * </pre>
+     *
+     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     *
+     * @return Whether the expectedRedirectResponseCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpectedRedirectResponseCode() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+     * expectedRedirectResponseCode cannot be set when service is set.
+     * </pre>
+     *
+     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     *
+     * @return The expectedRedirectResponseCode.
+     */
+    @java.lang.Override
+    public int getExpectedRedirectResponseCode() {
+      return expectedRedirectResponseCode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+     * expectedRedirectResponseCode cannot be set when service is set.
+     * </pre>
+     *
+     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     *
+     * @param value The expectedRedirectResponseCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpectedRedirectResponseCode(int value) {
+      bitField0_ |= 0x00000004;
+      expectedRedirectResponseCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For rules with urlRedirect, the test passes only if expectedRedirectResponseCode matches the HTTP status code in load balancer's redirect response.
+     * expectedRedirectResponseCode cannot be set when service is set.
+     * </pre>
+     *
+     * <code>int32 expected_redirect_response_code = 18888047;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExpectedRedirectResponseCode() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      expectedRedirectResponseCode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> headers_ =
+        java.util.Collections.emptyList();
+
+    private void ensureHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        headers_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTestHeader>(headers_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.UrlMapTestHeader,
+            com.google.cloud.compute.v1.UrlMapTestHeader.Builder,
+            com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+        headersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList() {
+      if (headersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(headers_);
+      } else {
+        return headersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public int getHeadersCount() {
+      if (headersBuilder_ == null) {
+        return headers_.size();
+      } else {
+        return headersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index) {
+      if (headersBuilder_ == null) {
+        return headers_.get(index);
+      } else {
+        return headersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder setHeaders(int index, com.google.cloud.compute.v1.UrlMapTestHeader value) {
+      if (headersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeadersIsMutable();
+        headers_.set(index, value);
+        onChanged();
+      } else {
+        headersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder setHeaders(
+        int index, com.google.cloud.compute.v1.UrlMapTestHeader.Builder builderForValue) {
+      if (headersBuilder_ == null) {
+        ensureHeadersIsMutable();
+        headers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        headersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder addHeaders(com.google.cloud.compute.v1.UrlMapTestHeader value) {
+      if (headersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeadersIsMutable();
+        headers_.add(value);
+        onChanged();
+      } else {
+        headersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder addHeaders(int index, com.google.cloud.compute.v1.UrlMapTestHeader value) {
+      if (headersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeadersIsMutable();
+        headers_.add(index, value);
+        onChanged();
+      } else {
+        headersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder addHeaders(
+        com.google.cloud.compute.v1.UrlMapTestHeader.Builder builderForValue) {
+      if (headersBuilder_ == null) {
+        ensureHeadersIsMutable();
+        headers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        headersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder addHeaders(
+        int index, com.google.cloud.compute.v1.UrlMapTestHeader.Builder builderForValue) {
+      if (headersBuilder_ == null) {
+        ensureHeadersIsMutable();
+        headers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        headersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder addAllHeaders(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.UrlMapTestHeader> values) {
+      if (headersBuilder_ == null) {
+        ensureHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headers_);
+        onChanged();
+      } else {
+        headersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder clearHeaders() {
+      if (headersBuilder_ == null) {
+        headers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        headersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public Builder removeHeaders(int index) {
+      if (headersBuilder_ == null) {
+        ensureHeadersIsMutable();
+        headers_.remove(index);
+        onChanged();
+      } else {
+        headersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapTestHeader.Builder getHeadersBuilder(int index) {
+      return getHeadersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder getHeadersOrBuilder(int index) {
+      if (headersBuilder_ == null) {
+        return headers_.get(index);
+      } else {
+        return headersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+        getHeadersOrBuilderList() {
+      if (headersBuilder_ != null) {
+        return headersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(headers_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapTestHeader.Builder addHeadersBuilder() {
+      return getHeadersFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.UrlMapTestHeader.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapTestHeader.Builder addHeadersBuilder(int index) {
+      return getHeadersFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.UrlMapTestHeader.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP headers for this request. If headers contains a host header, then host must also match the header value.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader.Builder>
+        getHeadersBuilderList() {
+      return getHeadersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.UrlMapTestHeader,
+            com.google.cloud.compute.v1.UrlMapTestHeader.Builder,
+            com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+        getHeadersFieldBuilder() {
+      if (headersBuilder_ == null) {
+        headersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.UrlMapTestHeader,
+                com.google.cloud.compute.v1.UrlMapTestHeader.Builder,
+                com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>(
+                headers_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        headers_ = null;
+      }
+      return headersBuilder_;
+    }
+
     private java.lang.Object host_ = "";
     /**
      *
@@ -933,7 +1805,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the host field is set.
      */
     public boolean hasHost() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -995,7 +1867,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       host_ = value;
       onChanged();
       return this;
@@ -1012,7 +1884,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       host_ = getDefaultInstance().getHost();
       onChanged();
       return this;
@@ -1034,7 +1906,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       host_ = value;
       onChanged();
       return this;
@@ -1053,7 +1925,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the path field is set.
      */
     public boolean hasPath() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1115,7 +1987,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       path_ = value;
       onChanged();
       return this;
@@ -1132,7 +2004,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       path_ = getDefaultInstance().getPath();
       onChanged();
       return this;
@@ -1154,7 +2026,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       path_ = value;
       onChanged();
       return this;
@@ -1174,7 +2046,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1239,7 +2111,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       service_ = value;
       onChanged();
       return this;
@@ -1257,7 +2129,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -1280,7 +2152,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       service_ = value;
       onChanged();
       return this;

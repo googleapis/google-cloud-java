@@ -174,6 +174,7 @@ public class RoutersClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region2 = "region2-690338393";
@@ -196,6 +197,7 @@ public class RoutersClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region2)
@@ -256,6 +258,7 @@ public class RoutersClientTest {
   public void getTest() {
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
+    boolean encryptedInterconnectRouter = false;
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
@@ -266,6 +269,7 @@ public class RoutersClientTest {
         Router.newBuilder()
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
+            .setEncryptedInterconnectRouter(encryptedInterconnectRouter)
             .setId(id)
             .setKind(kind)
             .setName(name)
@@ -444,6 +448,7 @@ public class RoutersClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region2 = "region2-690338393";
@@ -466,6 +471,7 @@ public class RoutersClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region2)
@@ -596,6 +602,7 @@ public class RoutersClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region2 = "region2-690338393";
@@ -618,6 +625,7 @@ public class RoutersClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region2)
@@ -738,6 +746,7 @@ public class RoutersClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region2 = "region2-690338393";
@@ -760,6 +769,7 @@ public class RoutersClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region2)

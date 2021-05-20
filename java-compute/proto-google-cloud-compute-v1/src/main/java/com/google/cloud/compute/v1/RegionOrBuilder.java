@@ -372,6 +372,31 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  boolean hasSupportsPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  boolean getSupportsPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] A list of zones available in this region, in the form of resource URLs.
    * </pre>
    *

@@ -103,6 +103,11 @@ public class ForwardingRulesSettings extends ClientSettings<ForwardingRulesSetti
     return ((ForwardingRulesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsSettings() {
+    return ((ForwardingRulesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTarget. */
   public UnaryCallSettings<SetTargetForwardingRuleRequest, Operation> setTargetSettings() {
     return ((ForwardingRulesStubSettings) getStubSettings()).setTargetSettings();
@@ -244,6 +249,12 @@ public class ForwardingRulesSettings extends ClientSettings<ForwardingRulesSetti
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchForwardingRuleRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
     }
 
     /** Returns the builder for the settings used for calls to setTarget. */

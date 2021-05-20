@@ -106,6 +106,47 @@ public interface HttpRouteActionOrBuilder
    *
    *
    * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return Whether the maxStreamDuration field is set.
+   */
+  boolean hasMaxStreamDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return The maxStreamDuration.
+   */
+  com.google.cloud.compute.v1.Duration getMaxStreamDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the policy on how requests intended for the route's backends are shadowed to a separate mirrored backend service. Loadbalancer does not wait for responses from the shadow service. Prior to sending traffic to the shadow service, the host / authority header is suffixed with -shadow.
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>

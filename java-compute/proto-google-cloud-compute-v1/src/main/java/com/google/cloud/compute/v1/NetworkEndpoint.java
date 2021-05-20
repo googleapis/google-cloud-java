@@ -462,7 +462,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -477,7 +477,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+   * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -1464,7 +1464,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -1479,7 +1479,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -1494,7 +1494,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -1512,7 +1512,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional port number of network endpoint. If not specified and the NetworkEndpointGroup.network_endpoint_type is GCE_IP_PORT, the defaultPort for the network endpoint group will be used.
+     * Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>

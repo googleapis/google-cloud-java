@@ -22,9 +22,11 @@ import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.addAccessCo
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.addResourcePoliciesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.aggregatedListMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.attachDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.bulkInsertMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.deleteAccessConfigMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.deleteMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.detachDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.getEffectiveFirewallsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.getGuestAttributesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.getIamPolicyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstancesStub.getMethodDescriptor;
@@ -93,10 +95,12 @@ public class InstancesClientTest {
               addResourcePoliciesMethodDescriptor,
               aggregatedListMethodDescriptor,
               attachDiskMethodDescriptor,
+              bulkInsertMethodDescriptor,
               deleteMethodDescriptor,
               deleteAccessConfigMethodDescriptor,
               detachDiskMethodDescriptor,
               getMethodDescriptor,
+              getEffectiveFirewallsMethodDescriptor,
               getGuestAttributesMethodDescriptor,
               getIamPolicyMethodDescriptor,
               getScreenshotMethodDescriptor,
@@ -171,6 +175,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -193,6 +198,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -266,6 +272,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -288,6 +295,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -426,6 +434,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -448,6 +457,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -507,7 +517,7 @@ public class InstancesClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteTest() {
+  public void bulkInsertTest() {
     String clientOperationId = "clientOperationId-239630617";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
@@ -518,6 +528,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -540,6 +551,101 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region)
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone2)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String zone = "zone3744684";
+    BulkInsertInstanceResource bulkInsertInstanceResourceResource =
+        BulkInsertInstanceResource.newBuilder().build();
+
+    Operation actualResponse = client.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void bulkInsertExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String zone = "zone3744684";
+      BulkInsertInstanceResource bulkInsertInstanceResourceResource =
+          BulkInsertInstanceResource.newBuilder().build();
+
+      client.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    int httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
+    String operationType = "operationType-1432962286";
+    int progress = 1001078227;
+    String region = "region-934795532";
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    String zone2 = "zone2-696322977";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -608,6 +714,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -630,6 +737,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -703,6 +811,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -725,6 +834,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -801,6 +911,7 @@ public class InstancesClientTest {
     String machineType = "machineType1838323762";
     String minCpuPlatform = "minCpuPlatform-1367699977";
     String name = "name3373707";
+    boolean satisfiesPzs = false;
     String selfLink = "selfLink-1691268851";
     boolean startRestricted = true;
     String statusMessage = "statusMessage-239442758";
@@ -823,6 +934,7 @@ public class InstancesClientTest {
             .setMachineType(machineType)
             .setMinCpuPlatform(minCpuPlatform)
             .setName(name)
+            .setSatisfiesPzs(satisfiesPzs)
             .setSelfLink(selfLink)
             .setStartRestricted(startRestricted)
             .setStatusMessage(statusMessage)
@@ -866,6 +978,58 @@ public class InstancesClientTest {
       String instance = "instance555127957";
 
       client.get(project, zone, instance);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEffectiveFirewallsTest() {
+    InstancesGetEffectiveFirewallsResponse expectedResponse =
+        InstancesGetEffectiveFirewallsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String zone = "zone3744684";
+    String instance = "instance555127957";
+    String networkInterface = "networkInterface902258792";
+
+    InstancesGetEffectiveFirewallsResponse actualResponse =
+        client.getEffectiveFirewalls(project, zone, instance, networkInterface);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEffectiveFirewallsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String zone = "zone3744684";
+      String instance = "instance555127957";
+      String networkInterface = "networkInterface902258792";
+
+      client.getEffectiveFirewalls(project, zone, instance, networkInterface);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1159,6 +1323,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1181,6 +1346,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1375,6 +1541,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1397,6 +1564,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1472,6 +1640,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1494,6 +1663,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1562,6 +1732,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1584,6 +1755,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1652,6 +1824,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1674,6 +1847,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1802,6 +1976,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1824,6 +1999,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1897,6 +2073,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1919,6 +2096,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -1994,6 +2172,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2016,6 +2195,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2089,6 +2269,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2111,6 +2292,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2181,6 +2363,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2203,6 +2386,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2277,6 +2461,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2299,6 +2484,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2369,6 +2555,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2391,6 +2578,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2465,6 +2653,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2487,6 +2676,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2562,6 +2752,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2584,6 +2775,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2654,6 +2846,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2676,6 +2869,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2744,6 +2938,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2766,6 +2961,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2834,6 +3030,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2856,6 +3053,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -2931,6 +3129,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -2953,6 +3152,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -3074,6 +3274,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -3096,6 +3297,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -3166,6 +3368,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -3188,6 +3391,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -3261,6 +3465,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -3283,6 +3488,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -3354,6 +3560,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -3376,6 +3583,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -3451,6 +3659,7 @@ public class InstancesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -3473,6 +3682,7 @@ public class InstancesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

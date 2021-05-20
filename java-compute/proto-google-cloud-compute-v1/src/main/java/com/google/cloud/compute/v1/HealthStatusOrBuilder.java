@@ -81,6 +81,80 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
+   * URL of the forwarding rule associated with the health status of the instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule = 269964030;</code>
+   *
+   * @return Whether the forwardingRule field is set.
+   */
+  boolean hasForwardingRule();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the forwarding rule associated with the health status of the instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule = 269964030;</code>
+   *
+   * @return The forwardingRule.
+   */
+  java.lang.String getForwardingRule();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the forwarding rule associated with the health status of the instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule = 269964030;</code>
+   *
+   * @return The bytes for forwardingRule.
+   */
+  com.google.protobuf.ByteString getForwardingRuleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule IP address assigned to this instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule_ip = 172250632;</code>
+   *
+   * @return Whether the forwardingRuleIp field is set.
+   */
+  boolean hasForwardingRuleIp();
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule IP address assigned to this instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule_ip = 172250632;</code>
+   *
+   * @return The forwardingRuleIp.
+   */
+  java.lang.String getForwardingRuleIp();
+  /**
+   *
+   *
+   * <pre>
+   * A forwarding rule IP address assigned to this instance.
+   * </pre>
+   *
+   * <code>string forwarding_rule_ip = 172250632;</code>
+   *
+   * @return The bytes for forwardingRuleIp.
+   */
+  com.google.protobuf.ByteString getForwardingRuleIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Health state of the instance.
    * </pre>
    *
@@ -155,7 +229,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * A forwarding rule IP address assigned to this instance.
+   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>string ip_address = 406272220;</code>
@@ -167,7 +241,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * A forwarding rule IP address assigned to this instance.
+   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>string ip_address = 406272220;</code>
@@ -179,7 +253,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * A forwarding rule IP address assigned to this instance.
+   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>string ip_address = 406272220;</code>

@@ -186,16 +186,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the balancing mode for the backend.
-   * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-   * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-   * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-   * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-   * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-   * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-   * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-   * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Backend.BalancingMode}
@@ -329,16 +320,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the balancing mode for the backend.
-   * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-   * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-   * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-   * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-   * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-   * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-   * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-   * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -353,16 +335,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the balancing mode for the backend.
-   * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-   * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-   * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-   * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-   * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-   * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-   * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-   * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -377,16 +350,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the balancing mode for the backend.
-   * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-   * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-   * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-   * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-   * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-   * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-   * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-   * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -407,8 +371,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-   * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+   * Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>float capacity_scaler = 315958157;</code>
@@ -423,8 +388,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-   * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+   * Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>float capacity_scaler = 315958157;</code>
@@ -615,8 +581,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>int32 max_connections = 110652154;</code>
@@ -631,8 +597,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>int32 max_connections = 110652154;</code>
@@ -650,8 +616,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+   * Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
    * </pre>
    *
    * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -666,8 +633,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+   * Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
    * </pre>
    *
    * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -685,8 +653,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+   * Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
    * </pre>
    *
    * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -701,8 +670,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-   * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+   * Not available if the backend's balancingMode is RATE. Not supported by:
+   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
    * </pre>
    *
    * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -720,8 +690,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -737,8 +706,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -757,8 +725,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-   * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -774,8 +741,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-   * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -794,8 +760,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -811,8 +776,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-   * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
    * Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
@@ -828,13 +792,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   public static final int MAX_UTILIZATION_FIELD_NUMBER = 148192199;
   private float maxUtilization_;
   /**
-   *
-   *
-   * <pre>
-   * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-   * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-   * </pre>
-   *
    * <code>float max_utilization = 148192199;</code>
    *
    * @return Whether the maxUtilization field is set.
@@ -844,13 +801,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000800) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-   * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-   * </pre>
-   *
    * <code>float max_utilization = 148192199;</code>
    *
    * @return The maxUtilization.
@@ -1456,16 +1406,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1480,16 +1421,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1504,16 +1436,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1531,16 +1454,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1560,16 +1474,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1590,16 +1495,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the balancing mode for the backend.
-     * When choosing a balancing mode, you need to consider the loadBalancingScheme, and protocol for the backend service, as well as the type of backend (instance group or NEG).
-     * - If the load balancing mode is CONNECTION, then the load is spread based on how many concurrent connections the backend can handle.
-     * You can use the CONNECTION balancing mode if the protocol for the backend service is SSL, TCP, or UDP.
-     * If the loadBalancingScheme for the backend service is EXTERNAL (SSL Proxy and TCP Proxy load balancers), you must also specify exactly one of the following parameters: maxConnections (except for regional managed instance groups), maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * If the loadBalancingScheme for the backend service is INTERNAL (internal TCP/UDP Load Balancers) or EXTERNAL  (Network Load Balancing), you cannot specify any additional parameters.
-     * - If the load balancing mode is RATE, the load is spread based on the rate of HTTP requests per second (RPS).
-     * You can use the RATE balancing mode if the protocol for the backend service is HTTP, HTTP2, or HTTPS. You must specify exactly one of the following parameters: maxRate (except for regional managed instance groups), maxRatePerInstance, or maxRatePerEndpoint.
-     * - If the load balancing mode is UTILIZATION, the load is spread based on the backend utilization of instances in an instance group.
-     * You can use the UTILIZATION balancing mode if the loadBalancingScheme of the backend service is EXTERNAL (except Network Load Balancing), INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED and the backends are instance groups. There are no restrictions on the backend service protocol.
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -1618,8 +1514,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-     * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+     * Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>float capacity_scaler = 315958157;</code>
@@ -1634,8 +1531,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-     * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+     * Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>float capacity_scaler = 315958157;</code>
@@ -1650,8 +1548,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-     * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+     * Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>float capacity_scaler = 315958157;</code>
@@ -1669,8 +1568,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. Valid range is 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-     * This cannot be used for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
+     * Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>float capacity_scaler = 315958157;</code>
@@ -2020,8 +1920,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>int32 max_connections = 110652154;</code>
@@ -2036,8 +1936,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>int32 max_connections = 110652154;</code>
@@ -2052,8 +1952,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>int32 max_connections = 110652154;</code>
@@ -2071,8 +1971,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnectionsPerInstance, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing
      * </pre>
      *
      * <code>int32 max_connections = 110652154;</code>
@@ -2091,8 +1991,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -2107,8 +2008,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -2123,8 +2025,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -2142,8 +2045,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a maximum number of target maximum simultaneous connections for the NEG. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter, maxConnections, or maxConnectionsPerInstance.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -2162,8 +2066,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -2178,8 +2083,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -2194,8 +2100,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -2213,8 +2120,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a target maximum number of simultaneous connections for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum number of simultaneous connections for the whole instance group. If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is CONNECTION, and backend is attached to a backend service whose loadBalancingScheme is EXTERNAL (except Network Load Balancing), you must specify either this parameter,  maxConnections, or maxConnectionsPerEndpoint.
-     * Not available if the backend's balancingMode is RATE. Cannot be specified for Network Load Balancing or Internal TCP/UDP Load Balancing, even though those load balancers require a balancing mode of CONNECTION.
+     * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
+     * Not available if the backend's balancingMode is RATE. Not supported by:
+     * - Internal TCP/UDP Load Balancing - Network Load Balancing.
      * </pre>
      *
      * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -2233,8 +2141,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2250,8 +2157,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2267,8 +2173,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2287,8 +2192,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum number of HTTP requests per second (RPS) that the backend can handle. Valid for network endpoint group and instance group backends (except for regional managed instance groups). Must not be defined if the backend is a managed instance group that uses autoscaling based on load balancing.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify maxRate, maxRatePerInstance, or maxRatePerEndpoint.
+     * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2308,8 +2212,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-     * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2325,8 +2228,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-     * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2342,8 +2244,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-     * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2362,8 +2263,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for an endpoint of a NEG. This is multiplied by the number of endpoints in the NEG to implicitly calculate a target maximum rate for the NEG.
-     * If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerInstance.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2383,8 +2283,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2400,8 +2299,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2417,8 +2315,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2437,8 +2334,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines a maximum target for requests per second (RPS) for a single VM in a backend instance group. This is multiplied by the number of instances in the instance group to implicitly calculate a target maximum rate for the whole instance group.
-     * If the backend's balancingMode is UTILIZATION, this is an optional parameter. If the backend's balancingMode is RATE, you must specify either this parameter, maxRate (except for regional managed instance groups), or maxRatePerEndpoint.
+     * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
      * Not available if the backend's balancingMode is CONNECTION.
      * </pre>
      *
@@ -2455,13 +2351,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
     private float maxUtilization_;
     /**
-     *
-     *
-     * <pre>
-     * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-     * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-     * </pre>
-     *
      * <code>float max_utilization = 148192199;</code>
      *
      * @return Whether the maxUtilization field is set.
@@ -2471,13 +2360,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-     * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-     * </pre>
-     *
      * <code>float max_utilization = 148192199;</code>
      *
      * @return The maxUtilization.
@@ -2487,13 +2369,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       return maxUtilization_;
     }
     /**
-     *
-     *
-     * <pre>
-     * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-     * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-     * </pre>
-     *
      * <code>float max_utilization = 148192199;</code>
      *
      * @param value The maxUtilization to set.
@@ -2506,13 +2381,6 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Defines the maximum average backend utilization of a backend VM in an instance group. The valid range is [0.0, 1.0]. This is an optional parameter if the backend's balancingMode is UTILIZATION.
-     * This parameter can be used in conjunction with maxRate, maxRatePerInstance, maxConnections (except for regional managed instance groups), or maxConnectionsPerInstance.
-     * </pre>
-     *
      * <code>float max_utilization = 148192199;</code>
      *
      * @return This builder for chaining.

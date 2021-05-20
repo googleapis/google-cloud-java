@@ -44,12 +44,14 @@ import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoute;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
 import com.google.cloud.compute.v1.GetNetworkRequest;
 import com.google.cloud.compute.v1.InsertNetworkRequest;
 import com.google.cloud.compute.v1.ListNetworksRequest;
 import com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
+import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
@@ -109,6 +111,9 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
   private final UnaryCallSettings<AddPeeringNetworkRequest, Operation> addPeeringSettings;
   private final UnaryCallSettings<DeleteNetworkRequest, Operation> deleteSettings;
   private final UnaryCallSettings<GetNetworkRequest, Network> getSettings;
+  private final UnaryCallSettings<
+          GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsSettings;
   private final UnaryCallSettings<InsertNetworkRequest, Operation> insertSettings;
   private final PagedCallSettings<ListNetworksRequest, NetworkList, ListPagedResponse> listSettings;
   private final PagedCallSettings<
@@ -135,6 +140,13 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetNetworkRequest, Network> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEffectiveFirewalls. */
+  public UnaryCallSettings<
+          GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsSettings() {
+    return getEffectiveFirewallsSettings;
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -254,6 +266,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     addPeeringSettings = settingsBuilder.addPeeringSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getEffectiveFirewallsSettings = settingsBuilder.getEffectiveFirewallsSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listPeeringRoutesSettings = settingsBuilder.listPeeringRoutesSettings().build();
@@ -395,6 +408,9 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     private final UnaryCallSettings.Builder<AddPeeringNetworkRequest, Operation> addPeeringSettings;
     private final UnaryCallSettings.Builder<DeleteNetworkRequest, Operation> deleteSettings;
     private final UnaryCallSettings.Builder<GetNetworkRequest, Network> getSettings;
+    private final UnaryCallSettings.Builder<
+            GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsSettings;
     private final UnaryCallSettings.Builder<InsertNetworkRequest, Operation> insertSettings;
     private final PagedCallSettings.Builder<ListNetworksRequest, NetworkList, ListPagedResponse>
         listSettings;
@@ -458,6 +474,8 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getEffectiveFirewallsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -477,6 +495,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
               addPeeringSettings,
               deleteSettings,
               getSettings,
+              getEffectiveFirewallsSettings,
               insertSettings,
               listSettings,
               listPeeringRoutesSettings,
@@ -511,6 +530,11 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEffectiveFirewallsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -558,6 +582,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
       addPeeringSettings = settings.addPeeringSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getEffectiveFirewallsSettings = settings.getEffectiveFirewallsSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listPeeringRoutesSettings = settings.listPeeringRoutesSettings.toBuilder();
@@ -571,6 +596,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
               addPeeringSettings,
               deleteSettings,
               getSettings,
+              getEffectiveFirewallsSettings,
               insertSettings,
               listSettings,
               listPeeringRoutesSettings,
@@ -609,6 +635,13 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetNetworkRequest, Network> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEffectiveFirewalls. */
+    public UnaryCallSettings.Builder<
+            GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsSettings() {
+      return getEffectiveFirewallsSettings;
     }
 
     /** Returns the builder for the settings used for calls to insert. */

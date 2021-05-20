@@ -73,7 +73,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           case 454399306:
             {
               com.google.cloud.compute.v1.HttpRetryPolicy.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = retryPolicy_.toBuilder();
               }
               retryPolicy_ =
@@ -83,13 +83,29 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(retryPolicy_);
                 retryPolicy_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          case 491427010:
+            {
+              com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = maxStreamDuration_.toBuilder();
+              }
+              maxStreamDuration_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxStreamDuration_);
+                maxStreamDuration_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
               break;
             }
           case 1761574930:
             {
               com.google.cloud.compute.v1.RequestMirrorPolicy.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = requestMirrorPolicy_.toBuilder();
               }
               requestMirrorPolicy_ =
@@ -99,13 +115,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(requestMirrorPolicy_);
                 requestMirrorPolicy_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             }
           case -2108295710:
             {
               com.google.cloud.compute.v1.UrlRewrite.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) != 0)) {
+              if (((bitField0_ & 0x00000040) != 0)) {
                 subBuilder = urlRewrite_.toBuilder();
               }
               urlRewrite_ =
@@ -115,13 +131,13 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(urlRewrite_);
                 urlRewrite_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             }
           case -1921357046:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) != 0)) {
+              if (((bitField0_ & 0x00000020) != 0)) {
                 subBuilder = timeout_.toBuilder();
               }
               timeout_ =
@@ -131,15 +147,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                 subBuilder.mergeFrom(timeout_);
                 timeout_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             }
           case -1598742902:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 weightedBackendServices_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.WeightedBackendService>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               weightedBackendServices_.add(
                   input.readMessage(
@@ -193,7 +209,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         weightedBackendServices_ = java.util.Collections.unmodifiableList(weightedBackendServices_);
       }
       this.unknownFields = unknownFields.build();
@@ -327,6 +343,62 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         : faultInjectionPolicy_;
   }
 
+  public static final int MAX_STREAM_DURATION_FIELD_NUMBER = 61428376;
+  private com.google.cloud.compute.v1.Duration maxStreamDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return Whether the maxStreamDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxStreamDuration() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return The maxStreamDuration.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getMaxStreamDuration() {
+    return maxStreamDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxStreamDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+   * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
+    return maxStreamDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxStreamDuration_;
+  }
+
   public static final int REQUEST_MIRROR_POLICY_FIELD_NUMBER = 220196866;
   private com.google.cloud.compute.v1.RequestMirrorPolicy requestMirrorPolicy_;
   /**
@@ -343,7 +415,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasRequestMirrorPolicy() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -397,7 +469,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasRetryPolicy() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -451,7 +523,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasTimeout() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -503,7 +575,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasUrlRewrite() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -643,16 +715,19 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(56799913, getRetryPolicy());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(61428376, getMaxStreamDuration());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(220196866, getRequestMirrorPolicy());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(273333948, getUrlRewrite());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
@@ -673,18 +748,23 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56799913, getRetryPolicy());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
+              61428376, getMaxStreamDuration());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
               220196866, getRequestMirrorPolicy());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(273333948, getUrlRewrite());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
@@ -724,6 +804,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     if (hasFaultInjectionPolicy()) {
       if (!getFaultInjectionPolicy().equals(other.getFaultInjectionPolicy())) return false;
     }
+    if (hasMaxStreamDuration() != other.hasMaxStreamDuration()) return false;
+    if (hasMaxStreamDuration()) {
+      if (!getMaxStreamDuration().equals(other.getMaxStreamDuration())) return false;
+    }
     if (hasRequestMirrorPolicy() != other.hasRequestMirrorPolicy()) return false;
     if (hasRequestMirrorPolicy()) {
       if (!getRequestMirrorPolicy().equals(other.getRequestMirrorPolicy())) return false;
@@ -760,6 +844,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     if (hasFaultInjectionPolicy()) {
       hash = (37 * hash) + FAULT_INJECTION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getFaultInjectionPolicy().hashCode();
+    }
+    if (hasMaxStreamDuration()) {
+      hash = (37 * hash) + MAX_STREAM_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStreamDuration().hashCode();
     }
     if (hasRequestMirrorPolicy()) {
       hash = (37 * hash) + REQUEST_MIRROR_POLICY_FIELD_NUMBER;
@@ -922,6 +1010,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCorsPolicyFieldBuilder();
         getFaultInjectionPolicyFieldBuilder();
+        getMaxStreamDurationFieldBuilder();
         getRequestMirrorPolicyFieldBuilder();
         getRetryPolicyFieldBuilder();
         getTimeoutFieldBuilder();
@@ -945,33 +1034,39 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         faultInjectionPolicyBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = null;
+      } else {
+        maxStreamDurationBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (requestMirrorPolicyBuilder_ == null) {
         requestMirrorPolicy_ = null;
       } else {
         requestMirrorPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (retryPolicyBuilder_ == null) {
         retryPolicy_ = null;
       } else {
         retryPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (timeoutBuilder_ == null) {
         timeout_ = null;
       } else {
         timeoutBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (urlRewriteBuilder_ == null) {
         urlRewrite_ = null;
       } else {
         urlRewriteBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (weightedBackendServicesBuilder_ == null) {
         weightedBackendServices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         weightedBackendServicesBuilder_.clear();
       }
@@ -1021,42 +1116,50 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (maxStreamDurationBuilder_ == null) {
+          result.maxStreamDuration_ = maxStreamDuration_;
+        } else {
+          result.maxStreamDuration_ = maxStreamDurationBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         if (requestMirrorPolicyBuilder_ == null) {
           result.requestMirrorPolicy_ = requestMirrorPolicy_;
         } else {
           result.requestMirrorPolicy_ = requestMirrorPolicyBuilder_.build();
         }
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         if (retryPolicyBuilder_ == null) {
           result.retryPolicy_ = retryPolicy_;
         } else {
           result.retryPolicy_ = retryPolicyBuilder_.build();
         }
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         if (timeoutBuilder_ == null) {
           result.timeout_ = timeout_;
         } else {
           result.timeout_ = timeoutBuilder_.build();
         }
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         if (urlRewriteBuilder_ == null) {
           result.urlRewrite_ = urlRewrite_;
         } else {
           result.urlRewrite_ = urlRewriteBuilder_.build();
         }
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
       if (weightedBackendServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           weightedBackendServices_ =
               java.util.Collections.unmodifiableList(weightedBackendServices_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.weightedBackendServices_ = weightedBackendServices_;
       } else {
@@ -1118,6 +1221,9 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       if (other.hasFaultInjectionPolicy()) {
         mergeFaultInjectionPolicy(other.getFaultInjectionPolicy());
       }
+      if (other.hasMaxStreamDuration()) {
+        mergeMaxStreamDuration(other.getMaxStreamDuration());
+      }
       if (other.hasRequestMirrorPolicy()) {
         mergeRequestMirrorPolicy(other.getRequestMirrorPolicy());
       }
@@ -1134,7 +1240,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         if (!other.weightedBackendServices_.isEmpty()) {
           if (weightedBackendServices_.isEmpty()) {
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureWeightedBackendServicesIsMutable();
             weightedBackendServices_.addAll(other.weightedBackendServices_);
@@ -1147,7 +1253,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
             weightedBackendServicesBuilder_.dispose();
             weightedBackendServicesBuilder_ = null;
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             weightedBackendServicesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWeightedBackendServicesFieldBuilder()
@@ -1590,6 +1696,211 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       return faultInjectionPolicyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.Duration maxStreamDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        maxStreamDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     *
+     * @return Whether the maxStreamDuration field is set.
+     */
+    public boolean hasMaxStreamDuration() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     *
+     * @return The maxStreamDuration.
+     */
+    public com.google.cloud.compute.v1.Duration getMaxStreamDuration() {
+      if (maxStreamDurationBuilder_ == null) {
+        return maxStreamDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxStreamDuration_;
+      } else {
+        return maxStreamDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder setMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxStreamDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxStreamDuration_ = value;
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder setMaxStreamDuration(
+        com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxStreamDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && maxStreamDuration_ != null
+            && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          maxStreamDuration_ =
+              com.google.cloud.compute.v1.Duration.newBuilder(maxStreamDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maxStreamDuration_ = value;
+        }
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder clearMaxStreamDuration() {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = null;
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getMaxStreamDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
+      if (maxStreamDurationBuilder_ != null) {
+        return maxStreamDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxStreamDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxStreamDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum duration (timeout) for streams on the selected route. Unlike the timeout field where the timeout duration starts from the time the request has been fully processed (i.e. end-of-stream), the duration in this field is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, will use the largest maxStreamDuration among all backend services associated with the route.
+     * This field is only allowed if the Url map is used with backend services with loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getMaxStreamDurationFieldBuilder() {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getMaxStreamDuration(), getParentForChildren(), isClean());
+        maxStreamDuration_ = null;
+      }
+      return maxStreamDurationBuilder_;
+    }
+
     private com.google.cloud.compute.v1.RequestMirrorPolicy requestMirrorPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.RequestMirrorPolicy,
@@ -1609,7 +1920,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestMirrorPolicy field is set.
      */
     public boolean hasRequestMirrorPolicy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1652,7 +1963,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         requestMirrorPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1673,7 +1984,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         requestMirrorPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1688,7 +1999,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRequestMirrorPolicy(com.google.cloud.compute.v1.RequestMirrorPolicy value) {
       if (requestMirrorPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && requestMirrorPolicy_ != null
             && requestMirrorPolicy_
                 != com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance()) {
@@ -1703,7 +2014,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         requestMirrorPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1723,7 +2034,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         requestMirrorPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -1737,7 +2048,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.RequestMirrorPolicy request_mirror_policy = 220196866;</code>
      */
     public com.google.cloud.compute.v1.RequestMirrorPolicy.Builder getRequestMirrorPolicyBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRequestMirrorPolicyFieldBuilder().getBuilder();
     }
@@ -1807,7 +2118,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * @return Whether the retryPolicy field is set.
      */
     public boolean hasRetryPolicy() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1850,7 +2161,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1871,7 +2182,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1886,7 +2197,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRetryPolicy(com.google.cloud.compute.v1.HttpRetryPolicy value) {
       if (retryPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && retryPolicy_ != null
             && retryPolicy_ != com.google.cloud.compute.v1.HttpRetryPolicy.getDefaultInstance()) {
           retryPolicy_ =
@@ -1900,7 +2211,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         retryPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1920,7 +2231,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         retryPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
     /**
@@ -1934,7 +2245,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public com.google.cloud.compute.v1.HttpRetryPolicy.Builder getRetryPolicyBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRetryPolicyFieldBuilder().getBuilder();
     }
@@ -2004,7 +2315,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2049,7 +2360,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2070,7 +2381,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2086,7 +2397,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeTimeout(com.google.cloud.compute.v1.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && timeout_ != null
             && timeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           timeout_ =
@@ -2100,7 +2411,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2121,7 +2432,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         timeoutBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -2136,7 +2447,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -2208,7 +2519,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * @return Whether the urlRewrite field is set.
      */
     public boolean hasUrlRewrite() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2253,7 +2564,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         urlRewriteBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2274,7 +2585,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         urlRewriteBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2290,7 +2601,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeUrlRewrite(com.google.cloud.compute.v1.UrlRewrite value) {
       if (urlRewriteBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && urlRewrite_ != null
             && urlRewrite_ != com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) {
           urlRewrite_ =
@@ -2304,7 +2615,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         urlRewriteBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2325,7 +2636,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
       } else {
         urlRewriteBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -2340,7 +2651,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public com.google.cloud.compute.v1.UrlRewrite.Builder getUrlRewriteBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUrlRewriteFieldBuilder().getBuilder();
     }
@@ -2396,11 +2707,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
         weightedBackendServices_ = java.util.Collections.emptyList();
 
     private void ensureWeightedBackendServicesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         weightedBackendServices_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.WeightedBackendService>(
                 weightedBackendServices_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2654,7 +2965,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     public Builder clearWeightedBackendServices() {
       if (weightedBackendServicesBuilder_ == null) {
         weightedBackendServices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         weightedBackendServicesBuilder_.clear();
@@ -2803,7 +3114,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.compute.v1.WeightedBackendService.Builder,
                 com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>(
                 weightedBackendServices_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         weightedBackendServices_ = null;

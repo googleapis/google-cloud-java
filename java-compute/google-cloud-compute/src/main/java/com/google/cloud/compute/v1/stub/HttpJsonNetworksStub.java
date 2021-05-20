@@ -35,12 +35,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
 import com.google.cloud.compute.v1.GetNetworkRequest;
 import com.google.cloud.compute.v1.InsertNetworkRequest;
 import com.google.cloud.compute.v1.ListNetworksRequest;
 import com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
+import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
@@ -208,6 +210,60 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .setDefaultInstance(Network.getDefaultInstance())
                   .build())
           .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Networks.GetEffectiveFirewalls")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEffectiveFirewallsNetworkRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/networks/{network}/getEffectiveFirewalls",
+                          new FieldsExtractor<
+                              GetEffectiveFirewallsNetworkRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(
+                                GetEffectiveFirewallsNetworkRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "network", request.getNetwork());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<
+                              GetEffectiveFirewallsNetworkRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                GetEffectiveFirewallsNetworkRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<GetEffectiveFirewallsNetworkRequest> serializer =
+                                  ProtoRestSerializer.create();
+
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<GetEffectiveFirewallsNetworkRequest, String>() {
+                            @Override
+                            public String extract(GetEffectiveFirewallsNetworkRequest request) {
+                              return "";
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NetworksGetEffectiveFirewallsResponse>newBuilder()
+                      .setDefaultInstance(
+                          NetworksGetEffectiveFirewallsResponse.getDefaultInstance())
+                      .build())
+              .build();
 
   @InternalApi
   public static final ApiMethodDescriptor<InsertNetworkRequest, Operation> insertMethodDescriptor =
@@ -613,6 +669,9 @@ public class HttpJsonNetworksStub extends NetworksStub {
   private final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable;
   private final UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable;
   private final UnaryCallable<GetNetworkRequest, Network> getCallable;
+  private final UnaryCallable<
+          GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable;
   private final UnaryCallable<InsertNetworkRequest, Operation> insertCallable;
   private final UnaryCallable<ListNetworksRequest, NetworkList> listCallable;
   private final UnaryCallable<ListNetworksRequest, ListPagedResponse> listPagedCallable;
@@ -677,6 +736,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertNetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -718,6 +784,11 @@ public class HttpJsonNetworksStub extends NetworksStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getEffectiveFirewallsCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveFirewallsTransportSettings,
+            settings.getEffectiveFirewallsSettings(),
+            clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -765,6 +836,11 @@ public class HttpJsonNetworksStub extends NetworksStub {
 
   public UnaryCallable<GetNetworkRequest, Network> getCallable() {
     return getCallable;
+  }
+
+  public UnaryCallable<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    return getEffectiveFirewallsCallable;
   }
 
   public UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {

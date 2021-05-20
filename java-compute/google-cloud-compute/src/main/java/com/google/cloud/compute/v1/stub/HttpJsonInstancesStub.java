@@ -37,9 +37,11 @@ import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
+import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceRequest;
 import com.google.cloud.compute.v1.GetInstanceRequest;
@@ -52,6 +54,7 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
+import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -347,6 +350,60 @@ public class HttpJsonInstancesStub extends InstancesStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<BulkInsertInstanceRequest, Operation>
+      bulkInsertMethodDescriptor =
+          ApiMethodDescriptor.<BulkInsertInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances.BulkInsert")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkInsertInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/bulkInsert",
+                          new FieldsExtractor<BulkInsertInstanceRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(BulkInsertInstanceRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<
+                              BulkInsertInstanceRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                BulkInsertInstanceRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<BulkInsertInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<BulkInsertInstanceRequest, String>() {
+                            @Override
+                            public String extract(BulkInsertInstanceRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody(
+                                      "bulkInsertInstanceResourceResource",
+                                      request.getBulkInsertInstanceResourceResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<DeleteInstanceRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Instances.Delete")
@@ -551,6 +608,62 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .setDefaultInstance(Instance.getDefaultInstance())
                   .build())
           .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances.GetEffectiveFirewalls")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEffectiveFirewallsInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/getEffectiveFirewalls",
+                          new FieldsExtractor<
+                              GetEffectiveFirewallsInstanceRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(
+                                GetEffectiveFirewallsInstanceRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "zone", request.getZone());
+                              serializer.putPathParam(fields, "instance", request.getInstance());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<
+                              GetEffectiveFirewallsInstanceRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                GetEffectiveFirewallsInstanceRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<GetEffectiveFirewallsInstanceRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putQueryParam(
+                                  fields, "networkInterface", request.getNetworkInterface());
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<GetEffectiveFirewallsInstanceRequest, String>() {
+                            @Override
+                            public String extract(GetEffectiveFirewallsInstanceRequest request) {
+                              return "";
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InstancesGetEffectiveFirewallsResponse>newBuilder()
+                      .setDefaultInstance(
+                          InstancesGetEffectiveFirewallsResponse.getDefaultInstance())
+                      .build())
+              .build();
 
   @InternalApi
   public static final ApiMethodDescriptor<GetGuestAttributesInstanceRequest, GuestAttributes>
@@ -2357,11 +2470,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<AggregatedListInstancesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
   private final UnaryCallable<AttachDiskInstanceRequest, Operation> attachDiskCallable;
+  private final UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable;
   private final UnaryCallable<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigCallable;
   private final UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getCallable;
+  private final UnaryCallable<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable;
   private final UnaryCallable<GetGuestAttributesInstanceRequest, GuestAttributes>
       getGuestAttributesCallable;
   private final UnaryCallable<GetIamPolicyInstanceRequest, Policy> getIamPolicyCallable;
@@ -2475,6 +2592,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
         HttpJsonCallSettings.<AttachDiskInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(attachDiskMethodDescriptor)
             .build();
+    HttpJsonCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertTransportSettings =
+        HttpJsonCallSettings.<BulkInsertInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(bulkInsertMethodDescriptor)
+            .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -2492,6 +2613,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .build();
+    HttpJsonCallSettings<
+            GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+                    newBuilder()
+                .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetGuestAttributesInstanceRequest, GuestAttributes>
         getGuestAttributesTransportSettings =
             HttpJsonCallSettings.<GetGuestAttributesInstanceRequest, GuestAttributes>newBuilder()
@@ -2660,6 +2789,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.attachDiskCallable =
         callableFactory.createUnaryCallable(
             attachDiskTransportSettings, settings.attachDiskSettings(), clientContext);
+    this.bulkInsertCallable =
+        callableFactory.createUnaryCallable(
+            bulkInsertTransportSettings, settings.bulkInsertSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -2674,6 +2806,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getEffectiveFirewallsCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveFirewallsTransportSettings,
+            settings.getEffectiveFirewallsSettings(),
+            clientContext);
     this.getGuestAttributesCallable =
         callableFactory.createUnaryCallable(
             getGuestAttributesTransportSettings,
@@ -2837,6 +2974,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
     return attachDiskCallable;
   }
 
+  public UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
+    return bulkInsertCallable;
+  }
+
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable() {
     return deleteCallable;
   }
@@ -2851,6 +2992,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
 
   public UnaryCallable<GetInstanceRequest, Instance> getCallable() {
     return getCallable;
+  }
+
+  public UnaryCallable<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    return getEffectiveFirewallsCallable;
   }
 
   public UnaryCallable<GetGuestAttributesInstanceRequest, GuestAttributes>

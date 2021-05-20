@@ -185,6 +185,10 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     REGION_RESOURCE_STOCKOUT(528622846),
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     SCALING_TARGET_DOES_NOT_EXIST(122636699),
+    /** <code>SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 29275586;</code> */
+    SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX(29275586),
+    /** <code>SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 398287669;</code> */
+    SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN(398287669),
     /** <code>UNKNOWN = 433141802;</code> */
     UNKNOWN(433141802),
     /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
@@ -234,6 +238,10 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public static final int REGION_RESOURCE_STOCKOUT_VALUE = 528622846;
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     public static final int SCALING_TARGET_DOES_NOT_EXIST_VALUE = 122636699;
+    /** <code>SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 29275586;</code> */
+    public static final int SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX_VALUE = 29275586;
+    /** <code>SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 398287669;</code> */
+    public static final int SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN_VALUE = 398287669;
     /** <code>UNKNOWN = 433141802;</code> */
     public static final int UNKNOWN_VALUE = 433141802;
     /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
@@ -297,6 +305,10 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           return REGION_RESOURCE_STOCKOUT;
         case 122636699:
           return SCALING_TARGET_DOES_NOT_EXIST;
+        case 29275586:
+          return SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX;
+        case 398287669:
+          return SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN;
         case 433141802:
           return UNKNOWN;
         case 330845009:

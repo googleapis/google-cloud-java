@@ -166,10 +166,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             }
           case -1388136534:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 statusDetails_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               statusDetails_.add(
                   input.readMessage(
@@ -191,6 +191,25 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
               selfLink_ = s;
               break;
             }
+          case -567365870:
+            {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                scalingScheduleStatus_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ScalingScheduleStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000100;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+                  scalingScheduleStatus__ =
+                      input.readMessage(
+                          ScalingScheduleStatusDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              scalingScheduleStatus_
+                  .getMutableMap()
+                  .put(scalingScheduleStatus__.getKey(), scalingScheduleStatus__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -205,7 +224,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         statusDetails_ = java.util.Collections.unmodifiableList(statusDetails_);
       }
       this.unknownFields = unknownFields.build();
@@ -216,6 +235,17 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Autoscaler_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 465950178:
+        return internalGetScalingScheduleStatus();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -376,7 +406,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -392,7 +422,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -410,7 +440,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -840,6 +870,127 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCALING_SCHEDULE_STATUS_FIELD_NUMBER = 465950178;
+
+  private static final class ScalingScheduleStatusDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+                    newDefaultInstance(
+                        com.google.cloud.compute.v1.Compute
+                            .internal_static_google_cloud_compute_v1_Autoscaler_ScalingScheduleStatusEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.compute.v1.ScalingScheduleStatus.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      scalingScheduleStatus_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      internalGetScalingScheduleStatus() {
+    if (scalingScheduleStatus_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ScalingScheduleStatusDefaultEntryHolder.defaultEntry);
+    }
+    return scalingScheduleStatus_;
+  }
+
+  public int getScalingScheduleStatusCount() {
+    return internalGetScalingScheduleStatus().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsScalingScheduleStatus(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetScalingScheduleStatus().getMap().containsKey(key);
+  }
+  /** Use {@link #getScalingScheduleStatusMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      getScalingScheduleStatus() {
+    return getScalingScheduleStatusMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      getScalingScheduleStatusMap() {
+    return internalGetScalingScheduleStatus().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
+      java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
+        internalGetScalingScheduleStatus().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
+        internalGetScalingScheduleStatus().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
@@ -1224,6 +1375,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetScalingScheduleStatus(),
+        ScalingScheduleStatusDefaultEntryHolder.defaultEntry,
+        465950178);
     unknownFields.writeTo(output);
   }
 
@@ -1277,6 +1433,20 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        entry : internalGetScalingScheduleStatus().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+          scalingScheduleStatus__ =
+              ScalingScheduleStatusDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              465950178, scalingScheduleStatus__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1324,6 +1494,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (hasRegion()) {
       if (!getRegion().equals(other.getRegion())) return false;
     }
+    if (!internalGetScalingScheduleStatus().equals(other.internalGetScalingScheduleStatus()))
+      return false;
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
@@ -1383,6 +1555,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
       hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (!internalGetScalingScheduleStatus().getMap().isEmpty()) {
+      hash = (37 * hash) + SCALING_SCHEDULE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetScalingScheduleStatus().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1527,6 +1703,26 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_compute_v1_Autoscaler_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 465950178:
+          return internalGetScalingScheduleStatus();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 465950178:
+          return internalGetMutableScalingScheduleStatus();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1577,20 +1773,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
+      internalGetMutableScalingScheduleStatus().clear();
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
-      status_ = 0;
       bitField0_ = (bitField0_ & ~0x00000200);
+      status_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         statusDetailsBuilder_.clear();
       }
       target_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
-      zone_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
+      zone_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1656,28 +1853,30 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       result.region_ = region_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      result.scalingScheduleStatus_ = internalGetScalingScheduleStatus();
+      result.scalingScheduleStatus_.makeImmutable();
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
       result.status_ = status_;
       if (statusDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           statusDetails_ = java.util.Collections.unmodifiableList(statusDetails_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.statusDetails_ = statusDetails_;
       } else {
         result.statusDetails_ = statusDetailsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000400;
       }
       result.target_ = target_;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
       result.zone_ = zone_;
@@ -1767,8 +1966,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         region_ = other.region_;
         onChanged();
       }
+      internalGetMutableScalingScheduleStatus().mergeFrom(other.internalGetScalingScheduleStatus());
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1779,7 +1979,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusDetails_.isEmpty()) {
           if (statusDetails_.isEmpty()) {
             statusDetails_ = other.statusDetails_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureStatusDetailsIsMutable();
             statusDetails_.addAll(other.statusDetails_);
@@ -1792,7 +1992,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
             statusDetailsBuilder_.dispose();
             statusDetailsBuilder_ = null;
             statusDetails_ = other.statusDetails_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             statusDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusDetailsFieldBuilder()
@@ -1803,12 +2003,12 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasTarget()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         target_ = other.target_;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -1853,7 +2053,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1868,7 +2068,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1889,7 +2089,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1912,7 +2112,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1933,7 +2133,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1963,7 +2163,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1983,7 +2183,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -1998,7 +2198,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -2017,7 +2217,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
      * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
@@ -2827,6 +3027,193 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        scalingScheduleStatus_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        internalGetScalingScheduleStatus() {
+      if (scalingScheduleStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ScalingScheduleStatusDefaultEntryHolder.defaultEntry);
+      }
+      return scalingScheduleStatus_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        internalGetMutableScalingScheduleStatus() {
+      onChanged();
+      ;
+      if (scalingScheduleStatus_ == null) {
+        scalingScheduleStatus_ =
+            com.google.protobuf.MapField.newMapField(
+                ScalingScheduleStatusDefaultEntryHolder.defaultEntry);
+      }
+      if (!scalingScheduleStatus_.isMutable()) {
+        scalingScheduleStatus_ = scalingScheduleStatus_.copy();
+      }
+      return scalingScheduleStatus_;
+    }
+
+    public int getScalingScheduleStatusCount() {
+      return internalGetScalingScheduleStatus().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsScalingScheduleStatus(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetScalingScheduleStatus().getMap().containsKey(key);
+    }
+    /** Use {@link #getScalingScheduleStatusMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        getScalingScheduleStatus() {
+      return getScalingScheduleStatusMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        getScalingScheduleStatusMap() {
+      return internalGetScalingScheduleStatus().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
+        java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
+          internalGetScalingScheduleStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
+          internalGetScalingScheduleStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearScalingScheduleStatus() {
+      internalGetMutableScalingScheduleStatus().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    public Builder removeScalingScheduleStatus(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScalingScheduleStatus().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+        getMutableScalingScheduleStatus() {
+      return internalGetMutableScalingScheduleStatus().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    public Builder putScalingScheduleStatus(
+        java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScalingScheduleStatus().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Status information of existing scaling schedules.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+     * </code>
+     */
+    public Builder putAllScalingScheduleStatus(
+        java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> values) {
+      internalGetMutableScalingScheduleStatus().getMutableMap().putAll(values);
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -2840,7 +3227,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2902,7 +3289,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2919,7 +3306,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2941,7 +3328,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2965,7 +3352,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3003,7 +3390,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       status_ = value;
       onChanged();
       return this;
@@ -3050,7 +3437,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -3071,7 +3458,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = 0;
       onChanged();
       return this;
@@ -3081,11 +3468,11 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         statusDetails_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>(
                 statusDetails_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3315,7 +3702,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusDetails() {
       if (statusDetailsBuilder_ == null) {
         statusDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         statusDetailsBuilder_.clear();
@@ -3449,7 +3836,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder,
                 com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>(
                 statusDetails_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         statusDetails_ = null;
@@ -3470,7 +3857,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3532,7 +3919,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       target_ = value;
       onChanged();
       return this;
@@ -3549,7 +3936,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -3571,7 +3958,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       target_ = value;
       onChanged();
       return this;
@@ -3590,7 +3977,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3652,7 +4039,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       zone_ = value;
       onChanged();
       return this;
@@ -3669,7 +4056,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -3691,7 +4078,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       zone_ = value;
       onChanged();
       return this;

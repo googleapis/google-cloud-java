@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.GetTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest;
@@ -364,6 +365,62 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchTargetHttpsProxyRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies.Patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchTargetHttpsProxyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}",
+                          new FieldsExtractor<PatchTargetHttpsProxyRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(
+                                PatchTargetHttpsProxyRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchTargetHttpsProxyRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(
+                                  fields, "targetHttpsProxy", request.getTargetHttpsProxy());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<
+                              PatchTargetHttpsProxyRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                PatchTargetHttpsProxyRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<PatchTargetHttpsProxyRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              if (request.hasRequestId()) {
+                                serializer.putQueryParam(
+                                    fields, "requestId", request.getRequestId());
+                              }
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<PatchTargetHttpsProxyRequest, String>() {
+                            @Override
+                            public String extract(PatchTargetHttpsProxyRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody(
+                                      "targetHttpsProxyResource",
+                                      request.getTargetHttpsProxyResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideMethodDescriptor =
           ApiMethodDescriptor.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
@@ -608,6 +665,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   private final UnaryCallable<InsertTargetHttpsProxyRequest, Operation> insertCallable;
   private final UnaryCallable<ListTargetHttpsProxiesRequest, TargetHttpsProxyList> listCallable;
   private final UnaryCallable<ListTargetHttpsProxiesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable;
   private final UnaryCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideCallable;
   private final UnaryCallable<SetSslCertificatesTargetHttpsProxyRequest, Operation>
@@ -680,6 +738,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
             HttpJsonCallSettings.<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchTargetHttpsProxyRequest, Operation> patchTransportSettings =
+        HttpJsonCallSettings.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideTransportSettings =
             HttpJsonCallSettings.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
@@ -721,6 +783,9 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.patchCallable =
+        callableFactory.createUnaryCallable(
+            patchTransportSettings, settings.patchSettings(), clientContext);
     this.setQuicOverrideCallable =
         callableFactory.createUnaryCallable(
             setQuicOverrideTransportSettings, settings.setQuicOverrideSettings(), clientContext);
@@ -767,6 +832,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
 
   public UnaryCallable<ListTargetHttpsProxiesRequest, TargetHttpsProxyList> listCallable() {
     return listCallable;
+  }
+
+  public UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable() {
+    return patchCallable;
   }
 
   public UnaryCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation>

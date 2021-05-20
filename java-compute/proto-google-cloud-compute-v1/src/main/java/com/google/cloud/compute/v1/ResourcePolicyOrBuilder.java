@@ -162,6 +162,48 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
+   * Resource policy for scheduling instance operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * </code>
+   *
+   * @return Whether the instanceSchedulePolicy field is set.
+   */
+  boolean hasInstanceSchedulePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for scheduling instance operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * </code>
+   *
+   * @return The instanceSchedulePolicy.
+   */
+  com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy getInstanceSchedulePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for scheduling instance operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy instance_schedule_policy = 344877104;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicyOrBuilder
+      getInstanceSchedulePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#resource_policies for resource policies.
    * </pre>
    *
@@ -250,6 +292,41 @@ public interface ResourcePolicyOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The system status of the resource policy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  boolean hasResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The system status of the resource policy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   *
+   * @return The resourceStatus.
+   */
+  com.google.cloud.compute.v1.ResourcePolicyResourceStatus getResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The system status of the resource policy.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.ResourcePolicyResourceStatus resource_status = 249429315;</code>
+   */
+  com.google.cloud.compute.v1.ResourcePolicyResourceStatusOrBuilder getResourceStatusOrBuilder();
 
   /**
    *

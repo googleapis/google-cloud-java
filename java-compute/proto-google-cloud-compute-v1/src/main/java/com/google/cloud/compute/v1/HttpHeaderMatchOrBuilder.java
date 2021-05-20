@@ -263,7 +263,7 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  en.cppreference.com/w/cpp/regex/ecmascript
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
    * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
@@ -278,7 +278,7 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  en.cppreference.com/w/cpp/regex/ecmascript
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
    * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
@@ -293,7 +293,7 @@ public interface HttpHeaderMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  en.cppreference.com/w/cpp/regex/ecmascript
+   * The value of the header must match the regular expression specified in regexMatch. For regular expression grammar, please see:  github.com/google/re2/wiki/Syntax
    * For matching against a port specified in the HTTP request, use a headerMatch with headerName set to PORT and a regular expression that satisfies the RFC2616 Host header's port specifier.
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * Note that regexMatch only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.

@@ -171,6 +171,7 @@ public class ReservationsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -193,6 +194,7 @@ public class ReservationsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -257,6 +259,7 @@ public class ReservationsClientTest {
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
+    boolean satisfiesPzs = false;
     String selfLink = "selfLink-1691268851";
     boolean specificReservationRequired = false;
     String zone2 = "zone2-696322977";
@@ -268,6 +271,7 @@ public class ReservationsClientTest {
             .setId(id)
             .setKind(kind)
             .setName(name)
+            .setSatisfiesPzs(satisfiesPzs)
             .setSelfLink(selfLink)
             .setSpecificReservationRequired(specificReservationRequired)
             .setZone(zone2)
@@ -381,6 +385,7 @@ public class ReservationsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -403,6 +408,7 @@ public class ReservationsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -533,6 +539,7 @@ public class ReservationsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -555,6 +562,7 @@ public class ReservationsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

@@ -400,7 +400,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * The prefix length if the resource reprensents an IP range.
+   * The prefix length if the resource represents an IP range.
    * </pre>
    *
    * <code>int32 prefix_length = 453565747;</code>
@@ -412,7 +412,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * The prefix length if the resource reprensents an IP range.
+   * The prefix length if the resource represents an IP range.
    * </pre>
    *
    * <code>int32 prefix_length = 453565747;</code>
@@ -430,7 +430,7 @@ public interface AddressOrBuilder
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -447,7 +447,7 @@ public interface AddressOrBuilder
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -464,7 +464,7 @@ public interface AddressOrBuilder
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -477,7 +477,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -489,7 +489,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -501,7 +501,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>

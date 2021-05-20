@@ -188,6 +188,33 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
+   * Field to indicate if a router is dedicated to use with encrypted Interconnect Attachment (IPsec-encrypted Cloud Interconnect feature).
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>bool encrypted_interconnect_router = 297996575;</code>
+   *
+   * @return Whether the encryptedInterconnectRouter field is set.
+   */
+  boolean hasEncryptedInterconnectRouter();
+  /**
+   *
+   *
+   * <pre>
+   * Field to indicate if a router is dedicated to use with encrypted Interconnect Attachment (IPsec-encrypted Cloud Interconnect feature).
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>bool encrypted_interconnect_router = 297996575;</code>
+   *
+   * @return The encryptedInterconnectRouter.
+   */
+  boolean getEncryptedInterconnectRouter();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *

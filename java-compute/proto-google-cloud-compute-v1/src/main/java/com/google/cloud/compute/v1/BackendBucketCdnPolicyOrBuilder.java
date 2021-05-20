@@ -27,6 +27,73 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader>
+      getBypassCacheOnRequestHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
+      getBypassCacheOnRequestHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  int getBypassCacheOnRequestHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
+      getBypassCacheOnRequestHeadersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeaderOrBuilder
+      getBypassCacheOnRequestHeadersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the cache setting for all responses from this backend. The possible values are:
    * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
    * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
@@ -73,7 +140,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
    * </pre>
    *
    * <code>int32 client_ttl = 29034360;</code>
@@ -85,7 +152,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
    * </pre>
    *
    * <code>int32 client_ttl = 29034360;</code>
@@ -143,6 +210,148 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The maxTtl.
    */
   int getMaxTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+   * </pre>
+   *
+   * <code>bool negative_caching = 336110005;</code>
+   *
+   * @return Whether the negativeCaching field is set.
+   */
+  boolean hasNegativeCaching();
+  /**
+   *
+   *
+   * <pre>
+   * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+   * </pre>
+   *
+   * <code>bool negative_caching = 336110005;</code>
+   *
+   * @return The negativeCaching.
+   */
+  boolean getNegativeCaching();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy>
+      getNegativeCachingPolicyList();
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy getNegativeCachingPolicy(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  int getNegativeCachingPolicyCount();
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder>
+      getNegativeCachingPolicyOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder
+      getNegativeCachingPolicyOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+   * </pre>
+   *
+   * <code>bool request_coalescing = 532808276;</code>
+   *
+   * @return Whether the requestCoalescing field is set.
+   */
+  boolean hasRequestCoalescing();
+  /**
+   *
+   *
+   * <pre>
+   * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+   * </pre>
+   *
+   * <code>bool request_coalescing = 532808276;</code>
+   *
+   * @return The requestCoalescing.
+   */
+  boolean getRequestCoalescing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * </pre>
+   *
+   * <code>int32 serve_while_stale = 236682203;</code>
+   *
+   * @return Whether the serveWhileStale field is set.
+   */
+  boolean hasServeWhileStale();
+  /**
+   *
+   *
+   * <pre>
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * </pre>
+   *
+   * <code>int32 serve_while_stale = 236682203;</code>
+   *
+   * @return The serveWhileStale.
+   */
+  int getServeWhileStale();
 
   /**
    *

@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.InsertForwardingRuleRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchForwardingRuleRequest;
+import com.google.cloud.compute.v1.SetLabelsForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetTargetForwardingRuleRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -115,6 +116,7 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
   private final PagedCallSettings<ListForwardingRulesRequest, ForwardingRuleList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<PatchForwardingRuleRequest, Operation> patchSettings;
+  private final UnaryCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsSettings;
   private final UnaryCallSettings<SetTargetForwardingRuleRequest, Operation> setTargetSettings;
 
   /** Returns the object with the settings used for calls to aggregatedList. */
@@ -150,6 +152,11 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchForwardingRuleRequest, Operation> patchSettings() {
     return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsForwardingRuleRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
   }
 
   /** Returns the object with the settings used for calls to setTarget. */
@@ -238,6 +245,7 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
     insertSettings = settingsBuilder.insertSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setTargetSettings = settingsBuilder.setTargetSettings().build();
   }
 
@@ -389,6 +397,8 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
             ListForwardingRulesRequest, ForwardingRuleList, ListPagedResponse>
         listSettings;
     private final UnaryCallSettings.Builder<PatchForwardingRuleRequest, Operation> patchSettings;
+    private final UnaryCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation>
+        setLabelsSettings;
     private final UnaryCallSettings.Builder<SetTargetForwardingRuleRequest, Operation>
         setTargetSettings;
 
@@ -445,6 +455,8 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
 
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -455,6 +467,7 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
               insertSettings,
               listSettings,
               patchSettings,
+              setLabelsSettings,
               setTargetSettings);
 
       initDefaults(this);
@@ -502,6 +515,11 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setTargetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -518,6 +536,7 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
       insertSettings = settings.insertSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setTargetSettings = settings.setTargetSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -528,6 +547,7 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
               insertSettings,
               listSettings,
               patchSettings,
+              setLabelsSettings,
               setTargetSettings);
     }
 
@@ -581,6 +601,12 @@ public class ForwardingRulesStubSettings extends StubSettings<ForwardingRulesStu
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchForwardingRuleRequest, Operation> patchSettings() {
       return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsForwardingRuleRequest, Operation>
+        setLabelsSettings() {
+      return setLabelsSettings;
     }
 
     /** Returns the builder for the settings used for calls to setTarget. */

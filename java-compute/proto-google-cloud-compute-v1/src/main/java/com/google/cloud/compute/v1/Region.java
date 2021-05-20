@@ -108,12 +108,18 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 671865712:
+            {
+              bitField0_ |= 0x00000100;
+              supportsPzs_ = input.readBool();
+              break;
+            }
           case 928682554:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 zones_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               zones_.add(s);
               break;
@@ -179,7 +185,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         zones_ = zones_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
@@ -885,6 +891,39 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Region.Status.UNRECOGNIZED : result;
   }
 
+  public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
+  private boolean supportsPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSupportsPzs() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  @java.lang.Override
+  public boolean getSupportsPzs() {
+    return supportsPzs_;
+  }
+
   public static final int ZONES_FIELD_NUMBER = 116085319;
   private com.google.protobuf.LazyStringList zones_;
   /**
@@ -972,6 +1011,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(83983214, supportsPzs_);
+    }
     for (int i = 0; i < zones_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 116085319, zones_.getRaw(i));
     }
@@ -1011,6 +1053,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(83983214, supportsPzs_);
     }
     {
       int dataSize = 0;
@@ -1083,6 +1128,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       if (status_ != other.status_) return false;
     }
+    if (hasSupportsPzs() != other.hasSupportsPzs()) return false;
+    if (hasSupportsPzs()) {
+      if (getSupportsPzs() != other.getSupportsPzs()) return false;
+    }
     if (!getZonesList().equals(other.getZonesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1130,6 +1179,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+    }
+    if (hasSupportsPzs()) {
+      hash = (37 * hash) + SUPPORTS_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsPzs());
     }
     if (getZonesCount() > 0) {
       hash = (37 * hash) + ZONES_FIELD_NUMBER;
@@ -1309,8 +1362,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       status_ = 0;
       bitField0_ = (bitField0_ & ~0x00000100);
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportsPzs_ = false;
       bitField0_ = (bitField0_ & ~0x00000200);
+      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1384,9 +1439,13 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       result.status_ = status_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.supportsPzs_ = supportsPzs_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
         zones_ = zones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.zones_ = zones_;
       result.bitField0_ = to_bitField0_;
@@ -1502,10 +1561,13 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStatus()) {
         setStatus(other.getStatus());
       }
+      if (other.hasSupportsPzs()) {
+        setSupportsPzs(other.getSupportsPzs());
+      }
       if (!other.zones_.isEmpty()) {
         if (zones_.isEmpty()) {
           zones_ = other.zones_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureZonesIsMutable();
           zones_.addAll(other.zones_);
@@ -2902,13 +2964,80 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean supportsPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return Whether the supportsPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSupportsPzs() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return The supportsPzs.
+     */
+    @java.lang.Override
+    public boolean getSupportsPzs() {
+      return supportsPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @param value The supportsPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsPzs(boolean value) {
+      bitField0_ |= 0x00000200;
+      supportsPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsPzs() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      supportsPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList zones_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureZonesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -3043,7 +3172,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZones() {
       zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }

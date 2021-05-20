@@ -27,6 +27,7 @@ import com.google.cloud.compute.v1.GetTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest;
@@ -74,6 +75,10 @@ public abstract class TargetHttpsProxiesStub implements BackgroundResource {
 
   public UnaryCallable<ListTargetHttpsProxiesRequest, TargetHttpsProxyList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation>

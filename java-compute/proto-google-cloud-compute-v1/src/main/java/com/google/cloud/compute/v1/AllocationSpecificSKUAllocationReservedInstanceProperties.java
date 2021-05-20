@@ -43,6 +43,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   private AllocationSpecificSKUAllocationReservedInstanceProperties() {
     guestAccelerators_ = java.util.Collections.emptyList();
     localSsds_ = java.util.Collections.emptyList();
+    locationHint_ = "";
     machineType_ = "";
     minCpuPlatform_ = "";
   }
@@ -80,7 +81,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           case 1821688210:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               machineType_ = s;
               break;
             }
@@ -104,8 +105,15 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           case 1943302074:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               minCpuPlatform_ = s;
+              break;
+            }
+          case -1490811254:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              locationHint_ = s;
               break;
             }
           case -586206342:
@@ -330,6 +338,70 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     return localSsds_.get(index);
   }
 
+  public static final int LOCATION_HINT_FIELD_NUMBER = 350519505;
+  private volatile java.lang.Object locationHint_;
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocationHint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The locationHint.
+   */
+  @java.lang.Override
+  public java.lang.String getLocationHint() {
+    java.lang.Object ref = locationHint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationHint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocationHintBytes() {
+    java.lang.Object ref = locationHint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      locationHint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MACHINE_TYPE_FIELD_NUMBER = 227711026;
   private volatile java.lang.Object machineType_;
   /**
@@ -345,7 +417,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    */
   @java.lang.Override
   public boolean hasMachineType() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -409,7 +481,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    */
   @java.lang.Override
   public boolean hasMinCpuPlatform() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -472,14 +544,17 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227711026, machineType_);
     }
     for (int i = 0; i < localSsds_.size(); i++) {
       output.writeMessage(229951299, localSsds_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 242912759, minCpuPlatform_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
     for (int i = 0; i < guestAccelerators_.size(); i++) {
       output.writeMessage(463595119, guestAccelerators_.get(i));
@@ -493,15 +568,18 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
     }
     for (int i = 0; i < localSsds_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(229951299, localSsds_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
     for (int i = 0; i < guestAccelerators_.size(); i++) {
       size +=
@@ -528,6 +606,10 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
     if (!getGuestAcceleratorsList().equals(other.getGuestAcceleratorsList())) return false;
     if (!getLocalSsdsList().equals(other.getLocalSsdsList())) return false;
+    if (hasLocationHint() != other.hasLocationHint()) return false;
+    if (hasLocationHint()) {
+      if (!getLocationHint().equals(other.getLocationHint())) return false;
+    }
     if (hasMachineType() != other.hasMachineType()) return false;
     if (hasMachineType()) {
       if (!getMachineType().equals(other.getMachineType())) return false;
@@ -554,6 +636,10 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     if (getLocalSsdsCount() > 0) {
       hash = (37 * hash) + LOCAL_SSDS_FIELD_NUMBER;
       hash = (53 * hash) + getLocalSsdsList().hashCode();
+    }
+    if (hasLocationHint()) {
+      hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationHint().hashCode();
     }
     if (hasMachineType()) {
       hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
@@ -748,10 +834,12 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       } else {
         localSsdsBuilder_.clear();
       }
-      machineType_ = "";
+      locationHint_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      minCpuPlatform_ = "";
+      machineType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
+      minCpuPlatform_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -808,9 +896,13 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000001;
       }
-      result.machineType_ = machineType_;
+      result.locationHint_ = locationHint_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000002;
+      }
+      result.machineType_ = machineType_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.minCpuPlatform_ = minCpuPlatform_;
       result.bitField0_ = to_bitField0_;
@@ -925,13 +1017,18 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           }
         }
       }
-      if (other.hasMachineType()) {
+      if (other.hasLocationHint()) {
         bitField0_ |= 0x00000004;
+        locationHint_ = other.locationHint_;
+        onChanged();
+      }
+      if (other.hasMachineType()) {
+        bitField0_ |= 0x00000008;
         machineType_ = other.machineType_;
         onChanged();
       }
       if (other.hasMinCpuPlatform()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
@@ -1797,6 +1894,126 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return localSsdsBuilder_;
     }
 
+    private java.lang.Object locationHint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @return Whether the locationHint field is set.
+     */
+    public boolean hasLocationHint() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @return The locationHint.
+     */
+    public java.lang.String getLocationHint() {
+      java.lang.Object ref = locationHint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationHint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @return The bytes for locationHint.
+     */
+    public com.google.protobuf.ByteString getLocationHintBytes() {
+      java.lang.Object ref = locationHint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        locationHint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @param value The locationHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationHint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      locationHint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocationHint() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      locationHint_ = getDefaultInstance().getLocationHint();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * </pre>
+     *
+     * <code>string location_hint = 350519505;</code>
+     *
+     * @param value The bytes for locationHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationHintBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      locationHint_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object machineType_ = "";
     /**
      *
@@ -1810,7 +2027,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return Whether the machineType field is set.
      */
     public boolean hasMachineType() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1872,7 +2089,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       machineType_ = value;
       onChanged();
       return this;
@@ -1889,7 +2106,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMachineType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       machineType_ = getDefaultInstance().getMachineType();
       onChanged();
       return this;
@@ -1911,7 +2128,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       machineType_ = value;
       onChanged();
       return this;
@@ -1930,7 +2147,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return Whether the minCpuPlatform field is set.
      */
     public boolean hasMinCpuPlatform() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1992,7 +2209,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       minCpuPlatform_ = value;
       onChanged();
       return this;
@@ -2009,7 +2226,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
       return this;
@@ -2031,7 +2248,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       minCpuPlatform_ = value;
       onChanged();
       return this;

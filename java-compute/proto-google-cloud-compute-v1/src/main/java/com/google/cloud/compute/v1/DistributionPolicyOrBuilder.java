@@ -27,6 +27,43 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return Whether the targetShape field is set.
+   */
+  boolean hasTargetShape();
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return The enum numeric value on the wire for targetShape.
+   */
+  int getTargetShapeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return The targetShape.
+   */
+  com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape();
+
+  /**
+   *
+   *
+   * <pre>
    * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *

@@ -586,6 +586,93 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
+   *   String project = "";
+   *   String resource = "";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response = globalForwardingRulesClient.setLabels(project, resource, globalSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation setLabels(
+      String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+    SetLabelsGlobalForwardingRuleRequest request =
+        SetLabelsGlobalForwardingRuleRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
+    return setLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   String project = "";
+   *   String resource = "";
+   *   SetLabelsGlobalForwardingRuleRequest request = SetLabelsGlobalForwardingRuleRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+   *     .setProject(project)
+   *     .setResource(resource)
+   *     .build();
+   *   Operation response = globalForwardingRulesClient.setLabels(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation setLabels(SetLabelsGlobalForwardingRuleRequest request) {
+    return setLabelsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   String project = "";
+   *   String resource = "";
+   *   SetLabelsGlobalForwardingRuleRequest request = SetLabelsGlobalForwardingRuleRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+   *     .setProject(project)
+   *     .setResource(resource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = globalForwardingRulesClient.setLabelsCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Changes target URL for the GlobalForwardingRule resource. The new target should be of the same
    * type as the old target.
    *

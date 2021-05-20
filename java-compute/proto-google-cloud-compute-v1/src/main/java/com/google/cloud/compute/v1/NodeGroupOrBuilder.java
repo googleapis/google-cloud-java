@@ -232,6 +232,43 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
+   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  boolean hasLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The locationHint.
+   */
+  java.lang.String getLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *

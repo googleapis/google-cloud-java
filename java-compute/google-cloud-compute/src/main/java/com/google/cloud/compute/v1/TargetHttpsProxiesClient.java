@@ -608,6 +608,93 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Patches the specified TargetHttpsProxy resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
+   *   String project = "";
+   *   String targetHttpsProxy = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
+   *   Operation response = targetHttpsProxiesClient.patch(project, targetHttpsProxy, targetHttpsProxyResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param targetHttpsProxy Name of the TargetHttpsProxy resource to patch.
+   * @param targetHttpsProxyResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation patch(
+      String project, String targetHttpsProxy, TargetHttpsProxy targetHttpsProxyResource) {
+    PatchTargetHttpsProxyRequest request =
+        PatchTargetHttpsProxyRequest.newBuilder()
+            .setProject(project)
+            .setTargetHttpsProxy(targetHttpsProxy)
+            .setTargetHttpsProxyResource(targetHttpsProxyResource)
+            .build();
+    return patch(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patches the specified TargetHttpsProxy resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
+   *   String project = "";
+   *   String targetHttpsProxy = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
+   *   PatchTargetHttpsProxyRequest request = PatchTargetHttpsProxyRequest.newBuilder()
+   *     .setProject(project)
+   *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
+   *     .build();
+   *   Operation response = targetHttpsProxiesClient.patch(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation patch(PatchTargetHttpsProxyRequest request) {
+    return patchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Patches the specified TargetHttpsProxy resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
+   *   String project = "";
+   *   String targetHttpsProxy = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
+   *   PatchTargetHttpsProxyRequest request = PatchTargetHttpsProxyRequest.newBuilder()
+   *     .setProject(project)
+   *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.patchCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable() {
+    return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets the QUIC override policy for TargetHttpsProxy.
    *
    * <p>Sample code:

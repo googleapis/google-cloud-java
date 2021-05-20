@@ -37,6 +37,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   private DistributionPolicy() {
+    targetShape_ = 0;
     zones_ = java.util.Collections.emptyList();
   }
 
@@ -72,16 +73,23 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
             break;
           case 928682554:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 zones_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               zones_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.parser(),
                       extensionRegistry));
+              break;
+            }
+          case -1585996904:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              targetShape_ = rawValue;
               break;
             }
           default:
@@ -98,7 +106,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         zones_ = java.util.Collections.unmodifiableList(zones_);
       }
       this.unknownFields = unknownFields.build();
@@ -119,6 +127,191 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.DistributionPolicy.class,
             com.google.cloud.compute.v1.DistributionPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.DistributionPolicy.TargetShape}
+   */
+  public enum TargetShape implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
+     */
+    UNDEFINED_TARGET_SHAPE(0),
+    /** <code>ANY = 64972;</code> */
+    ANY(64972),
+    /** <code>BALANCED = 468409608;</code> */
+    BALANCED(468409608),
+    /** <code>EVEN = 2140442;</code> */
+    EVEN(2140442),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
+     */
+    public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
+    /** <code>ANY = 64972;</code> */
+    public static final int ANY_VALUE = 64972;
+    /** <code>BALANCED = 468409608;</code> */
+    public static final int BALANCED_VALUE = 468409608;
+    /** <code>EVEN = 2140442;</code> */
+    public static final int EVEN_VALUE = 2140442;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetShape valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetShape forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TARGET_SHAPE;
+        case 64972:
+          return ANY;
+        case 468409608:
+          return BALANCED;
+        case 2140442:
+          return EVEN;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetShape> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetShape> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetShape>() {
+          public TargetShape findValueByNumber(int number) {
+            return TargetShape.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.DistributionPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final TargetShape[] VALUES = values();
+
+    public static TargetShape valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetShape(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.DistributionPolicy.TargetShape)
+  }
+
+  private int bitField0_;
+  public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
+  private int targetShape_;
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return Whether the targetShape field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetShape() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return The enum numeric value on the wire for targetShape.
+   */
+  @java.lang.Override
+  public int getTargetShapeValue() {
+    return targetShape_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   *
+   * @return The targetShape.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.DistributionPolicy.TargetShape result =
+        com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
+    return result == null
+        ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED
+        : result;
   }
 
   public static final int ZONES_FIELD_NUMBER = 116085319;
@@ -215,6 +408,9 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < zones_.size(); i++) {
       output.writeMessage(116085319, zones_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(338621299, targetShape_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -226,6 +422,9 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     size = 0;
     for (int i = 0; i < zones_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(116085319, zones_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(338621299, targetShape_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +442,10 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.DistributionPolicy other =
         (com.google.cloud.compute.v1.DistributionPolicy) obj;
 
+    if (hasTargetShape() != other.hasTargetShape()) return false;
+    if (hasTargetShape()) {
+      if (targetShape_ != other.targetShape_) return false;
+    }
     if (!getZonesList().equals(other.getZonesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -255,6 +458,10 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasTargetShape()) {
+      hash = (37 * hash) + TARGET_SHAPE_FIELD_NUMBER;
+      hash = (53 * hash) + targetShape_;
+    }
     if (getZonesCount() > 0) {
       hash = (37 * hash) + ZONES_FIELD_NUMBER;
       hash = (53 * hash) + getZonesList().hashCode();
@@ -405,9 +612,11 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      targetShape_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (zonesBuilder_ == null) {
         zones_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         zonesBuilder_.clear();
       }
@@ -439,15 +648,21 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
       com.google.cloud.compute.v1.DistributionPolicy result =
           new com.google.cloud.compute.v1.DistributionPolicy(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
+      result.targetShape_ = targetShape_;
       if (zonesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           zones_ = java.util.Collections.unmodifiableList(zones_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.zones_ = zones_;
       } else {
         result.zones_ = zonesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -497,11 +712,14 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.DistributionPolicy other) {
       if (other == com.google.cloud.compute.v1.DistributionPolicy.getDefaultInstance()) return this;
+      if (other.hasTargetShape()) {
+        setTargetShape(other.getTargetShape());
+      }
       if (zonesBuilder_ == null) {
         if (!other.zones_.isEmpty()) {
           if (zones_.isEmpty()) {
             zones_ = other.zones_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureZonesIsMutable();
             zones_.addAll(other.zones_);
@@ -514,7 +732,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
             zonesBuilder_.dispose();
             zonesBuilder_ = null;
             zones_ = other.zones_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             zonesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getZonesFieldBuilder()
@@ -555,15 +773,130 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
+    private int targetShape_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @return Whether the targetShape field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetShape() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for targetShape.
+     */
+    @java.lang.Override
+    public int getTargetShapeValue() {
+      return targetShape_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for targetShape to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetShapeValue(int value) {
+      bitField0_ |= 0x00000001;
+      targetShape_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @return The targetShape.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.DistributionPolicy.TargetShape result =
+          com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
+      return result == null
+          ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @param value The targetShape to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetShape(
+        com.google.cloud.compute.v1.DistributionPolicy.TargetShape value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      targetShape_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetShape() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      targetShape_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration> zones_ =
         java.util.Collections.emptyList();
 
     private void ensureZonesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         zones_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration>(zones_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -808,7 +1141,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
     public Builder clearZones() {
       if (zonesBuilder_ == null) {
         zones_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         zonesBuilder_.clear();
@@ -952,7 +1285,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration,
                 com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.Builder,
                 com.google.cloud.compute.v1.DistributionPolicyZoneConfigurationOrBuilder>(
-                zones_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                zones_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         zones_ = null;
       }
       return zonesBuilder_;

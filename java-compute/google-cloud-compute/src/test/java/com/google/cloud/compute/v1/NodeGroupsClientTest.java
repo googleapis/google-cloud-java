@@ -117,6 +117,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -139,6 +140,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -275,6 +277,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -297,6 +300,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -365,6 +369,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -387,6 +392,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -455,6 +461,7 @@ public class NodeGroupsClientTest {
     String fingerprint = "fingerprint-1375934236";
     String id = "id3355";
     String kind = "kind3292052";
+    String locationHint = "locationHint-1796964143";
     String name = "name3373707";
     String nodeTemplate = "nodeTemplate323154455";
     String selfLink = "selfLink-1691268851";
@@ -467,6 +474,7 @@ public class NodeGroupsClientTest {
             .setFingerprint(fingerprint)
             .setId(id)
             .setKind(kind)
+            .setLocationHint(locationHint)
             .setName(name)
             .setNodeTemplate(nodeTemplate)
             .setSelfLink(selfLink)
@@ -582,6 +590,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -604,6 +613,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -800,6 +810,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -822,6 +833,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -947,6 +959,7 @@ public class NodeGroupsClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -969,6 +982,7 @@ public class NodeGroupsClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

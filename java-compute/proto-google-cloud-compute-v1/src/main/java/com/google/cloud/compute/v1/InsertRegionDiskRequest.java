@@ -380,7 +380,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Source image to restore onto a disk.
+   * Source image to restore onto a disk. This field is optional.
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -395,7 +395,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Source image to restore onto a disk.
+   * Source image to restore onto a disk. This field is optional.
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -418,7 +418,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Source image to restore onto a disk.
+   * Source image to restore onto a disk. This field is optional.
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -1407,7 +1407,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -1421,7 +1421,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -1443,7 +1443,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -1465,7 +1465,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -1486,7 +1486,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -1503,7 +1503,7 @@ public final class InsertRegionDiskRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Source image to restore onto a disk.
+     * Source image to restore onto a disk. This field is optional.
      * </pre>
      *
      * <code>string source_image = 50443319;</code>

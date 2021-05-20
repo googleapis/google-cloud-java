@@ -108,6 +108,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 671865712:
+            {
+              bitField0_ |= 0x00000200;
+              supportsPzs_ = input.readBool();
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -934,6 +940,39 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Zone.Status.UNRECOGNIZED : result;
   }
 
+  public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
+  private boolean supportsPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSupportsPzs() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  @java.lang.Override
+  public boolean getSupportsPzs() {
+    return supportsPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -959,6 +998,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeBool(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -1000,6 +1042,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -1076,6 +1121,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       if (status_ != other.status_) return false;
     }
+    if (hasSupportsPzs() != other.hasSupportsPzs()) return false;
+    if (hasSupportsPzs()) {
+      if (getSupportsPzs() != other.getSupportsPzs()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1126,6 +1175,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+    }
+    if (hasSupportsPzs()) {
+      hash = (37 * hash) + SUPPORTS_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsPzs());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1298,6 +1351,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       status_ = 0;
       bitField0_ = (bitField0_ & ~0x00000200);
+      supportsPzs_ = false;
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1371,6 +1426,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000100;
       }
       result.status_ = status_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.supportsPzs_ = supportsPzs_;
+        to_bitField0_ |= 0x00000200;
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1471,6 +1530,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatus()) {
         setStatus(other.getStatus());
+      }
+      if (other.hasSupportsPzs()) {
+        setSupportsPzs(other.getSupportsPzs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2801,6 +2863,73 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatus() {
       bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean supportsPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return Whether the supportsPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSupportsPzs() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return The supportsPzs.
+     */
+    @java.lang.Override
+    public boolean getSupportsPzs() {
+      return supportsPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @param value The supportsPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsPzs(boolean value) {
+      bitField0_ |= 0x00000400;
+      supportsPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsPzs() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      supportsPzs_ = false;
       onChanged();
       return this;
     }

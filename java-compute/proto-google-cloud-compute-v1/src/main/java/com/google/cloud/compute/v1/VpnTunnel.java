@@ -302,7 +302,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
    * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
    * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
    * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
    * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
    * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -1595,7 +1595,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
    * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
    * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
    * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
    * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
    * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -1625,7 +1625,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
    * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
    * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
    * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
    * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
    * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -1655,7 +1655,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
    * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
    * - NO_INCOMING_PACKETS: No incoming packets from peer.
-   * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+   * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
    * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
    * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
    * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -4874,7 +4874,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -4904,7 +4904,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -4934,7 +4934,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -4967,7 +4967,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -5000,7 +5000,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.
@@ -5036,7 +5036,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * - DEPROVISIONING: Resources are being deallocated for the VPN tunnel.
      * - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
      * - NO_INCOMING_PACKETS: No incoming packets from peer.
-     * - REJECTED: Tunnel configuration was rejected, can be result of being blacklisted.
+     * - REJECTED: Tunnel configuration was rejected, can be result of being denied access.
      * - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources.
      * - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state.
      * - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT.

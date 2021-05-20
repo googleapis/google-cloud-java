@@ -385,6 +385,86 @@ public class NetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns the effective firewalls on a given network.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   String project = "";
+   *   String network = "";
+   *   NetworksGetEffectiveFirewallsResponse response = networksClient.getEffectiveFirewalls(project, network);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param network Name of the network for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NetworksGetEffectiveFirewallsResponse getEffectiveFirewalls(
+      String project, String network) {
+    GetEffectiveFirewallsNetworkRequest request =
+        GetEffectiveFirewallsNetworkRequest.newBuilder()
+            .setProject(project)
+            .setNetwork(network)
+            .build();
+    return getEffectiveFirewalls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the effective firewalls on a given network.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   String network = "";
+   *   String project = "";
+   *   GetEffectiveFirewallsNetworkRequest request = GetEffectiveFirewallsNetworkRequest.newBuilder()
+   *     .setNetwork(network)
+   *     .setProject(project)
+   *     .build();
+   *   NetworksGetEffectiveFirewallsResponse response = networksClient.getEffectiveFirewalls(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NetworksGetEffectiveFirewallsResponse getEffectiveFirewalls(
+      GetEffectiveFirewallsNetworkRequest request) {
+    return getEffectiveFirewallsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the effective firewalls on a given network.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   String network = "";
+   *   String project = "";
+   *   GetEffectiveFirewallsNetworkRequest request = GetEffectiveFirewallsNetworkRequest.newBuilder()
+   *     .setNetwork(network)
+   *     .setProject(project)
+   *     .build();
+   *   ApiFuture&lt;NetworksGetEffectiveFirewallsResponse&gt; future = networksClient.getEffectiveFirewallsCallable().futureCall(request);
+   *   // Do something
+   *   NetworksGetEffectiveFirewallsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    return stub.getEffectiveFirewallsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a network in the specified project using the data included in the request.
    *
    * <p>Sample code:

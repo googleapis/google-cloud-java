@@ -93,6 +93,11 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).patchSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsSettings() {
+    return ((GlobalForwardingRulesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTarget. */
   public UnaryCallSettings<SetTargetGlobalForwardingRuleRequest, Operation> setTargetSettings() {
     return ((GlobalForwardingRulesStubSettings) getStubSettings()).setTargetSettings();
@@ -228,6 +233,12 @@ public class GlobalForwardingRulesSettings extends ClientSettings<GlobalForwardi
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchGlobalForwardingRuleRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsGlobalForwardingRuleRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
     }
 
     /** Returns the builder for the settings used for calls to setTarget. */

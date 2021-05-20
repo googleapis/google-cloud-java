@@ -116,6 +116,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -138,6 +139,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -274,6 +276,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -296,6 +299,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -366,6 +370,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -388,6 +393,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -453,10 +459,13 @@ public class DisksClientTest {
     String labelFingerprint = "labelFingerprint714995737";
     String lastAttachTimestamp = "lastAttachTimestamp-2105323995";
     String lastDetachTimestamp = "lastDetachTimestamp-480399885";
+    String locationHint = "locationHint-1796964143";
     String name = "name3373707";
     String options = "options-1249474914";
     String physicalBlockSizeBytes = "physicalBlockSizeBytes-1190604793";
+    String provisionedIops = "provisionedIops1260510932";
     String region = "region-934795532";
+    boolean satisfiesPzs = false;
     String selfLink = "selfLink-1691268851";
     String sizeGb = "sizeGb2105542105";
     String sourceDisk = "sourceDisk-85117119";
@@ -465,6 +474,7 @@ public class DisksClientTest {
     String sourceImageId = "sourceImageId-2092155357";
     String sourceSnapshot = "sourceSnapshot-947679896";
     String sourceSnapshotId = "sourceSnapshotId-1511650478";
+    String sourceStorageObject = "sourceStorageObject-303818201";
     String type = "type3575610";
     String zone2 = "zone2-696322977";
     Disk expectedResponse =
@@ -476,10 +486,13 @@ public class DisksClientTest {
             .setLabelFingerprint(labelFingerprint)
             .setLastAttachTimestamp(lastAttachTimestamp)
             .setLastDetachTimestamp(lastDetachTimestamp)
+            .setLocationHint(locationHint)
             .setName(name)
             .setOptions(options)
             .setPhysicalBlockSizeBytes(physicalBlockSizeBytes)
+            .setProvisionedIops(provisionedIops)
             .setRegion(region)
+            .setSatisfiesPzs(satisfiesPzs)
             .setSelfLink(selfLink)
             .setSizeGb(sizeGb)
             .setSourceDisk(sourceDisk)
@@ -488,6 +501,7 @@ public class DisksClientTest {
             .setSourceImageId(sourceImageId)
             .setSourceSnapshot(sourceSnapshot)
             .setSourceSnapshotId(sourceSnapshotId)
+            .setSourceStorageObject(sourceStorageObject)
             .setType(type)
             .setZone(zone2)
             .build();
@@ -600,6 +614,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -622,6 +637,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -752,6 +768,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -774,6 +791,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -849,6 +867,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -871,6 +890,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -996,6 +1016,7 @@ public class DisksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -1018,6 +1039,7 @@ public class DisksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

@@ -21,10 +21,20 @@
     <field>*_VALUE</field>
   </difference>
   <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
-  <!-- Originally caused by https://github.com/googleapis/googleapis-discovery/pull/30-->
+    <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/compute/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
   <difference>
     <differenceType>7012</differenceType>
-    <className>com/google/cloud/compute/**</className>
+    <className>com/google/cloud/compute/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
 </differences>

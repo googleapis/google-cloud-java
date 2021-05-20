@@ -420,6 +420,43 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * </pre>
+   *
+   * <code>string operation_group_id = 40171187;</code>
+   *
+   * @return Whether the operationGroupId field is set.
+   */
+  boolean hasOperationGroupId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * </pre>
+   *
+   * <code>string operation_group_id = 40171187;</code>
+   *
+   * @return The operationGroupId.
+   */
+  java.lang.String getOperationGroupId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * </pre>
+   *
+   * <code>string operation_group_id = 40171187;</code>
+   *
+   * @return The bytes for operationGroupId.
+   */
+  com.google.protobuf.ByteString getOperationGroupIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
    * </pre>
    *

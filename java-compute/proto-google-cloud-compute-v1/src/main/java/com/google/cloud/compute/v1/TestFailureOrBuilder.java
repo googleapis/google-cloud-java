@@ -27,6 +27,68 @@ public interface TestFailureOrBuilder
    *
    *
    * <pre>
+   * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string actual_output_url = 287075458;</code>
+   *
+   * @return Whether the actualOutputUrl field is set.
+   */
+  boolean hasActualOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string actual_output_url = 287075458;</code>
+   *
+   * @return The actualOutputUrl.
+   */
+  java.lang.String getActualOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The actual output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string actual_output_url = 287075458;</code>
+   *
+   * @return The bytes for actualOutputUrl.
+   */
+  com.google.protobuf.ByteString getActualOutputUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * </pre>
+   *
+   * <code>int32 actual_redirect_response_code = 42926553;</code>
+   *
+   * @return Whether the actualRedirectResponseCode field is set.
+   */
+  boolean hasActualRedirectResponseCode();
+  /**
+   *
+   *
+   * <pre>
+   * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * </pre>
+   *
+   * <code>int32 actual_redirect_response_code = 42926553;</code>
+   *
+   * @return The actualRedirectResponseCode.
+   */
+  int getActualRedirectResponseCode();
+
+  /**
+   *
+   *
+   * <pre>
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
@@ -64,6 +126,68 @@ public interface TestFailureOrBuilder
    *
    *
    * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return Whether the expectedOutputUrl field is set.
+   */
+  boolean hasExpectedOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The expectedOutputUrl.
+   */
+  java.lang.String getExpectedOutputUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The expected output URL evaluated by load balancer containing the scheme, host, path and query parameters.
+   * </pre>
+   *
+   * <code>string expected_output_url = 433967384;</code>
+   *
+   * @return The bytes for expectedOutputUrl.
+   */
+  com.google.protobuf.ByteString getExpectedOutputUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return Whether the expectedRedirectResponseCode field is set.
+   */
+  boolean hasExpectedRedirectResponseCode();
+  /**
+   *
+   *
+   * <pre>
+   * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * </pre>
+   *
+   * <code>int32 expected_redirect_response_code = 18888047;</code>
+   *
+   * @return The expectedRedirectResponseCode.
+   */
+  int getExpectedRedirectResponseCode();
+
+  /**
+   *
+   *
+   * <pre>
    * Expected BackendService or BackendBucket resource the given URL should be mapped to.
    * </pre>
    *
@@ -96,6 +220,58 @@ public interface TestFailureOrBuilder
    * @return The bytes for expectedService.
    */
   com.google.protobuf.ByteString getExpectedServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers of the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers of the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers of the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  int getHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers of the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder>
+      getHeadersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP headers of the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.UrlMapTestHeader headers = 258436998;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapTestHeaderOrBuilder getHeadersOrBuilder(int index);
 
   /**
    *

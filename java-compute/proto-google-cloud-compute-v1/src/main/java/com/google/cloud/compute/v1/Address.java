@@ -648,7 +648,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.Purpose}
@@ -668,8 +668,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     DNS_RESOLVER(476114556),
     /** <code>GCE_ENDPOINT = 230515243;</code> */
     GCE_ENDPOINT(230515243),
+    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    IPSEC_INTERCONNECT(340437251),
     /** <code>NAT_AUTO = 163666477;</code> */
     NAT_AUTO(163666477),
+    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    PRIVATE_SERVICE_CONNECT(48134724),
     /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
     SHARED_LOADBALANCER_VIP(294447572),
     /** <code>VPC_PEERING = 400800170;</code> */
@@ -691,8 +695,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public static final int DNS_RESOLVER_VALUE = 476114556;
     /** <code>GCE_ENDPOINT = 230515243;</code> */
     public static final int GCE_ENDPOINT_VALUE = 230515243;
+    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    public static final int IPSEC_INTERCONNECT_VALUE = 340437251;
     /** <code>NAT_AUTO = 163666477;</code> */
     public static final int NAT_AUTO_VALUE = 163666477;
+    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
     /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
     public static final int SHARED_LOADBALANCER_VIP_VALUE = 294447572;
     /** <code>VPC_PEERING = 400800170;</code> */
@@ -728,8 +736,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           return DNS_RESOLVER;
         case 230515243:
           return GCE_ENDPOINT;
+        case 340437251:
+          return IPSEC_INTERCONNECT;
         case 163666477:
           return NAT_AUTO;
+        case 48134724:
+          return PRIVATE_SERVICE_CONNECT;
         case 294447572:
           return SHARED_LOADBALANCER_VIP;
         case 400800170:
@@ -1529,7 +1541,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The prefix length if the resource reprensents an IP range.
+   * The prefix length if the resource represents an IP range.
    * </pre>
    *
    * <code>int32 prefix_length = 453565747;</code>
@@ -1544,7 +1556,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The prefix length if the resource reprensents an IP range.
+   * The prefix length if the resource represents an IP range.
    * </pre>
    *
    * <code>int32 prefix_length = 453565747;</code>
@@ -1567,7 +1579,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1587,7 +1599,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1607,7 +1619,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1628,7 +1640,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -1643,7 +1655,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -1666,7 +1678,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -3826,7 +3838,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length if the resource reprensents an IP range.
+     * The prefix length if the resource represents an IP range.
      * </pre>
      *
      * <code>int32 prefix_length = 453565747;</code>
@@ -3841,7 +3853,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length if the resource reprensents an IP range.
+     * The prefix length if the resource represents an IP range.
      * </pre>
      *
      * <code>int32 prefix_length = 453565747;</code>
@@ -3856,7 +3868,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length if the resource reprensents an IP range.
+     * The prefix length if the resource represents an IP range.
      * </pre>
      *
      * <code>int32 prefix_length = 453565747;</code>
@@ -3874,7 +3886,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The prefix length if the resource reprensents an IP range.
+     * The prefix length if the resource represents an IP range.
      * </pre>
      *
      * <code>int32 prefix_length = 453565747;</code>
@@ -3898,7 +3910,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3918,7 +3930,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3938,7 +3950,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3961,7 +3973,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3984,7 +3996,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -4010,7 +4022,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -4029,7 +4041,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4043,7 +4055,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4065,7 +4077,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4087,7 +4099,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4108,7 +4120,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4125,7 +4137,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the regional address resides. This field is not applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
      * </pre>
      *
      * <code>string region = 138946292;</code>

@@ -404,4 +404,29 @@ public interface ZoneOrBuilder
    * @return The status.
    */
   com.google.cloud.compute.v1.Zone.Status getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  boolean hasSupportsPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  boolean getSupportsPzs();
 }

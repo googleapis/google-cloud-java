@@ -541,6 +541,43 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return Whether the locationHint field is set.
+   */
+  boolean hasLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The locationHint.
+   */
+  java.lang.String getLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 350519505;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -647,6 +684,43 @@ public interface DiskOrBuilder
    * @return The bytes for physicalBlockSizeBytes.
    */
   com.google.protobuf.ByteString getPhysicalBlockSizeBytesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return Whether the provisionedIops field is set.
+   */
+  boolean hasProvisionedIops();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return The provisionedIops.
+   */
+  java.lang.String getProvisionedIops();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return The bytes for provisionedIops.
+   */
+  com.google.protobuf.ByteString getProvisionedIopsBytes();
 
   /**
    *
@@ -791,6 +865,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
@@ -870,8 +969,11 @@ public interface DiskOrBuilder
    * <pre>
    * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
    * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
    * - projects/project/zones/zone/disks/disk
+   * - projects/project/regions/region/disks/disk
    * - zones/zone/disks/disk
+   * - regions/region/disks/disk
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -885,8 +987,11 @@ public interface DiskOrBuilder
    * <pre>
    * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
    * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
    * - projects/project/zones/zone/disks/disk
+   * - projects/project/regions/region/disks/disk
    * - zones/zone/disks/disk
+   * - regions/region/disks/disk
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -900,8 +1005,11 @@ public interface DiskOrBuilder
    * <pre>
    * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
    * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
    * - projects/project/zones/zone/disks/disk
+   * - projects/project/regions/region/disks/disk
    * - zones/zone/disks/disk
+   * - regions/region/disks/disk
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -1212,7 +1320,49 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for use. DELETING: Disk is deleting.
+   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * </pre>
+   *
+   * <code>string source_storage_object = 233052711;</code>
+   *
+   * @return Whether the sourceStorageObject field is set.
+   */
+  boolean hasSourceStorageObject();
+  /**
+   *
+   *
+   * <pre>
+   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * </pre>
+   *
+   * <code>string source_storage_object = 233052711;</code>
+   *
+   * @return The sourceStorageObject.
+   */
+  java.lang.String getSourceStorageObject();
+  /**
+   *
+   *
+   * <pre>
+   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * </pre>
+   *
+   * <code>string source_storage_object = 233052711;</code>
+   *
+   * @return The bytes for sourceStorageObject.
+   */
+  com.google.protobuf.ByteString getSourceStorageObjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of disk creation.
+   * - CREATING: Disk is provisioning.
+   * - RESTORING: Source data is being copied into the disk.
+   * - FAILED: Disk creation failed.
+   * - READY: Disk is ready for use.
+   * - DELETING: Disk is deleting.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
@@ -1224,7 +1374,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for use. DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation.
+   * - CREATING: Disk is provisioning.
+   * - RESTORING: Source data is being copied into the disk.
+   * - FAILED: Disk creation failed.
+   * - READY: Disk is ready for use.
+   * - DELETING: Disk is deleting.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>
@@ -1236,7 +1391,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. CREATING: Disk is provisioning. RESTORING: Source data is being copied into the disk. FAILED: Disk creation failed. READY: Disk is ready for use. DELETING: Disk is deleting.
+   * [Output Only] The status of disk creation.
+   * - CREATING: Disk is provisioning.
+   * - RESTORING: Source data is being copied into the disk.
+   * - FAILED: Disk creation failed.
+   * - READY: Disk is ready for use.
+   * - DELETING: Disk is deleting.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Disk.Status status = 181260274;</code>

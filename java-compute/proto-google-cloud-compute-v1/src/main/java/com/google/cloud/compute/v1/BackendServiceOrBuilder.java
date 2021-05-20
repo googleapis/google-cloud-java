@@ -107,7 +107,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -119,7 +119,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -131,7 +131,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -842,6 +842,47 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return Whether the maxStreamDuration field is set.
+   */
+  boolean hasMaxStreamDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return The maxStreamDuration.
+   */
+  com.google.cloud.compute.v1.Duration getMaxStreamDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -964,7 +1005,7 @@ public interface BackendServiceOrBuilder
    *
    * <pre>
    * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -977,7 +1018,7 @@ public interface BackendServiceOrBuilder
    *
    * <pre>
    * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -1226,7 +1267,7 @@ public interface BackendServiceOrBuilder
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -1243,7 +1284,7 @@ public interface BackendServiceOrBuilder
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -1260,7 +1301,7 @@ public interface BackendServiceOrBuilder
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -1277,7 +1318,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
    * </pre>
    *
    * <code>int32 timeout_sec = 79994995;</code>
@@ -1289,7 +1330,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
    * </pre>
    *
    * <code>int32 timeout_sec = 79994995;</code>

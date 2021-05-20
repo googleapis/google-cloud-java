@@ -295,6 +295,31 @@ public interface NodeGroupNodeOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * Binding properties for the physical server.
    * </pre>
    *

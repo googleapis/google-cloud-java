@@ -157,6 +157,22 @@
  * </code>
  * </pre>
  *
+ * ====================== FirewallPoliciesClient ======================
+ *
+ * <p>Service Description: The FirewallPolicies API.
+ *
+ * <p>Sample for FirewallPoliciesClient:
+ *
+ * <pre>
+ * <code>
+ * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
+ *   String firewallPolicy = "";
+ *   FirewallPolicyAssociation firewallPolicyAssociationResource = FirewallPolicyAssociation.newBuilder().build();
+ *   Operation response = firewallPoliciesClient.addAssociation(firewallPolicy, firewallPolicyAssociationResource);
+ * }
+ * </code>
+ * </pre>
+ *
  * =============== FirewallsClient ===============
  *
  * <p>Service Description: The Firewalls API.
@@ -268,6 +284,23 @@
  * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
  *   String operation = "";
  *   DeleteGlobalOrganizationOperationResponse response = globalOrganizationOperationsClient.delete(operation);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =================================== GlobalPublicDelegatedPrefixesClient
+ * ===================================
+ *
+ * <p>Service Description: The GlobalPublicDelegatedPrefixes API.
+ *
+ * <p>Sample for GlobalPublicDelegatedPrefixesClient:
+ *
+ * <pre>
+ * <code>
+ * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient = GlobalPublicDelegatedPrefixesClient.create()) {
+ *   String project = "";
+ *   String publicDelegatedPrefix = "";
+ *   Operation response = globalPublicDelegatedPrefixesClient.delete(project, publicDelegatedPrefix);
  * }
  * </code>
  * </pre>
@@ -592,6 +625,39 @@
  * </code>
  * </pre>
  *
+ * ============================== PublicAdvertisedPrefixesClient ==============================
+ *
+ * <p>Service Description: The PublicAdvertisedPrefixes API.
+ *
+ * <p>Sample for PublicAdvertisedPrefixesClient:
+ *
+ * <pre>
+ * <code>
+ * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient = PublicAdvertisedPrefixesClient.create()) {
+ *   String project = "";
+ *   String publicAdvertisedPrefix = "";
+ *   Operation response = publicAdvertisedPrefixesClient.delete(project, publicAdvertisedPrefix);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============================= PublicDelegatedPrefixesClient =============================
+ *
+ * <p>Service Description: The PublicDelegatedPrefixes API.
+ *
+ * <p>Sample for PublicDelegatedPrefixesClient:
+ *
+ * <pre>
+ * <code>
+ * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient = PublicDelegatedPrefixesClient.create()) {
+ *   String project = "";
+ *   String region = "";
+ *   String publicDelegatedPrefix = "";
+ *   Operation response = publicDelegatedPrefixesClient.delete(project, region, publicDelegatedPrefix);
+ * }
+ * </code>
+ * </pre>
+ *
  * ======================= RegionAutoscalersClient =======================
  *
  * <p>Service Description: The RegionAutoscalers API.
@@ -744,6 +810,23 @@
  *   String region = "";
  *   String instanceGroup = "";
  *   InstanceGroup response = regionInstanceGroupsClient.get(project, region, instanceGroup);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ===================== RegionInstancesClient =====================
+ *
+ * <p>Service Description: The RegionInstances API.
+ *
+ * <p>Sample for RegionInstancesClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
+ *   String project = "";
+ *   String region = "";
+ *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
+ *   Operation response = regionInstancesClient.bulkInsert(project, region, bulkInsertInstanceResourceResource);
  * }
  * </code>
  * </pre>

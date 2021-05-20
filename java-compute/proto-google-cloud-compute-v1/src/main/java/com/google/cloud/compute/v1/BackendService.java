@@ -84,6 +84,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
+    int mutable_bitField1_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -145,13 +146,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00020000;
               name_ = s;
               break;
             }
           case 27575304:
             {
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               port_ = input.readInt32();
               break;
             }
@@ -175,20 +176,36 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 332274762:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00200000;
               portName_ = s;
+              break;
+            }
+          case 491427010:
+            {
+              com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
+              if (((bitField0_ & 0x00010000) != 0)) {
+                subBuilder = maxStreamDuration_.toBuilder();
+              }
+              maxStreamDuration_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxStreamDuration_);
+                maxStreamDuration_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00010000;
               break;
             }
           case 639959960:
             {
-              bitField0_ |= 0x08000000;
+              bitField0_ |= 0x10000000;
               timeoutSec_ = input.readInt32();
               break;
             }
           case 676623552:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00400000;
               protocol_ = rawValue;
               break;
             }
@@ -219,14 +236,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00800000;
               region_ = s;
               break;
             }
           case 1368660106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x01000000;
               securityPolicy_ = s;
               break;
             }
@@ -250,7 +267,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00040000;
               network_ = s;
               break;
             }
@@ -287,7 +304,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case -1457966606:
             {
               com.google.cloud.compute.v1.OutlierDetection.Builder subBuilder = null;
-              if (((bitField0_ & 0x00040000) != 0)) {
+              if (((bitField0_ & 0x00080000) != 0)) {
                 subBuilder = outlierDetection_.toBuilder();
               }
               outlierDetection_ =
@@ -297,7 +314,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(outlierDetection_);
                 outlierDetection_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00080000;
               break;
             }
           case -1383845344:
@@ -359,7 +376,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x04000000;
               selfLink_ = s;
               break;
             }
@@ -382,14 +399,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           case -583858808:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x04000000;
+              bitField0_ |= 0x08000000;
               sessionAffinity_ = rawValue;
               break;
             }
           case -465767918:
             {
               com.google.cloud.compute.v1.SecuritySettings.Builder subBuilder = null;
-              if (((bitField0_ & 0x01000000) != 0)) {
+              if (((bitField0_ & 0x02000000) != 0)) {
                 subBuilder = securitySettings_.toBuilder();
               }
               securitySettings_ =
@@ -399,7 +416,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(securitySettings_);
                 securitySettings_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x02000000;
               break;
             }
           case -208248070:
@@ -935,7 +952,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -956,6 +973,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_SESSION_AFFINITY(0),
     /** <code>CLIENT_IP = 345665051;</code> */
     CLIENT_IP(345665051),
+    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    CLIENT_IP_NO_DESTINATION(106122516),
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     CLIENT_IP_PORT_PROTO(221722926),
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
@@ -983,6 +1002,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
     /** <code>CLIENT_IP = 345665051;</code> */
     public static final int CLIENT_IP_VALUE = 345665051;
+    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    public static final int CLIENT_IP_NO_DESTINATION_VALUE = 106122516;
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
@@ -1024,6 +1045,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_SESSION_AFFINITY;
         case 345665051:
           return CLIENT_IP;
+        case 106122516:
+          return CLIENT_IP_NO_DESTINATION;
         case 221722926:
           return CLIENT_IP_PORT_PROTO;
         case 25322148:
@@ -1204,7 +1227,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -1219,7 +1242,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -1236,7 +1259,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+   * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -2241,6 +2264,62 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         : logConfig_;
   }
 
+  public static final int MAX_STREAM_DURATION_FIELD_NUMBER = 61428376;
+  private com.google.cloud.compute.v1.Duration maxStreamDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return Whether the maxStreamDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxStreamDuration() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   *
+   * @return The maxStreamDuration.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getMaxStreamDuration() {
+    return maxStreamDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxStreamDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+   * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+   * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
+    return maxStreamDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxStreamDuration_;
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
   /**
@@ -2256,7 +2335,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -2320,7 +2399,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2388,7 +2467,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOutlierDetection() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -2438,7 +2517,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -2447,14 +2526,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPort() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
    *
    * <pre>
    * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-   * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+   * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
    * </pre>
    *
    * <code>int32 port = 3446913;</code>
@@ -2482,7 +2561,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPortName() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -2550,7 +2629,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProtocol() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -2607,7 +2686,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -2671,7 +2750,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSecurityPolicy() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -2737,7 +2816,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSecuritySettings() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
@@ -2791,7 +2870,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -2847,7 +2926,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -2860,14 +2939,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSessionAffinity() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
   /**
    *
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -2887,7 +2966,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of session affinity to use. The default is NONE.
-   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+   * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
    * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
    * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
    * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -2914,7 +2993,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
    * </pre>
    *
    * <code>int32 timeout_sec = 79994995;</code>
@@ -2923,13 +3002,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTimeoutSec() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
    * </pre>
    *
    * <code>int32 timeout_sec = 79994995;</code>
@@ -2967,10 +3046,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeInt32(3446913, port_);
     }
     for (int i = 0; i < customRequestHeaders_.size(); i++) {
@@ -2980,13 +3059,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(61428376, getMaxStreamDuration());
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeEnum(84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -2995,16 +3077,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeEnum(131431487, localityLbPolicy_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(213976452, getCdnPolicy());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -3016,7 +3098,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(354625086, getOutlierDetection());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
@@ -3039,16 +3121,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 448370606, healthChecks_.getRaw(i));
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(461096747, getConnectionDraining());
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeEnum(463888561, sessionAffinity_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(478649922, getSecuritySettings());
     }
     for (int i = 0; i < backends_.size(); i++) {
@@ -3075,10 +3157,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     {
@@ -3093,13 +3175,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              61428376, getMaxStreamDuration());
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -3109,16 +3196,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(131431487, localityLbPolicy_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -3130,7 +3217,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               354625086, getOutlierDetection());
@@ -3166,7 +3253,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3174,10 +3261,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               461096747, getConnectionDraining());
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(463888561, sessionAffinity_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               478649922, getSecuritySettings());
@@ -3268,6 +3355,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
       if (!getLogConfig().equals(other.getLogConfig())) return false;
+    }
+    if (hasMaxStreamDuration() != other.hasMaxStreamDuration()) return false;
+    if (hasMaxStreamDuration()) {
+      if (!getMaxStreamDuration().equals(other.getMaxStreamDuration())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -3407,6 +3498,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLogConfig().hashCode();
+    }
+    if (hasMaxStreamDuration()) {
+      hash = (37 * hash) + MAX_STREAM_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxStreamDuration().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -3609,6 +3704,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         getFailoverPolicyFieldBuilder();
         getIapFieldBuilder();
         getLogConfigFieldBuilder();
+        getMaxStreamDurationFieldBuilder();
         getOutlierDetectionFieldBuilder();
         getSecuritySettingsFieldBuilder();
       }
@@ -3689,38 +3785,44 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         logConfigBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00080000);
-      name_ = "";
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = null;
+      } else {
+        maxStreamDurationBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00100000);
-      network_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00200000);
+      network_ = "";
+      bitField0_ = (bitField0_ & ~0x00400000);
       if (outlierDetectionBuilder_ == null) {
         outlierDetection_ = null;
       } else {
         outlierDetectionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
-      port_ = 0;
       bitField0_ = (bitField0_ & ~0x00800000);
-      portName_ = "";
+      port_ = 0;
       bitField0_ = (bitField0_ & ~0x01000000);
-      protocol_ = 0;
+      portName_ = "";
       bitField0_ = (bitField0_ & ~0x02000000);
-      region_ = "";
+      protocol_ = 0;
       bitField0_ = (bitField0_ & ~0x04000000);
-      securityPolicy_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
+      securityPolicy_ = "";
+      bitField0_ = (bitField0_ & ~0x10000000);
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = null;
       } else {
         securitySettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x10000000);
-      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x20000000);
-      sessionAffinity_ = 0;
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x40000000);
-      timeoutSec_ = 0;
+      sessionAffinity_ = 0;
       bitField0_ = (bitField0_ & ~0x80000000);
+      timeoutSec_ = 0;
+      bitField1_ = (bitField1_ & ~0x00000001);
       return this;
     }
 
@@ -3749,6 +3851,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.BackendService result =
           new com.google.cloud.compute.v1.BackendService(this);
       int from_bitField0_ = bitField0_;
+      int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.affinityCookieTtlSec_ = affinityCookieTtlSec_;
@@ -3867,60 +3970,68 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        if (maxStreamDurationBuilder_ == null) {
+          result.maxStreamDuration_ = maxStreamDuration_;
+        } else {
+          result.maxStreamDuration_ = maxStreamDurationBuilder_.build();
+        }
         to_bitField0_ |= 0x00010000;
       }
-      result.name_ = name_;
       if (((from_bitField0_ & 0x00200000) != 0)) {
         to_bitField0_ |= 0x00020000;
       }
-      result.network_ = network_;
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        to_bitField0_ |= 0x00040000;
+      }
+      result.network_ = network_;
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         if (outlierDetectionBuilder_ == null) {
           result.outlierDetection_ = outlierDetection_;
         } else {
           result.outlierDetection_ = outlierDetectionBuilder_.build();
         }
-        to_bitField0_ |= 0x00040000;
-      }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.port_ = port_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.port_ = port_;
         to_bitField0_ |= 0x00100000;
       }
-      result.portName_ = portName_;
       if (((from_bitField0_ & 0x02000000) != 0)) {
         to_bitField0_ |= 0x00200000;
       }
-      result.protocol_ = protocol_;
+      result.portName_ = portName_;
       if (((from_bitField0_ & 0x04000000) != 0)) {
         to_bitField0_ |= 0x00400000;
       }
-      result.region_ = region_;
+      result.protocol_ = protocol_;
       if (((from_bitField0_ & 0x08000000) != 0)) {
         to_bitField0_ |= 0x00800000;
       }
-      result.securityPolicy_ = securityPolicy_;
+      result.region_ = region_;
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        to_bitField0_ |= 0x01000000;
+      }
+      result.securityPolicy_ = securityPolicy_;
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         if (securitySettingsBuilder_ == null) {
           result.securitySettings_ = securitySettings_;
         } else {
           result.securitySettings_ = securitySettingsBuilder_.build();
         }
-        to_bitField0_ |= 0x01000000;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
         to_bitField0_ |= 0x02000000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x40000000) != 0)) {
         to_bitField0_ |= 0x04000000;
       }
-      result.sessionAffinity_ = sessionAffinity_;
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.timeoutSec_ = timeoutSec_;
         to_bitField0_ |= 0x08000000;
+      }
+      result.sessionAffinity_ = sessionAffinity_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.timeoutSec_ = timeoutSec_;
+        to_bitField0_ |= 0x10000000;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -4087,13 +4198,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
       }
+      if (other.hasMaxStreamDuration()) {
+        mergeMaxStreamDuration(other.getMaxStreamDuration());
+      }
       if (other.hasName()) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         network_ = other.network_;
         onChanged();
       }
@@ -4104,7 +4218,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         setPort(other.getPort());
       }
       if (other.hasPortName()) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         portName_ = other.portName_;
         onChanged();
       }
@@ -4112,12 +4226,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         setProtocol(other.getProtocol());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSecurityPolicy()) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         securityPolicy_ = other.securityPolicy_;
         onChanged();
       }
@@ -4125,7 +4239,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         mergeSecuritySettings(other.getSecuritySettings());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -4165,6 +4279,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private int affinityCookieTtlSec_;
     /**
@@ -4599,7 +4714,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4613,7 +4728,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4633,7 +4748,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4655,7 +4770,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4675,7 +4790,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4704,7 +4819,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4723,7 +4838,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4737,7 +4852,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -4755,7 +4870,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud CDN configuration for this BackendService. Not available for Internal TCP/UDP Load Balancing and Network Load Balancing.
+     * Cloud CDN configuration for this BackendService. Only available for  external HTTP(S) Load Balancing.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy cdn_policy = 213976452;</code>
@@ -7423,6 +7538,211 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return logConfigBuilder_;
     }
 
+    private com.google.cloud.compute.v1.Duration maxStreamDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        maxStreamDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     *
+     * @return Whether the maxStreamDuration field is set.
+     */
+    public boolean hasMaxStreamDuration() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     *
+     * @return The maxStreamDuration.
+     */
+    public com.google.cloud.compute.v1.Duration getMaxStreamDuration() {
+      if (maxStreamDurationBuilder_ == null) {
+        return maxStreamDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxStreamDuration_;
+      } else {
+        return maxStreamDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder setMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxStreamDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxStreamDuration_ = value;
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder setMaxStreamDuration(
+        com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxStreamDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && maxStreamDuration_ != null
+            && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          maxStreamDuration_ =
+              com.google.cloud.compute.v1.Duration.newBuilder(maxStreamDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maxStreamDuration_ = value;
+        }
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public Builder clearMaxStreamDuration() {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDuration_ = null;
+        onChanged();
+      } else {
+        maxStreamDurationBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00100000);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getMaxStreamDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getMaxStreamDurationOrBuilder() {
+      if (maxStreamDurationBuilder_ != null) {
+        return maxStreamDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxStreamDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxStreamDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed.
+     * If not specified, there will be no timeout limit, i.e. the maximum duration is infinite.
+     * This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getMaxStreamDurationFieldBuilder() {
+      if (maxStreamDurationBuilder_ == null) {
+        maxStreamDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getMaxStreamDuration(), getParentForChildren(), isClean());
+        maxStreamDuration_ = null;
+      }
+      return maxStreamDurationBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -7436,7 +7756,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -7498,7 +7818,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       name_ = value;
       onChanged();
       return this;
@@ -7515,7 +7835,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -7537,7 +7857,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       name_ = value;
       onChanged();
       return this;
@@ -7556,7 +7876,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -7618,7 +7938,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       network_ = value;
       onChanged();
       return this;
@@ -7635,7 +7955,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -7657,7 +7977,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       network_ = value;
       onChanged();
       return this;
@@ -7685,7 +8005,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outlierDetection field is set.
      */
     public boolean hasOutlierDetection() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -7734,7 +8054,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -7758,7 +8078,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -7776,7 +8096,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && outlierDetection_ != null
             && outlierDetection_
                 != com.google.cloud.compute.v1.OutlierDetection.getDefaultInstance()) {
@@ -7791,7 +8111,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -7814,7 +8134,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       return this;
     }
     /**
@@ -7831,7 +8151,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.OutlierDetection outlier_detection = 354625086;</code>
      */
     public com.google.cloud.compute.v1.OutlierDetection.Builder getOutlierDetectionBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getOutlierDetectionFieldBuilder().getBuilder();
     }
@@ -7893,7 +8213,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -7902,14 +8222,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPort() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
      *
      * <pre>
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -7925,7 +8245,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -7934,7 +8254,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       port_ = value;
       onChanged();
       return this;
@@ -7944,7 +8264,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80.
-     * This cannot be used if the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
+     * Backend services for Internal TCP/UDP Load Balancing and Network Load Balancing require you omit port.
      * </pre>
      *
      * <code>int32 port = 3446913;</code>
@@ -7952,7 +8272,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       port_ = 0;
       onChanged();
       return this;
@@ -7972,7 +8292,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the portName field is set.
      */
     public boolean hasPortName() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -8037,7 +8357,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       portName_ = value;
       onChanged();
       return this;
@@ -8055,7 +8375,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -8078,7 +8398,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       portName_ = value;
       onChanged();
       return this;
@@ -8100,7 +8420,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProtocol() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -8134,7 +8454,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProtocolValue(int value) {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       protocol_ = value;
       onChanged();
       return this;
@@ -8179,7 +8499,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       protocol_ = value.getNumber();
       onChanged();
       return this;
@@ -8198,7 +8518,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       protocol_ = 0;
       onChanged();
       return this;
@@ -8217,7 +8537,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -8279,7 +8599,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       region_ = value;
       onChanged();
       return this;
@@ -8296,7 +8616,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -8318,7 +8638,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       region_ = value;
       onChanged();
       return this;
@@ -8337,7 +8657,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securityPolicy field is set.
      */
     public boolean hasSecurityPolicy() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -8399,7 +8719,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -8416,7 +8736,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
       onChanged();
       return this;
@@ -8438,7 +8758,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -8464,7 +8784,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -8509,7 +8829,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
     /**
@@ -8531,7 +8851,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
     /**
@@ -8547,7 +8867,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && securitySettings_ != null
             && securitySettings_
                 != com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) {
@@ -8562,7 +8882,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
     /**
@@ -8583,7 +8903,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       return this;
     }
     /**
@@ -8598,7 +8918,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.SecuritySettings security_settings = 478649922;</code>
      */
     public com.google.cloud.compute.v1.SecuritySettings.Builder getSecuritySettingsBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }
@@ -8663,7 +8983,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -8725,7 +9045,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -8742,7 +9062,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -8764,7 +9084,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -8776,7 +9096,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8789,14 +9109,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSessionAffinity() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8816,7 +9136,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8829,7 +9149,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSessionAffinityValue(int value) {
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -8839,7 +9159,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8864,7 +9184,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8881,7 +9201,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       sessionAffinity_ = value.getNumber();
       onChanged();
       return this;
@@ -8891,7 +9211,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of session affinity to use. The default is NONE.
-     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
+     * When the loadBalancingScheme is EXTERNAL: * For Network Load Balancing, the possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or  CLIENT_IP_PORT_PROTO. * For all other load balancers that use loadBalancingScheme=EXTERNAL, the possible values are NONE, CLIENT_IP, or GENERATED_COOKIE. * You can use GENERATED_COOKIE if the protocol is HTTP, HTTP2, or HTTPS.
      * When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP, CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
      * When the loadBalancingScheme is INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED, possible values are NONE, CLIENT_IP, GENERATED_COOKIE, HEADER_FIELD, or HTTP_COOKIE.
      * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -8903,7 +9223,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       sessionAffinity_ = 0;
       onChanged();
       return this;
@@ -8914,7 +9234,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
      * </pre>
      *
      * <code>int32 timeout_sec = 79994995;</code>
@@ -8923,13 +9243,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
      * </pre>
      *
      * <code>int32 timeout_sec = 79994995;</code>
@@ -8944,7 +9264,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
      * </pre>
      *
      * <code>int32 timeout_sec = 79994995;</code>
@@ -8953,7 +9273,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       timeoutSec_ = value;
       onChanged();
       return this;
@@ -8962,7 +9282,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see,  Backend service settings The default is 30 seconds. The full range of timeout values allowed is 1 - 2,147,483,647 seconds.
      * </pre>
      *
      * <code>int32 timeout_sec = 79994995;</code>
@@ -8970,7 +9290,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       timeoutSec_ = 0;
       onChanged();
       return this;

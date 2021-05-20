@@ -19,6 +19,7 @@ import static com.google.cloud.compute.v1.NetworksClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.NetworksClient.ListPeeringRoutesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.addPeeringMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.deleteMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.getEffectiveFirewallsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.getMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.insertMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworksStub.listMethodDescriptor;
@@ -58,6 +59,7 @@ public class NetworksClientTest {
               addPeeringMethodDescriptor,
               deleteMethodDescriptor,
               getMethodDescriptor,
+              getEffectiveFirewallsMethodDescriptor,
               insertMethodDescriptor,
               listMethodDescriptor,
               listPeeringRoutesMethodDescriptor,
@@ -107,6 +109,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -129,6 +132,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -200,6 +204,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -222,6 +227,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -345,6 +351,54 @@ public class NetworksClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getEffectiveFirewallsTest() {
+    NetworksGetEffectiveFirewallsResponse expectedResponse =
+        NetworksGetEffectiveFirewallsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String network = "network1843485230";
+
+    NetworksGetEffectiveFirewallsResponse actualResponse =
+        client.getEffectiveFirewalls(project, network);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getEffectiveFirewallsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String network = "network1843485230";
+
+      client.getEffectiveFirewalls(project, network);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertTest() {
     String clientOperationId = "clientOperationId-239630617";
     String creationTimestamp = "creationTimestamp567396278";
@@ -356,6 +410,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -378,6 +433,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -566,6 +622,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -588,6 +645,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -656,6 +714,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -678,6 +737,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -749,6 +809,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -771,6 +832,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -837,6 +899,7 @@ public class NetworksClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -859,6 +922,7 @@ public class NetworksClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

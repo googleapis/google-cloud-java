@@ -287,6 +287,43 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return Whether the provisionedIops field is set.
+   */
+  boolean hasProvisionedIops();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return The provisionedIops.
+   */
+  java.lang.String getProvisionedIops();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how many IOPS must be provisioned for the disk.
+   * </pre>
+   *
+   * <code>string provisioned_iops = 186769108;</code>
+   *
+   * @return The bytes for provisionedIops.
+   */
+  com.google.protobuf.ByteString getProvisionedIopsBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource policies applied to this disk for automatic snapshot creations. Specified using the full or partial URL. For instance template, specify only the resource policy name.
    * </pre>
    *

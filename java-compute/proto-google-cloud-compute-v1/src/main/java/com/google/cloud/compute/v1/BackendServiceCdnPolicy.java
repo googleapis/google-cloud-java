@@ -38,7 +38,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   private BackendServiceCdnPolicy() {
+    bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
     cacheMode_ = 0;
+    negativeCachingPolicy_ = java.util.Collections.emptyList();
     signedUrlCacheMaxAgeSec_ = "";
     signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -92,6 +94,21 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               defaultTtl_ = input.readInt32();
               break;
             }
+          case 1242879970:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                negativeCachingPolicy_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              negativeCachingPolicy_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
+                          .parser(),
+                      extensionRegistry));
+              break;
+            }
           case 1274109818:
             {
               com.google.cloud.compute.v1.CacheKeyPolicy.Builder subBuilder = null;
@@ -108,10 +125,16 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               bitField0_ |= 0x00000001;
               break;
             }
+          case 1893457624:
+            {
+              bitField0_ |= 0x00000080;
+              serveWhileStale_ = input.readInt32();
+              break;
+            }
           case -2139971022:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000100;
               signedUrlCacheMaxAgeSec_ = s;
               break;
             }
@@ -121,14 +144,42 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
               maxTtl_ = input.readInt32();
               break;
             }
+          case -1606087256:
+            {
+              bitField0_ |= 0x00000020;
+              negativeCaching_ = input.readBool();
+              break;
+            }
           case -1320176214:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000800;
               }
               signedUrlKeyNames_.add(s);
+              break;
+            }
+          case -405342638:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                bypassCacheOnRequestHeaders_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1
+                            .BackendServiceCdnPolicyBypassCacheOnRequestHeader>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              bypassCacheOnRequestHeaders_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+                          .parser(),
+                      extensionRegistry));
+              break;
+            }
+          case -32501088:
+            {
+              bitField0_ |= 0x00000040;
+              requestCoalescing_ = input.readBool();
               break;
             }
           default:
@@ -145,8 +196,15 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        negativeCachingPolicy_ = java.util.Collections.unmodifiableList(negativeCachingPolicy_);
+      }
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        bypassCacheOnRequestHeaders_ =
+            java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -311,6 +369,94 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   private int bitField0_;
+  public static final int BYPASS_CACHE_ON_REQUEST_HEADERS_FIELD_NUMBER = 486203082;
+  private java.util.List<
+          com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
+      bypassCacheOnRequestHeaders_;
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
+      getBypassCacheOnRequestHeadersList() {
+    return bypassCacheOnRequestHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
+      getBypassCacheOnRequestHeadersOrBuilderList() {
+    return bypassCacheOnRequestHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  @java.lang.Override
+  public int getBypassCacheOnRequestHeadersCount() {
+    return bypassCacheOnRequestHeaders_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+      getBypassCacheOnRequestHeaders(int index) {
+    return bypassCacheOnRequestHeaders_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
+      getBypassCacheOnRequestHeadersOrBuilder(int index) {
+    return bypassCacheOnRequestHeaders_.get(index);
+  }
+
   public static final int CACHE_KEY_POLICY_FIELD_NUMBER = 159263727;
   private com.google.cloud.compute.v1.CacheKeyPolicy cacheKeyPolicy_;
   /**
@@ -429,7 +575,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
    * </pre>
    *
    * <code>int32 client_ttl = 29034360;</code>
@@ -444,7 +590,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
    * </pre>
    *
    * <code>int32 client_ttl = 29034360;</code>
@@ -522,6 +668,190 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     return maxTtl_;
   }
 
+  public static final int NEGATIVE_CACHING_FIELD_NUMBER = 336110005;
+  private boolean negativeCaching_;
+  /**
+   *
+   *
+   * <pre>
+   * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+   * </pre>
+   *
+   * <code>bool negative_caching = 336110005;</code>
+   *
+   * @return Whether the negativeCaching field is set.
+   */
+  @java.lang.Override
+  public boolean hasNegativeCaching() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+   * </pre>
+   *
+   * <code>bool negative_caching = 336110005;</code>
+   *
+   * @return The negativeCaching.
+   */
+  @java.lang.Override
+  public boolean getNegativeCaching() {
+    return negativeCaching_;
+  }
+
+  public static final int NEGATIVE_CACHING_POLICY_FIELD_NUMBER = 155359996;
+  private java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
+      negativeCachingPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
+      getNegativeCachingPolicyList() {
+    return negativeCachingPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>
+      getNegativeCachingPolicyOrBuilderList() {
+    return negativeCachingPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  @java.lang.Override
+  public int getNegativeCachingPolicyCount() {
+    return negativeCachingPolicy_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
+      getNegativeCachingPolicy(int index) {
+    return negativeCachingPolicy_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder
+      getNegativeCachingPolicyOrBuilder(int index) {
+    return negativeCachingPolicy_.get(index);
+  }
+
+  public static final int REQUEST_COALESCING_FIELD_NUMBER = 532808276;
+  private boolean requestCoalescing_;
+  /**
+   *
+   *
+   * <pre>
+   * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+   * </pre>
+   *
+   * <code>bool request_coalescing = 532808276;</code>
+   *
+   * @return Whether the requestCoalescing field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestCoalescing() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+   * </pre>
+   *
+   * <code>bool request_coalescing = 532808276;</code>
+   *
+   * @return The requestCoalescing.
+   */
+  @java.lang.Override
+  public boolean getRequestCoalescing() {
+    return requestCoalescing_;
+  }
+
+  public static final int SERVE_WHILE_STALE_FIELD_NUMBER = 236682203;
+  private int serveWhileStale_;
+  /**
+   *
+   *
+   * <pre>
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * </pre>
+   *
+   * <code>int32 serve_while_stale = 236682203;</code>
+   *
+   * @return Whether the serveWhileStale field is set.
+   */
+  @java.lang.Override
+  public boolean hasServeWhileStale() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * </pre>
+   *
+   * <code>int32 serve_while_stale = 236682203;</code>
+   *
+   * @return The serveWhileStale.
+   */
+  @java.lang.Override
+  public int getServeWhileStale() {
+    return serveWhileStale_;
+  }
+
   public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
   private volatile java.lang.Object signedUrlCacheMaxAgeSec_;
   /**
@@ -537,7 +867,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasSignedUrlCacheMaxAgeSec() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -670,19 +1000,34 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt32(100253422, defaultTtl_);
     }
+    for (int i = 0; i < negativeCachingPolicy_.size(); i++) {
+      output.writeMessage(155359996, negativeCachingPolicy_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(159263727, getCacheKeyPolicy());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt32(236682203, serveWhileStale_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 269374534, signedUrlCacheMaxAgeSec_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(307578001, maxTtl_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(336110005, negativeCaching_);
+    }
     for (int i = 0; i < signedUrlKeyNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 371848885, signedUrlKeyNames_.getRaw(i));
+    }
+    for (int i = 0; i < bypassCacheOnRequestHeaders_.size(); i++) {
+      output.writeMessage(486203082, bypassCacheOnRequestHeaders_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(532808276, requestCoalescing_);
     }
     unknownFields.writeTo(output);
   }
@@ -702,17 +1047,28 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(100253422, defaultTtl_);
     }
+    for (int i = 0; i < negativeCachingPolicy_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              155359996, negativeCachingPolicy_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(159263727, getCacheKeyPolicy());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(236682203, serveWhileStale_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               269374534, signedUrlCacheMaxAgeSec_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(307578001, maxTtl_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(336110005, negativeCaching_);
     }
     {
       int dataSize = 0;
@@ -721,6 +1077,14 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       size += dataSize;
       size += 5 * getSignedUrlKeyNamesList().size();
+    }
+    for (int i = 0; i < bypassCacheOnRequestHeaders_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              486203082, bypassCacheOnRequestHeaders_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(532808276, requestCoalescing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -738,6 +1102,8 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.BackendServiceCdnPolicy other =
         (com.google.cloud.compute.v1.BackendServiceCdnPolicy) obj;
 
+    if (!getBypassCacheOnRequestHeadersList().equals(other.getBypassCacheOnRequestHeadersList()))
+      return false;
     if (hasCacheKeyPolicy() != other.hasCacheKeyPolicy()) return false;
     if (hasCacheKeyPolicy()) {
       if (!getCacheKeyPolicy().equals(other.getCacheKeyPolicy())) return false;
@@ -758,6 +1124,19 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (hasMaxTtl()) {
       if (getMaxTtl() != other.getMaxTtl()) return false;
     }
+    if (hasNegativeCaching() != other.hasNegativeCaching()) return false;
+    if (hasNegativeCaching()) {
+      if (getNegativeCaching() != other.getNegativeCaching()) return false;
+    }
+    if (!getNegativeCachingPolicyList().equals(other.getNegativeCachingPolicyList())) return false;
+    if (hasRequestCoalescing() != other.hasRequestCoalescing()) return false;
+    if (hasRequestCoalescing()) {
+      if (getRequestCoalescing() != other.getRequestCoalescing()) return false;
+    }
+    if (hasServeWhileStale() != other.hasServeWhileStale()) return false;
+    if (hasServeWhileStale()) {
+      if (getServeWhileStale() != other.getServeWhileStale()) return false;
+    }
     if (hasSignedUrlCacheMaxAgeSec() != other.hasSignedUrlCacheMaxAgeSec()) return false;
     if (hasSignedUrlCacheMaxAgeSec()) {
       if (!getSignedUrlCacheMaxAgeSec().equals(other.getSignedUrlCacheMaxAgeSec())) return false;
@@ -774,6 +1153,10 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getBypassCacheOnRequestHeadersCount() > 0) {
+      hash = (37 * hash) + BYPASS_CACHE_ON_REQUEST_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getBypassCacheOnRequestHeadersList().hashCode();
+    }
     if (hasCacheKeyPolicy()) {
       hash = (37 * hash) + CACHE_KEY_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getCacheKeyPolicy().hashCode();
@@ -793,6 +1176,22 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (hasMaxTtl()) {
       hash = (37 * hash) + MAX_TTL_FIELD_NUMBER;
       hash = (53 * hash) + getMaxTtl();
+    }
+    if (hasNegativeCaching()) {
+      hash = (37 * hash) + NEGATIVE_CACHING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNegativeCaching());
+    }
+    if (getNegativeCachingPolicyCount() > 0) {
+      hash = (37 * hash) + NEGATIVE_CACHING_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getNegativeCachingPolicyList().hashCode();
+    }
+    if (hasRequestCoalescing()) {
+      hash = (37 * hash) + REQUEST_COALESCING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestCoalescing());
+    }
+    if (hasServeWhileStale()) {
+      hash = (37 * hash) + SERVE_WHILE_STALE_FIELD_NUMBER;
+      hash = (53 * hash) + getServeWhileStale();
     }
     if (hasSignedUrlCacheMaxAgeSec()) {
       hash = (37 * hash) + SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER;
@@ -942,31 +1341,51 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBypassCacheOnRequestHeadersFieldBuilder();
         getCacheKeyPolicyFieldBuilder();
+        getNegativeCachingPolicyFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.clear();
+      }
       if (cacheKeyPolicyBuilder_ == null) {
         cacheKeyPolicy_ = null;
       } else {
         cacheKeyPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      cacheMode_ = 0;
       bitField0_ = (bitField0_ & ~0x00000002);
-      clientTtl_ = 0;
+      cacheMode_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
-      defaultTtl_ = 0;
+      clientTtl_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
-      maxTtl_ = 0;
+      defaultTtl_ = 0;
       bitField0_ = (bitField0_ & ~0x00000010);
-      signedUrlCacheMaxAgeSec_ = "";
+      maxTtl_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      negativeCaching_ = false;
       bitField0_ = (bitField0_ & ~0x00000040);
+      if (negativeCachingPolicyBuilder_ == null) {
+        negativeCachingPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        negativeCachingPolicyBuilder_.clear();
+      }
+      requestCoalescing_ = false;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      serveWhileStale_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      signedUrlCacheMaxAgeSec_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
+      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -996,7 +1415,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
           new com.google.cloud.compute.v1.BackendServiceCdnPolicy(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          bypassCacheOnRequestHeaders_ =
+              java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.bypassCacheOnRequestHeaders_ = bypassCacheOnRequestHeaders_;
+      } else {
+        result.bypassCacheOnRequestHeaders_ = bypassCacheOnRequestHeadersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         if (cacheKeyPolicyBuilder_ == null) {
           result.cacheKeyPolicy_ = cacheKeyPolicy_;
         } else {
@@ -1004,29 +1433,50 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         }
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
       result.cacheMode_ = cacheMode_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.clientTtl_ = clientTtl_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.defaultTtl_ = defaultTtl_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxTtl_ = maxTtl_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.negativeCaching_ = negativeCaching_;
         to_bitField0_ |= 0x00000020;
       }
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          negativeCachingPolicy_ = java.util.Collections.unmodifiableList(negativeCachingPolicy_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.negativeCachingPolicy_ = negativeCachingPolicy_;
+      } else {
+        result.negativeCachingPolicy_ = negativeCachingPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.requestCoalescing_ = requestCoalescing_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.serveWhileStale_ = serveWhileStale_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
       result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.signedUrlKeyNames_ = signedUrlKeyNames_;
       result.bitField0_ = to_bitField0_;
@@ -1080,6 +1530,33 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.BackendServiceCdnPolicy other) {
       if (other == com.google.cloud.compute.v1.BackendServiceCdnPolicy.getDefaultInstance())
         return this;
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        if (!other.bypassCacheOnRequestHeaders_.isEmpty()) {
+          if (bypassCacheOnRequestHeaders_.isEmpty()) {
+            bypassCacheOnRequestHeaders_ = other.bypassCacheOnRequestHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureBypassCacheOnRequestHeadersIsMutable();
+            bypassCacheOnRequestHeaders_.addAll(other.bypassCacheOnRequestHeaders_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.bypassCacheOnRequestHeaders_.isEmpty()) {
+          if (bypassCacheOnRequestHeadersBuilder_.isEmpty()) {
+            bypassCacheOnRequestHeadersBuilder_.dispose();
+            bypassCacheOnRequestHeadersBuilder_ = null;
+            bypassCacheOnRequestHeaders_ = other.bypassCacheOnRequestHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            bypassCacheOnRequestHeadersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBypassCacheOnRequestHeadersFieldBuilder()
+                    : null;
+          } else {
+            bypassCacheOnRequestHeadersBuilder_.addAllMessages(other.bypassCacheOnRequestHeaders_);
+          }
+        }
+      }
       if (other.hasCacheKeyPolicy()) {
         mergeCacheKeyPolicy(other.getCacheKeyPolicy());
       }
@@ -1095,15 +1572,51 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       if (other.hasMaxTtl()) {
         setMaxTtl(other.getMaxTtl());
       }
+      if (other.hasNegativeCaching()) {
+        setNegativeCaching(other.getNegativeCaching());
+      }
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (!other.negativeCachingPolicy_.isEmpty()) {
+          if (negativeCachingPolicy_.isEmpty()) {
+            negativeCachingPolicy_ = other.negativeCachingPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureNegativeCachingPolicyIsMutable();
+            negativeCachingPolicy_.addAll(other.negativeCachingPolicy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.negativeCachingPolicy_.isEmpty()) {
+          if (negativeCachingPolicyBuilder_.isEmpty()) {
+            negativeCachingPolicyBuilder_.dispose();
+            negativeCachingPolicyBuilder_ = null;
+            negativeCachingPolicy_ = other.negativeCachingPolicy_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            negativeCachingPolicyBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNegativeCachingPolicyFieldBuilder()
+                    : null;
+          } else {
+            negativeCachingPolicyBuilder_.addAllMessages(other.negativeCachingPolicy_);
+          }
+        }
+      }
+      if (other.hasRequestCoalescing()) {
+        setRequestCoalescing(other.getRequestCoalescing());
+      }
+      if (other.hasServeWhileStale()) {
+        setServeWhileStale(other.getServeWhileStale());
+      }
       if (other.hasSignedUrlCacheMaxAgeSec()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000400;
         signedUrlCacheMaxAgeSec_ = other.signedUrlCacheMaxAgeSec_;
         onChanged();
       }
       if (!other.signedUrlKeyNames_.isEmpty()) {
         if (signedUrlKeyNames_.isEmpty()) {
           signedUrlKeyNames_ = other.signedUrlKeyNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureSignedUrlKeyNamesIsMutable();
           signedUrlKeyNames_.addAll(other.signedUrlKeyNames_);
@@ -1142,6 +1655,431 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
     private int bitField0_;
 
+    private java.util.List<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
+        bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
+
+    private void ensureBypassCacheOnRequestHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        bypassCacheOnRequestHeaders_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>(
+                bypassCacheOnRequestHeaders_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
+        bypassCacheOnRequestHeadersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
+        getBypassCacheOnRequestHeadersList() {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
+      } else {
+        return bypassCacheOnRequestHeadersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public int getBypassCacheOnRequestHeadersCount() {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        return bypassCacheOnRequestHeaders_.size();
+      } else {
+        return bypassCacheOnRequestHeadersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+        getBypassCacheOnRequestHeaders(int index) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        return bypassCacheOnRequestHeaders_.get(index);
+      } else {
+        return bypassCacheOnRequestHeadersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder setBypassCacheOnRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader value) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.set(index, value);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder setBypassCacheOnRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+            builderForValue) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder addBypassCacheOnRequestHeaders(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader value) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.add(value);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder addBypassCacheOnRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader value) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.add(index, value);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder addBypassCacheOnRequestHeaders(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+            builderForValue) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.add(builderForValue.build());
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder addBypassCacheOnRequestHeaders(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+            builderForValue) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder addAllBypassCacheOnRequestHeaders(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader>
+            values) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, bypassCacheOnRequestHeaders_);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder clearBypassCacheOnRequestHeaders() {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public Builder removeBypassCacheOnRequestHeaders(int index) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        ensureBypassCacheOnRequestHeadersIsMutable();
+        bypassCacheOnRequestHeaders_.remove(index);
+        onChanged();
+      } else {
+        bypassCacheOnRequestHeadersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+        getBypassCacheOnRequestHeadersBuilder(int index) {
+      return getBypassCacheOnRequestHeadersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
+        getBypassCacheOnRequestHeadersOrBuilder(int index) {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        return bypassCacheOnRequestHeaders_.get(index);
+      } else {
+        return bypassCacheOnRequestHeadersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
+        getBypassCacheOnRequestHeadersOrBuilderList() {
+      if (bypassCacheOnRequestHeadersBuilder_ != null) {
+        return bypassCacheOnRequestHeadersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(bypassCacheOnRequestHeaders_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+        addBypassCacheOnRequestHeadersBuilder() {
+      return getBypassCacheOnRequestHeadersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder
+        addBypassCacheOnRequestHeadersBuilder(int index) {
+      return getBypassCacheOnRequestHeadersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bypass the cache when the specified request headers are matched - e.g. Pragma or Authorization headers. Up to 5 headers can be specified. The cache is bypassed for all cdnPolicy.cacheMode settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader bypass_cache_on_request_headers = 486203082;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder>
+        getBypassCacheOnRequestHeadersBuilderList() {
+      return getBypassCacheOnRequestHeadersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader.Builder,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
+        getBypassCacheOnRequestHeadersFieldBuilder() {
+      if (bypassCacheOnRequestHeadersBuilder_ == null) {
+        bypassCacheOnRequestHeadersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader,
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyBypassCacheOnRequestHeader
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder>(
+                bypassCacheOnRequestHeaders_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        bypassCacheOnRequestHeaders_ = null;
+      }
+      return bypassCacheOnRequestHeadersBuilder_;
+    }
+
     private com.google.cloud.compute.v1.CacheKeyPolicy cacheKeyPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CacheKeyPolicy,
@@ -1160,7 +2098,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return Whether the cacheKeyPolicy field is set.
      */
     public boolean hasCacheKeyPolicy() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1201,7 +2139,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         cacheKeyPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1221,7 +2159,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         cacheKeyPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1235,7 +2173,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     public Builder mergeCacheKeyPolicy(com.google.cloud.compute.v1.CacheKeyPolicy value) {
       if (cacheKeyPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && cacheKeyPolicy_ != null
             && cacheKeyPolicy_ != com.google.cloud.compute.v1.CacheKeyPolicy.getDefaultInstance()) {
           cacheKeyPolicy_ =
@@ -1249,7 +2187,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         cacheKeyPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1268,7 +2206,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         cacheKeyPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -1281,7 +2219,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * <code>.google.cloud.compute.v1.CacheKeyPolicy cache_key_policy = 159263727;</code>
      */
     public com.google.cloud.compute.v1.CacheKeyPolicy.Builder getCacheKeyPolicyBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCacheKeyPolicyFieldBuilder().getBuilder();
     }
@@ -1347,7 +2285,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasCacheMode() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1385,7 +2323,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setCacheModeValue(int value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       cacheMode_ = value;
       onChanged();
       return this;
@@ -1435,7 +2373,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       cacheMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1456,7 +2394,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCacheMode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       cacheMode_ = 0;
       onChanged();
       return this;
@@ -1467,7 +2405,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
      * </pre>
      *
      * <code>int32 client_ttl = 29034360;</code>
@@ -1476,13 +2414,13 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasClientTtl() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
      * </pre>
      *
      * <code>int32 client_ttl = 29034360;</code>
@@ -1497,7 +2435,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
      * </pre>
      *
      * <code>int32 client_ttl = 29034360;</code>
@@ -1506,7 +2444,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setClientTtl(int value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       clientTtl_ = value;
       onChanged();
       return this;
@@ -1515,7 +2453,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * Specifies a separate client (e.g. browser client) maximum TTL. This is used to clamp the max-age (or Expires) value sent to the client. With FORCE_CACHE_ALL, the lesser of client_ttl and default_ttl is used for the response max-age directive, along with a "public" directive. For cacheable content in CACHE_ALL_STATIC mode, client_ttl clamps the max-age from the origin (if specified), or else sets the response max-age directive to the lesser of the client_ttl and default_ttl, and also ensures a "public" cache-control directive is present. If a client TTL is not specified, a default value (1 hour) will be used. The maximum allowed value is 86400s (1 day).
      * </pre>
      *
      * <code>int32 client_ttl = 29034360;</code>
@@ -1523,7 +2461,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearClientTtl() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       clientTtl_ = 0;
       onChanged();
       return this;
@@ -1543,7 +2481,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasDefaultTtl() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1573,7 +2511,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setDefaultTtl(int value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       defaultTtl_ = value;
       onChanged();
       return this;
@@ -1590,7 +2528,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDefaultTtl() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       defaultTtl_ = 0;
       onChanged();
       return this;
@@ -1610,7 +2548,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasMaxTtl() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1640,7 +2578,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setMaxTtl(int value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       maxTtl_ = value;
       onChanged();
       return this;
@@ -1657,8 +2595,625 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMaxTtl() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxTtl_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean negativeCaching_;
+    /**
+     *
+     *
+     * <pre>
+     * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+     * </pre>
+     *
+     * <code>bool negative_caching = 336110005;</code>
+     *
+     * @return Whether the negativeCaching field is set.
+     */
+    @java.lang.Override
+    public boolean hasNegativeCaching() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+     * </pre>
+     *
+     * <code>bool negative_caching = 336110005;</code>
+     *
+     * @return The negativeCaching.
+     */
+    @java.lang.Override
+    public boolean getNegativeCaching() {
+      return negativeCaching_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+     * </pre>
+     *
+     * <code>bool negative_caching = 336110005;</code>
+     *
+     * @param value The negativeCaching to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNegativeCaching(boolean value) {
+      bitField0_ |= 0x00000040;
+      negativeCaching_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the cache mode is set to CACHE_ALL_STATIC or USE_ORIGIN_HEADERS, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the cache mode is set to FORCE_CACHE_ALL, negative caching applies to all responses with the specified response code, and override any caching headers. By default, Cloud CDN will apply the following default TTLs to these status codes: HTTP 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m HTTP 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s HTTP 405 (Method Not Found), 421 (Misdirected Request), 501 (Not Implemented): 60s. These defaults can be overridden in negative_caching_policy.
+     * </pre>
+     *
+     * <code>bool negative_caching = 336110005;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNegativeCaching() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      negativeCaching_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
+        negativeCachingPolicy_ = java.util.Collections.emptyList();
+
+    private void ensureNegativeCachingPolicyIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        negativeCachingPolicy_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>(
+                negativeCachingPolicy_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>
+        negativeCachingPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
+        getNegativeCachingPolicyList() {
+      if (negativeCachingPolicyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(negativeCachingPolicy_);
+      } else {
+        return negativeCachingPolicyBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public int getNegativeCachingPolicyCount() {
+      if (negativeCachingPolicyBuilder_ == null) {
+        return negativeCachingPolicy_.size();
+      } else {
+        return negativeCachingPolicyBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
+        getNegativeCachingPolicy(int index) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        return negativeCachingPolicy_.get(index);
+      } else {
+        return negativeCachingPolicyBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder setNegativeCachingPolicy(
+        int index, com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy value) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.set(index, value);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder setNegativeCachingPolicy(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+            builderForValue) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder addNegativeCachingPolicy(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy value) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.add(value);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder addNegativeCachingPolicy(
+        int index, com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy value) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.add(index, value);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder addNegativeCachingPolicy(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+            builderForValue) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder addNegativeCachingPolicy(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+            builderForValue) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder addAllNegativeCachingPolicy(
+        java.lang.Iterable<
+                ? extends com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy>
+            values) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        ensureNegativeCachingPolicyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, negativeCachingPolicy_);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder clearNegativeCachingPolicy() {
+      if (negativeCachingPolicyBuilder_ == null) {
+        negativeCachingPolicy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public Builder removeNegativeCachingPolicy(int index) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        ensureNegativeCachingPolicyIsMutable();
+        negativeCachingPolicy_.remove(index);
+        onChanged();
+      } else {
+        negativeCachingPolicyBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+        getNegativeCachingPolicyBuilder(int index) {
+      return getNegativeCachingPolicyFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder
+        getNegativeCachingPolicyOrBuilder(int index) {
+      if (negativeCachingPolicyBuilder_ == null) {
+        return negativeCachingPolicy_.get(index);
+      } else {
+        return negativeCachingPolicyBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>
+        getNegativeCachingPolicyOrBuilderList() {
+      if (negativeCachingPolicyBuilder_ != null) {
+        return negativeCachingPolicyBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(negativeCachingPolicy_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+        addNegativeCachingPolicyBuilder() {
+      return getNegativeCachingPolicyFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder
+        addNegativeCachingPolicyBuilder(int index) {
+      return getNegativeCachingPolicyFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets a cache TTL for the specified HTTP status code. negative_caching must be enabled to configure negative_caching_policy. Omitting the policy and leaving negative_caching enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit negative_caching_policy, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy negative_caching_policy = 155359996;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder>
+        getNegativeCachingPolicyBuilderList() {
+      return getNegativeCachingPolicyFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder,
+            com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>
+        getNegativeCachingPolicyFieldBuilder() {
+      if (negativeCachingPolicyBuilder_ == null) {
+        negativeCachingPolicyBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy,
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy.Builder,
+                com.google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder>(
+                negativeCachingPolicy_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        negativeCachingPolicy_ = null;
+      }
+      return negativeCachingPolicyBuilder_;
+    }
+
+    private boolean requestCoalescing_;
+    /**
+     *
+     *
+     * <pre>
+     * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+     * </pre>
+     *
+     * <code>bool request_coalescing = 532808276;</code>
+     *
+     * @return Whether the requestCoalescing field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequestCoalescing() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+     * </pre>
+     *
+     * <code>bool request_coalescing = 532808276;</code>
+     *
+     * @return The requestCoalescing.
+     */
+    @java.lang.Override
+    public boolean getRequestCoalescing() {
+      return requestCoalescing_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+     * </pre>
+     *
+     * <code>bool request_coalescing = 532808276;</code>
+     *
+     * @param value The requestCoalescing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestCoalescing(boolean value) {
+      bitField0_ |= 0x00000100;
+      requestCoalescing_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin.
+     * </pre>
+     *
+     * <code>bool request_coalescing = 532808276;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestCoalescing() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      requestCoalescing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int serveWhileStale_;
+    /**
+     *
+     *
+     * <pre>
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * </pre>
+     *
+     * <code>int32 serve_while_stale = 236682203;</code>
+     *
+     * @return Whether the serveWhileStale field is set.
+     */
+    @java.lang.Override
+    public boolean hasServeWhileStale() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * </pre>
+     *
+     * <code>int32 serve_while_stale = 236682203;</code>
+     *
+     * @return The serveWhileStale.
+     */
+    @java.lang.Override
+    public int getServeWhileStale() {
+      return serveWhileStale_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * </pre>
+     *
+     * <code>int32 serve_while_stale = 236682203;</code>
+     *
+     * @param value The serveWhileStale to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServeWhileStale(int value) {
+      bitField0_ |= 0x00000200;
+      serveWhileStale_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+     * </pre>
+     *
+     * <code>int32 serve_while_stale = 236682203;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServeWhileStale() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      serveWhileStale_ = 0;
       onChanged();
       return this;
     }
@@ -1676,7 +3231,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return Whether the signedUrlCacheMaxAgeSec field is set.
      */
     public boolean hasSignedUrlCacheMaxAgeSec() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -1738,7 +3293,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       signedUrlCacheMaxAgeSec_ = value;
       onChanged();
       return this;
@@ -1755,7 +3310,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSignedUrlCacheMaxAgeSec() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       signedUrlCacheMaxAgeSec_ = getDefaultInstance().getSignedUrlCacheMaxAgeSec();
       onChanged();
       return this;
@@ -1777,7 +3332,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       signedUrlCacheMaxAgeSec_ = value;
       onChanged();
       return this;
@@ -1787,9 +3342,9 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSignedUrlKeyNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList(signedUrlKeyNames_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -1924,7 +3479,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      */
     public Builder clearSignedUrlKeyNames() {
       signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }

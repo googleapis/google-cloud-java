@@ -173,7 +173,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -185,7 +185,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -197,7 +197,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -210,7 +210,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>

@@ -236,6 +236,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_SESSION_AFFINITY(0),
     /** <code>CLIENT_IP = 345665051;</code> */
     CLIENT_IP(345665051),
+    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    CLIENT_IP_NO_DESTINATION(106122516),
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     CLIENT_IP_PORT_PROTO(221722926),
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
@@ -263,6 +265,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
     /** <code>CLIENT_IP = 345665051;</code> */
     public static final int CLIENT_IP_VALUE = 345665051;
+    /** <code>CLIENT_IP_NO_DESTINATION = 106122516;</code> */
+    public static final int CLIENT_IP_NO_DESTINATION_VALUE = 106122516;
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
@@ -304,6 +308,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_SESSION_AFFINITY;
         case 345665051:
           return CLIENT_IP;
+        case 106122516:
+          return CLIENT_IP_NO_DESTINATION;
         case 221722926:
           return CLIENT_IP_PORT_PROTO;
         case 25322148:
@@ -613,7 +619,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -627,7 +633,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -641,7 +647,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -656,7 +662,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+   * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -2191,7 +2197,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2205,7 +2211,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2219,7 +2225,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2234,7 +2240,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2249,7 +2255,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2271,7 +2277,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2292,7 +2298,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2310,7 +2316,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2327,7 +2333,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
+     * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>

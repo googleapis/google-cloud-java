@@ -92,6 +92,11 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).attachDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
+    return ((InstancesStubSettings) getStubSettings()).bulkInsertSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings() {
     return ((InstancesStubSettings) getStubSettings()).deleteSettings();
@@ -111,6 +116,13 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getSettings() {
     return ((InstancesStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEffectiveFirewalls. */
+  public UnaryCallSettings<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsSettings() {
+    return ((InstancesStubSettings) getStubSettings()).getEffectiveFirewallsSettings();
   }
 
   /** Returns the object with the settings used for calls to getGuestAttributes. */
@@ -417,6 +429,11 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().attachDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
+      return getStubSettingsBuilder().bulkInsertSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
@@ -436,6 +453,13 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEffectiveFirewalls. */
+    public UnaryCallSettings.Builder<
+            GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsSettings() {
+      return getStubSettingsBuilder().getEffectiveFirewallsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getGuestAttributes. */

@@ -303,6 +303,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     UNDEFINED_NETWORK_ENDPOINT_TYPE(0),
+    /** <code>GCE_VM_IP = 401880793;</code> */
+    GCE_VM_IP(401880793),
     /** <code>GCE_VM_IP_PORT = 501838375;</code> */
     GCE_VM_IP_PORT(501838375),
     /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
@@ -326,6 +328,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_ENDPOINT_TYPE_VALUE = 0;
+    /** <code>GCE_VM_IP = 401880793;</code> */
+    public static final int GCE_VM_IP_VALUE = 401880793;
     /** <code>GCE_VM_IP_PORT = 501838375;</code> */
     public static final int GCE_VM_IP_PORT_VALUE = 501838375;
     /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
@@ -363,6 +367,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_ENDPOINT_TYPE;
+        case 401880793:
+          return GCE_VM_IP;
         case 501838375:
           return GCE_VM_IP_PORT;
         case 404154477:

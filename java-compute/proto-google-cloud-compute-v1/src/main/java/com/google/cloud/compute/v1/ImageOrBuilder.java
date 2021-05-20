@@ -685,6 +685,31 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *

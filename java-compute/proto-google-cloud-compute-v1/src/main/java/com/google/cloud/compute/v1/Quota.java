@@ -162,22 +162,30 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     BACKEND_BUCKETS(137626846),
     /** <code>BACKEND_SERVICES = 269623753;</code> */
     BACKEND_SERVICES(269623753),
+    /** <code>C2D_CPUS = 508182517;</code> */
+    C2D_CPUS(508182517),
     /** <code>C2_CPUS = 317601211;</code> */
     C2_CPUS(317601211),
     /** <code>COMMITMENTS = 456141790;</code> */
     COMMITMENTS(456141790),
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
     COMMITTED_A2_CPUS(59330902),
+    /** <code>COMMITTED_C2D_CPUS = 282390904;</code> */
+    COMMITTED_C2D_CPUS(282390904),
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     COMMITTED_C2_CPUS(223725528),
     /** <code>COMMITTED_CPUS = 292394702;</code> */
     COMMITTED_CPUS(292394702),
+    /** <code>COMMITTED_E2_CPUS = 388120154;</code> */
+    COMMITTED_E2_CPUS(388120154),
     /** <code>COMMITTED_LICENSES = 357606869;</code> */
     COMMITTED_LICENSES(357606869),
     /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 308393480;</code> */
     COMMITTED_LOCAL_SSD_TOTAL_GB(308393480),
     /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 489057886;</code> */
     COMMITTED_MEMORY_OPTIMIZED_CPUS(489057886),
+    /** <code>COMMITTED_N2A_CPUS = 40064304;</code> */
+    COMMITTED_N2A_CPUS(40064304),
     /** <code>COMMITTED_N2D_CPUS = 125951757;</code> */
     COMMITTED_N2D_CPUS(125951757),
     /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
@@ -200,6 +208,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     CPUS_ALL_REGIONS(470911149),
     /** <code>DISKS_TOTAL_GB = 353520543;</code> */
     DISKS_TOTAL_GB(353520543),
+    /** <code>E2_CPUS = 481995837;</code> */
+    E2_CPUS(481995837),
     /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
     EXTERNAL_NETWORK_LB_FORWARDING_RULES(374298265),
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
@@ -254,6 +264,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     M2_CPUS(65832517),
     /** <code>MACHINE_IMAGES = 446986640;</code> */
     MACHINE_IMAGES(446986640),
+    /** <code>N2A_CPUS = 265855917;</code> */
+    N2A_CPUS(265855917),
     /** <code>N2D_CPUS = 351743370;</code> */
     N2D_CPUS(351743370),
     /** <code>N2_CPUS = 416465286;</code> */
@@ -288,6 +300,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     NVIDIA_V100_GPUS(129293095),
     /** <code>PACKET_MIRRORINGS = 15578407;</code> */
     PACKET_MIRRORINGS(15578407),
+    /** <code>PD_EXTREME_TOTAL_PROVISIONED_IOPS = 69593965;</code> */
+    PD_EXTREME_TOTAL_PROVISIONED_IOPS(69593965),
     /** <code>PREEMPTIBLE_CPUS = 251184841;</code> */
     PREEMPTIBLE_CPUS(251184841),
     /** <code>PREEMPTIBLE_LOCAL_SSD_GB = 260819336;</code> */
@@ -391,22 +405,30 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int BACKEND_BUCKETS_VALUE = 137626846;
     /** <code>BACKEND_SERVICES = 269623753;</code> */
     public static final int BACKEND_SERVICES_VALUE = 269623753;
+    /** <code>C2D_CPUS = 508182517;</code> */
+    public static final int C2D_CPUS_VALUE = 508182517;
     /** <code>C2_CPUS = 317601211;</code> */
     public static final int C2_CPUS_VALUE = 317601211;
     /** <code>COMMITMENTS = 456141790;</code> */
     public static final int COMMITMENTS_VALUE = 456141790;
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
     public static final int COMMITTED_A2_CPUS_VALUE = 59330902;
+    /** <code>COMMITTED_C2D_CPUS = 282390904;</code> */
+    public static final int COMMITTED_C2D_CPUS_VALUE = 282390904;
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     public static final int COMMITTED_C2_CPUS_VALUE = 223725528;
     /** <code>COMMITTED_CPUS = 292394702;</code> */
     public static final int COMMITTED_CPUS_VALUE = 292394702;
+    /** <code>COMMITTED_E2_CPUS = 388120154;</code> */
+    public static final int COMMITTED_E2_CPUS_VALUE = 388120154;
     /** <code>COMMITTED_LICENSES = 357606869;</code> */
     public static final int COMMITTED_LICENSES_VALUE = 357606869;
     /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 308393480;</code> */
     public static final int COMMITTED_LOCAL_SSD_TOTAL_GB_VALUE = 308393480;
     /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 489057886;</code> */
     public static final int COMMITTED_MEMORY_OPTIMIZED_CPUS_VALUE = 489057886;
+    /** <code>COMMITTED_N2A_CPUS = 40064304;</code> */
+    public static final int COMMITTED_N2A_CPUS_VALUE = 40064304;
     /** <code>COMMITTED_N2D_CPUS = 125951757;</code> */
     public static final int COMMITTED_N2D_CPUS_VALUE = 125951757;
     /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
@@ -429,6 +451,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int CPUS_ALL_REGIONS_VALUE = 470911149;
     /** <code>DISKS_TOTAL_GB = 353520543;</code> */
     public static final int DISKS_TOTAL_GB_VALUE = 353520543;
+    /** <code>E2_CPUS = 481995837;</code> */
+    public static final int E2_CPUS_VALUE = 481995837;
     /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
     public static final int EXTERNAL_NETWORK_LB_FORWARDING_RULES_VALUE = 374298265;
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
@@ -483,6 +507,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int M2_CPUS_VALUE = 65832517;
     /** <code>MACHINE_IMAGES = 446986640;</code> */
     public static final int MACHINE_IMAGES_VALUE = 446986640;
+    /** <code>N2A_CPUS = 265855917;</code> */
+    public static final int N2A_CPUS_VALUE = 265855917;
     /** <code>N2D_CPUS = 351743370;</code> */
     public static final int N2D_CPUS_VALUE = 351743370;
     /** <code>N2_CPUS = 416465286;</code> */
@@ -517,6 +543,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int NVIDIA_V100_GPUS_VALUE = 129293095;
     /** <code>PACKET_MIRRORINGS = 15578407;</code> */
     public static final int PACKET_MIRRORINGS_VALUE = 15578407;
+    /** <code>PD_EXTREME_TOTAL_PROVISIONED_IOPS = 69593965;</code> */
+    public static final int PD_EXTREME_TOTAL_PROVISIONED_IOPS_VALUE = 69593965;
     /** <code>PREEMPTIBLE_CPUS = 251184841;</code> */
     public static final int PREEMPTIBLE_CPUS_VALUE = 251184841;
     /** <code>PREEMPTIBLE_LOCAL_SSD_GB = 260819336;</code> */
@@ -635,22 +663,30 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return BACKEND_BUCKETS;
         case 269623753:
           return BACKEND_SERVICES;
+        case 508182517:
+          return C2D_CPUS;
         case 317601211:
           return C2_CPUS;
         case 456141790:
           return COMMITMENTS;
         case 59330902:
           return COMMITTED_A2_CPUS;
+        case 282390904:
+          return COMMITTED_C2D_CPUS;
         case 223725528:
           return COMMITTED_C2_CPUS;
         case 292394702:
           return COMMITTED_CPUS;
+        case 388120154:
+          return COMMITTED_E2_CPUS;
         case 357606869:
           return COMMITTED_LICENSES;
         case 308393480:
           return COMMITTED_LOCAL_SSD_TOTAL_GB;
         case 489057886:
           return COMMITTED_MEMORY_OPTIMIZED_CPUS;
+        case 40064304:
+          return COMMITTED_N2A_CPUS;
         case 125951757:
           return COMMITTED_N2D_CPUS;
         case 322589603:
@@ -673,6 +709,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return CPUS_ALL_REGIONS;
         case 353520543:
           return DISKS_TOTAL_GB;
+        case 481995837:
+          return E2_CPUS;
         case 374298265:
           return EXTERNAL_NETWORK_LB_FORWARDING_RULES;
         case 63478888:
@@ -727,6 +765,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return M2_CPUS;
         case 446986640:
           return MACHINE_IMAGES;
+        case 265855917:
+          return N2A_CPUS;
         case 351743370:
           return N2D_CPUS;
         case 416465286:
@@ -761,6 +801,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NVIDIA_V100_GPUS;
         case 15578407:
           return PACKET_MIRRORINGS;
+        case 69593965:
+          return PD_EXTREME_TOTAL_PROVISIONED_IOPS;
         case 251184841:
           return PREEMPTIBLE_CPUS;
         case 260819336:

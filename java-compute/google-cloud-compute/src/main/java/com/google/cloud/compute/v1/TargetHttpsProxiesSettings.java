@@ -98,6 +98,11 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchTargetHttpsProxyRequest, Operation> patchSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).patchSettings();
+  }
+
   /** Returns the object with the settings used for calls to setQuicOverride. */
   public UnaryCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideSettings() {
@@ -251,6 +256,11 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
             ListTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
     }
 
     /** Returns the builder for the settings used for calls to setQuicOverride. */

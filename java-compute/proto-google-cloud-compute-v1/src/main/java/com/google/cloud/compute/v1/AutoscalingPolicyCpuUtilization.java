@@ -38,7 +38,9 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     super(builder);
   }
 
-  private AutoscalingPolicyCpuUtilization() {}
+  private AutoscalingPolicyCpuUtilization() {
+    predictiveMethod_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -72,8 +74,15 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
             break;
           case 1727246961:
             {
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               utilizationTarget_ = input.readDouble();
+              break;
+            }
+          case -1173201400:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000001;
+              predictiveMethod_ = rawValue;
               break;
             }
           default:
@@ -110,7 +119,201 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
             com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+   * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod}
+   */
+  public enum PredictiveMethod implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PREDICTIVE_METHOD = 0;</code>
+     */
+    UNDEFINED_PREDICTIVE_METHOD(0),
+    /** <code>NONE = 2402104;</code> */
+    NONE(2402104),
+    /** <code>OPTIMIZE_AVAILABILITY = 11629437;</code> */
+    OPTIMIZE_AVAILABILITY(11629437),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PREDICTIVE_METHOD = 0;</code>
+     */
+    public static final int UNDEFINED_PREDICTIVE_METHOD_VALUE = 0;
+    /** <code>NONE = 2402104;</code> */
+    public static final int NONE_VALUE = 2402104;
+    /** <code>OPTIMIZE_AVAILABILITY = 11629437;</code> */
+    public static final int OPTIMIZE_AVAILABILITY_VALUE = 11629437;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PredictiveMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PredictiveMethod forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PREDICTIVE_METHOD;
+        case 2402104:
+          return NONE;
+        case 11629437:
+          return OPTIMIZE_AVAILABILITY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PredictiveMethod> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PredictiveMethod>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PredictiveMethod>() {
+              public PredictiveMethod findValueByNumber(int number) {
+                return PredictiveMethod.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final PredictiveMethod[] VALUES = values();
+
+    public static PredictiveMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PredictiveMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod)
+  }
+
   private int bitField0_;
+  public static final int PREDICTIVE_METHOD_FIELD_NUMBER = 390220737;
+  private int predictiveMethod_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+   * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+   * </code>
+   *
+   * @return Whether the predictiveMethod field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictiveMethod() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+   * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for predictiveMethod.
+   */
+  @java.lang.Override
+  public int getPredictiveMethodValue() {
+    return predictiveMethod_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+   * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+   * </code>
+   *
+   * @return The predictiveMethod.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod
+      getPredictiveMethod() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod result =
+        com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.valueOf(
+            predictiveMethod_);
+    return result == null
+        ? com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.UNRECOGNIZED
+        : result;
+  }
+
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
   private double utilizationTarget_;
   /**
@@ -128,7 +331,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasUtilizationTarget() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -162,8 +365,11 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(215905870, utilizationTarget_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(390220737, predictiveMethod_);
     }
     unknownFields.writeTo(output);
   }
@@ -174,9 +380,12 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(215905870, utilizationTarget_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(390220737, predictiveMethod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +403,10 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization other =
         (com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization) obj;
 
+    if (hasPredictiveMethod() != other.hasPredictiveMethod()) return false;
+    if (hasPredictiveMethod()) {
+      if (predictiveMethod_ != other.predictiveMethod_) return false;
+    }
     if (hasUtilizationTarget() != other.hasUtilizationTarget()) return false;
     if (hasUtilizationTarget()) {
       if (java.lang.Double.doubleToLongBits(getUtilizationTarget())
@@ -210,6 +423,10 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPredictiveMethod()) {
+      hash = (37 * hash) + PREDICTIVE_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + predictiveMethod_;
+    }
     if (hasUtilizationTarget()) {
       hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
       hash =
@@ -363,8 +580,10 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      utilizationTarget_ = 0D;
+      predictiveMethod_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
+      utilizationTarget_ = 0D;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -395,8 +614,12 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.utilizationTarget_ = utilizationTarget_;
         to_bitField0_ |= 0x00000001;
+      }
+      result.predictiveMethod_ = predictiveMethod_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.utilizationTarget_ = utilizationTarget_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -449,6 +672,9 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
     public Builder mergeFrom(com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization other) {
       if (other == com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDefaultInstance())
         return this;
+      if (other.hasPredictiveMethod()) {
+        setPredictiveMethod(other.getPredictiveMethod());
+      }
       if (other.hasUtilizationTarget()) {
         setUtilizationTarget(other.getUtilizationTarget());
       }
@@ -484,6 +710,136 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
 
     private int bitField0_;
 
+    private int predictiveMethod_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @return Whether the predictiveMethod field is set.
+     */
+    @java.lang.Override
+    public boolean hasPredictiveMethod() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for predictiveMethod.
+     */
+    @java.lang.Override
+    public int getPredictiveMethodValue() {
+      return predictiveMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for predictiveMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPredictiveMethodValue(int value) {
+      bitField0_ |= 0x00000001;
+      predictiveMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @return The predictiveMethod.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod
+        getPredictiveMethod() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod result =
+          com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.valueOf(
+              predictiveMethod_);
+      return result == null
+          ? com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @param value The predictiveMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPredictiveMethod(
+        com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      predictiveMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
+     * * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPredictiveMethod() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      predictiveMethod_ = 0;
+      onChanged();
+      return this;
+    }
+
     private double utilizationTarget_;
     /**
      *
@@ -500,7 +856,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      */
     @java.lang.Override
     public boolean hasUtilizationTarget() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -534,7 +890,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setUtilizationTarget(double value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       utilizationTarget_ = value;
       onChanged();
       return this;
@@ -553,7 +909,7 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearUtilizationTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       utilizationTarget_ = 0D;
       onChanged();
       return this;

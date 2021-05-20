@@ -26,9 +26,11 @@ import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
+import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceRequest;
 import com.google.cloud.compute.v1.GetInstanceRequest;
@@ -41,6 +43,7 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
+import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -108,6 +111,10 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: attachDiskCallable()");
   }
 
+  public UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
+  }
+
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCallable()");
   }
@@ -122,6 +129,11 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<GetInstanceRequest, Instance> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEffectiveFirewallsCallable()");
   }
 
   public UnaryCallable<GetGuestAttributesInstanceRequest, GuestAttributes>

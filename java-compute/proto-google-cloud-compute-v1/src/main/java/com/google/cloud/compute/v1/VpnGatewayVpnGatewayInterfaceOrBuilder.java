@@ -52,6 +52,46 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return Whether the interconnectAttachment field is set.
+   */
+  boolean hasInterconnectAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return The interconnectAttachment.
+   */
+  java.lang.String getInterconnectAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * URL of the interconnect attachment resource. When the value of this field is present, the VPN Gateway will be used for IPsec-encrypted Cloud Interconnect; all Egress or Ingress traffic for this VPN Gateway interface will go through the specified interconnect attachment resource.
+   * Not currently available in all Interconnect locations.
+   * </pre>
+   *
+   * <code>string interconnect_attachment = 308135284;</code>
+   *
+   * @return The bytes for interconnectAttachment.
+   */
+  com.google.protobuf.ByteString getInterconnectAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *

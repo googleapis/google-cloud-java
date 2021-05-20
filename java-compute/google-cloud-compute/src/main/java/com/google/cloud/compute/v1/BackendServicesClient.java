@@ -966,7 +966,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service.
+   * Sets the Google Cloud Armor security policy for the specified backend service. For more
+   * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -1000,7 +1001,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service.
+   * Sets the Google Cloud Armor security policy for the specified backend service. For more
+   * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -1027,7 +1029,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the security policy for the specified backend service.
+   * Sets the Google Cloud Armor security policy for the specified backend service. For more
+   * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *

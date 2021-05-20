@@ -27,7 +27,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more of the policies for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
    * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
@@ -307,6 +307,74 @@ public interface AutoscalerOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  int getScalingScheduleStatusCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  boolean containsScalingScheduleStatus(java.lang.String key);
+  /** Use {@link #getScalingScheduleStatusMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      getScalingScheduleStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
+      getScalingScheduleStatusMap();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
+      java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information of existing scaling schedules.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.ScalingScheduleStatus&gt; scaling_schedule_status = 465950178;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrThrow(
+      java.lang.String key);
 
   /**
    *

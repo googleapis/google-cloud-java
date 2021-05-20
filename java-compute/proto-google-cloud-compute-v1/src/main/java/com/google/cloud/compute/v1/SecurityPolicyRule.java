@@ -164,7 +164,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
    * <code>string action = 187661878;</code>
@@ -179,7 +179,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
    * <code>string action = 187661878;</code>
@@ -202,7 +202,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
    * </pre>
    *
    * <code>string action = 187661878;</code>
@@ -930,7 +930,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>
@@ -944,7 +944,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>
@@ -966,7 +966,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>
@@ -988,7 +988,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>
@@ -1009,7 +1009,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>
@@ -1026,7 +1026,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to preform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     * The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      * </pre>
      *
      * <code>string action = 187661878;</code>

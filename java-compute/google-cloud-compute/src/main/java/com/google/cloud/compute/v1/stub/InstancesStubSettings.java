@@ -45,9 +45,11 @@ import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
+import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceRequest;
 import com.google.cloud.compute.v1.GetInstanceRequest;
@@ -60,6 +62,7 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
+import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
@@ -154,11 +157,15 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           AggregatedListInstancesRequest, InstanceAggregatedList, AggregatedListPagedResponse>
       aggregatedListSettings;
   private final UnaryCallSettings<AttachDiskInstanceRequest, Operation> attachDiskSettings;
+  private final UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings;
   private final UnaryCallSettings<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigSettings;
   private final UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getSettings;
+  private final UnaryCallSettings<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsSettings;
   private final UnaryCallSettings<GetGuestAttributesInstanceRequest, GuestAttributes>
       getGuestAttributesSettings;
   private final UnaryCallSettings<GetIamPolicyInstanceRequest, Policy> getIamPolicySettings;
@@ -236,6 +243,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return attachDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public UnaryCallSettings<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
+    return bulkInsertSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteSettings() {
     return deleteSettings;
@@ -255,6 +267,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEffectiveFirewalls. */
+  public UnaryCallSettings<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsSettings() {
+    return getEffectiveFirewallsSettings;
   }
 
   /** Returns the object with the settings used for calls to getGuestAttributes. */
@@ -514,10 +533,12 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     attachDiskSettings = settingsBuilder.attachDiskSettings().build();
+    bulkInsertSettings = settingsBuilder.bulkInsertSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteAccessConfigSettings = settingsBuilder.deleteAccessConfigSettings().build();
     detachDiskSettings = settingsBuilder.detachDiskSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getEffectiveFirewallsSettings = settingsBuilder.getEffectiveFirewallsSettings().build();
     getGuestAttributesSettings = settingsBuilder.getGuestAttributesSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     getScreenshotSettings = settingsBuilder.getScreenshotSettings().build();
@@ -750,12 +771,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         aggregatedListSettings;
     private final UnaryCallSettings.Builder<AttachDiskInstanceRequest, Operation>
         attachDiskSettings;
+    private final UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation>
+        bulkInsertSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings;
     private final UnaryCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation>
         deleteAccessConfigSettings;
     private final UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation>
         detachDiskSettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getSettings;
+    private final UnaryCallSettings.Builder<
+            GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsSettings;
     private final UnaryCallSettings.Builder<GetGuestAttributesInstanceRequest, GuestAttributes>
         getGuestAttributesSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyInstanceRequest, Policy>
@@ -867,6 +893,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       attachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      bulkInsertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -874,6 +902,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       detachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getEffectiveFirewallsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getGuestAttributesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -945,10 +975,12 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
+              bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
               detachDiskSettings,
               getSettings,
+              getEffectiveFirewallsSettings,
               getGuestAttributesSettings,
               getIamPolicySettings,
               getScreenshotSettings,
@@ -1017,6 +1049,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .bulkInsertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1033,6 +1070,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEffectiveFirewallsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -1206,10 +1248,12 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       attachDiskSettings = settings.attachDiskSettings.toBuilder();
+      bulkInsertSettings = settings.bulkInsertSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteAccessConfigSettings = settings.deleteAccessConfigSettings.toBuilder();
       detachDiskSettings = settings.detachDiskSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getEffectiveFirewallsSettings = settings.getEffectiveFirewallsSettings.toBuilder();
       getGuestAttributesSettings = settings.getGuestAttributesSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       getScreenshotSettings = settings.getScreenshotSettings.toBuilder();
@@ -1252,10 +1296,12 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
+              bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
               detachDiskSettings,
               getSettings,
+              getEffectiveFirewallsSettings,
               getGuestAttributesSettings,
               getIamPolicySettings,
               getScreenshotSettings,
@@ -1330,6 +1376,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return attachDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public UnaryCallSettings.Builder<BulkInsertInstanceRequest, Operation> bulkInsertSettings() {
+      return bulkInsertSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteSettings() {
       return deleteSettings;
@@ -1349,6 +1400,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEffectiveFirewalls. */
+    public UnaryCallSettings.Builder<
+            GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+        getEffectiveFirewallsSettings() {
+      return getEffectiveFirewallsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getGuestAttributes. */

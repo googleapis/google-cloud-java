@@ -24,12 +24,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
+import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
 import com.google.cloud.compute.v1.GetNetworkRequest;
 import com.google.cloud.compute.v1.InsertNetworkRequest;
 import com.google.cloud.compute.v1.ListNetworksRequest;
 import com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkList;
+import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
@@ -57,6 +59,11 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<GetNetworkRequest, Network> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEffectiveFirewallsCallable()");
   }
 
   public UnaryCallable<InsertNetworkRequest, Operation> insertCallable() {

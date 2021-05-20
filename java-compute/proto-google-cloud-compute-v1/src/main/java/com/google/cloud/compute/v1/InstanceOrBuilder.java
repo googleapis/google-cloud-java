@@ -27,6 +27,45 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   *
+   * @return Whether the advancedMachineFeatures field is set.
+   */
+  boolean hasAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   *
+   * @return The advancedMachineFeatures.
+   */
+  com.google.cloud.compute.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AdvancedMachineFeaturesOrBuilder
+      getAdvancedMachineFeaturesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
    * </pre>
    *
@@ -1049,6 +1088,31 @@ public interface InstanceOrBuilder
    * @return The bytes of the resourcePolicies at the given index.
    */
   com.google.protobuf.ByteString getResourcePoliciesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   /**
    *

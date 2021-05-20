@@ -85,6 +85,7 @@ public class ZonesClientTest {
     String name = "name3373707";
     String region = "region-934795532";
     String selfLink = "selfLink-1691268851";
+    boolean supportsPzs = true;
     Zone expectedResponse =
         Zone.newBuilder()
             .setCreationTimestamp(creationTimestamp)
@@ -94,6 +95,7 @@ public class ZonesClientTest {
             .setName(name)
             .setRegion(region)
             .setSelfLink(selfLink)
+            .setSupportsPzs(supportsPzs)
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -108,14 +108,14 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
           case 1450082192:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               status_ = rawValue;
               break;
             }
           case 1665436746:
             {
               com.google.cloud.compute.v1.ServerBinding.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
+              if (((bitField0_ & 0x00000010) != 0)) {
                 subBuilder = serverBinding_.toBuilder();
               }
               serverBinding_ =
@@ -125,7 +125,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(serverBinding_);
                 serverBinding_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             }
           case 1981823672:
@@ -150,7 +150,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
           case -1579500358:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               serverId_ = s;
               break;
             }
@@ -159,6 +159,12 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               nodeType_ = s;
+              break;
+            }
+          case -447253160:
+            {
+              bitField0_ |= 0x00000008;
+              satisfiesPzs_ = input.readBool();
               break;
             }
           default:
@@ -865,6 +871,39 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
+  private boolean satisfiesPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   public static final int SERVER_BINDING_FIELD_NUMBER = 208179593;
   private com.google.cloud.compute.v1.ServerBinding serverBinding_;
   /**
@@ -880,7 +919,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServerBinding() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -930,7 +969,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServerId() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -988,7 +1027,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
@@ -1035,10 +1074,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < disks_.size(); i++) {
       output.writeMessage(95594102, disks_.get(i));
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(208179593, getServerBinding());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1047,11 +1086,14 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(269577064, accelerators_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 339433367, serverId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 465832791, nodeType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(480964267, satisfiesPzs_);
     }
     unknownFields.writeTo(output);
   }
@@ -1076,10 +1118,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < disks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(208179593, getServerBinding());
     }
@@ -1090,11 +1132,14 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(269577064, accelerators_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(339433367, serverId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(465832791, nodeType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1126,6 +1171,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     if (hasNodeType() != other.hasNodeType()) return false;
     if (hasNodeType()) {
       if (!getNodeType().equals(other.getNodeType())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     }
     if (hasServerBinding() != other.hasServerBinding()) return false;
     if (hasServerBinding()) {
@@ -1173,6 +1222,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     if (hasNodeType()) {
       hash = (37 * hash) + NODE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getNodeType().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     }
     if (hasServerBinding()) {
       hash = (37 * hash) + SERVER_BINDING_FIELD_NUMBER;
@@ -1354,16 +1407,18 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       nodeType_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
+      satisfiesPzs_ = false;
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (serverBindingBuilder_ == null) {
         serverBinding_ = null;
       } else {
         serverBindingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
-      serverId_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      status_ = 0;
+      serverId_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
+      status_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1429,19 +1484,23 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       }
       result.nodeType_ = nodeType_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         if (serverBindingBuilder_ == null) {
           result.serverBinding_ = serverBinding_;
         } else {
           result.serverBinding_ = serverBindingBuilder_.build();
         }
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.serverId_ = serverId_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000020;
+      }
+      result.serverId_ = serverId_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000040;
       }
       result.status_ = status_;
       result.bitField0_ = to_bitField0_;
@@ -1571,11 +1630,14 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         nodeType_ = other.nodeType_;
         onChanged();
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       if (other.hasServerBinding()) {
         mergeServerBinding(other.getServerBinding());
       }
       if (other.hasServerId()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         serverId_ = other.serverId_;
         onChanged();
       }
@@ -2842,6 +2904,73 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+      bitField0_ |= 0x00000040;
+      satisfiesPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.ServerBinding serverBinding_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ServerBinding,
@@ -2860,7 +2989,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serverBinding field is set.
      */
     public boolean hasServerBinding() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2901,7 +3030,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         serverBindingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2921,7 +3050,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         serverBindingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2935,7 +3064,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeServerBinding(com.google.cloud.compute.v1.ServerBinding value) {
       if (serverBindingBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && serverBinding_ != null
             && serverBinding_ != com.google.cloud.compute.v1.ServerBinding.getDefaultInstance()) {
           serverBinding_ =
@@ -2949,7 +3078,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         serverBindingBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2968,7 +3097,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         serverBindingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
     /**
@@ -2981,7 +3110,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
      */
     public com.google.cloud.compute.v1.ServerBinding.Builder getServerBindingBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getServerBindingFieldBuilder().getBuilder();
     }
@@ -3042,7 +3171,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serverId field is set.
      */
     public boolean hasServerId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3104,7 +3233,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       serverId_ = value;
       onChanged();
       return this;
@@ -3121,7 +3250,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServerId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       serverId_ = getDefaultInstance().getServerId();
       onChanged();
       return this;
@@ -3143,7 +3272,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       serverId_ = value;
       onChanged();
       return this;
@@ -3157,7 +3286,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>.google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
@@ -3175,7 +3304,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       status_ = value;
       onChanged();
       return this;
@@ -3204,7 +3333,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -3215,7 +3344,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       status_ = 0;
       onChanged();
       return this;

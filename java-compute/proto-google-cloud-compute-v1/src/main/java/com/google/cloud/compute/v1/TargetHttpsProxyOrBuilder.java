@@ -147,6 +147,43 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpsProxy. An up-to-date fingerprint must be provided in order to patch the TargetHttpsProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpsProxy.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return Whether the fingerprint field is set.
+   */
+  boolean hasFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpsProxy. An up-to-date fingerprint must be provided in order to patch the TargetHttpsProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpsProxy.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return The fingerprint.
+   */
+  java.lang.String getFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpsProxy. An up-to-date fingerprint must be provided in order to patch the TargetHttpsProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpsProxy.
+   * </pre>
+   *
+   * <code>string fingerprint = 234678500;</code>
+   *
+   * @return The bytes for fingerprint.
+   */
+  com.google.protobuf.ByteString getFingerprintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
@@ -292,7 +329,6 @@ public interface TargetHttpsProxyOrBuilder
    * - When quic-override is set to ENABLE, the load balancer uses QUIC when possible.
    * - When quic-override is set to DISABLE, the load balancer doesn't use QUIC.
    * - If the quic-override flag is not specified, NONE is implied.
-   * -
    * </pre>
    *
    * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
@@ -309,7 +345,6 @@ public interface TargetHttpsProxyOrBuilder
    * - When quic-override is set to ENABLE, the load balancer uses QUIC when possible.
    * - When quic-override is set to DISABLE, the load balancer doesn't use QUIC.
    * - If the quic-override flag is not specified, NONE is implied.
-   * -
    * </pre>
    *
    * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
@@ -326,7 +361,6 @@ public interface TargetHttpsProxyOrBuilder
    * - When quic-override is set to ENABLE, the load balancer uses QUIC when possible.
    * - When quic-override is set to DISABLE, the load balancer doesn't use QUIC.
    * - If the quic-override flag is not specified, NONE is implied.
-   * -
    * </pre>
    *
    * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>

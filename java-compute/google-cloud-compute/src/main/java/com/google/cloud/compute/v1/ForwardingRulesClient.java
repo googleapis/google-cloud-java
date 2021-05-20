@@ -728,6 +728,103 @@ public class ForwardingRulesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   String project = "";
+   *   String region = "";
+   *   String resource = "";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response = forwardingRulesClient.setLabels(project, region, resource, regionSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation setLabels(
+      String project,
+      String region,
+      String resource,
+      RegionSetLabelsRequest regionSetLabelsRequestResource) {
+    SetLabelsForwardingRuleRequest request =
+        SetLabelsForwardingRuleRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+            .build();
+    return setLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   String project = "";
+   *   String region = "";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
+   *   String resource = "";
+   *   SetLabelsForwardingRuleRequest request = SetLabelsForwardingRuleRequest.newBuilder()
+   *     .setProject(project)
+   *     .setRegion(region)
+   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+   *     .setResource(resource)
+   *     .build();
+   *   Operation response = forwardingRulesClient.setLabels(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation setLabels(SetLabelsForwardingRuleRequest request) {
+    return setLabelsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on the specified resource. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
+   *   String project = "";
+   *   String region = "";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
+   *   String resource = "";
+   *   SetLabelsForwardingRuleRequest request = SetLabelsForwardingRuleRequest.newBuilder()
+   *     .setProject(project)
+   *     .setRegion(region)
+   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+   *     .setResource(resource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = forwardingRulesClient.setLabelsCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetLabelsForwardingRuleRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
    * target.
    *

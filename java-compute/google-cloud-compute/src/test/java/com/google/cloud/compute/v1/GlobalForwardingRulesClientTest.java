@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub
 import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub.insertMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub.listMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub.patchMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub.setLabelsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonGlobalForwardingRulesStub.setTargetMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -55,6 +56,7 @@ public class GlobalForwardingRulesClientTest {
               insertMethodDescriptor,
               listMethodDescriptor,
               patchMethodDescriptor,
+              setLabelsMethodDescriptor,
               setTargetMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(
@@ -99,6 +101,7 @@ public class GlobalForwardingRulesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -121,6 +124,7 @@ public class GlobalForwardingRulesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -187,9 +191,11 @@ public class GlobalForwardingRulesClientTest {
     String id = "id3355";
     boolean isMirroringCollector = true;
     String kind = "kind3292052";
+    String labelFingerprint = "labelFingerprint714995737";
     String name = "name3373707";
     String network = "network1843485230";
     String portRange = "portRange217518079";
+    String pscConnectionId = "pscConnectionId292082397";
     String region = "region-934795532";
     String selfLink = "selfLink-1691268851";
     String serviceLabel = "serviceLabel-1730474774";
@@ -208,9 +214,11 @@ public class GlobalForwardingRulesClientTest {
             .setId(id)
             .setIsMirroringCollector(isMirroringCollector)
             .setKind(kind)
+            .setLabelFingerprint(labelFingerprint)
             .setName(name)
             .setNetwork(network)
             .setPortRange(portRange)
+            .setPscConnectionId(pscConnectionId)
             .setRegion(region)
             .setSelfLink(selfLink)
             .setServiceLabel(serviceLabel)
@@ -273,6 +281,7 @@ public class GlobalForwardingRulesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -295,6 +304,7 @@ public class GlobalForwardingRulesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -421,6 +431,7 @@ public class GlobalForwardingRulesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -443,6 +454,7 @@ public class GlobalForwardingRulesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)
@@ -500,7 +512,7 @@ public class GlobalForwardingRulesClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void setTargetTest() {
+  public void setLabelsTest() {
     String clientOperationId = "clientOperationId-239630617";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
@@ -511,6 +523,7 @@ public class GlobalForwardingRulesClientTest {
     String insertTime = "insertTime-103148397";
     String kind = "kind3292052";
     String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
     String operationType = "operationType-1432962286";
     int progress = 1001078227;
     String region = "region-934795532";
@@ -533,6 +546,101 @@ public class GlobalForwardingRulesClientTest {
             .setInsertTime(insertTime)
             .setKind(kind)
             .setName(name)
+            .setOperationGroupId(operationGroupId)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region)
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String resource = "resource-341064690";
+    GlobalSetLabelsRequest globalSetLabelsRequestResource =
+        GlobalSetLabelsRequest.newBuilder().build();
+
+    Operation actualResponse = client.setLabels(project, resource, globalSetLabelsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String resource = "resource-341064690";
+      GlobalSetLabelsRequest globalSetLabelsRequestResource =
+          GlobalSetLabelsRequest.newBuilder().build();
+
+      client.setLabels(project, resource, globalSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setTargetTest() {
+    String clientOperationId = "clientOperationId-239630617";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    int httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationGroupId = "operationGroupId40171187";
+    String operationType = "operationType-1432962286";
+    int progress = 1001078227;
+    String region = "region-934795532";
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    String zone = "zone3744684";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId(clientOperationId)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationGroupId(operationGroupId)
             .setOperationType(operationType)
             .setProgress(progress)
             .setRegion(region)

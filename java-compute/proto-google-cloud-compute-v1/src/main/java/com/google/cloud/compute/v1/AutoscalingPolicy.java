@@ -105,6 +105,26 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                       extensionRegistry));
               break;
             }
+          case -1451634654:
+            {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                scalingSchedules_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ScalingSchedulesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000100;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String,
+                      com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+                  scalingSchedules__ =
+                      input.readMessage(
+                          ScalingSchedulesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              scalingSchedules_
+                  .getMutableMap()
+                  .put(scalingSchedules__.getKey(), scalingSchedules__.getValue());
+              break;
+            }
           case -1245278118:
             {
               com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.Builder subBuilder = null;
@@ -190,6 +210,17 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_AutoscalingPolicy_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 355416580:
+        return internalGetScalingSchedules();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -727,6 +758,131 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         : scaleInControl_;
   }
 
+  public static final int SCALING_SCHEDULES_FIELD_NUMBER = 355416580;
+
+  private static final class ScalingSchedulesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+                    newDefaultInstance(
+                        com.google.cloud.compute.v1.Compute
+                            .internal_static_google_cloud_compute_v1_AutoscalingPolicy_ScalingSchedulesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      scalingSchedules_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      internalGetScalingSchedules() {
+    if (scalingSchedules_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ScalingSchedulesDefaultEntryHolder.defaultEntry);
+    }
+    return scalingSchedules_;
+  }
+
+  public int getScalingSchedulesCount() {
+    return internalGetScalingSchedules().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsScalingSchedules(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetScalingSchedules().getMap().containsKey(key);
+  }
+  /** Use {@link #getScalingSchedulesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      getScalingSchedules() {
+    return getScalingSchedulesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+      getScalingSchedulesMap() {
+    return internalGetScalingSchedules().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrDefault(
+      java.lang.String key,
+      com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        map = internalGetScalingSchedules().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        map = internalGetScalingSchedules().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -753,6 +909,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < customMetricUtilizations_.size(); i++) {
       output.writeMessage(131972850, customMetricUtilizations_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetScalingSchedules(),
+        ScalingSchedulesDefaultEntryHolder.defaultEntry,
+        355416580);
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(381211147, getCpuUtilization());
     }
@@ -787,6 +948,20 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               131972850, customMetricUtilizations_.get(i));
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        entry : internalGetScalingSchedules().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+          scalingSchedules__ =
+              ScalingSchedulesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(355416580, scalingSchedules__);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -850,6 +1025,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (hasScaleInControl()) {
       if (!getScaleInControl().equals(other.getScaleInControl())) return false;
     }
+    if (!internalGetScalingSchedules().equals(other.internalGetScalingSchedules())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -892,6 +1068,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (hasScaleInControl()) {
       hash = (37 * hash) + SCALE_IN_CONTROL_FIELD_NUMBER;
       hash = (53 * hash) + getScaleInControl().hashCode();
+    }
+    if (!internalGetScalingSchedules().getMap().isEmpty()) {
+      hash = (37 * hash) + SCALING_SCHEDULES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetScalingSchedules().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1011,6 +1191,26 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
           .internal_static_google_cloud_compute_v1_AutoscalingPolicy_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 355416580:
+          return internalGetScalingSchedules();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 355416580:
+          return internalGetMutableScalingSchedules();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1075,6 +1275,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         scaleInControlBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      internalGetMutableScalingSchedules().clear();
       return this;
     }
 
@@ -1154,6 +1355,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         }
         to_bitField0_ |= 0x00000040;
       }
+      result.scalingSchedules_ = internalGetScalingSchedules();
+      result.scalingSchedules_.makeImmutable();
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1252,6 +1455,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (other.hasScaleInControl()) {
         mergeScaleInControl(other.getScaleInControl());
       }
+      internalGetMutableScalingSchedules().mergeFrom(other.internalGetScalingSchedules());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2578,6 +2782,200 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         scaleInControl_ = null;
       }
       return scaleInControlBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        scalingSchedules_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        internalGetScalingSchedules() {
+      if (scalingSchedules_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ScalingSchedulesDefaultEntryHolder.defaultEntry);
+      }
+      return scalingSchedules_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        internalGetMutableScalingSchedules() {
+      onChanged();
+      ;
+      if (scalingSchedules_ == null) {
+        scalingSchedules_ =
+            com.google.protobuf.MapField.newMapField(
+                ScalingSchedulesDefaultEntryHolder.defaultEntry);
+      }
+      if (!scalingSchedules_.isMutable()) {
+        scalingSchedules_ = scalingSchedules_.copy();
+      }
+      return scalingSchedules_;
+    }
+
+    public int getScalingSchedulesCount() {
+      return internalGetScalingSchedules().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsScalingSchedules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetScalingSchedules().getMap().containsKey(key);
+    }
+    /** Use {@link #getScalingSchedulesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        getScalingSchedules() {
+      return getScalingSchedulesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        getScalingSchedulesMap() {
+      return internalGetScalingSchedules().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule
+        getScalingSchedulesOrDefault(
+            java.lang.String key,
+            com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+          map = internalGetScalingSchedules().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+          map = internalGetScalingSchedules().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearScalingSchedules() {
+      internalGetMutableScalingSchedules().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    public Builder removeScalingSchedules(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScalingSchedules().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+        getMutableScalingSchedules() {
+      return internalGetMutableScalingSchedules().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    public Builder putScalingSchedules(
+        java.lang.String key, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScalingSchedules().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.AutoscalingPolicyScalingSchedule&gt; scaling_schedules = 355416580;
+     * </code>
+     */
+    public Builder putAllScalingSchedules(
+        java.util.Map<
+                java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
+            values) {
+      internalGetMutableScalingSchedules().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

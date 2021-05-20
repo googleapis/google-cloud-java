@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchGlobalForwardingRuleRequest;
+import com.google.cloud.compute.v1.SetLabelsGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -107,6 +108,8 @@ public class GlobalForwardingRulesStubSettings
           ListGlobalForwardingRulesRequest, ForwardingRuleList, ListPagedResponse>
       listSettings;
   private final UnaryCallSettings<PatchGlobalForwardingRuleRequest, Operation> patchSettings;
+  private final UnaryCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation>
+      setLabelsSettings;
   private final UnaryCallSettings<SetTargetGlobalForwardingRuleRequest, Operation>
       setTargetSettings;
 
@@ -134,6 +137,11 @@ public class GlobalForwardingRulesStubSettings
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchGlobalForwardingRuleRequest, Operation> patchSettings() {
     return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
   }
 
   /** Returns the object with the settings used for calls to setTarget. */
@@ -221,6 +229,7 @@ public class GlobalForwardingRulesStubSettings
     insertSettings = settingsBuilder.insertSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setTargetSettings = settingsBuilder.setTargetSettings().build();
   }
 
@@ -301,6 +310,8 @@ public class GlobalForwardingRulesStubSettings
         listSettings;
     private final UnaryCallSettings.Builder<PatchGlobalForwardingRuleRequest, Operation>
         patchSettings;
+    private final UnaryCallSettings.Builder<SetLabelsGlobalForwardingRuleRequest, Operation>
+        setLabelsSettings;
     private final UnaryCallSettings.Builder<SetTargetGlobalForwardingRuleRequest, Operation>
         setTargetSettings;
 
@@ -355,6 +366,8 @@ public class GlobalForwardingRulesStubSettings
 
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -364,6 +377,7 @@ public class GlobalForwardingRulesStubSettings
               insertSettings,
               listSettings,
               patchSettings,
+              setLabelsSettings,
               setTargetSettings);
 
       initDefaults(this);
@@ -406,6 +420,11 @@ public class GlobalForwardingRulesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setTargetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -421,6 +440,7 @@ public class GlobalForwardingRulesStubSettings
       insertSettings = settings.insertSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setTargetSettings = settings.setTargetSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -430,6 +450,7 @@ public class GlobalForwardingRulesStubSettings
               insertSettings,
               listSettings,
               patchSettings,
+              setLabelsSettings,
               setTargetSettings);
     }
 
@@ -476,6 +497,12 @@ public class GlobalForwardingRulesStubSettings
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchGlobalForwardingRuleRequest, Operation> patchSettings() {
       return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsGlobalForwardingRuleRequest, Operation>
+        setLabelsSettings() {
+      return setLabelsSettings;
     }
 
     /** Returns the builder for the settings used for calls to setTarget. */

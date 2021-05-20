@@ -307,7 +307,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
@@ -324,7 +324,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
@@ -349,7 +349,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
    * Only one of presentMatch, exactMatch or regexMatch must be set.
    * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
@@ -1098,7 +1098,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
@@ -1114,7 +1114,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
@@ -1138,7 +1138,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
@@ -1162,7 +1162,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
@@ -1185,7 +1185,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
@@ -1204,7 +1204,7 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see en.cppreference.com/w/cpp/regex/ecmascript
+     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For the regular expression grammar, please see github.com/google/re2/wiki/Syntax
      * Only one of presentMatch, exactMatch or regexMatch must be set.
      * Note that regexMatch only applies when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>

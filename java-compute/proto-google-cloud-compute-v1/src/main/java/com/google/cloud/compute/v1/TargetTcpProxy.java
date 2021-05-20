@@ -110,14 +110,20 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
           case 1282993136:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               proxyHeader_ = rawValue;
+              break;
+            }
+          case -2006762640:
+            {
+              bitField0_ |= 0x00000020;
+              proxyBind_ = input.readBool();
               break;
             }
           case -1306643030:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               service_ = s;
               break;
             }
@@ -131,7 +137,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
               break;
             }
@@ -615,6 +621,43 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROXY_BIND_FIELD_NUMBER = 286025582;
+  private boolean proxyBind_;
+  /**
+   *
+   *
+   * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 286025582;</code>
+   *
+   * @return Whether the proxyBind field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyBind() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 286025582;</code>
+   *
+   * @return The proxyBind.
+   */
+  @java.lang.Override
+  public boolean getProxyBind() {
+    return proxyBind_;
+  }
+
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
   private int proxyHeader_;
   /**
@@ -630,7 +673,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProxyHeader() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -683,7 +726,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -747,7 +790,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasService() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -822,16 +865,19 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(160374142, proxyHeader_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(286025582, proxyBind_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
@@ -856,16 +902,19 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(160374142, proxyHeader_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(286025582, proxyBind_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
@@ -903,6 +952,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasProxyBind() != other.hasProxyBind()) return false;
+    if (hasProxyBind()) {
+      if (getProxyBind() != other.getProxyBind()) return false;
     }
     if (hasProxyHeader() != other.hasProxyHeader()) return false;
     if (hasProxyHeader()) {
@@ -946,6 +999,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasProxyBind()) {
+      hash = (37 * hash) + PROXY_BIND_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProxyBind());
     }
     if (hasProxyHeader()) {
       hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
@@ -1115,12 +1172,14 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      proxyHeader_ = 0;
+      proxyBind_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
-      selfLink_ = "";
+      proxyHeader_ = 0;
       bitField0_ = (bitField0_ & ~0x00000040);
-      service_ = "";
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
+      service_ = "";
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1171,15 +1230,19 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       }
       result.name_ = name_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.proxyBind_ = proxyBind_;
         to_bitField0_ |= 0x00000020;
       }
-      result.proxyHeader_ = proxyHeader_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.selfLink_ = selfLink_;
+      result.proxyHeader_ = proxyHeader_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
+      }
+      result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
       }
       result.service_ = service_;
       result.bitField0_ = to_bitField0_;
@@ -1257,16 +1320,19 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (other.hasProxyBind()) {
+        setProxyBind(other.getProxyBind());
+      }
       if (other.hasProxyHeader()) {
         setProxyHeader(other.getProxyHeader());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         service_ = other.service_;
         onChanged();
       }
@@ -1901,6 +1967,81 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean proxyBind_;
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 286025582;</code>
+     *
+     * @return Whether the proxyBind field is set.
+     */
+    @java.lang.Override
+    public boolean hasProxyBind() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 286025582;</code>
+     *
+     * @return The proxyBind.
+     */
+    @java.lang.Override
+    public boolean getProxyBind() {
+      return proxyBind_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 286025582;</code>
+     *
+     * @param value The proxyBind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyBind(boolean value) {
+      bitField0_ |= 0x00000020;
+      proxyBind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 286025582;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyBind() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      proxyBind_ = false;
+      onChanged();
+      return this;
+    }
+
     private int proxyHeader_ = 0;
     /**
      *
@@ -1915,7 +2056,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProxyHeader() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1945,7 +2086,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProxyHeaderValue(int value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       proxyHeader_ = value;
       onChanged();
       return this;
@@ -1986,7 +2127,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       proxyHeader_ = value.getNumber();
       onChanged();
       return this;
@@ -2003,7 +2144,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       proxyHeader_ = 0;
       onChanged();
       return this;
@@ -2022,7 +2163,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2084,7 +2225,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2101,7 +2242,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2123,7 +2264,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2142,7 +2283,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2204,7 +2345,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       service_ = value;
       onChanged();
       return this;
@@ -2221,7 +2362,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -2243,7 +2384,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       service_ = value;
       onChanged();
       return this;

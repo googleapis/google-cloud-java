@@ -562,8 +562,91 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance.
+   * Creates multiple instances. Count specifies the number of instances to create.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "";
+   *   String zone = "";
+   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
+   *   Operation response = instancesClient.bulkInsert(project, zone, bulkInsertInstanceResourceResource);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param bulkInsertInstanceResourceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation bulkInsert(
+      String project, String zone, BulkInsertInstanceResource bulkInsertInstanceResourceResource) {
+    BulkInsertInstanceRequest request =
+        BulkInsertInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
+            .build();
+    return bulkInsert(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple instances. Count specifies the number of instances to create.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
+   *   String project = "";
+   *   String zone = "";
+   *   BulkInsertInstanceRequest request = BulkInsertInstanceRequest.newBuilder()
+   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
+   *     .setProject(project)
+   *     .setZone(zone)
+   *     .build();
+   *   Operation response = instancesClient.bulkInsert(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation bulkInsert(BulkInsertInstanceRequest request) {
+    return bulkInsertCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple instances. Count specifies the number of instances to create.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   BulkInsertInstanceResource bulkInsertInstanceResourceResource = BulkInsertInstanceResource.newBuilder().build();
+   *   String project = "";
+   *   String zone = "";
+   *   BulkInsertInstanceRequest request = BulkInsertInstanceRequest.newBuilder()
+   *     .setBulkInsertInstanceResourceResource(bulkInsertInstanceResourceResource)
+   *     .setProject(project)
+   *     .setZone(zone)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instancesClient.bulkInsertCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BulkInsertInstanceRequest, Operation> bulkInsertCallable() {
+    return stub.bulkInsertCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
@@ -593,8 +676,7 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance.
+   * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
@@ -621,8 +703,7 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Instance resource. For more information, see Stopping or Deleting an
-   * Instance.
+   * Deletes the specified Instance resource. For more information, see Deleting an instance.
    *
    * <p>Sample code:
    *
@@ -921,6 +1002,100 @@ public class InstancesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns effective firewalls applied to an interface of the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "";
+   *   String zone = "";
+   *   String instance = "";
+   *   String networkInterface = "";
+   *   InstancesGetEffectiveFirewallsResponse response = instancesClient.getEffectiveFirewalls(project, zone, instance, networkInterface);
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance scoping this request.
+   * @param networkInterface The name of the network interface to get the effective firewalls.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InstancesGetEffectiveFirewallsResponse getEffectiveFirewalls(
+      String project, String zone, String instance, String networkInterface) {
+    GetEffectiveFirewallsInstanceRequest request =
+        GetEffectiveFirewallsInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .setNetworkInterface(networkInterface)
+            .build();
+    return getEffectiveFirewalls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns effective firewalls applied to an interface of the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String instance = "";
+   *   String networkInterface = "";
+   *   String project = "";
+   *   String zone = "";
+   *   GetEffectiveFirewallsInstanceRequest request = GetEffectiveFirewallsInstanceRequest.newBuilder()
+   *     .setInstance(instance)
+   *     .setNetworkInterface(networkInterface)
+   *     .setProject(project)
+   *     .setZone(zone)
+   *     .build();
+   *   InstancesGetEffectiveFirewallsResponse response = instancesClient.getEffectiveFirewalls(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InstancesGetEffectiveFirewallsResponse getEffectiveFirewalls(
+      GetEffectiveFirewallsInstanceRequest request) {
+    return getEffectiveFirewallsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns effective firewalls applied to an interface of the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String instance = "";
+   *   String networkInterface = "";
+   *   String project = "";
+   *   String zone = "";
+   *   GetEffectiveFirewallsInstanceRequest request = GetEffectiveFirewallsInstanceRequest.newBuilder()
+   *     .setInstance(instance)
+   *     .setNetworkInterface(networkInterface)
+   *     .setProject(project)
+   *     .setZone(zone)
+   *     .build();
+   *   ApiFuture&lt;InstancesGetEffectiveFirewallsResponse&gt; future = instancesClient.getEffectiveFirewallsCallable().futureCall(request);
+   *   // Do something
+   *   InstancesGetEffectiveFirewallsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          GetEffectiveFirewallsInstanceRequest, InstancesGetEffectiveFirewallsResponse>
+      getEffectiveFirewallsCallable() {
+    return stub.getEffectiveFirewallsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -3766,7 +3941,10 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics.
+   * Updates an instance's network interface. This method can only update an interface's alias IP
+   * range and attached network. See Modifying alias IP ranges for an existing instance for
+   * instructions on changing alias IP ranges. See Migrating a VM between networks for instructions
+   * on migrating an interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -3807,7 +3985,10 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics.
+   * Updates an instance's network interface. This method can only update an interface's alias IP
+   * range and attached network. See Modifying alias IP ranges for an existing instance for
+   * instructions on changing alias IP ranges. See Migrating a VM between networks for instructions
+   * on migrating an interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *
@@ -3838,7 +4019,10 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an instance's network interface. This method follows PATCH semantics.
+   * Updates an instance's network interface. This method can only update an interface's alias IP
+   * range and attached network. See Modifying alias IP ranges for an existing instance for
+   * instructions on changing alias IP ranges. See Migrating a VM between networks for instructions
+   * on migrating an interface. This method follows PATCH semantics.
    *
    * <p>Sample code:
    *

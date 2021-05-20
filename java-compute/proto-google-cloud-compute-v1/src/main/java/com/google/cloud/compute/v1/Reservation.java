@@ -103,7 +103,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               zone_ = s;
               break;
             }
@@ -117,13 +117,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           case 1450082192:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               status_ = rawValue;
               break;
             }
           case 1812405496:
             {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               specificReservationRequired_ = input.readBool();
               break;
             }
@@ -131,7 +131,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             {
               com.google.cloud.compute.v1.AllocationSpecificSKUReservation.Builder subBuilder =
                   null;
-              if (((bitField0_ & 0x00000080) != 0)) {
+              if (((bitField0_ & 0x00000100) != 0)) {
                 subBuilder = specificReservation_.toBuilder();
               }
               specificReservation_ =
@@ -142,7 +142,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(specificReservation_);
                 specificReservation_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             }
           case -911466526:
@@ -155,8 +155,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               selfLink_ = s;
+              break;
+            }
+          case -447253160:
+            {
+              bitField0_ |= 0x00000040;
+              satisfiesPzs_ = input.readBool();
               break;
             }
           case -437888854:
@@ -728,6 +734,39 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
+  private boolean satisfiesPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
@@ -743,7 +782,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -809,7 +848,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSpecificReservation() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -864,7 +903,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSpecificReservationRequired() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -897,7 +936,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -948,7 +987,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1020,26 +1059,29 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeEnum(181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(226550687, specificReservationRequired_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(404901951, getSpecificReservation());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 482134805, commitment_);
@@ -1062,22 +1104,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               226550687, specificReservationRequired_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               404901951, getSpecificReservation());
@@ -1085,8 +1127,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(482134805, commitment_);
@@ -1129,6 +1174,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1184,6 +1233,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1365,20 +1418,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      selfLink_ = "";
+      satisfiesPzs_ = false;
       bitField0_ = (bitField0_ & ~0x00000040);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (specificReservationBuilder_ == null) {
         specificReservation_ = null;
       } else {
         specificReservationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
-      specificReservationRequired_ = false;
       bitField0_ = (bitField0_ & ~0x00000100);
-      status_ = 0;
+      specificReservationRequired_ = false;
       bitField0_ = (bitField0_ & ~0x00000200);
-      zone_ = "";
+      status_ = 0;
       bitField0_ = (bitField0_ & ~0x00000400);
+      zone_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1433,27 +1488,31 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       result.name_ = name_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000040;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
+      result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         if (specificReservationBuilder_ == null) {
           result.specificReservation_ = specificReservation_;
         } else {
           result.specificReservation_ = specificReservationBuilder_.build();
         }
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.specificReservationRequired_ = specificReservationRequired_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.specificReservationRequired_ = specificReservationRequired_;
         to_bitField0_ |= 0x00000200;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000400;
+      }
+      result.status_ = status_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
       }
       result.zone_ = zone_;
       result.bitField0_ = to_bitField0_;
@@ -1536,8 +1595,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1551,7 +1613,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         setStatus(other.getStatus());
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         zone_ = other.zone_;
         onChanged();
       }
@@ -2306,6 +2368,73 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+      bitField0_ |= 0x00000040;
+      satisfiesPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -2319,7 +2448,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2381,7 +2510,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2398,7 +2527,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2420,7 +2549,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2446,7 +2575,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the specificReservation field is set.
      */
     public boolean hasSpecificReservation() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2492,7 +2621,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2514,7 +2643,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2531,7 +2660,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpecificReservation(
         com.google.cloud.compute.v1.AllocationSpecificSKUReservation value) {
       if (specificReservationBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && specificReservation_ != null
             && specificReservation_
                 != com.google.cloud.compute.v1.AllocationSpecificSKUReservation
@@ -2548,7 +2677,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2569,7 +2698,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
     /**
@@ -2585,7 +2714,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.AllocationSpecificSKUReservation.Builder
         getSpecificReservationBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSpecificReservationFieldBuilder().getBuilder();
     }
@@ -2652,7 +2781,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSpecificReservationRequired() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2682,7 +2811,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSpecificReservationRequired(boolean value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       specificReservationRequired_ = value;
       onChanged();
       return this;
@@ -2699,7 +2828,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpecificReservationRequired() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       specificReservationRequired_ = false;
       onChanged();
       return this;
@@ -2719,7 +2848,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2749,7 +2878,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       status_ = value;
       onChanged();
       return this;
@@ -2788,7 +2917,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -2805,7 +2934,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = 0;
       onChanged();
       return this;
@@ -2824,7 +2953,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2886,7 +3015,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       zone_ = value;
       onChanged();
       return this;
@@ -2903,7 +3032,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -2925,7 +3054,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       zone_ = value;
       onChanged();
       return this;

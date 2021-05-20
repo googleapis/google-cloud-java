@@ -39,6 +39,7 @@ import com.google.cloud.compute.v1.InsertGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchGlobalForwardingRuleRequest;
+import com.google.cloud.compute.v1.SetLabelsGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleRequest;
 import java.io.IOException;
 import java.util.HashMap;
@@ -343,6 +344,59 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetLabelsGlobalForwardingRuleRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsGlobalForwardingRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules.SetLabels")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsGlobalForwardingRuleRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/forwardingRules/{resource}/setLabels",
+                          new FieldsExtractor<
+                              SetLabelsGlobalForwardingRuleRequest, Map<String, String>>() {
+                            @Override
+                            public Map<String, String> extract(
+                                SetLabelsGlobalForwardingRuleRequest request) {
+                              Map<String, String> fields = new HashMap<>();
+                              ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
+                                  ProtoRestSerializer.create();
+                              serializer.putPathParam(fields, "project", request.getProject());
+                              serializer.putPathParam(fields, "resource", request.getResource());
+                              return fields;
+                            }
+                          })
+                      .setQueryParamsExtractor(
+                          new FieldsExtractor<
+                              SetLabelsGlobalForwardingRuleRequest, Map<String, List<String>>>() {
+                            @Override
+                            public Map<String, List<String>> extract(
+                                SetLabelsGlobalForwardingRuleRequest request) {
+                              Map<String, List<String>> fields = new HashMap<>();
+                              ProtoRestSerializer<SetLabelsGlobalForwardingRuleRequest> serializer =
+                                  ProtoRestSerializer.create();
+
+                              return fields;
+                            }
+                          })
+                      .setRequestBodyExtractor(
+                          new FieldsExtractor<SetLabelsGlobalForwardingRuleRequest, String>() {
+                            @Override
+                            public String extract(SetLabelsGlobalForwardingRuleRequest request) {
+                              return ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetLabelsRequestResource",
+                                      request.getGlobalSetLabelsRequestResource());
+                            }
+                          })
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetTargetGlobalForwardingRuleRequest, Operation>
       setTargetMethodDescriptor =
           ApiMethodDescriptor.<SetTargetGlobalForwardingRuleRequest, Operation>newBuilder()
@@ -408,6 +462,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
   private final UnaryCallable<ListGlobalForwardingRulesRequest, ListPagedResponse>
       listPagedCallable;
   private final UnaryCallable<PatchGlobalForwardingRuleRequest, Operation> patchCallable;
+  private final UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable;
   private final UnaryCallable<SetTargetGlobalForwardingRuleRequest, Operation> setTargetCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
@@ -472,6 +527,11 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
         HttpJsonCallSettings.<PatchGlobalForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation>
+        setLabelsTransportSettings =
+            HttpJsonCallSettings.<SetLabelsGlobalForwardingRuleRequest, Operation>newBuilder()
+                .setMethodDescriptor(setLabelsMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetTargetGlobalForwardingRuleRequest, Operation>
         setTargetTransportSettings =
             HttpJsonCallSettings.<SetTargetGlobalForwardingRuleRequest, Operation>newBuilder()
@@ -496,6 +556,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
     this.setTargetCallable =
         callableFactory.createUnaryCallable(
             setTargetTransportSettings, settings.setTargetSettings(), clientContext);
@@ -525,6 +588,10 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
 
   public UnaryCallable<PatchGlobalForwardingRuleRequest, Operation> patchCallable() {
     return patchCallable;
+  }
+
+  public UnaryCallable<SetLabelsGlobalForwardingRuleRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
   }
 
   public UnaryCallable<SetTargetGlobalForwardingRuleRequest, Operation> setTargetCallable() {

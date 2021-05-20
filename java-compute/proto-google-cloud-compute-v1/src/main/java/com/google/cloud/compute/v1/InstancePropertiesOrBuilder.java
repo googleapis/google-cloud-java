@@ -27,6 +27,45 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   *
+   * @return Whether the advancedMachineFeatures field is set.
+   */
+  boolean hasAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   *
+   * @return The advancedMachineFeatures.
+   */
+  com.google.cloud.compute.v1.AdvancedMachineFeatures getAdvancedMachineFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Controls for advanced machine-related behavior features.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.AdvancedMachineFeatures advanced_machine_features = 409646002;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AdvancedMachineFeaturesOrBuilder
+      getAdvancedMachineFeaturesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *

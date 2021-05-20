@@ -84,6 +84,7 @@ public class RegionsClientTest {
     String kind = "kind3292052";
     String name = "name3373707";
     String selfLink = "selfLink-1691268851";
+    boolean supportsPzs = true;
     Region expectedResponse =
         Region.newBuilder()
             .setCreationTimestamp(creationTimestamp)
@@ -92,6 +93,7 @@ public class RegionsClientTest {
             .setKind(kind)
             .setName(name)
             .setSelfLink(selfLink)
+            .setSupportsPzs(supportsPzs)
             .build();
     mockService.addResponse(expectedResponse);
 
