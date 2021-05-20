@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.23...v1.3.0) (2021-05-19)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#569](https://www.github.com/googleapis/java-containeranalysis/issues/569)) ([8b5d99c](https://www.github.com/googleapis/java-containeranalysis/commit/8b5d99ca6cae1d6a163b48e4216fb546e167e2d4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#568](https://www.github.com/googleapis/java-containeranalysis/issues/568)) ([956f32e](https://www.github.com/googleapis/java-containeranalysis/commit/956f32e29751e179664db06a8a0d3a8284f13ea1))
+
 ### [1.2.23](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.22...v1.2.23) (2021-05-14)
 
 
