@@ -6,3 +6,5 @@ branches:
     handleGHRelease: true
     releaseType: java-lts
     branch: 1.22.0-sp
+extraFiles:
+  - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
