@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.6.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.5.0...v2.6.0) (2021-05-19)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#488](https://www.github.com/googleapis/java-cloudbuild/issues/488)) ([112973b](https://www.github.com/googleapis/java-cloudbuild/commit/112973b03fbfea0859a7350d6b4e55eb4d83dfb0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#487](https://www.github.com/googleapis/java-cloudbuild/issues/487)) ([760bf88](https://www.github.com/googleapis/java-cloudbuild/commit/760bf88d5ed98a970740c0f7e3a7c9692623c98a))
+
 ## [2.5.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.4.0...v2.5.0) (2021-05-13)
 
 
