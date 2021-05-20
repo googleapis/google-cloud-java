@@ -81,11 +81,15 @@ public class IamCheckerClientTest {
   public void troubleshootIamPolicyTest() throws Exception {
     TroubleshootIamPolicyResponse expectedResponse =
         TroubleshootIamPolicyResponse.newBuilder()
+            .setAccess(Explanations.AccessState.forNumber(0))
             .addAllExplainedPolicies(new ArrayList<Explanations.ExplainedPolicy>())
             .build();
     mockIamChecker.addResponse(expectedResponse);
 
-    TroubleshootIamPolicyRequest request = TroubleshootIamPolicyRequest.newBuilder().build();
+    TroubleshootIamPolicyRequest request =
+        TroubleshootIamPolicyRequest.newBuilder()
+            .setAccessTuple(Explanations.AccessTuple.newBuilder().build())
+            .build();
 
     TroubleshootIamPolicyResponse actualResponse = client.troubleshootIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -108,7 +112,10 @@ public class IamCheckerClientTest {
     mockIamChecker.addException(exception);
 
     try {
-      TroubleshootIamPolicyRequest request = TroubleshootIamPolicyRequest.newBuilder().build();
+      TroubleshootIamPolicyRequest request =
+          TroubleshootIamPolicyRequest.newBuilder()
+              .setAccessTuple(Explanations.AccessTuple.newBuilder().build())
+              .build();
       client.troubleshootIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

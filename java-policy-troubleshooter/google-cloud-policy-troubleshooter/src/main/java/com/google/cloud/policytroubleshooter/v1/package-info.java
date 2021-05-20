@@ -27,7 +27,10 @@
  *
  * <pre>{@code
  * try (IamCheckerClient iamCheckerClient = IamCheckerClient.create()) {
- *   TroubleshootIamPolicyRequest request = TroubleshootIamPolicyRequest.newBuilder().build();
+ *   TroubleshootIamPolicyRequest request =
+ *       TroubleshootIamPolicyRequest.newBuilder()
+ *           .setAccessTuple(Explanations.AccessTuple.newBuilder().build())
+ *           .build();
  *   TroubleshootIamPolicyResponse response = iamCheckerClient.troubleshootIamPolicy(request);
  * }
  * }</pre>
