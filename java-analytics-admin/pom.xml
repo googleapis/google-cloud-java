@@ -119,8 +119,8 @@
 
   <modules>
     <module>google-analytics-admin</module>
-    <module>proto-google-analytics-admin-v1alpha</module>
     <module>grpc-google-analytics-admin-v1alpha</module>
+    <module>proto-google-analytics-admin-v1alpha</module>
     <module>google-analytics-admin-bom</module>
   </modules>
 
