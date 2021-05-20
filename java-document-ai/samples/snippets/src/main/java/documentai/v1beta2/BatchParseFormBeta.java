@@ -128,7 +128,7 @@ public class BatchParseFormBeta {
 
       // Wait for operation to complete.
       System.out.println("Waiting for operation to complete...");
-      future.get(300, TimeUnit.SECONDS);
+      future.get(360, TimeUnit.SECONDS);
 
       System.out.println("Document processing complete.");
 
