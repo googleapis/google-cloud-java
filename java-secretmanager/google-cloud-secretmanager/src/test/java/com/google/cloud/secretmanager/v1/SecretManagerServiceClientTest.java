@@ -189,6 +189,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
@@ -238,6 +239,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
@@ -286,6 +288,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -330,6 +333,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -375,6 +379,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
@@ -418,6 +423,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
@@ -461,6 +467,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
@@ -662,6 +669,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -703,6 +711,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -822,6 +831,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -864,6 +874,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -906,6 +917,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -947,6 +959,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -988,6 +1001,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -1030,6 +1044,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDestroyTime(Timestamp.newBuilder().build())
             .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 

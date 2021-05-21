@@ -366,6 +366,31 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
+   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
    * rotation policy.
    * </pre>

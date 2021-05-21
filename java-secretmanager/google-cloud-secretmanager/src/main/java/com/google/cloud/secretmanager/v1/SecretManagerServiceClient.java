@@ -783,6 +783,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DeleteSecretRequest request =
    *       DeleteSecretRequest.newBuilder()
    *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   secretManagerServiceClient.deleteSecret(request);
    * }
@@ -807,6 +808,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DeleteSecretRequest request =
    *       DeleteSecretRequest.newBuilder()
    *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Empty> future =
    *       secretManagerServiceClient.deleteSecretCallable().futureCall(request);
@@ -981,7 +983,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -997,7 +999,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
-   *     `projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   *     <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1011,7 +1013,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1027,7 +1029,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
-   *     `projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   *     <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1040,7 +1042,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1067,7 +1069,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1095,7 +1097,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the
    * secret data.
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1111,6 +1113,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
+   *     <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
+   *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccessSecretVersionResponse accessSecretVersion(SecretVersionName name) {
@@ -1126,7 +1130,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the
    * secret data.
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1142,6 +1146,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
+   *     <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
+   *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccessSecretVersionResponse accessSecretVersion(String name) {
@@ -1155,7 +1161,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the
    * secret data.
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1184,7 +1190,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the
    * secret data.
    *
-   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
+   * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the most recently created
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
@@ -1284,6 +1290,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DisableSecretVersionRequest request =
    *       DisableSecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   SecretVersion response = secretManagerServiceClient.disableSecretVersion(request);
    * }
@@ -1312,6 +1319,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DisableSecretVersionRequest request =
    *       DisableSecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<SecretVersion> future =
    *       secretManagerServiceClient.disableSecretVersionCallable().futureCall(request);
@@ -1401,6 +1409,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   EnableSecretVersionRequest request =
    *       EnableSecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   SecretVersion response = secretManagerServiceClient.enableSecretVersion(request);
    * }
@@ -1429,6 +1438,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   EnableSecretVersionRequest request =
    *       EnableSecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<SecretVersion> future =
    *       secretManagerServiceClient.enableSecretVersionCallable().futureCall(request);
@@ -1521,6 +1531,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DestroySecretVersionRequest request =
    *       DestroySecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   SecretVersion response = secretManagerServiceClient.destroySecretVersion(request);
    * }
@@ -1550,6 +1561,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   DestroySecretVersionRequest request =
    *       DestroySecretVersionRequest.newBuilder()
    *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<SecretVersion> future =
    *       secretManagerServiceClient.destroySecretVersionCallable().futureCall(request);

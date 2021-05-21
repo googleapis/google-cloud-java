@@ -890,8 +890,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public void getSecretVersion(
@@ -907,8 +907,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the secret data.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public void accessSecretVersion(
@@ -1272,8 +1272,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public void getSecretVersion(
@@ -1291,8 +1291,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the secret data.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public void accessSecretVersion(
@@ -1544,8 +1544,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.SecretVersion getSecretVersion(
@@ -1559,8 +1559,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the secret data.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public com.google.cloud.secretmanager.v1.AccessSecretVersionResponse accessSecretVersion(
@@ -1790,8 +1790,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1806,8 +1806,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Accesses a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This call returns the secret data.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

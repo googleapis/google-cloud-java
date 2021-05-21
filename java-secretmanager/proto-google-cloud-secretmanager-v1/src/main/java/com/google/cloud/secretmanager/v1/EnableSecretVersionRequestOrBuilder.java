@@ -53,4 +53,33 @@ public interface EnableSecretVersionRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+   * the etag of the currently stored secret version object. If the etag is
+   * omitted, the request succeeds.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+   * the etag of the currently stored secret version object. If the etag is
+   * omitted, the request succeeds.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

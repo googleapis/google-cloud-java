@@ -199,4 +199,29 @@ public interface SecretVersionOrBuilder
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
    */
   com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder getReplicationStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

@@ -39,6 +39,7 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
 
   private DisableSecretVersionRequest() {
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
               break;
             }
           default:
@@ -166,6 +174,59 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int ETAG_FIELD_NUMBER = 2;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+   * the etag of the currently stored secret version object. If the etag is
+   * omitted, the request succeeds.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+   * the etag of the currently stored secret version object. If the etag is
+   * omitted, the request succeeds.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -183,6 +244,9 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, etag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +258,9 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, etag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +279,7 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
         (com.google.cloud.secretmanager.v1.DisableSecretVersionRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -225,6 +293,8 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -373,6 +443,8 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
       super.clear();
       name_ = "";
 
+      etag_ = "";
+
       return this;
     }
 
@@ -402,6 +474,7 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
       com.google.cloud.secretmanager.v1.DisableSecretVersionRequest result =
           new com.google.cloud.secretmanager.v1.DisableSecretVersionRequest(this);
       result.name_ = name_;
+      result.etag_ = etag_;
       onBuilt();
       return result;
     }
@@ -455,6 +528,10 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -605,6 +682,122 @@ public final class DisableSecretVersionRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+     * the etag of the currently stored secret version object. If the etag is
+     * omitted, the request succeeds.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+     * the etag of the currently stored secret version object. If the etag is
+     * omitted, the request succeeds.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+     * the etag of the currently stored secret version object. If the etag is
+     * omitted, the request succeeds.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+     * the etag of the currently stored secret version object. If the etag is
+     * omitted, the request succeeds.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
+     * the etag of the currently stored secret version object. If the etag is
+     * omitted, the request succeeds.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
       onChanged();
       return this;
     }
