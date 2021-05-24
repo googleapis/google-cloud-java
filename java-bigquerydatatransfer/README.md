@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>1.2.16</version>
+  <version>1.2.17</version>
 </dependency>
 
 ```
