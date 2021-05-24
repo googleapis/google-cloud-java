@@ -22,23 +22,35 @@ import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /** Options for the {@link GcpManagedChannel}. */
 public class GcpManagedChannelOptions {
   private static final Logger logger = Logger.getLogger(GcpManagedChannelOptions.class.getName());
 
+  @Nullable
   private final GcpMetricsOptions metricsOptions;
+  @Nullable
+  private final GcpResiliencyOptions resiliencyOptions;
 
   public GcpManagedChannelOptions() {
     metricsOptions = null;
+    resiliencyOptions = null;
   }
 
   public GcpManagedChannelOptions(Builder builder) {
     metricsOptions = builder.metricsOptions;
+    resiliencyOptions = builder.resiliencyOptions;
   }
 
+  @Nullable
   public GcpMetricsOptions getMetricsOptions() {
     return metricsOptions;
+  }
+
+  @Nullable
+  public GcpResiliencyOptions getResiliencyOptions() {
+    return resiliencyOptions;
   }
 
   /** Creates a new GcpManagedChannelOptions.Builder. */
@@ -48,6 +60,7 @@ public class GcpManagedChannelOptions {
 
   public static class Builder {
     private GcpMetricsOptions metricsOptions;
+    private GcpResiliencyOptions resiliencyOptions;
 
     public Builder() {}
 
@@ -90,6 +103,16 @@ public class GcpManagedChannelOptions {
      */
     public Builder withMetricsOptions(GcpMetricsOptions metricsOptions) {
       this.metricsOptions = metricsOptions;
+      return this;
+    }
+
+    /**
+     * Sets the resiliency configuration for the {@link GcpManagedChannel}.
+     *
+     * @param resiliencyOptions a {@link GcpResiliencyOptions} to use as resiliency configuration.
+     */
+    public Builder withResiliencyOptions(GcpResiliencyOptions resiliencyOptions) {
+      this.resiliencyOptions = resiliencyOptions;
       return this;
     }
   }
@@ -182,6 +205,45 @@ public class GcpManagedChannelOptions {
        */
       public Builder withNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
+        return this;
+      }
+    }
+  }
+
+  /** Resiliency configuration for the GCP managed channel. */
+  public static class GcpResiliencyOptions {
+    private final boolean notReadyFallbackEnabled;
+
+    public GcpResiliencyOptions(Builder builder) {
+      notReadyFallbackEnabled = builder.notReadyFallbackEnabled;
+    }
+
+    /** Creates a new GcpResiliencyOptions.Builder. */
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    public boolean isNotReadyFallbackEnabled() {
+      return notReadyFallbackEnabled;
+    }
+
+    public static class Builder {
+      private boolean notReadyFallbackEnabled = false;
+
+      public Builder() {}
+
+      public GcpResiliencyOptions build() {
+        return new GcpResiliencyOptions(this);
+      }
+
+      /**
+       * Temporarily fallback requests to a ready channel from a channel which is not ready to send
+       * a request immediately. The fallback will happen if the pool has another
+       * channel in the READY state and that channel has less than maximum allowed concurrent active
+       * streams.
+       */
+      public Builder enableNotReadyFallback() {
+        notReadyFallbackEnabled = true;
         return this;
       }
     }

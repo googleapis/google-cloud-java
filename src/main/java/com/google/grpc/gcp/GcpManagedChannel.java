@@ -26,6 +26,7 @@ import static com.google.grpc.gcp.GcpMetricsConstants.POOL_INDEX_LABEL;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.grpc.gcp.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.grpc.gcp.GcpManagedChannelOptions.GcpResiliencyOptions;
 import com.google.grpc.gcp.proto.AffinityConfig;
 import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.grpc.gcp.proto.MethodConfig;
@@ -66,6 +67,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private final ManagedChannelBuilder delegateChannelBuilder;
   private final GcpManagedChannelOptions options;
+  private final boolean fallbackEnabled;
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
@@ -76,9 +78,14 @@ public class GcpManagedChannel extends ManagedChannel {
   @GuardedBy("bindLock")
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
+  // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
+  @GuardedBy("this")
+  private final HashMap<Integer, HashMap<String, Integer>> fallbackMap = new HashMap<>();
+
   @VisibleForTesting
   @GuardedBy("this")
   final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
+  private final HashMap<Integer, ChannelRef> channelRefById = new HashMap<>();
 
   private final Object bindLock = new Object();
 
@@ -108,6 +115,11 @@ public class GcpManagedChannel extends ManagedChannel {
     getChannelRef(null);
     this.options = options;
     initOptions();
+    if (options.getResiliencyOptions() != null) {
+      fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
+    } else {
+      fallbackEnabled = false;
+    }
   }
 
   private void initOptions() {
@@ -185,6 +197,62 @@ public class GcpManagedChannel extends ManagedChannel {
     gauge.createTimeSeries(labelValues, obj, func);
   }
 
+  /**
+   * ChannelStateMonitor subscribes to channel's state changes and informs {@link GcpManagedChannel}
+   * on any new state. This monitor allows to detect when a channel is not ready and
+   * temporarily route requests via another ready channel if the option is enabled.
+   */
+  private class ChannelStateMonitor implements Runnable {
+    private final int channelId;
+    private final ManagedChannel channel;
+
+    private ChannelStateMonitor(ManagedChannel channel, int channelId) {
+      this.channelId = channelId;
+      this.channel = channel;
+      run();
+    }
+
+    @Override
+    public void run() {
+      if (channel == null) {
+        return;
+      }
+      ConnectivityState newState = channel.getState(false);
+      processChannelStateChange(channelId, newState);
+      if (newState != ConnectivityState.SHUTDOWN) {
+        channel.notifyWhenStateChanged(newState, this);
+      }
+    }
+  }
+
+  private void processChannelStateChange(int channelId, ConnectivityState state) {
+    if (!fallbackEnabled) {
+      return;
+    }
+    if (state == ConnectivityState.READY || state == ConnectivityState.IDLE) {
+      // Ready
+      if (fallbackMap.containsKey(channelId)) {
+        channelRecovered(channelId);
+      }
+      return;
+    }
+    // Not ready
+    if (!fallbackMap.containsKey(channelId)) {
+      channelBroke(channelId);
+    }
+  }
+
+  private synchronized void channelBroke(int channelId) {
+    if (fallbackMap.containsKey(channelId)) {
+      return;
+    }
+    fallbackMap.put(channelId, new HashMap<>());
+  }
+
+  private synchronized void channelRecovered(int channelId) {
+    fallbackMap.remove(channelId);
+  }
+
   public int getMaxSize() {
     return maxSize;
   }
@@ -199,7 +267,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   public int getMinActiveStreams() {
     final OptionalInt minStreams =
-        channelRefs.stream().mapToInt(value -> value.activeStreamsCount).min();
+        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min();
     if (minStreams.isPresent()) {
       return minStreams.getAsInt();
     }
@@ -208,7 +276,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   public int getMaxActiveStreams() {
     final OptionalInt maxStreams =
-        channelRefs.stream().mapToInt(value -> value.activeStreamsCount).max();
+        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max();
     if (maxStreams.isPresent()) {
       return maxStreams.getAsInt();
     }
@@ -216,38 +284,85 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   public int getTotalActiveStreams() {
-    return channelRefs.stream().mapToInt(value -> value.activeStreamsCount).sum();
+    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).sum();
   }
 
   /**
-   * Pick a channelRef (and create a new one if necessary).
+   * Pick a {@link ChannelRef} (and create a new one if necessary).
+   * If notReadyFallbackEnabled is true in the {@link GcpResiliencyOptions} then instead of a
+   * channel in a non-READY state another channel in the READY state and having fewer than maximum
+   * allowed number of active streams will be provided if available.
+   * Subsequent calls with the same affinity key will provide the same fallback channel as long as
+   * the fallback channel is in the READY state and has fewer than maximum allowed number of active
+   * streams.
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
    *     Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
-
-    if (key != null && key != "") {
-      synchronized (bindLock) {
-        return affinityKeyToChannelRef.get(key);
-      }
+    if (key == null || key.equals("")) {
+      return pickLeastBusyChannel();
     }
-    synchronized (this) {
-      int size = channelRefs.size();
-      channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
+    ChannelRef channelRef = affinityKeyToChannelRef.get(key);
+    if (channelRef == null || !fallbackEnabled) {
+      return channelRef;
+    }
+    // Look up if the channelRef is not ready.
+    HashMap<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
+    if (tempMap == null) {
+      // Channel is ready.
+      return channelRef;
+    }
+    // Channel is not ready. Look up if the affinity key mapped to another channel.
+    Integer channelId = tempMap.get(key);
+    if (channelId == null || fallbackMap.containsKey(channelId)) {
+      // No temp mapping for this key or fallback channelId is also broken.
+      channelRef = pickLeastBusyChannel();
+      tempMap.put(key, channelRef.getId());
+      return channelRef;
+    }
+    // Fallback channelId is ready.
+    return channelRefById.get(channelId);
+  }
 
-      // Create a new channel if the max size has not been reached and we reached the low watermark
-      // of active streams on every existing channel.
-      if (size == 0
-          || (size < maxSize
-              && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
-        ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
-        channelRefs.add(channelRef);
-        return channelRef;
-      }
-      // Choose the channelRef that has the least busy delegate channel.
+  /**
+   * Pick a {@link ChannelRef} (and create a new one if necessary).
+   * If notReadyFallbackEnabled is true in the {@link GcpResiliencyOptions} then instead of a
+   * channel in a non-READY state another channel in the READY state and having fewer than maximum
+   * allowed number of active streams will be provided if available.
+   */
+  private synchronized ChannelRef pickLeastBusyChannel() {
+    int size = channelRefs.size();
+    channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
+
+    // Create a new channel if the max size has not been reached.
+    if (size == 0
+        || (size < maxSize
+        && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
+      ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
+      channelRefs.add(channelRef);
+      channelRefById.put(size, channelRef);
+      return channelRef;
+    }
+
+    if (!fallbackEnabled) {
       return channelRefs.get(0);
     }
+
+    // Pick the least busy ready channel.
+    for (ChannelRef channelRef : channelRefs) {
+      // Do not fallback to overloaded channels.
+      if (channelRef.getActiveStreamsCount() >= DEFAULT_MAX_STREAM) {
+        break;
+      }
+      // Skip not ready channels.
+      if (fallbackMap.containsKey(channelRef.getId())) {
+        continue;
+      }
+      return channelRef;
+    }
+    // Return the least busy non-ready channel if all others are not ready or overloaded.
+    return channelRefs.get(0);
   }
 
   @Override
@@ -528,22 +643,20 @@ public class GcpManagedChannel extends ManagedChannel {
 
     private final ManagedChannel delegate;
     private final int channelId;
-    private int affinityCount;
-    private int activeStreamsCount;
+    private final AtomicInteger affinityCount;
+    private final AtomicInteger activeStreamsCount;
 
     protected ChannelRef(ManagedChannel channel, int channelId) {
-      this.delegate = channel;
-      this.channelId = channelId;
-      this.affinityCount = 0;
-      this.activeStreamsCount = 0;
+      this(channel, channelId, 0, 0);
     }
 
     protected ChannelRef(
         ManagedChannel channel, int channelId, int affinityCount, int activeStreamsCount) {
       this.delegate = channel;
       this.channelId = channelId;
-      this.affinityCount = affinityCount;
-      this.activeStreamsCount = activeStreamsCount;
+      this.affinityCount = new AtomicInteger(affinityCount);
+      this.activeStreamsCount = new AtomicInteger(activeStreamsCount);
+      new ChannelStateMonitor(channel, channelId);
     }
 
     protected ManagedChannel getChannel() {
@@ -555,27 +668,27 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void affinityCountIncr() {
-      affinityCount++;
+      affinityCount.incrementAndGet();
     }
 
     protected void affinityCountDecr() {
-      affinityCount--;
+      affinityCount.decrementAndGet();
     }
 
     protected void activeStreamsCountIncr() {
-      activeStreamsCount++;
+      activeStreamsCount.incrementAndGet();
     }
 
     protected void activeStreamsCountDecr() {
-      activeStreamsCount--;
+      activeStreamsCount.decrementAndGet();
     }
 
     protected int getAffinityCount() {
-      return affinityCount;
+      return affinityCount.get();
     }
 
     protected int getActiveStreamsCount() {
-      return activeStreamsCount;
+      return activeStreamsCount.get();
     }
   }
 }
