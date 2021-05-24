@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManagedChannelBuilder> {
 
@@ -88,7 +89,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     return this;
   }
 
-  public GcpManagedChannelBuilder withOptions(GcpManagedChannelOptions options) {
+  public GcpManagedChannelBuilder withOptions(@Nullable GcpManagedChannelOptions options) {
     if (options != null) {
       this.options = options;
     }

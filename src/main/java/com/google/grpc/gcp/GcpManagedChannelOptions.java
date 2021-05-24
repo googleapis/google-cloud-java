@@ -58,6 +58,34 @@ public class GcpManagedChannelOptions {
     /**
      * Sets the metrics configuration for the {@link GcpManagedChannel}.
      *
+     * <p>If a {@link MetricRegistry} is provided in {@link GcpMetricsOptions} then the
+     * GcpManagedChannel will emit metrics using that registry. The metrics options also allow to
+     * set up labels (tags) and a prefix for metrics names.
+     * The GcpManagedChannel will add its own label "pool_index" with values "pool-0", "pool-1",
+     * etc. for each instance of GcpManagedChannel created.
+     *
+     * <p>Example usage (e. g. with export to Cloud Monitoring)
+     * <pre>
+     * // Enable Cloud Monitoring exporter.
+     * StackdriverStatsExporter.createAndRegister();
+     *
+     * // Configure metrics options.
+     * GcpMetricsOptions metricsOptions = GcpMetricsOptions.newBuilder(Metrics.getMetricRegistry())
+     *     .withNamePrefix("myapp/gcp-pool/")
+     *     .build());
+     *
+     * final GcpManagedChannel pool =
+     *     (GcpManagedChannel)
+     *         GcpManagedChannelBuilder.forDelegateBuilder(builder)
+     *             .withOptions(
+     *                 GcpManagedChannelOptions.newBuilder()
+     *                     .withMetricsOptions(metricsOptions)
+     *                     .build())
+     *             .build();
+     *
+     * // Use the pool that will emit metrics which will be exported to Cloud Monitoring.
+     * </pre>
+     *
      * @param metricsOptions a {@link GcpMetricsOptions} to use as metrics configuration.
      */
     public Builder withMetricsOptions(GcpMetricsOptions metricsOptions) {

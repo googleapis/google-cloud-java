@@ -16,7 +16,7 @@
 
 package com.google.grpc.gcp;
 
-public class GcpMetricsConstants {
+class GcpMetricsConstants {
   public static String POOL_INDEX_LABEL = "pool_index";
   public static String POOL_INDEX_DESC = "gRPC GCP channel pool index.";
 

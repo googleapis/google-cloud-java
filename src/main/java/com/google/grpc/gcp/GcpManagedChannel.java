@@ -37,6 +37,7 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import io.opencensus.common.ToLongFunction;
 import io.opencensus.metrics.DerivedLongGauge;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
@@ -81,6 +82,11 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private final Object bindLock = new Object();
 
+  private MetricRegistry metricRegistry;
+  private List<LabelKey> labelKeys = new ArrayList<>();
+  private List<LabelValue> labelValues = new ArrayList<>();
+  private String metricPrefix;
+
   /**
    * Constructor for GcpManagedChannel.
    *
@@ -120,75 +126,63 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     logger.info("Metrics enabled.");
 
-    final MetricRegistry metricRegistry = metricsOptions.getMetricRegistry();
-    final List<LabelKey> labelKeys = new ArrayList<>(metricsOptions.getLabelKeys());
-    final List<LabelValue> labelValues = new ArrayList<>(metricsOptions.getLabelValues());
+    metricRegistry = metricsOptions.getMetricRegistry();
+    labelKeys = new ArrayList<>(metricsOptions.getLabelKeys());
+    labelValues = new ArrayList<>(metricsOptions.getLabelValues());
     labelKeys.add(LabelKey.create(POOL_INDEX_LABEL, POOL_INDEX_DESC));
     labelValues.add(
         LabelValue.create(String.format("pool-%d", channelPoolIndex.getAndIncrement())));
+    metricPrefix = metricsOptions.getNamePrefix();
 
-    final DerivedLongGauge numChannelsMetric =
+    createDerivedLongGaugeTimeSeries(
+        METRIC_NUM_CHANNELS,
+        "The number of channels in the pool.",
+        GcpMetricsOptions.COUNT,
+        this,
+        GcpManagedChannel::getNumberOfChannels);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_ALLOWED_CHANNELS,
+        "The maximum number of channels allowed in the pool.",
+        GcpMetricsOptions.COUNT,
+        this,
+        GcpManagedChannel::getMaxSize);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MIN_ACTIVE_STREAMS,
+        "The minimum number of active streams on any channel.",
+        GcpMetricsOptions.COUNT,
+        this,
+        GcpManagedChannel::getMinActiveStreams);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_MAX_ACTIVE_STREAMS,
+        "The maximum number of active streams on any channel.",
+        GcpMetricsOptions.COUNT,
+        this,
+        GcpManagedChannel::getMaxActiveStreams);
+
+    createDerivedLongGaugeTimeSeries(
+        METRIC_NUM_TOTAL_ACTIVE_STREAMS,
+        "The total number of active streams across all channels.",
+        GcpMetricsOptions.COUNT,
+        this,
+        GcpManagedChannel::getTotalActiveStreams);
+  }
+
+  private <T> void createDerivedLongGaugeTimeSeries(
+      String name, String description, String unit, T obj, ToLongFunction<T> func) {
+    final DerivedLongGauge gauge =
         metricRegistry.addDerivedLongGauge(
-            metricsOptions.getNamePrefix() + METRIC_NUM_CHANNELS,
+            metricPrefix + name,
             MetricOptions.builder()
-                .setDescription("The number of channels in the pool.")
+                .setDescription(description)
                 .setLabelKeys(labelKeys)
-                .setUnit(GcpMetricsOptions.COUNT)
+                .setUnit(unit)
                 .build());
 
-    numChannelsMetric.removeTimeSeries(labelValues);
-    numChannelsMetric.createTimeSeries(labelValues, this, GcpManagedChannel::getNumberOfChannels);
-
-    final DerivedLongGauge maxChannelsMetric =
-        metricRegistry.addDerivedLongGauge(
-            metricsOptions.getNamePrefix() + METRIC_MAX_ALLOWED_CHANNELS,
-            MetricOptions.builder()
-                .setDescription("The maximum number of channels allowed in the pool.")
-                .setLabelKeys(labelKeys)
-                .setUnit(GcpMetricsOptions.COUNT)
-                .build());
-
-    maxChannelsMetric.removeTimeSeries(labelValues);
-    maxChannelsMetric.createTimeSeries(labelValues, this, GcpManagedChannel::getMaxSize);
-
-    final DerivedLongGauge minActiveStreamsMetric =
-        metricRegistry.addDerivedLongGauge(
-            metricsOptions.getNamePrefix() + METRIC_MIN_ACTIVE_STREAMS,
-            MetricOptions.builder()
-                .setDescription("The minimum number of active streams on any channel.")
-                .setLabelKeys(labelKeys)
-                .setUnit(GcpMetricsOptions.COUNT)
-                .build());
-
-    minActiveStreamsMetric.removeTimeSeries(labelValues);
-    minActiveStreamsMetric.createTimeSeries(
-        labelValues, this, GcpManagedChannel::getMinActiveStreams);
-
-    final DerivedLongGauge maxActiveStreamsMetric =
-        metricRegistry.addDerivedLongGauge(
-            metricsOptions.getNamePrefix() + METRIC_MAX_ACTIVE_STREAMS,
-            MetricOptions.builder()
-                .setDescription("The maximum number of active streams on any channel.")
-                .setLabelKeys(labelKeys)
-                .setUnit(GcpMetricsOptions.COUNT)
-                .build());
-
-    maxActiveStreamsMetric.removeTimeSeries(labelValues);
-    maxActiveStreamsMetric.createTimeSeries(
-        labelValues, this, GcpManagedChannel::getMaxActiveStreams);
-
-    final DerivedLongGauge totalActiveStreamsMetric =
-        metricRegistry.addDerivedLongGauge(
-            metricsOptions.getNamePrefix() + METRIC_NUM_TOTAL_ACTIVE_STREAMS,
-            MetricOptions.builder()
-                .setDescription("The total number of active streams across all channels.")
-                .setLabelKeys(labelKeys)
-                .setUnit(GcpMetricsOptions.COUNT)
-                .build());
-
-    totalActiveStreamsMetric.removeTimeSeries(labelValues);
-    totalActiveStreamsMetric.createTimeSeries(
-        labelValues, this, GcpManagedChannel::getTotalActiveStreams);
+    gauge.removeTimeSeries(labelValues);
+    gauge.createTimeSeries(labelValues, obj, func);
   }
 
   public int getMaxSize() {
