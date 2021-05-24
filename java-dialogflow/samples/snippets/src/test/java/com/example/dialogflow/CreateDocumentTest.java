@@ -86,8 +86,7 @@ public class CreateDocumentTest {
     System.setOut(null);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testCreateDocument() throws Exception {

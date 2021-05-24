@@ -32,9 +32,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}.
- */
+/** Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentWithSentimentAndTextToSpeechIT {
@@ -78,8 +76,8 @@ public class DetectIntentWithSentimentAndTextToSpeechIT {
   @Test
   public void testDetectIntentTextsWithLocation() throws Exception {
     Map<String, com.google.cloud.dialogflow.v2beta1.QueryResult> queryResults =
-        DetectIntentWithLocation
-            .detectIntentWithLocation(PROJECT_ID, LOCATION_ID, TEXTS, SESSION_ID, LANGUAGE_CODE);
+        DetectIntentWithLocation.detectIntentWithLocation(
+            PROJECT_ID, LOCATION_ID, TEXTS, SESSION_ID, LANGUAGE_CODE);
     com.google.cloud.dialogflow.v2beta1.QueryResult finalResult =
         queryResults.get(TEXTS.get(TEXTS.size() - 1));
     assertTrue(finalResult.getAllRequiredParamsPresent());

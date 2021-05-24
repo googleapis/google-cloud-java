@@ -35,17 +35,22 @@ public class DetectIntentWithLocation {
 
   // DialogFlow API Detect Intent sample with text inputs.
   public static Map<String, QueryResult> detectIntentWithLocation(
-      String projectId, String locationId, List<String> texts, String sessionId,
+      String projectId,
+      String locationId,
+      List<String> texts,
+      String sessionId,
       String languageCode)
       throws IOException, ApiException {
-    SessionsSettings sessionsSettings = SessionsSettings.newBuilder()
-        .setEndpoint(locationId + "-dialogflow.googleapis.com:443").build();
+    SessionsSettings sessionsSettings =
+        SessionsSettings.newBuilder()
+            .setEndpoint(locationId + "-dialogflow.googleapis.com:443")
+            .build();
     Map<String, QueryResult> queryResults = Maps.newHashMap();
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectId (my-project-id), locationId and sessionId (UUID)
-      SessionName session = SessionName
-          .ofProjectLocationSessionName(projectId, locationId, sessionId);
+      SessionName session =
+          SessionName.ofProjectLocationSessionName(projectId, locationId, sessionId);
       System.out.println("Session Path: " + session.toString());
 
       // Detect intents for each text input
