@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.30.0](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.19...v0.30.0) (2021-05-25)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#446](https://www.github.com/googleapis/java-phishingprotection/issues/446)) ([51762cd](https://www.github.com/googleapis/java-phishingprotection/commit/51762cddede502dd94dc84d77eb649df64f776b8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#447](https://www.github.com/googleapis/java-phishingprotection/issues/447)) ([9f7c9d1](https://www.github.com/googleapis/java-phishingprotection/commit/9f7c9d16f55f976e2c93fc83f8acad40b2e7c7e4))
+
 ### [0.29.19](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.18...v0.29.19) (2021-05-11)
 
 
