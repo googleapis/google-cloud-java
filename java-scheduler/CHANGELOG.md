@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.24.0](https://www.github.com/googleapis/java-scheduler/compare/v1.23.14...v1.24.0) (2021-05-25)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#451](https://www.github.com/googleapis/java-scheduler/issues/451)) ([1f03ace](https://www.github.com/googleapis/java-scheduler/commit/1f03acece3ddaa871f2d6f5b118365e52fd6a6e7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#450](https://www.github.com/googleapis/java-scheduler/issues/450)) ([980b1ba](https://www.github.com/googleapis/java-scheduler/commit/980b1baa4df4dd0ca60ffc18578f030fde81fed0))
+
 ### [1.23.14](https://www.github.com/googleapis/java-scheduler/compare/v1.23.13...v1.23.14) (2021-05-14)
 
 
