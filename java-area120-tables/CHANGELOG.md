@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-area120-tables/compare/v0.2.3...v0.3.0) (2021-05-24)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#168](https://www.github.com/googleapis/java-area120-tables/issues/168)) ([e61538f](https://www.github.com/googleapis/java-area120-tables/commit/e61538fcd808d228631d28ee17fe7dddd7a59298))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#155](https://www.github.com/googleapis/java-area120-tables/issues/155)) ([d8fbee0](https://www.github.com/googleapis/java-area120-tables/commit/d8fbee09c9d7fbdf65fdebd0097470e4f9a81d53))
+* typo ([#152](https://www.github.com/googleapis/java-area120-tables/issues/152)) ([97d6b85](https://www.github.com/googleapis/java-area120-tables/commit/97d6b85920992f39053755b9db2c75f778ec617d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#158](https://www.github.com/googleapis/java-area120-tables/issues/158)) ([7898196](https://www.github.com/googleapis/java-area120-tables/commit/78981961bbb88284278cec586c10d0a2356dc24b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#164](https://www.github.com/googleapis/java-area120-tables/issues/164)) ([4a1884b](https://www.github.com/googleapis/java-area120-tables/commit/4a1884b42d9b11280598354b3bac51628702cea5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#167](https://www.github.com/googleapis/java-area120-tables/issues/167)) ([ff28bfa](https://www.github.com/googleapis/java-area120-tables/commit/ff28bfaa40584cdb723a8107bd68be477e10c723))
+
 ### [0.2.3](https://www.github.com/googleapis/java-area120-tables/compare/v0.2.2...v0.2.3) (2021-04-12)
 
 
