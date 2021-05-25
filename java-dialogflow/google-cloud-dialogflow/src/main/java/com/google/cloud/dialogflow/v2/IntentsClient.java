@@ -178,7 +178,12 @@ public class IntentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   *     ID&gt;/agent` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *     <p>Alternatively, you can specify the environment to list intents for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;`. Note: training phrases of the intents
+   *     will not be returned for non-draft environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(AgentName parent) {
@@ -205,7 +210,12 @@ public class IntentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   *     ID&gt;/agent` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *     <p>Alternatively, you can specify the environment to list intents for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;`. Note: training phrases of the intents
+   *     will not be returned for non-draft environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(String parent) {
@@ -230,7 +240,12 @@ public class IntentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   *     ID&gt;/agent` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *     <p>Alternatively, you can specify the environment to list intents for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;`. Note: training phrases of the intents
+   *     will not be returned for non-draft environment.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -263,7 +278,12 @@ public class IntentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   *     ID&gt;/agent` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *     <p>Alternatively, you can specify the environment to list intents for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;`. Note: training phrases of the intents
+   *     will not be returned for non-draft environment.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
