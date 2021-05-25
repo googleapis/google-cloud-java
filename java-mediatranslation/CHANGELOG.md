@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.4.0...v0.5.0) (2021-05-25)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#291](https://www.github.com/googleapis/java-mediatranslation/issues/291)) ([2e2931b](https://www.github.com/googleapis/java-mediatranslation/commit/2e2931b1db60bc7d268dac98f428479e8cdca016))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#290](https://www.github.com/googleapis/java-mediatranslation/issues/290)) ([bdc6490](https://www.github.com/googleapis/java-mediatranslation/commit/bdc64903868c2ffb9faf73018b1178520f30aea5))
+
 ## [0.4.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.3.2...v0.4.0) (2021-05-14)
 
 
