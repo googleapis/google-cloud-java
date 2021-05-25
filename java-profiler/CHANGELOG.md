@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-profiler/compare/v1.0.1...v1.1.0) (2021-05-25)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#71](https://www.github.com/googleapis/java-profiler/issues/71)) ([3dd72d8](https://www.github.com/googleapis/java-profiler/commit/3dd72d8c5815840adfae9e907440a8d223ae3aca))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#72](https://www.github.com/googleapis/java-profiler/issues/72)) ([9a39607](https://www.github.com/googleapis/java-profiler/commit/9a3960765ee3fa9cb531d6fd39513e7cfc3a1361))
+
 ### [1.0.1](https://www.github.com/googleapis/java-profiler/compare/v1.0.0...v1.0.1) (2021-05-11)
 
 
