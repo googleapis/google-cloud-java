@@ -4,27 +4,16 @@
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/mediatranslation/v1beta1/*OrBuilder</className>
-    <method>* has*(*)</method>
-  </difference>
-  <!-- TODO: Remove after 0.4.0 is released -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/mediatranslation/v1beta1/TranslateSpeechConfig*</className>
-    <method>* *AlternativeSourceLanguageCodes*(*)</method>
+    <method>* get*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/mediatranslation/v1beta1/StreamingTranslateSpeechResult*</className>
-    <method>* *DetectedSourceLanguageCode*(*)</method>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
   </difference>
   <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/mediatranslation/v1beta1/StreamingTranslateSpeechResult*</className>
-    <method>* *RecognitionResult*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/mediatranslation/v1beta1/*TranslateSpeech*</className>
-    <field>*FIELD_NUMBER</field>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>
