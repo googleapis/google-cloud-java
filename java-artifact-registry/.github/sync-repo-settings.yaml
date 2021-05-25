@@ -47,3 +47,6 @@ permissionRules:
   permission: admin
 - team: yoshi-java
   permission: push
+- team: cicd
+  permission: push
+
