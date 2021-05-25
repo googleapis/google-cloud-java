@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.17...v1.1.0) (2021-05-25)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#194](https://www.github.com/googleapis/java-accesscontextmanager/issues/194)) ([5d1b43c](https://www.github.com/googleapis/java-accesscontextmanager/commit/5d1b43c9c89bc2acddbcac1ce0b9726bb135e8c3))
+
+
+### Bug Fixes
+
+* specify valid go_package option ([#184](https://www.github.com/googleapis/java-accesscontextmanager/issues/184)) ([8c305f2](https://www.github.com/googleapis/java-accesscontextmanager/commit/8c305f223859e3cfeae2f804f31ab798f6b0a3ba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#190](https://www.github.com/googleapis/java-accesscontextmanager/issues/190)) ([ef57c01](https://www.github.com/googleapis/java-accesscontextmanager/commit/ef57c01306d6e9c7723a0729246b09f282f20412))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#193](https://www.github.com/googleapis/java-accesscontextmanager/issues/193)) ([d89f775](https://www.github.com/googleapis/java-accesscontextmanager/commit/d89f7759ff778b37fb2b9b2b3cf567628267d288))
+
 ### [1.0.17](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.16...v1.0.17) (2021-04-24)
 
 
