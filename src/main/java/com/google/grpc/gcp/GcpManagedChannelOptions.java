@@ -28,10 +28,8 @@ import javax.annotation.Nullable;
 public class GcpManagedChannelOptions {
   private static final Logger logger = Logger.getLogger(GcpManagedChannelOptions.class.getName());
 
-  @Nullable
-  private final GcpMetricsOptions metricsOptions;
-  @Nullable
-  private final GcpResiliencyOptions resiliencyOptions;
+  @Nullable private final GcpMetricsOptions metricsOptions;
+  @Nullable private final GcpResiliencyOptions resiliencyOptions;
 
   public GcpManagedChannelOptions() {
     metricsOptions = null;
@@ -73,11 +71,12 @@ public class GcpManagedChannelOptions {
      *
      * <p>If a {@link MetricRegistry} is provided in {@link GcpMetricsOptions} then the
      * GcpManagedChannel will emit metrics using that registry. The metrics options also allow to
-     * set up labels (tags) and a prefix for metrics names.
-     * The GcpManagedChannel will add its own label "pool_index" with values "pool-0", "pool-1",
-     * etc. for each instance of GcpManagedChannel created.
+     * set up labels (tags) and a prefix for metrics names. The GcpManagedChannel will add its own
+     * label "pool_index" with values "pool-0", "pool-1", etc. for each instance of
+     * GcpManagedChannel created.
      *
      * <p>Example usage (e. g. with export to Cloud Monitoring)
+     *
      * <pre>
      * // Enable Cloud Monitoring exporter.
      * StackdriverStatsExporter.createAndRegister();
@@ -238,9 +237,8 @@ public class GcpManagedChannelOptions {
 
       /**
        * Temporarily fallback requests to a ready channel from a channel which is not ready to send
-       * a request immediately. The fallback will happen if the pool has another
-       * channel in the READY state and that channel has less than maximum allowed concurrent active
-       * streams.
+       * a request immediately. The fallback will happen if the pool has another channel in the
+       * READY state and that channel has less than maximum allowed concurrent active streams.
        */
       public Builder enableNotReadyFallback() {
         notReadyFallbackEnabled = true;

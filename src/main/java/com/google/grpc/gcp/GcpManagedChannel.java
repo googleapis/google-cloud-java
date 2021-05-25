@@ -52,6 +52,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.OptionalInt;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
@@ -79,12 +80,13 @@ public class GcpManagedChannel extends ManagedChannel {
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
   // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
-  @GuardedBy("this")
-  private final HashMap<Integer, HashMap<String, Integer>> fallbackMap = new HashMap<>();
+  private final ConcurrentHashMap<Integer, ConcurrentHashMap<String, Integer>> fallbackMap =
+      new ConcurrentHashMap<>();
 
   @VisibleForTesting
   @GuardedBy("this")
   final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
+
   private final HashMap<Integer, ChannelRef> channelRefById = new HashMap<>();
 
   private final Object bindLock = new Object();
@@ -199,8 +201,8 @@ public class GcpManagedChannel extends ManagedChannel {
 
   /**
    * ChannelStateMonitor subscribes to channel's state changes and informs {@link GcpManagedChannel}
-   * on any new state. This monitor allows to detect when a channel is not ready and
-   * temporarily route requests via another ready channel if the option is enabled.
+   * on any new state. This monitor allows to detect when a channel is not ready and temporarily
+   * route requests via another ready channel if the option is enabled.
    */
   private class ChannelStateMonitor implements Runnable {
     private final int channelId;
@@ -231,26 +233,11 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     if (state == ConnectivityState.READY || state == ConnectivityState.IDLE) {
       // Ready
-      if (fallbackMap.containsKey(channelId)) {
-        channelRecovered(channelId);
-      }
+      fallbackMap.remove(channelId);
       return;
     }
     // Not ready
-    if (!fallbackMap.containsKey(channelId)) {
-      channelBroke(channelId);
-    }
-  }
-
-  private synchronized void channelBroke(int channelId) {
-    if (fallbackMap.containsKey(channelId)) {
-      return;
-    }
-    fallbackMap.put(channelId, new HashMap<>());
-  }
-
-  private synchronized void channelRecovered(int channelId) {
-    fallbackMap.remove(channelId);
+    fallbackMap.putIfAbsent(channelId, new ConcurrentHashMap<>());
   }
 
   public int getMaxSize() {
@@ -288,13 +275,12 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Pick a {@link ChannelRef} (and create a new one if necessary).
-   * If notReadyFallbackEnabled is true in the {@link GcpResiliencyOptions} then instead of a
-   * channel in a non-READY state another channel in the READY state and having fewer than maximum
-   * allowed number of active streams will be provided if available.
-   * Subsequent calls with the same affinity key will provide the same fallback channel as long as
-   * the fallback channel is in the READY state and has fewer than maximum allowed number of active
-   * streams.
+   * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
+   * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
+   * channel in the READY state and having fewer than maximum allowed number of active streams will
+   * be provided if available. Subsequent calls with the same affinity key will provide the same
+   * fallback channel as long as the fallback channel is in the READY state and has fewer than
+   * maximum allowed number of active streams.
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
    *     Otherwise pick the one with the smallest number of streams.
@@ -308,7 +294,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return channelRef;
     }
     // Look up if the channelRef is not ready.
-    HashMap<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
+    ConcurrentHashMap<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
     if (tempMap == null) {
       // Channel is ready.
       return channelRef;
@@ -326,10 +312,10 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Pick a {@link ChannelRef} (and create a new one if necessary).
-   * If notReadyFallbackEnabled is true in the {@link GcpResiliencyOptions} then instead of a
-   * channel in a non-READY state another channel in the READY state and having fewer than maximum
-   * allowed number of active streams will be provided if available.
+   * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
+   * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
+   * channel in the READY state and having fewer than maximum allowed number of active streams will
+   * be provided if available.
    */
   private synchronized ChannelRef pickLeastBusyChannel() {
     int size = channelRefs.size();
@@ -338,7 +324,7 @@ public class GcpManagedChannel extends ManagedChannel {
     // Create a new channel if the max size has not been reached.
     if (size == 0
         || (size < maxSize
-        && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
+            && channelRefs.get(0).getActiveStreamsCount() >= maxConcurrentStreamsLowWatermark)) {
       ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
       channelRefs.add(channelRef);
       channelRefById.put(size, channelRef);
