@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.3.0...v0.4.0) (2021-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Make CertificateTemplate bools optional to indicate unset values (#172)
+
+### Features
+
+* Make CertificateTemplate bools optional to indicate unset values ([#172](https://www.github.com/googleapis/java-security-private-ca/issues/172)) ([c3fddec](https://www.github.com/googleapis/java-security-private-ca/commit/c3fddecf4ab394dff81db57f5cd09ffa87d7f696))
+* Refactored Elliptic Key curves to provide additional options, the NamedCurve enum is replaced by the EcKeyType message ([#158](https://www.github.com/googleapis/java-security-private-ca/issues/158)) ([a79eaa9](https://www.github.com/googleapis/java-security-private-ca/commit/a79eaa92f41727e63e67fbba22ae3a487f4dbbe4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#161](https://www.github.com/googleapis/java-security-private-ca/issues/161)) ([6e22288](https://www.github.com/googleapis/java-security-private-ca/commit/6e22288b97afcdd869fa03431fc97310fdc50b96))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#164](https://www.github.com/googleapis/java-security-private-ca/issues/164)) ([303b2b4](https://www.github.com/googleapis/java-security-private-ca/commit/303b2b4b1a1c31d9e7ed1cd8c6218ebbaf7dc3a1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#173](https://www.github.com/googleapis/java-security-private-ca/issues/173)) ([672fd91](https://www.github.com/googleapis/java-security-private-ca/commit/672fd91f744031912f5be6cd4c19d160ea80b23e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#177](https://www.github.com/googleapis/java-security-private-ca/issues/177)) ([020c849](https://www.github.com/googleapis/java-security-private-ca/commit/020c8496bedc2ab1a62c1ef103b98f5885530e26))
+
 ## [0.3.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.8...v0.3.0) (2021-04-15)
 
 
