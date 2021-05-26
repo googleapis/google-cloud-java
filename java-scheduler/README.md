@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler</artifactId>
-  <version>1.23.14</version>
+  <version>1.24.0</version>
 </dependency>
 
 ```
