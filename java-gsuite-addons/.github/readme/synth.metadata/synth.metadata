@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-gsuite-addons.git",
+        "sha": "29ece93891ad1f6673f7692a2cade58cbde2758c"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "1778de119522ea9c9b18763c2a4577e22a60433c"
+      }
+    }
+  ]
+}
