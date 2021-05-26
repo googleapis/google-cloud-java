@@ -80,14 +80,13 @@ public class GcpManagedChannel extends ManagedChannel {
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
   // Map from a broken channel id to the remapped affinity keys (key => ready channel id).
-  private final ConcurrentHashMap<Integer, ConcurrentHashMap<String, Integer>> fallbackMap =
-      new ConcurrentHashMap<>();
+  private final Map<Integer, Map<String, Integer>> fallbackMap = new ConcurrentHashMap<>();
 
   @VisibleForTesting
   @GuardedBy("this")
   final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
 
-  private final HashMap<Integer, ChannelRef> channelRefById = new HashMap<>();
+  private final Map<Integer, ChannelRef> channelRefById = new HashMap<>();
 
   private final Object bindLock = new Object();
 
@@ -294,7 +293,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return channelRef;
     }
     // Look up if the channelRef is not ready.
-    ConcurrentHashMap<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
+    Map<String, Integer> tempMap = fallbackMap.get(channelRef.getId());
     if (tempMap == null) {
       // Channel is ready.
       return channelRef;
