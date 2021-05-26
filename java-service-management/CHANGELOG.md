@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-service-management/compare/v1.0.1...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#53](https://www.github.com/googleapis/java-service-management/issues/53)) ([b09aab5](https://www.github.com/googleapis/java-service-management/commit/b09aab533a9b8254175526558aebe45c3eac93df))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#52](https://www.github.com/googleapis/java-service-management/issues/52)) ([441243e](https://www.github.com/googleapis/java-service-management/commit/441243e33c860df8f9900c6c6ddb22fd2794a5e4))
+
 ### [1.0.1](https://www.github.com/googleapis/java-service-management/compare/v1.0.0...v1.0.1) (2021-05-11)
 
 
