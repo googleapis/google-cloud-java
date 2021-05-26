@@ -629,8 +629,8 @@ public class GcpManagedChannel extends ManagedChannel {
 
     private final ManagedChannel delegate;
     private final int channelId;
-    private final AtomicInteger affinityCount;
-    private final AtomicInteger activeStreamsCount;
+    private int affinityCount;
+    private int activeStreamsCount;
 
     protected ChannelRef(ManagedChannel channel, int channelId) {
       this(channel, channelId, 0, 0);
@@ -640,8 +640,8 @@ public class GcpManagedChannel extends ManagedChannel {
         ManagedChannel channel, int channelId, int affinityCount, int activeStreamsCount) {
       this.delegate = channel;
       this.channelId = channelId;
-      this.affinityCount = new AtomicInteger(affinityCount);
-      this.activeStreamsCount = new AtomicInteger(activeStreamsCount);
+      this.affinityCount = affinityCount;
+      this.activeStreamsCount = activeStreamsCount;
       new ChannelStateMonitor(channel, channelId);
     }
 
@@ -654,27 +654,27 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void affinityCountIncr() {
-      affinityCount.incrementAndGet();
+      affinityCount++;
     }
 
     protected void affinityCountDecr() {
-      affinityCount.decrementAndGet();
+      affinityCount--;
     }
 
     protected void activeStreamsCountIncr() {
-      activeStreamsCount.incrementAndGet();
+      activeStreamsCount++;
     }
 
     protected void activeStreamsCountDecr() {
-      activeStreamsCount.decrementAndGet();
+      activeStreamsCount--;
     }
 
     protected int getAffinityCount() {
-      return affinityCount.get();
+      return affinityCount;
     }
 
     protected int getActiveStreamsCount() {
-      return activeStreamsCount.get();
+      return activeStreamsCount;
     }
   }
 }
