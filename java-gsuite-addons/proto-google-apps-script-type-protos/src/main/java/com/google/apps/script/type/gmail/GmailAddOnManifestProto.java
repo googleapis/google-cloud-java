@@ -94,7 +94,7 @@ public final class GmailAddOnManifestProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.apps.script.type.AddonWidgetSet.getDescriptor(),
+              com.google.apps.script.type.AddOnWidgetSetProto.getDescriptor(),
               com.google.apps.script.type.ExtensionPoint.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -140,7 +140,7 @@ public final class GmailAddOnManifestProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_apps_script_type_gmail_UnconditionalTrigger_descriptor,
             new java.lang.String[] {});
-    com.google.apps.script.type.AddonWidgetSet.getDescriptor();
+    com.google.apps.script.type.AddOnWidgetSetProto.getDescriptor();
     com.google.apps.script.type.ExtensionPoint.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

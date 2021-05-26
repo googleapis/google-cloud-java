@@ -18,8 +18,8 @@
 
 package com.google.apps.script.type;
 
-public final class AddonWidgetSet {
-  private AddonWidgetSet() {}
+public final class AddOnWidgetSetProto {
+  private AddOnWidgetSetProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -49,11 +49,12 @@ public final class AddonWidgetSet {
           + "TTONS\020\002\022\024\n\020PERSISTENT_FORMS\020\003\022\020\n\014FIXED_F"
           + "OOTER\020\004\022!\n\035UPDATE_SUBJECT_AND_RECIPIENTS"
           + "\020\005\022\017\n\013GRID_WIDGET\020\006\022\033\n\027ADDON_COMPOSE_UI_"
-          + "ACTION\020\007B\250\001\n\033com.google.apps.script.type"
-          + "P\001Z6google.golang.org/genproto/googleapi"
-          + "s/apps/script/type\252\002\027Google.Apps.Script."
-          + "Type\312\002\027Google\\Apps\\Script\\Type\352\002\032Google:"
-          + ":Apps::Script::Typeb\006proto3"
+          + "ACTION\020\007B\275\001\n\033com.google.apps.script.type"
+          + "B\023AddOnWidgetSetProtoP\001Z6google.golang.o"
+          + "rg/genproto/googleapis/apps/script/type\252"
+          + "\002\027Google.Apps.Script.Type\312\002\027Google\\Apps\\"
+          + "Script\\Type\352\002\032Google::Apps::Script::Type"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
