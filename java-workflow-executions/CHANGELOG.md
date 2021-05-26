@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-workflow-executions/compare/v0.1.8...v0.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#114](https://www.github.com/googleapis/java-workflow-executions/issues/114)) ([b877b23](https://www.github.com/googleapis/java-workflow-executions/commit/b877b236d5435ba03c8edf2468202f48194c1176))
+* add v1 client ([#119](https://www.github.com/googleapis/java-workflow-executions/issues/119)) ([2039980](https://www.github.com/googleapis/java-workflow-executions/commit/2039980de2b82567d5252d2884a0cdd143b281d6))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#95](https://www.github.com/googleapis/java-workflow-executions/issues/95)) ([f013e7a](https://www.github.com/googleapis/java-workflow-executions/commit/f013e7a29415493d046273e6ec68e89843a1b2d1))
+* typo ([#92](https://www.github.com/googleapis/java-workflow-executions/issues/92)) ([079eb7f](https://www.github.com/googleapis/java-workflow-executions/commit/079eb7f3be4097c710f0185331bd9df89cb7e4d8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#96](https://www.github.com/googleapis/java-workflow-executions/issues/96)) ([1bc3bef](https://www.github.com/googleapis/java-workflow-executions/commit/1bc3bef95d72d8a8aee33f51fcce97c86eacd66d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#99](https://www.github.com/googleapis/java-workflow-executions/issues/99)) ([774e2ca](https://www.github.com/googleapis/java-workflow-executions/commit/774e2cab1f4af73c55ffa85a2b91f3273a44e81c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#110](https://www.github.com/googleapis/java-workflow-executions/issues/110)) ([99f28de](https://www.github.com/googleapis/java-workflow-executions/commit/99f28de65b4867a496b13e11c896e33805b9c2d6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#113](https://www.github.com/googleapis/java-workflow-executions/issues/113)) ([ef824c9](https://www.github.com/googleapis/java-workflow-executions/commit/ef824c9e2bd461a5940dbdde0f01b033f307360e))
+
 ### [0.1.8](https://www.github.com/googleapis/java-workflow-executions/compare/v0.1.7...v0.1.8) (2021-04-09)
 
 
