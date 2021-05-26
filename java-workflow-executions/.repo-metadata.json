@@ -4,7 +4,7 @@
     "product_documentation": "https://cloud.google.com/workflows",
     "api_description": "allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.",
     "client_documentation": "https://googleapis.dev/java/google-cloud-workflow-executions/latest/index.html",
-    "release_level": "beta",
+    "release_level": "ga",
     "transport": "grpc",
     "language": "java",
     "repo": "googleapis/java-workflow-executions",

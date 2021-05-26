@@ -74,6 +74,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-workflow-executions-v1</artifactId>
+        <version>0.1.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-workflow-executions-v1</artifactId>
+        <version>0.1.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-workflow-executions-v1beta</artifactId>
         <version>0.1.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1beta:current} -->
       </dependency>
@@ -112,8 +122,10 @@
 
   <modules>
     <module>google-cloud-workflow-executions</module>
-    <module>proto-google-cloud-workflow-executions-v1beta</module>
     <module>grpc-google-cloud-workflow-executions-v1beta</module>
+    <module>grpc-google-cloud-workflow-executions-v1</module>
+    <module>proto-google-cloud-workflow-executions-v1beta</module>
+    <module>proto-google-cloud-workflow-executions-v1</module>
     <module>google-cloud-workflow-executions-bom</module>
   </modules>
 

@@ -19,7 +19,7 @@ import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'workflows-executions'
-versions = ['v1beta']
+versions = ['v1beta','v1']
 
 for version in versions:
   java.bazel_library(
