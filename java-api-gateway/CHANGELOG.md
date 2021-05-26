@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-api-gateway/compare/v1.0.1...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#43](https://www.github.com/googleapis/java-api-gateway/issues/43)) ([b633c4c](https://www.github.com/googleapis/java-api-gateway/commit/b633c4cb27f43b3d9ecc4583c342ba3fd4b2c712))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#42](https://www.github.com/googleapis/java-api-gateway/issues/42)) ([5fbece8](https://www.github.com/googleapis/java-api-gateway/commit/5fbece84342332cc7eb55d50f46abf8ceddf26e4))
+
 ### [1.0.1](https://www.github.com/googleapis/java-api-gateway/compare/v1.0.0...v1.0.1) (2021-05-14)
 
 
