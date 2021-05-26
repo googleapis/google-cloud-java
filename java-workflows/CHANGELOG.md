@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-workflows/compare/v0.4.2...v1.0.0) (2021-05-26)
+
+
+### Features
+
+* promote to 1.0.0 ([#267](https://www.github.com/googleapis/java-workflows/issues/267)) ([91404ce](https://www.github.com/googleapis/java-workflows/commit/91404cef3b9cef16c0e0c1e322a9eda0d4f80b24))
+
 ### [0.4.2](https://www.github.com/googleapis/java-workflows/compare/v0.4.1...v0.4.2) (2021-05-19)
 
 
