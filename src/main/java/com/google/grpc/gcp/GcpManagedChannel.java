@@ -38,6 +38,7 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import io.opencensus.common.ToLongFunction;
 import io.opencensus.metrics.DerivedLongGauge;
 import io.opencensus.metrics.LabelKey;
@@ -69,6 +70,9 @@ public class GcpManagedChannel extends ManagedChannel {
   private final ManagedChannelBuilder delegateChannelBuilder;
   private final GcpManagedChannelOptions options;
   private final boolean fallbackEnabled;
+  private final boolean unresponsiveDetectionEnabled;
+  private final int unresponsiveMs;
+  private final int unresponsiveDropCount;
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
@@ -118,8 +122,15 @@ public class GcpManagedChannel extends ManagedChannel {
     initOptions();
     if (options.getResiliencyOptions() != null) {
       fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
+      unresponsiveDetectionEnabled =
+          options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
+      unresponsiveMs = options.getResiliencyOptions().getUnresponsiveDetectionMs();
+      unresponsiveDropCount = options.getResiliencyOptions().getUnresponsiveDetectionDroppedCount();
     } else {
       fallbackEnabled = false;
+      unresponsiveDetectionEnabled = false;
+      unresponsiveMs = 0;
+      unresponsiveDropCount = 0;
     }
   }
 
@@ -632,6 +643,8 @@ public class GcpManagedChannel extends ManagedChannel {
     // activeStreamsCount are mutated from the GcpClientCall concurrently using the
     // `activeStreamsCountIncr()` and `activeStreamsCountDecr()` methods.
     private final AtomicInteger activeStreamsCount;
+    private long lastResponseNanos = System.nanoTime();
+    private final AtomicInteger deadlineExceededCount = new AtomicInteger();
 
     protected ChannelRef(ManagedChannel channel, int channelId) {
       this(channel, channelId, 0, 0);
@@ -666,8 +679,16 @@ public class GcpManagedChannel extends ManagedChannel {
       activeStreamsCount.incrementAndGet();
     }
 
-    protected void activeStreamsCountDecr() {
+    protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {
       activeStreamsCount.decrementAndGet();
+      if (unresponsiveDetectionEnabled) {
+        detectUnresponsiveConnection(startNanos, status, fromClientSide);
+      }
+    }
+
+    protected void messageReceived() {
+      lastResponseNanos = System.nanoTime();
+      deadlineExceededCount.set(0);
     }
 
     protected int getAffinityCount() {
@@ -676,6 +697,39 @@ public class GcpManagedChannel extends ManagedChannel {
 
     protected int getActiveStreamsCount() {
       return activeStreamsCount.get();
+    }
+
+    private void detectUnresponsiveConnection(
+        long startNanos, Status status, boolean fromClientSide) {
+      if (status == Status.DEADLINE_EXCEEDED) {
+        if (startNanos < lastResponseNanos) {
+          // Skip deadline exceeded from past calls.
+          return;
+        }
+        if (deadlineExceededCount.incrementAndGet() >= unresponsiveDropCount
+            && unresponsiveTimingConditionMet()) {
+          maybeReconnectUnresponsive();
+        }
+        return;
+      }
+      if (!fromClientSide) {
+        // If not a deadline exceeded and not coming from the client side then reset time and count.
+        lastResponseNanos = System.nanoTime();
+        deadlineExceededCount.set(0);
+      }
+    }
+
+    private boolean unresponsiveTimingConditionMet() {
+      return (System.nanoTime() - lastResponseNanos) / 1000000 >= unresponsiveMs;
+    }
+
+    private synchronized void maybeReconnectUnresponsive() {
+      if (deadlineExceededCount.get() >= unresponsiveDropCount
+          && unresponsiveTimingConditionMet()) {
+        delegate.enterIdle();
+        lastResponseNanos = System.nanoTime();
+        deadlineExceededCount.set(0);
+      }
     }
   }
 }

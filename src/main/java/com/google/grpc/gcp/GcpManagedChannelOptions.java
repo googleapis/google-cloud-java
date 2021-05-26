@@ -16,6 +16,7 @@
 
 package com.google.grpc.gcp;
 
+import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
@@ -212,9 +213,15 @@ public class GcpManagedChannelOptions {
   /** Resiliency configuration for the GCP managed channel. */
   public static class GcpResiliencyOptions {
     private final boolean notReadyFallbackEnabled;
+    private final boolean unresponsiveDetectionEnabled;
+    private final int unresponsiveDetectionMs;
+    private final int unresponsiveDetectionDroppedCount;
 
     public GcpResiliencyOptions(Builder builder) {
       notReadyFallbackEnabled = builder.notReadyFallbackEnabled;
+      unresponsiveDetectionEnabled = builder.unresponsiveDetectionEnabled;
+      unresponsiveDetectionMs = builder.unresponsiveDetectionMs;
+      unresponsiveDetectionDroppedCount = builder.unresponsiveDetectionDroppedCount;
     }
 
     /** Creates a new GcpResiliencyOptions.Builder. */
@@ -226,8 +233,23 @@ public class GcpManagedChannelOptions {
       return notReadyFallbackEnabled;
     }
 
+    public boolean isUnresponsiveDetectionEnabled() {
+      return unresponsiveDetectionEnabled;
+    }
+
+    public int getUnresponsiveDetectionMs() {
+      return unresponsiveDetectionMs;
+    }
+
+    public int getUnresponsiveDetectionDroppedCount() {
+      return unresponsiveDetectionDroppedCount;
+    }
+
     public static class Builder {
       private boolean notReadyFallbackEnabled = false;
+      private boolean unresponsiveDetectionEnabled = false;
+      private int unresponsiveDetectionMs = 0;
+      private int unresponsiveDetectionDroppedCount = 0;
 
       public Builder() {}
 
@@ -242,6 +264,36 @@ public class GcpManagedChannelOptions {
        */
       public Builder enableNotReadyFallback() {
         notReadyFallbackEnabled = true;
+        return this;
+      }
+
+      /**
+       * Enable unresponsive connection detection.
+       *
+       * <p>If an RPC channel fails to receive any RPC message from the server for {@code ms}
+       * milliseconds and there were {@code numDroppedRequests} calls (started after the last
+       * response from the server) that resulted in DEADLINE_EXCEEDED then a graceful reconnection
+       * of the channel will be performed.
+       *
+       * <p>During the reconnection a new subchannel (connection) will be created for new RPCs, and
+       * the calls on the old subchannel will still have a chance to complete if the server side
+       * responds. When all RPCs on the old subchannel finish the old connection will be closed.
+       *
+       * <p>The {@code ms} should not be less than the timeout used for the majority of calls. And
+       * {@code numDroppedRequests} must be > 0.
+       *
+       * <p>The logic treats any message from the server almost as a "ping" response. But only calls
+       * started after the last response received and ended up in DEADLINE_EXCEEDED count towards
+       * {@code numDroppedRequests}. Because of that, it may not detect an unresponsive connection
+       * if you have long-running streaming calls only.
+       */
+      public Builder withUnresponsiveConnectionDetection(int ms, int numDroppedRequests) {
+        Preconditions.checkArgument(ms > 0, "ms should be > 0, got %s", ms);
+        Preconditions.checkArgument(
+            numDroppedRequests > 0, "numDroppedRequests should be > 0, got %s", numDroppedRequests);
+        unresponsiveDetectionEnabled = true;
+        unresponsiveDetectionMs = ms;
+        unresponsiveDetectionDroppedCount = numDroppedRequests;
         return this;
       }
     }

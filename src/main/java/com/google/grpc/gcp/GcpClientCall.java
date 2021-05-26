@@ -63,6 +63,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   @GuardedBy("this")
   private boolean started;
 
+  private long startNanos = 0;
+
   protected GcpClientCall(
       GcpManagedChannel delegateChannel,
       MethodDescriptor<ReqT, RespT> methodDescriptor,
@@ -107,6 +109,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   public void sendMessage(ReqT message) {
     synchronized (this) {
       if (!started) {
+        startNanos = System.nanoTime();
         // Check if the current channelRef is bound with the key and change it if necessary.
         // If no channel is bound with the key, use the least busy one.
         keys = delegateChannel.checkKeys(message, true, methodDescriptor);
@@ -158,7 +161,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
   private void checkedCancel(@Nullable String message, @Nullable Throwable cause) {
     if (!decremented.getAndSet(true)) {
-      delegateChannelRef.activeStreamsCountDecr();
+      delegateChannelRef.activeStreamsCountDecr(startNanos, Status.CANCELLED, true);
     }
     delegateCall.cancel(message, cause);
   }
@@ -181,7 +184,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       @Override
       public void onClose(Status status, Metadata trailers) {
         if (!decremented.getAndSet(true)) {
-          delegateChannelRef.activeStreamsCountDecr();
+          delegateChannelRef.activeStreamsCountDecr(startNanos, status, false);
         }
         // If the operation completed successfully, bind/unbind the affinity key.
         if (keys != null && status.getCode() == Status.Code.OK) {
@@ -198,6 +201,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       // with the channelRef.
       @Override
       public void onMessage(RespT message) {
+        delegateChannelRef.messageReceived();
         if (!received) {
           received = true;
           if (keys == null) {
@@ -219,6 +223,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
     private final GcpManagedChannel.ChannelRef channelRef;
     private final ClientCall<ReqT, RespT> delegateCall;
+    private long startNanos = 0;
 
     private final AtomicBoolean decremented = new AtomicBoolean(false);
 
@@ -237,6 +242,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
+      startNanos = System.nanoTime();
 
       Listener<RespT> listener =
           new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
@@ -244,9 +250,15 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             @Override
             public void onClose(Status status, Metadata trailers) {
               if (!decremented.getAndSet(true)) {
-                channelRef.activeStreamsCountDecr();
+                channelRef.activeStreamsCountDecr(startNanos, status, false);
               }
               super.onClose(status, trailers);
+            }
+
+            @Override
+            public void onMessage(RespT message) {
+              channelRef.messageReceived();
+              super.onMessage(message);
             }
           };
 
@@ -257,7 +269,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     @Override
     public void cancel(String message, Throwable cause) {
       if (!decremented.getAndSet(true)) {
-        channelRef.activeStreamsCountDecr();
+        channelRef.activeStreamsCountDecr(startNanos, Status.CANCELLED, true);
       }
       delegateCall.cancel(message, cause);
     }
