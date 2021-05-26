@@ -112,7 +112,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>20.3.0</version>
+        <version>20.5.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
