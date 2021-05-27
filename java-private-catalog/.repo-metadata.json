@@ -1,0 +1,15 @@
+{
+  "name": "private-catalog",
+  "name_pretty": "Private Catalog",
+  "product_documentation": "https://cloud.google.com/private-catalog/docs",
+  "api_description": "allows developers and cloud admins to make their solutions discoverable to their internal enterprise users. Cloud admins can manage their solutions and ensure their users are always launching the latest versions.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-private-catalog/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-private-catalog",
+  "repo_short": "java-private-catalog",
+  "distribution_name": "com.google.cloud:google-cloud-private-catalog",
+  "api_id": "private-catalog.googleapis.com",
+  "requires_billing": true
+}
