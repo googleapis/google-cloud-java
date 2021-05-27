@@ -11,5 +11,6 @@
   "repo_short": "java-binary-authorization",
   "distribution_name": "com.google.cloud:google-cloud-binary-authorization",
   "api_id": "binary-authorization.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
