@@ -163,20 +163,6 @@
               <groupId>com.google.cloud</groupId>
               <artifactId>google-cloud-conformance-tests</artifactId>
               <version>0.1.0</version>
-              <exclusions>
-                <!--
-                * The protos for bigtable are already included in the classpath
-                  as the declared dependency above. Exclude it here.
-                * Exclude the firestore protos to prevent creating a dependency
-                  diamond with any transitive dependencies.
-                * Exclude protobuf-java to prefer the version declared here
-                  in the project.
-                -->
-                <exclusion>
-                  <groupId>*</groupId>
-                  <artifactId>*</artifactId>
-                </exclusion>
-              </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.google.truth</groupId>
