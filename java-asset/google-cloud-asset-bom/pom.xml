@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -60,11 +60,10 @@
 
   <dependencyManagement>
     <dependencies>
-
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-asset-v1</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-asset</artifactId>
+        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -98,6 +97,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-asset-v1p7beta1</artifactId>
+        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p7beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-asset-v1</artifactId>
+        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p1beta1</artifactId>
         <version>0.96.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
       </dependency>
@@ -122,9 +131,9 @@
         <version>0.96.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p5beta1:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-asset</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-asset-v1p7beta1</artifactId>
+        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p7beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

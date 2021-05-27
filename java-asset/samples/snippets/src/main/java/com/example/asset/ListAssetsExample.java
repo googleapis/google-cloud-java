@@ -49,18 +49,18 @@ public class ListAssetsExample {
       ProjectName parent = ProjectName.of(projectId);
 
       // Build initial ListAssetsRequest without setting page token.
-      ListAssetsRequest request = ListAssetsRequest.newBuilder()
-          .setParent(parent.toString())
-          .addAllAssetTypes(Arrays.asList(assetTypes))
-          .setContentType(contentType)
-          .build();
+      ListAssetsRequest request =
+          ListAssetsRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllAssetTypes(Arrays.asList(assetTypes))
+              .setContentType(contentType)
+              .build();
 
       // Repeatedly call ListAssets until page token is empty.
       ListAssetsPagedResponse response = client.listAssets(request);
       System.out.println(response);
       while (!response.getNextPageToken().isEmpty()) {
-        request = request.toBuilder()
-            .setPageToken(response.getNextPageToken()).build();
+        request = request.toBuilder().setPageToken(response.getNextPageToken()).build();
         response = client.listAssets(request);
         System.out.println(response);
       }

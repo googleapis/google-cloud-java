@@ -30,16 +30,22 @@ public class UpdateFeedExample {
   public static void updateFeed(String feedName, String topic) throws Exception {
     // String feedName = "MY_FEED_NAME"
     // String topic = "projects/[PROJECT_ID]/topics/[TOPIC_NAME]"
-    Feed feed = Feed.newBuilder()
-        .setName(feedName)
-        .setFeedOutputConfig(
-            FeedOutputConfig.newBuilder().setPubsubDestination(
-                PubsubDestination.newBuilder().setTopic(topic).build()).build()).build();
-    UpdateFeedRequest request = UpdateFeedRequest.newBuilder()
-        .setFeed(feed)
-        .setUpdateMask(
-          FieldMask.newBuilder().addPaths("feed_output_config.pubsub_destination.topic").build())
-        .build();
+    Feed feed =
+        Feed.newBuilder()
+            .setName(feedName)
+            .setFeedOutputConfig(
+                FeedOutputConfig.newBuilder()
+                    .setPubsubDestination(PubsubDestination.newBuilder().setTopic(topic).build())
+                    .build())
+            .build();
+    UpdateFeedRequest request =
+        UpdateFeedRequest.newBuilder()
+            .setFeed(feed)
+            .setUpdateMask(
+                FieldMask.newBuilder()
+                    .addPaths("feed_output_config.pubsub_destination.topic")
+                    .build())
+            .build();
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.

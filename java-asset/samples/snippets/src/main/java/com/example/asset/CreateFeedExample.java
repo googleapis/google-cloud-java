@@ -27,22 +27,26 @@ import java.util.Arrays;
 
 public class CreateFeedExample {
   // Create a feed
-  public static void createFeed(
-      String[] assetNames, String feedId, String topic, String projectId) throws Exception {
+  public static void createFeed(String[] assetNames, String feedId, String topic, String projectId)
+      throws Exception {
     // String[] assetNames = {"MY_ASSET_NAME"}
     // String FeedId = "MY_FEED_ID"
     // String topic = "projects/[PROJECT_ID]/topics/[TOPIC_NAME]"
     // String projectID = "MY_PROJECT_ID"
-    Feed feed = Feed.newBuilder()
-        .addAllAssetNames(Arrays.asList(assetNames))
-        .setFeedOutputConfig(
-          FeedOutputConfig.newBuilder().setPubsubDestination(
-              PubsubDestination.newBuilder().setTopic(topic).build()).build()).build();
-    CreateFeedRequest request = CreateFeedRequest.newBuilder()
-        .setParent(String.format(ProjectName.of(projectId).toString()))
-        .setFeedId(feedId)
-        .setFeed(feed)
-        .build();
+    Feed feed =
+        Feed.newBuilder()
+            .addAllAssetNames(Arrays.asList(assetNames))
+            .setFeedOutputConfig(
+                FeedOutputConfig.newBuilder()
+                    .setPubsubDestination(PubsubDestination.newBuilder().setTopic(topic).build())
+                    .build())
+            .build();
+    CreateFeedRequest request =
+        CreateFeedRequest.newBuilder()
+            .setParent(String.format(ProjectName.of(projectId).toString()))
+            .setFeedId(feedId)
+            .setFeed(feed)
+            .build();
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.

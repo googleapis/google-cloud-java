@@ -54,9 +54,9 @@ public class SearchAllResourcesExample {
     } catch (IOException e) {
       System.out.println(String.format("Failed to create client:%n%s", e.toString()));
     } catch (InvalidArgumentException e) {
-      System.out.println(String.format("Invalid request:%n%s",  e.toString()));
+      System.out.println(String.format("Invalid request:%n%s", e.toString()));
     } catch (ApiException e) {
-      System.out.println(String.format("Error during SearchAllResources:%n%s",  e.toString()));
+      System.out.println(String.format("Error during SearchAllResources:%n%s", e.toString()));
     }
   }
 }

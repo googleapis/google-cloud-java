@@ -42,12 +42,13 @@ public class BatchGetAssetsHistoryExample {
       ProjectName parent = ProjectName.of(projectId);
       ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
       TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
-      BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-          .setParent(parent.toString())
-          .addAllAssetNames(Arrays.asList(assetNames))
-          .setContentType(contentType)
-          .setReadTimeWindow(readTimeWindow)
-          .build();
+      BatchGetAssetsHistoryRequest request =
+          BatchGetAssetsHistoryRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllAssetNames(Arrays.asList(assetNames))
+              .setContentType(contentType)
+              .setReadTimeWindow(readTimeWindow)
+              .build();
       BatchGetAssetsHistoryResponse response = client.batchGetAssetsHistory(request);
       System.out.println(response);
     }
