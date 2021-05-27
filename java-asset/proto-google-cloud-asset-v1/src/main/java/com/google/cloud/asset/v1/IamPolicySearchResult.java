@@ -2080,7 +2080,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
    * instance, Cloud Storage bucket), the project field will indicate the
    * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * orgnization, this field will be empty.
    * To search against the `project`:
    * * specify the `scope` field as this project in your search request.
    * </pre>
@@ -2109,7 +2109,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
    * instance, Cloud Storage bucket), the project field will indicate the
    * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * orgnization, this field will be empty.
    * To search against the `project`:
    * * specify the `scope` field as this project in your search request.
    * </pre>
@@ -2801,7 +2801,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
      * instance, Cloud Storage bucket), the project field will indicate the
      * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -2829,7 +2829,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
      * instance, Cloud Storage bucket), the project field will indicate the
      * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -2857,7 +2857,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
      * instance, Cloud Storage bucket), the project field will indicate the
      * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -2884,7 +2884,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
      * instance, Cloud Storage bucket), the project field will indicate the
      * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -2907,7 +2907,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
      * instance, Cloud Storage bucket), the project field will indicate the
      * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>

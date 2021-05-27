@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * IAM policy analysis query message.
+ * ## IAM policy analysis query message.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.IamPolicyAnalysisQuery}
@@ -144,6 +144,24 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
               if (subBuilder != null) {
                 subBuilder.mergeFrom(options_);
                 options_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder subBuilder =
+                  null;
+              if (conditionContext_ != null) {
+                subBuilder = conditionContext_.toBuilder();
+              }
+              conditionContext_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(conditionContext_);
+                conditionContext_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4076,6 +4094,908 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface ConditionContextOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     *
+     * @return Whether the accessTime field is set.
+     */
+    boolean hasAccessTime();
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     *
+     * @return The accessTime.
+     */
+    com.google.protobuf.Timestamp getAccessTime();
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getAccessTimeOrBuilder();
+
+    public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.TimeContextCase
+        getTimeContextCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IAM conditions context.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext}
+   */
+  public static final class ConditionContext extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+      ConditionContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConditionContext.newBuilder() to construct.
+    private ConditionContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConditionContext() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConditionContext();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ConditionContext(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (timeContextCase_ == 1) {
+                  subBuilder = ((com.google.protobuf.Timestamp) timeContext_).toBuilder();
+                }
+                timeContext_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.protobuf.Timestamp) timeContext_);
+                  timeContext_ = subBuilder.buildPartial();
+                }
+                timeContextCase_ = 1;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ConditionContext_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.asset.v1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ConditionContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.class,
+              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder.class);
+    }
+
+    private int timeContextCase_ = 0;
+    private java.lang.Object timeContext_;
+
+    public enum TimeContextCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      ACCESS_TIME(1),
+      TIMECONTEXT_NOT_SET(0);
+      private final int value;
+
+      private TimeContextCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TimeContextCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TimeContextCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return ACCESS_TIME;
+          case 0:
+            return TIMECONTEXT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TimeContextCase getTimeContextCase() {
+      return TimeContextCase.forNumber(timeContextCase_);
+    }
+
+    public static final int ACCESS_TIME_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     *
+     * @return Whether the accessTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessTime() {
+      return timeContextCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     *
+     * @return The accessTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getAccessTime() {
+      if (timeContextCase_ == 1) {
+        return (com.google.protobuf.Timestamp) timeContext_;
+      }
+      return com.google.protobuf.Timestamp.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hypothetical access timestamp to evaluate IAM conditions. Note that
+     * this value must not be earlier than the current time; otherwise, an
+     * INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getAccessTimeOrBuilder() {
+      if (timeContextCase_ == 1) {
+        return (com.google.protobuf.Timestamp) timeContext_;
+      }
+      return com.google.protobuf.Timestamp.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (timeContextCase_ == 1) {
+        output.writeMessage(1, (com.google.protobuf.Timestamp) timeContext_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (timeContextCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.protobuf.Timestamp) timeContext_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext other =
+          (com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext) obj;
+
+      if (!getTimeContextCase().equals(other.getTimeContextCase())) return false;
+      switch (timeContextCase_) {
+        case 1:
+          if (!getAccessTime().equals(other.getAccessTime())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (timeContextCase_) {
+        case 1:
+          hash = (37 * hash) + ACCESS_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getAccessTime().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IAM conditions context.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.asset.v1.AssetServiceProto
+            .internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ConditionContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.asset.v1.AssetServiceProto
+            .internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ConditionContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.class,
+                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        timeContextCase_ = 0;
+        timeContext_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.asset.v1.AssetServiceProto
+            .internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ConditionContext_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+          getDefaultInstanceForType() {
+        return com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext build() {
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext buildPartial() {
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext result =
+            new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext(this);
+        if (timeContextCase_ == 1) {
+          if (accessTimeBuilder_ == null) {
+            result.timeContext_ = timeContext_;
+          } else {
+            result.timeContext_ = accessTimeBuilder_.build();
+          }
+        }
+        result.timeContextCase_ = timeContextCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext) {
+          return mergeFrom(
+              (com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext other) {
+        if (other
+            == com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+                .getDefaultInstance()) return this;
+        switch (other.getTimeContextCase()) {
+          case ACCESS_TIME:
+            {
+              mergeAccessTime(other.getAccessTime());
+              break;
+            }
+          case TIMECONTEXT_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int timeContextCase_ = 0;
+      private java.lang.Object timeContext_;
+
+      public TimeContextCase getTimeContextCase() {
+        return TimeContextCase.forNumber(timeContextCase_);
+      }
+
+      public Builder clearTimeContext() {
+        timeContextCase_ = 0;
+        timeContext_ = null;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          accessTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       *
+       * @return Whether the accessTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccessTime() {
+        return timeContextCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       *
+       * @return The accessTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getAccessTime() {
+        if (accessTimeBuilder_ == null) {
+          if (timeContextCase_ == 1) {
+            return (com.google.protobuf.Timestamp) timeContext_;
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        } else {
+          if (timeContextCase_ == 1) {
+            return accessTimeBuilder_.getMessage();
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      public Builder setAccessTime(com.google.protobuf.Timestamp value) {
+        if (accessTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeContext_ = value;
+          onChanged();
+        } else {
+          accessTimeBuilder_.setMessage(value);
+        }
+        timeContextCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      public Builder setAccessTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (accessTimeBuilder_ == null) {
+          timeContext_ = builderForValue.build();
+          onChanged();
+        } else {
+          accessTimeBuilder_.setMessage(builderForValue.build());
+        }
+        timeContextCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      public Builder mergeAccessTime(com.google.protobuf.Timestamp value) {
+        if (accessTimeBuilder_ == null) {
+          if (timeContextCase_ == 1
+              && timeContext_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            timeContext_ =
+                com.google.protobuf.Timestamp.newBuilder(
+                        (com.google.protobuf.Timestamp) timeContext_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            timeContext_ = value;
+          }
+          onChanged();
+        } else {
+          if (timeContextCase_ == 1) {
+            accessTimeBuilder_.mergeFrom(value);
+          }
+          accessTimeBuilder_.setMessage(value);
+        }
+        timeContextCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      public Builder clearAccessTime() {
+        if (accessTimeBuilder_ == null) {
+          if (timeContextCase_ == 1) {
+            timeContextCase_ = 0;
+            timeContext_ = null;
+            onChanged();
+          }
+        } else {
+          if (timeContextCase_ == 1) {
+            timeContextCase_ = 0;
+            timeContext_ = null;
+          }
+          accessTimeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getAccessTimeBuilder() {
+        return getAccessTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getAccessTimeOrBuilder() {
+        if ((timeContextCase_ == 1) && (accessTimeBuilder_ != null)) {
+          return accessTimeBuilder_.getMessageOrBuilder();
+        } else {
+          if (timeContextCase_ == 1) {
+            return (com.google.protobuf.Timestamp) timeContext_;
+          }
+          return com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hypothetical access timestamp to evaluate IAM conditions. Note that
+       * this value must not be earlier than the current time; otherwise, an
+       * INVALID_ARGUMENT error will be returned.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getAccessTimeFieldBuilder() {
+        if (accessTimeBuilder_ == null) {
+          if (!(timeContextCase_ == 1)) {
+            timeContext_ = com.google.protobuf.Timestamp.getDefaultInstance();
+          }
+          accessTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  (com.google.protobuf.Timestamp) timeContext_, getParentForChildren(), isClean());
+          timeContext_ = null;
+        }
+        timeContextCase_ = 1;
+        onChanged();
+        ;
+        return accessTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext)
+    private static final com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext();
+    }
+
+    public static com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConditionContext> PARSER =
+        new com.google.protobuf.AbstractParser<ConditionContext>() {
+          @java.lang.Override
+          public ConditionContext parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ConditionContext(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConditionContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConditionContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int SCOPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object scope_;
   /**
@@ -4360,6 +5280,61 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     return getOptions();
   }
 
+  public static final int CONDITION_CONTEXT_FIELD_NUMBER = 6;
+  private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext conditionContext_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the conditionContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasConditionContext() {
+    return conditionContext_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The conditionContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext getConditionContext() {
+    return conditionContext_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.getDefaultInstance()
+        : conditionContext_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder
+      getConditionContextOrBuilder() {
+    return getConditionContext();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4389,6 +5364,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     if (options_ != null) {
       output.writeMessage(5, getOptions());
     }
+    if (conditionContext_ != null) {
+      output.writeMessage(6, getConditionContext());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -4412,6 +5390,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
     if (options_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getOptions());
+    }
+    if (conditionContext_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getConditionContext());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4446,6 +5427,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     if (hasOptions()) {
       if (!getOptions().equals(other.getOptions())) return false;
     }
+    if (hasConditionContext() != other.hasConditionContext()) return false;
+    if (hasConditionContext()) {
+      if (!getConditionContext().equals(other.getConditionContext())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4474,6 +5459,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     if (hasOptions()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptions().hashCode();
+    }
+    if (hasConditionContext()) {
+      hash = (37 * hash) + CONDITION_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getConditionContext().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4579,7 +5568,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * IAM policy analysis query message.
+   * ## IAM policy analysis query message.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.IamPolicyAnalysisQuery}
@@ -4646,6 +5635,12 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         options_ = null;
         optionsBuilder_ = null;
       }
+      if (conditionContextBuilder_ == null) {
+        conditionContext_ = null;
+      } else {
+        conditionContext_ = null;
+        conditionContextBuilder_ = null;
+      }
       return this;
     }
 
@@ -4693,6 +5688,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         result.options_ = options_;
       } else {
         result.options_ = optionsBuilder_.build();
+      }
+      if (conditionContextBuilder_ == null) {
+        result.conditionContext_ = conditionContext_;
+      } else {
+        result.conditionContext_ = conditionContextBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4759,6 +5759,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       }
       if (other.hasOptions()) {
         mergeOptions(other.getOptions());
+      }
+      if (other.hasConditionContext()) {
+        mergeConditionContext(other.getConditionContext());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5764,6 +6767,215 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         options_ = null;
       }
       return optionsBuilder_;
+    }
+
+    private com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext conditionContext_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext,
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder,
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder>
+        conditionContextBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the conditionContext field is set.
+     */
+    public boolean hasConditionContext() {
+      return conditionContextBuilder_ != null || conditionContext_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The conditionContext.
+     */
+    public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext getConditionContext() {
+      if (conditionContextBuilder_ == null) {
+        return conditionContext_ == null
+            ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.getDefaultInstance()
+            : conditionContext_;
+      } else {
+        return conditionContextBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConditionContext(
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext value) {
+      if (conditionContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conditionContext_ = value;
+        onChanged();
+      } else {
+        conditionContextBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConditionContext(
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder builderForValue) {
+      if (conditionContextBuilder_ == null) {
+        conditionContext_ = builderForValue.build();
+        onChanged();
+      } else {
+        conditionContextBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConditionContext(
+        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext value) {
+      if (conditionContextBuilder_ == null) {
+        if (conditionContext_ != null) {
+          conditionContext_ =
+              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.newBuilder(
+                      conditionContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          conditionContext_ = value;
+        }
+        onChanged();
+      } else {
+        conditionContextBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConditionContext() {
+      if (conditionContextBuilder_ == null) {
+        conditionContext_ = null;
+        onChanged();
+      } else {
+        conditionContext_ = null;
+        conditionContextBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder
+        getConditionContextBuilder() {
+
+      onChanged();
+      return getConditionContextFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder
+        getConditionContextOrBuilder() {
+      if (conditionContextBuilder_ != null) {
+        return conditionContextBuilder_.getMessageOrBuilder();
+      } else {
+        return conditionContext_ == null
+            ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.getDefaultInstance()
+            : conditionContext_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The hypothetical context for IAM conditions evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext,
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder,
+            com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder>
+        getConditionContextFieldBuilder() {
+      if (conditionContextBuilder_ == null) {
+        conditionContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext,
+                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder,
+                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder>(
+                getConditionContext(), getParentForChildren(), isClean());
+        conditionContext_ = null;
+      }
+      return conditionContextBuilder_;
     }
 
     @java.lang.Override

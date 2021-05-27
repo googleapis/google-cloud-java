@@ -16,6 +16,7 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -39,6 +40,8 @@ import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.ListAssetsRequest;
+import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
@@ -72,6 +75,15 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1.AssetService/ExportAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ExportAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
+      listAssetsMethodDescriptor =
+          MethodDescriptor.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/ListAssets")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
@@ -172,6 +184,8 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable;
   private final UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistoryCallable;
   private final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable;
@@ -246,6 +260,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                 new RequestParamsExtractor<ExportAssetsRequest>() {
                   @Override
                   public Map<String, String> extract(ExportAssetsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
+        GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+            .setMethodDescriptor(listAssetsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListAssetsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListAssetsRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
@@ -403,6 +430,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             settings.exportAssetsOperationSettings(),
             clientContext,
             operationsStub);
+    this.listAssetsCallable =
+        callableFactory.createUnaryCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.listAssetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
     this.batchGetAssetsHistoryCallable =
         callableFactory.createUnaryCallable(
             batchGetAssetsHistoryTransportSettings,
@@ -475,6 +508,16 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   public OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable() {
     return exportAssetsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return listAssetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    return listAssetsPagedCallable;
   }
 
   @Override

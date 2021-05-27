@@ -28,6 +28,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.asset.v1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -269,6 +270,154 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
     return stub.exportAssetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ResourceName parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization or project the assets belong to. Format:
+   *     "organizations/[organization-number]" (such as "organizations/123"),
+   *     "projects/[project-id]" (such as "projects/my-project-id"), or "projects/[project-number]"
+   *     (such as "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(ResourceName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString();
+   *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization or project the assets belong to. Format:
+   *     "organizations/[organization-number]" (such as "organizations/123"),
+   *     "projects/[project-id]" (such as "projects/my-project-id"), or "projects/[project-number]"
+   *     (such as "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(String parent) {
+    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(ListAssetsRequest request) {
+    return listAssetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Asset> future = assetServiceClient.listAssetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Asset element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    return stub.listAssetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
+   *     for (Asset element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return stub.listAssetsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -747,7 +896,7 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param scope Required. A scope can be a project, a folder, or an organization. The search is
    *     limited to the resources within the `scope`. The caller must be granted the
-   *     [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   *     [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    *     permission on the desired scope.
    *     <p>The allowed values are:
    *     <ul>
@@ -758,32 +907,36 @@ public class AssetServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @param query Optional. The query statement. See [how to construct a
-   *     query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   *     query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    *     for more information. If not specified or empty, it will search all the resources within
-   *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
-   *     binding, including its members, roles, and Cloud IAM conditions. The returned Cloud IAM
-   *     policies will only contain the bindings that match your query. To learn more about the IAM
-   *     policy structure, see [IAM policy
-   *     doc](https://cloud.google.com/iam/docs/policies#structure).
+   *     the specified `scope`.
    *     <p>Examples:
    *     <ul>
    *       <li>`name:Important` to find Cloud resources whose name contains "Important" as a word.
+   *       <li>`name=Important` to find the Cloud resource whose name is exactly "Important".
    *       <li>`displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
-   *           as a prefix.
-   *       <li>`description:&#42;por&#42;` to find Cloud resources whose description contains "por"
-   *           as a substring.
-   *       <li>`location:us-west&#42;` to find Cloud resources whose location is prefixed with
-   *           "us-west".
+   *           as a prefix of any word in the field.
+   *       <li>`location:us-west&#42;` to find Cloud resources whose location contains both "us" and
+   *           "west" as prefixes.
    *       <li>`labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
    *       <li>`labels.env:prod` to find Cloud resources that have a label "env" and its value is
    *           "prod".
    *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
+   *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
+   *           whose name contains the word "key".
+   *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
+   *       <li>`NOT state:ACTIVE` to find {{gcp_name}} resources whose state doesn't contain
+   *           "ACTIVE" as a word.
+   *       <li>`createTime&lt;1609459200` to find Cloud resources that were created before
+   *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
+   *           UTC" in seconds.
+   *       <li>`updateTime&gt;1609459200` to find Cloud resources that were updated after
+   *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
+   *           UTC" in seconds.
    *       <li>`Important` to find Cloud resources that contain "Important" as a word in any of the
    *           searchable fields.
-   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix in any of the
-   *           searchable fields.
-   *       <li>`&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
-   *           the searchable fields.
+   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix of any word in
+   *           any of the searchable fields.
    *       <li>`Important location:(us-west1 OR global)` to find Cloud resources that contain
    *           "Important" as a word in any of the searchable fields and are also located in the
    *           "us-west1" region or the "global" location.
@@ -792,6 +945,16 @@ public class AssetServiceClient implements BackgroundResource {
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the [searchable asset
    *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *     <p>Regular expressions are also supported. For example:
+   *     <ul>
+   *       <li>"compute.googleapis.com.&#42;" snapshots resources whose asset type starts with
+   *           "compute.googleapis.com".
+   *       <li>".&#42;Instance" snapshots resources whose asset type ends with "Instance".
+   *       <li>".&#42;Instance.&#42;" snapshots resources whose asset type contains "Instance".
+   *     </ul>
+   *     <p>See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported regular
+   *     expression syntax. If the regular expression does not match any supported asset type, an
+   *     INVALID_ARGUMENT error will be returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAllResourcesPagedResponse searchAllResources(
@@ -933,7 +1096,7 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param scope Required. A scope can be a project, a folder, or an organization. The search is
    *     limited to the IAM policies within the `scope`. The caller must be granted the
-   *     [`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   *     [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    *     permission on the desired scope.
    *     <p>The allowed values are:
    *     <ul>
@@ -946,23 +1109,33 @@ public class AssetServiceClient implements BackgroundResource {
    * @param query Optional. The query statement. See [how to construct a
    *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
    *     for more information. If not specified or empty, it will search all the IAM policies within
-   *     the specified `scope`.
+   *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
+   *     binding, including its members, roles, and Cloud IAM conditions. The returned Cloud IAM
+   *     policies will only contain the bindings that match your query. To learn more about the IAM
+   *     policy structure, see [IAM policy
+   *     doc](https://cloud.google.com/iam/docs/policies#structure).
    *     <p>Examples:
    *     <ul>
    *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
    *           "amy{@literal @}gmail.com".
    *       <li>`policy:roles/compute.admin` to find IAM policy bindings that specify the Compute
    *           Admin role.
+   *       <li>`policy:comp&#42;` to find IAM policy bindings that contain "comp" as a prefix of any
+   *           word in the binding.
    *       <li>`policy.role.permissions:storage.buckets.update` to find IAM policy bindings that
    *           specify a role containing "storage.buckets.update" permission. Note that if callers
    *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
    *           that specify this role will be dropped from the search results.
+   *       <li>`policy.role.permissions:upd&#42;` to find IAM policy bindings that specify a role
+   *           containing "upd" as a prefix of any word in the role permission. Note that if callers
+   *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
+   *           that specify this role will be dropped from the search results.
    *       <li>`resource:organizations/123456` to find IAM policy bindings that are set on
    *           "organizations/123456".
+   *       <li>`resource=//cloudresourcemanager.googleapis.com/projects/myproject` to find IAM
+   *           policy bindings that are set on the project named "myproject".
    *       <li>`Important` to find IAM policy bindings that contain "Important" as a word in any of
    *           the searchable fields (except for the included permissions).
-   *       <li>`&#42;por&#42;` to find IAM policy bindings that contain "por" as a substring in any
-   *           of the searchable fields (except for the included permissions).
    *       <li>`resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are
    *           set on resources "instance1" or "instance2" and also specify user "amy".
    *     </ul>
@@ -1255,6 +1428,86 @@ public class AssetServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListAssetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAssetsRequest,
+          ListAssetsResponse,
+          Asset,
+          ListAssetsPage,
+          ListAssetsFixedSizeCollection> {
+
+    public static ApiFuture<ListAssetsPagedResponse> createAsync(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ApiFuture<ListAssetsResponse> futureResponse) {
+      ApiFuture<ListAssetsPage> futurePage =
+          ListAssetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListAssetsPage, ListAssetsPagedResponse>() {
+            @Override
+            public ListAssetsPagedResponse apply(ListAssetsPage input) {
+              return new ListAssetsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAssetsPagedResponse(ListAssetsPage page) {
+      super(page, ListAssetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAssetsPage
+      extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
+
+    private ListAssetsPage(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ListAssetsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAssetsPage createEmptyPage() {
+      return new ListAssetsPage(null, null);
+    }
+
+    @Override
+    protected ListAssetsPage createPage(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ListAssetsResponse response) {
+      return new ListAssetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAssetsPage> createPageAsync(
+        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        ApiFuture<ListAssetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAssetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAssetsRequest,
+          ListAssetsResponse,
+          Asset,
+          ListAssetsPage,
+          ListAssetsFixedSizeCollection> {
+
+    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAssetsFixedSizeCollection createEmptyCollection() {
+      return new ListAssetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAssetsFixedSizeCollection createCollection(
+        List<ListAssetsPage> pages, int collectionSize) {
+      return new ListAssetsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class SearchAllResourcesPagedResponse

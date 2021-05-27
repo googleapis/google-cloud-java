@@ -76,6 +76,48 @@ public final class AssetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListAssetsRequest, com.google.cloud.asset.v1.ListAssetsResponse>
+      getListAssetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAssets",
+      requestType = com.google.cloud.asset.v1.ListAssetsRequest.class,
+      responseType = com.google.cloud.asset.v1.ListAssetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListAssetsRequest, com.google.cloud.asset.v1.ListAssetsResponse>
+      getListAssetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.ListAssetsRequest,
+            com.google.cloud.asset.v1.ListAssetsResponse>
+        getListAssetsMethod;
+    if ((getListAssetsMethod = AssetServiceGrpc.getListAssetsMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getListAssetsMethod = AssetServiceGrpc.getListAssetsMethod) == null) {
+          AssetServiceGrpc.getListAssetsMethod =
+              getListAssetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.ListAssetsRequest,
+                          com.google.cloud.asset.v1.ListAssetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAssets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListAssetsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListAssetsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("ListAssets"))
+                      .build();
+        }
+      }
+    }
+    return getListAssetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest,
           com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse>
       getBatchGetAssetsHistoryMethod;
@@ -596,6 +638,21 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * </pre>
+     */
+    public void listAssets(
+        com.google.cloud.asset.v1.ListAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch gets the update history of assets that overlap a time window.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
@@ -763,6 +820,12 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.ExportAssetsRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_ASSETS)))
           .addMethod(
+              getListAssetsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.ListAssetsRequest,
+                      com.google.cloud.asset.v1.ListAssetsResponse>(this, METHODID_LIST_ASSETS)))
+          .addMethod(
               getBatchGetAssetsHistoryMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -872,6 +935,22 @@ public final class AssetServiceGrpc {
           getChannel().newCall(getExportAssetsMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * </pre>
+     */
+    public void listAssets(
+        com.google.cloud.asset.v1.ListAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAssetsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1096,6 +1175,20 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListAssetsResponse listAssets(
+        com.google.cloud.asset.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch gets the update history of assets that overlap a time window.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
@@ -1290,6 +1383,21 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Lists assets with time and resource types and returns paged results in
+     * response.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.ListAssetsResponse>
+        listAssets(com.google.cloud.asset.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAssetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch gets the update history of assets that overlap a time window.
      * For IAM_POLICY content, this API outputs history when the asset and its
      * attached IAM POLICY both exist. This can create gaps in the output history.
@@ -1446,16 +1554,17 @@ public final class AssetServiceGrpc {
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
-  private static final int METHODID_BATCH_GET_ASSETS_HISTORY = 1;
-  private static final int METHODID_CREATE_FEED = 2;
-  private static final int METHODID_GET_FEED = 3;
-  private static final int METHODID_LIST_FEEDS = 4;
-  private static final int METHODID_UPDATE_FEED = 5;
-  private static final int METHODID_DELETE_FEED = 6;
-  private static final int METHODID_SEARCH_ALL_RESOURCES = 7;
-  private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 8;
-  private static final int METHODID_ANALYZE_IAM_POLICY = 9;
-  private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 10;
+  private static final int METHODID_LIST_ASSETS = 1;
+  private static final int METHODID_BATCH_GET_ASSETS_HISTORY = 2;
+  private static final int METHODID_CREATE_FEED = 3;
+  private static final int METHODID_GET_FEED = 4;
+  private static final int METHODID_LIST_FEEDS = 5;
+  private static final int METHODID_UPDATE_FEED = 6;
+  private static final int METHODID_DELETE_FEED = 7;
+  private static final int METHODID_SEARCH_ALL_RESOURCES = 8;
+  private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 9;
+  private static final int METHODID_ANALYZE_IAM_POLICY = 10;
+  private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1478,6 +1587,12 @@ public final class AssetServiceGrpc {
           serviceImpl.exportAssets(
               (com.google.cloud.asset.v1.ExportAssetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_ASSETS:
+          serviceImpl.listAssets(
+              (com.google.cloud.asset.v1.ListAssetsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListAssetsResponse>)
+                  responseObserver);
           break;
         case METHODID_BATCH_GET_ASSETS_HISTORY:
           serviceImpl.batchGetAssetsHistory(
@@ -1599,6 +1714,7 @@ public final class AssetServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
                       .addMethod(getExportAssetsMethod())
+                      .addMethod(getListAssetsMethod())
                       .addMethod(getBatchGetAssetsHistoryMethod())
                       .addMethod(getCreateFeedMethod())
                       .addMethod(getGetFeedMethod())

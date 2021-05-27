@@ -230,4 +230,46 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * </code>
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.OptionsOrBuilder getOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the conditionContext field is set.
+   */
+  boolean hasConditionContext();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The conditionContext.
+   */
+  com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext getConditionContext();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hypothetical context for IAM conditions evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext condition_context = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder
+      getConditionContextOrBuilder();
 }

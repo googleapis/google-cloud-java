@@ -16,6 +16,7 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -34,6 +35,8 @@ import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.ListAssetsRequest;
+import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
@@ -66,6 +69,14 @@ public abstract class AssetServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
     throw new UnsupportedOperationException("Not implemented: exportAssetsCallable()");
+  }
+
+  public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssetsCallable()");
   }
 
   public UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>

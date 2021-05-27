@@ -16,6 +16,7 @@
 
 package com.google.cloud.asset.v1;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -81,6 +82,12 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   public OperationCallSettings<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).exportAssetsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAssets. */
+  public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+      listAssetsSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).listAssetsSettings();
   }
 
   /** Returns the object with the settings used for calls to batchGetAssetsHistory. */
@@ -260,6 +267,12 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
             ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
         exportAssetsOperationSettings() {
       return getStubSettingsBuilder().exportAssetsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAssets. */
+    public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+        listAssetsSettings() {
+      return getStubSettingsBuilder().listAssetsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchGetAssetsHistory. */

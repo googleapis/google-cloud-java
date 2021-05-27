@@ -31,6 +31,9 @@
             "GetFeed": {
               "methods": ["getFeed", "getFeed", "getFeed", "getFeedCallable"]
             },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
             "ListFeeds": {
               "methods": ["listFeeds", "listFeeds", "listFeedsCallable"]
             },

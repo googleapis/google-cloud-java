@@ -32,6 +32,9 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   * If the specified Cloud Storage object already exists and there is no
+   * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
+   * overwritten with the exported result.
    * </pre>
    *
    * <code>string uri = 1;</code>
@@ -48,6 +51,9 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   * If the specified Cloud Storage object already exists and there is no
+   * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
+   * overwritten with the exported result.
    * </pre>
    *
    * <code>string uri = 1;</code>
@@ -64,6 +70,9 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   * If the specified Cloud Storage object already exists and there is no
+   * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
+   * overwritten with the exported result.
    * </pre>
    *
    * <code>string uri = 1;</code>
