@@ -870,7 +870,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The state of the queue.
-   * `state` can only be changed by called
+   * `state` can only be changed by calling
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
    * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -890,7 +890,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The state of the queue.
-   * `state` can only be changed by called
+   * `state` can only be changed by calling
    * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
    * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -2940,7 +2940,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by called
+     * `state` can only be changed by calling
      * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -2960,7 +2960,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by called
+     * `state` can only be changed by calling
      * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -2983,7 +2983,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by called
+     * `state` can only be changed by calling
      * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -3006,7 +3006,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by called
+     * `state` can only be changed by calling
      * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
@@ -3032,7 +3032,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by called
+     * `state` can only be changed by calling
      * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue], or uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
