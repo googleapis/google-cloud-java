@@ -11,5 +11,6 @@
   "repo_short": "java-tpu",
   "distribution_name": "com.google.cloud:google-cloud-tpu",
   "api_id": "tpu.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
