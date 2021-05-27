@@ -10,6 +10,7 @@
   "repo": "googleapis/java-private-catalog",
   "repo_short": "java-private-catalog",
   "distribution_name": "com.google.cloud:google-cloud-private-catalog",
-  "api_id": "private-catalog.googleapis.com",
-  "requires_billing": true
+  "api_id": "privatecatalog.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO"
 }
