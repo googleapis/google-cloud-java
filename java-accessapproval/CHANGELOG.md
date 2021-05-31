@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.18...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#434](https://www.github.com/googleapis/java-accessapproval/issues/434)) ([34d5676](https://www.github.com/googleapis/java-accessapproval/commit/34d56762dce7d53d1b466171f6a0174ab4d51aad))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#433](https://www.github.com/googleapis/java-accessapproval/issues/433)) ([fdba695](https://www.github.com/googleapis/java-accessapproval/commit/fdba695b2eda6531ad94829dd524325046fb4ac2))
+
 ### [1.0.18](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.17...v1.0.18) (2021-05-11)
 
 
