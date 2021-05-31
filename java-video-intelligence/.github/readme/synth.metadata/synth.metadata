@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "e06175ef8e8bb5a77463446c80bb2d4f9de7a19e"
+        "sha": "a509db24312a4f6a98bb537f11ebdcd7bc3ebef7"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a2de127f90799cd5bace653b1dcc5dd2ca8b19c9"
+        "sha": "c3e41da0fa256ad7f6b4bc76b9d069dedecdfef4"
       }
     }
   ]
