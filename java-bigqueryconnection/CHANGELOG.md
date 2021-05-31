@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.18...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#413](https://www.github.com/googleapis/java-bigqueryconnection/issues/413)) ([00c838a](https://www.github.com/googleapis/java-bigqueryconnection/commit/00c838aa79f534990fe3a04b9fd03c991ce6b096))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#417](https://www.github.com/googleapis/java-bigqueryconnection/issues/417)) ([c3dfd76](https://www.github.com/googleapis/java-bigqueryconnection/commit/c3dfd76286f894cceaf39cfb4f9464f10f1c80e5))
+
 ### [1.0.18](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.17...v1.0.18) (2021-05-19)
 
 
