@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
@@ -586,6 +587,156 @@ public class EnvironmentsClientTest {
     try {
       String name = "name3373707";
       client.lookupEnvironmentHistory(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void runContinuousTestTest() throws Exception {
+    RunContinuousTestResponse expectedResponse =
+        RunContinuousTestResponse.newBuilder()
+            .setContinuousTestResult(ContinuousTestResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runContinuousTestTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    RunContinuousTestRequest request =
+        RunContinuousTestRequest.newBuilder()
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .build();
+
+    RunContinuousTestResponse actualResponse = client.runContinuousTestAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunContinuousTestRequest actualRequest = ((RunContinuousTestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runContinuousTestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      RunContinuousTestRequest request =
+          RunContinuousTestRequest.newBuilder()
+              .setEnvironment(
+                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                      .toString())
+              .build();
+      client.runContinuousTestAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listContinuousTestResultsTest() throws Exception {
+    ContinuousTestResult responsesElement = ContinuousTestResult.newBuilder().build();
+    ListContinuousTestResultsResponse expectedResponse =
+        ListContinuousTestResultsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContinuousTestResults(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    EnvironmentName parent =
+        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+
+    ListContinuousTestResultsPagedResponse pagedListResponse =
+        client.listContinuousTestResults(parent);
+
+    List<ContinuousTestResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContinuousTestResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListContinuousTestResultsRequest actualRequest =
+        ((ListContinuousTestResultsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listContinuousTestResultsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      EnvironmentName parent =
+          EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+      client.listContinuousTestResults(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listContinuousTestResultsTest2() throws Exception {
+    ContinuousTestResult responsesElement = ContinuousTestResult.newBuilder().build();
+    ListContinuousTestResultsResponse expectedResponse =
+        ListContinuousTestResultsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContinuousTestResults(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListContinuousTestResultsPagedResponse pagedListResponse =
+        client.listContinuousTestResults(parent);
+
+    List<ContinuousTestResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContinuousTestResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListContinuousTestResultsRequest actualRequest =
+        ((ListContinuousTestResultsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listContinuousTestResultsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listContinuousTestResults(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

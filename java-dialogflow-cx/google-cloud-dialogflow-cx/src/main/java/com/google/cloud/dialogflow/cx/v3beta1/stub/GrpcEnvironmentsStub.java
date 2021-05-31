@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
@@ -32,10 +33,15 @@ import com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.Environment;
 import com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -126,6 +132,31 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(LookupEnvironmentHistoryResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RunContinuousTestRequest, Operation>
+      runContinuousTestMethodDescriptor =
+          MethodDescriptor.<RunContinuousTestRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Environments/RunContinuousTest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunContinuousTestRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+      listContinuousTestResultsMethodDescriptor =
+          MethodDescriptor
+              .<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Environments/ListContinuousTestResults")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListContinuousTestResultsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListContinuousTestResultsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
@@ -143,6 +174,15 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<
           LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistoryPagedCallable;
+  private final UnaryCallable<RunContinuousTestRequest, Operation> runContinuousTestCallable;
+  private final OperationCallable<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationCallable;
+  private final UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+      listContinuousTestResultsCallable;
+  private final UnaryCallable<
+          ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -268,6 +308,34 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<RunContinuousTestRequest, Operation> runContinuousTestTransportSettings =
+        GrpcCallSettings.<RunContinuousTestRequest, Operation>newBuilder()
+            .setMethodDescriptor(runContinuousTestMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RunContinuousTestRequest>() {
+                  @Override
+                  public Map<String, String> extract(RunContinuousTestRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("environment", String.valueOf(request.getEnvironment()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+        listContinuousTestResultsTransportSettings =
+            GrpcCallSettings
+                .<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>newBuilder()
+                .setMethodDescriptor(listContinuousTestResultsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListContinuousTestResultsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListContinuousTestResultsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listEnvironmentsCallable =
         callableFactory.createUnaryCallable(
@@ -314,6 +382,27 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
         callableFactory.createPagedCallable(
             lookupEnvironmentHistoryTransportSettings,
             settings.lookupEnvironmentHistorySettings(),
+            clientContext);
+    this.runContinuousTestCallable =
+        callableFactory.createUnaryCallable(
+            runContinuousTestTransportSettings,
+            settings.runContinuousTestSettings(),
+            clientContext);
+    this.runContinuousTestOperationCallable =
+        callableFactory.createOperationCallable(
+            runContinuousTestTransportSettings,
+            settings.runContinuousTestOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listContinuousTestResultsCallable =
+        callableFactory.createUnaryCallable(
+            listContinuousTestResultsTransportSettings,
+            settings.listContinuousTestResultsSettings(),
+            clientContext);
+    this.listContinuousTestResultsPagedCallable =
+        callableFactory.createPagedCallable(
+            listContinuousTestResultsTransportSettings,
+            settings.listContinuousTestResultsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -378,6 +467,30 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistoryPagedCallable() {
     return lookupEnvironmentHistoryPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunContinuousTestRequest, Operation> runContinuousTestCallable() {
+    return runContinuousTestCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationCallable() {
+    return runContinuousTestOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>
+      listContinuousTestResultsCallable() {
+    return listContinuousTestResultsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListContinuousTestResultsRequest, ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsPagedCallable() {
+    return listContinuousTestResultsPagedCallable;
   }
 
   @Override

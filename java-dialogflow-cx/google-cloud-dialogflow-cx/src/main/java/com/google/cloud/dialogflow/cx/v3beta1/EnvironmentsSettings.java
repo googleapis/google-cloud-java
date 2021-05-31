@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
@@ -120,6 +121,27 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).lookupEnvironmentHistorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to runContinuousTest. */
+  public UnaryCallSettings<RunContinuousTestRequest, Operation> runContinuousTestSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).runContinuousTestSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runContinuousTest. */
+  public OperationCallSettings<
+          RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+      runContinuousTestOperationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).runContinuousTestOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listContinuousTestResults. */
+  public PagedCallSettings<
+          ListContinuousTestResultsRequest,
+          ListContinuousTestResultsResponse,
+          ListContinuousTestResultsPagedResponse>
+      listContinuousTestResultsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listContinuousTestResultsSettings();
   }
 
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
@@ -268,6 +290,28 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings() {
       return getStubSettingsBuilder().lookupEnvironmentHistorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runContinuousTest. */
+    public UnaryCallSettings.Builder<RunContinuousTestRequest, Operation>
+        runContinuousTestSettings() {
+      return getStubSettingsBuilder().runContinuousTestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runContinuousTest. */
+    public OperationCallSettings.Builder<
+            RunContinuousTestRequest, RunContinuousTestResponse, RunContinuousTestMetadata>
+        runContinuousTestOperationSettings() {
+      return getStubSettingsBuilder().runContinuousTestOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listContinuousTestResults. */
+    public PagedCallSettings.Builder<
+            ListContinuousTestResultsRequest,
+            ListContinuousTestResultsResponse,
+            ListContinuousTestResultsPagedResponse>
+        listContinuousTestResultsSettings() {
+      return getStubSettingsBuilder().listContinuousTestResultsSettings();
     }
 
     @Override
