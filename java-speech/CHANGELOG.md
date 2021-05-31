@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.29.0](https://www.github.com/googleapis/java-speech/compare/v1.28.0...v1.29.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#528](https://www.github.com/googleapis/java-speech/issues/528)) ([20bcb51](https://www.github.com/googleapis/java-speech/commit/20bcb512f6ef238ecbb71522e9d53c0c7ea7c84d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#527](https://www.github.com/googleapis/java-speech/issues/527)) ([b6a387e](https://www.github.com/googleapis/java-speech/commit/b6a387e33af29aa57e426fcbd8955e0e2ebde74b))
+* update dependency com.google.errorprone:error_prone_annotations to v2.7.1 ([#524](https://www.github.com/googleapis/java-speech/issues/524)) ([5a169b7](https://www.github.com/googleapis/java-speech/commit/5a169b72000311cbe5584114f2c23eb49e8a68ec))
+
 ## [1.28.0](https://www.github.com/googleapis/java-speech/compare/v1.27.1...v1.28.0) (2021-05-11)
 
 
