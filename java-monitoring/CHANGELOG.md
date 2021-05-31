@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-monitoring/compare/v2.2.3...v2.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#558](https://www.github.com/googleapis/java-monitoring/issues/558)) ([38ba442](https://www.github.com/googleapis/java-monitoring/commit/38ba44243fc53b769805f1a302ba1799fce6145f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#557](https://www.github.com/googleapis/java-monitoring/issues/557)) ([30dd87f](https://www.github.com/googleapis/java-monitoring/commit/30dd87fa16ac266e681e777ca53b530c7c1751c0))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#564](https://www.github.com/googleapis/java-monitoring/issues/564)) ([227eee4](https://www.github.com/googleapis/java-monitoring/commit/227eee4edb7a37cfe6cdad2e6c040f65ce0c96ce))
+
 ### [2.2.3](https://www.github.com/googleapis/java-monitoring/compare/v2.2.2...v2.2.3) (2021-05-14)
 
 
