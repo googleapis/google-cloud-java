@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-os-config/compare/v1.2.3...v1.3.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#280](https://www.github.com/googleapis/java-os-config/issues/280)) ([36dc847](https://www.github.com/googleapis/java-os-config/commit/36dc847fd46edc453c00d1822c7ab2d1d72c02cc))
+* add v1alpha and v1beta clients ([#287](https://www.github.com/googleapis/java-os-config/issues/287)) ([440e1a6](https://www.github.com/googleapis/java-os-config/commit/440e1a673802bdbac0db8fb2adfe4594098e4d47))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#279](https://www.github.com/googleapis/java-os-config/issues/279)) ([b12e8dd](https://www.github.com/googleapis/java-os-config/commit/b12e8dd34caea40de92d2deb2506f9979ac074c4))
+
 ### [1.2.3](https://www.github.com/googleapis/java-os-config/compare/v1.2.2...v1.2.3) (2021-05-14)
 
 
