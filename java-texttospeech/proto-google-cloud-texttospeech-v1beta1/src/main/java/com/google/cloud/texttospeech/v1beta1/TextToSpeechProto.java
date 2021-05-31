@@ -132,7 +132,7 @@ public final class TextToSpeechProto {
           + "exttospeech.v1beta1B\021TextToSpeechProtoP\001"
           + "ZMgoogle.golang.org/genproto/googleapis/"
           + "cloud/texttospeech/v1beta1;texttospeech\370"
-          + "\001\001\252\002!Google.Cloud.TextToSpeech.V1beta1\312\002"
+          + "\001\001\252\002!Google.Cloud.TextToSpeech.V1Beta1\312\002"
           + "!Google\\Cloud\\TextToSpeech\\V1beta1\352\002$Goo"
           + "gle::Cloud::TextToSpeech::V1beta1b\006proto"
           + "3"
