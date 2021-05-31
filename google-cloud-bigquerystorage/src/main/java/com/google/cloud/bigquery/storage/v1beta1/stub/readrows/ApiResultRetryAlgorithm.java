@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.bigquery.storage.util.Errors;
 import io.grpc.Status;
 import org.threeten.bp.Duration;
 
@@ -29,19 +30,12 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   // Duration to sleep on if the error is DEADLINE_EXCEEDED.
   public static final Duration DEADLINE_SLEEP_DURATION = Duration.ofMillis(1);
 
-  private boolean isRetryableStatus(Status status) {
-    return status.getCode() == Status.Code.INTERNAL
-        && status.getDescription() != null
-        && (status.getDescription().contains("Received unexpected EOS on DATA frame from server")
-            || status.getDescription().contains("Received Rst Stream"));
-  }
-
   @Override
   public TimedAttemptSettings createNextAttempt(
       Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (isRetryableStatus(status)) {
+      if (Errors.isRetryableInternalStatus(status)) {
         return TimedAttemptSettings.newBuilder()
             .setGlobalSettings(prevSettings.getGlobalSettings())
             .setRetryDelay(prevSettings.getRetryDelay())
@@ -59,7 +53,7 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   public boolean shouldRetry(Throwable prevThrowable, ResponseT prevResponse) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (isRetryableStatus(status)) {
+      if (Errors.isRetryableInternalStatus(status)) {
         return true;
       }
     }
