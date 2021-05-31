@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-retail/compare/v1.0.3...v1.1.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#112](https://www.github.com/googleapis/java-retail/issues/112)) ([bad144d](https://www.github.com/googleapis/java-retail/commit/bad144d492edd2ad99171169971c399772bbe0c6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#111](https://www.github.com/googleapis/java-retail/issues/111)) ([e885558](https://www.github.com/googleapis/java-retail/commit/e885558f6171195c586ad6e06a34fd877c00fda4))
+
 ### [1.0.3](https://www.github.com/googleapis/java-retail/compare/v1.0.2...v1.0.3) (2021-05-14)
 
 
