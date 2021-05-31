@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.2.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.1.0...v3.2.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#561](https://www.github.com/googleapis/java-dialogflow/issues/561)) ([2cbe20f](https://www.github.com/googleapis/java-dialogflow/commit/2cbe20fe371aca28962b5ea9b68913207f910892))
+* added a field in the query result to indicate whether slot filling is cancelled ([7d8d343](https://www.github.com/googleapis/java-dialogflow/commit/7d8d343e97d1012b7f4b19b6915073b5b1dae9e0))
+* added DTMF and PARTIAL DTMF type in recognition result ([7d8d343](https://www.github.com/googleapis/java-dialogflow/commit/7d8d343e97d1012b7f4b19b6915073b5b1dae9e0))
+* added location-aware HTTP path binding for ListIntents ([#557](https://www.github.com/googleapis/java-dialogflow/issues/557)) ([da0f279](https://www.github.com/googleapis/java-dialogflow/commit/da0f279c763956ff59b87269c6d968a750b24253))
+* added location-aware HTTP path binding for ListIntents ([#574](https://www.github.com/googleapis/java-dialogflow/issues/574)) ([7d8d343](https://www.github.com/googleapis/java-dialogflow/commit/7d8d343e97d1012b7f4b19b6915073b5b1dae9e0))
+* exposed match confidence and parameter in AnalyzeContentResponse ([7d8d343](https://www.github.com/googleapis/java-dialogflow/commit/7d8d343e97d1012b7f4b19b6915073b5b1dae9e0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#560](https://www.github.com/googleapis/java-dialogflow/issues/560)) ([f81b522](https://www.github.com/googleapis/java-dialogflow/commit/f81b522a1e44fdb06f27947096efd2e4a5ffda63))
+
 ## [3.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.2...v3.1.0) (2021-05-14)
 
 
