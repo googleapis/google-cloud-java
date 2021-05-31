@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.2.17...v1.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#846](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/846)) ([07bb7b3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/07bb7b3d07ee6ece8eb3022618b5e40faa41d3b5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.131.1 ([#845](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/845)) ([7033bfa](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/7033bfa1dae7359daa845442ae66add16a8fda0d))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#852](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/852)) ([4342d19](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/4342d19df208ada851019e458ca3a5dc8015e4fb))
+
 ### [1.2.17](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.2.16...v1.2.17) (2021-05-19)
 
 
