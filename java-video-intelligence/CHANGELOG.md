@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.6.5...v1.7.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#528](https://www.github.com/googleapis/java-video-intelligence/issues/528)) ([0208fc2](https://www.github.com/googleapis/java-video-intelligence/commit/0208fc28104a7332a2d228e2df8a2b0b47dacb19))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#527](https://www.github.com/googleapis/java-video-intelligence/issues/527)) ([e10b3c4](https://www.github.com/googleapis/java-video-intelligence/commit/e10b3c4e12989d3b2bbd2880b4ced29b73db0d2e))
+
 ### [1.6.5](https://www.github.com/googleapis/java-video-intelligence/compare/v1.6.4...v1.6.5) (2021-05-14)
 
 
