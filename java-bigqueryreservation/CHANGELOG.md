@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.1.6...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#401](https://www.github.com/googleapis/java-bigqueryreservation/issues/401)) ([86ab734](https://www.github.com/googleapis/java-bigqueryreservation/commit/86ab734f55f61703ee0e6318eaddb0d3f65a5b49))
+
 ### [1.1.6](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.1.5...v1.1.6) (2021-05-19)
 
 
