@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-iot/compare/v1.2.3...v1.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#461](https://www.github.com/googleapis/java-iot/issues/461)) ([0660812](https://www.github.com/googleapis/java-iot/commit/06608126cd1ce2d980c87518c79e3f825380a8dd))
+* add blunderbuss config to cloud iot label ([#422](https://www.github.com/googleapis/java-iot/issues/422)) ([6eb088e](https://www.github.com/googleapis/java-iot/commit/6eb088efb53bb285bb6ca99f54b04b6403305fdd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#460](https://www.github.com/googleapis/java-iot/issues/460)) ([8b9624a](https://www.github.com/googleapis/java-iot/commit/8b9624ad6732e1f9a6c958eb36ba0ef15d171df7))
+
 ### [1.2.3](https://www.github.com/googleapis/java-iot/compare/v1.2.2...v1.2.3) (2021-05-14)
 
 
