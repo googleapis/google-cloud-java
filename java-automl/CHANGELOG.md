@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-automl/compare/v1.4.3...v1.5.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#709](https://www.github.com/googleapis/java-automl/issues/709)) ([5f5e3f3](https://www.github.com/googleapis/java-automl/commit/5f5e3f392c75dcfb881ffa25104623a1d14da16d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.131.1 ([#705](https://www.github.com/googleapis/java-automl/issues/705)) ([e91d827](https://www.github.com/googleapis/java-automl/commit/e91d8276dc69793c3d186d4639251d6c0830b7b9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#708](https://www.github.com/googleapis/java-automl/issues/708)) ([b4a2c70](https://www.github.com/googleapis/java-automl/commit/b4a2c70ba58153e6dfa58418d5f9409fd2f1b57f))
+
 ### [1.4.3](https://www.github.com/googleapis/java-automl/compare/v1.4.2...v1.4.3) (2021-05-14)
 
 
