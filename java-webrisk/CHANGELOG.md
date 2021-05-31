@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-webrisk/compare/v1.1.15...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#440](https://www.github.com/googleapis/java-webrisk/issues/440)) ([c96f71f](https://www.github.com/googleapis/java-webrisk/commit/c96f71f1cfc5b6f86672c15090eed91bc7fc75c2))
+
 ### [1.1.15](https://www.github.com/googleapis/java-webrisk/compare/v1.1.14...v1.1.15) (2021-05-19)
 
 
