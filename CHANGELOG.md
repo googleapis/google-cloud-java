@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-logging/compare/v2.2.3...v2.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#534](https://www.github.com/googleapis/java-logging/issues/534)) ([5e8a13f](https://www.github.com/googleapis/java-logging/commit/5e8a13f64ef29f2541aa246771ac1659c9f29e97))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#532](https://www.github.com/googleapis/java-logging/issues/532)) ([8a30a36](https://www.github.com/googleapis/java-logging/commit/8a30a365310f07378e65e8e75e70b4fcbb920e17))
+
 ### [2.2.3](https://www.github.com/googleapis/java-logging/compare/v2.2.2...v2.2.3) (2021-05-11)
 
 
