@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-dns/compare/v1.1.6...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#417](https://www.github.com/googleapis/java-dns/issues/417)) ([3602735](https://www.github.com/googleapis/java-dns/commit/360273551f89fdf67724b3d08522f1d4011a0a3b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#416](https://www.github.com/googleapis/java-dns/issues/416)) ([41e3756](https://www.github.com/googleapis/java-dns/commit/41e37567033eaa830d25507c253939999148b95f))
+
 ### [1.1.6](https://www.github.com/googleapis/java-dns/compare/v1.1.5...v1.1.6) (2021-05-17)
 
 
