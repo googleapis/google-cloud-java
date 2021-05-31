@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.3.3...v1.4.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#533](https://www.github.com/googleapis/java-datacatalog/issues/533)) ([73513ef](https://www.github.com/googleapis/java-datacatalog/commit/73513ef9339264a054227efb986f15d69bdf545c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#532](https://www.github.com/googleapis/java-datacatalog/issues/532)) ([970ce77](https://www.github.com/googleapis/java-datacatalog/commit/970ce779ac53ab924b07b024abea8b70f6d34df7))
+
 ### [1.3.3](https://www.github.com/googleapis/java-datacatalog/compare/v1.3.2...v1.3.3) (2021-05-11)
 
 
