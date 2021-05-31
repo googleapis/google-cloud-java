@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-talent/compare/v1.1.3...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#514](https://www.github.com/googleapis/java-talent/issues/514)) ([e35e0e7](https://www.github.com/googleapis/java-talent/commit/e35e0e7bcf6ecf2accf789668a833c88f1db7535))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#513](https://www.github.com/googleapis/java-talent/issues/513)) ([3c9a807](https://www.github.com/googleapis/java-talent/commit/3c9a8072040dc508ca58cd574c62b2c27f0305d7))
+
 ### [1.1.3](https://www.github.com/googleapis/java-talent/compare/v1.1.2...v1.1.3) (2021-05-11)
 
 
