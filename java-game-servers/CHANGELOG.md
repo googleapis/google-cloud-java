@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-game-servers/compare/v1.1.3...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#435](https://www.github.com/googleapis/java-game-servers/issues/435)) ([767a89c](https://www.github.com/googleapis/java-game-servers/commit/767a89cf82aa0a6e7dde9472cde0cd2493fd1b37))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#434](https://www.github.com/googleapis/java-game-servers/issues/434)) ([b32a45b](https://www.github.com/googleapis/java-game-servers/commit/b32a45bec1537f384b53ce867083aa087b8bf0d3))
+* update dependency com.google.code.gson:gson to v2.8.7 ([#441](https://www.github.com/googleapis/java-game-servers/issues/441)) ([4480384](https://www.github.com/googleapis/java-game-servers/commit/4480384d40550027f381ef8b51355e1896736d17))
+
 ### [1.1.3](https://www.github.com/googleapis/java-game-servers/compare/v1.1.2...v1.1.3) (2021-05-11)
 
 
