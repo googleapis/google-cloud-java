@@ -1766,7 +1766,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = registrationServiceClient.getIamPolicy(request);
@@ -1790,7 +1791,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1814,7 +1816,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = registrationServiceClient.setIamPolicy(request);
@@ -1838,7 +1841,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1862,7 +1866,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = registrationServiceClient.testIamPermissions(request);
@@ -1886,7 +1891,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setResource(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
