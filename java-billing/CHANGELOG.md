@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-billing/compare/v1.1.18...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#413](https://www.github.com/googleapis/java-billing/issues/413)) ([ef341dd](https://www.github.com/googleapis/java-billing/commit/ef341dd4cb79b0d73a9815d886e24949c1cfecf9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#412](https://www.github.com/googleapis/java-billing/issues/412)) ([2dc699e](https://www.github.com/googleapis/java-billing/commit/2dc699e8f71b3c87e7d05649224ca1984830bb71))
+
 ### [1.1.18](https://www.github.com/googleapis/java-billing/compare/v1.1.17...v1.1.18) (2021-05-11)
 
 
