@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.113.0](https://www.github.com/googleapis/java-vision/compare/v1.112.3...v1.113.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#513](https://www.github.com/googleapis/java-vision/issues/513)) ([50c5c7f](https://www.github.com/googleapis/java-vision/commit/50c5c7f22c3a37e907fc3c607f947bcc9345100e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#512](https://www.github.com/googleapis/java-vision/issues/512)) ([daf6ae2](https://www.github.com/googleapis/java-vision/commit/daf6ae2f091c09eb7f0fa0221e1c339aacc25f77))
+* update spring.version to v2.5.0 ([#516](https://www.github.com/googleapis/java-vision/issues/516)) ([2fd512b](https://www.github.com/googleapis/java-vision/commit/2fd512b72bf8bbab0280e2a82744213d58ff2954))
+
 ### [1.112.3](https://www.github.com/googleapis/java-vision/compare/v1.112.2...v1.112.3) (2021-05-14)
 
 
