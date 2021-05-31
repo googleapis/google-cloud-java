@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.42.0](https://www.github.com/googleapis/java-kms/compare/v1.41.4...v1.42.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#495](https://www.github.com/googleapis/java-kms/issues/495)) ([9f4d2db](https://www.github.com/googleapis/java-kms/commit/9f4d2db9959302275f692d8f8fb9e6b73d3601db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#494](https://www.github.com/googleapis/java-kms/issues/494)) ([987a8ee](https://www.github.com/googleapis/java-kms/commit/987a8ee4990b5f6baac0b6bde8361ab27f5ee111))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#500](https://www.github.com/googleapis/java-kms/issues/500)) ([779ad04](https://www.github.com/googleapis/java-kms/commit/779ad0460de241cbdc339f3cd3cc20e70b72bb2e))
+
 ### [1.41.4](https://www.github.com/googleapis/java-kms/compare/v1.41.3...v1.41.4) (2021-05-14)
 
 
