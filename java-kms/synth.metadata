@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "b2295fd70411006c5eeb5b89206ef11b2a4ec083"
+        "sha": "93cfd17a5317f5f11e70b6b16fef42b4cdd8169a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0e915217fb5261c1e57bfaf0e16ee5c7feaaba89",
-        "internalRef": "361377784"
+        "sha": "b59fdf334dd6bba1cf11810e8bb1dbcc0e2196ec",
+        "internalRef": "375588753"
       }
     },
     {
@@ -104,16 +104,17 @@
     "codecov.yaml",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceSettings.java",
+    "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/gapic_metadata.json",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/package-info.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/GrpcKeyManagementServiceCallableFactory.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/GrpcKeyManagementServiceStub.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/KeyManagementServiceStub.java",
     "google-cloud-kms/src/main/java/com/google/cloud/kms/v1/stub/KeyManagementServiceStubSettings.java",
     "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/KeyManagementServiceClientTest.java",
-    "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicy.java",
-    "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockIAMPolicyImpl.java",
     "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementService.java",
     "google-cloud-kms/src/test/java/com/google/cloud/kms/v1/MockKeyManagementServiceImpl.java",
+    "google-cloud-kms/src/test/java/com/google/iam/v1/MockIAMPolicy.java",
+    "google-cloud-kms/src/test/java/com/google/iam/v1/MockIAMPolicyImpl.java",
     "grpc-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceGrpc.java",
     "java.header",
     "license-checks.xml",

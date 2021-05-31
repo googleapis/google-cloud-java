@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.kms.v1.stub;
 
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeyVersionsPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysP
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListImportJobsPagedResponse;
 import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -70,6 +70,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -77,58 +78,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Key Management Service (KMS) API.
+ * gRPC stub implementation for the KeyManagementService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
-
-  private static final MethodDescriptor<CreateImportJobRequest, ImportJob>
-      createImportJobMethodDescriptor =
-          MethodDescriptor.<CreateImportJobRequest, ImportJob>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/CreateImportJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateImportJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ImportJob.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<CreateCryptoKeyRequest, CryptoKey>
-      createCryptoKeyMethodDescriptor =
-          MethodDescriptor.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/CreateCryptoKey")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateCryptoKeyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
-      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
-      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListKeyRingsRequest, ListKeyRingsResponse>
       listKeyRingsMethodDescriptor =
           MethodDescriptor.<ListKeyRingsRequest, ListKeyRingsResponse>newBuilder()
@@ -138,6 +95,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKeyRingsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListCryptoKeysRequest, ListCryptoKeysResponse>
       listCryptoKeysMethodDescriptor =
           MethodDescriptor.<ListCryptoKeysRequest, ListCryptoKeysResponse>newBuilder()
@@ -148,6 +106,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCryptoKeysResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
       listCryptoKeyVersionsMethodDescriptor =
           MethodDescriptor.<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>newBuilder()
@@ -158,6 +117,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCryptoKeyVersionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListImportJobsRequest, ListImportJobsResponse>
       listImportJobsMethodDescriptor =
           MethodDescriptor.<ListImportJobsRequest, ListImportJobsResponse>newBuilder()
@@ -168,6 +128,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListImportJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetKeyRingRequest, KeyRing> getKeyRingMethodDescriptor =
       MethodDescriptor.<GetKeyRingRequest, KeyRing>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -175,6 +136,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(KeyRing.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetCryptoKeyRequest, CryptoKey>
       getCryptoKeyMethodDescriptor =
           MethodDescriptor.<GetCryptoKeyRequest, CryptoKey>newBuilder()
@@ -183,6 +145,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetCryptoKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<GetCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -192,6 +155,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(GetCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetPublicKeyRequest, PublicKey>
       getPublicKeyMethodDescriptor =
           MethodDescriptor.<GetPublicKeyRequest, PublicKey>newBuilder()
@@ -200,6 +164,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublicKey.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetImportJobRequest, ImportJob>
       getImportJobMethodDescriptor =
           MethodDescriptor.<GetImportJobRequest, ImportJob>newBuilder()
@@ -208,6 +173,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ImportJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateKeyRingRequest, KeyRing>
       createKeyRingMethodDescriptor =
           MethodDescriptor.<CreateKeyRingRequest, KeyRing>newBuilder()
@@ -217,6 +183,17 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(CreateKeyRingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KeyRing.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<CreateCryptoKeyRequest, CryptoKey>
+      createCryptoKeyMethodDescriptor =
+          MethodDescriptor.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/CreateCryptoKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCryptoKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<CreateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -226,6 +203,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(CreateCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<ImportCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -235,6 +213,17 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(ImportCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<CreateImportJobRequest, ImportJob>
+      createImportJobMethodDescriptor =
+          MethodDescriptor.<CreateImportJobRequest, ImportJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/CreateImportJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateImportJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ImportJob.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateCryptoKeyRequest, CryptoKey>
       updateCryptoKeyMethodDescriptor =
           MethodDescriptor.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -244,6 +233,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(UpdateCryptoKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -253,6 +243,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(UpdateCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<EncryptRequest, EncryptResponse> encryptMethodDescriptor =
       MethodDescriptor.<EncryptRequest, EncryptResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -260,6 +251,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(EncryptRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(EncryptResponse.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DecryptRequest, DecryptResponse> decryptMethodDescriptor =
       MethodDescriptor.<DecryptRequest, DecryptResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -267,6 +259,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DecryptRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DecryptResponse.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<AsymmetricSignRequest, AsymmetricSignResponse>
       asymmetricSignMethodDescriptor =
           MethodDescriptor.<AsymmetricSignRequest, AsymmetricSignResponse>newBuilder()
@@ -277,6 +270,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AsymmetricSignResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
       asymmetricDecryptMethodDescriptor =
           MethodDescriptor.<AsymmetricDecryptRequest, AsymmetricDecryptResponse>newBuilder()
@@ -287,6 +281,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AsymmetricDecryptResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionMethodDescriptor =
           MethodDescriptor.<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>newBuilder()
@@ -297,6 +292,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(UpdateCryptoKeyPrimaryVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKey.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
       destroyCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -306,6 +302,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   ProtoUtils.marshaller(DestroyCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionMethodDescriptor =
           MethodDescriptor.<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -316,14 +313,33 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
 
-  private final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable;
-  private final UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsCallable;
   private final UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse>
       listKeyRingsPagedCallable;
@@ -344,10 +360,12 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   private final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable;
   private final UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable;
   private final UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable;
+  private final UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable;
   private final UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable;
   private final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable;
+  private final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable;
   private final UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable;
   private final UnaryCallable<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionCallable;
@@ -362,7 +380,13 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       destroyCryptoKeyVersionCallable;
   private final UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcKeyManagementServiceStub create(KeyManagementServiceStubSettings settings)
@@ -403,73 +427,8 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
-        GrpcCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
-            .setMethodDescriptor(createImportJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateImportJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateImportJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
-        GrpcCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
-            .setMethodDescriptor(createCryptoKeyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateCryptoKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCryptoKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsTransportSettings =
         GrpcCallSettings.<ListKeyRingsRequest, ListKeyRingsResponse>newBuilder()
             .setMethodDescriptor(listKeyRingsMethodDescriptor)
@@ -605,6 +564,19 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
+        GrpcCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
+            .setMethodDescriptor(createCryptoKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateCryptoKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateCryptoKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionTransportSettings =
             GrpcCallSettings.<CreateCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
@@ -633,6 +605,19 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
+        GrpcCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
+            .setMethodDescriptor(createImportJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateImportJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateImportJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         GrpcCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
             .setMethodDescriptor(updateCryptoKeyMethodDescriptor)
@@ -759,24 +744,47 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.createImportJobCallable =
-        callableFactory.createUnaryCallable(
-            createImportJobTransportSettings, settings.createImportJobSettings(), clientContext);
-    this.createCryptoKeyCallable =
-        callableFactory.createUnaryCallable(
-            createCryptoKeyTransportSettings, settings.createCryptoKeySettings(), clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
     this.listKeyRingsCallable =
         callableFactory.createUnaryCallable(
             listKeyRingsTransportSettings, settings.listKeyRingsSettings(), clientContext);
@@ -825,6 +833,9 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
     this.createKeyRingCallable =
         callableFactory.createUnaryCallable(
             createKeyRingTransportSettings, settings.createKeyRingSettings(), clientContext);
+    this.createCryptoKeyCallable =
+        callableFactory.createUnaryCallable(
+            createCryptoKeyTransportSettings, settings.createCryptoKeySettings(), clientContext);
     this.createCryptoKeyVersionCallable =
         callableFactory.createUnaryCallable(
             createCryptoKeyVersionTransportSettings,
@@ -835,6 +846,9 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             importCryptoKeyVersionTransportSettings,
             settings.importCryptoKeyVersionSettings(),
             clientContext);
+    this.createImportJobCallable =
+        callableFactory.createUnaryCallable(
+            createImportJobTransportSettings, settings.createImportJobSettings(), clientContext);
     this.updateCryptoKeyCallable =
         callableFactory.createUnaryCallable(
             updateCryptoKeyTransportSettings, settings.updateCryptoKeySettings(), clientContext);
@@ -872,140 +886,186 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             restoreCryptoKeyVersionTransportSettings,
             settings.restoreCryptoKeyVersionSettings(),
             clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
-    return createImportJobCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
-  public UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
-    return createCryptoKeyCallable;
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
-  }
-
-  public UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse> listKeyRingsPagedCallable() {
-    return listKeyRingsPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsCallable() {
     return listKeyRingsCallable;
   }
 
+  @Override
+  public UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse> listKeyRingsPagedCallable() {
+    return listKeyRingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysResponse> listCryptoKeysCallable() {
+    return listCryptoKeysCallable;
+  }
+
+  @Override
   public UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysPagedResponse>
       listCryptoKeysPagedCallable() {
     return listCryptoKeysPagedCallable;
   }
 
-  public UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysResponse> listCryptoKeysCallable() {
-    return listCryptoKeysCallable;
-  }
-
-  public UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsPagedResponse>
-      listCryptoKeyVersionsPagedCallable() {
-    return listCryptoKeyVersionsPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
       listCryptoKeyVersionsCallable() {
     return listCryptoKeyVersionsCallable;
   }
 
+  @Override
+  public UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsPagedResponse>
+      listCryptoKeyVersionsPagedCallable() {
+    return listCryptoKeyVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable() {
+    return listImportJobsCallable;
+  }
+
+  @Override
   public UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
       listImportJobsPagedCallable() {
     return listImportJobsPagedCallable;
   }
 
-  public UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable() {
-    return listImportJobsCallable;
-  }
-
+  @Override
   public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
     return getKeyRingCallable;
   }
 
+  @Override
   public UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable() {
     return getCryptoKeyCallable;
   }
 
+  @Override
   public UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion> getCryptoKeyVersionCallable() {
     return getCryptoKeyVersionCallable;
   }
 
+  @Override
   public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
     return getPublicKeyCallable;
   }
 
+  @Override
   public UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
     return getImportJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
     return createKeyRingCallable;
   }
 
+  @Override
+  public UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
+    return createCryptoKeyCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionCallable() {
     return createCryptoKeyVersionCallable;
   }
 
+  @Override
   public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable() {
     return importCryptoKeyVersionCallable;
   }
 
+  @Override
+  public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
+    return createImportJobCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable() {
     return updateCryptoKeyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
       updateCryptoKeyVersionCallable() {
     return updateCryptoKeyVersionCallable;
   }
 
+  @Override
   public UnaryCallable<EncryptRequest, EncryptResponse> encryptCallable() {
     return encryptCallable;
   }
 
+  @Override
   public UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable() {
     return decryptCallable;
   }
 
+  @Override
   public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {
     return asymmetricSignCallable;
   }
 
+  @Override
   public UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
       asymmetricDecryptCallable() {
     return asymmetricDecryptCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionCallable() {
     return updateCryptoKeyPrimaryVersionCallable;
   }
 
+  @Override
   public UnaryCallable<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
       destroyCryptoKeyVersionCallable() {
     return destroyCryptoKeyVersionCallable;
   }
 
+  @Override
   public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable() {
     return restoreCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override
