@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-iamcredentials/compare/v1.2.5...v1.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#444](https://www.github.com/googleapis/java-iamcredentials/issues/444)) ([aaf884c](https://www.github.com/googleapis/java-iamcredentials/commit/aaf884c4603e9087069ebe5e2ce0b55113c5543f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#443](https://www.github.com/googleapis/java-iamcredentials/issues/443)) ([b2dc131](https://www.github.com/googleapis/java-iamcredentials/commit/b2dc1314b498606e2dbf9a019130e5112b8ae934))
+
 ### [1.2.5](https://www.github.com/googleapis/java-iamcredentials/compare/v1.2.4...v1.2.5) (2021-05-11)
 
 
