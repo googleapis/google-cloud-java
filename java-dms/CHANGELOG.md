@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/googleapis/java-dms/compare/v0.1.0...v0.1.1) (2021-05-31)
+
+
+### Dependencies
+
+* update shared-config ([#17](https://www.github.com/googleapis/java-dms/issues/17)) ([03fadb8](https://www.github.com/googleapis/java-dms/commit/03fadb828255d7c134ddbd3982c338188a9e9b9c))
+
 ## 0.1.0 (2021-05-12)
 
 
