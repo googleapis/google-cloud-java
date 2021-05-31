@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-document-ai/compare/v0.8.2...v1.0.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#490](https://www.github.com/googleapis/java-document-ai/issues/490)) ([0f2808e](https://www.github.com/googleapis/java-document-ai/commit/0f2808e78337a196108907d19805c77a5278c6b1))
+* release 1.0.0 ([#475](https://www.github.com/googleapis/java-document-ai/issues/475)) ([c4cb6ec](https://www.github.com/googleapis/java-document-ai/commit/c4cb6ec92f03a0c57b648780f9967c4affb9e74d))
+* Use non-regionalized default host name for documentai.googleapis.com ([#476](https://www.github.com/googleapis/java-document-ai/issues/476)) ([8b0c212](https://www.github.com/googleapis/java-document-ai/commit/8b0c2129d2e827fa671ba939852bdfa33b0434a5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#489](https://www.github.com/googleapis/java-document-ai/issues/489)) ([fe100b0](https://www.github.com/googleapis/java-document-ai/commit/fe100b03943f74fb4b883c9d12af49acbe22bd24))
+
 ### [0.8.2](https://www.github.com/googleapis/java-document-ai/compare/v0.8.1...v0.8.2) (2021-05-13)
 
 
