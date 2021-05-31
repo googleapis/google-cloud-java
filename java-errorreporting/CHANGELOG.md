@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.121.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.25...v0.121.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#541](https://www.github.com/googleapis/java-errorreporting/issues/541)) ([95adb02](https://www.github.com/googleapis/java-errorreporting/commit/95adb02e2f03c0116789c33adf4247475c5caa3d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#540](https://www.github.com/googleapis/java-errorreporting/issues/540)) ([160a4c2](https://www.github.com/googleapis/java-errorreporting/commit/160a4c207c598bd092baef6e48ccd75517d8c3ba))
+
 ### [0.120.25](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.24...v0.120.25) (2021-05-11)
 
 
