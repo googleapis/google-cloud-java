@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.16...v0.120.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#488](https://www.github.com/googleapis/java-datalabeling/issues/488)) ([a344e20](https://www.github.com/googleapis/java-datalabeling/commit/a344e20a4d556620f961e0cc11c39b65166ac713))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#487](https://www.github.com/googleapis/java-datalabeling/issues/487)) ([560ce47](https://www.github.com/googleapis/java-datalabeling/commit/560ce47c22be70e17fb671b3920241445c08c5b8))
+
 ### [0.119.16](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.15...v0.119.16) (2021-05-14)
 
 
