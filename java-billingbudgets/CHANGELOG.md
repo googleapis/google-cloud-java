@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-billingbudgets/compare/v1.1.1...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#477](https://www.github.com/googleapis/java-billingbudgets/issues/477)) ([31aaf8d](https://www.github.com/googleapis/java-billingbudgets/commit/31aaf8d5f6ec847109c8d6c074012c22c62dd585))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#476](https://www.github.com/googleapis/java-billingbudgets/issues/476)) ([bd48a75](https://www.github.com/googleapis/java-billingbudgets/commit/bd48a7582a3d29f0f63ffaf1ecd34b85d6e7626a))
+
 ### [1.1.1](https://www.github.com/googleapis/java-billingbudgets/compare/v1.1.0...v1.1.1) (2021-05-11)
 
 
