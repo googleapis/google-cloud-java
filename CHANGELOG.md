@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.22.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.21.1...v1.22.0) (2021-05-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove default deadline for AppendRows API (#1101)
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#1092](https://www.github.com/googleapis/java-bigquerystorage/issues/1092)) ([9fe34d1](https://www.github.com/googleapis/java-bigquerystorage/commit/9fe34d1a7ea2b4c1f750fd8805251811a4b0111d))
+
+
+### Bug Fixes
+
+* More robust STREAM_RST logic ([#1102](https://www.github.com/googleapis/java-bigquerystorage/issues/1102)) ([dd67534](https://www.github.com/googleapis/java-bigquerystorage/commit/dd675343b20d614eaf715306f1151532a3a2c33f))
+* remove default deadline for AppendRows API ([#1101](https://www.github.com/googleapis/java-bigquerystorage/issues/1101)) ([87cadf0](https://www.github.com/googleapis/java-bigquerystorage/commit/87cadf01edbdaf876699e98f027835d6594f8072))
+
+
+### Dependencies
+
+* update arrow.version to v4.0.1 ([#1103](https://www.github.com/googleapis/java-bigquerystorage/issues/1103)) ([b2e3489](https://www.github.com/googleapis/java-bigquerystorage/commit/b2e34894f443075ce375b822babcfc329b34c76c))
+* update dependency com.google.truth:truth to v1.1.3 ([#1100](https://www.github.com/googleapis/java-bigquerystorage/issues/1100)) ([12c401f](https://www.github.com/googleapis/java-bigquerystorage/commit/12c401feec1fb7fbaf39ea7ccffee4a02faffeb3))
+
 ### [1.21.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.21.0...v1.21.1) (2021-05-19)
 
 
