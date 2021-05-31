@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.1.5...v1.2.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#454](https://www.github.com/googleapis/java-recaptchaenterprise/issues/454)) ([b006e2f](https://www.github.com/googleapis/java-recaptchaenterprise/commit/b006e2f98375d9da5a75d4150fdc799203eb98e0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#453](https://www.github.com/googleapis/java-recaptchaenterprise/issues/453)) ([1e63b18](https://www.github.com/googleapis/java-recaptchaenterprise/commit/1e63b1886005a18d1ff39e4569e9a61b3cc14010))
+
 ### [1.1.5](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.1.4...v1.1.5) (2021-05-11)
 
 
