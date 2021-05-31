@@ -19,7 +19,11 @@
  *
  * <p>======================= ServiceUsageClient =======================
  *
- * <p>Service Description: [Service Usage API](/service-usage/docs/overview)
+ * <p>Service Description: Enables services that service consumers want to use on Google Cloud
+ * Platform, lists the available or enabled services, or disables services that service consumers no
+ * longer use.
+ *
+ * <p>See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * <p>Sample for ServiceUsageClient:
  *

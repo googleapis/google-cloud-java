@@ -19,7 +19,7 @@
  *
  * <p>======================= ServiceUsageClient =======================
  *
- * <p>Service Description: [Service Usage API](/service-usage/docs/overview)
+ * <p>Service Description: [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * <p>Sample for ServiceUsageClient:
  *

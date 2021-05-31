@@ -72,10 +72,13 @@ public final class ResourcesProto {
           + "\022*\n\nmonitoring\030\034 \001(\0132\026.google.api.Monito"
           + "ring\"+\n\021OperationMetadata\022\026\n\016resource_na"
           + "mes\030\002 \003(\t*9\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002Bz\n\036com.goog"
-          + "le.api.serviceusage.v1B\016ResourcesProtoP\001"
-          + "ZFgoogle.golang.org/genproto/googleapis/"
-          + "api/serviceusage/v1;serviceusageb\006proto3"
+          + "\000\022\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002B\332\001\n\036com.goo"
+          + "gle.api.serviceusage.v1B\016ResourcesProtoP"
+          + "\001ZFgoogle.golang.org/genproto/googleapis"
+          + "/api/serviceusage/v1;serviceusage\252\002\034Goog"
+          + "le.Cloud.ServiceUsage.V1\312\002\034Google\\Cloud\\"
+          + "ServiceUsage\\V1\352\002\037Google::Cloud::Service"
+          + "Usage::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

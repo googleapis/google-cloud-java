@@ -149,10 +149,13 @@ public final class ServiceUsageProto {
           + "oogleapis.com/auth/cloud-platform,https:"
           + "//www.googleapis.com/auth/cloud-platform"
           + ".read-only,https://www.googleapis.com/au"
-          + "th/service.managementB}\n\036com.google.api."
-          + "serviceusage.v1B\021ServiceUsageProtoP\001ZFgo"
-          + "ogle.golang.org/genproto/googleapis/api/"
-          + "serviceusage/v1;serviceusageb\006proto3"
+          + "th/service.managementB\335\001\n\036com.google.api"
+          + ".serviceusage.v1B\021ServiceUsageProtoP\001ZFg"
+          + "oogle.golang.org/genproto/googleapis/api"
+          + "/serviceusage/v1;serviceusage\252\002\034Google.C"
+          + "loud.ServiceUsage.V1\312\002\034Google\\Cloud\\Serv"
+          + "iceUsage\\V1\352\002\037Google::Cloud::ServiceUsag"
+          + "e::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

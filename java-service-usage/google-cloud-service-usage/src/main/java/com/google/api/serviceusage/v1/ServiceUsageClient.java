@@ -40,7 +40,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Service Usage API](/service-usage/docs/overview)
+ * Service Description: Enables services that service consumers want to use on Google Cloud
+ * Platform, lists the available or enabled services, or disables services that service consumers no
+ * longer use.
+ *
+ * <p>See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

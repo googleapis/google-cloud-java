@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Service Usage API](/service-usage/docs/overview)
+ * Service Description: [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
