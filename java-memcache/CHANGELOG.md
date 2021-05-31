@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-memcache/compare/v1.0.5...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#403](https://www.github.com/googleapis/java-memcache/issues/403)) ([7a01982](https://www.github.com/googleapis/java-memcache/commit/7a019824e16438cfa47d5edf2afec8a391c371d3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#402](https://www.github.com/googleapis/java-memcache/issues/402)) ([6208ee1](https://www.github.com/googleapis/java-memcache/commit/6208ee1b82cbe54493751758cc8986502e632619))
+
 ### [1.0.5](https://www.github.com/googleapis/java-memcache/compare/v1.0.4...v1.0.5) (2021-05-14)
 
 
