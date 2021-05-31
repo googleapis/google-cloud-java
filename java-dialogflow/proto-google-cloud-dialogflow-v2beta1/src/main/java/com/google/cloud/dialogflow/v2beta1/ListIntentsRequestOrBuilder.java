@@ -28,7 +28,14 @@ public interface ListIntentsRequestOrBuilder
    *
    * <pre>
    * Required. The agent to list all intents from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   * Alternatively, you can specify the environment to list intents for.
+   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`.
+   * Note: training phrases of the intents will not be returned for non-draft
+   * environment.
    * </pre>
    *
    * <code>
@@ -43,7 +50,14 @@ public interface ListIntentsRequestOrBuilder
    *
    * <pre>
    * Required. The agent to list all intents from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   * Alternatively, you can specify the environment to list intents for.
+   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`.
+   * Note: training phrases of the intents will not be returned for non-draft
+   * environment.
    * </pre>
    *
    * <code>

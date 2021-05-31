@@ -202,14 +202,69 @@ public interface AutomatedAgentReplyOrBuilder
    *
    *
    * <pre>
-   * The collection of current Dialogflow CX agent session parameters at the
-   * time of this response.
+   * The confidence of the match. Values range from 0.0 (completely uncertain)
+   * to 1.0 (completely certain).
+   * This value is for informational purpose only and is only used to help match
+   * the best intent within the classification threshold. This value may change
+   * for the same end-user expression at any time due to a model retraining or
+   * change in implementation.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>float match_confidence = 9;</code>
+   *
+   * @return The matchConfidence.
+   */
+  float getMatchConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  boolean hasParameters();
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return The parameters.
+   */
+  com.google.protobuf.Struct getParameters();
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   */
+  com.google.protobuf.StructOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current Dialogflow CX agent session parameters at the
+   * time of this response.
+   * Deprecated: Use `parameters` instead.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @return Whether the cxSessionParameters field is set.
    */
+  @java.lang.Deprecated
   boolean hasCxSessionParameters();
   /**
    *
@@ -217,12 +272,14 @@ public interface AutomatedAgentReplyOrBuilder
    * <pre>
    * The collection of current Dialogflow CX agent session parameters at the
    * time of this response.
+   * Deprecated: Use `parameters` instead.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @return The cxSessionParameters.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Struct getCxSessionParameters();
   /**
    *
@@ -230,10 +287,12 @@ public interface AutomatedAgentReplyOrBuilder
    * <pre>
    * The collection of current Dialogflow CX agent session parameters at the
    * time of this response.
+   * Deprecated: Use `parameters` instead.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder();
 
   public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.ResponseCase getResponseCase();

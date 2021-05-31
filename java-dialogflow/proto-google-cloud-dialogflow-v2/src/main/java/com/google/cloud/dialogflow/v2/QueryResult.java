@@ -228,6 +228,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 168:
+            {
+              cancelsSlotFilling_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -565,6 +570,25 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getAllRequiredParamsPresent() {
     return allRequiredParamsPresent_;
+  }
+
+  public static final int CANCELS_SLOT_FILLING_FIELD_NUMBER = 21;
+  private boolean cancelsSlotFilling_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the conversational query triggers a cancellation for slot
+   * filling.
+   * </pre>
+   *
+   * <code>bool cancels_slot_filling = 21;</code>
+   *
+   * @return The cancelsSlotFilling.
+   */
+  @java.lang.Override
+  public boolean getCancelsSlotFilling() {
+    return cancelsSlotFilling_;
   }
 
   public static final int FULFILLMENT_TEXT_FIELD_NUMBER = 6;
@@ -1129,6 +1153,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (sentimentAnalysisResult_ != null) {
       output.writeMessage(17, getSentimentAnalysisResult());
     }
+    if (cancelsSlotFilling_ != false) {
+      output.writeBool(21, cancelsSlotFilling_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1188,6 +1215,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getSentimentAnalysisResult());
     }
+    if (cancelsSlotFilling_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, cancelsSlotFilling_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1214,6 +1244,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (!getParameters().equals(other.getParameters())) return false;
     }
     if (getAllRequiredParamsPresent() != other.getAllRequiredParamsPresent()) return false;
+    if (getCancelsSlotFilling() != other.getCancelsSlotFilling()) return false;
     if (!getFulfillmentText().equals(other.getFulfillmentText())) return false;
     if (!getFulfillmentMessagesList().equals(other.getFulfillmentMessagesList())) return false;
     if (!getWebhookSource().equals(other.getWebhookSource())) return false;
@@ -1261,6 +1292,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ALL_REQUIRED_PARAMS_PRESENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllRequiredParamsPresent());
+    hash = (37 * hash) + CANCELS_SLOT_FILLING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCancelsSlotFilling());
     hash = (37 * hash) + FULFILLMENT_TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getFulfillmentText().hashCode();
     if (getFulfillmentMessagesCount() > 0) {
@@ -1455,6 +1488,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       allRequiredParamsPresent_ = false;
 
+      cancelsSlotFilling_ = false;
+
       fulfillmentText_ = "";
 
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1535,6 +1570,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         result.parameters_ = parametersBuilder_.build();
       }
       result.allRequiredParamsPresent_ = allRequiredParamsPresent_;
+      result.cancelsSlotFilling_ = cancelsSlotFilling_;
       result.fulfillmentText_ = fulfillmentText_;
       if (fulfillmentMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -1645,6 +1681,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getAllRequiredParamsPresent() != false) {
         setAllRequiredParamsPresent(other.getAllRequiredParamsPresent());
+      }
+      if (other.getCancelsSlotFilling() != false) {
+        setCancelsSlotFilling(other.getCancelsSlotFilling());
       }
       if (!other.getFulfillmentText().isEmpty()) {
         fulfillmentText_ = other.fulfillmentText_;
@@ -2551,6 +2590,61 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAllRequiredParamsPresent() {
 
       allRequiredParamsPresent_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean cancelsSlotFilling_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     *
+     * @return The cancelsSlotFilling.
+     */
+    @java.lang.Override
+    public boolean getCancelsSlotFilling() {
+      return cancelsSlotFilling_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     *
+     * @param value The cancelsSlotFilling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCancelsSlotFilling(boolean value) {
+
+      cancelsSlotFilling_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the conversational query triggers a cancellation for slot
+     * filling.
+     * </pre>
+     *
+     * <code>bool cancels_slot_filling = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCancelsSlotFilling() {
+
+      cancelsSlotFilling_ = false;
       onChanged();
       return this;
     }

@@ -233,6 +233,20 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
+   * Indicates whether the conversational query triggers a cancellation for slot
+   * filling.
+   * </pre>
+   *
+   * <code>bool cancels_slot_filling = 21;</code>
+   *
+   * @return The cancelsSlotFilling.
+   */
+  boolean getCancelsSlotFilling();
+
+  /**
+   *
+   *
+   * <pre>
    * The text to be pronounced to the user or shown on the screen.
    * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
