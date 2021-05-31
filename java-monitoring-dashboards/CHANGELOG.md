@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.2.2...v1.3.0) (2021-05-26)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#379](https://www.github.com/googleapis/java-monitoring-dashboards/issues/379)) ([0c68376](https://www.github.com/googleapis/java-monitoring-dashboards/commit/0c68376509f65ac9bc96fdd54c671bae0bc17841))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#378](https://www.github.com/googleapis/java-monitoring-dashboards/issues/378)) ([dcfc5d6](https://www.github.com/googleapis/java-monitoring-dashboards/commit/dcfc5d6094e626ee992af7056da7dc351250105e))
+
 ### [1.2.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.2.1...v1.2.2) (2021-05-14)
 
 
