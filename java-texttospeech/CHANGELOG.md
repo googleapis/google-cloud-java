@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.4.2...v1.5.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#462](https://www.github.com/googleapis/java-texttospeech/issues/462)) ([311b4a4](https://www.github.com/googleapis/java-texttospeech/commit/311b4a4098c833d72855aeb33fbae84231ef6b96))
+
+
+### Bug Fixes
+
+* Fix the last element of the C# namespace to V1Beta1 instead of V1beta1 ([#468](https://www.github.com/googleapis/java-texttospeech/issues/468)) ([90a9d8c](https://www.github.com/googleapis/java-texttospeech/commit/90a9d8c891166a617c9c7f60744d6d386bed19eb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#461](https://www.github.com/googleapis/java-texttospeech/issues/461)) ([999f9f5](https://www.github.com/googleapis/java-texttospeech/commit/999f9f573ee2c2aa3a17136003e483384e7e05ef))
+
 ### [1.4.2](https://www.github.com/googleapis/java-texttospeech/compare/v1.4.1...v1.4.2) (2021-05-11)
 
 
