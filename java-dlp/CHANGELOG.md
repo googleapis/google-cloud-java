@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-dlp/compare/v2.3.4...v2.4.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#531](https://www.github.com/googleapis/java-dlp/issues/531)) ([5bc1ab9](https://www.github.com/googleapis/java-dlp/commit/5bc1ab99c9f145d6f1becb05869b8be682821afa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#532](https://www.github.com/googleapis/java-dlp/issues/532)) ([2a82b38](https://www.github.com/googleapis/java-dlp/commit/2a82b38d4b46f6145f8d1dc298dc52b819360afd))
+
 ### [2.3.4](https://www.github.com/googleapis/java-dlp/compare/v2.3.3...v2.3.4) (2021-05-14)
 
 
