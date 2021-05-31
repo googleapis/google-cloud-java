@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.5.2...v1.6.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#485](https://www.github.com/googleapis/java-secretmanager/issues/485)) ([1e08041](https://www.github.com/googleapis/java-secretmanager/commit/1e080418f12bcdc9d158684d19ce369161a1d5a5))
+* Etags in Secret Manager ([#481](https://www.github.com/googleapis/java-secretmanager/issues/481)) ([b2b9934](https://www.github.com/googleapis/java-secretmanager/commit/b2b993438c3ebad007cf968f82ae4da7b1eabe1c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#484](https://www.github.com/googleapis/java-secretmanager/issues/484)) ([0006e34](https://www.github.com/googleapis/java-secretmanager/commit/0006e34ed6ddc98b4b111b51ec99d29477c12ebd))
+* update dependency com.google.protobuf:protobuf-java-util to v3.17.1 ([#490](https://www.github.com/googleapis/java-secretmanager/issues/490)) ([f94276f](https://www.github.com/googleapis/java-secretmanager/commit/f94276fd3408237ed4a4037352410d9d573625d8))
+
 ### [1.5.2](https://www.github.com/googleapis/java-secretmanager/compare/v1.5.1...v1.5.2) (2021-05-14)
 
 
