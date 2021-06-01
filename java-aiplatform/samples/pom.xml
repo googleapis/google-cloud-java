@@ -5,10 +5,10 @@
   <artifactId>google-cloud-aiplatform-samples</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- This artifact should not be released -->
   <packaging>pom</packaging>
-  <name>Google AI Platform Samples Parent</name>
+  <name>Google Cloud Vertex AI Samples Parent</name>
   <url>https://github.com/googleapis/java-aiplatform</url>
   <description>
-    Java idiomatic client for Google Cloud Platform services.
+    Java client samples for Google Cloud Vertex AI services.
   </description>
 
   <!--

@@ -5,9 +5,9 @@
   <artifactId>google-cloud-aiplatform</artifactId>
   <version>0.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <packaging>jar</packaging>
-  <name>Google AI Platform</name>
+  <name>Google Cloud Vertex AI</name>
   <url>https://github.com/googleapis/java-aiplatform</url>
-  <description>brings AutoML and AI Platform (Legacy) together into a unified API, client library, and user interface.</description>
+  <description>Java client for Google Cloud Vertex AI services.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform-parent</artifactId>
