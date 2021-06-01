@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-notification/compare/v0.121.11...v0.122.0) (2021-06-01)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#318](https://www.github.com/googleapis/java-notification/issues/318)) ([f71d23c](https://www.github.com/googleapis/java-notification/commit/f71d23c91224e44b681cd6b3c07ee3446b5d6a65))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.112.5 ([#314](https://www.github.com/googleapis/java-notification/issues/314)) ([9c89b48](https://www.github.com/googleapis/java-notification/commit/9c89b486eac5ed3ebe9aaf266f82e26372c3daa7))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.113.0 ([#324](https://www.github.com/googleapis/java-notification/issues/324)) ([9233c66](https://www.github.com/googleapis/java-notification/commit/9233c665e7744051bba6e1691d4fc9e2f5303c9f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#317](https://www.github.com/googleapis/java-notification/issues/317)) ([9ca3a7e](https://www.github.com/googleapis/java-notification/commit/9ca3a7e7a8c0e88fc52c6f604f3cbb4a04257ba6))
+* update dependency com.google.cloud:google-cloud-storage to v1.115.0 ([#311](https://www.github.com/googleapis/java-notification/issues/311)) ([67d8bf4](https://www.github.com/googleapis/java-notification/commit/67d8bf43fbb9802a427c7f63cd19454a942728aa))
+
 ### [0.121.11](https://www.github.com/googleapis/java-notification/compare/v0.121.10...v0.121.11) (2021-05-11)
 
 
