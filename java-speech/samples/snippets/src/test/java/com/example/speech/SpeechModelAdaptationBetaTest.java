@@ -34,7 +34,7 @@ public class SpeechModelAdaptationBetaTest {
   private static String UNIQUE_ID = UUID.randomUUID().toString();
   private static final String AUDIO_FILE = "gs://cloud-samples-tests/speech/brooklyn.flac";
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String LOCATION = "us-west1";
+  private static final String LOCATION = "global";
   private static final String CUSTOM_CLASS_ID = "customClassId" + UNIQUE_ID;
   private static final String PHRASE_SET_ID = "phraseSetId" + UNIQUE_ID;
   private ByteArrayOutputStream bout;
