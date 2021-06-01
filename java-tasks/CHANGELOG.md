@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.33.0](https://www.github.com/googleapis/java-tasks/compare/v1.32.4...v1.33.0) (2021-05-27)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#438](https://www.github.com/googleapis/java-tasks/issues/438)) ([2dcf421](https://www.github.com/googleapis/java-tasks/commit/2dcf421900073d42bd5c7218826bfdb1e7088ec2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.2.0 ([#437](https://www.github.com/googleapis/java-tasks/issues/437)) ([d38ae30](https://www.github.com/googleapis/java-tasks/commit/d38ae30439cf91434c6b39ea3416e73d170c32a6))
+
+
+### Documentation
+
+* fix grammar in documentation. ([#444](https://www.github.com/googleapis/java-tasks/issues/444)) ([5f67b25](https://www.github.com/googleapis/java-tasks/commit/5f67b252adc10509a544b780840574965e3395f7))
+
 ### [1.32.4](https://www.github.com/googleapis/java-tasks/compare/v1.32.3...v1.32.4) (2021-05-11)
 
 
