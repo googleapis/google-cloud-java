@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * A service for creating and managing AI Platform's Index resources.
+ * A service for creating and managing Vertex AI's Index resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -299,7 +299,7 @@ public final class IndexServiceGrpc {
    *
    *
    * <pre>
-   * A service for creating and managing AI Platform's Index resources.
+   * A service for creating and managing Vertex AI's Index resources.
    * </pre>
    */
   public abstract static class IndexServiceImplBase implements io.grpc.BindableService {
@@ -418,7 +418,7 @@ public final class IndexServiceGrpc {
    *
    *
    * <pre>
-   * A service for creating and managing AI Platform's Index resources.
+   * A service for creating and managing Vertex AI's Index resources.
    * </pre>
    */
   public static final class IndexServiceStub
@@ -518,7 +518,7 @@ public final class IndexServiceGrpc {
    *
    *
    * <pre>
-   * A service for creating and managing AI Platform's Index resources.
+   * A service for creating and managing Vertex AI's Index resources.
    * </pre>
    */
   public static final class IndexServiceBlockingStub
@@ -605,7 +605,7 @@ public final class IndexServiceGrpc {
    *
    *
    * <pre>
-   * A service for creating and managing AI Platform's Index resources.
+   * A service for creating and managing Vertex AI's Index resources.
    * </pre>
    */
   public static final class IndexServiceFutureStub

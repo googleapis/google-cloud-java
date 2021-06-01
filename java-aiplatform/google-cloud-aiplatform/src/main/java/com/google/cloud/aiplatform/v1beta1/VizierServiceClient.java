@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Cloud AI Platform Vizier API.
+ * Service Description: Vertex Vizier API.
  *
  * <p>Vizier service is a GCP service to solve blackbox optimization problems, such as tuning
  * machine learning hyperparameters and searching over deep learning architectures.
@@ -686,8 +686,8 @@ public class VizierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds one or more Trials to a Study, with parameter values suggested by AI Platform Vizier.
-   * Returns a long-running operation associated with the generation of Trial suggestions. When this
+   * Adds one or more Trials to a Study, with parameter values suggested by Vertex Vizier. Returns a
+   * long-running operation associated with the generation of Trial suggestions. When this
    * long-running operation succeeds, it will contain a
    * [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
    *
@@ -715,8 +715,8 @@ public class VizierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds one or more Trials to a Study, with parameter values suggested by AI Platform Vizier.
-   * Returns a long-running operation associated with the generation of Trial suggestions. When this
+   * Adds one or more Trials to a Study, with parameter values suggested by Vertex Vizier. Returns a
+   * long-running operation associated with the generation of Trial suggestions. When this
    * long-running operation succeeds, it will contain a
    * [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
    *
@@ -744,8 +744,8 @@ public class VizierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Adds one or more Trials to a Study, with parameter values suggested by AI Platform Vizier.
-   * Returns a long-running operation associated with the generation of Trial suggestions. When this
+   * Adds one or more Trials to a Study, with parameter values suggested by Vertex Vizier. Returns a
+   * long-running operation associated with the generation of Trial suggestions. When this
    * long-running operation succeeds, it will contain a
    * [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
    *

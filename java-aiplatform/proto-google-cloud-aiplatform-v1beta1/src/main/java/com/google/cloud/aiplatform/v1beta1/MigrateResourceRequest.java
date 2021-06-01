@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Config of migrating one resource from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.MigrateResourceRequest}
@@ -288,7 +288,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -301,7 +301,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -315,7 +315,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * Protobuf type {@code
@@ -547,7 +547,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -571,7 +571,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the model in AI Platform.
+     * Required. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -800,7 +800,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * Protobuf type {@code
@@ -1262,7 +1262,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1285,7 +1285,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1308,7 +1308,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1330,7 +1330,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1348,7 +1348,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the model in AI Platform.
+       * Required. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -1470,7 +1470,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1483,7 +1483,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1497,7 +1497,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * Protobuf type {@code
@@ -1660,7 +1660,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1684,7 +1684,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -1900,7 +1900,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * Protobuf type {@code
@@ -2216,7 +2216,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2239,7 +2239,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2262,7 +2262,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2284,7 +2284,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2302,7 +2302,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the model in AI Platform.
+       * Optional. Display name of the model in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -2422,7 +2422,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2435,7 +2435,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2449,7 +2449,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -2614,7 +2614,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2638,7 +2638,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Display name of the Dataset in AI Platform.
+     * Required. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -2855,7 +2855,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -3175,7 +3175,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -3198,7 +3198,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -3221,7 +3221,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -3243,7 +3243,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -3261,7 +3261,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Display name of the Dataset in AI Platform.
+       * Required. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -3382,7 +3382,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -3395,7 +3395,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -3410,7 +3410,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3427,7 +3427,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3443,7 +3443,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3457,7 +3457,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3476,7 +3476,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -3662,7 +3662,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery.
+     * Vertex AI's SavedQuery.
      * </pre>
      *
      * Protobuf type {@code
@@ -4011,7 +4011,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery.
+       * Vertex AI's SavedQuery.
        * </pre>
        *
        * Protobuf type {@code
@@ -4456,7 +4456,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -4480,7 +4480,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Display name of the Dataset in AI Platform.
+     * Optional. Display name of the Dataset in Vertex AI.
      * System will pick a display name if unspecified.
      * </pre>
      *
@@ -4511,7 +4511,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -4531,7 +4531,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -4553,7 +4553,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -4570,7 +4570,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -4589,7 +4589,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
      * to the datalabeling Dataset.
      * </pre>
      *
@@ -5196,7 +5196,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -5219,7 +5219,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -5242,7 +5242,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -5264,7 +5264,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -5282,7 +5282,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Display name of the Dataset in AI Platform.
+       * Optional. Display name of the Dataset in Vertex AI.
        * System will pick a display name if unspecified.
        * </pre>
        *
@@ -5334,7 +5334,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5358,7 +5358,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5378,7 +5378,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5400,7 +5400,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5430,7 +5430,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5459,7 +5459,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5488,7 +5488,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5518,7 +5518,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5545,7 +5545,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5574,7 +5574,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5604,7 +5604,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5627,7 +5627,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5650,7 +5650,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5668,7 +5668,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5690,7 +5690,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5716,7 +5716,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5738,7 +5738,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5761,7 +5761,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
        * to the datalabeling Dataset.
        * </pre>
        *
@@ -5925,7 +5925,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -5942,7 +5942,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -5967,7 +5967,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+   * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
    * </pre>
    *
    * <code>
@@ -5992,7 +5992,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -6010,7 +6010,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -6034,7 +6034,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Model in automl.googleapis.com to AI Platform's
+   * Config for migrating Model in automl.googleapis.com to Vertex AI's
    * Model.
    * </pre>
    *
@@ -6059,7 +6059,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -6077,7 +6077,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -6101,7 +6101,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+   * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
    * Dataset.
    * </pre>
    *
@@ -6127,7 +6127,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>
@@ -6145,7 +6145,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>
@@ -6170,7 +6170,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Config for migrating Dataset in datalabeling.googleapis.com to
-   * AI Platform's Dataset.
+   * Vertex AI's Dataset.
    * </pre>
    *
    * <code>
@@ -6444,7 +6444,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Config of migrating one resource from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.MigrateResourceRequest}
@@ -6675,7 +6675,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6692,7 +6692,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6725,7 +6725,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6751,7 +6751,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6775,7 +6775,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6815,7 +6815,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6842,7 +6842,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6858,7 +6858,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6885,7 +6885,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      * </pre>
      *
      * <code>
@@ -6938,7 +6938,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -6956,7 +6956,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -6989,7 +6989,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7015,7 +7015,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7039,7 +7039,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7079,7 +7079,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7107,7 +7107,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7124,7 +7124,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7152,7 +7152,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      * </pre>
      *
@@ -7204,7 +7204,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7222,7 +7222,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7255,7 +7255,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7282,7 +7282,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7307,7 +7307,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7348,7 +7348,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7376,7 +7376,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7393,7 +7393,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7421,7 +7421,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      * </pre>
      *
@@ -7476,7 +7476,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7494,7 +7494,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7528,7 +7528,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7555,7 +7555,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7580,7 +7580,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7621,7 +7621,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7649,7 +7649,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7666,7 +7666,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>
@@ -7694,7 +7694,7 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      * </pre>
      *
      * <code>

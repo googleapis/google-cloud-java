@@ -179,7 +179,7 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
+   * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
@@ -206,7 +206,7 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
+   * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
@@ -233,7 +233,7 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
+   * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
@@ -373,7 +373,7 @@ public interface InputDataConfigOrBuilder
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
    * the role of the DataItem they are on (for the auto-assigned that role is
-   * decided by AI Platform). A filter with same syntax as the one used in
+   * decided by Vertex AI). A filter with same syntax as the one used in
    * [ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations] may be used, but note
    * here it filters across all Annotations of the Dataset, and not just within
    * a single DataItem.
@@ -393,7 +393,7 @@ public interface InputDataConfigOrBuilder
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
    * the role of the DataItem they are on (for the auto-assigned that role is
-   * decided by AI Platform). A filter with same syntax as the one used in
+   * decided by Vertex AI). A filter with same syntax as the one used in
    * [ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations] may be used, but note
    * here it filters across all Annotations of the Dataset, and not just within
    * a single DataItem.

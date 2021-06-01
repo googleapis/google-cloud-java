@@ -70,7 +70,7 @@
  *
  * <p>======================= IndexEndpointServiceClient =======================
  *
- * <p>Service Description: A service for managing AI Platform's IndexEndpoints.
+ * <p>Service Description: A service for managing Vertex AI's IndexEndpoints.
  *
  * <p>Sample for IndexEndpointServiceClient:
  *
@@ -84,7 +84,7 @@
  *
  * <p>======================= IndexServiceClient =======================
  *
- * <p>Service Description: A service for creating and managing AI Platform's Index resources.
+ * <p>Service Description: A service for creating and managing Vertex AI's Index resources.
  *
  * <p>Sample for IndexServiceClient:
  *
@@ -97,7 +97,7 @@
  *
  * <p>======================= JobServiceClient =======================
  *
- * <p>Service Description: A service for creating and managing AI Platform's jobs.
+ * <p>Service Description: A service for creating and managing Vertex AI's jobs.
  *
  * <p>Sample for JobServiceClient:
  *
@@ -125,7 +125,7 @@
  * <p>======================= MigrationServiceClient =======================
  *
  * <p>Service Description: A service that migrates resources from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  *
  * <p>Sample for MigrationServiceClient:
  *
@@ -141,7 +141,7 @@
  *
  * <p>======================= ModelServiceClient =======================
  *
- * <p>Service Description: A service for managing AI Platform's machine learning Models.
+ * <p>Service Description: A service for managing Vertex AI's machine learning Models.
  *
  * <p>Sample for ModelServiceClient:
  *
@@ -154,7 +154,9 @@
  *
  * <p>======================= PipelineServiceClient =======================
  *
- * <p>Service Description: A service for creating and managing AI Platform's pipelines.
+ * <p>Service Description: A service for creating and managing Vertex AI's pipelines. This includes
+ * both `TrainingPipeline` resources (used for AutoML and custom training) and `PipelineJob`
+ * resources (used for Vertex Pipelines).
  *
  * <p>Sample for PipelineServiceClient:
  *
@@ -216,7 +218,7 @@
  *
  * <p>======================= VizierServiceClient =======================
  *
- * <p>Service Description: Cloud AI Platform Vizier API.
+ * <p>Service Description: Vertex Vizier API.
  *
  * <p>Vizier service is a GCP service to solve blackbox optimization problems, such as tuning
  * machine learning hyperparameters and searching over deep learning architectures.

@@ -85,10 +85,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
    * Updatable fields:
-   *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -108,10 +106,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
    * Updatable fields:
-   *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -131,10 +127,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
    * Updatable fields:
-   *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

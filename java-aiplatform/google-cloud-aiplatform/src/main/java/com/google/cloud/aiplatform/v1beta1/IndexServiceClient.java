@@ -42,7 +42,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for creating and managing AI Platform's Index resources.
+ * Service Description: A service for creating and managing Vertex AI's Index resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -542,7 +542,7 @@ public class IndexServiceClient implements BackgroundResource {
    *
    * @param index Required. The Index which updates the resource on the server.
    * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
-   *     [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+   *     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, UpdateIndexOperationMetadata> updateIndexAsync(

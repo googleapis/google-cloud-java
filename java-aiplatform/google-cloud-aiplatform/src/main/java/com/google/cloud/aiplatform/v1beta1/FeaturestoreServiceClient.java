@@ -579,8 +579,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     the user does not provide a mask then only the non-empty fields present in the request will
    *     be overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `display_name` &#42; `labels` &#42; `online_serving_config.fixed_node_count` &#42;
-   *     `retention_policy.online_storage_ttl_days`
+   *     <p>&#42; `labels` &#42; `online_serving_config.fixed_node_count`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Featurestore, UpdateFeaturestoreOperationMetadata>

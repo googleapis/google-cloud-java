@@ -141,7 +141,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform.
+   * AutoML Models always have this field populated by Vertex AI.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -173,7 +173,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform.
+   * AutoML Models always have this field populated by Vertex AI.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -208,7 +208,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform, if no
+   * AutoML Models always have this field populated by Vertex AI, if no
    * parameters are supported, then it is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -241,7 +241,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform, if no
+   * AutoML Models always have this field populated by Vertex AI, if no
    * parameters are supported, then it is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -277,7 +277,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform.
+   * AutoML Models always have this field populated by Vertex AI.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -309,7 +309,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
    * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform.
+   * AutoML Models always have this field populated by Vertex AI.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
    * point to a location where the user only has a read access.
@@ -695,7 +695,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -726,7 +726,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -757,7 +757,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -787,7 +787,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -813,7 +813,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -846,7 +846,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * parameters are supported, then it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -878,7 +878,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * parameters are supported, then it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -910,7 +910,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * parameters are supported, then it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -941,7 +941,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * parameters are supported, then it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -968,7 +968,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.model_parameters][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model_parameters].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * parameters are supported, then it is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -1002,7 +1002,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1033,7 +1033,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1064,7 +1064,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1094,7 +1094,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.
@@ -1120,7 +1120,7 @@ public final class PredictSchemata extends com.google.protobuf.GeneratedMessageV
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform.
+     * AutoML Models always have this field populated by Vertex AI.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
      * point to a location where the user only has a read access.

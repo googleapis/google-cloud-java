@@ -1546,7 +1546,7 @@ public final class MetadataServiceGrpc {
      * Adds a set of Contexts as children to a parent Context. If any of the
      * child Contexts have already been added to the parent Context, they are
      * simply skipped. If this call would create a cycle or cause any Context to
-     * have more than 10 parents, the request will fail with INVALID_ARGUMENT
+     * have more than 10 parents, the request will fail with an INVALID_ARGUMENT
      * error.
      * </pre>
      */
@@ -1638,9 +1638,10 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Adds Events for denoting whether each Artifact was an input or output for a
-     * given Execution. If any Events already exist between the Execution and any
-     * of the specified Artifacts they are simply skipped.
+     * Adds Events to the specified Execution. An Event indicates whether an
+     * Artifact was used as an input or output for an Execution. If an Event
+     * already exists between the Execution and the Artifact, the Event is
+     * skipped.
      * </pre>
      */
     public void addExecutionEvents(
@@ -1672,7 +1673,7 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Creates an MetadataSchema.
+     * Creates a MetadataSchema.
      * </pre>
      */
     public void createMetadataSchema(
@@ -2168,7 +2169,7 @@ public final class MetadataServiceGrpc {
      * Adds a set of Contexts as children to a parent Context. If any of the
      * child Contexts have already been added to the parent Context, they are
      * simply skipped. If this call would create a cycle or cause any Context to
-     * have more than 10 parents, the request will fail with INVALID_ARGUMENT
+     * have more than 10 parents, the request will fail with an INVALID_ARGUMENT
      * error.
      * </pre>
      */
@@ -2272,9 +2273,10 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Adds Events for denoting whether each Artifact was an input or output for a
-     * given Execution. If any Events already exist between the Execution and any
-     * of the specified Artifacts they are simply skipped.
+     * Adds Events to the specified Execution. An Event indicates whether an
+     * Artifact was used as an input or output for an Execution. If an Event
+     * already exists between the Execution and the Artifact, the Event is
+     * skipped.
      * </pre>
      */
     public void addExecutionEvents(
@@ -2310,7 +2312,7 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Creates an MetadataSchema.
+     * Creates a MetadataSchema.
      * </pre>
      */
     public void createMetadataSchema(
@@ -2587,7 +2589,7 @@ public final class MetadataServiceGrpc {
      * Adds a set of Contexts as children to a parent Context. If any of the
      * child Contexts have already been added to the parent Context, they are
      * simply skipped. If this call would create a cycle or cause any Context to
-     * have more than 10 parents, the request will fail with INVALID_ARGUMENT
+     * have more than 10 parents, the request will fail with an INVALID_ARGUMENT
      * error.
      * </pre>
      */
@@ -2667,9 +2669,10 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Adds Events for denoting whether each Artifact was an input or output for a
-     * given Execution. If any Events already exist between the Execution and any
-     * of the specified Artifacts they are simply skipped.
+     * Adds Events to the specified Execution. An Event indicates whether an
+     * Artifact was used as an input or output for an Execution. If an Event
+     * already exists between the Execution and the Artifact, the Event is
+     * skipped.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.AddExecutionEventsResponse addExecutionEvents(
@@ -2697,7 +2700,7 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Creates an MetadataSchema.
+     * Creates a MetadataSchema.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.MetadataSchema createMetadataSchema(
@@ -2972,7 +2975,7 @@ public final class MetadataServiceGrpc {
      * Adds a set of Contexts as children to a parent Context. If any of the
      * child Contexts have already been added to the parent Context, they are
      * simply skipped. If this call would create a cycle or cause any Context to
-     * have more than 10 parents, the request will fail with INVALID_ARGUMENT
+     * have more than 10 parents, the request will fail with an INVALID_ARGUMENT
      * error.
      * </pre>
      */
@@ -3059,9 +3062,10 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Adds Events for denoting whether each Artifact was an input or output for a
-     * given Execution. If any Events already exist between the Execution and any
-     * of the specified Artifacts they are simply skipped.
+     * Adds Events to the specified Execution. An Event indicates whether an
+     * Artifact was used as an input or output for an Execution. If an Event
+     * already exists between the Execution and the Artifact, the Event is
+     * skipped.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3093,7 +3097,7 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
-     * Creates an MetadataSchema.
+     * Creates a MetadataSchema.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

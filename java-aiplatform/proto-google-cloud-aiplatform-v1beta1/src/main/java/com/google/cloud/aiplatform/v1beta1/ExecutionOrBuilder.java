@@ -81,7 +81,7 @@ public interface ExecutionOrBuilder
    * <pre>
    * The state of this Execution. This is a property of the Execution, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as AI Platform Pipelines) and the system does not prescribe
+   * clients (such as Vertex Pipelines) and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *
@@ -96,7 +96,7 @@ public interface ExecutionOrBuilder
    * <pre>
    * The state of this Execution. This is a property of the Execution, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as AI Platform Pipelines) and the system does not prescribe
+   * clients (such as Vertex Pipelines) and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *
@@ -323,7 +323,7 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * The version of the schema in schema_name to use.
+   * The version of the schema in `schema_title` to use.
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -338,7 +338,7 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * The version of the schema in schema_name to use.
+   * The version of the schema in `schema_title` to use.
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.

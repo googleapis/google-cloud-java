@@ -152,7 +152,7 @@ public interface ModelOrBuilder
    * does not have any additional information.
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform, if no
+   * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -173,7 +173,7 @@ public interface ModelOrBuilder
    * does not have any additional information.
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML Models always have this field populated by AI Platform, if no
+   * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -332,7 +332,7 @@ public interface ModelOrBuilder
    * Input only. The specification of the container that is to be used when deploying
    * this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by AI Platform.
+   * and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -350,7 +350,7 @@ public interface ModelOrBuilder
    * Input only. The specification of the container that is to be used when deploying
    * this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by AI Platform.
+   * and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -368,7 +368,7 @@ public interface ModelOrBuilder
    * Input only. The specification of the container that is to be used when deploying
    * this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by AI Platform.
+   * and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -868,7 +868,7 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this Model was uploaded into AI Platform.
+   * Output only. Timestamp when this Model was uploaded into Vertex AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -881,7 +881,7 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this Model was uploaded into AI Platform.
+   * Output only. Timestamp when this Model was uploaded into Vertex AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -894,7 +894,7 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this Model was uploaded into AI Platform.
+   * Output only. Timestamp when this Model was uploaded into Vertex AI.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];

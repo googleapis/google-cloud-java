@@ -375,8 +375,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies task was not triggered because the trigger policy of the task
-     * in the [PipelineJob.pipeline_spec.condition][] is not satisfied.
+     * Specifies that the task was not triggered because the task's trigger
+     * policy is not satisfied. The trigger policy is specified in the
+     * `condition` field of [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>NOT_TRIGGERED = 9;</code>
@@ -479,8 +480,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies task was not triggered because the trigger policy of the task
-     * in the [PipelineJob.pipeline_spec.condition][] is not satisfied.
+     * Specifies that the task was not triggered because the task's trigger
+     * policy is not satisfied. The trigger policy is specified in the
+     * `condition` field of [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>NOT_TRIGGERED = 9;</code>

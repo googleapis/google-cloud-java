@@ -325,8 +325,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the AI Platform Custom Code Service Agent for the
-   * CustomJob's project is used.
+   * If unspecified, the [AI Platform Custom Code Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * for the CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -351,8 +352,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the AI Platform Custom Code Service Agent for the
-   * CustomJob's project is used.
+   * If unspecified, the [AI Platform Custom Code Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * for the CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -449,7 +451,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -479,7 +481,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -511,7 +513,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
    * baseOutputDirectory.
-   * The following AI Platform environment variables will be passed to
+   * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -537,7 +539,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
    * will upload Tensorboard logs.
    * Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -565,7 +567,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
    * will upload Tensorboard logs.
    * Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -1681,8 +1683,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the AI Platform Custom Code Service Agent for the
-     * CustomJob's project is used.
+     * If unspecified, the [AI Platform Custom Code Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * for the CustomJob's project is used.
      * </pre>
      *
      * <code>string service_account = 4;</code>
@@ -1706,8 +1709,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the AI Platform Custom Code Service Agent for the
-     * CustomJob's project is used.
+     * If unspecified, the [AI Platform Custom Code Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * for the CustomJob's project is used.
      * </pre>
      *
      * <code>string service_account = 4;</code>
@@ -1731,8 +1735,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the AI Platform Custom Code Service Agent for the
-     * CustomJob's project is used.
+     * If unspecified, the [AI Platform Custom Code Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * for the CustomJob's project is used.
      * </pre>
      *
      * <code>string service_account = 4;</code>
@@ -1755,8 +1760,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the AI Platform Custom Code Service Agent for the
-     * CustomJob's project is used.
+     * If unspecified, the [AI Platform Custom Code Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * for the CustomJob's project is used.
      * </pre>
      *
      * <code>string service_account = 4;</code>
@@ -1775,8 +1781,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the AI Platform Custom Code Service Agent for the
-     * CustomJob's project is used.
+     * If unspecified, the [AI Platform Custom Code Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * for the CustomJob's project is used.
      * </pre>
      *
      * <code>string service_account = 4;</code>
@@ -1957,7 +1964,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -1986,7 +1993,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2021,7 +2028,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2059,7 +2066,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2094,7 +2101,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2136,7 +2143,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2171,7 +2178,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2201,7 +2208,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2235,7 +2242,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
      * baseOutputDirectory.
-     * The following AI Platform environment variables will be passed to
+     * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
@@ -2271,7 +2278,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
      * will upload Tensorboard logs.
      * Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -2298,7 +2305,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
      * will upload Tensorboard logs.
      * Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -2325,7 +2332,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
      * will upload Tensorboard logs.
      * Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -2351,7 +2358,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
      * will upload Tensorboard logs.
      * Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -2373,7 +2380,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
      * will upload Tensorboard logs.
      * Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`

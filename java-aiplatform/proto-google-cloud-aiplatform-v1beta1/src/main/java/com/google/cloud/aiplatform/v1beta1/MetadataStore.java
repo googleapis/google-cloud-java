@@ -207,7 +207,7 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent state information for a MetadataStore.
+   * Represents state information for a MetadataStore.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState}
@@ -476,7 +476,7 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represent state information for a MetadataStore.
+     * Represents state information for a MetadataStore.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState}
@@ -901,9 +901,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -918,9 +918,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -937,9 +937,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2018,9 +2018,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2034,9 +2034,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2056,9 +2056,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2080,9 +2080,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2102,9 +2102,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2130,9 +2130,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2152,9 +2152,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2168,9 +2168,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -2189,9 +2189,9 @@ public final class MetadataStore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>

@@ -2130,7 +2130,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -2144,7 +2144,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -2561,7 +2561,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -2586,7 +2586,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -3792,7 +3792,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3816,7 +3816,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3840,7 +3840,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3863,7 +3863,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3882,7 +3882,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -5511,7 +5511,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -5530,7 +5530,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -5552,7 +5552,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -8621,7 +8621,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8639,7 +8639,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8664,7 +8664,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8691,7 +8691,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8715,7 +8715,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8747,7 +8747,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8771,7 +8771,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8790,7 +8790,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -8813,7 +8813,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *

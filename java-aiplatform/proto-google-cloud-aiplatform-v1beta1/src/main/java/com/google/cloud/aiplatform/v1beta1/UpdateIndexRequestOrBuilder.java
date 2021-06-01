@@ -70,7 +70,7 @@ public interface UpdateIndexRequestOrBuilder
    * <pre>
    * The update mask applies to the resource.
    * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -84,7 +84,7 @@ public interface UpdateIndexRequestOrBuilder
    * <pre>
    * The update mask applies to the resource.
    * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -98,7 +98,7 @@ public interface UpdateIndexRequestOrBuilder
    * <pre>
    * The update mask applies to the resource.
    * For the `FieldMask` definition, see
-   * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

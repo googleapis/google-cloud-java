@@ -1771,8 +1771,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the pipeline.
-   * The spec contains a `schema_version` field which indicates the Kubeflow
-   * Pipeline schema version to decode the struct.
    * </pre>
    *
    * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -1789,8 +1787,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the pipeline.
-   * The spec contains a `schema_version` field which indicates the Kubeflow
-   * Pipeline schema version to decode the struct.
    * </pre>
    *
    * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -1807,8 +1803,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the pipeline.
-   * The spec contains a `schema_version` field which indicates the Kubeflow
-   * Pipeline schema version to decode the struct.
    * </pre>
    *
    * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -2253,7 +2247,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * network name.
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the GCP resources
-   * being launched, if applied, such as Cloud AI Platform
+   * being launched, if applied, such as Vertex AI
    * Training or Dataflow job. If left unspecified, the workload is not peered
    * with any network.
    * </pre>
@@ -2288,7 +2282,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * network name.
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the GCP resources
-   * being launched, if applied, such as Cloud AI Platform
+   * being launched, if applied, such as Vertex AI
    * Training or Dataflow job. If left unspecified, the workload is not peered
    * with any network.
    * </pre>
@@ -4001,8 +3995,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4018,8 +4010,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4041,8 +4031,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4066,8 +4054,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4088,8 +4074,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4115,8 +4099,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4138,8 +4120,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4155,8 +4135,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -4176,8 +4154,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      * </pre>
      *
      * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
@@ -5412,7 +5388,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      * </pre>
@@ -5446,7 +5422,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      * </pre>
@@ -5480,7 +5456,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      * </pre>
@@ -5513,7 +5489,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      * </pre>
@@ -5542,7 +5518,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      * </pre>

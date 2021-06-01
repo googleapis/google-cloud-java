@@ -62,7 +62,6 @@ public interface ListFeaturestoresRequestOrBuilder
    * <pre>
    * Lists the featurestores that match the filter expression. The following
    * fields are supported:
-   * * `display_name`: Supports =, != comparisons.
    * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
    * be
    *   in RFC 3339 format.
@@ -90,7 +89,6 @@ public interface ListFeaturestoresRequestOrBuilder
    * <pre>
    * Lists the featurestores that match the filter expression. The following
    * fields are supported:
-   * * `display_name`: Supports =, != comparisons.
    * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
    * be
    *   in RFC 3339 format.
@@ -171,7 +169,6 @@ public interface ListFeaturestoresRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported Fields:
-   *   * `display_name`
    *   * `create_time`
    *   * `update_time`
    *   * `online_serving_config.fixed_node_count`
@@ -189,7 +186,6 @@ public interface ListFeaturestoresRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported Fields:
-   *   * `display_name`
    *   * `create_time`
    *   * `update_time`
    *   * `online_serving_config.fixed_node_count`

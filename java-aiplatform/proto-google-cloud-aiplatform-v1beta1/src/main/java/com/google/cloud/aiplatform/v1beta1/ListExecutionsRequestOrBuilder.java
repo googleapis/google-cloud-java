@@ -77,7 +77,7 @@ public interface ListExecutionsRequestOrBuilder
    * A page token, received from a previous [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
-   * provided the page token. (Otherwise the request will fail with
+   * provided the page token. (Otherwise the request will fail with an
    * INVALID_ARGUMENT error.)
    * </pre>
    *
@@ -93,7 +93,7 @@ public interface ListExecutionsRequestOrBuilder
    * A page token, received from a previous [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
-   * provided the page token. (Otherwise the request will fail with
+   * provided the page token. (Otherwise the request will fail with an
    * INVALID_ARGUMENT error.)
    * </pre>
    *
@@ -111,26 +111,26 @@ public interface ListExecutionsRequestOrBuilder
    * order to be part of the result set.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * Following are the supported set of filters:
-   *   1. Attributes filtering
-   *      e.g. display_name = "test"
-   *      supported fields include: name, display_name, state,
-   *                                schema_title, create_time and update_time.
-   *      Time fields, i.e. create_time and update_time, require values to
-   *      specified in RFC-3339 format.
-   *      e.g. create_time = "2020-11-19T11:30:00-04:00"
-   *   2. Metadata field
-   *      To filter on metadata fields use traversal operation as follows:
-   *           metadata.&lt;field_name&gt;.&lt;type_value&gt;
-   *      e.g. metadata.field_1.number_value = 10.0
-   *   3. Context based filtering
-   *      To filter Executions based on the contexts to which they belong use
-   *      the function operator with the full resource name
-   *      "in_context(&lt;context-name&gt;)"
-   *      e.g.
-   *      in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`.
+   *    Supported fields include: `name`, `display_name`, `state`,
+   *    `schema_title`, `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`
+   *    For example: `metadata.field_1.number_value = 10.0`
+   * *  **Context based filtering**:
+   *    To filter Executions based on the contexts to which they belong use
+   *    the function operator with the full resource name:
+   *    `in_context(&lt;context-name&gt;)`.
+   *    For example:
+   *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
    * Each of the above supported filters can be combined together using
-   * Logical operators (AND &amp; OR).
-   * e.g. display_name = "test" AND metadata.field1.bool_value = true.
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -146,26 +146,26 @@ public interface ListExecutionsRequestOrBuilder
    * order to be part of the result set.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * Following are the supported set of filters:
-   *   1. Attributes filtering
-   *      e.g. display_name = "test"
-   *      supported fields include: name, display_name, state,
-   *                                schema_title, create_time and update_time.
-   *      Time fields, i.e. create_time and update_time, require values to
-   *      specified in RFC-3339 format.
-   *      e.g. create_time = "2020-11-19T11:30:00-04:00"
-   *   2. Metadata field
-   *      To filter on metadata fields use traversal operation as follows:
-   *           metadata.&lt;field_name&gt;.&lt;type_value&gt;
-   *      e.g. metadata.field_1.number_value = 10.0
-   *   3. Context based filtering
-   *      To filter Executions based on the contexts to which they belong use
-   *      the function operator with the full resource name
-   *      "in_context(&lt;context-name&gt;)"
-   *      e.g.
-   *      in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`.
+   *    Supported fields include: `name`, `display_name`, `state`,
+   *    `schema_title`, `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`
+   *    For example: `metadata.field_1.number_value = 10.0`
+   * *  **Context based filtering**:
+   *    To filter Executions based on the contexts to which they belong use
+   *    the function operator with the full resource name:
+   *    `in_context(&lt;context-name&gt;)`.
+   *    For example:
+   *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
    * Each of the above supported filters can be combined together using
-   * Logical operators (AND &amp; OR).
-   * e.g. display_name = "test" AND metadata.field1.bool_value = true.
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
    * <code>string filter = 4;</code>

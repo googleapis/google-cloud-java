@@ -104,12 +104,76 @@ public interface ListContextsRequestOrBuilder
   com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Filter specifying the boolean condition for the Contexts to satisfy in
+   * order to be part of the result set.
+   * The syntax to define filter query is based on https://google.aip.dev/160.
+   * Following are the supported set of filters:
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`.
+   *    Supported fields include: `name`, `display_name`, `schema_title`,
+   *    `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
+   *    For example: `metadata.field_1.number_value = 10.0`.
+   * *  **Parent Child filtering**:
+   *    To filter Contexts based on parent-child relationship use the HAS
+   *    operator as follows:
+   *    ```
+   *    parent_contexts:
+   *    "projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context_id&gt;"
+   *    child_contexts:
+   *    "projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context_id&gt;"
+   *    ```
+   * Each of the above supported filters can be combined together using
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+   * </pre>
+   *
    * <code>string filter = 4;</code>
    *
    * @return The filter.
    */
   java.lang.String getFilter();
   /**
+   *
+   *
+   * <pre>
+   * Filter specifying the boolean condition for the Contexts to satisfy in
+   * order to be part of the result set.
+   * The syntax to define filter query is based on https://google.aip.dev/160.
+   * Following are the supported set of filters:
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`.
+   *    Supported fields include: `name`, `display_name`, `schema_title`,
+   *    `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
+   *    For example: `metadata.field_1.number_value = 10.0`.
+   * *  **Parent Child filtering**:
+   *    To filter Contexts based on parent-child relationship use the HAS
+   *    operator as follows:
+   *    ```
+   *    parent_contexts:
+   *    "projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context_id&gt;"
+   *    child_contexts:
+   *    "projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context_id&gt;"
+   *    ```
+   * Each of the above supported filters can be combined together using
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+   * </pre>
+   *
    * <code>string filter = 4;</code>
    *
    * @return The bytes for filter.

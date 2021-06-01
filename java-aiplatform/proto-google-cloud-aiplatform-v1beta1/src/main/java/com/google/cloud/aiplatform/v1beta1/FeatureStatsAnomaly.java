@@ -29,7 +29,7 @@ package com.google.cloud.aiplatform.v1beta1;
  * window, start_time = end_time. Timestamp of the stats and anomalies always
  * refers to end_time. Raw stats and anomalies are stored in stats_uri or
  * anomaly_uri in the tensorflow defined protos. Field data_stats contains
- * almost identical information with the raw stats in AI Platform
+ * almost identical information with the raw stats in Vertex AI
  * defined proto, for UI to display.
  * </pre>
  *
@@ -713,7 +713,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
    * window, start_time = end_time. Timestamp of the stats and anomalies always
    * refers to end_time. Raw stats and anomalies are stored in stats_uri or
    * anomaly_uri in the tensorflow defined protos. Field data_stats contains
-   * almost identical information with the raw stats in AI Platform
+   * almost identical information with the raw stats in Vertex AI
    * defined proto, for UI to display.
    * </pre>
    *

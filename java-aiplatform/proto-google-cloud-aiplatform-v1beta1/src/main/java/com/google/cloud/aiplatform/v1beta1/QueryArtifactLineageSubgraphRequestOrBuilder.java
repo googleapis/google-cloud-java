@@ -89,20 +89,20 @@ public interface QueryArtifactLineageSubgraphRequestOrBuilder
    * order to be part of the Lineage Subgraph.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * The supported set of filters include the following:
-   *   1. Attributes filtering
-   *      e.g. display_name = "test"
-   *      supported fields include: name, display_name, uri, state,
-   *                                schema_title, create_time and update_time.
-   *      Time fields, i.e. create_time and update_time, require values to
-   *      specified in RFC-3339 format.
-   *      e.g. create_time = "2020-11-19T11:30:00-04:00"
-   *   2. Metadata field
-   *      To filter on metadata fields use traversal operation as follows:
-   *           metadata.&lt;field_name&gt;.&lt;type_value&gt;
-   *      e.g. metadata.field_1.number_value = 10.0
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`
+   *    Supported fields include: `name`, `display_name`, `uri`, `state`,
+   *    `schema_title`, `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
+   *    For example: `metadata.field_1.number_value = 10.0`
    * Each of the above supported filter types can be combined together using
-   * Logical operators (AND &amp; OR).
-   * e.g. display_name = "test" AND metadata.field1.bool_value = true.
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -118,20 +118,20 @@ public interface QueryArtifactLineageSubgraphRequestOrBuilder
    * order to be part of the Lineage Subgraph.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * The supported set of filters include the following:
-   *   1. Attributes filtering
-   *      e.g. display_name = "test"
-   *      supported fields include: name, display_name, uri, state,
-   *                                schema_title, create_time and update_time.
-   *      Time fields, i.e. create_time and update_time, require values to
-   *      specified in RFC-3339 format.
-   *      e.g. create_time = "2020-11-19T11:30:00-04:00"
-   *   2. Metadata field
-   *      To filter on metadata fields use traversal operation as follows:
-   *           metadata.&lt;field_name&gt;.&lt;type_value&gt;
-   *      e.g. metadata.field_1.number_value = 10.0
+   * *  **Attribute filtering**:
+   *    For example: `display_name = "test"`
+   *    Supported fields include: `name`, `display_name`, `uri`, `state`,
+   *    `schema_title`, `create_time`, and `update_time`.
+   *    Time fields, such as `create_time` and `update_time`, require values
+   *    specified in RFC-3339 format.
+   *    For example: `create_time = "2020-11-19T11:30:00-04:00"`
+   * *  **Metadata field**:
+   *    To filter on metadata fields use traversal operation as follows:
+   *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
+   *    For example: `metadata.field_1.number_value = 10.0`
    * Each of the above supported filter types can be combined together using
-   * Logical operators (AND &amp; OR).
-   * e.g. display_name = "test" AND metadata.field1.bool_value = true.
+   * logical operators (`AND` &amp; `OR`).
+   * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
    * <code>string filter = 3;</code>

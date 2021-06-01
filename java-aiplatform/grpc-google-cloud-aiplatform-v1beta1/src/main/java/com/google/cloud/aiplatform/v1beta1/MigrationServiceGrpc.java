@@ -22,7 +22,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * A service that migrates resources from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -182,7 +182,7 @@ public final class MigrationServiceGrpc {
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    */
   public abstract static class MigrationServiceImplBase implements io.grpc.BindableService {
@@ -193,7 +193,7 @@ public final class MigrationServiceGrpc {
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * AI Platform's given location.
+     * Vertex AI's given location.
      * </pre>
      */
     public void searchMigratableResources(
@@ -210,7 +210,7 @@ public final class MigrationServiceGrpc {
      *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * and datalabeling.googleapis.com to Vertex AI.
      * </pre>
      */
     public void batchMigrateResources(
@@ -245,7 +245,7 @@ public final class MigrationServiceGrpc {
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    */
   public static final class MigrationServiceStub
@@ -265,7 +265,7 @@ public final class MigrationServiceGrpc {
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * AI Platform's given location.
+     * Vertex AI's given location.
      * </pre>
      */
     public void searchMigratableResources(
@@ -284,7 +284,7 @@ public final class MigrationServiceGrpc {
      *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * and datalabeling.googleapis.com to Vertex AI.
      * </pre>
      */
     public void batchMigrateResources(
@@ -302,7 +302,7 @@ public final class MigrationServiceGrpc {
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    */
   public static final class MigrationServiceBlockingStub
@@ -323,7 +323,7 @@ public final class MigrationServiceGrpc {
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * AI Platform's given location.
+     * Vertex AI's given location.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
@@ -338,7 +338,7 @@ public final class MigrationServiceGrpc {
      *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * and datalabeling.googleapis.com to Vertex AI.
      * </pre>
      */
     public com.google.longrunning.Operation batchMigrateResources(
@@ -353,7 +353,7 @@ public final class MigrationServiceGrpc {
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
-   * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    */
   public static final class MigrationServiceFutureStub
@@ -374,7 +374,7 @@ public final class MigrationServiceGrpc {
      * <pre>
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * AI Platform's given location.
+     * Vertex AI's given location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -390,7 +390,7 @@ public final class MigrationServiceGrpc {
      *
      * <pre>
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * and datalabeling.googleapis.com to Vertex AI.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

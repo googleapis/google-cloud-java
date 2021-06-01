@@ -42,7 +42,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for managing AI Platform's IndexEndpoints.
+ * Service Description: A service for managing Vertex AI's IndexEndpoints.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

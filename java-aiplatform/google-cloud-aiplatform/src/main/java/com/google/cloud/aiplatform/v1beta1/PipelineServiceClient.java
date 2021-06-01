@@ -41,7 +41,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for creating and managing AI Platform's pipelines.
+ * Service Description: A service for creating and managing Vertex AI's pipelines. This includes
+ * both `TrainingPipeline` resources (used for AutoML and custom training) and `PipelineJob`
+ * resources (used for Vertex Pipelines).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
